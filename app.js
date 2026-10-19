@@ -28,7 +28,10 @@
     showNumbers: true,
     showAmenities: true,
     showRoadNames: true,
-    activeFilter: 'ALL'
+    activeFilter: 'ALL',
+    userLocation: null,
+    isGeoTracking: false,
+    geoWatchId: null
   };
 
   // DOM Elements
@@ -38,6 +41,7 @@
   const roadsLayer = document.getElementById('roads-layer');
   const amenitiesLayer = document.getElementById('amenities-layer');
   const routeLayer = document.getElementById('route-layer');
+  const geoLayer = document.getElementById('geo-layer');
   const labelsLayer = document.getElementById('labels-layer');
   const tooltip = document.getElementById('map-tooltip');
 
@@ -343,6 +347,9 @@
   // Populate Start & Destination Dropdowns
   function populateSelectDropdowns() {
     startSelect.innerHTML = `
+      <optgroup label="📍 Your Position">
+        <option value="my_location">📍 My Live Location (GPS)</option>
+      </optgroup>
       <optgroup label="Main Gates">
         <option value="gate_1" selected>Gate 1 (Main West Entrance)</option>
         <option value="gate_2">Gate 2 (East Entrance)</option>
@@ -397,10 +404,27 @@
 
     startSelect.addEventListener('change', () => {
       state.startNodeId = startSelect.value;
+      if (state.startNodeId === 'my_location') {
+        if (!state.userLocation) {
+          startLocationTracking(true);
+        }
+      }
       if (state.selectedPlotId) {
         calculateAndDisplayRoute(state.startNodeId, state.selectedPlotId);
       }
     });
+
+    const useMyLocBtn = document.getElementById('use-my-loc-btn');
+    if (useMyLocBtn) {
+      useMyLocBtn.addEventListener('click', () => {
+        startSelect.value = 'my_location';
+        state.startNodeId = 'my_location';
+        startLocationTracking(true);
+        if (state.selectedPlotId) {
+          calculateAndDisplayRoute('my_location', state.selectedPlotId);
+        }
+      });
+    }
 
     destSelect.addEventListener('change', () => {
       const val = destSelect.value;
@@ -576,16 +600,221 @@
     return steps;
   }
 
+  // Toast Notification Helper
+  function showToast(message, duration = 3500) {
+    let toast = document.getElementById('map-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'map-toast';
+      toast.style.position = 'fixed';
+      toast.style.bottom = window.innerWidth <= 900 ? '49vh' : '24px';
+      toast.style.left = '50%';
+      toast.style.transform = 'translateX(-50%)';
+      toast.style.background = 'rgba(15, 23, 42, 0.94)';
+      toast.style.color = '#ffffff';
+      toast.style.padding = '10px 18px';
+      toast.style.borderRadius = '24px';
+      toast.style.fontSize = '12px';
+      toast.style.fontWeight = '600';
+      toast.style.zIndex = '9999';
+      toast.style.boxShadow = '0 6px 20px rgba(0,0,0,0.35)';
+      toast.style.backdropFilter = 'blur(6px)';
+      toast.style.textAlign = 'center';
+      toast.style.maxWidth = '92vw';
+      toast.style.pointerEvents = 'none';
+      toast.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = message;
+    toast.style.opacity = '1';
+    toast.style.display = 'block';
+    clearTimeout(toast._timeout);
+    toast._timeout = setTimeout(() => {
+      toast.style.opacity = '0';
+      setTimeout(() => { toast.style.display = 'none'; }, 250);
+    }, duration);
+  }
+
+  // --- GEOLOCATION MODULE (GPS to Map Projection & Real-Time Tracking) ---
+  const GPS_REF = {
+    minLat: 12.8588, // South perimeter (Play Area / Temple)
+    maxLat: 12.8622, // North perimeter (Plots 1A/1B/1C)
+    minLng: 77.5898, // West perimeter (Gate 1 / Aster Road)
+    maxLng: 77.5952, // East perimeter (Gate 2 / Hibiscus Road)
+    minX: 140,
+    maxX: 1000,
+    minY: 200,
+    maxY: 640
+  };
+
+  function gpsToMap(lat, lng) {
+    const normX = (lng - GPS_REF.minLng) / (GPS_REF.maxLng - GPS_REF.minLng);
+    const normY = (GPS_REF.maxLat - lat) / (GPS_REF.maxLat - GPS_REF.minLat);
+    const mapX = GPS_REF.minX + normX * (GPS_REF.maxX - GPS_REF.minX);
+    const mapY = GPS_REF.minY + normY * (GPS_REF.maxY - GPS_REF.minY);
+    return { mapX, mapY };
+  }
+
+  function getDistanceMeters(lat1, lon1, lat2, lon2) {
+    const R = 6371e3;
+    const phi1 = lat1 * Math.PI / 180;
+    const phi2 = lat2 * Math.PI / 180;
+    const deltaPhi = (lat2 - lat1) * Math.PI / 180;
+    const deltaLambda = (lon2 - lon1) * Math.PI / 180;
+    const a = Math.sin(deltaPhi / 2) * Math.sin(deltaPhi / 2) +
+              Math.cos(phi1) * Math.cos(phi2) *
+              Math.sin(deltaLambda / 2) * Math.sin(deltaLambda / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  }
+
+  function findClosestRoadNode(x, y) {
+    let closestId = 'gate_1';
+    let minDist = Infinity;
+    for (const nid in nodes) {
+      const n = nodes[nid];
+      const dx = n.x - x;
+      const dy = n.y - y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < minDist) {
+        minDist = dist;
+        closestId = nid;
+      }
+    }
+    return closestId;
+  }
+
+  function updateUserLocationMarker(mapX, mapY, accuracyMeters = 15, heading = null) {
+    if (!geoLayer) return;
+    const clampedX = Math.max(80, Math.min(1250, mapX));
+    const clampedY = Math.max(120, Math.min(880, mapY));
+    const pxRadius = Math.max(14, Math.min(65, accuracyMeters * 1.1));
+
+    geoLayer.innerHTML = `
+      <!-- Accuracy Circle -->
+      <circle cx="${clampedX}" cy="${clampedY}" r="${pxRadius}" fill="rgba(37, 99, 235, 0.12)" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="4,3" />
+      <!-- Radar Pulse Ring -->
+      <circle id="geo-pulse-ring" cx="${clampedX}" cy="${clampedY}" r="14" fill="rgba(37, 99, 235, 0.28)" />
+      <!-- Center User Pin -->
+      <circle cx="${clampedX}" cy="${clampedY}" r="8.5" fill="#2563eb" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 2px 6px rgba(0,0,0,0.45))" />
+      <circle cx="${clampedX}" cy="${clampedY}" r="3" fill="#ffffff" />
+      <!-- Label Pin -->
+      <g transform="translate(${clampedX}, ${clampedY - 16})">
+        <rect x="-38" y="-18" width="76" height="18" rx="9" fill="#0f172a" />
+        <text x="0" y="-5" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">YOU ARE HERE</text>
+      </g>
+    `;
+  }
+
+  function startLocationTracking(centerOnUser = true) {
+    if (!navigator.geolocation) {
+      showToast("Geolocation is not supported by your browser.", 3000);
+      return;
+    }
+
+    const geoBtn = document.getElementById('geo-btn');
+    if (geoBtn) geoBtn.classList.add('active');
+    state.isGeoTracking = true;
+
+    showToast("Acquiring GPS location... 🛰️", 2000);
+
+    const geoSuccess = (position) => {
+      const lat = position.coords.latitude;
+      const lng = position.coords.longitude;
+      const accuracy = position.coords.accuracy || 20;
+      const heading = position.coords.heading;
+
+      // Distance from Himagiri Meadows center (12.8605, 77.5925)
+      const distToLayout = getDistanceMeters(lat, lng, 12.8605, 77.5925);
+
+      let mapX, mapY;
+      if (distToLayout <= 1500) {
+        // User is inside or near the layout
+        const proj = gpsToMap(lat, lng);
+        mapX = proj.mapX;
+        mapY = proj.mapY;
+        if (!state.userLocation && centerOnUser) {
+          showToast("📍 Located inside Himagiri Meadows!", 3000);
+          zoomToCoordinates(mapX, mapY, 1.8);
+        }
+      } else {
+        // User is testing outside layout (e.g. at home)
+        // Default to Gate 1 Entrance so routing works seamlessly
+        mapX = 140;
+        mapY = 340;
+        if (!state.userLocation) {
+          const distKm = (distToLayout / 1000).toFixed(1);
+          showToast(`📍 Live GPS active (~${distKm} km away). Placed at Gate 1 for navigation. (Tap map to change location)`, 4500);
+          if (centerOnUser) {
+            zoomToCoordinates(140, 340, 1.8);
+          }
+        }
+      }
+
+      state.userLocation = { lat, lng, mapX, mapY, accuracy, heading };
+      updateUserLocationMarker(mapX, mapY, accuracy, heading);
+
+      // If live location route is selected, dynamically re-route
+      if (state.startNodeId === 'my_location' && state.selectedPlotId) {
+        calculateAndDisplayRoute('my_location', state.selectedPlotId);
+      }
+    };
+
+    const geoError = (error) => {
+      console.warn("Geolocation error:", error);
+      showToast("Could not access GPS. Defaulted to Gate 1. Tap anywhere on map to set your location.", 4000);
+      state.userLocation = { lat: 12.8605, lng: 77.5898, mapX: 140, mapY: 340, accuracy: 20 };
+      updateUserLocationMarker(140, 340, 20);
+      if (centerOnUser) {
+        zoomToCoordinates(140, 340, 1.8);
+      }
+    };
+
+    if (state.geoWatchId !== null) {
+      navigator.geolocation.clearWatch(state.geoWatchId);
+    }
+    state.geoWatchId = navigator.geolocation.watchPosition(geoSuccess, geoError, {
+      enableHighAccuracy: true,
+      maximumAge: 3000,
+      timeout: 10000
+    });
+  }
+
+  function stopLocationTracking() {
+    if (state.geoWatchId !== null) {
+      navigator.geolocation.clearWatch(state.geoWatchId);
+      state.geoWatchId = null;
+    }
+    state.isGeoTracking = false;
+    const geoBtn = document.getElementById('geo-btn');
+    if (geoBtn) geoBtn.classList.remove('active');
+    if (geoLayer) geoLayer.innerHTML = '';
+    state.userLocation = null;
+    showToast("Location tracking stopped.", 2000);
+  }
+
   // --- 4. RENDER ROUTE & ANIMATION ON MAP ---
   function calculateAndDisplayRoute(startNid, targetPlotId) {
     const plot = plots[targetPlotId];
     if (!plot) return;
 
     const targetNodeId = plot.roadNode;
-    const route = findShortestPath(startNid, targetNodeId);
+    let effectiveStartNodeId = startNid;
+    let isUserLocationStart = false;
+
+    if (startNid === 'my_location') {
+      isUserLocationStart = true;
+      if (!state.userLocation) {
+        state.userLocation = { mapX: 140, mapY: 340, accuracy: 15 };
+        updateUserLocationMarker(140, 340, 15);
+      }
+      effectiveStartNodeId = findClosestRoadNode(state.userLocation.mapX, state.userLocation.mapY);
+    }
+
+    const route = findShortestPath(effectiveStartNodeId, targetNodeId);
 
     if (!route) {
-      console.warn("No route found between", startNid, targetNodeId);
+      console.warn("No route found between", effectiveStartNodeId, targetNodeId);
       return;
     }
 
@@ -593,6 +822,10 @@
 
     // Build SVG Path coordinates
     const points = [];
+    if (isUserLocationStart && state.userLocation) {
+      points.push(`${state.userLocation.mapX},${state.userLocation.mapY}`);
+    }
+
     for (const nid of route.nodes) {
       const n = nodes[nid];
       points.push(`${n.x},${n.y}`);
@@ -605,6 +838,10 @@
 
     const pathData = "M " + points.join(" L ");
 
+    const startX = isUserLocationStart ? state.userLocation.mapX : nodes[startNid].x;
+    const startY = isUserLocationStart ? state.userLocation.mapY : nodes[startNid].y;
+    const startColor = isUserLocationStart ? "#2563eb" : "#10b981";
+
     // Render in SVG
     routeLayer.innerHTML = `
       <!-- Underlay glow -->
@@ -612,7 +849,7 @@
       <!-- Animated dashed route -->
       <path id="active-nav-path" d="${pathData}" class="nav-route-path" />
       <!-- Start Pin -->
-      <circle cx="${nodes[startNid].x}" cy="${nodes[startNid].y}" r="8" fill="#10b981" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 2px 5px rgba(0,0,0,0.4))" />
+      <circle cx="${startX}" cy="${startY}" r="8" fill="${startColor}" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 2px 5px rgba(0,0,0,0.4))" />
       <!-- End Pin / House Indicator -->
       <g transform="translate(${plotCenterX}, ${plotCenterY - 14})">
         <path d="M 0,0 C -6,-10 -6,-16 0,-20 C 6,-16 6,-10 0,0 Z" fill="#ef4444" stroke="#ffffff" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.4))" />
@@ -626,7 +863,13 @@
     startRouteTravelerAnimation();
 
     // Generate Steps & Distance
-    const totalDistMeters = Math.round((route.totalDist + 15) * 0.95);
+    let totalDistMeters = Math.round((route.totalDist + 15) * 0.95);
+    if (isUserLocationStart && state.userLocation) {
+      const dx = state.userLocation.mapX - nodes[effectiveStartNodeId].x;
+      const dy = state.userLocation.mapY - nodes[effectiveStartNodeId].y;
+      totalDistMeters += Math.round(Math.sqrt(dx * dx + dy * dy) * 0.95);
+    }
+
     const walkMins = Math.max(1, Math.round(totalDistMeters / 70)); // ~70m per min
     const driveMins = Math.max(1, Math.round(totalDistMeters / 250)); // ~250m per min
 
@@ -634,16 +877,25 @@
     walkTimeVal.textContent = `${walkMins} min`;
     driveTimeVal.textContent = `${driveMins} min`;
 
-    const steps = generateTurnByTurnDirections(route, plot, startNid);
+    const steps = generateTurnByTurnDirections(route, plot, effectiveStartNodeId);
+    if (isUserLocationStart) {
+      const closestLabel = nodes[effectiveStartNodeId]?.label || 'the road';
+      steps.unshift({
+        icon: "📍",
+        text: `Start from <strong>Your Current Location</strong> and walk to ${closestLabel}`,
+        dist: Math.round(Math.sqrt(Math.pow(state.userLocation.mapX - nodes[effectiveStartNodeId].x, 2) + Math.pow(state.userLocation.mapY - nodes[effectiveStartNodeId].y, 2)) * 0.95)
+      });
+    }
     renderDirectionsList(steps);
 
     if (window.HimagiriAnalytics) {
-      const sName = nodes[startNid]?.label?.split(' (')[0] || 'Gate 1';
+      const sName = isUserLocationStart ? 'Live Location' : (nodes[startNid]?.label?.split(' (')[0] || 'Gate 1');
       window.HimagiriAnalytics.trackRoute(sName, `House #${plot.number}`, totalDistMeters);
     }
 
     // Natural conversational explanation
-    const conversationalText = `House #${plot.number} is located on ${plot.road} in ${plot.block} (${plot.facing}-facing). From ${nodes[startNid]?.label.split(' (')[0] || "your start location"}, it is approximately ${totalDistMeters} meters away (about a ${walkMins}-minute walk). Follow the glowing cyan navigation route highlighted on the map.`;
+    const startLabel = isUserLocationStart ? "your current location" : (nodes[startNid]?.label.split(' (')[0] || "your start location");
+    const conversationalText = `House #${plot.number} is located on ${plot.road} in ${plot.block} (${plot.facing}-facing). From ${startLabel}, it is approximately ${totalDistMeters} meters away (about a ${walkMins}-minute walk). Follow the glowing cyan navigation route highlighted on the map.`;
     displayAssistantResponse(conversationalText);
 
     // Highlight active plot
@@ -1098,13 +1350,44 @@
     if (focusCenterBtn) {
       focusCenterBtn.addEventListener('click', () => {
         const isMobile = window.innerWidth <= 900;
-        zoomToCoordinates(600, 480, isMobile ? 1.6 : 1.3);
+        // Center directly on Children's Play Area & West Temple precinct
+        zoomToCoordinates(280, 625, isMobile ? 1.85 : 1.6);
+        showToast("Centered on Children's Play Area & Temple 🛝🛕", 3000);
+      });
+    }
+
+    const geoBtn = document.getElementById('geo-btn');
+    if (geoBtn) {
+      geoBtn.addEventListener('click', () => {
+        if (state.isGeoTracking) {
+          stopLocationTracking();
+        } else {
+          startLocationTracking(true);
+        }
       });
     }
 
     document.getElementById('focus-gate2-btn').addEventListener('click', () => {
       const isMobile = window.innerWidth <= 900;
       zoomToCoordinates(1000, 295, isMobile ? 2.0 : 1.8);
+    });
+
+    // Map tap to set starting point when in location mode
+    svg.addEventListener('click', (e) => {
+      if (e.target.id === 'map-svg' || e.target.classList.contains('road-corridor') || e.target.classList.contains('road-centerline')) {
+        const pt = svg.createSVGPoint();
+        pt.x = e.clientX;
+        pt.y = e.clientY;
+        const svgP = pt.matrixTransform(viewport.getScreenCTM().inverse());
+        if (state.startNodeId === 'my_location' || state.isGeoTracking) {
+          state.userLocation = { mapX: svgP.x, mapY: svgP.y, accuracy: 10 };
+          updateUserLocationMarker(svgP.x, svgP.y, 10);
+          showToast("📍 Location pin set to selected spot!", 2500);
+          if (state.selectedPlotId) {
+            calculateAndDisplayRoute('my_location', state.selectedPlotId);
+          }
+        }
+      }
     });
   }
 
@@ -1135,12 +1418,12 @@
 
     if (isMobile && !forceFullFit && !isOverviewMode) {
       // On mobile / Android: start with a LARGE, crisp, detailed view!
-      // Scale 0.95 gives comfortable 35-40px wide plots with readable numbers
-      const mobileScale = 0.95;
+      // Scale 1.45 gives comfortable 50px wide plots with bold readable numbers
+      const mobileScale = 1.45;
       state.transform.scale = mobileScale;
-      // Center around Gate 1 and Main Avenue (x: 320, y: 380)
-      state.transform.x = rect.width / 2 - 320 * mobileScale;
-      state.transform.y = rect.height / 2 - 380 * mobileScale;
+      // Center around Gate 1 and Main Avenue hub (x: 300, y: 460)
+      state.transform.x = rect.width / 2 - 300 * mobileScale;
+      state.transform.y = rect.height / 2 - 460 * mobileScale;
     } else {
       const mapWidth = 1350;
       const mapHeight = 980;
@@ -1166,13 +1449,57 @@
     searchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         parseAndAnswerQuery(searchInput.value);
+        if (window.innerWidth <= 900) {
+          searchInput.blur();
+        }
       }
     });
+
+    const searchEnterBtn = document.getElementById('search-enter-btn');
+    if (searchEnterBtn) {
+      searchEnterBtn.addEventListener('click', () => {
+        parseAndAnswerQuery(searchInput.value);
+        if (window.innerWidth <= 900) {
+          searchInput.blur();
+        }
+      });
+    }
 
     const searchBtn = document.getElementById('search-btn');
     if (searchBtn) {
       searchBtn.addEventListener('click', () => {
         parseAndAnswerQuery(searchInput.value);
+        if (window.innerWidth <= 900) {
+          searchInput.blur();
+        }
+      });
+    }
+
+    const searchClearBtn = document.getElementById('search-clear-btn');
+    if (searchClearBtn) {
+      searchClearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchClearBtn.style.display = 'none';
+        searchInput.focus();
+      });
+    }
+
+    searchInput.addEventListener('input', () => {
+      if (searchClearBtn) {
+        searchClearBtn.style.display = searchInput.value.trim() ? 'flex' : 'none';
+      }
+    });
+
+    // Mobile View Mode Toggle (Full Map vs Split View)
+    const mobileViewToggle = document.getElementById('mobile-view-toggle');
+    const appContainer = document.querySelector('.app-container');
+    if (mobileViewToggle && appContainer) {
+      mobileViewToggle.addEventListener('click', () => {
+        const isFull = appContainer.classList.toggle('full-map');
+        mobileViewToggle.innerHTML = isFull ? '<span>↕ Split View</span>' : '<span>↕ Expand Map</span>';
+        setTimeout(() => {
+          fitMapToView(false);
+        }, 320);
       });
     }
 
@@ -1182,6 +1509,9 @@
         const q = chip.getAttribute('data-query');
         searchInput.value = q;
         parseAndAnswerQuery(q);
+        if (window.innerWidth <= 900) {
+          searchInput.blur();
+        }
       });
     });
 

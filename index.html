@@ -88,24 +88,27 @@
             <span style="font-size: 11px; color: #64748b; font-weight: 600;">Voice & Text Enabled</span>
           </div>
 
-          <div class="search-input-box">
-            <span class="search-icon-left">🔍</span>
-            <input 
-              type="text" 
-              id="search-input" 
-              class="search-input" 
-              placeholder="Ask 'Where is House 142?' or enter plot #"
-              autocomplete="off"
-            />
-            <div style="position: absolute; right: 8px; display: flex; align-items: center; gap: 4px;">
-              <button id="search-btn" class="voice-btn" title="Search" style="color: #059669; font-weight: 700;">
-                ➔
-              </button>
-              <button id="voice-btn" class="voice-btn" title="Click to speak (Voice Recognition)">
-                🎤
-              </button>
+          <div class="search-input-wrapper">
+            <div class="search-input-box">
+              <span class="search-icon-left">🔍</span>
+              <input 
+                type="text" 
+                id="search-input" 
+                class="search-input" 
+                placeholder="Enter house # (e.g. 142) or ask..."
+                autocomplete="off"
+                inputmode="search"
+              />
+              <div class="search-input-icons">
+                <button id="search-clear-btn" class="clear-btn" title="Clear input" style="display: none;">✕</button>
+                <button id="voice-btn" class="voice-btn" title="Voice Recognition">🎤</button>
+              </div>
             </div>
+            <button id="search-enter-btn" class="btn-search-enter" title="Find House Number">
+              <span>ENTER</span> ↵
+            </button>
           </div>
+
 
           <!-- Quick Suggestion Chips -->
           <div class="prompt-chips">
@@ -169,6 +172,9 @@
             <div class="point-row">
               <div class="point-dot start"></div>
               <select id="start-node-select" class="point-select"></select>
+              <button id="use-my-loc-btn" class="loc-quick-btn" title="Use My Current GPS Location as Start">
+                <span>📍</span> My Location
+              </button>
             </div>
             <div class="point-row">
               <div class="point-dot end"></div>
@@ -244,10 +250,16 @@
         <button id="zoom-in-btn" class="map-ctrl-btn" title="Zoom In">+</button>
         <button id="zoom-out-btn" class="map-ctrl-btn" title="Zoom Out">−</button>
         <button id="zoom-fit-btn" class="map-ctrl-btn" title="Reset / Fit Map">⛶</button>
+        <button id="geo-btn" class="map-ctrl-btn geo-btn" title="Track My Live Location (GPS)">📍</button>
         <button id="focus-gate1-btn" class="map-ctrl-btn" title="Center on Gate 1" style="font-size: 11px; font-weight: 800; color: #059669;">G1</button>
-        <button id="focus-center-btn" class="map-ctrl-btn" title="Center on Layout Center" style="font-size: 11px; font-weight: 800; color: #d97706;">CTR</button>
+        <button id="focus-center-btn" class="map-ctrl-btn" title="Center on Children's Play Area & Temple" style="font-size: 11px; font-weight: 800; color: #d97706;">CTR</button>
         <button id="focus-gate2-btn" class="map-ctrl-btn" title="Center on Gate 2" style="font-size: 11px; font-weight: 800; color: #0284c7;">G2</button>
       </div>
+
+      <!-- Mobile Split / Full Map View Toggle Pill -->
+      <button id="mobile-view-toggle" class="mobile-view-toggle" title="Toggle Full Map / Split View">
+        <span>↕ Expand Map</span>
+      </button>
 
       <!-- Layer Toggles on Bottom Left -->
       <div class="layer-controls">
@@ -292,6 +304,7 @@
           <g id="plots-layer"></g>
           <g id="amenities-layer"></g>
           <g id="route-layer"></g>
+          <g id="geo-layer"></g>
           <g id="labels-layer"></g>
         </g>
       </svg>
