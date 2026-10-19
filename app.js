@@ -179,17 +179,17 @@
 
     // Road Labels
     const roadLabels = [
-      { name: "ASTER ROAD", x: 220, y: 440, vertical: true },
-      { name: "BLUEBELL ROAD", x: 340, y: 440, vertical: true },
-      { name: "CARNATION ROAD", x: 460, y: 440, vertical: true },
-      { name: "DHALIA ROAD", x: 580, y: 440, vertical: true },
-      { name: "EXOTICA ROAD", x: 700, y: 440, vertical: true },
-      { name: "FLORENTINE ROAD", x: 820, y: 440, vertical: true },
-      { name: "GARDENIA ROAD", x: 940, y: 440, vertical: true },
-      { name: "HIBISCUS ROAD", x: 230, y: 740, vertical: false },
-      { name: "MAIN AVENUE (GATE 1)", x: 290, y: 340, vertical: false },
-      { name: "CENTRAL GARDEN ROAD", x: 620, y: 620, vertical: false },
-      { name: "GATE 2 ENTRY ROAD", x: 970, y: 295, vertical: false }
+      { name: "ASTER ROAD", x: 188, y: 482, vertical: true },
+      { name: "BLUEBELL ROAD", x: 306, y: 482, vertical: true },
+      { name: "CARNATION ROAD", x: 424, y: 482, vertical: true },
+      { name: "DHALIA ROAD", x: 542, y: 482, vertical: true },
+      { name: "EXOTICA ROAD", x: 660, y: 482, vertical: true },
+      { name: "FLORENTINE ROAD", x: 778, y: 482, vertical: true },
+      { name: "GARDENIA ROAD", x: 896, y: 482, vertical: true },
+      { name: "HIBISCUS ROAD", x: 180, y: 715, vertical: false },
+      { name: "MAIN AVENUE (GATE 1)", x: 306, y: 336, vertical: false },
+      { name: "CENTRAL GARDEN ROAD", x: 600, y: 626, vertical: false },
+      { name: "GATE 2 ENTRY ROAD", x: 940, y: 336, vertical: false }
     ];
 
     const labelsG = document.createElementNS("http://www.w3.org/2000/svg", "g");
@@ -1343,15 +1343,15 @@
 
     document.getElementById('focus-gate1-btn').addEventListener('click', () => {
       const isMobile = window.innerWidth <= 900;
-      zoomToCoordinates(140, 340, isMobile ? 2.0 : 1.8);
+      zoomToCoordinates(80, 336, isMobile ? 2.0 : 1.8);
     });
 
     const focusCenterBtn = document.getElementById('focus-center-btn');
     if (focusCenterBtn) {
       focusCenterBtn.addEventListener('click', () => {
         const isMobile = window.innerWidth <= 900;
-        // Center directly on Children's Play Area & West Temple precinct
-        zoomToCoordinates(280, 625, isMobile ? 1.85 : 1.6);
+        // Center directly on Children's Play Area & Central Garden/Temple precinct
+        zoomToCoordinates(320, 650, isMobile ? 1.85 : 1.6);
         showToast("Centered on Children's Play Area & Temple 🛝🛕", 3000);
       });
     }
@@ -1369,7 +1369,7 @@
 
     document.getElementById('focus-gate2-btn').addEventListener('click', () => {
       const isMobile = window.innerWidth <= 900;
-      zoomToCoordinates(1000, 295, isMobile ? 2.0 : 1.8);
+      zoomToCoordinates(940, 336, isMobile ? 2.0 : 1.8);
     });
 
     // Map tap to set starting point when in location mode
@@ -1786,7 +1786,7 @@
     // Register Service Worker for Android PWA with instant update reload
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=4').then((reg) => {
           reg.update(); // Force immediate update check
         }).catch(err => {
           console.log('SW registration error:', err);
