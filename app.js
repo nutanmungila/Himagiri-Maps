@@ -637,6 +637,11 @@
     const steps = generateTurnByTurnDirections(route, plot, startNid);
     renderDirectionsList(steps);
 
+    if (window.HimagiriAnalytics) {
+      const sName = nodes[startNid]?.label?.split(' (')[0] || 'Gate 1';
+      window.HimagiriAnalytics.trackRoute(sName, `House #${plot.number}`, totalDistMeters);
+    }
+
     // Natural conversational explanation
     const conversationalText = `House #${plot.number} is located on ${plot.road} in ${plot.block} (${plot.facing}-facing). From ${nodes[startNid]?.label.split(' (')[0] || "your start location"}, it is approximately ${totalDistMeters} meters away (about a ${walkMins}-minute walk). Follow the glowing cyan navigation route highlighted on the map.`;
     displayAssistantResponse(conversationalText);
@@ -691,8 +696,12 @@
   }
 
   // --- 5. NATURAL LANGUAGE "ASK WHERE A HOUSE IS" PARSER ---
-  function parseAndAnswerQuery(queryText) {
+  function parseAndAnswerQuery(queryText, isVoice = false) {
     if (!queryText || !queryText.trim()) return;
+
+    if (window.HimagiriAnalytics) {
+      window.HimagiriAnalytics.trackSearch(queryText, isVoice);
+    }
 
     const text = queryText.toLowerCase().trim();
 
@@ -814,7 +823,7 @@
     recognition.onresult = (event) => {
       const transcript = event.results[0][0].transcript;
       searchInput.value = transcript;
-      parseAndAnswerQuery(transcript);
+      parseAndAnswerQuery(transcript, true);
     };
 
     recognition.onerror = () => {
@@ -1234,6 +1243,9 @@
         btn.innerHTML = `✓ Copied!`;
         setTimeout(() => { btn.innerHTML = origText; }, 2500);
       });
+      if (window.HimagiriAnalytics) {
+        window.HimagiriAnalytics.trackShare(plots[state.selectedPlotId].number, 'link');
+      }
     });
 
     // Native Android Web Share API (WhatsApp / Maps / Messages)
@@ -1253,6 +1265,10 @@
         const shareTitle = `Directions to House #${plot.number} - Himagiri Meadows`;
         const shareText = `Here are the directions to House #${plot.number} (${plot.road}) from ${gateLabel} in Himagiri Meadows Layout:\n${url.toString()}`;
 
+        if (window.HimagiriAnalytics) {
+          window.HimagiriAnalytics.trackShare(plot.number, 'whatsapp_native');
+        }
+
         if (navigator.share) {
           try {
             await navigator.share({
@@ -1270,6 +1286,80 @@
           // Fallback to WhatsApp Web/App
           window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, '_blank');
         }
+      });
+    }
+
+    // Analytics Dashboard Modal & Stats Populator
+    const analyticsModal = document.getElementById('analytics-modal');
+    const analyticsBtn = document.getElementById('analytics-btn');
+    const closeAnalyticsModal = document.getElementById('close-analytics-modal');
+
+    function updateAnalyticsUI() {
+      if (!window.HimagiriAnalytics) return;
+      const stats = window.HimagiriAnalytics.getStats();
+
+      const visitsElem = document.getElementById('stat-total-visits');
+      if (visitsElem) visitsElem.textContent = stats.totalVisits || 1;
+
+      const androidCount = stats.deviceStats?.android || 0;
+      const iosCount = stats.deviceStats?.ios || 0;
+      const desktopCount = stats.deviceStats?.desktop || 0;
+      const totalDevices = androidCount + iosCount + desktopCount || 1;
+      const mobilePct = Math.round(((androidCount + iosCount) / totalDevices) * 100);
+
+      const mobilePctElem = document.getElementById('stat-mobile-pct');
+      if (mobilePctElem) mobilePctElem.textContent = `${mobilePct}%`;
+
+      const totalSearches = Object.values(stats.searches || {}).reduce((a, b) => a + b, 0);
+      const searchesElem = document.getElementById('stat-total-searches');
+      if (searchesElem) searchesElem.textContent = totalSearches;
+
+      const sharesElem = document.getElementById('stat-total-shares');
+      if (sharesElem) sharesElem.textContent = stats.shares || 0;
+
+      const androidElem = document.getElementById('stat-android');
+      if (androidElem) androidElem.textContent = `Android: ${androidCount}`;
+      const iosElem = document.getElementById('stat-ios');
+      if (iosElem) iosElem.textContent = `iOS/iPhone: ${iosCount}`;
+      const desktopElem = document.getElementById('stat-desktop');
+      if (desktopElem) desktopElem.textContent = `Desktop: ${desktopCount}`;
+
+      // Render Top Searches list
+      const topList = document.getElementById('top-searches-list');
+      if (topList && stats.searches) {
+        const searchEntries = Object.entries(stats.searches).sort((a, b) => b[1] - a[1]).slice(0, 5);
+        if (searchEntries.length > 0) {
+          topList.innerHTML = '';
+          searchEntries.forEach(([query, count], idx) => {
+            const item = document.createElement('div');
+            item.style.display = 'flex';
+            item.style.justifyContent = 'space-between';
+            item.style.alignItems = 'center';
+            item.style.padding = '4px 0';
+            item.style.borderBottom = '1px solid #f1f5f9';
+            item.innerHTML = `
+              <span><strong>#${idx + 1}</strong> ${query}</span>
+              <span style="background:#e0f2fe;color:#0369a1;padding:2px 8px;border-radius:10px;font-weight:700;font-size:11px;">${count} searches</span>
+            `;
+            topList.appendChild(item);
+          });
+        }
+      }
+    }
+
+    if (analyticsBtn && analyticsModal) {
+      analyticsBtn.addEventListener('click', () => {
+        updateAnalyticsUI();
+        analyticsModal.classList.add('active');
+      });
+    }
+
+    if (closeAnalyticsModal && analyticsModal) {
+      closeAnalyticsModal.addEventListener('click', () => {
+        analyticsModal.classList.remove('active');
+      });
+      analyticsModal.addEventListener('click', (e) => {
+        if (e.target === analyticsModal) analyticsModal.classList.remove('active');
       });
     }
 
