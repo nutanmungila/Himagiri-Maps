@@ -32,13 +32,13 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
   <script>
     // Aggressively purge older PWA caches so updates show instantly
     if ('caches' in window) {
       caches.keys().then(function(names) {
         for (let name of names) {
-          if (name !== 'himagiri-map-v4') {
+          if (name !== 'himagiri-map-v5') {
             caches.delete(name);
           }
         }
@@ -68,6 +68,9 @@
     </div>
 
     <div class="header-actions">
+      <button id="header-map-toggle-btn" class="btn btn-secondary" title="Toggle Fullscreen Map / Split View">
+        <span>⇥</span> Full Map
+      </button>
       <button id="analytics-btn" class="btn btn-secondary" title="View Usage Analytics & Community Stats">
         <span>📊</span> Stats
       </button>
@@ -432,9 +435,9 @@
   </div>
 
   <!-- Load Scripts with Version Cache-Buster -->
-  <script src="analytics.js?v=4"></script>
-  <script src="qrcode.min.js?v=4"></script>
-  <script src="map_data.js?v=4"></script>
-  <script src="app.js?v=4"></script>
+  <script src="analytics.js?v=5"></script>
+  <script src="qrcode.min.js?v=5"></script>
+  <script src="map_data.js?v=5"></script>
+  <script src="app.js?v=5"></script>
 </body>
 </html>

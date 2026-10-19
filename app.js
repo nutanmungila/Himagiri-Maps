@@ -740,13 +740,13 @@
       } else {
         // User is testing outside layout (e.g. at home)
         // Default to Gate 1 Entrance so routing works seamlessly
-        mapX = 140;
-        mapY = 340;
+        mapX = 80;
+        mapY = 336;
         if (!state.userLocation) {
           const distKm = (distToLayout / 1000).toFixed(1);
-          showToast(`📍 Live GPS active (~${distKm} km away). Placed at Gate 1 for navigation. (Tap map to change location)`, 4500);
+          showToast(`📍 Live GPS active (~${distKm} km away). Placed at Gate 1 for navigation. (Click map to change location)`, 4500);
           if (centerOnUser) {
-            zoomToCoordinates(140, 340, 1.8);
+            zoomToCoordinates(80, 336, 1.8);
           }
         }
       }
@@ -1332,13 +1332,9 @@
     });
 
     document.getElementById('zoom-fit-btn').addEventListener('click', () => {
-      const isMobile = window.innerWidth <= 900;
-      if (isMobile) {
-        isOverviewMode = !isOverviewMode;
-        fitMapToView(isOverviewMode);
-      } else {
-        fitMapToView(true);
-      }
+      isOverviewMode = !isOverviewMode;
+      fitMapToView(isOverviewMode);
+      showToast(isOverviewMode ? "Overview: Entire Layout 🗺️" : "Zoomed: Community Hub View 🔍", 2000);
     });
 
     document.getElementById('focus-gate1-btn').addEventListener('click', () => {
@@ -1416,25 +1412,41 @@
     const rect = viewportDiv.getBoundingClientRect();
     const isMobile = window.innerWidth <= 900;
 
-    if (isMobile && !forceFullFit && !isOverviewMode) {
-      // On mobile / Android: start with a LARGE, crisp, detailed view!
-      // Scale 1.45 gives comfortable 50px wide plots with bold readable numbers
-      const mobileScale = 1.45;
-      state.transform.scale = mobileScale;
-      // Center around Gate 1 and Main Avenue hub (x: 300, y: 460)
-      state.transform.x = rect.width / 2 - 300 * mobileScale;
-      state.transform.y = rect.height / 2 - 460 * mobileScale;
+    if (isMobile) {
+      if (!forceFullFit && !isOverviewMode) {
+        // On mobile / Android: start with a LARGE, crisp, detailed view!
+        const mobileScale = 1.45;
+        state.transform.scale = mobileScale;
+        state.transform.x = rect.width / 2 - 320 * mobileScale;
+        state.transform.y = rect.height / 2 - 480 * mobileScale;
+      } else {
+        const mapWidth = 1120;
+        const mapHeight = 840;
+        const scaleX = (rect.width - 24) / mapWidth;
+        const scaleY = (rect.height - 24) / mapHeight;
+        const scale = Math.min(scaleX, scaleY, 1.2);
+        state.transform.scale = scale;
+        state.transform.x = (rect.width - mapWidth * scale) / 2 + 10;
+        state.transform.y = (rect.height - mapHeight * scale) / 2 + 10;
+      }
     } else {
-      const mapWidth = 1350;
-      const mapHeight = 980;
-
-      const scaleX = (rect.width - 30) / mapWidth;
-      const scaleY = (rect.height - 30) / mapHeight;
-      const scale = Math.min(scaleX, scaleY, 1.15);
-
-      state.transform.scale = scale;
-      state.transform.x = (rect.width - mapWidth * scale) / 2 + 15;
-      state.transform.y = (rect.height - mapHeight * scale) / 2 + 10;
+      // PC / Desktop view
+      if (!forceFullFit && !isOverviewMode) {
+        // High visibility on PC: clear, large, comfortable house numbers
+        const pcScale = 1.15;
+        state.transform.scale = pcScale;
+        state.transform.x = rect.width / 2 - 540 * pcScale;
+        state.transform.y = rect.height / 2 - 520 * pcScale;
+      } else {
+        const contentWidth = 1120;
+        const contentHeight = 840;
+        const scaleX = (rect.width - 40) / contentWidth;
+        const scaleY = (rect.height - 40) / contentHeight;
+        const scale = Math.min(scaleX, scaleY, 1.25);
+        state.transform.scale = scale;
+        state.transform.x = rect.width / 2 - 560 * scale;
+        state.transform.y = rect.height / 2 - 540 * scale;
+      }
     }
 
     viewport.setAttribute(
@@ -1490,18 +1502,31 @@
       }
     });
 
-    // Mobile View Mode Toggle (Full Map vs Split View)
+    // View Mode Toggle (Full Map vs Split View) - Works on both PC and Mobile!
     const mobileViewToggle = document.getElementById('mobile-view-toggle');
+    const headerMapToggleBtn = document.getElementById('header-map-toggle-btn');
     const appContainer = document.querySelector('.app-container');
-    if (mobileViewToggle && appContainer) {
-      mobileViewToggle.addEventListener('click', () => {
-        const isFull = appContainer.classList.toggle('full-map');
-        mobileViewToggle.innerHTML = isFull ? '<span>↕ Split View</span>' : '<span>↕ Expand Map</span>';
-        setTimeout(() => {
-          fitMapToView(false);
-        }, 320);
-      });
+
+    function toggleFullMapView() {
+      if (!appContainer) return;
+      const isFull = appContainer.classList.toggle('full-map');
+      const isMobile = window.innerWidth <= 900;
+
+      const toggleText = isFull 
+        ? (isMobile ? '<span>↕ Split View</span>' : '<span>⇤ Split View</span>')
+        : (isMobile ? '<span>↕ Expand Map</span>' : '<span>⇥ Full Map</span>');
+
+      if (mobileViewToggle) mobileViewToggle.innerHTML = toggleText;
+      if (headerMapToggleBtn) headerMapToggleBtn.innerHTML = isFull ? '<span>⇤</span> Split View' : '<span>⇥</span> Full Map';
+
+      showToast(isFull ? "Full Screen Map Active 🗺️" : "Split View Active 🧭", 2000);
+      setTimeout(() => {
+        fitMapToView(false);
+      }, 320);
     }
+
+    if (mobileViewToggle) mobileViewToggle.addEventListener('click', toggleFullMapView);
+    if (headerMapToggleBtn) headerMapToggleBtn.addEventListener('click', toggleFullMapView);
 
     // Prompt chips click
     document.querySelectorAll('.prompt-chips .chip').forEach(chip => {
@@ -1786,7 +1811,7 @@
     // Register Service Worker for Android PWA with instant update reload
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=4').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=5').then((reg) => {
           reg.update(); // Force immediate update check
         }).catch(err => {
           console.log('SW registration error:', err);
