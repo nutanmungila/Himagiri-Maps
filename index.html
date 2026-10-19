@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <title>Himagiri Meadows — Smart Community Layout & Navigator</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#059669">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Himagiri Map">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="big-labels">
+
+  <!-- Top Header Navigation -->
+  <header class="app-header">
+    <div class="header-brand">
+      <div class="brand-icon">🗺️</div>
+      <div class="brand-titles">
+        <h1>Himagiri Meadows</h1>
+        <p>Interactive Digital Map & Wayfinding Assistant</p>
+      </div>
+    </div>
+
+    <div class="header-badges">
+      <span class="badge badge-info">344 Plots</span>
+      <span class="badge badge-success">8 Avenues</span>
+      <span class="badge badge-info">13 Amenities</span>
+    </div>
+
+    <div class="header-actions">
+      <button id="android-connect-btn" class="btn btn-primary">
+        <span>📲</span> Connect Phone
+      </button>
+      <button id="view-original-btn" class="btn btn-secondary">
+        <span>📷</span> View Original
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="app-container">
+
+    <!-- Mobile Drawer Toggle Button -->
+    <button id="mobile-drawer-toggle" class="mobile-drawer-toggle">
+      <span>☰</span> Navigator Menu
+    </button>
+
+    <!-- Left Control & Navigation Sidebar -->
+    <aside class="sidebar">
+
+      <!-- 1. Conversational "Ask Where a House Is" Card -->
+      <section class="sidebar-section">
+        <div class="ask-card">
+          <div class="ask-header">
+            <div class="ask-header-title">
+              <span class="ai-pulse-dot"></span>
+              <span>Ask Navigator</span>
+            </div>
+            <span style="font-size: 11px; color: #64748b; font-weight: 600;">Voice & Text Enabled</span>
+          </div>
+
+          <div class="search-input-box">
+            <span class="search-icon-left">🔍</span>
+            <input 
+              type="text" 
+              id="search-input" 
+              class="search-input" 
+              placeholder="Ask 'Where is House 142?' or enter plot #"
+              autocomplete="off"
+            />
+            <div style="position: absolute; right: 8px; display: flex; align-items: center; gap: 4px;">
+              <button id="search-btn" class="voice-btn" title="Search" style="color: #059669; font-weight: 700;">
+                ➔
+              </button>
+              <button id="voice-btn" class="voice-btn" title="Click to speak (Voice Recognition)">
+                🎤
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Suggestion Chips -->
+          <div class="prompt-chips">
+            <span class="chip" data-query="Where is house 142?">House 142</span>
+            <span class="chip" data-query="How to get to plot 85 from Gate 1?">Plot 85 from Gate 1</span>
+            <span class="chip" data-query="Take me to house 220 from Gate 2">Plot 220 from Gate 2</span>
+            <span class="chip" data-query="Where is the temple?">Temple</span>
+            <span class="chip" data-query="Where is children play area?">Play Area</span>
+            <span class="chip" data-query="Where is house 305?">House 305</span>
+          </div>
+
+          <!-- Conversational Response Banner -->
+          <div id="assistant-response" class="assistant-response">
+            <div class="assistant-header">
+              <span class="assistant-tag">💬 Navigator Answer</span>
+              <button id="speak-btn" class="speak-btn">
+                <span>🔊</span> Listen
+              </button>
+            </div>
+            <p id="assistant-text" class="assistant-text"></p>
+          </div>
+        </div>
+
+        <!-- Selected House Details Card -->
+        <div id="house-card" class="house-card">
+          <div class="house-card-header">
+            <div class="house-title">
+              <span>🏠</span> <span id="card-house-num">#142</span>
+            </div>
+            <button id="close-house-card" class="close-card-btn">✕</button>
+          </div>
+          <div class="house-meta-grid">
+            <div class="meta-box">
+              <div class="meta-box-label">Avenue / Road</div>
+              <div id="card-road" class="meta-box-val">Exotica Road</div>
+            </div>
+            <div class="meta-box">
+              <div class="meta-box-label">Sector Block</div>
+              <div id="card-block" class="meta-box-val">Central North</div>
+            </div>
+            <div class="meta-box">
+              <div class="meta-box-label">Entrance Facing</div>
+              <div id="card-facing" class="meta-box-val">West Facing</div>
+            </div>
+            <div class="meta-box">
+              <div class="meta-box-label">From Gate 1</div>
+              <div id="card-dist-g1" class="meta-box-val">180m</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Wayfinding & Directions Engine -->
+      <section class="sidebar-section">
+        <div class="route-card">
+          <div class="route-card-title">
+            <span>🧭</span> Turn-by-Turn Wayfinding
+          </div>
+
+          <div class="points-selector">
+            <div class="point-row">
+              <div class="point-dot start"></div>
+              <select id="start-node-select" class="point-select"></select>
+            </div>
+            <div class="point-row">
+              <div class="point-dot end"></div>
+              <select id="dest-node-select" class="point-select"></select>
+            </div>
+          </div>
+
+          <!-- Route Distance & Time Statistics -->
+          <div id="route-summary" class="route-summary">
+            <div class="stat-item">
+              <div class="stat-label">Distance</div>
+              <div id="distance-val" class="stat-value">--</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Walk Time</div>
+              <div id="walk-time-val" class="stat-value">--</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">Drive Time</div>
+              <div id="drive-time-val" class="stat-value">--</div>
+            </div>
+          </div>
+
+          <div class="route-actions">
+            <button id="share-link-btn" class="btn btn-secondary" style="flex:1;">
+              <span>🔗</span> Copy Link
+            </button>
+            <button id="share-native-btn" class="btn btn-primary" style="flex:1;" title="Share via WhatsApp or Native Android share">
+              <span>📲</span> Share Route
+            </button>
+          </div>
+
+          <!-- Step-by-Step Directions -->
+          <div class="directions-panel">
+            <div class="directions-title">
+              <span>Directions</span>
+              <span style="font-size: 10px; color: #10b981; font-weight: 700;">LIVE ROUTE</span>
+            </div>
+            <ul id="steps-list" class="step-list">
+              <li class="step-item" style="color: #64748b; font-style: italic;">
+                Select a house or ask where a house is to see step-by-step directions.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Sector & Avenue Explorer -->
+      <section class="sidebar-section">
+        <div style="font-size: 13px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">
+          Filter by Avenue
+        </div>
+        <div class="sector-pills">
+          <button class="sector-pill active" data-sector="ALL">All Avenues</button>
+          <button class="sector-pill" data-sector="Aster">Aster</button>
+          <button class="sector-pill" data-sector="Bluebell">Bluebell</button>
+          <button class="sector-pill" data-sector="Carnation">Carnation</button>
+          <button class="sector-pill" data-sector="Dhalia">Dhalia</button>
+          <button class="sector-pill" data-sector="Exotica">Exotica</button>
+          <button class="sector-pill" data-sector="Florentine">Florentine</button>
+          <button class="sector-pill" data-sector="Gardenia">Gardenia</button>
+          <button class="sector-pill" data-sector="Hibiscus">Hibiscus</button>
+        </div>
+      </section>
+
+    </aside>
+
+    <!-- Right Interactive Map Viewport -->
+    <div class="map-viewport">
+
+      <!-- Floating Map Zoom & Action Controls -->
+      <div class="map-controls">
+        <button id="zoom-in-btn" class="map-ctrl-btn" title="Zoom In">+</button>
+        <button id="zoom-out-btn" class="map-ctrl-btn" title="Zoom Out">−</button>
+        <button id="zoom-fit-btn" class="map-ctrl-btn" title="Reset / Fit Map">⛶</button>
+        <button id="focus-gate1-btn" class="map-ctrl-btn" title="Center on Gate 1" style="font-size: 11px; font-weight: 800; color: #059669;">G1</button>
+        <button id="focus-center-btn" class="map-ctrl-btn" title="Center on Layout Center" style="font-size: 11px; font-weight: 800; color: #d97706;">CTR</button>
+        <button id="focus-gate2-btn" class="map-ctrl-btn" title="Center on Gate 2" style="font-size: 11px; font-weight: 800; color: #0284c7;">G2</button>
+      </div>
+
+      <!-- Layer Toggles on Bottom Left -->
+      <div class="layer-controls">
+        <label class="layer-toggle">
+          <input type="checkbox" id="toggle-numbers" checked>
+          <span>House Numbers</span>
+        </label>
+        <label class="layer-toggle">
+          <input type="checkbox" id="toggle-big-text" checked>
+          <span>Big Text</span>
+        </label>
+        <label class="layer-toggle">
+          <input type="checkbox" id="toggle-amenities" checked>
+          <span>Amenities</span>
+        </label>
+        <label class="layer-toggle">
+          <input type="checkbox" id="toggle-roads" checked>
+          <span>Roads</span>
+        </label>
+      </div>
+
+      <!-- Compass Rose -->
+      <div class="compass-box" title="North Arrow">
+        <svg width="46" height="46" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="#94a3b8" stroke-width="2" />
+          <polygon points="50,12 58,48 50,42" fill="#ef4444" />
+          <polygon points="50,12 42,48 50,42" fill="#dc2626" />
+          <polygon points="50,88 58,52 50,58" fill="#64748b" />
+          <polygon points="50,88 42,52 50,58" fill="#475569" />
+          <polygon points="12,50 48,42 42,50" fill="#94a3b8" />
+          <polygon points="88,50 52,42 58,50" fill="#94a3b8" />
+          <circle cx="50" cy="50" r="5" fill="#0f172a" />
+          <text x="50" y="8" font-size="11" font-weight="900" text-anchor="middle" fill="#ef4444">N</text>
+        </svg>
+      </div>
+
+      <!-- SVG Map Canvas (direct pixel coordinates, pan & zoom managed smoothly by JS) -->
+      <svg id="map-svg">
+        <g id="viewport-group">
+          <!-- Dynamically populated layers -->
+          <g id="roads-layer"></g>
+          <g id="plots-layer"></g>
+          <g id="amenities-layer"></g>
+          <g id="route-layer"></g>
+          <g id="labels-layer"></g>
+        </g>
+      </svg>
+
+      <!-- Hover Tooltip -->
+      <div id="map-tooltip" class="map-tooltip"></div>
+    </div>
+
+  </main>
+
+  <!-- Modal: View Original Layout Map Blueprint -->
+  <div id="original-map-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Original Layout Map Photo (Reference)</h3>
+        <button id="close-modal-btn" class="close-card-btn" style="font-size: 18px;">✕</button>
+      </div>
+      <div class="modal-body">
+        <img src="original_map.png" alt="Himagiri Meadows Layout Board Photo">
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Connect Android Phone -->
+  <div id="android-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 460px; height: auto;">
+      <div class="modal-header">
+        <h3>📲 Open on Android Phone</h3>
+        <button id="close-android-modal" class="close-card-btn" style="font-size: 18px;">✕</button>
+      </div>
+      <div class="modal-body" style="flex-direction: column; text-align: center; padding: 22px;">
+        <div id="qrcode-box" style="background: white; padding: 16px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: inline-flex; justify-content: center; align-items: center; min-height: 200px;"></div>
+        <p style="font-size: 13px; color: #475569; margin-top: 14px; font-weight: 500;">
+          Scan with your Android camera or Google Lens:
+        </p>
+        <div style="margin: 10px 0; background: #e2e8f0; padding: 10px 14px; border-radius: 8px; font-family: monospace; font-size: 14px; font-weight: bold; color: #0f172a; display: flex; align-items: center; justify-content: space-between;">
+          <span id="android-url-text">http://192.168.68.103:8080</span>
+          <button id="copy-android-url-btn" class="btn btn-secondary" style="padding: 4px 10px; font-size: 11px;">Copy</button>
+        </div>
+        <div style="text-align: left; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px; margin-top: 10px; font-size: 12px; line-height: 1.5; color: #334155;">
+          <strong>📱 How to install as Native Android App:</strong><br>
+          1. Connect your Android to the same Wi-Fi.<br>
+          2. Open the link in Chrome.<br>
+          3. Tap the three dots <strong>(⋮)</strong> and select <strong>"Add to Home screen"</strong> or <strong>"Install App"</strong>.<br>
+          4. Enjoy full-screen offline-capable navigation!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Scripts -->
+  <script src="qrcode.min.js"></script>
+  <script src="map_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
