@@ -1783,12 +1783,21 @@
       });
     }
 
-    // Register Service Worker for Android PWA
+    // Register Service Worker for Android PWA with instant update reload
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js').catch(err => {
+        navigator.serviceWorker.register('sw.js').then((reg) => {
+          reg.update(); // Force immediate update check
+        }).catch(err => {
           console.log('SW registration error:', err);
         });
+      });
+      let refreshing = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!refreshing) {
+          refreshing = true;
+          window.location.reload();
+        }
       });
     }
 
