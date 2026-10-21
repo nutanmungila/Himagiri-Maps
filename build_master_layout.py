@@ -59,11 +59,11 @@ def build_perfect_layout():
         'flo_garden':      (778, 626),
         'gar_s':           (896, 626),
 
-        # South Central Road at y=702
-        'car_s_garden':    (424, 702),
-        'dha_s_garden':    (542, 702),
-        'exo_s_garden':    (660, 702),
-        'flo_s_garden':    (778, 702),
+        # South Central Road at y=700
+        'car_s_garden':    (424, 700),
+        'dha_s_garden':    (542, 700),
+        'exo_s_garden':    (660, 700),
+        'flo_s_garden':    (778, 700),
 
         # South avenue midpoints at y=805
         'car_s_mid':       (424, 805),
@@ -78,25 +78,29 @@ def build_perfect_layout():
         'flo_s_end':       (778, 925),
 
         # West utility nodes
-        'ast_sw_corner':   (188, 685),
-        'ast_temple':      (60, 685),
-        'ast_wtp':         (60, 520),
+        'ast_sw_corner':   (188, 690),
+        'ast_temple':      (35, 690),
+        'ast_wtp':         (35, 520),
 
         # East Sector nodes
         'east_mid':        (988, 440),
         'east_s':          (988, 560),
 
         # Hibiscus nodes
-        'hib_top_w':       (60, 715),
-        'hib_top_m':       (180, 715),
-        'hib_top_e':       (306, 715),
-        'hib_inner_lane':  (180, 785),
-        'hib_main_s1':     (306, 780),
-        'hib_main_s2':     (306, 850),
-        'hib_se_corner':   (306, 925),
-        'hib_sw_bottom':   (60, 880),
-        'hib_s_perimeter': (230, 925),
+        'hib_top_w':       (35, 700),
+        'hib_top_m':       (188, 700),
+        'hib_top_e':       (337, 700),
+        'hib_inner_lane':  (231, 835),
+        'hib_inner_w':     (35, 835),
+        'hib_main_s1':     (337, 780),
+        'hib_main_s2':     (337, 850),
+        'hib_se_corner':   (337, 925),
+        'hib_s_perimeter': (188, 925),
+        'hib_sw_bottom':   (35, 925),
     }
+
+    if 'hib_inner_turn' in nodes:
+        del nodes['hib_inner_turn']
 
     for nid, (nx, ny) in node_coords.items():
         if nid not in nodes:
@@ -114,7 +118,11 @@ def build_perfect_layout():
         ('hib_inner_lane', 'hib_s_perimeter'), ('hib_s_perimeter', 'hib_inner_lane'),
         ('hib_main_s2', 'car_s_garden'), ('car_s_garden', 'hib_main_s2'),
         ('hib_s_perimeter', 'hib_main_s2'), ('hib_main_s2', 'hib_s_perimeter'),
-        ('east_park_n', 'east_gate2'), ('east_gate2', 'east_park_n')
+        ('east_park_n', 'east_gate2'), ('east_gate2', 'east_park_n'),
+        ('hib_top_w', 'hib_sw_bottom'), ('hib_sw_bottom', 'hib_top_w'),
+        ('hib_inner_turn', 'hib_inner_lane'), ('hib_inner_lane', 'hib_inner_turn'),
+        ('hib_top_m', 'hib_inner_turn'), ('hib_inner_turn', 'hib_top_m'),
+        ('hib_inner_turn', 'hib_top_e'), ('hib_top_e', 'hib_inner_turn')
     }
 
     for e in edges:
@@ -129,16 +137,18 @@ def build_perfect_layout():
         ('ast_sw_corner', 'ast_temple', 'secondary'),
         ('ast_temple', 'ast_wtp', 'secondary'),
         ('ast_temple', 'hib_top_w', 'secondary'),
+        ('hib_top_w', 'hib_inner_w', 'secondary'),
+        ('hib_inner_w', 'hib_sw_bottom', 'secondary'),
+        ('hib_top_w', 'hib_top_m', 'secondary'),
+        ('hib_top_m', 'hib_top_e', 'secondary'),
+        ('hib_inner_lane', 'hib_inner_w', 'secondary'),
         ('blu_s', 'hib_top_e', 'secondary'),
         ('hib_top_e', 'hib_main_s1', 'secondary'),
         ('hib_main_s1', 'hib_main_s2', 'secondary'),
         ('hib_main_s2', 'hib_se_corner', 'secondary'),
         ('hib_se_corner', 'hib_s_perimeter', 'secondary'),
-        ('hib_s_perimeter', 'car_s_end', 'secondary'),
-        ('hib_top_w', 'hib_top_m', 'secondary'),
-        ('hib_top_m', 'hib_top_e', 'secondary'),
-        ('hib_top_w', 'hib_sw_bottom', 'secondary'),
-        ('hib_sw_bottom', 'hib_s_perimeter', 'secondary'),
+        ('hib_s_perimeter', 'hib_sw_bottom', 'secondary'),
+        ('hib_se_corner', 'car_s_end', 'secondary'),
         ('east_gate2', 'east_ne_turn', 'secondary'),
         ('east_ne_turn', 'east_park_n', 'secondary'),
     ]
@@ -168,11 +178,11 @@ def build_perfect_layout():
     aster_mid = ['1', '2', '3', '5', '6', '7', '8', '9', '10', '11', '12', '12B', '14', '15', '16']
     place_col(aster_mid, 130, 356, 20, 18, 'East', 'ast_mid', 'Aster South')
 
-    # West temple plots
+    # West temple plots: 97 and 96 sit side by side below the West Temple
     if '97' in plots:
-        plots['97'].update({'x': 90, 'y': 620, 'w': 24, 'h': 18, 'facing': 'East', 'roadNode': 'ast_temple', 'block': 'West Sector'})
+        plots['97'].update({'x': 58, 'y': 655, 'w': 32, 'h': 22, 'facing': 'South', 'roadNode': 'ast_temple', 'block': 'West Sector'})
     if '96' in plots:
-        plots['96'].update({'x': 90, 'y': 642, 'w': 24, 'h': 18, 'facing': 'East', 'roadNode': 'ast_temple', 'block': 'West Sector'})
+        plots['96'].update({'x': 93, 'y': 655, 'w': 32, 'h': 22, 'facing': 'South', 'roadNode': 'ast_temple', 'block': 'West Sector'})
 
     # 3. Block 1 (between Aster and Bluebell)
     place_col(['33', '32', '31', '30', '29'], 204, 200, 24, PH_NORTH, 'West', 'ast_n', 'Aster North')
@@ -270,27 +280,29 @@ def build_perfect_layout():
     plots['241'].update({'x': 796, 'y': 816, 'w': 50, 'h': 20, 'facing': 'North', 'roadNode': 'flo_s_end'})
 
     # 11. Far West South (Hibiscus Area)
-    # Angled top row: 53..60
+    # Row 1 (top): 53..60 spanning x=58 to 312 with wide 30px boxes
     for idx, pid in enumerate(['53', '54', '55', '56', '57', '58', '59', '60']):
-        plots[pid].update({'x': 85 + idx * 24, 'y': 730, 'w': 22, 'h': 20, 'facing': 'North', 'roadNode': 'hib_top_m', 'block': 'Hibiscus North'})
-    # Mid row: 318..321
-    for idx, pid in enumerate(['318', '319', '320', '321']):
-        plots[pid].update({'x': 85 + idx * 24, 'y': 760, 'w': 22, 'h': 20, 'facing': 'North', 'roadNode': 'hib_inner_lane', 'block': 'Hibiscus Mid'})
+        plots[pid].update({'x': 58 + idx * 32, 'y': 724, 'w': 30, 'h': 22, 'facing': 'North', 'roadNode': 'hib_top_m', 'block': 'Hibiscus North'})
     
-    # Hibiscus inner lane: 306, 303 / 307, 304 / 305
-    plots['306'].update({'x': 214, 'y': 758, 'w': 24, 'h': 19, 'facing': 'East', 'roadNode': 'hib_inner_lane', 'block': 'Hibiscus Lane'})
-    plots['303'].update({'x': 242, 'y': 758, 'w': 24, 'h': 19, 'facing': 'West', 'roadNode': 'hib_inner_lane', 'block': 'Hibiscus Lane'})
-    plots['307'].update({'x': 214, 'y': 780, 'w': 24, 'h': 19, 'facing': 'East', 'roadNode': 'hib_inner_lane', 'block': 'Hibiscus Lane'})
-    plots['304'].update({'x': 242, 'y': 780, 'w': 24, 'h': 19, 'facing': 'West', 'roadNode': 'hib_inner_lane', 'block': 'Hibiscus Lane'})
-    plots['305'].update({'x': 228, 'y': 802, 'w': 38, 'h': 19, 'facing': 'East', 'roadNode': 'hib_inner_lane', 'block': 'Hibiscus Lane'})
+    # Row 2 Left (under 53..57): 318..321 with large 37px wide boxes
+    for idx, pid in enumerate(['318', '319', '320', '321']):
+        plots[pid].update({'x': 58 + idx * 40, 'y': 750, 'w': 37, 'h': 24, 'facing': 'North', 'roadNode': 'hib_inner_lane', 'block': 'Hibiscus Mid'})
+    
+    # Row 2 Right (under 58..60): 306, 303 / 307, 304 / 305 cleanly aligned with Plot 60 right edge at 312
+    plots['306'].update({'x': 232, 'y': 750, 'w': 38, 'h': 22, 'facing': 'East', 'roadNode': 'hib_inner_lane', 'block': 'Hibiscus Lane'})
+    plots['303'].update({'x': 274, 'y': 750, 'w': 38, 'h': 22, 'facing': 'West', 'roadNode': 'hib_inner_lane', 'block': 'Hibiscus Lane'})
+    plots['307'].update({'x': 232, 'y': 775, 'w': 38, 'h': 22, 'facing': 'East', 'roadNode': 'hib_inner_lane', 'block': 'Hibiscus Lane'})
+    plots['304'].update({'x': 274, 'y': 775, 'w': 38, 'h': 22, 'facing': 'West', 'roadNode': 'hib_inner_lane', 'block': 'Hibiscus Lane'})
+    plots['305'].update({'x': 232, 'y': 800, 'w': 80, 'h': 22, 'facing': 'East', 'roadNode': 'hib_inner_lane', 'block': 'Hibiscus Lane'})
 
-    # Bottom row: 317..310
+    # Row 3 Bottom: 317..310 spanning x=58 to 312 with wide 30px boxes (zero squishing!)
     for idx, pid in enumerate(['317', '316', '315', '314', '313', '312', '311', '310']):
-        plots[pid].update({'x': 85 + idx * 25, 'y': 840, 'w': 23, 'h': 20, 'facing': 'South', 'roadNode': 'hib_s_perimeter', 'block': 'Hibiscus South'})
+        plots[pid].update({'x': 58 + idx * 32, 'y': 848, 'w': 30, 'h': 22, 'facing': 'South', 'roadNode': 'hib_s_perimeter', 'block': 'Hibiscus South'})
 
     # Hibiscus vertical column: 298..302 (left) and 297..292, 309 (right)
-    place_col(['298', '299', '300', '301', '302'], 322, 730, 22, 20, 'West', 'hib_main_s1', 'Hibiscus East')
-    place_col(['297', '296', '295', '294', '293', '292', '309'], 366, 730, 22, 20, 'East', 'car_s_mid', 'Hibiscus East')
+    # Sits cleanly between Hibiscus Avenue (x=337) and Carnation Road (x=424)
+    place_col(['298', '299', '300', '301', '302'], 355, 720, 22, 20, 'West', 'hib_main_s1', 'Hibiscus East', width=25)
+    place_col(['297', '296', '295', '294', '293', '292', '309'], 383, 720, 22, 20, 'East', 'car_s_mid', 'Hibiscus East', width=26)
 
     # 12. Update amenities positions
     for am in amenities:
@@ -302,9 +314,9 @@ def build_perfect_layout():
         elif aid == 'school_bus':
             am.update({'x': 188, 'y': 356})
         elif aid == 'wtp_sump':
-            am.update({'x': 45, 'y': 520})
+            am.update({'x': 75, 'y': 520})
         elif aid == 'temple_west':
-            am.update({'x': 45, 'y': 685})
+            am.update({'x': 75, 'y': 615})
         elif aid == 'children_play':
             am.update({'x': 260, 'y': 660})
         elif aid == 'auditorium':
@@ -318,7 +330,7 @@ def build_perfect_layout():
         elif aid == 'atm':
             am.update({'x': 940, 'y': 660})
         elif aid == 'dry_waste':
-            am.update({'x': 45, 'y': 710})
+            am.update({'x': 75, 'y': 565})
 
     # Collision Check between plots
     plot_items = list(plots.items())

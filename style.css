@@ -828,6 +828,7 @@ body {
   stroke: rgba(255, 255, 255, 0.45);
   stroke-width: 0.35px;
   user-select: none;
+  letter-spacing: -0.3px;
 }
 
 body.big-labels .plot-label {
@@ -835,6 +836,15 @@ body.big-labels .plot-label {
   font-weight: 900 !important;
   stroke: rgba(255, 255, 255, 0.6) !important;
   stroke-width: 0.5px !important;
+  letter-spacing: -0.3px;
+}
+
+body.big-labels .plot-label.plot-label-mid {
+  font-size: 10.5px !important;
+}
+
+body.big-labels .plot-label.plot-label-long {
+  font-size: 9px !important;
 }
 
 /* Road Styling in SVG */

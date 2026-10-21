@@ -186,7 +186,7 @@
       { name: "EXOTICA ROAD", x: 660, y: 482, vertical: true },
       { name: "FLORENTINE ROAD", x: 778, y: 482, vertical: true },
       { name: "GARDENIA ROAD", x: 896, y: 482, vertical: true },
-      { name: "HIBISCUS ROAD", x: 180, y: 715, vertical: false },
+      { name: "HIBISCUS ROAD", x: 337, y: 810, vertical: true },
       { name: "MAIN AVENUE (GATE 1)", x: 306, y: 336, vertical: false },
       { name: "CENTRAL GARDEN ROAD", x: 600, y: 626, vertical: false },
       { name: "GATE 2 ENTRY ROAD", x: 940, y: 336, vertical: false }
@@ -247,8 +247,10 @@
       // Adjust font size for longer plot numbers like "35/36" or "265/B"
       if (p.number.length >= 5) {
         txt.setAttribute("font-size", "8.5px");
+        txt.classList.add("plot-label-long");
       } else if (p.number.length >= 4) {
         txt.setAttribute("font-size", "10px");
+        txt.classList.add("plot-label-mid");
       } else {
         txt.setAttribute("font-size", "11.5px");
       }
@@ -1811,7 +1813,7 @@
     // Register Service Worker for Android PWA with instant update reload
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=5').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=6').then((reg) => {
           reg.update(); // Force immediate update check
         }).catch(err => {
           console.log('SW registration error:', err);
