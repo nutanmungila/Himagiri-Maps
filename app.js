@@ -177,6 +177,41 @@
     checkUrlParams();
   }
 
+  // Double-tap (mobile touch) & double-click (desktop) listener helper for sub-area exploration
+  function enableDoubleTapOrClick(el, onTrigger) {
+    if (!el) return;
+    el.style.cursor = 'pointer';
+
+    // 1. Desktop: Double-click
+    el.addEventListener('dblclick', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      onTrigger();
+    });
+
+    // 2. Mobile: Fast touch double-tap (< 380ms)
+    let lastTapTime = 0;
+    el.addEventListener('touchend', (e) => {
+      const now = Date.now();
+      const diff = now - lastTapTime;
+      if (diff > 40 && diff < 380) {
+        e.preventDefault();
+        e.stopPropagation();
+        lastTapTime = 0;
+        onTrigger();
+      } else {
+        lastTapTime = now;
+      }
+    });
+
+    // 3. Fallback: Right-click (contextmenu) also opens it
+    el.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      onTrigger();
+    });
+  }
+
   // Landscaping & Perimeter
   function renderPerimeterAndLandscaping() {
     let bgGroup = document.getElementById("landscaping-layer");
@@ -326,10 +361,7 @@
           lmG.appendChild(lmtxt);
         }
 
-        lmG.style.cursor = "pointer";
-        lmG.addEventListener('contextmenu', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
+        enableDoubleTapOrClick(lmG, () => {
           const lbl = lm.label || 'Commercial Complex';
           const type = lbl.toLowerCase().includes('mall') ? 'mall' : 'tower';
           openSubAreaInterior(type, lbl, null, lm);
@@ -337,8 +369,7 @@
         lmG.addEventListener('click', (e) => {
           e.stopPropagation();
           const lbl = lm.label || 'Commercial Complex';
-          const type = lbl.toLowerCase().includes('mall') ? 'mall' : 'tower';
-          openSubAreaInterior(type, lbl, null, lm);
+          showToast(`🏢 ${lbl} • Double-tap to explore inside`, 2500);
         });
 
         bgGroup.appendChild(lmG);
@@ -596,14 +627,12 @@
           selectPlot(uList[0].id, true);
         });
 
-        // Right-Click (contextmenu): Explore inner part of this sub-area
-        blockG.addEventListener('contextmenu', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
+        // Double-Tap / Double-Click: Explore inner part of this sub-area
+        enableDoubleTapOrClick(blockG, () => {
           openSubAreaInterior('tower', cleanName, uList);
         });
 
-        // Mobile touch long-press (touch and hold) to enter inside
+        // Mobile touch long-press (touch and hold) as additional shortcut
         let blockTouchTimer = null;
         blockG.addEventListener('touchstart', (e) => {
           blockTouchTimer = setTimeout(() => {
@@ -692,17 +721,15 @@
         g.appendChild(txt);
       }
 
-      // Interactions
+      // Interactions: Single click to select & navigate
       g.addEventListener('click', () => selectPlot(p.id, true));
 
-      // Right-Click (contextmenu): Enter inside the villa/house sub-area!
-      g.addEventListener('contextmenu', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
+      // Double-Tap / Double-Click: Enter inside the villa/house sub-area!
+      enableDoubleTapOrClick(g, () => {
         openSubAreaInterior('villa', `House #${p.number}`, [p]);
       });
 
-      // Mobile touch long-press (touch and hold) to enter inside
+      // Mobile touch long-press (touch and hold) as additional shortcut
       let plotTouchTimer = null;
       g.addEventListener('touchstart', (e) => {
         plotTouchTimer = setTimeout(() => {
@@ -791,10 +818,8 @@
         selectAmenity(am.id, true);
       });
 
-      // Right-Click (contextmenu): Enter inside clubhouse, mall, or sports amenity
-      g.addEventListener('contextmenu', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
+      // Double-Tap / Double-Click: Enter inside clubhouse, mall, or sports amenity
+      enableDoubleTapOrClick(g, () => {
         const aType = (am.type === 'clubhouse' || am.id.includes('club') || am.id.includes('sports')) ? 'clubhouse' :
                       (am.type === 'mall' || am.id.includes('mall')) ? 'mall' :
                       (am.type === 'auditorium' || am.id.includes('convention')) ? 'clubhouse' : 'facility';
@@ -805,7 +830,7 @@
         }
       });
 
-      // Mobile touch long-press (touch and hold) to enter inside
+      // Mobile touch long-press (touch and hold) as additional shortcut
       let amTouchTimer = null;
       g.addEventListener('touchstart', () => {
         amTouchTimer = setTimeout(() => {
@@ -2092,7 +2117,7 @@
       <div style="font-size:11px;color:#cbd5e1;">Road: <strong>${p.road}</strong></div>
       <div style="font-size:11px;color:#cbd5e1;">Sector: ${blockLabel} (${p.facing}-facing)</div>
       <div style="font-size:10px;color:#10b981;margin-top:4px;">📍 ${distG1}m from ${gateLabel}</div>
-      <div style="font-size:10px;color:#f59e0b;margin-top:4px;font-weight:700;">👉 Right-click to explore inside</div>
+      <div style="font-size:10px;color:#f59e0b;margin-top:4px;font-weight:700;">👉 Double-tap to explore inside</div>
     `;
     tooltip.style.display = 'block';
     movePlotTooltip(e);
@@ -3060,7 +3085,7 @@
   };
 
   function openSubAreaInterior(type, name, uList, extraData) {
-    // 1. If right-clicked subarea matches another layout in window.LAYOUTS, switch to that layout!
+    // 1. If double-tapped subarea matches another layout in window.LAYOUTS, switch to that layout!
     const cleanQuery = (name || '').toLowerCase().trim();
     const layoutMatch = Object.keys(layouts).find(k => {
       const l = layouts[k];

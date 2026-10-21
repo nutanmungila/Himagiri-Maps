@@ -1221,7 +1221,7 @@ body.big-labels .road-label {
 }
 
 /* ======================================================== */
-/* SUB-AREA INTERIOR FLOOR PLAN VIEW (RIGHT-CLICK FEATURE)  */
+/* SUB-AREA INTERIOR FLOOR PLAN VIEW (DOUBLE-TAP FEATURE)   */
 /* ======================================================== */
 .interior-modal-overlay {
   z-index: 99999;
