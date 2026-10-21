@@ -1705,6 +1705,7 @@ body.big-labels .road-label {
   width: 100%;
   height: calc(100vh - 60px);
   overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   background: radial-gradient(circle at 50% 10%, #1e1b4b 0%, #090d16 65%, #020617 100%);
   color: #f8fafc;
@@ -1714,6 +1715,8 @@ body.big-labels .road-label {
 
 .portal-container {
   max-width: 1140px;
+  width: 100%;
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 40px 20px 60px;
 }
@@ -1778,6 +1781,8 @@ body.big-labels .road-label {
   padding: 16px 18px;
   box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 30px rgba(99, 102, 241, 0.15);
   text-align: left;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .portal-ai-input-wrapper {
@@ -1788,15 +1793,21 @@ body.big-labels .road-label {
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
   padding: 6px 12px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .ai-sparkle-icon {
   font-size: 18px;
   color: #818cf8;
+  flex-shrink: 0;
 }
 
 .portal-ai-input {
   flex: 1;
+  min-width: 0;
   background: transparent;
   border: none;
   color: #ffffff;
@@ -1804,10 +1815,13 @@ body.big-labels .road-label {
   font-family: inherit;
   outline: none;
   padding: 8px 0;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
 }
 
 .portal-ai-input::placeholder {
   color: #64748b;
+  text-overflow: ellipsis;
 }
 
 .portal-ai-voice-btn {
@@ -1823,6 +1837,7 @@ body.big-labels .road-label {
   justify-content: center;
   font-size: 16px;
   transition: all 0.2s;
+  flex-shrink: 0;
 }
 
 .portal-ai-voice-btn:hover {
@@ -1845,6 +1860,8 @@ body.big-labels .road-label {
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
   transition: all 0.2s;
   white-space: nowrap;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .portal-ai-submit-btn:hover {
@@ -2538,7 +2555,44 @@ body.big-labels .road-label {
   }
 
   .portal-container {
-    padding: 24px 12px 40px;
+    padding: 20px 12px 40px;
+  }
+
+  .portal-ai-card {
+    padding: 12px 10px;
+    border-radius: 14px;
+  }
+
+  .portal-ai-input-wrapper {
+    gap: 6px;
+    padding: 4px 8px;
+    border-radius: 10px;
+  }
+
+  .ai-sparkle-icon {
+    font-size: 15px;
+  }
+
+  .portal-ai-input {
+    font-size: 13px;
+    padding: 6px 0;
+    min-width: 0;
+  }
+
+  .portal-ai-voice-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .portal-ai-submit-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    gap: 4px;
+    flex-shrink: 0;
   }
 
   .communities-grid {
@@ -2570,6 +2624,67 @@ body.big-labels .road-label {
   }
 
   .floating-ai-btn .floating-ai-text {
+    font-size: 10.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portal-container {
+    padding: 16px 10px 36px;
+  }
+
+  .portal-hero-title {
+    font-size: 21px;
+  }
+
+  .portal-hero-sub {
+    font-size: 12px;
+    margin-bottom: 18px;
+  }
+
+  .portal-ai-card {
+    padding: 10px 8px;
+  }
+
+  .portal-ai-input-wrapper {
+    gap: 4px;
+    padding: 3px 6px;
+    border-radius: 8px;
+  }
+
+  .ai-sparkle-icon {
+    display: none;
+  }
+
+  .portal-ai-input {
+    font-size: 12px;
+    padding: 5px 0;
+    min-width: 0;
+  }
+
+  .portal-ai-voice-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .portal-ai-submit-btn {
+    padding: 5px 9px;
+    font-size: 11px;
+    border-radius: 6px;
+    gap: 3px;
+    flex-shrink: 0;
+  }
+
+  .portal-quick-chips {
+    gap: 5px;
+    margin-top: 8px;
+  }
+
+  .portal-chip {
+    padding: 3px 8px;
     font-size: 10.5px;
   }
 }
