@@ -132,7 +132,8 @@
     activeFilter: 'ALL',
     userLocation: null,
     isGeoTracking: false,
-    geoWatchId: null
+    geoWatchId: null,
+    expandedBlocks: new Set()
   };
 
   // DOM Elements
@@ -301,10 +302,267 @@
     roadsLayer.appendChild(labelsG);
   }
 
-  // Render Plots with House Numbers
+  // Helper: check if layout is an apartment/tower/block community
+  function isApartmentOrBlockLayout(layout) {
+    if (!layout) return false;
+    if (layout.id === 'himagiri') return false; // Himagiri Meadows is a landed plot community with 344 individual surveyed plots
+    const uType = (layout.unitType || '').toLowerCase();
+    const lType = (layout.type || '').toLowerCase();
+    if (uType.includes('apartment') || uType.includes('tower') || uType.includes('block') || uType.includes('wing')) return true;
+    if (lType.includes('apartment') || lType.includes('township') || lType.includes('high-rise') || lType.includes('condominium')) return true;
+    return false;
+  }
+
+  // Short clean unit number helper (e.g. "Tower 1 - 101" -> "101", "Block A - 202" -> "202")
+  function getShortUnitNumber(p) {
+    if (!p) return '';
+    const numStr = String(p.number || p.id || '').trim();
+    const dashMatch = numStr.match(/[-–—:]\s*([A-Za-z0-9]+)$/);
+    if (dashMatch) return dashMatch[1];
+    const flatMatch = numStr.match(/(?:flat|unit|plot|house|no\.?)\s*([A-Za-z0-9]+)/i);
+    if (flatMatch) return flatMatch[1];
+    const blockUnitMatch = numStr.match(/(?:tower|block|wing)\s+([A-Za-z0-9]+)/i);
+    if (blockUnitMatch && numStr.length <= 10) return blockUnitMatch[1];
+    return numStr;
+  }
+
+  // Toggle expanding or collapsing an apartment block
+  function toggleBlockExpansion(bName) {
+    if (!state.expandedBlocks) state.expandedBlocks = new Set();
+    if (state.expandedBlocks.has(bName)) {
+      state.expandedBlocks.delete(bName);
+    } else {
+      state.expandedBlocks.add(bName);
+      // If no unit in this block is currently selected, select the first unit
+      const blockPlots = Object.values(plots).filter(p => p.block === bName);
+      if (blockPlots.length > 0 && (!state.selectedPlotId || plots[state.selectedPlotId]?.block !== bName)) {
+        selectPlot(blockPlots[0].id, false);
+        return;
+      }
+    }
+    renderPlots();
+  }
+
+  // Render Plots / Apartment Blocks with Click-to-Reveal Numbers
   function renderPlots() {
     plotsLayer.innerHTML = '';
+    if (!state.expandedBlocks) state.expandedBlocks = new Set();
 
+    // Auto-expand block of selected plot if any
+    if (state.selectedPlotId && plots[state.selectedPlotId]) {
+      const activeBlock = plots[state.selectedPlotId].block;
+      if (activeBlock) state.expandedBlocks.add(activeBlock);
+    }
+
+    const isApt = isApartmentOrBlockLayout(currentLayout);
+
+    if (isApt) {
+      // Group plots by block/tower
+      const blockGroups = {};
+      for (const pid in plots) {
+        const p = plots[pid];
+        const bName = p.block || 'Main Tower';
+        if (!blockGroups[bName]) blockGroups[bName] = [];
+        blockGroups[bName].push(p);
+      }
+
+      for (const bName in blockGroups) {
+        const uList = blockGroups[bName];
+        const isExpanded = state.expandedBlocks.has(bName);
+        const isBlockActive = uList.some(p => p.id === state.selectedPlotId);
+
+        // Calculate bounding box and center of the block
+        const xs = uList.map(u => u.x);
+        const ys = uList.map(u => u.y);
+        const minX = Math.min(...xs);
+        const minY = Math.min(...ys);
+        const maxX = Math.max(...uList.map(u => u.x + u.w));
+        const maxY = Math.max(...uList.map(u => u.y + u.h));
+        const cx = (minX + maxX) / 2;
+        const cy = (minY + maxY) / 2;
+
+        // Grid parameters for units inside the block
+        const cols = Math.min(4, Math.ceil(Math.sqrt(uList.length * 1.6)));
+        const rows = Math.ceil(uList.length / cols);
+        const tileW = 28;
+        const tileH = 20;
+        const gap = 4;
+        const gridW = cols * tileW + (cols - 1) * gap;
+        const gridH = rows * tileH + (rows - 1) * gap;
+
+        // Block shell dimensions
+        const blockW = isExpanded ? Math.max(136, gridW + 20, maxX - minX + 16) : Math.max(110, maxX - minX + 10);
+        const blockH = isExpanded ? Math.max(88, gridH + 36, maxY - minY + 16) : Math.max(64, maxY - minY + 10);
+        const bx = cx - blockW / 2;
+        const by = cy - blockH / 2;
+
+        const safeBlockId = bName.replace(/[^a-zA-Z0-9]/g, '_');
+        const blockG = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        blockG.setAttribute("class", `svg-building-block ${isExpanded ? 'block-expanded' : 'block-collapsed'} ${isBlockActive ? 'block-has-active' : ''}`);
+        blockG.setAttribute("id", `building-block-${safeBlockId}`);
+        blockG.setAttribute("data-block", bName);
+
+        // Building base footprint
+        const shell = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        shell.setAttribute("class", "building-shell");
+        shell.setAttribute("x", bx);
+        shell.setAttribute("y", by);
+        shell.setAttribute("width", blockW);
+        shell.setAttribute("height", blockH);
+        shell.setAttribute("rx", "7");
+
+        if (isBlockActive) {
+          shell.setAttribute("stroke", "#f59e0b");
+          shell.setAttribute("stroke-width", "2.5");
+        } else if (isExpanded) {
+          shell.setAttribute("stroke", "#38bdf8");
+          shell.setAttribute("stroke-width", "2");
+        } else {
+          shell.setAttribute("stroke", "#475569");
+          shell.setAttribute("stroke-width", "1.5");
+        }
+
+        blockG.appendChild(shell);
+
+        // Top architectural accent line
+        const accent = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        accent.setAttribute("x", bx);
+        accent.setAttribute("y", by);
+        accent.setAttribute("width", blockW);
+        accent.setAttribute("height", "4");
+        accent.setAttribute("rx", "2");
+        accent.setAttribute("fill", isBlockActive ? "#f59e0b" : (isExpanded ? "#38bdf8" : "#64748b"));
+        blockG.appendChild(accent);
+
+        // Block Title text
+        const titleTxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        titleTxt.setAttribute("class", "building-title");
+        titleTxt.setAttribute("x", cx);
+        titleTxt.setAttribute("y", by + (isExpanded ? 18 : 28));
+        titleTxt.setAttribute("text-anchor", "middle");
+        titleTxt.setAttribute("font-size", isExpanded ? "11px" : "11.5px");
+        titleTxt.setAttribute("font-weight", "700");
+        titleTxt.setAttribute("fill", isBlockActive ? "#fbbf24" : (isExpanded ? "#38bdf8" : "#f1f5f9"));
+        titleTxt.textContent = `🏢 ${bName}`;
+        blockG.appendChild(titleTxt);
+
+        if (!isExpanded) {
+          // Collapsed block prompt
+          const promptTxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+          promptTxt.setAttribute("class", "building-click-prompt");
+          promptTxt.setAttribute("x", cx);
+          promptTxt.setAttribute("y", by + 48);
+          promptTxt.setAttribute("text-anchor", "middle");
+          promptTxt.setAttribute("font-size", "9px");
+          promptTxt.setAttribute("fill", "#94a3b8");
+          promptTxt.textContent = `👉 Click for numbers (${uList.length})`;
+          blockG.appendChild(promptTxt);
+
+          // Click anywhere on collapsed block to reveal numbers
+          blockG.style.cursor = "pointer";
+          blockG.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleBlockExpansion(bName);
+          });
+        } else {
+          // EXPANDED: Collapse toggle button
+          const closeBtn = document.createElementNS("http://www.w3.org/2000/svg", "text");
+          closeBtn.setAttribute("class", "building-collapse-btn");
+          closeBtn.setAttribute("x", bx + blockW - 8);
+          closeBtn.setAttribute("y", by + 18);
+          closeBtn.setAttribute("text-anchor", "end");
+          closeBtn.setAttribute("font-size", "11px");
+          closeBtn.setAttribute("fill", "#94a3b8");
+          closeBtn.setAttribute("cursor", "pointer");
+          closeBtn.textContent = "▲";
+          closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleBlockExpansion(bName);
+          });
+          blockG.appendChild(closeBtn);
+
+          // Allow clicking the top header bar to collapse
+          const headerHit = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+          headerHit.setAttribute("x", bx);
+          headerHit.setAttribute("y", by);
+          headerHit.setAttribute("width", blockW);
+          headerHit.setAttribute("height", "24");
+          headerHit.setAttribute("fill", "transparent");
+          headerHit.setAttribute("cursor", "pointer");
+          headerHit.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleBlockExpansion(bName);
+          });
+          blockG.appendChild(headerHit);
+
+          // Render flat numbers INSIDE the block!
+          const startGridX = cx - gridW / 2;
+          const startGridY = by + 26;
+
+          uList.forEach((p, idx) => {
+            const col = idx % cols;
+            const row = Math.floor(idx / cols);
+            const tx = startGridX + col * (tileW + gap);
+            const ty = startGridY + row * (tileH + gap);
+            const isSelected = (state.selectedPlotId === p.id);
+            const shortNum = getShortUnitNumber(p);
+
+            const unitG = document.createElementNS("http://www.w3.org/2000/svg", "g");
+            unitG.setAttribute("class", `svg-plot in-block-unit ${isSelected ? 'active-target active-unit-tile' : ''}`);
+            unitG.setAttribute("id", `plot-${p.id}`);
+            unitG.setAttribute("data-id", p.id);
+            unitG.setAttribute("data-road", p.road);
+            unitG.setAttribute("cursor", "pointer");
+
+            const uRect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+            uRect.setAttribute("class", "in-block-unit-rect");
+            uRect.setAttribute("x", tx);
+            uRect.setAttribute("y", ty);
+            uRect.setAttribute("width", tileW);
+            uRect.setAttribute("height", tileH);
+            uRect.setAttribute("rx", "4");
+
+            if (isSelected) {
+              uRect.setAttribute("fill", "#f59e0b");
+              uRect.setAttribute("stroke", "#ffffff");
+              uRect.setAttribute("stroke-width", "2");
+            } else {
+              uRect.setAttribute("fill", "#1e293b");
+              uRect.setAttribute("stroke", "#475569");
+              uRect.setAttribute("stroke-width", "1");
+            }
+
+            const uTxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            uTxt.setAttribute("class", "in-block-unit-text");
+            uTxt.setAttribute("x", tx + tileW / 2);
+            uTxt.setAttribute("y", ty + tileH / 2 + 3.5);
+            uTxt.setAttribute("text-anchor", "middle");
+            uTxt.setAttribute("font-size", shortNum.length > 3 ? "8.5px" : "9.5px");
+            uTxt.setAttribute("font-weight", isSelected ? "800" : "600");
+            uTxt.setAttribute("fill", isSelected ? "#000000" : "#e2e8f0");
+            uTxt.textContent = shortNum;
+
+            unitG.appendChild(uRect);
+            unitG.appendChild(uTxt);
+
+            unitG.addEventListener('click', (e) => {
+              e.stopPropagation();
+              selectPlot(p.id, false);
+            });
+            unitG.addEventListener('mouseenter', (e) => showPlotTooltip(e, p));
+            unitG.addEventListener('mousemove', (e) => movePlotTooltip(e));
+            unitG.addEventListener('mouseleave', hidePlotTooltip);
+
+            blockG.appendChild(unitG);
+          });
+        }
+
+        plotsLayer.appendChild(blockG);
+      }
+      return;
+    }
+
+    // Standard Landed Plot Layout (Himagiri Meadows 1-344, Plotted layouts)
     for (const pid in plots) {
       const p = plots[pid];
       const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
@@ -570,6 +828,7 @@
     state.startNodeId = gateNodes.length > 0 ? gateNodes[0] : Object.keys(nodes)[0];
     state.selectedPlotId = null;
     state.activeRoute = null;
+    state.expandedBlocks = new Set();
 
     buildGraph();
 
@@ -1403,6 +1662,47 @@
     state.selectedPlotId = plot.id;
     destSelect.value = `plot:${plot.id}`;
 
+    // Auto-expand apartment block and show unit quick-picker in card
+    if (isApartmentOrBlockLayout(currentLayout)) {
+      if (plot.block && (!state.expandedBlocks || !state.expandedBlocks.has(plot.block))) {
+        if (!state.expandedBlocks) state.expandedBlocks = new Set();
+        state.expandedBlocks.add(plot.block);
+        renderPlots();
+      }
+      const blockUnitsEl = document.getElementById('card-block-units');
+      if (blockUnitsEl) {
+        blockUnitsEl.innerHTML = '';
+        const blockUnits = Object.values(plots).filter(p => p.block === plot.block);
+        if (blockUnits.length > 1) {
+          blockUnitsEl.style.display = 'flex';
+          const label = document.createElement('div');
+          label.className = 'card-block-units-title';
+          label.textContent = `${plot.block} Flats (${blockUnits.length}):`;
+          blockUnitsEl.appendChild(label);
+
+          const chipsContainer = document.createElement('div');
+          chipsContainer.className = 'card-unit-chips';
+          blockUnits.forEach(u => {
+            const chip = document.createElement('button');
+            chip.className = `unit-chip-btn ${u.id === plot.id ? 'active' : ''}`;
+            chip.textContent = getShortUnitNumber(u);
+            chip.title = u.number;
+            chip.addEventListener('click', (e) => {
+              e.stopPropagation();
+              selectPlot(u.id, false);
+            });
+            chipsContainer.appendChild(chip);
+          });
+          blockUnitsEl.appendChild(chipsContainer);
+        } else {
+          blockUnitsEl.style.display = 'none';
+        }
+      }
+    } else {
+      const blockUnitsEl = document.getElementById('card-block-units');
+      if (blockUnitsEl) blockUnitsEl.style.display = 'none';
+    }
+
     // Highlight plot in SVG
     highlightPlot(plot.id);
 
@@ -1492,12 +1792,35 @@
   }
 
   function highlightPlot(plotId) {
-    document.querySelectorAll('.svg-plot').forEach(el => el.classList.remove('active-target'));
+    document.querySelectorAll('.svg-plot').forEach(el => el.classList.remove('active-target', 'active-unit-tile'));
     const targetEl = document.getElementById(`plot-${plotId}`);
     if (targetEl) {
-      targetEl.classList.add('active-target');
+      targetEl.classList.add('active-target', 'active-unit-tile');
       // Bring to top
       targetEl.parentNode.appendChild(targetEl);
+    }
+
+    // Update active building block shell if in apartment layout
+    const targetPlot = plots[plotId];
+    if (targetPlot && targetPlot.block) {
+      document.querySelectorAll('.svg-building-block').forEach(b => {
+        b.classList.remove('block-has-active');
+        const s = b.querySelector('.building-shell');
+        if (s && !b.classList.contains('block-expanded')) {
+          s.setAttribute('stroke', '#475569');
+          s.setAttribute('stroke-width', '1.5');
+        }
+      });
+      const safeBlockId = targetPlot.block.replace(/[^a-zA-Z0-9]/g, '_');
+      const blk = document.getElementById(`building-block-${safeBlockId}`);
+      if (blk) {
+        blk.classList.add('block-has-active');
+        const s = blk.querySelector('.building-shell');
+        if (s) {
+          s.setAttribute('stroke', '#f59e0b');
+          s.setAttribute('stroke-width', '2.5');
+        }
+      }
     }
   }
 
@@ -2397,9 +2720,19 @@
   function applySectorFilter(sector) {
     state.activeFilter = sector;
     if (sector === 'ALL') {
-      document.querySelectorAll('.svg-plot').forEach(p => p.style.opacity = '1');
+      document.querySelectorAll('.svg-plot, .svg-building-block').forEach(p => p.style.opacity = '1');
       fitMapToView();
       return;
+    }
+
+    if (isApartmentOrBlockLayout(currentLayout)) {
+      const allPlots = Object.values(plots);
+      const matchPlot = allPlots.find(p => p.block && (p.block.toLowerCase().includes(sector.toLowerCase()) || sector.toLowerCase().includes(p.block.toLowerCase())));
+      if (matchPlot && matchPlot.block) {
+        if (!state.expandedBlocks) state.expandedBlocks = new Set();
+        state.expandedBlocks.add(matchPlot.block);
+        renderPlots();
+      }
     }
 
     let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
@@ -2408,7 +2741,7 @@
     document.querySelectorAll('.svg-plot').forEach(el => {
       const pid = el.getAttribute('data-id');
       const plot = plots[pid];
-      if (plot && plot.road.toLowerCase().includes(sector.toLowerCase())) {
+      if (plot && (plot.road.toLowerCase().includes(sector.toLowerCase()) || (plot.block && plot.block.toLowerCase().includes(sector.toLowerCase())))) {
         el.style.opacity = '1';
         minX = Math.min(minX, plot.x);
         minY = Math.min(minY, plot.y);
@@ -2417,6 +2750,15 @@
         found = true;
       } else {
         el.style.opacity = '0.2';
+      }
+    });
+
+    document.querySelectorAll('.svg-building-block').forEach(el => {
+      const b = el.getAttribute('data-block') || '';
+      if (b.toLowerCase().includes(sector.toLowerCase()) || sector.toLowerCase().includes(b.toLowerCase())) {
+        el.style.opacity = '1';
+      } else {
+        el.style.opacity = '0.3';
       }
     });
 

@@ -483,77 +483,114 @@ def build_custom_layout(spec):
 
     plots = {}
     uid = 1
-    # 8 North row
-    for i in range(8):
-        pid = str(uid)
-        num_str = f"{unitPrefix} {uid}" if unitPrefix != 'House' else f"{uid}"
-        plots[pid] = {
-            'id': pid, 'number': num_str, 'road': avenues[1], 'block': sectors[0] if len(sectors) > 0 else 'North Sector',
-            'facing': 'South', 'x': 360 + i * 65, 'y': 210, 'w': 50, 'h': 36,
-            'roadNode': f'{lid}_n_mid' if i in [3, 4] else (f'{lid}_n_w' if i < 3 else f'{lid}_n_e'),
-            'color': color_theme
-        }
-        uid += 1
 
-    # 8 Mid-North row
-    for i in range(8):
-        pid = str(uid)
-        num_str = f"{unitPrefix} {uid}" if unitPrefix != 'House' else f"{uid}"
-        plots[pid] = {
-            'id': pid, 'number': num_str, 'road': avenues[1], 'block': sectors[1] if len(sectors) > 1 else 'Central Sector',
-            'facing': 'North', 'x': 360 + i * 65, 'y': 330, 'w': 50, 'h': 36,
-            'roadNode': f'{lid}_n_mid' if i in [3, 4] else (f'{lid}_n_w' if i < 3 else f'{lid}_n_e'),
-            'color': color_theme
-        }
-        uid += 1
+    is_apartment_type = any(term in unitType.lower() for term in ['apartment', 'tower', 'block', 'wing']) or \
+                        any(term in ltype.lower() for term in ['apartment', 'township', 'high-rise', 'condominium'])
 
-    # 8 Mid-South row
-    for i in range(8):
-        pid = str(uid)
-        num_str = f"{unitPrefix} {uid}" if unitPrefix != 'House' else f"{uid}"
-        plots[pid] = {
-            'id': pid, 'number': num_str, 'road': avenues[2], 'block': sectors[1] if len(sectors) > 1 else 'Central Sector',
-            'facing': 'South', 'x': 360 + i * 65, 'y': 630, 'w': 50, 'h': 36,
-            'roadNode': f'{lid}_s_mid' if i in [3, 4] else (f'{lid}_s_w' if i < 3 else f'{lid}_s_e'),
-            'color': color_theme
-        }
-        uid += 1
+    if is_apartment_type:
+        block_names = sectors if sectors and len(sectors) >= 2 else [f'{unitPrefix} {i+1}' for i in range(4)]
+        num_blocks = min(len(block_names), 6)
+        block_positions = [
+            (280, 200, f'{lid}_n_w', avenues[1], 'South'),
+            (560, 200, f'{lid}_n_mid', avenues[1], 'South'),
+            (840, 200, f'{lid}_n_e', avenues[1], 'South'),
+            (380, 680, f'{lid}_s_w', avenues[2], 'North'),
+            (620, 680, f'{lid}_s_mid', avenues[2], 'North'),
+            (860, 680, f'{lid}_s_e', avenues[2], 'North')
+        ]
+        flats = [101, 102, 201, 202, 301, 302, 401, 402]
+        for b_idx in range(num_blocks):
+            b_name = block_names[b_idx]
+            bx, by, b_node, b_road, b_facing = block_positions[b_idx % len(block_positions)]
+            for f_idx, fl in enumerate(flats):
+                pid = str(uid)
+                num_str = f"{b_name} - {fl}"
+                plots[pid] = {
+                    'id': pid,
+                    'number': num_str,
+                    'road': b_road,
+                    'block': b_name,
+                    'facing': b_facing,
+                    'x': bx + (f_idx % 4) * 22 - 33,
+                    'y': by + (f_idx // 4) * 22 - 11,
+                    'w': 48,
+                    'h': 34,
+                    'roadNode': b_node,
+                    'color': color_theme
+                }
+                uid += 1
+    else:
+        # 8 North row
+        for i in range(8):
+            pid = str(uid)
+            num_str = f"{unitPrefix} {uid}" if unitPrefix != 'House' else f"{uid}"
+            plots[pid] = {
+                'id': pid, 'number': num_str, 'road': avenues[1], 'block': sectors[0] if len(sectors) > 0 else 'North Sector',
+                'facing': 'South', 'x': 360 + i * 65, 'y': 210, 'w': 50, 'h': 36,
+                'roadNode': f'{lid}_n_mid' if i in [3, 4] else (f'{lid}_n_w' if i < 3 else f'{lid}_n_e'),
+                'color': color_theme
+            }
+            uid += 1
 
-    # 8 South row
-    for i in range(8):
-        pid = str(uid)
-        num_str = f"{unitPrefix} {uid}" if unitPrefix != 'House' else f"{uid}"
-        plots[pid] = {
-            'id': pid, 'number': num_str, 'road': avenues[2], 'block': sectors[2] if len(sectors) > 2 else 'South Sector',
-            'facing': 'North', 'x': 360 + i * 65, 'y': 750, 'w': 50, 'h': 36,
-            'roadNode': f'{lid}_s_mid' if i in [3, 4] else (f'{lid}_s_w' if i < 3 else f'{lid}_s_e'),
-            'color': color_theme
-        }
-        uid += 1
+        # 8 Mid-North row
+        for i in range(8):
+            pid = str(uid)
+            num_str = f"{unitPrefix} {uid}" if unitPrefix != 'House' else f"{uid}"
+            plots[pid] = {
+                'id': pid, 'number': num_str, 'road': avenues[1], 'block': sectors[1] if len(sectors) > 1 else 'Central Sector',
+                'facing': 'North', 'x': 360 + i * 65, 'y': 330, 'w': 50, 'h': 36,
+                'roadNode': f'{lid}_n_mid' if i in [3, 4] else (f'{lid}_n_w' if i < 3 else f'{lid}_n_e'),
+                'color': color_theme
+            }
+            uid += 1
 
-    # 6 West wing
-    for i in range(6):
-        pid = str(uid)
-        num_str = f"{unitPrefix} {uid}" if unitPrefix != 'House' else f"{uid}"
-        plots[pid] = {
-            'id': pid, 'number': num_str, 'road': avenues[3], 'block': sectors[0] if len(sectors) > 0 else 'West Sector',
-            'facing': 'East', 'x': 240, 'y': 280 + i * 70, 'w': 48, 'h': 36,
-            'roadNode': f'{lid}_w_n_mid' if i < 3 else f'{lid}_w_s_mid',
-            'color': color_theme
-        }
-        uid += 1
+        # 8 Mid-South row
+        for i in range(8):
+            pid = str(uid)
+            num_str = f"{unitPrefix} {uid}" if unitPrefix != 'House' else f"{uid}"
+            plots[pid] = {
+                'id': pid, 'number': num_str, 'road': avenues[2], 'block': sectors[1] if len(sectors) > 1 else 'Central Sector',
+                'facing': 'South', 'x': 360 + i * 65, 'y': 630, 'w': 50, 'h': 36,
+                'roadNode': f'{lid}_s_mid' if i in [3, 4] else (f'{lid}_s_w' if i < 3 else f'{lid}_s_e'),
+                'color': color_theme
+            }
+            uid += 1
 
-    # 6 East wing
-    for i in range(6):
-        pid = str(uid)
-        num_str = f"{unitPrefix} {uid}" if unitPrefix != 'House' else f"{uid}"
-        plots[pid] = {
-            'id': pid, 'number': num_str, 'road': avenues[4], 'block': sectors[3] if len(sectors) > 3 else 'East Sector',
-            'facing': 'West', 'x': 1000, 'y': 280 + i * 70, 'w': 48, 'h': 36,
-            'roadNode': f'{lid}_e_n_mid' if i < 3 else f'{lid}_e_s_mid',
-            'color': color_theme
-        }
-        uid += 1
+        # 8 South row
+        for i in range(8):
+            pid = str(uid)
+            num_str = f"{unitPrefix} {uid}" if unitPrefix != 'House' else f"{uid}"
+            plots[pid] = {
+                'id': pid, 'number': num_str, 'road': avenues[2], 'block': sectors[2] if len(sectors) > 2 else 'South Sector',
+                'facing': 'North', 'x': 360 + i * 65, 'y': 750, 'w': 50, 'h': 36,
+                'roadNode': f'{lid}_s_mid' if i in [3, 4] else (f'{lid}_s_w' if i < 3 else f'{lid}_s_e'),
+                'color': color_theme
+            }
+            uid += 1
+
+        # 6 West wing
+        for i in range(6):
+            pid = str(uid)
+            num_str = f"{unitPrefix} {uid}" if unitPrefix != 'House' else f"{uid}"
+            plots[pid] = {
+                'id': pid, 'number': num_str, 'road': avenues[3], 'block': sectors[0] if len(sectors) > 0 else 'West Sector',
+                'facing': 'East', 'x': 240, 'y': 280 + i * 70, 'w': 48, 'h': 36,
+                'roadNode': f'{lid}_w_n_mid' if i < 3 else f'{lid}_w_s_mid',
+                'color': color_theme
+            }
+            uid += 1
+
+        # 6 East wing
+        for i in range(6):
+            pid = str(uid)
+            num_str = f"{unitPrefix} {uid}" if unitPrefix != 'House' else f"{uid}"
+            plots[pid] = {
+                'id': pid, 'number': num_str, 'road': avenues[4], 'block': sectors[3] if len(sectors) > 3 else 'East Sector',
+                'facing': 'West', 'x': 1000, 'y': 280 + i * 70, 'w': 48, 'h': 36,
+                'roadNode': f'{lid}_e_n_mid' if i < 3 else f'{lid}_e_s_mid',
+                'color': color_theme
+            }
+            uid += 1
 
     amenities = [
         {'id': f'{lid}_gate_1', 'name': f'{name} Main Gate 1', 'description': 'Security checkpoint, visitor RFID entry & security cabin', 'x': 90, 'y': 480, 'roadNode': f'{lid}_gate_1', 'icon': '🚪', 'type': 'gate'},

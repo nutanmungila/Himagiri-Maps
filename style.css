@@ -821,6 +821,56 @@ body {
   margin-top: 2px;
 }
 
+/* House Card Block Units Quick Switcher */
+.card-block-units {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.card-block-units-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-unit-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.unit-chip-btn {
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.unit-chip-btn:hover {
+  background: #e2e8f0;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+}
+
+.unit-chip-btn.active {
+  background: #f59e0b;
+  border-color: #d97706;
+  color: #000000;
+  font-weight: 800;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
+}
+
 /* Map Viewport Area */
 .map-viewport {
   flex: 1;
@@ -874,6 +924,106 @@ body {
   stroke: #ef4444 !important;
   stroke-width: 2.5 !important;
   animation: plotPulse 1.5s infinite;
+}
+
+/* Apartment & Tower SVG Building Footprint */
+.svg-building-block {
+  cursor: pointer;
+}
+
+.building-shell {
+  fill: #0f172a;
+  fill-opacity: 0.94;
+  transition: all 0.25s ease;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.45));
+}
+
+.svg-building-block.block-collapsed:hover .building-shell {
+  stroke: #38bdf8 !important;
+  stroke-width: 2.2 !important;
+  filter: drop-shadow(0 6px 14px rgba(56, 189, 248, 0.35));
+}
+
+.svg-building-block.block-expanded .building-shell {
+  fill: #090e17;
+  stroke: #38bdf8 !important;
+  stroke-width: 2 !important;
+  filter: drop-shadow(0 8px 18px rgba(15, 23, 42, 0.65));
+}
+
+.svg-building-block.block-has-active .building-shell {
+  stroke: #f59e0b !important;
+  stroke-width: 2.5 !important;
+  filter: drop-shadow(0 8px 22px rgba(245, 158, 11, 0.35));
+}
+
+.building-title {
+  user-select: none;
+  pointer-events: none;
+  font-family: 'Inter', -apple-system, sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.building-click-prompt {
+  user-select: none;
+  pointer-events: none;
+  font-family: 'Inter', -apple-system, sans-serif;
+  animation: promptPulse 2s infinite ease-in-out;
+}
+
+@keyframes promptPulse {
+  0%, 100% { opacity: 0.75; }
+  50% { opacity: 1; }
+}
+
+.building-collapse-btn {
+  user-select: none;
+  font-weight: 800;
+  transition: fill 0.2s;
+}
+
+.building-collapse-btn:hover {
+  fill: #ef4444 !important;
+}
+
+/* In-block Flat Number Tiles */
+.in-block-unit {
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.in-block-unit:hover {
+  transform: scale(1.08);
+  transform-origin: center;
+}
+
+.in-block-unit-rect {
+  transition: all 0.15s ease;
+}
+
+.in-block-unit:hover .in-block-unit-rect {
+  stroke: #38bdf8 !important;
+  stroke-width: 1.8 !important;
+  fill: #1e3a8a !important;
+}
+
+.in-block-unit-text {
+  pointer-events: none;
+  user-select: none;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+.in-block-unit.active-unit-tile .in-block-unit-rect {
+  fill: #f59e0b !important;
+  stroke: #ffffff !important;
+  stroke-width: 2 !important;
+  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.9));
+}
+
+.in-block-unit.active-unit-tile .in-block-unit-text {
+  fill: #000000 !important;
+  font-weight: 800 !important;
 }
 
 @keyframes plotPulse {
