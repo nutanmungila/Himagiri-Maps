@@ -326,33 +326,9 @@
     return numStr;
   }
 
-  // Toggle expanding or collapsing an apartment block
-  function toggleBlockExpansion(bName) {
-    if (!state.expandedBlocks) state.expandedBlocks = new Set();
-    if (state.expandedBlocks.has(bName)) {
-      state.expandedBlocks.delete(bName);
-    } else {
-      state.expandedBlocks.add(bName);
-      // If no unit in this block is currently selected, select the first unit
-      const blockPlots = Object.values(plots).filter(p => p.block === bName);
-      if (blockPlots.length > 0 && (!state.selectedPlotId || plots[state.selectedPlotId]?.block !== bName)) {
-        selectPlot(blockPlots[0].id, false);
-        return;
-      }
-    }
-    renderPlots();
-  }
-
-  // Render Plots / Apartment Blocks with Click-to-Reveal Numbers
+  // Render Plots / Apartment Blocks (No numbers inside blocks/apartments)
   function renderPlots() {
     plotsLayer.innerHTML = '';
-    if (!state.expandedBlocks) state.expandedBlocks = new Set();
-
-    // Auto-expand block of selected plot if any
-    if (state.selectedPlotId && plots[state.selectedPlotId]) {
-      const activeBlock = plots[state.selectedPlotId].block;
-      if (activeBlock) state.expandedBlocks.add(activeBlock);
-    }
 
     const isApt = isApartmentOrBlockLayout(currentLayout);
 
@@ -368,7 +344,6 @@
 
       for (const bName in blockGroups) {
         const uList = blockGroups[bName];
-        const isExpanded = state.expandedBlocks.has(bName);
         const isBlockActive = uList.some(p => p.id === state.selectedPlotId);
 
         // Calculate bounding box and center of the block
@@ -381,44 +356,36 @@
         const cx = (minX + maxX) / 2;
         const cy = (minY + maxY) / 2;
 
-        // Grid parameters for units inside the block
-        const cols = Math.min(4, Math.ceil(Math.sqrt(uList.length * 1.6)));
-        const rows = Math.ceil(uList.length / cols);
-        const tileW = 28;
-        const tileH = 20;
-        const gap = 4;
-        const gridW = cols * tileW + (cols - 1) * gap;
-        const gridH = rows * tileH + (rows - 1) * gap;
-
-        // Block shell dimensions
-        const blockW = isExpanded ? Math.max(136, gridW + 20, maxX - minX + 16) : Math.max(110, maxX - minX + 10);
-        const blockH = isExpanded ? Math.max(88, gridH + 36, maxY - minY + 16) : Math.max(64, maxY - minY + 10);
+        // Clean architectural building footprint
+        const blockW = Math.max(124, maxX - minX + 16);
+        const blockH = Math.max(72, maxY - minY + 16);
         const bx = cx - blockW / 2;
         const by = cy - blockH / 2;
 
         const safeBlockId = bName.replace(/[^a-zA-Z0-9]/g, '_');
         const blockG = document.createElementNS("http://www.w3.org/2000/svg", "g");
-        blockG.setAttribute("class", `svg-building-block ${isExpanded ? 'block-expanded' : 'block-collapsed'} ${isBlockActive ? 'block-has-active' : ''}`);
+        blockG.setAttribute("class", `svg-building-block svg-plot ${isBlockActive ? 'block-has-active active-target' : ''}`);
         blockG.setAttribute("id", `building-block-${safeBlockId}`);
+        blockG.setAttribute("data-id", uList[0].id);
         blockG.setAttribute("data-block", bName);
+        blockG.setAttribute("data-road", uList[0].road);
+        blockG.style.cursor = "pointer";
 
-        // Building base footprint
+        // Building base footprint shell
         const shell = document.createElementNS("http://www.w3.org/2000/svg", "rect");
         shell.setAttribute("class", "building-shell");
         shell.setAttribute("x", bx);
         shell.setAttribute("y", by);
         shell.setAttribute("width", blockW);
         shell.setAttribute("height", blockH);
-        shell.setAttribute("rx", "7");
+        shell.setAttribute("rx", "8");
+        shell.setAttribute("fill", isBlockActive ? "#1e293b" : "#0f172a");
 
         if (isBlockActive) {
           shell.setAttribute("stroke", "#f59e0b");
           shell.setAttribute("stroke-width", "2.5");
-        } else if (isExpanded) {
-          shell.setAttribute("stroke", "#38bdf8");
-          shell.setAttribute("stroke-width", "2");
         } else {
-          shell.setAttribute("stroke", "#475569");
+          shell.setAttribute("stroke", "#3b82f6");
           shell.setAttribute("stroke-width", "1.5");
         }
 
@@ -431,131 +398,50 @@
         accent.setAttribute("width", blockW);
         accent.setAttribute("height", "4");
         accent.setAttribute("rx", "2");
-        accent.setAttribute("fill", isBlockActive ? "#f59e0b" : (isExpanded ? "#38bdf8" : "#64748b"));
+        accent.setAttribute("fill", isBlockActive ? "#f59e0b" : "#38bdf8");
         blockG.appendChild(accent);
 
-        // Block Title text
+        // Block Title text (e.g. 🏢 Tower 1 or 🏢 Block A) - No numbers inside
         const titleTxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
         titleTxt.setAttribute("class", "building-title");
         titleTxt.setAttribute("x", cx);
-        titleTxt.setAttribute("y", by + (isExpanded ? 18 : 28));
+        titleTxt.setAttribute("y", cy - 2);
         titleTxt.setAttribute("text-anchor", "middle");
-        titleTxt.setAttribute("font-size", isExpanded ? "11px" : "11.5px");
+        titleTxt.setAttribute("font-size", "12px");
         titleTxt.setAttribute("font-weight", "700");
-        titleTxt.setAttribute("fill", isBlockActive ? "#fbbf24" : (isExpanded ? "#38bdf8" : "#f1f5f9"));
+        titleTxt.setAttribute("fill", isBlockActive ? "#fbbf24" : "#f1f5f9");
         titleTxt.textContent = `🏢 ${bName}`;
         blockG.appendChild(titleTxt);
 
-        if (!isExpanded) {
-          // Collapsed block prompt
-          const promptTxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
-          promptTxt.setAttribute("class", "building-click-prompt");
-          promptTxt.setAttribute("x", cx);
-          promptTxt.setAttribute("y", by + 48);
-          promptTxt.setAttribute("text-anchor", "middle");
-          promptTxt.setAttribute("font-size", "9px");
-          promptTxt.setAttribute("fill", "#94a3b8");
-          promptTxt.textContent = `👉 Click for numbers (${uList.length})`;
-          blockG.appendChild(promptTxt);
+        // Subtitle text (e.g. Apartment Tower / Block)
+        const subTxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        subTxt.setAttribute("class", "building-subtitle");
+        subTxt.setAttribute("x", cx);
+        subTxt.setAttribute("y", cy + 15);
+        subTxt.setAttribute("text-anchor", "middle");
+        subTxt.setAttribute("font-size", "9.5px");
+        subTxt.setAttribute("font-weight", "500");
+        subTxt.setAttribute("fill", isBlockActive ? "#fde68a" : "#94a3b8");
+        subTxt.textContent = currentLayout.unitType ? currentLayout.unitType.replace(/ \/ .*/, '') : 'Apartment Tower';
+        blockG.appendChild(subTxt);
 
-          // Click anywhere on collapsed block to reveal numbers
-          blockG.style.cursor = "pointer";
-          blockG.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleBlockExpansion(bName);
+        // Click to select block & calculate route
+        blockG.addEventListener('click', (e) => {
+          e.stopPropagation();
+          selectPlot(uList[0].id, true);
+        });
+
+        // Hover Tooltip
+        blockG.addEventListener('mouseenter', (e) => {
+          showPlotTooltip(e, {
+            number: bName,
+            block: bName,
+            road: uList[0].road,
+            facing: uList[0].facing
           });
-        } else {
-          // EXPANDED: Collapse toggle button
-          const closeBtn = document.createElementNS("http://www.w3.org/2000/svg", "text");
-          closeBtn.setAttribute("class", "building-collapse-btn");
-          closeBtn.setAttribute("x", bx + blockW - 8);
-          closeBtn.setAttribute("y", by + 18);
-          closeBtn.setAttribute("text-anchor", "end");
-          closeBtn.setAttribute("font-size", "11px");
-          closeBtn.setAttribute("fill", "#94a3b8");
-          closeBtn.setAttribute("cursor", "pointer");
-          closeBtn.textContent = "▲";
-          closeBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleBlockExpansion(bName);
-          });
-          blockG.appendChild(closeBtn);
-
-          // Allow clicking the top header bar to collapse
-          const headerHit = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-          headerHit.setAttribute("x", bx);
-          headerHit.setAttribute("y", by);
-          headerHit.setAttribute("width", blockW);
-          headerHit.setAttribute("height", "24");
-          headerHit.setAttribute("fill", "transparent");
-          headerHit.setAttribute("cursor", "pointer");
-          headerHit.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleBlockExpansion(bName);
-          });
-          blockG.appendChild(headerHit);
-
-          // Render flat numbers INSIDE the block!
-          const startGridX = cx - gridW / 2;
-          const startGridY = by + 26;
-
-          uList.forEach((p, idx) => {
-            const col = idx % cols;
-            const row = Math.floor(idx / cols);
-            const tx = startGridX + col * (tileW + gap);
-            const ty = startGridY + row * (tileH + gap);
-            const isSelected = (state.selectedPlotId === p.id);
-            const shortNum = getShortUnitNumber(p);
-
-            const unitG = document.createElementNS("http://www.w3.org/2000/svg", "g");
-            unitG.setAttribute("class", `svg-plot in-block-unit ${isSelected ? 'active-target active-unit-tile' : ''}`);
-            unitG.setAttribute("id", `plot-${p.id}`);
-            unitG.setAttribute("data-id", p.id);
-            unitG.setAttribute("data-road", p.road);
-            unitG.setAttribute("cursor", "pointer");
-
-            const uRect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-            uRect.setAttribute("class", "in-block-unit-rect");
-            uRect.setAttribute("x", tx);
-            uRect.setAttribute("y", ty);
-            uRect.setAttribute("width", tileW);
-            uRect.setAttribute("height", tileH);
-            uRect.setAttribute("rx", "4");
-
-            if (isSelected) {
-              uRect.setAttribute("fill", "#f59e0b");
-              uRect.setAttribute("stroke", "#ffffff");
-              uRect.setAttribute("stroke-width", "2");
-            } else {
-              uRect.setAttribute("fill", "#1e293b");
-              uRect.setAttribute("stroke", "#475569");
-              uRect.setAttribute("stroke-width", "1");
-            }
-
-            const uTxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
-            uTxt.setAttribute("class", "in-block-unit-text");
-            uTxt.setAttribute("x", tx + tileW / 2);
-            uTxt.setAttribute("y", ty + tileH / 2 + 3.5);
-            uTxt.setAttribute("text-anchor", "middle");
-            uTxt.setAttribute("font-size", shortNum.length > 3 ? "8.5px" : "9.5px");
-            uTxt.setAttribute("font-weight", isSelected ? "800" : "600");
-            uTxt.setAttribute("fill", isSelected ? "#000000" : "#e2e8f0");
-            uTxt.textContent = shortNum;
-
-            unitG.appendChild(uRect);
-            unitG.appendChild(uTxt);
-
-            unitG.addEventListener('click', (e) => {
-              e.stopPropagation();
-              selectPlot(p.id, false);
-            });
-            unitG.addEventListener('mouseenter', (e) => showPlotTooltip(e, p));
-            unitG.addEventListener('mousemove', (e) => movePlotTooltip(e));
-            unitG.addEventListener('mouseleave', hidePlotTooltip);
-
-            blockG.appendChild(unitG);
-          });
-        }
+        });
+        blockG.addEventListener('mousemove', (e) => movePlotTooltip(e));
+        blockG.addEventListener('mouseleave', hidePlotTooltip);
 
         plotsLayer.appendChild(blockG);
       }
@@ -783,30 +669,49 @@
     }
     destSelect.appendChild(amGroup);
 
-    // Plots grouped by road
-    const roads = {};
-    for (const pid in plots) {
-      const road = plots[pid].road;
-      if (!roads[road]) roads[road] = [];
-      roads[road].push(plots[pid]);
-    }
-
-    for (const roadName in roads) {
-      const grp = document.createElement('optgroup');
-      grp.label = roadName;
-      roads[roadName].sort((a, b) => {
-        const na = parseInt(a.number) || 0;
-        const nb = parseInt(b.number) || 0;
-        if (na !== nb) return na - nb;
-        return a.number.localeCompare(b.number);
-      });
-      for (const p of roads[roadName]) {
-        const opt = document.createElement('option');
-        opt.value = `plot:${p.id}`;
-        opt.textContent = `${uType} #${p.number} (${p.road})`;
-        grp.appendChild(opt);
+    // Plots or Blocks in Destination dropdown
+    if (isApartmentOrBlockLayout(currentLayout)) {
+      const blockGroupOpt = document.createElement('optgroup');
+      blockGroupOpt.label = "Towers & Residential Blocks";
+      const seenBlocks = new Set();
+      for (const pid in plots) {
+        const p = plots[pid];
+        const b = p.block || p.number;
+        if (!seenBlocks.has(b)) {
+          seenBlocks.add(b);
+          const opt = document.createElement('option');
+          opt.value = `plot:${p.id}`;
+          opt.textContent = `🏢 ${b} (${p.road})`;
+          blockGroupOpt.appendChild(opt);
+        }
       }
-      destSelect.appendChild(grp);
+      destSelect.appendChild(blockGroupOpt);
+    } else {
+      // Plots grouped by road
+      const roads = {};
+      for (const pid in plots) {
+        const road = plots[pid].road;
+        if (!roads[road]) roads[road] = [];
+        roads[road].push(plots[pid]);
+      }
+
+      for (const roadName in roads) {
+        const grp = document.createElement('optgroup');
+        grp.label = roadName;
+        roads[roadName].sort((a, b) => {
+          const na = parseInt(a.number) || 0;
+          const nb = parseInt(b.number) || 0;
+          if (na !== nb) return na - nb;
+          return a.number.localeCompare(b.number);
+        });
+        for (const p of roads[roadName]) {
+          const opt = document.createElement('option');
+          opt.value = `plot:${p.id}`;
+          opt.textContent = `${uType} #${p.number} (${p.road})`;
+          grp.appendChild(opt);
+        }
+        destSelect.appendChild(grp);
+      }
     }
   }
 
@@ -1662,46 +1567,9 @@
     state.selectedPlotId = plot.id;
     destSelect.value = `plot:${plot.id}`;
 
-    // Auto-expand apartment block and show unit quick-picker in card
-    if (isApartmentOrBlockLayout(currentLayout)) {
-      if (plot.block && (!state.expandedBlocks || !state.expandedBlocks.has(plot.block))) {
-        if (!state.expandedBlocks) state.expandedBlocks = new Set();
-        state.expandedBlocks.add(plot.block);
-        renderPlots();
-      }
-      const blockUnitsEl = document.getElementById('card-block-units');
-      if (blockUnitsEl) {
-        blockUnitsEl.innerHTML = '';
-        const blockUnits = Object.values(plots).filter(p => p.block === plot.block);
-        if (blockUnits.length > 1) {
-          blockUnitsEl.style.display = 'flex';
-          const label = document.createElement('div');
-          label.className = 'card-block-units-title';
-          label.textContent = `${plot.block} Flats (${blockUnits.length}):`;
-          blockUnitsEl.appendChild(label);
-
-          const chipsContainer = document.createElement('div');
-          chipsContainer.className = 'card-unit-chips';
-          blockUnits.forEach(u => {
-            const chip = document.createElement('button');
-            chip.className = `unit-chip-btn ${u.id === plot.id ? 'active' : ''}`;
-            chip.textContent = getShortUnitNumber(u);
-            chip.title = u.number;
-            chip.addEventListener('click', (e) => {
-              e.stopPropagation();
-              selectPlot(u.id, false);
-            });
-            chipsContainer.appendChild(chip);
-          });
-          blockUnitsEl.appendChild(chipsContainer);
-        } else {
-          blockUnitsEl.style.display = 'none';
-        }
-      }
-    } else {
-      const blockUnitsEl = document.getElementById('card-block-units');
-      if (blockUnitsEl) blockUnitsEl.style.display = 'none';
-    }
+    // Hide block unit chips in card
+    const blockUnitsEl = document.getElementById('card-block-units');
+    if (blockUnitsEl) blockUnitsEl.style.display = 'none';
 
     // Highlight plot in SVG
     highlightPlot(plot.id);
@@ -1710,8 +1578,8 @@
     calculateAndDisplayRoute(state.startNodeId, plot.id);
 
     // Update House Info Card
-    const uLabel = currentLayout.unitType || 'House';
-    document.getElementById('card-house-num').textContent = `#${plot.number}`;
+    const isApt = isApartmentOrBlockLayout(currentLayout);
+    document.getElementById('card-house-num').textContent = isApt ? (plot.block || plot.number) : `#${plot.number}`;
     document.getElementById('card-road').textContent = plot.road;
     document.getElementById('card-block').textContent = plot.block;
     document.getElementById('card-facing').textContent = `${plot.facing} Facing`;
@@ -3097,18 +2965,22 @@
 
       this.state = 'ASKING_SPECIFIC_PLACE';
       const uLabel = targetLayout.unitType ? targetLayout.unitType.toLowerCase() : 'house';
+      const isApt = isApartmentOrBlockLayout(targetLayout);
 
-      const plotKeys = Object.keys(targetLayout.plots);
-      const samplePlots = plotKeys.slice(0, 3).map(k => targetLayout.plots[k]);
+      let sampleChips = [];
+      if (isApt) {
+        const blocks = [...new Set(Object.values(targetLayout.plots).map(p => p.block).filter(Boolean))];
+        sampleChips = blocks.slice(0, 3).map(b => ({ text: b, query: b }));
+      } else {
+        const plotKeys = Object.keys(targetLayout.plots);
+        sampleChips = plotKeys.slice(0, 3).map(k => ({ text: targetLayout.plots[k].number, query: targetLayout.plots[k].number }));
+      }
 
       let chips = [
         { text: "Yes", query: "Yes" },
-        { text: "Explore Map", query: "No" }
+        { text: "Explore Map", query: "No" },
+        ...sampleChips
       ];
-
-      samplePlots.forEach(p => {
-        chips.push({ text: p.number, query: p.number });
-      });
 
       this.addAiMessage({
         text: `<strong>${targetLayout.name}</strong> loaded. Looking for a specific ${uLabel}?`,
@@ -3459,16 +3331,22 @@
         showMapView(targetLayout.id);
 
         const uLabel = targetLayout.unitType ? targetLayout.unitType.toLowerCase() : 'house';
-        const plotKeys = Object.keys(targetLayout.plots);
-        const samplePlots = plotKeys.slice(0, 3).map(k => targetLayout.plots[k]);
+        const isApt = isApartmentOrBlockLayout(targetLayout);
+
+        let sampleChips = [];
+        if (isApt) {
+          const blocks = [...new Set(Object.values(targetLayout.plots).map(p => p.block).filter(Boolean))];
+          sampleChips = blocks.slice(0, 3).map(b => ({ text: b, query: b }));
+        } else {
+          const plotKeys = Object.keys(targetLayout.plots);
+          sampleChips = plotKeys.slice(0, 3).map(k => ({ text: targetLayout.plots[k].number, query: targetLayout.plots[k].number }));
+        }
 
         let chips = [
           { text: "Yes", query: "Yes" },
-          { text: "Explore Map", query: "No" }
+          { text: "Explore Map", query: "No" },
+          ...sampleChips
         ];
-        samplePlots.forEach(p => {
-          chips.push({ text: p.number, query: p.number });
-        });
 
         this.addAiMessage({
           text: `<strong>${targetLayout.name}</strong> loaded. Looking for a specific ${uLabel}?`,

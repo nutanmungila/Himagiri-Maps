@@ -938,17 +938,10 @@ body {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.45));
 }
 
-.svg-building-block.block-collapsed:hover .building-shell {
+.svg-building-block:hover .building-shell {
   stroke: #38bdf8 !important;
   stroke-width: 2.2 !important;
   filter: drop-shadow(0 6px 14px rgba(56, 189, 248, 0.35));
-}
-
-.svg-building-block.block-expanded .building-shell {
-  fill: #090e17;
-  stroke: #38bdf8 !important;
-  stroke-width: 2 !important;
-  filter: drop-shadow(0 8px 18px rgba(15, 23, 42, 0.65));
 }
 
 .svg-building-block.block-has-active .building-shell {
@@ -964,66 +957,11 @@ body {
   letter-spacing: 0.3px;
 }
 
-.building-click-prompt {
+.building-subtitle {
   user-select: none;
   pointer-events: none;
   font-family: 'Inter', -apple-system, sans-serif;
-  animation: promptPulse 2s infinite ease-in-out;
-}
-
-@keyframes promptPulse {
-  0%, 100% { opacity: 0.75; }
-  50% { opacity: 1; }
-}
-
-.building-collapse-btn {
-  user-select: none;
-  font-weight: 800;
-  transition: fill 0.2s;
-}
-
-.building-collapse-btn:hover {
-  fill: #ef4444 !important;
-}
-
-/* In-block Flat Number Tiles */
-.in-block-unit {
-  cursor: pointer;
-  transition: transform 0.15s ease;
-}
-
-.in-block-unit:hover {
-  transform: scale(1.08);
-  transform-origin: center;
-}
-
-.in-block-unit-rect {
-  transition: all 0.15s ease;
-}
-
-.in-block-unit:hover .in-block-unit-rect {
-  stroke: #38bdf8 !important;
-  stroke-width: 1.8 !important;
-  fill: #1e3a8a !important;
-}
-
-.in-block-unit-text {
-  pointer-events: none;
-  user-select: none;
-  font-family: 'Inter', -apple-system, sans-serif;
-  font-variant-numeric: tabular-nums;
-}
-
-.in-block-unit.active-unit-tile .in-block-unit-rect {
-  fill: #f59e0b !important;
-  stroke: #ffffff !important;
-  stroke-width: 2 !important;
-  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.9));
-}
-
-.in-block-unit.active-unit-tile .in-block-unit-text {
-  fill: #000000 !important;
-  font-weight: 800 !important;
+  letter-spacing: 0.2px;
 }
 
 @keyframes plotPulse {
