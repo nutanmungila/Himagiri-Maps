@@ -976,6 +976,21 @@
   // Layout Switcher: dynamically swaps active dataset, blueprints, roads & units
   function loadLayout(layoutId, targetPlotId = null) {
     if (!layouts[layoutId]) {
+      // Try dynamic fetch from MongoDB REST API if running on a server
+      if (window.location.protocol.startsWith('http')) {
+        fetch(`/api/layouts/${layoutId}`)
+          .then(res => res.ok ? res.json() : null)
+          .then(doc => {
+            if (doc && doc.plots) {
+              layouts[layoutId] = doc;
+              loadLayout(layoutId, targetPlotId);
+            } else {
+              console.warn("Layout not found in window.LAYOUTS or MongoDB:", layoutId);
+            }
+          })
+          .catch(() => console.warn("Layout not found:", layoutId));
+        return;
+      }
       console.warn("Layout not found in window.LAYOUTS:", layoutId);
       return;
     }
