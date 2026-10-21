@@ -2150,41 +2150,40 @@
       floatingAiBtn.addEventListener('click', () => aiAssistant.open());
     }
 
-    // Community Card & Button triggers across all layouts
-    document.querySelectorAll('.btn-open-himagiri, #portal-open-himagiri-btn').forEach(btn => {
-      btn.addEventListener('click', () => loadLayout('himagiri'));
-    });
-    document.querySelectorAll('.btn-ask-ai-himagiri').forEach(btn => {
-      btn.addEventListener('click', () => aiAssistant.openForLayout('himagiri'));
-    });
-
-    document.querySelectorAll('.btn-open-greenwood').forEach(btn => {
-      btn.addEventListener('click', () => loadLayout('greenwood'));
-    });
-    document.querySelectorAll('.btn-ask-ai-greenwood').forEach(btn => {
-      btn.addEventListener('click', () => aiAssistant.openForLayout('greenwood'));
-    });
-
-    document.querySelectorAll('.btn-open-tech-horizon').forEach(btn => {
-      btn.addEventListener('click', () => loadLayout('tech_horizon'));
-    });
-    document.querySelectorAll('.btn-ask-ai-tech-horizon').forEach(btn => {
-      btn.addEventListener('click', () => aiAssistant.openForLayout('tech_horizon'));
-    });
-
-    // Make whole card interactive if user clicks card body
-    const cardGw = document.getElementById('card-greenwood');
-    if (cardGw) {
-      cardGw.addEventListener('click', (e) => {
-        if (!e.target.closest('button')) loadLayout('greenwood');
+    // Portal Directory Live Search & Zone Filter Listeners
+    const dirSearchInput = document.getElementById('directory-search-input');
+    const dirClearBtn = document.getElementById('directory-clear-search');
+    if (dirSearchInput) {
+      dirSearchInput.addEventListener('input', (e) => {
+        currentDirectorySearch = e.target.value;
+        if (dirClearBtn) dirClearBtn.style.display = currentDirectorySearch ? 'flex' : 'none';
+        renderPortalDirectory(currentDirectoryZone, currentDirectorySearch);
       });
     }
-    const cardTh = document.getElementById('card-tech-horizon');
-    if (cardTh) {
-      cardTh.addEventListener('click', (e) => {
-        if (!e.target.closest('button')) loadLayout('tech_horizon');
+    if (dirClearBtn) {
+      dirClearBtn.addEventListener('click', () => {
+        if (dirSearchInput) {
+          dirSearchInput.value = '';
+          dirSearchInput.focus();
+        }
+        dirClearBtn.style.display = 'none';
+        currentDirectorySearch = '';
+        renderPortalDirectory(currentDirectoryZone, '');
       });
     }
+
+    const zoneTabs = document.querySelectorAll('.zone-tab');
+    zoneTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        zoneTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentDirectoryZone = tab.getAttribute('data-zone') || 'all';
+        renderPortalDirectory(currentDirectoryZone, currentDirectorySearch);
+      });
+    });
+
+    // Render portal directory with all 50+ layouts
+    renderPortalDirectory(currentDirectoryZone, currentDirectorySearch);
 
     // Dropdown change listeners
     startSelect.addEventListener('change', () => {
@@ -2403,6 +2402,207 @@
       .replace(/'/g, '&#039;');
   }
 
+  let currentDirectoryZone = 'all';
+  let currentDirectorySearch = '';
+
+  function renderPortalDirectory(filterZone = 'all', searchQuery = '') {
+    currentDirectoryZone = filterZone;
+    currentDirectorySearch = searchQuery;
+    const grid = document.getElementById('communities-grid');
+    if (!grid) return;
+
+    const q = searchQuery.toLowerCase().trim();
+    const layoutList = Object.values(layouts);
+
+    // Compute zone counts across all layouts
+    const counts = { all: layoutList.length, south: 0, whitefield: 0, ecity: 0, north: 0, west: 0 };
+    layoutList.forEach(lay => {
+      const z = lay.zone;
+      if (z === 'south') counts.south++;
+      else if (z === 'whitefield' || z === 'east') counts.whitefield++;
+      else if (z === 'ecity' || z === 'southeast') counts.ecity++;
+      else if (z === 'north') counts.north++;
+      else if (z === 'west' || z === 'central') counts.west++;
+    });
+
+    // Update tab count badges if elements exist
+    Object.keys(counts).forEach(k => {
+      const el = document.getElementById(`count-${k}`);
+      if (el) el.textContent = counts[k];
+    });
+
+    // Filter layouts according to active zone & search query
+    const filtered = layoutList.filter(lay => {
+      // Zone filter
+      if (filterZone !== 'all') {
+        if (filterZone === 'south' && lay.zone !== 'south') return false;
+        if (filterZone === 'whitefield' && lay.zone !== 'whitefield' && lay.zone !== 'east') return false;
+        if (filterZone === 'ecity' && lay.zone !== 'ecity' && lay.zone !== 'southeast') return false;
+        if (filterZone === 'north' && lay.zone !== 'north') return false;
+        if (filterZone === 'west' && lay.zone !== 'west' && lay.zone !== 'central') return false;
+      }
+
+      // Search query filter
+      if (q) {
+        const matchesName = lay.name.toLowerCase().includes(q);
+        const matchesLoc = lay.location.toLowerCase().includes(q);
+        const matchesType = (lay.type || '').toLowerCase().includes(q);
+        const matchesZone = (lay.zone || '').toLowerCase().includes(q);
+        if (!matchesName && !matchesLoc && !matchesType && !matchesZone) return false;
+      }
+      return true;
+    });
+
+    if (filtered.length === 0) {
+      grid.innerHTML = `
+        <div class="directory-no-results" style="grid-column: 1 / -1; text-align: center; padding: 48px 20px; color: #94a3b8;">
+          <div style="font-size: 38px; margin-bottom: 12px;">🔍</div>
+          <h3 style="color: #f1f5f9; font-size: 18px; margin-bottom: 8px;">No matching layouts found</h3>
+          <p style="font-size: 13.5px;">Try searching for another locality like "Whitefield", "Sarjapur", "Hebbal", "HSR", or "South".</p>
+          <button id="reset-directory-search-btn" class="btn btn-secondary" style="margin-top: 16px;">View All 50+ Layouts</button>
+        </div>
+      `;
+      const resetBtn = document.getElementById('reset-directory-search-btn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          const sInput = document.getElementById('directory-search-input');
+          if (sInput) sInput.value = '';
+          const clearBtn = document.getElementById('directory-clear-search');
+          if (clearBtn) clearBtn.style.display = 'none';
+          document.querySelectorAll('.zone-tab').forEach(t => t.classList.toggle('active', t.getAttribute('data-zone') === 'all'));
+          renderPortalDirectory('all', '');
+        });
+      }
+      return;
+    }
+
+    let cardsHtml = '';
+    filtered.forEach(lay => {
+      const uCount = Object.keys(lay.plots).length;
+      const uType = lay.unitType || 'Unit';
+      const amenCount = lay.amenities ? lay.amenities.length : 0;
+      const roadCount = lay.roads && lay.roads.nodes ? Object.keys(lay.roads.nodes).length : 0;
+
+      // Icon selector
+      let icon = '🏡';
+      const nameL = lay.name.toLowerCase();
+      const typeL = (lay.type || '').toLowerCase();
+      if (typeL.includes('villa') || nameL.includes('meadow') || nameL.includes('orchard') || nameL.includes('palm') || nameL.includes('valley')) icon = '🌳';
+      if (typeL.includes('tech') || typeL.includes('corporate') || nameL.includes('tech') || nameL.includes('tower') || nameL.includes('gateway')) icon = '🏢';
+      if (typeL.includes('golf') || nameL.includes('golf')) icon = '⛳';
+      if (nameL.includes('lake') || nameL.includes('habita')) icon = '🌊';
+      if (typeL.includes('apartment') || typeL.includes('high-rise')) icon = '🏙️';
+
+      // Badge
+      let badge = '🟢 Live Verified Layout';
+      if (typeL.includes('township') || nameL.includes('city')) badge = '🟢 Live Verified Township';
+      if (typeL.includes('campus') || nameL.includes('park')) badge = '🟢 Live Verified Campus';
+
+      // Description
+      let desc = '';
+      if (lay.id === 'himagiri') {
+        desc = "Premium 344-plot gated community with 8 tree-lined avenues, dual security gates, West & Central temples, children's park, and auditorium.";
+      } else if (lay.id === 'greenwood') {
+        desc = "Gated luxury villa community with 60 bespoke villas, Orchard Boulevard, Pine Court, Palm Drive, Grand Clubhouse, swimming pool, and lake promenade.";
+      } else if (lay.id === 'tech_horizon') {
+        desc = "Premier corporate IT campus featuring Towers A to D, 36 tech enterprise blocks, Central Innovation Boulevard, food plaza, and smart MLCP parking.";
+      } else {
+        desc = `${lay.type || 'Verified residential layout'} featuring ${uCount} ${uType.toLowerCase()}s, ${amenCount} community amenities, and verified turn-by-turn routing.`;
+      }
+
+      cardsHtml += `
+        <div class="community-card active-card" data-layout-id="${lay.id}">
+          <div class="card-badge live-badge">${badge}</div>
+          <div class="card-header">
+            <div class="community-avatar">${icon}</div>
+            <div>
+              <h3 class="community-name">${escapeHtml(lay.name)}</h3>
+              <p class="community-loc">${escapeHtml(lay.location)}</p>
+            </div>
+          </div>
+          <p class="community-desc">${escapeHtml(desc)}</p>
+          <div class="community-tags">
+            <span class="tag">📍 ${uCount} ${uType}s</span>
+            <span class="tag">🛣️ ${roadCount} Nodes</span>
+            <span class="tag">🛕 ${amenCount} Amenities</span>
+            <span class="tag">📡 Live GPS</span>
+          </div>
+          <div class="community-actions">
+            <button class="btn btn-primary btn-open-card-map" data-layout-id="${lay.id}" style="flex: 1.3;">
+              🗺️ Explore Map
+            </button>
+            <button class="btn btn-secondary btn-ask-card-ai" data-layout-id="${lay.id}" style="flex: 1;">
+              ✨ Ask AI Guide
+            </button>
+          </div>
+        </div>
+      `;
+    });
+
+    // Append Onboard Society Card at the end
+    cardsHtml += `
+      <div class="community-card onboard-card" id="card-onboard-society">
+        <div class="card-badge free-badge">Free Onboarding</div>
+        <div class="card-header">
+          <div class="community-avatar">📐</div>
+          <div>
+            <h3 class="community-name">Onboard Your Community</h3>
+            <p class="community-loc">Residential Societies • Campuses</p>
+          </div>
+        </div>
+        <p class="community-desc">
+          Have a physical layout board or blueprint photo? Turn it into a smart, GPS-enabled digital map with turn-by-turn AI wayfinding for your residents and delivery visitors.
+        </p>
+        <div class="community-tags">
+          <span class="tag">⚡ 24hr Digitization</span>
+          <span class="tag">🧭 AI Navigator</span>
+          <span class="tag">📱 Instant PWA</span>
+        </div>
+        <div class="community-actions">
+          <button id="btn-onboard-society" class="btn btn-primary" style="width: 100%;">
+            🚀 Submit Layout Blueprint
+          </button>
+        </div>
+      </div>
+    `;
+
+    grid.innerHTML = cardsHtml;
+
+    // Attach event listeners to card buttons
+    grid.querySelectorAll('.btn-open-card-map').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const lid = btn.getAttribute('data-layout-id');
+        loadLayout(lid);
+      });
+    });
+
+    grid.querySelectorAll('.btn-ask-card-ai').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const lid = btn.getAttribute('data-layout-id');
+        aiAssistant.openForLayout(lid);
+      });
+    });
+
+    // Make whole card clickable (except buttons)
+    grid.querySelectorAll('.community-card.active-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('button')) return;
+        const lid = card.getAttribute('data-layout-id');
+        if (lid) loadLayout(lid);
+      });
+    });
+
+    const onboardBtn = document.getElementById('btn-onboard-society');
+    if (onboardBtn) {
+      onboardBtn.addEventListener('click', () => {
+        const modal = document.getElementById('onboard-modal');
+        if (modal) modal.style.display = 'flex';
+      });
+    }
+  }
+
   function showPortalView() {
     const portal = document.getElementById('portal-view');
     const mapApp = document.getElementById('app-container');
@@ -2422,6 +2622,7 @@
     if (brandSub) brandSub.textContent = 'Smart Layout & Community Wayfinding';
     if (brandIcon) brandIcon.textContent = '🌐';
 
+    renderPortalDirectory(currentDirectoryZone, currentDirectorySearch);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -2471,12 +2672,14 @@
       const messagesContainer = document.getElementById('ai-chat-messages');
       if (messagesContainer && messagesContainer.children.length === 0) {
         this.addAiMessage({
-          text: "Hello! I am your <strong>HM Maps AI Navigator</strong> 🧭.<br>I know every real layout, villa, plot, corporate block, and road in Bangalore.<br><br>Where would you like to go today?",
+          text: "Hello! I am your <strong>HM Maps AI Navigator</strong> 🧭.<br>I know 50+ real residential layouts, villas, plots, corporate blocks, and avenues across Bangalore.<br><br>Where would you like to go today?",
           chips: [
             { text: "🧭 Where do I go?", query: "Where do I go?" },
-            { text: "🏡 Himagiri Meadows (South)", query: "Himagiri Meadows" },
-            { text: "🌳 Greenwood Orchards (East)", query: "Greenwood Orchards" },
-            { text: "🏢 Tech Horizon (Electronic City)", query: "Tech Horizon Campus" },
+            { text: "🌳 Whitefield & East", query: "Layouts in Whitefield" },
+            { text: "🏡 South Bangalore", query: "Layouts in South Bangalore" },
+            { text: "🏢 Electronic City & ORR", query: "Layouts in Electronic City" },
+            { text: "✈️ North Bangalore", query: "Layouts in North Bangalore" },
+            { text: "🏛️ Central & West", query: "Layouts in Central Bangalore" },
             { text: "📡 Live GPS Tracking", query: "Track live location" }
           ]
         });
@@ -2499,32 +2702,25 @@
       this.state = 'ASKING_SPECIFIC_PLACE';
       const uLabel = targetLayout.unitType ? targetLayout.unitType.toLowerCase() : 'house';
 
-      let chips = [];
-      if (layoutId === 'himagiri') {
-        chips = [
-          { text: "✅ Yes, a specific plot", query: "Yes" },
-          { text: "🌿 No, explore layout", query: "No" },
-          { text: "Plot 142", query: "Plot 142" },
-          { text: "🛕 West Temple", query: "West Temple" }
-        ];
-      } else if (layoutId === 'greenwood') {
-        chips = [
-          { text: "✅ Yes, a specific villa", query: "Yes" },
-          { text: "🌿 No, explore layout", query: "No" },
-          { text: "Villa 24", query: "Villa 24" },
-          { text: "🏊 Grand Clubhouse", query: "Clubhouse" }
-        ];
-      } else if (layoutId === 'tech_horizon') {
-        chips = [
-          { text: "✅ Yes, a specific block/tower", query: "Yes" },
-          { text: "🌿 No, explore campus", query: "No" },
-          { text: "Tower A1", query: "Tower A1" },
-          { text: "🍽️ Food Plaza", query: "Food Plaza" }
-        ];
+      const plotKeys = Object.keys(targetLayout.plots);
+      const samplePlots = plotKeys.slice(0, 3).map(k => targetLayout.plots[k]);
+      const sampleAmenity = targetLayout.amenities && targetLayout.amenities.length > 0 ? targetLayout.amenities[0] : null;
+
+      let chips = [
+        { text: `✅ Yes, a specific ${uLabel}`, query: "Yes" },
+        { text: `🌿 No, explore full layout`, query: "No" }
+      ];
+
+      samplePlots.forEach(p => {
+        chips.push({ text: `${targetLayout.unitType || 'Unit'} #${p.number}`, query: `${targetLayout.unitType || 'Unit'} ${p.number}` });
+      });
+
+      if (sampleAmenity) {
+        chips.push({ text: `📍 ${sampleAmenity.name}`, query: sampleAmenity.name });
       }
 
       this.addAiMessage({
-        text: `Welcome to <strong>${targetLayout.name}</strong> (${targetLayout.location})! 📍<br><br><strong>Are you trying to go to a specific ${uLabel} or place?</strong>`,
+        text: `Welcome to <strong>${targetLayout.name}</strong> (${targetLayout.location})! 📍<br>${plotKeys.length} ${uLabel}s, ${targetLayout.amenities?.length || 0} community amenities.<br><br><strong>Are you trying to go to a specific ${uLabel} or place?</strong>`,
         chips: chips
       });
     },
@@ -2625,35 +2821,12 @@
         if (/^(yes|yeah|yep|y|sure|true|definitely|specific|correct|of course|i do|i am)/i.test(lower) || lower.includes('yes') || lower.includes('specific')) {
           this.state = 'ASKING_HOUSE_NUMBER';
 
-          let chips = [];
-          if (targetLayout.id === 'himagiri') {
-            chips = [
-              { text: "Plot 142", query: "Plot 142" },
-              { text: "Plot 55", query: "Plot 55" },
-              { text: "Plot 250", query: "Plot 250" },
-              { text: "Plot 318", query: "Plot 318" },
-              { text: "Plot 77", query: "Plot 77" },
-              { text: "Plot 35/36", query: "Plot 35/36" }
-            ];
-          } else if (targetLayout.id === 'greenwood') {
-            chips = [
-              { text: "Villa 12", query: "Villa 12" },
-              { text: "Villa 24", query: "Villa 24" },
-              { text: "Villa 45", query: "Villa 45" },
-              { text: "Villa 5", query: "Villa 5" },
-              { text: "Villa 36", query: "Villa 36" },
-              { text: "Villa 60", query: "Villa 60" }
-            ];
-          } else if (targetLayout.id === 'tech_horizon') {
-            chips = [
-              { text: "Tower A1", query: "Tower A1" },
-              { text: "Tower B2", query: "Tower B2" },
-              { text: "Block 102", query: "Block 102" },
-              { text: "Block 205", query: "Block 205" },
-              { text: "Block 304", query: "Block 304" },
-              { text: "Tower D4", query: "Tower D4" }
-            ];
-          }
+          const plotKeys = Object.keys(targetLayout.plots);
+          const samplePlots = plotKeys.slice(0, 6).map(k => targetLayout.plots[k]);
+          const chips = samplePlots.map(p => ({
+            text: `${targetLayout.unitType || 'Unit'} #${p.number}`,
+            query: `${targetLayout.unitType || 'Unit'} ${p.number}`
+          }));
 
           this.addAiMessage({
             text: `Which <strong>${targetLayout.unitType || 'house'} or room number</strong> are you looking for in <strong>${targetLayout.name}</strong>?`,
@@ -2681,24 +2854,28 @@
 
       // Conversational State Machine: SELECTING_LAYOUT
       if (this.state === 'SELECTING_LAYOUT') {
-        let chosenId = null;
-        if (lower.includes('himagiri') || lower.includes('south') || lower.includes('bannerghatta')) chosenId = 'himagiri';
-        else if (lower.includes('greenwood') || lower.includes('east') || lower.includes('sarjapur') || lower.includes('orchard')) chosenId = 'greenwood';
-        else if (lower.includes('tech') || lower.includes('horizon') || lower.includes('electronic') || lower.includes('campus')) chosenId = 'tech_horizon';
-
-        if (chosenId && layouts[chosenId]) {
-          this.chosenLayoutId = chosenId;
-          const targetLayout = layouts[chosenId];
-          this.state = 'ASKING_SPECIFIC_PLACE';
-
-          this.addAiMessage({
-            text: `Selected <strong>${targetLayout.name}</strong> in ${targetLayout.location}! 🗺️<br><br><strong>Are you trying to go to a specific ${targetLayout.unitType ? targetLayout.unitType.toLowerCase() : 'place'} or house?</strong>`,
-            chips: [
-              { text: `✅ Yes, a specific ${targetLayout.unitType || 'house'}`, query: "Yes" },
+        for (const [lid, lay] of Object.entries(layouts)) {
+          const lName = lay.name.toLowerCase();
+          const cleanName = lName.replace(/layout|phase|stage|block|residency|campus|homes|apartments|villas|city/g, '').trim();
+          if (lower.includes(lName) || (cleanName.length >= 3 && lower.includes(cleanName))) {
+            this.chosenLayoutId = lid;
+            this.state = 'ASKING_SPECIFIC_PLACE';
+            const uLabel = lay.unitType ? lay.unitType.toLowerCase() : 'house';
+            const plotKeys = Object.keys(lay.plots);
+            const samplePlots = plotKeys.slice(0, 3).map(k => lay.plots[k]);
+            const chips = [
+              { text: `✅ Yes, a specific ${uLabel}`, query: "Yes" },
               { text: `🌿 No, explore full layout`, query: "No" }
-            ]
-          });
-          return;
+            ];
+            samplePlots.forEach(p => {
+              chips.push({ text: `${lay.unitType || 'Unit'} #${p.number}`, query: `${lay.unitType || 'Unit'} ${p.number}` });
+            });
+            this.addAiMessage({
+              text: `Selected <strong>${lay.name}</strong> in ${lay.location}! 🗺️<br>${plotKeys.length} ${uLabel}s, ${lay.amenities?.length || 0} amenities.<br><br><strong>Are you trying to go to a specific ${uLabel} or house?</strong>`,
+              chips: chips
+            });
+            return;
+          }
         }
       }
 
@@ -2709,14 +2886,39 @@
         return;
       }
 
-      // Detect direct Area queries ("where to go in Bangalore South", "Sarjapur", "Electronic City", etc.)
-      const isSouthQuery = lower.includes('south') || lower.includes('bannerghatta');
-      const isEastQuery = lower.includes('east') || lower.includes('sarjapur') || lower.includes('carmelaram');
-      const isEcityQuery = lower.includes('electronic city') || lower.includes('e-city') || lower.includes('ecity') || lower.includes('tech park');
+      // Check if user asks about a specific layout name directly
+      for (const [lid, lay] of Object.entries(layouts)) {
+        const lName = lay.name.toLowerCase();
+        const cleanName = lName.replace(/layout|phase|stage|block|residency|campus|homes|apartments|villas|city/g, '').trim();
+        if (lower.includes(lName) || (cleanName.length >= 4 && lower.includes(cleanName))) {
+          this.chosenLayoutId = lid;
+          this.state = 'ASKING_SPECIFIC_PLACE';
+          const uLabel = lay.unitType ? lay.unitType.toLowerCase() : 'house';
+          const plotKeys = Object.keys(lay.plots);
+          const samplePlots = plotKeys.slice(0, 3).map(k => lay.plots[k]);
+          const chips = [
+            { text: `✅ Yes, a specific ${uLabel}`, query: "Yes" },
+            { text: `🌿 No, explore full layout`, query: "No" }
+          ];
+          samplePlots.forEach(p => {
+            chips.push({ text: `${lay.unitType || 'Unit'} #${p.number}`, query: `${lay.unitType || 'Unit'} ${p.number}` });
+          });
+          this.addAiMessage({
+            text: `Welcome to <strong>${lay.name}</strong> (${lay.location})! 📍<br>${plotKeys.length} ${uLabel}s, ${lay.amenities?.length || 0} community amenities.<br><br><strong>Are you trying to go to a specific ${uLabel} or place?</strong>`,
+            chips: chips
+          });
+          return;
+        }
+      }
 
-      // General "Where do I go?" / Area discovery query
-      if (
-        lower.includes('where do i go') ||
+      // Area queries: "Where do I go?", "where should i go in whitefield", "layouts in south", etc.
+      const isSouth = lower.includes('south') || lower.includes('bannerghatta') || lower.includes('kanakapura') || lower.includes('jp nagar') || lower.includes('jayanagar') || lower.includes('btm') || lower.includes('meenakshi');
+      const isEast = lower.includes('whitefield') || lower.includes('sarjapur') || lower.includes('east') || lower.includes('varthur') || lower.includes('marathahalli') || lower.includes('carmelaram');
+      const isEcity = lower.includes('electronic city') || lower.includes('ecity') || lower.includes('e-city') || lower.includes('hsr') || lower.includes('bellandur') || lower.includes('orr') || lower.includes('outer ring road') || lower.includes('green glen');
+      const isNorth = lower.includes('north') || lower.includes('hebbal') || lower.includes('manyata') || lower.includes('yelahanka') || lower.includes('airport') || lower.includes('jakkur') || lower.includes('sahakara');
+      const isWest = lower.includes('central') || lower.includes('west') || lower.includes('koramangala') || lower.includes('indiranagar') || lower.includes('malleswaram') || lower.includes('rajajinagar') || lower.includes('sadashivanagar') || lower.includes('banashankari') || lower.includes('vijayanagar') || lower.includes('peenya');
+
+      const isAreaDiscovery = lower.includes('where do i go') ||
         lower.includes('where to go') ||
         lower.includes('how do i navigate') ||
         lower.includes('where should i go') ||
@@ -2724,108 +2926,134 @@
         lower.includes('show layout') ||
         lower.includes('show me layout') ||
         lower.includes('tell me the location') ||
+        lower.includes('layouts in') ||
+        lower.includes('layout in') ||
         lower === 'navigate' ||
         lower === 'layout' ||
-        lower === 'layouts'
-      ) {
-        if (isSouthQuery) {
-          this.chosenLayoutId = 'himagiri';
-          this.state = 'ASKING_SPECIFIC_PLACE';
+        lower === 'layouts' ||
+        isSouth || isEast || isEcity || isNorth || isWest;
+
+      if (isAreaDiscovery) {
+        if (isSouth) {
+          this.state = 'SELECTING_LAYOUT';
           this.addAiMessage({
-            text: `In <strong>Bangalore South (Bannerghatta Road)</strong>, we have <strong>Himagiri Meadows</strong> 🏡.<br>A premier gated community featuring 344 residential plots, 8 tree-lined avenues, 2 entry gates, central park, and children's play area.<br><br><strong>Are you trying to go to a specific plot in Himagiri Meadows?</strong>`,
+            text: `Here are the top residential layouts in <strong>Bangalore South</strong> (Bannerghatta, Kanakapura, JP Nagar & Jayanagar): 🏡<br><br>
+• <strong>Himagiri Meadows</strong> — 344 residential plots, 8 avenues, 2 gates & temples<br>
+• <strong>Brigade Meadows</strong> — 48 units, Kanakapura Road township<br>
+• <strong>Mantri Tranquil</strong> — 48 units, Gubbalala vicinity<br>
+• <strong>Concorde Napa Valley</strong> — 44 luxury villas, Kanakapura corridor<br>
+• <strong>JP Nagar 7th Phase & 2nd Phase</strong> — Premier BDA residential layouts<br>
+• <strong>Jayanagar 4th & 9th Block</strong> — Historic, prestigious South Bangalore layouts<br><br>
+<strong>Which layout would you like to explore, or are you trying to go to a specific house?</strong>`,
             chips: [
-              { text: "✅ Yes, a specific plot", query: "Yes" },
-              { text: "🌿 No, explore full layout", query: "No" },
-              { text: "🚪 Gate 1 Entry", query: "Gate 1" },
-              { text: "🛕 West Temple", query: "West Temple" }
+              { text: "🏡 Himagiri Meadows", query: "Himagiri Meadows" },
+              { text: "🌳 Brigade Meadows", query: "Brigade Meadows" },
+              { text: "✨ Mantri Tranquil", query: "Mantri Tranquil" },
+              { text: "🍇 Concorde Napa Valley", query: "Concorde Napa Valley" },
+              { text: "📍 JP Nagar 7th Phase", query: "JP Nagar 7th Phase" }
             ]
           });
           return;
-        } else if (isEastQuery) {
-          this.chosenLayoutId = 'greenwood';
-          this.state = 'ASKING_SPECIFIC_PLACE';
+        } else if (isEast) {
+          this.state = 'SELECTING_LAYOUT';
           this.addAiMessage({
-            text: `In <strong>Bangalore East (Sarjapur / Carmelaram)</strong>, we have <strong>Greenwood Orchards</strong> 🌳.<br>An exclusive private community of 60 bespoke luxury villas, Orchard Boulevard, Pine Court, Grand Clubhouse, swimming pool, and lake promenade.<br><br><strong>Are you trying to go to a specific villa in Greenwood Orchards?</strong>`,
+            text: `Here are the top residential layouts in <strong>East Bangalore & Whitefield</strong>: 🌳<br><br>
+• <strong>Palm Meadows</strong> — 44 luxury villas, Varthur Main Road<br>
+• <strong>Prestige Lakeside Habitat</strong> — 48 units, Varthur Lake township<br>
+• <strong>Greenwood Orchards</strong> — 60 bespoke villas, Sarjapur Road<br>
+• <strong>Prestige Shantiniketan</strong> — 44 high-rise units, ITPL Main Road<br>
+• <strong>Rainbow Drive</strong> — 44 gated villas, Sarjapur Road<br>
+• <strong>Divyasree Republic of Whitefield</strong> — 44 units, EPIP Zone<br><br>
+<strong>Which layout would you like to explore, or are you looking for a specific villa/apartment?</strong>`,
             chips: [
-              { text: "✅ Yes, a specific villa", query: "Yes" },
-              { text: "🌿 No, explore full layout", query: "No" },
-              { text: "🏊 Grand Clubhouse", query: "Clubhouse" },
-              { text: "🌊 Lake Promenade", query: "Lake Promenade" }
+              { text: "🌳 Palm Meadows", query: "Palm Meadows" },
+              { text: "🌊 Prestige Lakeside", query: "Prestige Lakeside Habitat" },
+              { text: "🏡 Greenwood Orchards", query: "Greenwood Orchards" },
+              { text: "🏢 Prestige Shantiniketan", query: "Prestige Shantiniketan" },
+              { text: "🌈 Rainbow Drive", query: "Rainbow Drive" }
             ]
           });
           return;
-        } else if (isEcityQuery) {
-          this.chosenLayoutId = 'tech_horizon';
-          this.state = 'ASKING_SPECIFIC_PLACE';
+        } else if (isEcity) {
+          this.state = 'SELECTING_LAYOUT';
           this.addAiMessage({
-            text: `In <strong>Electronic City Phase 1</strong>, we have <strong>Tech Horizon Campus</strong> 🏢.<br>A premier corporate tech park featuring 36 enterprise blocks and towers (Towers A–D, Blocks 101–310), Innovation Boulevard, Food Plaza, and Multi-Level Car Parking.<br><br><strong>Are you trying to go to a specific tower or block in Tech Horizon?</strong>`,
+            text: `Here are the top layouts in <strong>Electronic City, HSR & Outer Ring Road (ORR)</strong>: 🏢<br><br>
+• <strong>Tech Horizon Campus</strong> — 36 enterprise blocks & tech towers, Electronic City Phase 1<br>
+• <strong>Adarsh Palm Retreat</strong> — 44 luxury villas, Bellandur ORR corridor<br>
+• <strong>HSR Layout Sectors 1, 2 & 3</strong> — Premier planned residential sectors<br>
+• <strong>Green Glen Layout</strong> — 40 units, Bellandur tech hub<br>
+• <strong>Neotown Electronic City</strong> — 44 units, Electronic City Phase 1<br><br>
+<strong>Which layout or campus are you trying to visit?</strong>`,
             chips: [
-              { text: "✅ Yes, a specific block/tower", query: "Yes" },
-              { text: "🌿 No, explore campus", query: "No" },
-              { text: "🍽️ Food Plaza", query: "Food Plaza" },
-              { text: "🅿️ Smart MLCP", query: "Smart MLCP" }
+              { text: "🏢 Tech Horizon Campus", query: "Tech Horizon Campus" },
+              { text: "🌴 Adarsh Palm Retreat", query: "Adarsh Palm Retreat" },
+              { text: "📍 HSR Layout Sector 1", query: "HSR Layout Sector 1" },
+              { text: "🌿 Green Glen Layout", query: "Green Glen Layout" },
+              { text: "🏙️ Neotown Electronic City", query: "Neotown Electronic City" }
+            ]
+          });
+          return;
+        } else if (isNorth) {
+          this.state = 'SELECTING_LAYOUT';
+          this.addAiMessage({
+            text: `Here are the top residential layouts in <strong>North Bangalore & Airport Corridor</strong>: ✈️<br><br>
+• <strong>Sobha City</strong> — 48 units, Thanisandra Main Road luxury township<br>
+• <strong>Bhartiya City Nikoo Homes</strong> — 48 units, integrated smart city<br>
+• <strong>Manyata Tech Park Residency</strong> — 44 units, Nagavara IT corridor<br>
+• <strong>Prestige Golfshire</strong> — 40 signature golf villas, Nandi Hills road<br>
+• <strong>Ozone Urbana</strong> — 44 units, Devanahalli airport township<br>
+• <strong>RMZ Galleria & Prestige Misty Waters</strong> — Hebbal lake vicinity<br><br>
+<strong>Which North Bangalore township would you like to explore?</strong>`,
+            chips: [
+              { text: "🏙️ Sobha City", query: "Sobha City" },
+              { text: "🌆 Bhartiya City", query: "Bhartiya City Nikoo Homes" },
+              { text: "🏢 Manyata Residency", query: "Manyata Tech Park Residency" },
+              { text: "⛳ Prestige Golfshire", query: "Prestige Golfshire" },
+              { text: "✈️ Ozone Urbana", query: "Ozone Urbana" }
+            ]
+          });
+          return;
+        } else if (isWest) {
+          this.state = 'SELECTING_LAYOUT';
+          this.addAiMessage({
+            text: `Here are the top layouts in <strong>Central & West Bangalore</strong>: 🏛️<br><br>
+• <strong>Koramangala 4th & 3rd Block</strong> — Bangalore's most prestigious central layouts<br>
+• <strong>Indiranagar Defence Colony & HAL 2nd Stage</strong> — Iconic East-Central neighborhoods<br>
+• <strong>Brigade Gateway</strong> — 44 units, Rajajinagar landmark township<br>
+• <strong>Sadashivanagar Royal Layout</strong> — Premier elite residential enclave<br>
+• <strong>Malleswaram 18th Cross</strong> — Historic heritage layout<br>
+• <strong>Banashankari 3rd Stage & Vijayanagar BDA</strong> — Major West Bangalore layouts<br><br>
+<strong>Which layout would you like to explore?</strong>`,
+            chips: [
+              { text: "☕ Koramangala 4th Block", query: "Koramangala 4th Block" },
+              { text: "🌳 Indiranagar Defence Colony", query: "Indiranagar Defence Colony" },
+              { text: "🏢 Brigade Gateway", query: "Brigade Gateway" },
+              { text: "👑 Sadashivanagar", query: "Sadashivanagar Royal Layout" },
+              { text: "🌺 Malleswaram 18th Cross", query: "Malleswaram 18th Cross" }
             ]
           });
           return;
         } else {
-          // General city-wide area overview:
+          // General citywide
           this.state = 'SELECTING_LAYOUT';
           this.addAiMessage({
-            text: `Here are the active layout locations in our digital system: 🗺️<br><br>• 📍 <strong>Bangalore South (Bannerghatta Road)</strong>: <strong>Himagiri Meadows</strong> — 344 residential plots, 8 avenues, central park & temple.<br>• 📍 <strong>Bangalore East (Sarjapur / Carmelaram)</strong>: <strong>Greenwood Orchards</strong> — 60 luxury villas, grand clubhouse, swimming pool & lake promenade.<br>• 📍 <strong>Electronic City Phase 1</strong>: <strong>Tech Horizon Campus</strong> — 36 corporate blocks, Towers A–D, food plaza & innovation boulevards.<br><br><strong>Which layout area would you like to explore, or are you trying to go to a specific place?</strong>`,
+            text: `Welcome to HM Maps! We have <strong>53 verified layouts & townships</strong> across all 5 zones of Bangalore: 🗺️<br><br>
+• 🏡 <strong>South</strong>: Himagiri Meadows, Brigade Meadows, Mantri Tranquil, JP Nagar<br>
+• 🌳 <strong>Whitefield & East</strong>: Palm Meadows, Prestige Lakeside Habitat, Greenwood Orchards<br>
+• 🏢 <strong>Electronic City & ORR</strong>: Tech Horizon Campus, Adarsh Palm Retreat, HSR Layout<br>
+• ✈️ <strong>North Bangalore</strong>: Sobha City, Bhartiya City Nikoo Homes, Prestige Golfshire<br>
+• 🏛️ <strong>Central & West</strong>: Koramangala 4th Block, Indiranagar Defence Colony, Brigade Gateway<br><br>
+<strong>Which area or layout are you trying to visit?</strong>`,
             chips: [
               { text: "🏡 Himagiri Meadows (South)", query: "Himagiri Meadows" },
-              { text: "🌳 Greenwood Orchards (East)", query: "Greenwood Orchards" },
-              { text: "🏢 Tech Horizon (Electronic City)", query: "Tech Horizon Campus" }
+              { text: "🌳 Palm Meadows (Whitefield)", query: "Palm Meadows" },
+              { text: "🏢 Tech Horizon (Electronic City)", query: "Tech Horizon Campus" },
+              { text: "✈️ Sobha City (North)", query: "Sobha City" },
+              { text: "☕ Koramangala (Central)", query: "Koramangala 4th Block" }
             ]
           });
           return;
         }
-      }
-
-      // Check if user specifically named a layout
-      if (lower.includes('greenwood') || lower.includes('orchard')) {
-        this.chosenLayoutId = 'greenwood';
-        const targetLayout = layouts.greenwood;
-        this.state = 'ASKING_SPECIFIC_PLACE';
-        this.addAiMessage({
-          text: `Welcome to <strong>Greenwood Orchards</strong> (Sarjapur / Bangalore East)! 🌳<br>60 luxury villas, clubhouse, pool, and lake promenade.<br><br><strong>Are you trying to go to a specific villa or place in Greenwood?</strong>`,
-          chips: [
-            { text: "✅ Yes, a specific villa", query: "Yes" },
-            { text: "🌿 No, explore full layout", query: "No" },
-            { text: "🏊 Grand Clubhouse", query: "Clubhouse" }
-          ]
-        });
-        return;
-      }
-
-      if (lower.includes('tech horizon') || lower.includes('horizon campus')) {
-        this.chosenLayoutId = 'tech_horizon';
-        const targetLayout = layouts.tech_horizon;
-        this.state = 'ASKING_SPECIFIC_PLACE';
-        this.addAiMessage({
-          text: `Welcome to <strong>Tech Horizon Campus</strong> (Electronic City Phase 1)! 🏢<br>36 enterprise blocks and towers, food plaza, MLCP parking.<br><br><strong>Are you trying to go to a specific block, tower, or room?</strong>`,
-          chips: [
-            { text: "✅ Yes, a specific block/tower", query: "Yes" },
-            { text: "🌿 No, explore campus", query: "No" },
-            { text: "🍽️ Food Plaza", query: "Food Plaza" }
-          ]
-        });
-        return;
-      }
-
-      if (lower.includes('himagiri') || lower.includes('meadows')) {
-        this.chosenLayoutId = 'himagiri';
-        const targetLayout = layouts.himagiri;
-        this.state = 'ASKING_SPECIFIC_PLACE';
-        this.addAiMessage({
-          text: `Welcome to <strong>Himagiri Meadows</strong> (Bannerghatta Road, Bangalore South)! 🏡<br>344 residential plots across 8 avenues, 2 gates, and central parks.<br><br><strong>Are you trying to go to a specific plot or house?</strong>`,
-          chips: [
-            { text: "✅ Yes, a specific plot", query: "Yes" },
-            { text: "🌿 No, explore full layout", query: "No" },
-            { text: "Plot 142", query: "Plot 142" }
-          ]
-        });
-        return;
       }
 
       // UNIT LOOKUP: Check in chosen layout first, then active layout, then all layouts
@@ -2915,12 +3143,13 @@
 
       // Fallback
       this.addAiMessage({
-        text: `I'm here to guide you across all layouts! 🧭<br><br>You can ask me:<br>• <strong>'Where do I go?'</strong> (to view layouts in Bangalore South, East, and Electronic City)<br>• A house or villa number like <strong>'Plot 142'</strong>, <strong>'Villa 24'</strong>, or <strong>'Tower A1'</strong><br>• Society landmarks like <strong>'Grand Clubhouse'</strong>, <strong>'Food Plaza'</strong>, or <strong>'Temple'</strong>`,
+        text: `I'm here to guide you across 50+ layouts in Bangalore! 🧭<br><br>You can ask me:<br>• <strong>'Where do I go?'</strong> (to view layouts in Whitefield, South, Electronic City, North, or Central)<br>• A specific layout like <strong>'Palm Meadows'</strong>, <strong>'Sobha City'</strong>, <strong>'HSR Layout'</strong>, or <strong>'Himagiri'</strong><br>• A house/villa number like <strong>'Plot 142'</strong>, <strong>'Villa 24'</strong>, or <strong>'Tower A1'</strong><br>• Society landmarks like <strong>'Grand Clubhouse'</strong>, <strong>'Food Plaza'</strong>, or <strong>'Temple'</strong>`,
         chips: [
           { text: "🧭 Where do I go?", query: "Where do I go?" },
-          { text: "🏡 Himagiri Meadows", query: "Himagiri Meadows" },
-          { text: "🌳 Greenwood Orchards", query: "Greenwood Orchards" },
-          { text: "🏢 Tech Horizon Campus", query: "Tech Horizon Campus" }
+          { text: "🌳 Palm Meadows (Whitefield)", query: "Palm Meadows" },
+          { text: "🏡 Himagiri Meadows (South)", query: "Himagiri Meadows" },
+          { text: "🏢 Tech Horizon (Electronic City)", query: "Tech Horizon Campus" },
+          { text: "✈️ Sobha City (North)", query: "Sobha City" }
         ]
       });
     }
@@ -2947,12 +3176,6 @@
       showPortalView();
     }
   }
-
-  // Initialize on DOM load
-  document.addEventListener('DOMContentLoaded', () => {
-    initMap();
-    setupEventListeners();
-  });
 
   // Initialize on DOM load
   document.addEventListener('DOMContentLoaded', () => {

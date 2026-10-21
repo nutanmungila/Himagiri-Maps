@@ -1762,6 +1762,125 @@ body.big-labels .road-label {
   margin-top: 4px;
 }
 
+/* Directory Search & Zone Filter Controls */
+.directory-controls {
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.directory-search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.directory-search-wrapper .search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: #64748b;
+  pointer-events: none;
+}
+
+.directory-search-input {
+  width: 100%;
+  padding: 13px 44px 13px 46px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  color: #ffffff;
+  font-size: 14.5px;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+}
+
+.directory-search-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2), 0 8px 24px -4px rgba(0, 0, 0, 0.4);
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.directory-search-input::placeholder {
+  color: #64748b;
+}
+
+.directory-clear-btn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #94a3b8;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.directory-clear-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.directory-zone-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.directory-zone-tabs::-webkit-scrollbar {
+  height: 4px;
+}
+.directory-zone-tabs::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+.zone-tab {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  padding: 8px 14px;
+  border-radius: 9999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: inherit;
+}
+
+.zone-tab:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #f1f5f9;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.zone-tab.active {
+  background: #6366f1;
+  color: #ffffff;
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+}
+
 .communities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
