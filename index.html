@@ -32,13 +32,13 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
   <script>
     // Aggressively purge older PWA caches so updates show instantly
     if ('caches' in window) {
       caches.keys().then(function(names) {
         for (let name of names) {
-          if (name !== 'himagiri-map-v6') {
+          if (name !== 'himagiri-map-v7') {
             caches.delete(name);
           }
         }
@@ -74,11 +74,11 @@
       <button id="analytics-btn" class="btn btn-secondary" title="View Usage Analytics & Community Stats">
         <span>📊</span> Stats
       </button>
-      <button id="android-connect-btn" class="btn btn-primary">
-        <span>📲</span> Connect Phone
+      <button id="android-connect-btn" class="btn btn-primary" title="Install App on Phone">
+        <span>📲</span> <span class="btn-text-full">Connect Phone</span><span class="btn-text-mobile">App</span>
       </button>
-      <button id="view-original-btn" class="btn btn-secondary">
-        <span>📷</span> View Original
+      <button id="view-original-btn" class="btn btn-secondary" title="View Master Blueprint Board">
+        <span>📷</span> <span class="btn-text-full">View Original</span><span class="btn-text-mobile">Board</span>
       </button>
     </div>
   </header>
@@ -435,9 +435,9 @@
   </div>
 
   <!-- Load Scripts with Version Cache-Buster -->
-  <script src="analytics.js?v=6"></script>
-  <script src="qrcode.min.js?v=6"></script>
-  <script src="map_data.js?v=6"></script>
-  <script src="app.js?v=6"></script>
+  <script src="analytics.js?v=7"></script>
+  <script src="qrcode.min.js?v=7"></script>
+  <script src="map_data.js?v=7"></script>
+  <script src="app.js?v=7"></script>
 </body>
 </html>

@@ -1334,9 +1334,8 @@
     });
 
     document.getElementById('zoom-fit-btn').addEventListener('click', () => {
-      isOverviewMode = !isOverviewMode;
-      fitMapToView(isOverviewMode);
-      showToast(isOverviewMode ? "Overview: Entire Layout 🗺️" : "Zoomed: Community Hub View 🔍", 2000);
+      fitMapToView(true);
+      showToast("Reset: Entire Layout Overview 🗺️", 2000);
     });
 
     document.getElementById('focus-gate1-btn').addEventListener('click', () => {
@@ -1411,45 +1410,35 @@
 
   function fitMapToView(forceFullFit = false) {
     const viewportDiv = document.querySelector('.map-viewport');
+    if (!viewportDiv) return;
     const rect = viewportDiv.getBoundingClientRect();
+    if (!rect.width || !rect.height) return;
+
     const isMobile = window.innerWidth <= 900;
 
-    if (isMobile) {
-      if (!forceFullFit && !isOverviewMode) {
-        // On mobile / Android: start with a LARGE, crisp, detailed view!
-        const mobileScale = 1.45;
-        state.transform.scale = mobileScale;
-        state.transform.x = rect.width / 2 - 320 * mobileScale;
-        state.transform.y = rect.height / 2 - 480 * mobileScale;
-      } else {
-        const mapWidth = 1120;
-        const mapHeight = 840;
-        const scaleX = (rect.width - 24) / mapWidth;
-        const scaleY = (rect.height - 24) / mapHeight;
-        const scale = Math.min(scaleX, scaleY, 1.2);
-        state.transform.scale = scale;
-        state.transform.x = (rect.width - mapWidth * scale) / 2 + 10;
-        state.transform.y = (rect.height - mapHeight * scale) / 2 + 10;
-      }
-    } else {
-      // PC / Desktop view
-      if (!forceFullFit && !isOverviewMode) {
-        // High visibility on PC: clear, large, comfortable house numbers
-        const pcScale = 1.15;
-        state.transform.scale = pcScale;
-        state.transform.x = rect.width / 2 - 540 * pcScale;
-        state.transform.y = rect.height / 2 - 520 * pcScale;
-      } else {
-        const contentWidth = 1120;
-        const contentHeight = 840;
-        const scaleX = (rect.width - 40) / contentWidth;
-        const scaleY = (rect.height - 40) / contentHeight;
-        const scale = Math.min(scaleX, scaleY, 1.25);
-        state.transform.scale = scale;
-        state.transform.x = rect.width / 2 - 560 * scale;
-        state.transform.y = rect.height / 2 - 540 * scale;
-      }
-    }
+    // Full layout bounds (matching perimeter border, Gate 1, Gate 2, all plots and roads)
+    const contentMinX = 20;
+    const contentMaxX = 1270;
+    const contentWidth = contentMaxX - contentMinX; // 1250
+    const centerX = 645; // (20 + 1270) / 2
+
+    const contentMinY = 135;
+    const contentMaxY = 935;
+    const contentHeight = contentMaxY - contentMinY; // 800
+    const centerY = 535; // (135 + 935) / 2
+
+    // Comfortable padding inside the viewport
+    const padX = isMobile ? 10 : 28;
+    const padY = isMobile ? 10 : 20;
+
+    const availWidth = Math.max(rect.width - padX * 2, 80);
+    const availHeight = Math.max(rect.height - padY * 2, 80);
+
+    const fitScale = Math.min(availWidth / contentWidth, availHeight / contentHeight);
+
+    state.transform.scale = fitScale;
+    state.transform.x = rect.width / 2 - centerX * fitScale;
+    state.transform.y = rect.height / 2 - centerY * fitScale;
 
     viewport.setAttribute(
       'transform',
@@ -1813,7 +1802,7 @@
     // Register Service Worker for Android PWA with instant update reload
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=6').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=7').then((reg) => {
           reg.update(); // Force immediate update check
         }).catch(err => {
           console.log('SW registration error:', err);
@@ -1827,6 +1816,13 @@
         }
       });
     }
+
+    // Auto-fit on screen orientation change or resize
+    window.addEventListener('resize', () => {
+      if (!state.selectedPlotId && !state.activeRoute) {
+        fitMapToView();
+      }
+    });
 
     // Voice recognition
     initVoiceRecognition();

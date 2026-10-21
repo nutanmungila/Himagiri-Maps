@@ -120,6 +120,14 @@ body {
   gap: 10px;
 }
 
+.btn-text-mobile {
+  display: none;
+}
+
+.btn-text-full {
+  display: inline;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -1246,8 +1254,8 @@ body.big-labels .road-label {
 /* Mobile responsive layout — Equal Split View (Map on top, Navigator on bottom) */
 @media (max-width: 900px) {
   .app-header {
-    padding: 0 12px;
-    height: 52px;
+    padding: 0 10px;
+    height: 48px;
   }
 
   .brand-titles p, .header-badges {
@@ -1255,27 +1263,48 @@ body.big-labels .road-label {
   }
 
   .brand-titles h1 {
-    font-size: 15px;
+    font-size: 14px;
+  }
+
+  .header-actions {
+    gap: 4px;
+  }
+
+  .header-actions .btn {
+    padding: 3px 6px !important;
+    font-size: 10px !important;
+    min-height: 26px !important;
+    max-height: 28px !important;
+    border-radius: 6px !important;
+    gap: 3px !important;
+  }
+
+  .btn-text-mobile {
+    display: inline !important;
+  }
+
+  .btn-text-full {
+    display: none !important;
   }
 
   .btn {
-    padding: 5px 10px;
-    font-size: 11px;
+    padding: 4px 8px;
+    font-size: 10.5px;
   }
 
   .app-container {
     display: flex;
     flex-direction: column;
-    height: calc(100dvh - 52px);
-    height: calc(100vh - 52px);
+    height: calc(100dvh - 48px);
+    height: calc(100vh - 48px);
     overflow: hidden;
     position: relative;
   }
 
-  /* Top Half: Interactive Map Viewport (Takes ~52% of screen) */
+  /* Top Half: Interactive Map Viewport (Takes ~54% of screen) */
   .map-viewport {
     order: 1;
-    height: 52%;
+    height: 54%;
     min-height: 220px;
     width: 100%;
     flex: none;
@@ -1286,7 +1315,7 @@ body.big-labels .road-label {
     z-index: 1;
   }
 
-  /* Bottom Half: Navigation & Search Menu (Takes ~48% of screen, Always Visible) */
+  /* Bottom Half: Navigation & Search Menu (Takes ~46% of screen, Always Visible) */
   .sidebar {
     order: 2;
     position: relative;
@@ -1295,7 +1324,7 @@ body.big-labels .road-label {
     bottom: auto;
     width: 100%;
     max-width: 100%;
-    height: 48%;
+    height: 46%;
     flex: 1;
     transform: none !important;
     box-shadow: none;
@@ -1309,7 +1338,7 @@ body.big-labels .road-label {
   }
 
   .sidebar-section {
-    padding: 12px 14px;
+    padding: 10px 12px;
   }
 
   /* Full Map Toggle Mode */
@@ -1333,52 +1362,130 @@ body.big-labels .road-label {
     display: none !important;
   }
 
+  /* Compact Mobile View Toggle button */
   .mobile-view-toggle {
     display: flex;
+    top: 8px;
+    left: 8px;
+    padding: 3px 8px !important;
+    font-size: 10px !important;
+    font-weight: 600;
+    border-radius: 12px !important;
+    gap: 4px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2) !important;
   }
 
+  /* Compact Map Control Buttons */
   .map-controls {
-    top: 10px;
-    right: 10px;
-    gap: 5px;
+    top: 8px;
+    right: 8px;
+    gap: 3px;
   }
 
   .map-ctrl-btn {
-    width: 38px;
-    height: 38px;
-    font-size: 14px;
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+    max-height: 28px !important;
+    font-size: 12px !important;
+    border-radius: 6px !important;
+    padding: 0 !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18) !important;
+  }
+
+  .map-ctrl-btn.geo-btn {
+    font-size: 12.5px !important;
+  }
+
+  #focus-gate1-btn, #focus-center-btn, #focus-gate2-btn {
+    font-size: 9px !important;
+    font-weight: 800 !important;
   }
 
   .compass-box {
-    bottom: 46px;
-    right: 10px;
-    width: 38px;
-    height: 38px;
+    bottom: 34px;
+    right: 8px;
+    width: 26px;
+    height: 26px;
+    font-size: 9px;
   }
 
   .layer-controls {
-    bottom: 8px;
-    left: 8px;
-    padding: 4px 8px;
-    font-size: 10px;
-    gap: 6px;
+    bottom: 6px;
+    left: 6px;
+    padding: 3px 6px;
+    font-size: 9px;
+    gap: 4px;
+  }
+
+  /* Compact Search Row on Mobile */
+  .search-input-wrapper {
+    gap: 4px;
+  }
+
+  .search-input {
+    min-height: 36px !important;
+    font-size: 13px !important;
+    padding: 6px 8px 6px 30px !important;
+  }
+
+  .btn-search-enter {
+    min-height: 36px !important;
+    padding: 0 10px !important;
+    font-size: 11.5px !important;
+    border-radius: 8px !important;
+  }
+
+  .voice-btn {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+    font-size: 13px !important;
+  }
+
+  .clear-btn {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 11px !important;
+  }
+
+  /* Compact Sector Pills on Mobile */
+  .sector-pills {
+    gap: 4px;
+    padding-bottom: 2px;
+  }
+
+  .sector-pill {
+    padding: 3px 8px !important;
+    font-size: 10px !important;
+    min-height: 24px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Compact Quick Action Buttons in Cards */
+  .loc-quick-btn {
+    padding: 4px 8px !important;
+    min-height: 26px !important;
+    font-size: 10px !important;
+    border-radius: 6px !important;
+  }
+
+  .prompt-chips .chip {
+    padding: 3px 8px !important;
+    font-size: 10px !important;
   }
 }
 
-/* Touch improvements for mobile/Android */
+/* Touch improvements for mobile/Android — do not blow up button sizes */
 @media (pointer: coarse) {
-  .btn, .map-ctrl-btn, .sector-pill, .voice-btn {
-    min-height: 40px;
+  button, .btn, .map-ctrl-btn, .sector-pill, .voice-btn {
     touch-action: manipulation;
   }
 
   .point-select {
-    min-height: 44px;
-  }
-
-  .search-input {
-    min-height: 46px;
-    font-size: 15px;
+    min-height: 36px;
   }
 }
 
