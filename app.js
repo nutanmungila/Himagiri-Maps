@@ -902,6 +902,8 @@
 
     // Highlight active plot
     highlightPlot(plot.id);
+
+    return { totalDistMeters, walkMins, steps, conversationalText };
   }
 
   // Animated vehicle / traveler along the route path
@@ -1802,7 +1804,7 @@
     // Register Service Worker for Android PWA with instant update reload
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=7').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=8').then((reg) => {
           reg.update(); // Force immediate update check
         }).catch(err => {
           console.log('SW registration error:', err);
@@ -1826,6 +1828,151 @@
 
     // Voice recognition
     initVoiceRecognition();
+
+    // Portal & Map View Navigation
+    const headerBackBtn = document.getElementById('header-back-btn');
+    if (headerBackBtn) {
+      headerBackBtn.addEventListener('click', showPortalView);
+    }
+
+    const headerBrand = document.getElementById('header-brand');
+    if (headerBrand) {
+      headerBrand.addEventListener('click', () => {
+        const portal = document.getElementById('portal-view');
+        if (portal && portal.style.display !== 'none') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          showPortalView();
+        }
+      });
+    }
+
+    // AI Assistant Toggle Buttons
+    const headerAiBtn = document.getElementById('header-ai-guide-btn');
+    if (headerAiBtn) {
+      headerAiBtn.addEventListener('click', () => aiAssistant.open());
+    }
+
+    const floatingAiBtn = document.getElementById('floating-ai-btn');
+    if (floatingAiBtn) {
+      floatingAiBtn.addEventListener('click', () => aiAssistant.open());
+    }
+
+    // Community Card & Button triggers
+    document.querySelectorAll('.btn-open-himagiri, #portal-open-himagiri-btn').forEach(btn => {
+      btn.addEventListener('click', () => showMapView('himagiri'));
+    });
+
+    document.querySelectorAll('.btn-ask-ai-himagiri').forEach(btn => {
+      btn.addEventListener('click', () => {
+        aiAssistant.open("Where do I go?");
+      });
+    });
+
+    // Portal Prompt Chips
+    document.querySelectorAll('.portal-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const q = chip.getAttribute('data-query');
+        aiAssistant.open(q);
+      });
+    });
+
+    // Portal AI Search Input
+    const portalAiSubmit = document.getElementById('portal-ai-submit-btn');
+    const portalAiInput = document.getElementById('portal-ai-input');
+    if (portalAiSubmit && portalAiInput) {
+      const runPortalAi = () => {
+        const q = portalAiInput.value.trim();
+        aiAssistant.open(q || "Where do I go?");
+      };
+      portalAiSubmit.addEventListener('click', runPortalAi);
+      portalAiInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') runPortalAi();
+      });
+    }
+
+    const portalVoice = document.getElementById('portal-ai-voice-btn');
+    if (portalVoice) {
+      portalVoice.addEventListener('click', () => {
+        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+          const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+          const rec = new SpeechRecognition();
+          rec.lang = 'en-IN';
+          rec.start();
+          showToast("Listening to voice... 🎙️", 2500);
+          rec.onresult = (e) => {
+            const transcript = e.results[0][0].transcript;
+            if (portalAiInput) portalAiInput.value = transcript;
+            aiAssistant.open(transcript);
+          };
+        } else {
+          showToast("Speech recognition not supported in this browser", 2500);
+        }
+      });
+    }
+
+    // AI Drawer close & clear
+    document.querySelectorAll('#ai-close-btn, #ai-drawer-backdrop').forEach(el => {
+      el.addEventListener('click', () => aiAssistant.close());
+    });
+
+    const aiClearBtn = document.getElementById('ai-clear-btn');
+    if (aiClearBtn) {
+      aiClearBtn.addEventListener('click', () => aiAssistant.reset());
+    }
+
+    // AI Drawer input send
+    const aiDrawerSend = document.getElementById('ai-drawer-send-btn');
+    const aiDrawerInput = document.getElementById('ai-drawer-input');
+    if (aiDrawerSend && aiDrawerInput) {
+      const sendFromDrawer = () => {
+        const val = aiDrawerInput.value.trim();
+        if (val) {
+          aiDrawerInput.value = '';
+          aiAssistant.handleUserQuery(val);
+        }
+      };
+      aiDrawerSend.addEventListener('click', sendFromDrawer);
+      aiDrawerInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') sendFromDrawer();
+      });
+    }
+
+    // AI Drawer voice recognition
+    const aiDrawerVoice = document.getElementById('ai-drawer-voice-btn');
+    if (aiDrawerVoice && aiDrawerInput) {
+      aiDrawerVoice.addEventListener('click', () => {
+        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+          const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+          const rec = new SpeechRecognition();
+          rec.lang = 'en-IN';
+          rec.start();
+          showToast("Listening to voice... 🎙️", 2500);
+          rec.onresult = (e) => {
+            const transcript = e.results[0][0].transcript;
+            aiDrawerInput.value = transcript;
+            aiAssistant.handleUserQuery(transcript);
+          };
+        } else {
+          showToast("Speech recognition not supported in this browser", 2500);
+        }
+      });
+    }
+
+    // Sample preview buttons
+    document.querySelectorAll('.btn-preview-sample, .btn-demo-card').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.getAttribute('data-name') || 'This layout';
+        showToast(`${name} is a sample preview. Try Himagiri Meadows for full live navigation! 🗺️`, 3500);
+      });
+    });
+
+    const onboardBtn = document.getElementById('btn-onboard-society');
+    if (onboardBtn) {
+      onboardBtn.addEventListener('click', () => {
+        showToast("Layout onboarding: Email your layout photo or blueprint to support@hmmaps.in 🚀", 4000);
+      });
+    }
   }
 
   function applySectorFilter(sector) {
@@ -1859,19 +2006,402 @@
     }
   }
 
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function showPortalView() {
+    const portal = document.getElementById('portal-view');
+    const mapApp = document.getElementById('app-container');
+    const backBtn = document.getElementById('header-back-btn');
+    const headerBadges = document.getElementById('header-badges');
+    const headerMapControls = document.getElementById('header-map-controls');
+    const brandTitle = document.getElementById('brand-title');
+    const brandSub = document.getElementById('brand-subtitle');
+    const brandIcon = document.getElementById('brand-icon');
+
+    if (portal) portal.style.display = 'block';
+    if (mapApp) mapApp.style.display = 'none';
+    if (backBtn) backBtn.style.display = 'none';
+    if (headerBadges) headerBadges.style.display = 'none';
+    if (headerMapControls) headerMapControls.style.display = 'none';
+    if (brandTitle) brandTitle.textContent = 'HM Maps';
+    if (brandSub) brandSub.textContent = 'Smart Layout & Community Wayfinding';
+    if (brandIcon) brandIcon.textContent = '🌐';
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showMapView(communityId = 'himagiri', targetPlot = null) {
+    const portal = document.getElementById('portal-view');
+    const mapApp = document.getElementById('app-container');
+    const backBtn = document.getElementById('header-back-btn');
+    const headerBadges = document.getElementById('header-badges');
+    const headerMapControls = document.getElementById('header-map-controls');
+    const brandTitle = document.getElementById('brand-title');
+    const brandSub = document.getElementById('brand-subtitle');
+    const brandIcon = document.getElementById('brand-icon');
+
+    if (portal) portal.style.display = 'none';
+    if (mapApp) mapApp.style.display = 'flex';
+    if (backBtn) backBtn.style.display = 'flex';
+    if (headerBadges) headerBadges.style.display = (window.innerWidth > 900) ? 'flex' : 'none';
+    if (headerMapControls) headerMapControls.style.display = 'flex';
+    if (brandTitle) brandTitle.textContent = 'Himagiri Meadows';
+    if (brandSub) brandSub.textContent = 'Interactive Digital Map & Wayfinding';
+    if (brandIcon) brandIcon.textContent = '🗺️';
+
+    setTimeout(() => {
+      fitMapToView(true);
+      if (targetPlot) {
+        selectPlot(targetPlot, true);
+        calculateAndDisplayRoute(state.startNodeId || 'gate_1', targetPlot);
+      }
+    }, 120);
+  }
+
+  // --- AI SPATIAL ASSISTANT MODULE ---
+  const aiAssistant = {
+    state: 'IDLE', // 'IDLE', 'ASKING_SPECIFIC_PLACE', 'ASKING_HOUSE_NUMBER', 'GUIDING', 'EXPLORING'
+    isOpen: false,
+
+    open(initialQuery = null) {
+      const drawer = document.getElementById('ai-chat-drawer');
+      if (!drawer) return;
+      drawer.style.display = 'flex';
+      void drawer.offsetWidth;
+      drawer.classList.add('open');
+      this.isOpen = true;
+
+      const messagesContainer = document.getElementById('ai-chat-messages');
+      if (messagesContainer && messagesContainer.children.length === 0) {
+        this.addAiMessage({
+          text: "Hello! I am your HM Maps AI Guide 🧭.<br>I know every plot, avenue road, and amenity in the layout.<br><br>Where would you like to go today?",
+          chips: [
+            { text: "🧭 Where do I go?", query: "Where do I go?" },
+            { text: "🏠 Looking for a specific plot", query: "I want to go to a specific place" },
+            { text: "🛕 Where is the Temple?", query: "Where is the temple?" },
+            { text: "🛝 Children's Play Area", query: "Take me to children play area" },
+            { text: "🚪 Gate 1 to Gate 2", query: "Route from Gate 1 to Gate 2" }
+          ]
+        });
+      }
+
+      if (initialQuery) {
+        this.handleUserQuery(initialQuery);
+      } else {
+        const input = document.getElementById('ai-drawer-input');
+        if (input) input.focus();
+      }
+    },
+
+    close() {
+      const drawer = document.getElementById('ai-chat-drawer');
+      if (!drawer) return;
+      drawer.classList.remove('open');
+      setTimeout(() => {
+        if (!this.isOpen) drawer.style.display = 'none';
+      }, 300);
+      this.isOpen = false;
+    },
+
+    reset() {
+      const messagesContainer = document.getElementById('ai-chat-messages');
+      if (messagesContainer) messagesContainer.innerHTML = '';
+      this.state = 'IDLE';
+      this.open();
+    },
+
+    setTyping(isTyping) {
+      const indicator = document.getElementById('ai-typing-indicator');
+      if (indicator) {
+        indicator.style.display = isTyping ? 'flex' : 'none';
+      }
+      this.scrollToBottom();
+    },
+
+    scrollToBottom() {
+      const messagesContainer = document.getElementById('ai-chat-messages');
+      if (messagesContainer) {
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }
+    },
+
+    addUserMessage(text) {
+      const messagesContainer = document.getElementById('ai-chat-messages');
+      if (!messagesContainer) return;
+      const msgDiv = document.createElement('div');
+      msgDiv.className = 'ai-msg user';
+      msgDiv.innerHTML = `<div class="ai-bubble user-bubble">${escapeHtml(text)}</div>`;
+      messagesContainer.appendChild(msgDiv);
+      this.scrollToBottom();
+    },
+
+    addAiMessage({ text, chips = [], routeInfo = null }) {
+      const messagesContainer = document.getElementById('ai-chat-messages');
+      if (!messagesContainer) return;
+      const msgDiv = document.createElement('div');
+      msgDiv.className = 'ai-msg ai';
+
+      let html = `<div class="ai-bubble">${text}`;
+      if (routeInfo) {
+        html += `<div class="ai-route-info">${routeInfo}</div>`;
+      }
+      html += `</div>`;
+
+      if (chips && chips.length > 0) {
+        html += `<div class="ai-chips-wrap">`;
+        chips.forEach(c => {
+          html += `<button class="ai-action-chip" data-query="${escapeHtml(c.query)}">${escapeHtml(c.text)}</button>`;
+        });
+        html += `</div>`;
+      }
+
+      msgDiv.innerHTML = html;
+      messagesContainer.appendChild(msgDiv);
+
+      msgDiv.querySelectorAll('.ai-action-chip').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const q = btn.getAttribute('data-query');
+          this.handleUserQuery(q);
+        });
+      });
+
+      this.scrollToBottom();
+    },
+
+    handleUserQuery(rawText) {
+      if (!rawText || !rawText.trim()) return;
+      const text = rawText.trim();
+      this.addUserMessage(text);
+      this.setTyping(true);
+
+      setTimeout(() => {
+        this.setTyping(false);
+        this.processQuery(text);
+      }, 350);
+    },
+
+    processQuery(query) {
+      const lower = query.toLowerCase();
+
+      // Check for responses in conversational state
+      if (this.state === 'ASKING_SPECIFIC_PLACE') {
+        if (/^(yes|yeah|yep|y|sure|true|definitely|specific|correct|of course|i do|i am)/i.test(lower) || lower.includes('yes') || lower.includes('specific')) {
+          this.state = 'ASKING_HOUSE_NUMBER';
+          this.addAiMessage({
+            text: "Which house, plot, or room number are you looking for?",
+            chips: [
+              { text: "Plot 142", query: "Plot 142" },
+              { text: "Plot 55", query: "Plot 55" },
+              { text: "Plot 250", query: "Plot 250" },
+              { text: "Plot 318", query: "Plot 318" },
+              { text: "Plot 77", query: "Plot 77" },
+              { text: "Plot 12B", query: "Plot 12B" },
+              { text: "Plot 35/36", query: "Plot 35/36" }
+            ]
+          });
+          return;
+        } else if (/^(no|nope|nah|not really|just looking|exploring|browse)/i.test(lower) || lower.includes('no') || lower.includes('explor')) {
+          this.state = 'EXPLORING';
+          this.addAiMessage({
+            text: "No problem! Take your time to explore the layout. 🌿<br><br>Here are the key landmarks you can visit:",
+            chips: [
+              { text: "🛕 West Layout Temple", query: "West Temple" },
+              { text: "🛝 Children's Play Area", query: "Children Play Area" },
+              { text: "🏛️ Community Auditorium", query: "Auditorium" },
+              { text: "🕉️ Central Garden Temple", query: "Central Temple" },
+              { text: "🚪 Gate 1 (Main Entrance)", query: "Gate 1" },
+              { text: "🚪 Gate 2 (North-East)", query: "Gate 2" },
+              { text: "🌿 View All 8 Avenues", query: "Show all Avenues" }
+            ]
+          });
+          return;
+        }
+      }
+
+      // 1. Where do I go / Show layout query
+      if (
+        lower.includes('where do i go') ||
+        lower.includes('where to go') ||
+        lower.includes('how do i navigate') ||
+        lower.includes('show me the layout') ||
+        lower.includes('show layout') ||
+        lower.includes('where should i go') ||
+        lower.includes('help me find where to go') ||
+        lower.includes('take me somewhere') ||
+        lower === 'navigate' ||
+        lower === 'layout'
+      ) {
+        showMapView('himagiri');
+        fitMapToView(true);
+        this.state = 'ASKING_SPECIFIC_PLACE';
+
+        this.addAiMessage({
+          text: "Here is the complete community layout area! 🗺️<br><br><strong>Are you trying to go to a specific place?</strong>",
+          chips: [
+            { text: "✅ Yes, a specific house / plot", query: "Yes" },
+            { text: "🌿 No, just exploring", query: "No" }
+          ]
+        });
+        return;
+      }
+
+      // 2. Extract Plot Number if present
+      const plotMatch = query.match(/\b(?:plot|house|no|room|site|h\.?no)?\s*#?\s*([0-9]{1,3}(?:\/[0-9A-Z]+|[A-Z])?)\b/i);
+      let matchedPlotId = null;
+
+      if (plotMatch && plotMatch[1]) {
+        const candidate = plotMatch[1].toUpperCase();
+        if (plots[candidate]) {
+          matchedPlotId = candidate;
+        }
+      }
+
+      if (matchedPlotId) {
+        showMapView('himagiri');
+        const p = plots[matchedPlotId];
+        selectPlot(matchedPlotId, true);
+
+        const startNode = state.startNodeId || 'gate_1';
+        const startName = startNode === 'gate_2' ? 'Gate 2' : (startNode === 'my_location' ? 'Your Live Location' : 'Gate 1 (Main Entrance)');
+        const routeResult = calculateAndDisplayRoute(startNode, matchedPlotId);
+
+        let distText = '';
+        let dirText = '';
+        if (routeResult && routeResult.totalDistMeters) {
+          distText = `🚶 <strong>Walking Distance:</strong> ~${routeResult.totalDistMeters} meters (~${routeResult.walkMins} min walk from ${startName})`;
+          dirText = `🧭 <strong>Directions:</strong> Enter via ${startName}, proceed along ${p.road}, turn into block. House <strong>#${p.number}</strong> faces ${p.facing}.`;
+        } else {
+          dirText = `Plot <strong>#${p.number}</strong> is located on <strong>${p.road}</strong> (${p.block}, facing ${p.facing}).`;
+        }
+
+        this.state = 'IDLE';
+        this.addAiMessage({
+          text: `Found it! 🎯<br><strong>Plot #${p.number}</strong> is located on <strong>${p.road}</strong> (${p.block}).<br><br>I've centered the map, highlighted the plot with a red pulse, and drawn your shortest route!`,
+          routeInfo: `${distText}<br>${dirText}`,
+          chips: [
+            { text: "🚪 Route from Gate 2 instead", query: `Route to ${p.number} from Gate 2` },
+            { text: "📡 Use Live GPS Location", query: "Track live location" },
+            { text: "🗺️ Full Layout Overview", query: "Where do I go?" }
+          ]
+        });
+        return;
+      }
+
+      // 3. Amenity query
+      const matchedAmenity = amenities.find(a => {
+        const nameLower = a.name.toLowerCase();
+        return lower.includes(nameLower) ||
+          (lower.includes('temple') && (nameLower.includes('temple') || a.id.includes('temple'))) ||
+          (lower.includes('play') && a.id.includes('play')) ||
+          (lower.includes('park') && (a.id.includes('play') || a.id.includes('garden'))) ||
+          (lower.includes('auditorium') && a.id.includes('auditorium')) ||
+          (lower.includes('gate 1') && a.id === 'gate_1') ||
+          (lower.includes('gate 2') && a.id === 'gate_2') ||
+          (lower.includes('wtp') && a.id.includes('wtp')) ||
+          (lower.includes('waste') && a.id.includes('waste'));
+      });
+
+      if (matchedAmenity) {
+        showMapView('himagiri');
+        selectAmenity(matchedAmenity.id, true);
+        calculateAndDisplayRoute(state.startNodeId || 'gate_1', matchedAmenity.id);
+
+        this.state = 'IDLE';
+        this.addAiMessage({
+          text: `Here is <strong>${matchedAmenity.name}</strong> 📍<br>${matchedAmenity.desc || 'Community amenity area'}.<br><br>I've centered the map on it and drawn your route from Gate 1!`,
+          chips: [
+            { text: "🚪 Route from Gate 2", query: `Route to ${matchedAmenity.name} from Gate 2` },
+            { text: "🏠 Find a House instead", query: "Where do I go?" },
+            { text: "🗺️ Layout Overview", query: "Where do I go?" }
+          ]
+        });
+        return;
+      }
+
+      // 4. Gate 2 query
+      if (lower.includes('from gate 2') || (lower.includes('gate 2') && state.selectedPlotId)) {
+        state.startNodeId = 'gate_2';
+        if (state.selectedPlotId) {
+          calculateAndDisplayRoute('gate_2', state.selectedPlotId);
+          this.addAiMessage({
+            text: `Updated route to <strong>Plot #${state.selectedPlotId}</strong> starting from <strong>Gate 2 (North-East Entry)</strong>! 🚪`,
+            chips: [
+              { text: "🚪 Switch back to Gate 1", query: `Route to ${state.selectedPlotId} from Gate 1` },
+              { text: "🗺️ Layout Overview", query: "Where do I go?" }
+            ]
+          });
+          return;
+        }
+      }
+
+      // 5. GPS live tracking
+      if (lower.includes('gps') || lower.includes('live location') || lower.includes('track')) {
+        showMapView('himagiri');
+        startLocationTracking(true);
+        this.addAiMessage({
+          text: "Starting live GPS location tracking! 📡<br>Your real-time position will appear as a pulsing blue radar pin on the map. As you walk, turn-by-turn routes will calculate from your exact spot.",
+          chips: [
+            { text: "Where do I go?", query: "Where do I go?" },
+            { text: "Find Plot 142", query: "Plot 142" }
+          ]
+        });
+        return;
+      }
+
+      // 6. Avenues list
+      if (lower.includes('avenue') || lower.includes('roads')) {
+        showMapView('himagiri');
+        fitMapToView(true);
+        this.addAiMessage({
+          text: "Himagiri Meadows has 8 scenic tree-lined avenues running North to South:<br>• <strong>Aster Road</strong> (Gate 1 Entry)<br>• <strong>Bluebell Road</strong><br>• <strong>Carnation Road</strong><br>• <strong>Dhalia Road</strong><br>• <strong>Exotica Road</strong><br>• <strong>Florentine Road</strong><br>• <strong>Gardenia Road</strong><br>• <strong>Hibiscus Road</strong><br><br>Which one are you looking for?",
+          chips: [
+            { text: "Aster Road", query: "Aster" },
+            { text: "Carnation Road", query: "Carnation" },
+            { text: "Exotica Road", query: "Exotica" },
+            { text: "Hibiscus Road", query: "Hibiscus" }
+          ]
+        });
+        return;
+      }
+
+      // Fallback response
+      this.addAiMessage({
+        text: `I'm not quite sure about "${escapeHtml(query)}".<br><br>You can ask me:<br>• <strong>'Where do I go?'</strong> (to view the full layout and find your destination)<br>• A specific house number like <strong>'Plot 142'</strong> or <strong>'House 55'</strong><br>• Community landmarks like <strong>'West Temple'</strong> or <strong>'Children's Play Area'</strong>`,
+        chips: [
+          { text: "🧭 Where do I go?", query: "Where do I go?" },
+          { text: "🏠 Plot 142", query: "Plot 142" },
+          { text: "🛕 West Temple", query: "West Temple" },
+          { text: "🗺️ Full Layout", query: "Where do I go?" }
+        ]
+      });
+    }
+  };
+
   // Check URL parameters for direct delivery link sharing
   function checkUrlParams() {
     const params = new URLSearchParams(window.location.search);
     const houseNum = params.get('house') || params.get('plot');
     const gateNum = params.get('gate');
+    const mapParam = params.get('map');
 
     if (gateNum === '2') {
       state.startNodeId = 'gate_2';
       startSelect.value = 'gate_2';
     }
 
-    if (houseNum) {
-      parseAndAnswerQuery(`Where is house ${houseNum}`);
+    if (houseNum || mapParam === 'himagiri') {
+      showMapView('himagiri', houseNum);
+    } else {
+      // By default: Show Portal View! Himagiri is NOT the first map that they see!
+      showPortalView();
     }
   }
 

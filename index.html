@@ -32,13 +32,13 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
   <script>
     // Aggressively purge older PWA caches so updates show instantly
     if ('caches' in window) {
       caches.keys().then(function(names) {
         for (let name of names) {
-          if (name !== 'himagiri-map-v7') {
+          if (name !== 'himagiri-map-v8') {
             caches.delete(name);
           }
         }
@@ -53,38 +53,243 @@
 
   <!-- Top Header Navigation -->
   <header class="app-header">
-    <div class="header-brand">
-      <div class="brand-icon">🗺️</div>
-      <div class="brand-titles">
-        <h1>Himagiri Meadows</h1>
-        <p>Interactive Digital Map & Wayfinding Assistant</p>
+    <div class="header-brand-wrap">
+      <button id="header-back-btn" class="header-back-btn" style="display: none;" title="Back to All Communities">
+        <span>←</span> <span class="back-btn-text">All Layouts</span>
+      </button>
+
+      <div class="header-brand" id="header-brand">
+        <div class="brand-icon" id="brand-icon">🌐</div>
+        <div class="brand-titles">
+          <h1 id="brand-title">HM Maps</h1>
+          <p id="brand-subtitle">Smart Layout & Community Wayfinding</p>
+        </div>
       </div>
     </div>
 
-    <div class="header-badges">
+    <div class="header-badges" id="header-badges" style="display: none;">
       <span class="badge badge-info">344 Plots</span>
       <span class="badge badge-success">8 Avenues</span>
       <span class="badge badge-info">13 Amenities</span>
     </div>
 
     <div class="header-actions">
-      <button id="header-map-toggle-btn" class="btn btn-secondary" title="Toggle Fullscreen Map / Split View">
-        <span>⇥</span> Full Map
+      <!-- Universal AI Assistant Button -->
+      <button id="header-ai-guide-btn" class="btn btn-ai-guide" title="Open AI Spatial Assistant">
+        <span class="ai-sparkle">✨</span> <span class="btn-text-full">AI Guide</span><span class="btn-text-mobile">AI</span>
       </button>
+
+      <!-- Map-specific controls (shown in map view) -->
+      <div id="header-map-controls" style="display: none; align-items: center; gap: 4px;">
+        <button id="header-map-toggle-btn" class="btn btn-secondary" title="Toggle Fullscreen Map / Split View">
+          <span>⇥</span> Full Map
+        </button>
+        <button id="view-original-btn" class="btn btn-secondary" title="View Master Blueprint Board">
+          <span>📷</span> <span class="btn-text-full">View Original</span><span class="btn-text-mobile">Board</span>
+        </button>
+      </div>
+
       <button id="analytics-btn" class="btn btn-secondary" title="View Usage Analytics & Community Stats">
         <span>📊</span> Stats
       </button>
       <button id="android-connect-btn" class="btn btn-primary" title="Install App on Phone">
         <span>📲</span> <span class="btn-text-full">Connect Phone</span><span class="btn-text-mobile">App</span>
       </button>
-      <button id="view-original-btn" class="btn btn-secondary" title="View Master Blueprint Board">
-        <span>📷</span> <span class="btn-text-full">View Original</span><span class="btn-text-mobile">Board</span>
-      </button>
     </div>
   </header>
 
-  <!-- Main Container -->
-  <main class="app-container">
+  <!-- 1. PORTAL HUB VIEW (Default landing view: Himagiri is NOT the first map users see!) -->
+  <div id="portal-view" class="portal-view">
+    <div class="portal-container">
+      
+      <!-- Hero Section -->
+      <section class="portal-hero">
+        <div class="portal-hero-badge">
+          <span class="badge-dot"></span> AI-Powered Spatial Navigation
+        </div>
+        <h1 class="portal-hero-title">
+          Find Any House, Plot or Landmark <br />
+          <span class="text-gradient">with Intelligent AI</span>
+        </h1>
+        <p class="portal-hero-sub">
+          Search across residential layouts, gated communities, and campuses. Ask our AI Navigator where to go, or choose a community below to explore its interactive map.
+        </p>
+
+        <!-- Interactive AI Prompt Box on Hero -->
+        <div class="portal-ai-card">
+          <div class="portal-ai-input-wrapper">
+            <span class="ai-sparkle-icon">✨</span>
+            <input 
+              type="text" 
+              id="portal-ai-input" 
+              class="portal-ai-input" 
+              placeholder="Ask AI: 'Where do I go?', 'Plot 142', 'West Temple'..." 
+              autocomplete="off"
+            />
+            <button id="portal-ai-voice-btn" class="portal-ai-voice-btn" title="Speak to AI">🎤</button>
+            <button id="portal-ai-submit-btn" class="portal-ai-submit-btn">
+              <span>Ask AI</span> ➔
+            </button>
+          </div>
+
+          <div class="portal-quick-chips">
+            <span class="quick-chip-label">Try Asking:</span>
+            <button class="portal-chip active-chip" data-query="Where do I go?">🧭 Where do I go?</button>
+            <button class="portal-chip" data-query="Plot 142">🏠 Plot 142</button>
+            <button class="portal-chip" data-query="Where is the West Temple?">🛕 West Temple</button>
+            <button class="portal-chip" data-query="Children's Play Area">🛝 Play Area</button>
+            <button class="portal-chip" data-query="Plot 55">📍 Plot 55</button>
+            <button class="portal-chip" data-query="Gate 1 to Gate 2">🚪 Gate 1 to Gate 2</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Community Layouts Directory Grid -->
+      <section class="portal-directory">
+        <div class="directory-header">
+          <div>
+            <h2 class="directory-title">Community & Layout Directory</h2>
+            <p class="directory-sub">Select your verified residential community to launch turn-by-turn wayfinding</p>
+          </div>
+        </div>
+
+        <div class="communities-grid">
+          <!-- Card 1: Himagiri Meadows (Featured Active Community) -->
+          <div class="community-card active-card" id="card-himagiri">
+            <div class="card-badge live-badge">🟢 Live Verified Layout</div>
+            <div class="card-header">
+              <div class="community-avatar">🏡</div>
+              <div>
+                <h3 class="community-name">Himagiri Meadows</h3>
+                <p class="community-loc">Bangalore South • Bannerghatta Vicinity</p>
+              </div>
+            </div>
+            <p class="community-desc">
+              Premium 344-plot gated community with 8 tree-lined avenues, dual security gates, West & Central temples, children's park, auditorium, and complete utilities.
+            </p>
+            <div class="community-tags">
+              <span class="tag">📍 344 Plots</span>
+              <span class="tag">🛣️ 8 Avenues</span>
+              <span class="tag">🛕 13 Amenities</span>
+              <span class="tag">📡 Live GPS</span>
+            </div>
+            <div class="community-actions">
+              <button class="btn btn-primary btn-open-himagiri" style="flex: 1.3;">
+                🗺️ Explore Himagiri Map
+              </button>
+              <button class="btn btn-secondary btn-ask-ai-himagiri" style="flex: 1;">
+                ✨ Ask AI Guide
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Greenwood Orchards (Sample Layout) -->
+          <div class="community-card coming-soon-card">
+            <div class="card-badge preview-badge">Sample Layout</div>
+            <div class="card-header">
+              <div class="community-avatar">🌳</div>
+              <div>
+                <h3 class="community-name">Greenwood Orchards</h3>
+                <p class="community-loc">Sarjapur Road Corridor</p>
+              </div>
+            </div>
+            <p class="community-desc">
+              Ecological villa development featuring 180 residential plots, central lakeside trail, community clubhouse, tennis court, and solar-powered amenities.
+            </p>
+            <div class="community-tags">
+              <span class="tag">📍 180 Plots</span>
+              <span class="tag">🏊 Clubhouse</span>
+              <span class="tag">🎾 Sports Zone</span>
+            </div>
+            <div class="community-actions">
+              <button class="btn btn-secondary btn-preview-sample" data-name="Greenwood Orchards" style="width: 100%;">
+                🔍 Preview Layout
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Tech Horizon Campus (Corporate Campus Sample) -->
+          <div class="community-card coming-soon-card">
+            <div class="card-badge preview-badge">Corporate Campus</div>
+            <div class="card-header">
+              <div class="community-avatar">🏢</div>
+              <div>
+                <h3 class="community-name">Tech Horizon Campus</h3>
+                <p class="community-loc">Electronic City Phase 1</p>
+              </div>
+            </div>
+            <p class="community-desc">
+              Modern 45-acre enterprise campus with 12 corporate towers, central amphitheater, multi-level visitor parking, EV charging hubs, and food court.
+            </p>
+            <div class="community-tags">
+              <span class="tag">🏢 12 Blocks</span>
+              <span class="tag">⚡ EV Hubs</span>
+              <span class="tag">🅿️ Smart Parking</span>
+            </div>
+            <div class="community-actions">
+              <button class="btn btn-secondary btn-preview-sample" data-name="Tech Horizon Campus" style="width: 100%;">
+                🔍 Preview Campus
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4: Onboard Your Layout -->
+          <div class="community-card onboard-card">
+            <div class="card-badge free-badge">Free Onboarding</div>
+            <div class="card-header">
+              <div class="community-avatar">📐</div>
+              <div>
+                <h3 class="community-name">Onboard Your Community</h3>
+                <p class="community-loc">Residential Societies • Campuses</p>
+              </div>
+            </div>
+            <p class="community-desc">
+              Have a physical layout board or blueprint photo? Turn it into a smart, GPS-enabled digital map with turn-by-turn AI wayfinding for your residents and delivery visitors.
+            </p>
+            <div class="community-tags">
+              <span class="tag">⚡ 24hr Digitization</span>
+              <span class="tag">🧭 AI Navigator</span>
+              <span class="tag">📱 Instant PWA</span>
+            </div>
+            <div class="community-actions">
+              <button id="btn-onboard-society" class="btn btn-primary" style="width: 100%;">
+                🚀 Submit Layout Blueprint
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlights Banner -->
+      <section class="portal-features-banner">
+        <div class="feat-item">
+          <span class="feat-icon">🧭</span>
+          <div>
+            <h4>Turn-by-Turn Wayfinding</h4>
+            <p>Shortest pedestrian and vehicular routes calculated in real time.</p>
+          </div>
+        </div>
+        <div class="feat-item">
+          <span class="feat-icon">✨</span>
+          <div>
+            <h4>Spatial AI Assistant</h4>
+            <p>Conversational guide that pinpoints houses, rooms, gates, and amenities.</p>
+          </div>
+        </div>
+        <div class="feat-item">
+          <span class="feat-icon">📍</span>
+          <div>
+            <h4>Live GPS Location</h4>
+            <p>Watch your live blue radar pin advance as you walk through avenues.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Main Map Container (Hidden by default, shown when user opens a layout or asks AI) -->
+  <main id="app-container" class="app-container" style="display: none;">
 
     <!-- Mobile Drawer Toggle Button -->
     <button id="mobile-drawer-toggle" class="mobile-drawer-toggle">
@@ -278,6 +483,13 @@
         <span>↕ Expand Map</span>
       </button>
 
+      <!-- Floating AI Guide Action Button on Map View -->
+      <button id="floating-ai-btn" class="floating-ai-btn" title="Ask AI Spatial Navigator">
+        <span class="ai-sparkle-dot"></span>
+        <span class="floating-ai-icon">✨</span>
+        <span class="floating-ai-text">AI Guide</span>
+      </button>
+
       <!-- Layer Toggles on Bottom Left -->
       <div class="layer-controls">
         <label class="layer-toggle">
@@ -434,10 +646,61 @@
     </div>
   </div>
 
+  <!-- ======================================================== -->
+  <!-- AI SPATIAL ASSISTANT MODAL / DRAWER                      -->
+  <!-- ======================================================== -->
+  <div id="ai-chat-drawer" class="ai-chat-drawer" style="display: none;">
+    <div class="ai-drawer-backdrop" id="ai-drawer-backdrop"></div>
+    <div class="ai-drawer-panel">
+      <!-- Drawer Header -->
+      <div class="ai-drawer-header">
+        <div class="ai-drawer-title-wrap">
+          <div class="ai-avatar">✨</div>
+          <div>
+            <h3 class="ai-name">HM Maps AI Navigator</h3>
+            <p class="ai-status"><span class="ai-status-dot"></span> Online • Community Spatial Guide</p>
+          </div>
+        </div>
+        <div class="ai-drawer-actions">
+          <button id="ai-clear-btn" class="ai-action-btn" title="Reset Conversation">🔄</button>
+          <button id="ai-close-btn" class="ai-action-btn" title="Close AI Assistant">✕</button>
+        </div>
+      </div>
+
+      <!-- Messages Body -->
+      <div id="ai-chat-messages" class="ai-chat-messages">
+        <!-- Messages injected dynamically by app.js -->
+      </div>
+
+      <!-- Typing Indicator -->
+      <div id="ai-typing-indicator" class="ai-typing-indicator" style="display: none;">
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+        <span class="typing-text">AI is locating on layout...</span>
+      </div>
+
+      <!-- Chat Input Area -->
+      <div class="ai-drawer-input-area">
+        <div class="ai-input-wrapper">
+          <input 
+            type="text" 
+            id="ai-drawer-input" 
+            class="ai-drawer-input" 
+            placeholder="Ask where to go, or enter house/plot #..." 
+            autocomplete="off"
+          />
+          <button id="ai-drawer-voice-btn" class="ai-input-btn voice-btn" title="Voice Search">🎤</button>
+          <button id="ai-drawer-send-btn" class="ai-input-btn send-btn" title="Send">➔</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Load Scripts with Version Cache-Buster -->
-  <script src="analytics.js?v=7"></script>
-  <script src="qrcode.min.js?v=7"></script>
-  <script src="map_data.js?v=7"></script>
-  <script src="app.js?v=7"></script>
+  <script src="analytics.js?v=8"></script>
+  <script src="qrcode.min.js?v=8"></script>
+  <script src="map_data.js?v=8"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>
