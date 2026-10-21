@@ -32,13 +32,13 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="style.css?v=19">
   <script>
     // Aggressively purge older PWA caches so updates show instantly
     if ('caches' in window) {
       caches.keys().then(function(names) {
         for (let name of names) {
-          if (name !== 'himagiri-map-v18') {
+          if (name !== 'himagiri-map-v19') {
             caches.delete(name);
           }
         }
@@ -608,10 +608,10 @@
   </div>
 
   <!-- Load Scripts with Version Cache-Buster -->
-  <script src="analytics.js?v=18"></script>
-  <script src="qrcode.min.js?v=18"></script>
-  <script src="map_data.js?v=18"></script>
-  <script src="layouts_data.js?v=18"></script>
-  <script src="app.js?v=18"></script>
+  <script src="analytics.js?v=19"></script>
+  <script src="qrcode.min.js?v=19"></script>
+  <script src="map_data.js?v=19"></script>
+  <script src="layouts_data.js?v=19"></script>
+  <script src="app.js?v=19"></script>
 </body>
 </html>

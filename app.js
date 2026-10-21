@@ -966,7 +966,7 @@
   // --- 2. DIJKSTRA SHORTEST PATHFINDING ---
   function findShortestPath(startNid, endNid) {
     if (!nodes[startNid] || !nodes[endNid]) return null;
-    if (startNid === endNid) return [startNid];
+    if (startNid === endNid) return { nodes: [startNid], edges: [], totalDist: 0 };
 
     const distances = {};
     const previous = {};
@@ -1027,6 +1027,130 @@
     };
   }
 
+  // Project a point onto a line segment
+  function projectPointOnSegment(px, py, x1, y1, x2, y2) {
+    const dx = x2 - x1;
+    const dy = y2 - y1;
+    const lenSq = dx * dx + dy * dy;
+    if (lenSq === 0) return { x: x1, y: y1, t: 0, dist: Math.hypot(px - x1, py - y1) };
+    let t = ((px - x1) * dx + (py - y1) * dy) / lenSq;
+    t = Math.max(0, Math.min(1, t));
+    const projX = x1 + t * dx;
+    const projY = y1 + t * dy;
+    const dist = Math.hypot(px - projX, py - projY);
+    return { x: projX, y: projY, t, dist };
+  }
+
+  // Find exact curb point on the road right next to the location (prevents routing to the centre of the road)
+  function findBestCurbPoint(plot, edgeList, nodeDict) {
+    if (!plot) return null;
+    const pcx = plot.x + plot.w / 2;
+    const pcy = plot.y + plot.h / 2;
+    let best = null;
+    let minScore = Infinity;
+    const targetRoad = (plot.road || '').toLowerCase().trim();
+
+    for (const e of edgeList) {
+      const u = nodeDict[e.u];
+      const v = nodeDict[e.v];
+      if (!u || !v) continue;
+      const proj = projectPointOnSegment(pcx, pcy, u.x, u.y, v.x, v.y);
+      const edgeRoad = (e.road || '').toLowerCase().trim();
+
+      let roadMatch = false;
+      if (targetRoad && edgeRoad) {
+        if (targetRoad === edgeRoad || targetRoad.includes(edgeRoad) || edgeRoad.includes(targetRoad)) {
+          roadMatch = true;
+        }
+      }
+
+      let score = proj.dist;
+      if (!roadMatch) {
+        score += 70; // Prioritize edges on the same road as the plot
+      }
+
+      if (score < minScore) {
+        minScore = score;
+        best = {
+          edge: e,
+          u: e.u,
+          v: e.v,
+          x: Math.round(proj.x),
+          y: Math.round(proj.y),
+          t: proj.t,
+          dist: Math.round(proj.dist),
+          road: e.road || plot.road || 'Road'
+        };
+      }
+    }
+
+    if (!best && plot.roadNode && nodeDict[plot.roadNode]) {
+      const n = nodeDict[plot.roadNode];
+      return {
+        edge: null,
+        u: plot.roadNode,
+        v: plot.roadNode,
+        x: n.x,
+        y: n.y,
+        t: 0,
+        dist: Math.hypot(pcx - n.x, pcy - n.y),
+        road: plot.road || 'Road'
+      };
+    }
+
+    return best;
+  }
+
+  // Find shortest path to the curb point right next to the location
+  function findShortestPathToCurb(startNid, curb) {
+    if (!curb || !curb.u || !curb.v) return null;
+    if (!nodes[startNid] || !nodes[curb.u] || !nodes[curb.v]) return null;
+
+    const uNode = nodes[curb.u];
+    const vNode = nodes[curb.v];
+    const distU = Math.hypot(uNode.x - curb.x, uNode.y - curb.y);
+    const distV = Math.hypot(vNode.x - curb.x, vNode.y - curb.y);
+
+    let routeU = null;
+    let routeV = null;
+
+    if (startNid === curb.u) {
+      routeU = { nodes: [curb.u], edges: [], totalDist: 0 };
+    } else {
+      routeU = findShortestPath(startNid, curb.u);
+    }
+
+    if (startNid === curb.v) {
+      routeV = { nodes: [curb.v], edges: [], totalDist: 0 };
+    } else {
+      routeV = findShortestPath(startNid, curb.v);
+    }
+
+    const costU = (routeU ? routeU.totalDist : Infinity) + distU;
+    const costV = (routeV ? routeV.totalDist : Infinity) + distV;
+
+    if (costU === Infinity && costV === Infinity) return null;
+
+    const viaU = costU <= costV;
+    const bestRoute = viaU ? routeU : routeV;
+    const entryNode = viaU ? curb.u : curb.v;
+    const distToCurb = viaU ? distU : distV;
+
+    const routeEdges = [...bestRoute.edges];
+    if (distToCurb > 2) {
+      routeEdges.push({ u: entryNode, v: 'curb', road: curb.road, dist: distToCurb });
+    }
+
+    return {
+      nodes: bestRoute.nodes,
+      edges: routeEdges,
+      totalDist: bestRoute.totalDist + distToCurb,
+      curbPoint: { x: curb.x, y: curb.y },
+      entryNode: entryNode,
+      distToCurb: distToCurb
+    };
+  }
+
   // --- 3. TURN-BY-TURN DIRECTIONS BUILDER ---
   function generateTurnByTurnDirections(routeResult, targetPlot, startNodeId) {
     const steps = [];
@@ -1055,9 +1179,9 @@
         accumulatedDist += legDist;
       } else {
         // Road changed -> Determine Turn direction (Left vs Right)
-        const u = nodes[routeResult.edges[i - 1].u];
-        const v = nodes[routeResult.edges[i - 1].v];
-        const nextV = nodes[edge.v];
+        const u = nodes[routeResult.edges[i - 1].u] || routeResult.curbPoint;
+        const v = nodes[routeResult.edges[i - 1].v] || routeResult.curbPoint;
+        const nextV = nodes[edge.v] || routeResult.curbPoint;
 
         const dx1 = v.x - u.x;
         const dy1 = v.y - u.y;
@@ -1107,10 +1231,13 @@
 
     // Final arrival step
     if (targetPlot) {
+      const isApt = isApartmentOrBlockLayout(currentLayout);
+      const bTitle = cleanBlockTitle(targetPlot.block);
+      const targetLabel = isApt ? `<strong>${bTitle}</strong>` : `<strong>House #${targetPlot.number}</strong>`;
       const facing = targetPlot.facing ? ` (${targetPlot.facing}-facing)` : '';
       steps.push({
         icon: "🏁",
-        text: `Arrive at <strong>House #${targetPlot.number}</strong> on ${targetPlot.road}${facing}`,
+        text: `Arrive at ${targetLabel} on ${targetPlot.road}${facing}`,
         dist: 0
       });
     } else {
@@ -1322,7 +1449,6 @@
     const plot = plots[targetPlotId];
     if (!plot) return;
 
-    const targetNodeId = plot.roadNode;
     let effectiveStartNodeId = startNid;
     let isUserLocationStart = false;
 
@@ -1335,11 +1461,17 @@
       effectiveStartNodeId = findClosestRoadNode(state.userLocation.mapX, state.userLocation.mapY);
     }
 
-    const route = findShortestPath(effectiveStartNodeId, targetNodeId);
+    // Find curb point directly adjacent to the location on the road network
+    const curb = findBestCurbPoint(plot, edges, nodes);
+    let route = curb ? findShortestPathToCurb(effectiveStartNodeId, curb) : null;
 
     if (!route) {
-      console.warn("No route found between", effectiveStartNodeId, targetNodeId);
-      return;
+      const fallbackNodeId = plot.roadNode || Object.keys(nodes)[0];
+      route = findShortestPath(effectiveStartNodeId, fallbackNodeId);
+      if (!route) {
+        console.warn("No route found between", effectiveStartNodeId, fallbackNodeId);
+        return;
+      }
     }
 
     state.activeRoute = route;
@@ -1352,10 +1484,19 @@
 
     for (const nid of route.nodes) {
       const n = nodes[nid];
-      points.push(`${n.x},${n.y}`);
+      if (n) points.push(`${n.x},${n.y}`);
     }
 
-    // Connect from road node directly to plot center door
+    // Add curb point right next to location so route stops beside the plot, not in the centre of the road
+    if (route.curbPoint) {
+      const lastPoint = points[points.length - 1];
+      const curbStr = `${route.curbPoint.x},${route.curbPoint.y}`;
+      if (lastPoint !== curbStr) {
+        points.push(curbStr);
+      }
+    }
+
+    // Connect from road curb directly to plot center door
     const plotCenterX = plot.x + plot.w / 2;
     const plotCenterY = plot.y + plot.h / 2;
     points.push(`${plotCenterX},${plotCenterY}`);
@@ -1387,7 +1528,7 @@
     startRouteTravelerAnimation();
 
     // Generate Steps & Distance
-    let totalDistMeters = Math.round((route.totalDist + 15) * 0.95);
+    let totalDistMeters = Math.round((route.totalDist + (curb ? curb.dist : 15)) * 0.95);
     if (isUserLocationStart && state.userLocation) {
       const dx = state.userLocation.mapX - nodes[effectiveStartNodeId].x;
       const dy = state.userLocation.mapY - nodes[effectiveStartNodeId].y;
@@ -1419,7 +1560,10 @@
 
     // Natural conversational explanation
     const startLabel = isUserLocationStart ? "your current location" : (nodes[startNid]?.label.split(' (')[0] || "your start location");
-    const conversationalText = `House #${plot.number} is located on ${plot.road} in ${plot.block} (${plot.facing}-facing). From ${startLabel}, it is approximately ${totalDistMeters} meters away (about a ${walkMins}-minute walk). Follow the glowing cyan navigation route highlighted on the map.`;
+    const isApt = isApartmentOrBlockLayout(currentLayout);
+    const bTitle = cleanBlockTitle(plot.block);
+    const targetLabel = isApt ? bTitle : `House #${plot.number}`;
+    const conversationalText = `${targetLabel} is located on ${plot.road}${plot.block && !isApt ? ' in ' + plot.block : ''} (${plot.facing}-facing). From ${startLabel}, it is approximately ${totalDistMeters} meters away (about a ${walkMins}-minute walk). Follow the glowing cyan navigation route highlighted on the map.`;
     displayAssistantResponse(conversationalText);
 
     // Highlight active plot
@@ -1642,8 +1786,9 @@
     const gate1 = Object.keys(nodes).find(n => n.includes('main') || n === 'gate_1') || Object.keys(nodes)[0];
     const gate2 = Object.keys(nodes).find(n => (n.includes('east') || n.includes('north') || n === 'gate_2') && n !== gate1);
 
-    const routeG1 = gate1 ? findShortestPath(gate1, plot.roadNode) : null;
-    const distG1 = routeG1 ? Math.round(routeG1.totalDist * 0.95) : '--';
+    const curb = findBestCurbPoint(plot, edges, nodes);
+    const routeG1 = gate1 ? (curb ? findShortestPathToCurb(gate1, curb) : findShortestPath(gate1, plot.roadNode)) : null;
+    const distG1 = routeG1 ? Math.round((routeG1.totalDist + (curb ? curb.dist : 15)) * 0.95) : '--';
     const cardDistG1 = document.getElementById('card-dist-g1');
     if (cardDistG1) {
       cardDistG1.textContent = `${distG1}m`;
@@ -1651,8 +1796,8 @@
       if (prev && nodes[gate1]) prev.textContent = `From ${nodes[gate1].label.split(' (')[0]}`;
     }
 
-    const routeG2 = gate2 ? findShortestPath(gate2, plot.roadNode) : null;
-    const distG2 = routeG2 ? Math.round(routeG2.totalDist * 0.95) : '--';
+    const routeG2 = gate2 ? (curb ? findShortestPathToCurb(gate2, curb) : findShortestPath(gate2, plot.roadNode)) : null;
+    const distG2 = routeG2 ? Math.round((routeG2.totalDist + (curb ? curb.dist : 15)) * 0.95) : '--';
     const cardDistG2 = document.getElementById('card-dist-g2');
     if (cardDistG2) {
       cardDistG2.textContent = `${distG2}m`;
@@ -1750,8 +1895,9 @@
   // --- 7. TOOLTIP SYSTEM ---
   function showPlotTooltip(e, p) {
     const gate1 = Object.keys(nodes).find(n => n.includes('main') || n === 'gate_1') || Object.keys(nodes)[0];
-    const routeG1 = gate1 ? findShortestPath(gate1, p.roadNode) : null;
-    const distG1 = routeG1 ? Math.round(routeG1.totalDist * 0.95) : '~180';
+    const curb = findBestCurbPoint(p, edges, nodes);
+    const routeG1 = gate1 ? (curb ? findShortestPathToCurb(gate1, curb) : findShortestPath(gate1, p.roadNode)) : null;
+    const distG1 = routeG1 ? Math.round((routeG1.totalDist + (curb ? curb.dist : 15)) * 0.95) : '~180';
     const gateLabel = nodes[gate1]?.label ? nodes[gate1].label.split(' (')[0] : 'Entrance Gate';
     const uLabel = currentLayout.unitType || 'Unit';
     const isApt = isApartmentOrBlockLayout(currentLayout);
