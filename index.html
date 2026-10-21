@@ -32,7 +32,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=21">
   <script>
     // Aggressively purge older PWA caches so updates show instantly
     if ('caches' in window) {
@@ -266,6 +266,9 @@
             </div>
           </div>
           <div id="card-block-units" class="card-block-units" style="display: none;"></div>
+          <button id="card-explore-interior-btn" class="btn btn-secondary" style="width: 100%; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; background: #0f172a; border-color: #38bdf8; color: #38bdf8;">
+            <span>🔍</span> Enter Sub-Area Interior (Right-Click)
+          </button>
         </div>
       </section>
 
@@ -443,6 +446,72 @@
     </div>
   </div>
 
+  <!-- Modal: Sub-Area Interior Floor Plan Explorer (Triggered by Right-Click) -->
+  <div id="interior-view-modal" class="modal-overlay interior-modal-overlay">
+    <div class="modal-content interior-modal-content">
+      <div class="modal-header interior-modal-header">
+        <div class="interior-header-left">
+          <button id="interior-back-btn" class="btn btn-secondary interior-back-btn" title="Back to Campus Map (Esc)">
+            <span>←</span> Back to Campus Map
+          </button>
+          <div class="interior-title-group">
+            <h3 id="interior-subarea-title">🏢 Residential Tower</h3>
+            <span id="interior-subarea-subtitle" class="interior-subarea-sub">Interior Floor Plan & Layout</span>
+          </div>
+        </div>
+        <div class="interior-header-controls">
+          <div class="floor-selector-group" id="floor-selector-group">
+            <span class="floor-label">Floor:</span>
+            <div id="floor-pills" class="floor-pills">
+              <!-- Dynamically populated: Floor 1, Floor 2, Floor 3, etc. -->
+            </div>
+          </div>
+          <button id="close-interior-modal" class="close-card-btn" title="Close (Esc)">✕</button>
+        </div>
+      </div>
+      <div class="modal-body interior-modal-body">
+        <div class="interior-blueprint-container">
+          <!-- Interior SVG Floor Plan Canvas -->
+          <svg id="interior-floor-svg" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet">
+            <!-- Dynamically populated interior layout -->
+          </svg>
+        </div>
+        <!-- Side Details Panel for selected inner flat / unit -->
+        <div id="interior-unit-panel" class="interior-unit-panel" style="display: none;">
+          <div class="interior-unit-header">
+            <h4 id="interior-unit-name">Flat 101</h4>
+            <span id="interior-unit-type" class="interior-unit-badge">3 BHK</span>
+          </div>
+          <div class="interior-unit-details">
+            <div class="interior-detail-row">
+              <span class="detail-label">Sub-Area:</span>
+              <span id="interior-detail-tower" class="detail-val">Tower A</span>
+            </div>
+            <div class="interior-detail-row">
+              <span class="detail-label">Floor Level:</span>
+              <span id="interior-detail-floor" class="detail-val">1st Floor</span>
+            </div>
+            <div class="interior-detail-row">
+              <span class="detail-label">Facing:</span>
+              <span id="interior-detail-facing" class="detail-val">East Facing</span>
+            </div>
+            <div class="interior-detail-row">
+              <span class="detail-label">Super Built-up:</span>
+              <span id="interior-detail-area" class="detail-val">1,650 sq ft</span>
+            </div>
+            <div class="interior-detail-row">
+              <span class="detail-label">Room Layout:</span>
+              <span id="interior-detail-rooms" class="detail-val">Living & Dining, 3 Bed, 3 Bath, 2 Balconies, Kitchen</span>
+            </div>
+          </div>
+          <button id="interior-navigate-btn" class="btn btn-primary" style="width: 100%; margin-top: 14px;">
+            📍 Navigate to this Flat
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Modal: Connect Android Phone -->
   <div id="android-modal" class="modal-overlay">
     <div class="modal-content" style="max-width: 460px; height: auto;">
@@ -608,10 +677,10 @@
   </div>
 
   <!-- Load Scripts with Version Cache-Buster -->
-  <script src="analytics.js?v=20"></script>
-  <script src="qrcode.min.js?v=20"></script>
-  <script src="map_data.js?v=20"></script>
-  <script src="layouts_data.js?v=20"></script>
-  <script src="app.js?v=20"></script>
+  <script src="analytics.js?v=21"></script>
+  <script src="qrcode.min.js?v=21"></script>
+  <script src="map_data.js?v=21"></script>
+  <script src="layouts_data.js?v=21"></script>
+  <script src="app.js?v=21"></script>
 </body>
 </html>
