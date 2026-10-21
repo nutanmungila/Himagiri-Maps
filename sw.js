@@ -1,5 +1,5 @@
 // Himagiri Meadows Service Worker - Network-First for Instant Updates
-const CACHE_NAME = 'himagiri-map-v15';
+const CACHE_NAME = 'himagiri-map-v16';
 const ASSETS = [
   './',
   './index.html',
