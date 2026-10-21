@@ -6,13 +6,87 @@
 (function () {
   'use strict';
 
-  // Check data availability
-  if (!window.HIMAGIRI_DATA) {
-    console.error("Himagiri map data not found!");
+  // Check data availability (Support both window.LAYOUTS and legacy window.HIMAGIRI_DATA)
+  const layouts = window.LAYOUTS || {};
+  let currentLayoutId = 'himagiri';
+  let currentLayout = layouts[currentLayoutId] || (window.HIMAGIRI_DATA ? {
+    id: 'himagiri',
+    name: 'Himagiri Meadows',
+    location: 'Bannerghatta Road, Bangalore South',
+    type: 'Residential Gated Community',
+    unitType: 'Plot',
+    bounds: { minX: 20, maxX: 1270, minY: 135, maxY: 935 },
+    center: { x: 645, y: 535 },
+    groundPolygon: "40,320 80,180 300,160 850,140 1050,140 1260,170 1250,600 1150,620 950,830 800,900 500,890 280,880 30,830 30,620",
+    borderTreesPath: "M 40,320 Q 150,160 300,160 T 850,140 T 1050,140 T 1260,170 L 1250,600 L 1150,620 L 950,830 L 800,900 L 500,890 L 280,880 L 30,830 Z",
+    gardenPark: { x: 440, y: 625, w: 370, h: 45, rx: 6, label: "Central Community Garden" },
+    plots: window.HIMAGIRI_DATA.plots,
+    roads: { nodes: window.HIMAGIRI_DATA.nodes, edges: window.HIMAGIRI_DATA.edges },
+    amenities: window.HIMAGIRI_DATA.amenities,
+    sectors: ['Aster', 'Bluebell', 'Carnation', 'Dhalia', 'Exotica', 'Florentine', 'Gardenia', 'Hibiscus'],
+    roadLabels: [
+      { name: "ASTER ROAD", x: 188, y: 482, vertical: true },
+      { name: "BLUEBELL ROAD", x: 306, y: 482, vertical: true },
+      { name: "CARNATION ROAD", x: 424, y: 482, vertical: true },
+      { name: "DHALIA ROAD", x: 542, y: 482, vertical: true },
+      { name: "EXOTICA ROAD", x: 660, y: 482, vertical: true },
+      { name: "FLORENTINE ROAD", x: 778, y: 482, vertical: true },
+      { name: "GARDENIA ROAD", x: 896, y: 482, vertical: true },
+      { name: "HIBISCUS ROAD", x: 337, y: 810, vertical: true },
+      { name: "MAIN AVENUE (GATE 1)", x: 306, y: 336, vertical: false },
+      { name: "CENTRAL GARDEN ROAD", x: 600, y: 626, vertical: false },
+      { name: "GATE 2 ENTRY ROAD", x: 940, y: 336, vertical: false }
+    ]
+  } : null);
+
+  if (!currentLayout) {
+    console.error("Layout data not found!");
     return;
   }
 
-  const { plots, nodes, edges, amenities } = window.HIMAGIRI_DATA;
+  let plots = currentLayout.plots;
+  let nodes = currentLayout.roads.nodes;
+  let edges = currentLayout.roads.edges;
+  let amenities = currentLayout.amenities;
+  let graph = {};
+
+  // Universal Plot / Unit Lookup Helper
+  function findPlotInLayout(layout, query) {
+    if (!layout || !layout.plots || !query) return null;
+    const qClean = String(query).trim().toUpperCase();
+    const qNorm = qClean.replace(/^(PLOT|VILLA|HOUSE|BLOCK|TOWER|ROOM|SITE|H\.?NO)\s*#?\s*/i, '').trim();
+
+    if (layout.plots[qClean]) return layout.plots[qClean];
+    if (layout.plots[qNorm]) return layout.plots[qNorm];
+    if (layout.plots[`T-${qNorm}`]) return layout.plots[`T-${qNorm}`];
+    if (layout.plots[`T-${qClean}`]) return layout.plots[`T-${qClean}`];
+
+    for (const pid in layout.plots) {
+      const p = layout.plots[pid];
+      const numClean = p.number.toUpperCase();
+      if (numClean === qClean || numClean === qNorm) return p;
+      if (numClean.replace(/^(PLOT|VILLA|HOUSE|BLOCK|TOWER)\s*/i, '').trim() === qNorm) return p;
+      if (p.id.toUpperCase() === qNorm) return p;
+    }
+    return null;
+  }
+
+  // Pre-build Graph Adjacency List for Dijkstra
+  function buildGraph() {
+    graph = {};
+    for (const nid in nodes) {
+      graph[nid] = [];
+    }
+    for (const e of edges) {
+      const u = nodes[e.u];
+      const v = nodes[e.v];
+      if (u && v) {
+        const dist = Math.hypot(u.x - v.x, u.y - v.y);
+        graph[e.u].push({ node: e.v, dist, road: e.road });
+        graph[e.v].push({ node: e.u, dist, road: e.road });
+      }
+    }
+  }
 
   // State Management
   const state = {
@@ -61,20 +135,8 @@
   const houseCard = document.getElementById('house-card');
   const originalModal = document.getElementById('original-map-modal');
 
-  // Pre-build Graph Adjacency List for Dijkstra
-  const graph = {};
-  for (const nid in nodes) {
-    graph[nid] = [];
-  }
-  for (const e of edges) {
-    const u = nodes[e.u];
-    const v = nodes[e.v];
-    if (u && v) {
-      const dist = Math.hypot(u.x - v.x, u.y - v.y);
-      graph[e.u].push({ node: e.v, dist, road: e.road });
-      graph[e.v].push({ node: e.u, dist, road: e.road });
-    }
-  }
+  // Build initial Dijkstra graph
+  buildGraph();
 
   // --- 1. RENDER SVG MAP ---
   function initMap() {
@@ -82,63 +144,74 @@
     renderRoads();
     renderPlots();
     renderAmenities();
+    renderAvenueFilterPills();
     populateSelectDropdowns();
     setupPanZoom();
-    fitMapToView();
     checkUrlParams();
   }
 
   // Landscaping & Perimeter
   function renderPerimeterAndLandscaping() {
-    const bgGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
-    bgGroup.setAttribute("id", "landscaping-layer");
+    let bgGroup = document.getElementById("landscaping-layer");
+    if (!bgGroup) {
+      bgGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      bgGroup.setAttribute("id", "landscaping-layer");
+      viewport.insertBefore(bgGroup, viewport.firstChild);
+    } else {
+      bgGroup.innerHTML = '';
+    }
 
     // Outer layout ground polygon
     const ground = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-    // Outer perimeter boundary coordinates matching layout board
-    ground.setAttribute("points", "40,320 80,180 300,160 850,140 1050,140 1260,170 1250,600 1150,620 950,830 800,900 500,890 280,880 30,830 30,620");
-    ground.setAttribute("fill", "#f8fafc");
-    ground.setAttribute("stroke", "#94a3b8");
+    const groundPoints = currentLayout.groundPolygon || "40,320 80,180 300,160 850,140 1050,140 1260,170 1250,600 1150,620 950,830 800,900 500,890 280,880 30,830 30,620";
+    ground.setAttribute("points", groundPoints);
+    ground.setAttribute("fill", "#090d16");
+    ground.setAttribute("stroke", "#334155");
     ground.setAttribute("stroke-width", "2");
     ground.setAttribute("stroke-dasharray", "6,4");
     bgGroup.appendChild(ground);
 
     // Landscaped perimeter tree border
-    const borderTrees = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    borderTrees.setAttribute("d", "M 40,320 Q 150,160 300,160 T 850,140 T 1050,140 T 1260,170 L 1250,600 L 1150,620 L 950,830 L 800,900 L 500,890 L 280,880 L 30,830 Z");
-    borderTrees.setAttribute("fill", "none");
-    borderTrees.setAttribute("stroke", "#86efac");
-    borderTrees.setAttribute("stroke-width", "12");
-    borderTrees.setAttribute("stroke-linecap", "round");
-    borderTrees.setAttribute("stroke-linejoin", "round");
-    borderTrees.setAttribute("opacity", "0.6");
-    bgGroup.appendChild(borderTrees);
+    if (currentLayout.borderTreesPath) {
+      const borderTrees = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      borderTrees.setAttribute("d", currentLayout.borderTreesPath);
+      borderTrees.setAttribute("fill", "none");
+      borderTrees.setAttribute("stroke", "#059669");
+      borderTrees.setAttribute("stroke-width", "12");
+      borderTrees.setAttribute("stroke-linecap", "round");
+      borderTrees.setAttribute("stroke-linejoin", "round");
+      borderTrees.setAttribute("opacity", "0.45");
+      bgGroup.appendChild(borderTrees);
+    }
 
     // Central Garden Park Area polygon
-    const gardenPark = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-    gardenPark.setAttribute("x", "440");
-    gardenPark.setAttribute("y", "625");
-    gardenPark.setAttribute("width", "370");
-    gardenPark.setAttribute("height", "45");
-    gardenPark.setAttribute("rx", "6");
-    gardenPark.setAttribute("fill", "#bbf7d0");
-    gardenPark.setAttribute("stroke", "#4ade80");
-    gardenPark.setAttribute("stroke-width", "1.5");
-    bgGroup.appendChild(gardenPark);
+    if (currentLayout.gardenPark) {
+      const gp = currentLayout.gardenPark;
+      const gardenPark = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      gardenPark.setAttribute("x", gp.x);
+      gardenPark.setAttribute("y", gp.y);
+      gardenPark.setAttribute("width", gp.w);
+      gardenPark.setAttribute("height", gp.h);
+      gardenPark.setAttribute("rx", gp.rx || "6");
+      gardenPark.setAttribute("fill", "#064e3b");
+      gardenPark.setAttribute("stroke", "#10b981");
+      gardenPark.setAttribute("stroke-width", "1.5");
+      bgGroup.appendChild(gardenPark);
+    }
 
-    // Children Play Area polygon
-    const playArea = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-    playArea.setAttribute("x", "250");
-    playArea.setAttribute("y", "625");
-    playArea.setAttribute("width", "180");
-    playArea.setAttribute("height", "45");
-    playArea.setAttribute("rx", "6");
-    playArea.setAttribute("fill", "#dcfce7");
-    playArea.setAttribute("stroke", "#86efac");
-    playArea.setAttribute("stroke-width", "1.5");
-    bgGroup.appendChild(playArea);
-
-    viewport.insertBefore(bgGroup, viewport.firstChild);
+    // Children Play Area polygon (Himagiri specific)
+    if (currentLayout.id === 'himagiri') {
+      const playArea = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      playArea.setAttribute("x", "250");
+      playArea.setAttribute("y", "625");
+      playArea.setAttribute("width", "180");
+      playArea.setAttribute("height", "45");
+      playArea.setAttribute("rx", "6");
+      playArea.setAttribute("fill", "#065f46");
+      playArea.setAttribute("stroke", "#34d399");
+      playArea.setAttribute("stroke-width", "1.5");
+      bgGroup.appendChild(playArea);
+    }
   }
 
   // Render Asphalt Roads and Centerlines
@@ -158,8 +231,8 @@
       roadPath.setAttribute("y1", u.y);
       roadPath.setAttribute("x2", v.x);
       roadPath.setAttribute("y2", v.y);
-      roadPath.setAttribute("stroke", "#27272a");
-      roadPath.setAttribute("stroke-width", "22");
+      roadPath.setAttribute("stroke", "#1e293b");
+      roadPath.setAttribute("stroke-width", currentLayout.id === 'tech_horizon' ? "26" : "22");
       roadPath.setAttribute("stroke-linecap", "round");
       roadPath.setAttribute("stroke-linejoin", "round");
       corridorGroup.appendChild(roadPath);
@@ -177,20 +250,8 @@
     roadsLayer.appendChild(corridorGroup);
     roadsLayer.appendChild(centerlinesGroup);
 
-    // Road Labels
-    const roadLabels = [
-      { name: "ASTER ROAD", x: 188, y: 482, vertical: true },
-      { name: "BLUEBELL ROAD", x: 306, y: 482, vertical: true },
-      { name: "CARNATION ROAD", x: 424, y: 482, vertical: true },
-      { name: "DHALIA ROAD", x: 542, y: 482, vertical: true },
-      { name: "EXOTICA ROAD", x: 660, y: 482, vertical: true },
-      { name: "FLORENTINE ROAD", x: 778, y: 482, vertical: true },
-      { name: "GARDENIA ROAD", x: 896, y: 482, vertical: true },
-      { name: "HIBISCUS ROAD", x: 337, y: 810, vertical: true },
-      { name: "MAIN AVENUE (GATE 1)", x: 306, y: 336, vertical: false },
-      { name: "CENTRAL GARDEN ROAD", x: 600, y: 626, vertical: false },
-      { name: "GATE 2 ENTRY ROAD", x: 940, y: 336, vertical: false }
-    ];
+    // Dynamic Road Labels from currentLayout
+    const roadLabels = currentLayout.roadLabels || [];
 
     const labelsG = document.createElementNS("http://www.w3.org/2000/svg", "g");
     labelsG.setAttribute("id", "road-name-labels");
@@ -232,8 +293,21 @@
       rect.setAttribute("width", p.w);
       rect.setAttribute("height", p.h);
 
-      const fillColor = p.color === 'lightgreen' ? '#bbf7d0' : (p.color === 'lightyellow' ? '#fef9c3' : '#fef08a');
-      const strokeColor = p.color === 'lightgreen' ? '#16a34a' : '#ca8a04';
+      let fillColor = '#1e293b';
+      let strokeColor = '#3b82f6';
+      if (p.color === 'green' || p.color === 'lightgreen') {
+        fillColor = '#064e3b';
+        strokeColor = '#10b981';
+      } else if (p.color === 'yellow' || p.color === 'lightyellow') {
+        fillColor = '#451a03';
+        strokeColor = '#f59e0b';
+      } else if (p.color === 'blue') {
+        fillColor = '#1e3a8a';
+        strokeColor = '#38bdf8';
+      } else if (p.color === 'purple') {
+        fillColor = '#4c1d95';
+        strokeColor = '#a855f7';
+      }
 
       rect.setAttribute("fill", fillColor);
       rect.setAttribute("stroke", strokeColor);
@@ -244,8 +318,10 @@
       txt.setAttribute("x", p.x + p.w / 2);
       txt.setAttribute("y", p.y + p.h / 2);
 
-      // Adjust font size for longer plot numbers like "35/36" or "265/B"
-      if (p.number.length >= 5) {
+      if (p.number.length >= 8) {
+        txt.setAttribute("font-size", "7.5px");
+        txt.classList.add("plot-label-long");
+      } else if (p.number.length >= 5) {
         txt.setAttribute("font-size", "8.5px");
         txt.classList.add("plot-label-long");
       } else if (p.number.length >= 4) {
@@ -269,7 +345,7 @@
     }
   }
 
-  // Render Amenities (Gate 1, Gate 2, Temple, Play Area, etc.)
+  // Render Amenities (Gates, Parks, Temple, Clubhouse, etc.)
   function renderAmenities() {
     amenitiesLayer.innerHTML = '';
 
@@ -279,52 +355,57 @@
       g.setAttribute("id", `amenity-${am.id}`);
       g.setAttribute("cursor", "pointer");
 
-      // Outer circle badge
+      const isGate = am.type === 'gate' || am.id.includes('gate');
       const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
       circle.setAttribute("cx", am.x);
       circle.setAttribute("cy", am.y);
-      circle.setAttribute("r", am.type === 'gate' ? "15" : "12");
+      circle.setAttribute("r", isGate ? "15" : "12");
 
       let bgColor = "#0284c7";
-      if (am.type === 'gate') bgColor = "#059669";
-      if (am.type === 'worship') bgColor = "#d97706";
-      if (am.type === 'recreation') bgColor = "#16a34a";
-      if (am.type === 'civic') bgColor = "#7c3aed";
-      if (am.type === 'utility') bgColor = "#475569";
+      if (isGate) bgColor = "#059669";
+      else if (am.type === 'worship') bgColor = "#d97706";
+      else if (am.type === 'recreation') bgColor = "#16a34a";
+      else if (am.type === 'sports' || am.id.includes('clubhouse')) bgColor = "#0891b2";
+      else if (am.type === 'civic' || am.id.includes('food')) bgColor = "#ea580c";
+      else if (am.type === 'utility') bgColor = "#475569";
 
       circle.setAttribute("fill", bgColor);
       circle.setAttribute("stroke", "#ffffff");
       circle.setAttribute("stroke-width", "2");
-      circle.setAttribute("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.3))");
+      circle.setAttribute("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.4))");
 
-      // Label text
       const iconTxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
       iconTxt.setAttribute("x", am.x);
       iconTxt.setAttribute("y", am.y);
       iconTxt.setAttribute("text-anchor", "middle");
       iconTxt.setAttribute("dominant-baseline", "central");
       iconTxt.setAttribute("fill", "#ffffff");
-      iconTxt.setAttribute("font-size", am.type === 'gate' ? "10px" : "8.5px");
+      iconTxt.setAttribute("font-size", isGate ? "10px" : "8.5px");
       iconTxt.setAttribute("font-weight", "800");
 
       if (am.id === 'gate_1') iconTxt.textContent = "G1";
       else if (am.id === 'gate_2') iconTxt.textContent = "G2";
+      else if (isGate) iconTxt.textContent = "🚪";
       else if (am.type === 'worship') iconTxt.textContent = "🛕";
       else if (am.type === 'recreation') iconTxt.textContent = "🌳";
-      else if (am.id === 'school_bus_stop') iconTxt.textContent = "🚌";
-      else if (am.id === 'auditorium') iconTxt.textContent = "🏛️";
-      else if (am.id === 'atm') iconTxt.textContent = "💳";
+      else if (am.id.includes('clubhouse') || am.type === 'sports') iconTxt.textContent = "🏊";
+      else if (am.id.includes('food') || am.id.includes('cafeteria')) iconTxt.textContent = "🍽️";
+      else if (am.id.includes('bus')) iconTxt.textContent = "🚌";
+      else if (am.id.includes('parking') || am.id.includes('mlcp')) iconTxt.textContent = "🅿️";
+      else if (am.id.includes('auditorium') || am.id.includes('convention')) iconTxt.textContent = "🏛️";
+      else if (am.id.includes('atm')) iconTxt.textContent = "💳";
+      else if (am.id.includes('ev')) iconTxt.textContent = "⚡";
       else iconTxt.textContent = "★";
 
       // Text Title underneath
       const title = document.createElementNS("http://www.w3.org/2000/svg", "text");
       title.setAttribute("x", am.x);
-      title.setAttribute("y", am.y + (am.type === 'gate' ? 24 : 20));
+      title.setAttribute("y", am.y + (isGate ? 24 : 20));
       title.setAttribute("text-anchor", "middle");
-      title.setAttribute("fill", "#0f172a");
+      title.setAttribute("fill", "#f8fafc");
       title.setAttribute("font-size", "10px");
       title.setAttribute("font-weight", "700");
-      title.setAttribute("filter", "drop-shadow(0 1px 2px rgba(255,255,255,0.9))");
+      title.setAttribute("filter", "drop-shadow(0 1px 2px rgba(0,0,0,0.9))");
       title.textContent = am.name.split(' (')[0];
 
       g.appendChild(circle);
@@ -335,7 +416,7 @@
         selectAmenity(am.id, true);
       });
       g.addEventListener('mouseenter', (e) => {
-        tooltip.innerHTML = `<strong>${am.name}</strong><br><span style="color:#94a3b8;font-size:11px;">${am.description}</span>`;
+        tooltip.innerHTML = `<strong>${am.name}</strong><br><span style="color:#94a3b8;font-size:11px;">${am.description || am.desc || 'Amenity'}</span>`;
         tooltip.style.display = 'block';
         movePlotTooltip(e);
       });
@@ -346,27 +427,65 @@
     }
   }
 
-  // Populate Start & Destination Dropdowns
+  // Dynamic Avenue Filter Pills from currentLayout
+  function renderAvenueFilterPills() {
+    const container = document.querySelector('.sector-pills');
+    if (!container) return;
+    const sectors = currentLayout && currentLayout.sectors ? currentLayout.sectors : [];
+    const unitLabel = currentLayout.unitType === 'Tower / Block' ? 'Zones' : 'Avenues';
+    container.innerHTML = `<button class="sector-pill active" data-sector="ALL">All ${unitLabel}</button>`;
+
+    sectors.forEach(s => {
+      const btn = document.createElement('button');
+      btn.className = 'sector-pill';
+      btn.setAttribute('data-sector', s);
+      btn.textContent = s.replace(/ (Road|Avenue|Boulevard|Court|Drive|Way|Link)/i, '');
+      btn.addEventListener('click', () => {
+        container.querySelectorAll('.sector-pill').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        applySectorFilter(s);
+      });
+      container.appendChild(btn);
+    });
+
+    const allBtn = container.querySelector('[data-sector="ALL"]');
+    if (allBtn) {
+      allBtn.addEventListener('click', () => {
+        container.querySelectorAll('.sector-pill').forEach(p => p.classList.remove('active'));
+        allBtn.classList.add('active');
+        applySectorFilter('ALL');
+      });
+    }
+  }
+
+  // Populate Start & Destination Dropdowns dynamically
   function populateSelectDropdowns() {
-    startSelect.innerHTML = `
+    const gateNodes = Object.entries(nodes).filter(([id, n]) => id.includes('gate') && !id.includes('entry') && !id.includes('_x'));
+    const landmarkNodes = amenities.slice(0, 6);
+
+    let startHtml = `
       <optgroup label="📍 Your Position">
         <option value="my_location">📍 My Live Location (GPS)</option>
       </optgroup>
-      <optgroup label="Main Gates">
-        <option value="gate_1" selected>Gate 1 (Main West Entrance)</option>
-        <option value="gate_2">Gate 2 (East Entrance)</option>
-      </optgroup>
-      <optgroup label="Key Landmarks">
-        <option value="ast_main">School Bus Stop</option>
-        <option value="blu_s">Children's Play Area</option>
-        <option value="dha_garden">Central Garden Area</option>
-        <option value="car_garden">Community Auditorium</option>
-        <option value="exo_garden">Central Temple</option>
-      </optgroup>
-    `;
+      <optgroup label="Community Gates">`;
+    
+    if (gateNodes.length > 0) {
+      gateNodes.forEach(([id, n], idx) => {
+        startHtml += `<option value="${id}" ${idx === 0 ? 'selected' : ''}>${n.label || id}</option>`;
+      });
+    } else {
+      startHtml += `<option value="${Object.keys(nodes)[0]}" selected>Main Entrance</option>`;
+    }
+    startHtml += `</optgroup><optgroup label="Key Landmarks">`;
+    landmarkNodes.forEach(am => {
+      startHtml += `<option value="${am.roadNode || am.id}">${am.name}</option>`;
+    });
+    startHtml += `</optgroup>`;
+    startSelect.innerHTML = startHtml;
 
     // Destination selector with all plots & amenities
-    destSelect.innerHTML = `<option value="">-- Choose House or Landmark --</option>`;
+    const uType = currentLayout.unitType || 'House';
+    destSelect.innerHTML = `<option value="">-- Choose ${uType} or Landmark --</option>`;
 
     // Amenities group
     const amGroup = document.createElement('optgroup');
@@ -393,52 +512,209 @@
       roads[roadName].sort((a, b) => {
         const na = parseInt(a.number) || 0;
         const nb = parseInt(b.number) || 0;
-        return na - nb;
+        if (na !== nb) return na - nb;
+        return a.number.localeCompare(b.number);
       });
       for (const p of roads[roadName]) {
         const opt = document.createElement('option');
         opt.value = `plot:${p.id}`;
-        opt.textContent = `House #${p.number} (${p.road})`;
+        opt.textContent = `${uType} #${p.number} (${p.road})`;
         grp.appendChild(opt);
       }
       destSelect.appendChild(grp);
     }
+  }
 
-    startSelect.addEventListener('change', () => {
-      state.startNodeId = startSelect.value;
-      if (state.startNodeId === 'my_location') {
-        if (!state.userLocation) {
-          startLocationTracking(true);
-        }
-      }
-      if (state.selectedPlotId) {
-        calculateAndDisplayRoute(state.startNodeId, state.selectedPlotId);
-      }
-    });
+  // Layout Switcher: dynamically swaps active dataset, blueprints, roads & units
+  function loadLayout(layoutId, targetPlotId = null) {
+    if (!layouts[layoutId]) {
+      console.warn("Layout not found in window.LAYOUTS:", layoutId);
+      return;
+    }
+    currentLayoutId = layoutId;
+    currentLayout = layouts[layoutId];
+    plots = currentLayout.plots;
+    nodes = currentLayout.roads.nodes;
+    edges = currentLayout.roads.edges;
+    amenities = currentLayout.amenities;
 
-    const useMyLocBtn = document.getElementById('use-my-loc-btn');
-    if (useMyLocBtn) {
-      useMyLocBtn.addEventListener('click', () => {
-        startSelect.value = 'my_location';
-        state.startNodeId = 'my_location';
-        startLocationTracking(true);
-        if (state.selectedPlotId) {
-          calculateAndDisplayRoute('my_location', state.selectedPlotId);
-        }
-      });
+    // Set default start gate
+    const gateNodes = Object.keys(nodes).filter(k => k.includes('gate') && !k.includes('entry') && !k.includes('_x'));
+    state.startNodeId = gateNodes.length > 0 ? gateNodes[0] : Object.keys(nodes)[0];
+    state.selectedPlotId = null;
+    state.activeRoute = null;
+
+    buildGraph();
+
+    renderPerimeterAndLandscaping();
+    renderRoads();
+    renderPlots();
+    renderAmenities();
+    renderAvenueFilterPills();
+    populateSelectDropdowns();
+
+    updateHeaderForLayout(currentLayout);
+
+    // Switch view
+    const portal = document.getElementById('portal-view');
+    const mapApp = document.getElementById('app-container');
+    const backBtn = document.getElementById('header-back-btn');
+    const headerBadges = document.getElementById('header-badges');
+    const headerMapControls = document.getElementById('header-map-controls');
+
+    if (portal) portal.style.display = 'none';
+    if (mapApp) mapApp.style.display = 'flex';
+    if (backBtn) backBtn.style.display = 'flex';
+    if (headerBadges) headerBadges.style.display = (window.innerWidth > 900) ? 'flex' : 'none';
+    if (headerMapControls) headerMapControls.style.display = 'flex';
+
+    if (routeLayer) routeLayer.innerHTML = '';
+    if (houseCard) houseCard.classList.remove('active');
+    if (routeSummary) routeSummary.style.display = 'none';
+
+    setTimeout(() => {
+      fitMapToView(true);
+      if (targetPlotId) {
+        selectPlot(targetPlotId, true);
+        calculateAndDisplayRoute(state.startNodeId, targetPlotId);
+        const p = plots[targetPlotId];
+        startLayoutTutorial(currentLayout, p ? p.number : targetPlotId);
+      }
+    }, 120);
+  }
+
+  // Update header titles & badges for current layout
+  function updateHeaderForLayout(layout) {
+    const brandTitle = document.getElementById('brand-title');
+    const brandSub = document.getElementById('brand-subtitle');
+    const brandIcon = document.getElementById('brand-icon');
+    const headerBadges = document.getElementById('header-badges');
+
+    if (brandTitle) brandTitle.textContent = layout.name;
+    if (brandSub) brandSub.textContent = layout.location;
+    if (brandIcon) {
+      brandIcon.textContent = layout.id === 'tech_horizon' ? '🏢' : (layout.id === 'greenwood' ? '🌳' : '🗺️');
     }
 
-    destSelect.addEventListener('change', () => {
-      const val = destSelect.value;
-      if (!val) return;
-      if (val.startsWith('plot:')) {
-        const pid = val.replace('plot:', '');
-        selectPlot(pid, true);
-      } else if (val.startsWith('amenity:')) {
-        const aid = val.replace('amenity:', '');
-        selectAmenity(aid, true);
+    if (headerBadges) {
+      const plotCount = Object.keys(layout.plots).length;
+      const secCount = layout.sectors ? layout.sectors.length : 0;
+      const amenCount = layout.amenities ? layout.amenities.length : 0;
+      const unitLabel = layout.unitType === 'Plot' ? 'Plots' : (layout.unitType === 'Villa' ? 'Villas' : 'Units');
+
+      headerBadges.innerHTML = `
+        <span class="badge badge-info">${plotCount} ${unitLabel}</span>
+        <span class="badge badge-success">${secCount} ${layout.unitType === 'Tower / Block' ? 'Zones' : 'Avenues'}</span>
+        <span class="badge badge-info">${amenCount} Amenities</span>
+      `;
+    }
+  }
+
+  // --- GUIDED LAYOUT TUTORIAL ENGINE ---
+  let tutorialCurrentStep = 0;
+  let activeTutorialLayout = null;
+  let activeTutorialUnit = null;
+
+  function getTutorialSteps(layout, unitNumber) {
+    const lay = layout || currentLayout;
+    const unitLabel = lay.unitType || 'House';
+    const targetUnit = unitNumber ? `${unitLabel} #${unitNumber}` : `your selected ${unitLabel.toLowerCase()}`;
+    const sectorsName = lay.unitType === 'Tower / Block' ? 'zones' : 'avenues';
+    const sectorsSample = lay.sectors && lay.sectors.length > 0 ? lay.sectors.slice(0, 3).join(', ') : 'main roads';
+
+    return [
+      {
+        counter: "Feature 1 of 5",
+        icon: "🧭",
+        title: "Turn-by-Turn Route Navigation",
+        desc: `Follow the glowing cyan navigation path from the security gate directly to ${targetUnit}. The route card at the bottom displays real-time pedestrian walking distance and estimated arrival time.`,
+        highlightSelector: "#route-summary"
+      },
+      {
+        counter: "Feature 2 of 5",
+        icon: "🏠",
+        title: `${unitLabel} Information Card`,
+        desc: `Tap any ${unitLabel.toLowerCase()} on the map anytime. The property card slides up showing street address, compass facing direction, and exact walking distance from both gates.`,
+        highlightSelector: "#house-card"
+      },
+      {
+        counter: "Feature 3 of 5",
+        icon: "📡",
+        title: "Live GPS Wayfinding Radar",
+        desc: `Tap '📍 My Location' to track your exact walking coordinates inside the layout. A pulsating blue radar pin shows your live location and recalculates your route dynamically as you walk.`,
+        highlightSelector: "#use-my-loc-btn"
+      },
+      {
+        counter: "Feature 4 of 5",
+        icon: "🔍",
+        title: "Instant Search & Sector Filters",
+        desc: `Use the search box to find any ${unitLabel.toLowerCase()} or amenity, or tap the ${sectorsName} filter pills (${sectorsSample}) to isolate specific areas of the layout.`,
+        highlightSelector: ".sector-pills"
+      },
+      {
+        counter: "Feature 5 of 5",
+        icon: "🗺️",
+        title: "Interactive Canvas & Center Button",
+        desc: `Pinch or drag freely across the entire high-definition blueprint. Tap the 'CTR' button anytime to instantly snap your camera back to the central park, temple, and amenities.`,
+        highlightSelector: "#focus-center-btn"
       }
-    });
+    ];
+  }
+
+  function startLayoutTutorial(layout, unitNumber = null) {
+    activeTutorialLayout = layout || currentLayout;
+    activeTutorialUnit = unitNumber;
+    tutorialCurrentStep = 0;
+
+    const overlay = document.getElementById('layout-tutorial-overlay');
+    if (!overlay) return;
+
+    overlay.style.display = 'flex';
+    renderTutorialStep();
+  }
+
+  function renderTutorialStep() {
+    const steps = getTutorialSteps(activeTutorialLayout, activeTutorialUnit);
+    const step = steps[tutorialCurrentStep];
+    if (!step) return;
+
+    const counter = document.getElementById('tutorial-step-counter');
+    const icon = document.getElementById('tutorial-icon');
+    const title = document.getElementById('tutorial-title');
+    const desc = document.getElementById('tutorial-desc');
+    const prevBtn = document.getElementById('tutorial-prev-btn');
+    const nextBtn = document.getElementById('tutorial-next-btn');
+    const finishBtn = document.getElementById('tutorial-finish-btn');
+
+    if (counter) counter.textContent = step.counter;
+    if (icon) icon.textContent = step.icon;
+    if (title) title.textContent = step.title;
+    if (desc) desc.textContent = step.desc;
+
+    if (prevBtn) prevBtn.style.display = tutorialCurrentStep > 0 ? 'inline-flex' : 'none';
+    if (nextBtn) nextBtn.style.display = tutorialCurrentStep < steps.length - 1 ? 'inline-flex' : 'none';
+    if (finishBtn) finishBtn.style.display = tutorialCurrentStep === steps.length - 1 ? 'inline-flex' : 'none';
+
+    document.querySelectorAll('.tutorial-highlight-pulse').forEach(el => el.classList.remove('tutorial-highlight-pulse'));
+
+    if (step.highlightSelector) {
+      const el = document.querySelector(step.highlightSelector);
+      if (el) {
+        el.classList.add('tutorial-highlight-pulse');
+        if (el.id === 'house-card' && state.selectedPlotId) {
+          el.classList.add('active');
+        }
+        if (el.id === 'route-summary' && state.activeRoute) {
+          el.style.display = 'flex';
+        }
+      }
+    }
+  }
+
+  function closeTutorial() {
+    const overlay = document.getElementById('layout-tutorial-overlay');
+    if (overlay) overlay.style.display = 'none';
+    document.querySelectorAll('.tutorial-highlight-pulse').forEach(el => el.classList.remove('tutorial-highlight-pulse'));
   }
 
   // --- 2. DIJKSTRA SHORTEST PATHFINDING ---
@@ -963,79 +1239,64 @@
 
     // Check for origin gate
     let detectedStart = state.startNodeId;
-    if (text.includes("gate 2") || text.includes("gate2")) {
-      detectedStart = "gate_2";
-      startSelect.value = "gate_2";
-      state.startNodeId = "gate_2";
-    } else if (text.includes("gate 1") || text.includes("gate1")) {
-      detectedStart = "gate_1";
-      startSelect.value = "gate_1";
-      state.startNodeId = "gate_1";
-    }
-
-    // Check for Landmarks first
-    const landmarkKeywords = [
-      { key: "play area", id: "children_play_area" },
-      { key: "children", id: "children_play_area" },
-      { key: "garden", id: "garden_area" },
-      { key: "temple", id: "temple_garden" },
-      { key: "auditorium", id: "auditorium" },
-      { key: "shopping", id: "shopping_complex" },
-      { key: "complex", id: "shopping_complex" },
-      { key: "bus stop", id: "school_bus_stop" },
-      { key: "bus stand", id: "school_bus_stop" },
-      { key: "wtp", id: "wtp_sump" },
-      { key: "sump", id: "wtp_sump" },
-      { key: "water plant", id: "wtp_sump" },
-      { key: "stp", id: "stp_plant" },
-      { key: "atm", id: "atm" },
-      { key: "waste", id: "dry_waste" },
-      { key: "gate 1", id: "gate_1" },
-      { key: "gate 2", id: "gate_2" }
-    ];
-
-    for (const lmk of landmarkKeywords) {
-      if (text.includes(lmk.key) && !text.includes("house") && !text.includes("plot")) {
-        selectAmenity(lmk.id, true);
-        const am = amenities.find(a => a.id === lmk.id);
-        const resp = `${am.name} is located at ${am.description} Click 'Directions' to view the quickest path from ${nodes[detectedStart].label}.`;
-        displayAssistantResponse(resp);
-        speakText(resp);
-        return;
+    if (text.includes("gate 2") || text.includes("gate2") || text.includes("east gate")) {
+      const g2 = Object.keys(nodes).find(n => (n.includes('east') || n.includes('north') || n === 'gate_2') && n !== 'gate_1');
+      if (g2) {
+        detectedStart = g2;
+        startSelect.value = g2;
+        state.startNodeId = g2;
+      }
+    } else if (text.includes("gate 1") || text.includes("gate1") || text.includes("main gate")) {
+      const g1 = Object.keys(nodes).find(n => n.includes('main') || n === 'gate_1') || Object.keys(nodes)[0];
+      if (g1) {
+        detectedStart = g1;
+        startSelect.value = g1;
+        state.startNodeId = g1;
       }
     }
 
-    // Extract plot number
-    // Handle formats: "142", "house 142", "plot #85", "no. 265/B", "35/36", "1C"
-    let matchedPlot = null;
+    // Check for Landmarks / Amenities
+    const matchedAmenity = amenities.find(a => {
+      const aName = a.name.toLowerCase();
+      const aId = a.id.toLowerCase();
+      return text.includes(aName) ||
+        (text.includes('play') && aId.includes('play')) ||
+        (text.includes('garden') && aId.includes('garden')) ||
+        (text.includes('temple') && (aName.includes('temple') || aId.includes('temple'))) ||
+        (text.includes('clubhouse') && aId.includes('clubhouse')) ||
+        (text.includes('pool') && aId.includes('pool')) ||
+        (text.includes('lake') && aId.includes('lake')) ||
+        (text.includes('food') && (aId.includes('food') || aId.includes('cafeteria'))) ||
+        (text.includes('auditorium') && aId.includes('auditorium')) ||
+        (text.includes('shopping') && aId.includes('shopping')) ||
+        (text.includes('bus') && aId.includes('bus')) ||
+        (text.includes('wtp') && aId.includes('wtp')) ||
+        (text.includes('parking') && aId.includes('parking')) ||
+        (text.includes('atm') && aId.includes('atm'));
+    });
 
-    // Direct match against known plots
-    for (const pid in plots) {
-      const pNum = plots[pid].number.toLowerCase();
-      // Match whole word or exact pattern
-      const regex = new RegExp(`(?:^|[\\s#,#])(${pNum.replace('/', '\\/')})(?:[\\s,\\?!]|$)`, 'i');
-      if (regex.test(text)) {
-        matchedPlot = plots[pid];
-        break;
-      }
+    if (matchedAmenity && !text.includes("house") && !text.includes("plot") && !text.includes("villa") && !text.includes("block") && !text.includes("tower")) {
+      selectAmenity(matchedAmenity.id, true);
+      const gateLabel = nodes[detectedStart]?.label ? nodes[detectedStart].label.split(' (')[0] : 'Entrance Gate';
+      const resp = `${matchedAmenity.name} is located at ${matchedAmenity.description || matchedAmenity.desc || 'society grounds'}. Route plotted from ${gateLabel}.`;
+      displayAssistantResponse(resp);
+      speakText(resp);
+      return;
     }
 
-    // If still not matched, extract any digit sequence
-    if (!matchedPlot) {
-      const numMatch = text.match(/\b([0-9]{1,3}(?:\/[a-zA-Z0-9]+|[a-zA-Z])?)\b/);
-      if (numMatch && plots[numMatch[1]]) {
-        matchedPlot = plots[numMatch[1]];
-      }
-    }
+    // Match unit using findPlotInLayout
+    const matchedPlot = findPlotInLayout(currentLayout, queryText);
 
     if (matchedPlot) {
       selectPlot(matchedPlot.id, true);
-      const startName = nodes[detectedStart]?.label.split(' (')[0];
-      const resp = `House #${matchedPlot.number} is on ${matchedPlot.road} in ${matchedPlot.block}. I have highlighted its exact location on the digital map and plotted your turn-by-turn directions from ${startName}!`;
+      const startName = (nodes[detectedStart]?.label || 'the main entrance').split(' (')[0];
+      const uType = currentLayout.unitType || 'House';
+      const resp = `${uType} #${matchedPlot.number} is on ${matchedPlot.road} in ${matchedPlot.block}. I have highlighted its location and plotted your turn-by-turn directions from ${startName}!`;
       displayAssistantResponse(resp);
       speakText(resp);
     } else {
-      const notFound = `I couldn't find a house matching "${queryText}". Himagiri Meadows has plots numbered 1 through 360 across Aster, Bluebell, Carnation, Dhalia, Exotica, Florentine, Gardenia, and Hibiscus. Try asking "Where is house 142?" or "Take me to plot 85".`;
+      const uType = currentLayout.unitType || 'House';
+      const notFound = `I couldn't find a ${uType.toLowerCase()} matching "${queryText}" in ${currentLayout.name}. Try asking "Where is ${uType} 12?" or choose from the destination dropdown.`;
       displayAssistantResponse(notFound);
       speakText(notFound);
     }
@@ -1116,19 +1377,33 @@
     calculateAndDisplayRoute(state.startNodeId, plot.id);
 
     // Update House Info Card
+    const uLabel = currentLayout.unitType || 'House';
     document.getElementById('card-house-num').textContent = `#${plot.number}`;
     document.getElementById('card-road').textContent = plot.road;
     document.getElementById('card-block').textContent = plot.block;
     document.getElementById('card-facing').textContent = `${plot.facing} Facing`;
 
-    // Distances from Gate 1 & Gate 2
-    const routeG1 = findShortestPath('gate_1', plot.roadNode);
-    const distG1 = routeG1 ? Math.round(routeG1.totalDist * 0.95) : '--';
-    document.getElementById('card-dist-g1').textContent = `${distG1}m`;
+    // Distances from primary & secondary gates
+    const gate1 = Object.keys(nodes).find(n => n.includes('main') || n === 'gate_1') || Object.keys(nodes)[0];
+    const gate2 = Object.keys(nodes).find(n => (n.includes('east') || n.includes('north') || n === 'gate_2') && n !== gate1);
 
-    const routeG2 = findShortestPath('gate_2', plot.roadNode);
+    const routeG1 = gate1 ? findShortestPath(gate1, plot.roadNode) : null;
+    const distG1 = routeG1 ? Math.round(routeG1.totalDist * 0.95) : '--';
+    const cardDistG1 = document.getElementById('card-dist-g1');
+    if (cardDistG1) {
+      cardDistG1.textContent = `${distG1}m`;
+      const prev = cardDistG1.previousElementSibling;
+      if (prev && nodes[gate1]) prev.textContent = `From ${nodes[gate1].label.split(' (')[0]}`;
+    }
+
+    const routeG2 = gate2 ? findShortestPath(gate2, plot.roadNode) : null;
     const distG2 = routeG2 ? Math.round(routeG2.totalDist * 0.95) : '--';
-    document.getElementById('card-dist-g2').textContent = `${distG2}m`;
+    const cardDistG2 = document.getElementById('card-dist-g2');
+    if (cardDistG2) {
+      cardDistG2.textContent = `${distG2}m`;
+      const prev = cardDistG2.previousElementSibling;
+      if (prev && gate2 && nodes[gate2]) prev.textContent = `From ${nodes[gate2].label.split(' (')[0]}`;
+    }
 
     houseCard.classList.add('active');
 
@@ -1145,21 +1420,23 @@
     destSelect.value = `amenity:${am.id}`;
 
     // Create route to the amenity's road node
-    const route = findShortestPath(state.startNodeId, am.roadNode);
+    const startNode = nodes[state.startNodeId] ? state.startNodeId : (Object.keys(nodes).find(n => n.includes('main') || n === 'gate_1') || Object.keys(nodes)[0]);
+    const route = findShortestPath(startNode, am.roadNode);
     if (route) {
       state.activeRoute = route;
       const points = [];
       for (const nid of route.nodes) {
         const n = nodes[nid];
-        points.push(`${n.x},${n.y}`);
+        if (n) points.push(`${n.x},${n.y}`);
       }
       points.push(`${am.x},${am.y}`);
       const pathData = "M " + points.join(" L ");
 
+      const sNode = nodes[startNode] || { x: 80, y: 336 };
       routeLayer.innerHTML = `
         <path d="${pathData}" class="nav-route-underlay" />
         <path id="active-nav-path" d="${pathData}" class="nav-route-path" />
-        <circle cx="${nodes[state.startNodeId].x}" cy="${nodes[state.startNodeId].y}" r="8" fill="#10b981" stroke="#ffffff" stroke-width="2.5" />
+        <circle cx="${sNode.x}" cy="${sNode.y}" r="8" fill="#10b981" stroke="#ffffff" stroke-width="2.5" />
         <circle cx="${am.x}" cy="${am.y}" r="12" fill="#ef4444" stroke="#ffffff" stroke-width="2" />
         <circle id="route-traveler" r="6" fill="#f59e0b" stroke="#ffffff" stroke-width="2" />
       `;
@@ -1172,7 +1449,7 @@
       walkTimeVal.textContent = `${walkMins} min`;
       driveTimeVal.textContent = `1 min`;
 
-      const steps = generateTurnByTurnDirections(route, null, state.startNodeId);
+      const steps = generateTurnByTurnDirections(route, null, startNode);
       renderDirectionsList(steps);
     }
 
@@ -1193,14 +1470,17 @@
 
   // --- 7. TOOLTIP SYSTEM ---
   function showPlotTooltip(e, p) {
-    const routeG1 = findShortestPath('gate_1', p.roadNode);
+    const gate1 = Object.keys(nodes).find(n => n.includes('main') || n === 'gate_1') || Object.keys(nodes)[0];
+    const routeG1 = gate1 ? findShortestPath(gate1, p.roadNode) : null;
     const distG1 = routeG1 ? Math.round(routeG1.totalDist * 0.95) : '~180';
+    const gateLabel = nodes[gate1]?.label ? nodes[gate1].label.split(' (')[0] : 'Entrance Gate';
+    const uLabel = currentLayout.unitType || 'Unit';
 
     tooltip.innerHTML = `
-      <div style="font-weight:800;font-size:13px;color:#38bdf8;margin-bottom:2px;">House #${p.number}</div>
+      <div style="font-weight:800;font-size:13px;color:#38bdf8;margin-bottom:2px;">${uLabel} #${p.number}</div>
       <div style="font-size:11px;color:#cbd5e1;">Road: <strong>${p.road}</strong></div>
       <div style="font-size:11px;color:#cbd5e1;">Sector: ${p.block} (${p.facing}-facing)</div>
-      <div style="font-size:10px;color:#10b981;margin-top:4px;">📍 ${distG1}m from Gate 1</div>
+      <div style="font-size:10px;color:#10b981;margin-top:4px;">📍 ${distG1}m from ${gateLabel}</div>
     `;
     tooltip.style.display = 'block';
     movePlotTooltip(e);
@@ -1342,16 +1622,23 @@
 
     document.getElementById('focus-gate1-btn').addEventListener('click', () => {
       const isMobile = window.innerWidth <= 900;
-      zoomToCoordinates(80, 336, isMobile ? 2.0 : 1.8);
+      const g1 = Object.keys(nodes).find(n => n.includes('main') || n === 'gate_1') || Object.keys(nodes)[0];
+      const gn = nodes[g1] || { x: 80, y: 336 };
+      zoomToCoordinates(gn.x, gn.y, isMobile ? 2.0 : 1.8);
+      showToast(`Focused on ${nodes[g1]?.label || 'Gate 1'} 🚪`, 2000);
     });
 
     const focusCenterBtn = document.getElementById('focus-center-btn');
     if (focusCenterBtn) {
       focusCenterBtn.addEventListener('click', () => {
         const isMobile = window.innerWidth <= 900;
-        // Center directly on Children's Play Area & Central Garden/Temple precinct
-        zoomToCoordinates(320, 650, isMobile ? 1.85 : 1.6);
-        showToast("Centered on Children's Play Area & Temple 🛝🛕", 3000);
+        const cx = currentLayout.center ? currentLayout.center.x : 320;
+        const cy = currentLayout.center ? currentLayout.center.y : 650;
+        // Himagiri specific: center directly on Children's play area & central garden / temple
+        const targetX = currentLayout.id === 'himagiri' ? 320 : cx;
+        const targetY = currentLayout.id === 'himagiri' ? 650 : cy;
+        zoomToCoordinates(targetX, targetY, isMobile ? 1.85 : 1.6);
+        showToast(`Centered on ${currentLayout.name} central area 🎯`, 3000);
       });
     }
 
@@ -1368,7 +1655,11 @@
 
     document.getElementById('focus-gate2-btn').addEventListener('click', () => {
       const isMobile = window.innerWidth <= 900;
-      zoomToCoordinates(940, 336, isMobile ? 2.0 : 1.8);
+      const g1 = Object.keys(nodes).find(n => n.includes('main') || n === 'gate_1') || Object.keys(nodes)[0];
+      const g2 = Object.keys(nodes).find(n => (n.includes('east') || n.includes('north') || n === 'gate_2') && n !== g1);
+      const gn = (g2 && nodes[g2]) ? nodes[g2] : { x: 940, y: 336 };
+      zoomToCoordinates(gn.x, gn.y, isMobile ? 2.0 : 1.8);
+      showToast(`Focused on ${(g2 && nodes[g2]?.label) || 'Gate 2'} 🚪`, 2000);
     });
 
     // Map tap to set starting point when in location mode
@@ -1418,16 +1709,17 @@
 
     const isMobile = window.innerWidth <= 900;
 
-    // Full layout bounds (matching perimeter border, Gate 1, Gate 2, all plots and roads)
-    const contentMinX = 20;
-    const contentMaxX = 1270;
-    const contentWidth = contentMaxX - contentMinX; // 1250
-    const centerX = 645; // (20 + 1270) / 2
+    // Full layout bounds from currentLayout
+    const b = currentLayout && currentLayout.bounds ? currentLayout.bounds : { minX: 20, maxX: 1270, minY: 135, maxY: 935 };
+    const contentMinX = b.minX;
+    const contentMaxX = b.maxX;
+    const contentWidth = contentMaxX - contentMinX;
+    const centerX = currentLayout && currentLayout.center ? currentLayout.center.x : (contentMinX + contentMaxX) / 2;
 
-    const contentMinY = 135;
-    const contentMaxY = 935;
-    const contentHeight = contentMaxY - contentMinY; // 800
-    const centerY = 535; // (135 + 935) / 2
+    const contentMinY = b.minY;
+    const contentMaxY = b.maxY;
+    const contentHeight = contentMaxY - contentMinY;
+    const centerY = currentLayout && currentLayout.center ? currentLayout.center.y : (contentMinY + contentMaxY) / 2;
 
     // Comfortable padding inside the viewport
     const padX = isMobile ? 10 : 28;
@@ -1438,9 +1730,9 @@
 
     const fitScale = Math.min(availWidth / contentWidth, availHeight / contentHeight);
 
-    state.transform.scale = fitScale;
-    state.transform.x = rect.width / 2 - centerX * fitScale;
-    state.transform.y = rect.height / 2 - centerY * fitScale;
+    state.transform.scale = isMobile ? fitScale * 0.98 : fitScale;
+    state.transform.x = rect.width / 2 - centerX * state.transform.scale;
+    state.transform.y = rect.height / 2 - centerY * state.transform.scale;
 
     viewport.setAttribute(
       'transform',
@@ -1858,16 +2150,111 @@
       floatingAiBtn.addEventListener('click', () => aiAssistant.open());
     }
 
-    // Community Card & Button triggers
+    // Community Card & Button triggers across all layouts
     document.querySelectorAll('.btn-open-himagiri, #portal-open-himagiri-btn').forEach(btn => {
-      btn.addEventListener('click', () => showMapView('himagiri'));
+      btn.addEventListener('click', () => loadLayout('himagiri'));
+    });
+    document.querySelectorAll('.btn-ask-ai-himagiri').forEach(btn => {
+      btn.addEventListener('click', () => aiAssistant.openForLayout('himagiri'));
     });
 
-    document.querySelectorAll('.btn-ask-ai-himagiri').forEach(btn => {
-      btn.addEventListener('click', () => {
-        aiAssistant.open("Where do I go?");
-      });
+    document.querySelectorAll('.btn-open-greenwood').forEach(btn => {
+      btn.addEventListener('click', () => loadLayout('greenwood'));
     });
+    document.querySelectorAll('.btn-ask-ai-greenwood').forEach(btn => {
+      btn.addEventListener('click', () => aiAssistant.openForLayout('greenwood'));
+    });
+
+    document.querySelectorAll('.btn-open-tech-horizon').forEach(btn => {
+      btn.addEventListener('click', () => loadLayout('tech_horizon'));
+    });
+    document.querySelectorAll('.btn-ask-ai-tech-horizon').forEach(btn => {
+      btn.addEventListener('click', () => aiAssistant.openForLayout('tech_horizon'));
+    });
+
+    // Make whole card interactive if user clicks card body
+    const cardGw = document.getElementById('card-greenwood');
+    if (cardGw) {
+      cardGw.addEventListener('click', (e) => {
+        if (!e.target.closest('button')) loadLayout('greenwood');
+      });
+    }
+    const cardTh = document.getElementById('card-tech-horizon');
+    if (cardTh) {
+      cardTh.addEventListener('click', (e) => {
+        if (!e.target.closest('button')) loadLayout('tech_horizon');
+      });
+    }
+
+    // Dropdown change listeners
+    startSelect.addEventListener('change', () => {
+      state.startNodeId = startSelect.value;
+      if (state.startNodeId === 'my_location') {
+        if (!state.userLocation) {
+          startLocationTracking(true);
+        }
+      }
+      if (state.selectedPlotId) {
+        calculateAndDisplayRoute(state.startNodeId, state.selectedPlotId);
+      }
+    });
+
+    const useMyLocBtn = document.getElementById('use-my-loc-btn');
+    if (useMyLocBtn) {
+      useMyLocBtn.addEventListener('click', () => {
+        startSelect.value = 'my_location';
+        state.startNodeId = 'my_location';
+        startLocationTracking(true);
+        if (state.selectedPlotId) {
+          calculateAndDisplayRoute('my_location', state.selectedPlotId);
+        }
+      });
+    }
+
+    destSelect.addEventListener('change', () => {
+      const val = destSelect.value;
+      if (!val) return;
+      if (val.startsWith('plot:')) {
+        const pid = val.replace('plot:', '');
+        selectPlot(pid, true);
+      } else if (val.startsWith('amenity:')) {
+        const aid = val.replace('amenity:', '');
+        selectAmenity(aid, true);
+      }
+    });
+
+    // Guided Tutorial walkthrough buttons
+    const tutCloseBtn = document.getElementById('tutorial-close-btn');
+    if (tutCloseBtn) tutCloseBtn.addEventListener('click', closeTutorial);
+
+    const tutNextBtn = document.getElementById('tutorial-next-btn');
+    if (tutNextBtn) {
+      tutNextBtn.addEventListener('click', () => {
+        const steps = getTutorialSteps(activeTutorialLayout, activeTutorialUnit);
+        if (tutorialCurrentStep < steps.length - 1) {
+          tutorialCurrentStep++;
+          renderTutorialStep();
+        }
+      });
+    }
+
+    const tutPrevBtn = document.getElementById('tutorial-prev-btn');
+    if (tutPrevBtn) {
+      tutPrevBtn.addEventListener('click', () => {
+        if (tutorialCurrentStep > 0) {
+          tutorialCurrentStep--;
+          renderTutorialStep();
+        }
+      });
+    }
+
+    const tutFinishBtn = document.getElementById('tutorial-finish-btn');
+    if (tutFinishBtn) {
+      tutFinishBtn.addEventListener('click', () => {
+        closeTutorial();
+        showToast(`Ready! Enjoy exploring ${currentLayout.name} 🚀`, 3000);
+      });
+    }
 
     // Portal Prompt Chips
     document.querySelectorAll('.portal-chip').forEach(chip => {
@@ -2039,36 +2426,38 @@
   }
 
   function showMapView(communityId = 'himagiri', targetPlot = null) {
+    if (communityId && currentLayoutId !== communityId && layouts[communityId]) {
+      loadLayout(communityId, targetPlot);
+      return;
+    }
+
     const portal = document.getElementById('portal-view');
     const mapApp = document.getElementById('app-container');
     const backBtn = document.getElementById('header-back-btn');
     const headerBadges = document.getElementById('header-badges');
     const headerMapControls = document.getElementById('header-map-controls');
-    const brandTitle = document.getElementById('brand-title');
-    const brandSub = document.getElementById('brand-subtitle');
-    const brandIcon = document.getElementById('brand-icon');
 
     if (portal) portal.style.display = 'none';
     if (mapApp) mapApp.style.display = 'flex';
     if (backBtn) backBtn.style.display = 'flex';
     if (headerBadges) headerBadges.style.display = (window.innerWidth > 900) ? 'flex' : 'none';
     if (headerMapControls) headerMapControls.style.display = 'flex';
-    if (brandTitle) brandTitle.textContent = 'Himagiri Meadows';
-    if (brandSub) brandSub.textContent = 'Interactive Digital Map & Wayfinding';
-    if (brandIcon) brandIcon.textContent = '🗺️';
+
+    updateHeaderForLayout(currentLayout);
 
     setTimeout(() => {
       fitMapToView(true);
       if (targetPlot) {
         selectPlot(targetPlot, true);
-        calculateAndDisplayRoute(state.startNodeId || 'gate_1', targetPlot);
+        calculateAndDisplayRoute(state.startNodeId || Object.keys(nodes)[0], targetPlot);
       }
     }, 120);
   }
 
   // --- AI SPATIAL ASSISTANT MODULE ---
   const aiAssistant = {
-    state: 'IDLE', // 'IDLE', 'ASKING_SPECIFIC_PLACE', 'ASKING_HOUSE_NUMBER', 'GUIDING', 'EXPLORING'
+    state: 'IDLE', // 'IDLE', 'SELECTING_LAYOUT', 'ASKING_SPECIFIC_PLACE', 'ASKING_HOUSE_NUMBER', 'EXPLORING'
+    chosenLayoutId: 'himagiri',
     isOpen: false,
 
     open(initialQuery = null) {
@@ -2082,13 +2471,13 @@
       const messagesContainer = document.getElementById('ai-chat-messages');
       if (messagesContainer && messagesContainer.children.length === 0) {
         this.addAiMessage({
-          text: "Hello! I am your HM Maps AI Guide 🧭.<br>I know every plot, avenue road, and amenity in the layout.<br><br>Where would you like to go today?",
+          text: "Hello! I am your <strong>HM Maps AI Navigator</strong> 🧭.<br>I know every real layout, villa, plot, corporate block, and road in Bangalore.<br><br>Where would you like to go today?",
           chips: [
             { text: "🧭 Where do I go?", query: "Where do I go?" },
-            { text: "🏠 Looking for a specific plot", query: "I want to go to a specific place" },
-            { text: "🛕 Where is the Temple?", query: "Where is the temple?" },
-            { text: "🛝 Children's Play Area", query: "Take me to children play area" },
-            { text: "🚪 Gate 1 to Gate 2", query: "Route from Gate 1 to Gate 2" }
+            { text: "🏡 Himagiri Meadows (South)", query: "Himagiri Meadows" },
+            { text: "🌳 Greenwood Orchards (East)", query: "Greenwood Orchards" },
+            { text: "🏢 Tech Horizon (Electronic City)", query: "Tech Horizon Campus" },
+            { text: "📡 Live GPS Tracking", query: "Track live location" }
           ]
         });
       }
@@ -2099,6 +2488,45 @@
         const input = document.getElementById('ai-drawer-input');
         if (input) input.focus();
       }
+    },
+
+    openForLayout(layoutId) {
+      if (!layouts[layoutId]) layoutId = 'himagiri';
+      this.chosenLayoutId = layoutId;
+      const targetLayout = layouts[layoutId];
+      this.open();
+
+      this.state = 'ASKING_SPECIFIC_PLACE';
+      const uLabel = targetLayout.unitType ? targetLayout.unitType.toLowerCase() : 'house';
+
+      let chips = [];
+      if (layoutId === 'himagiri') {
+        chips = [
+          { text: "✅ Yes, a specific plot", query: "Yes" },
+          { text: "🌿 No, explore layout", query: "No" },
+          { text: "Plot 142", query: "Plot 142" },
+          { text: "🛕 West Temple", query: "West Temple" }
+        ];
+      } else if (layoutId === 'greenwood') {
+        chips = [
+          { text: "✅ Yes, a specific villa", query: "Yes" },
+          { text: "🌿 No, explore layout", query: "No" },
+          { text: "Villa 24", query: "Villa 24" },
+          { text: "🏊 Grand Clubhouse", query: "Clubhouse" }
+        ];
+      } else if (layoutId === 'tech_horizon') {
+        chips = [
+          { text: "✅ Yes, a specific block/tower", query: "Yes" },
+          { text: "🌿 No, explore campus", query: "No" },
+          { text: "Tower A1", query: "Tower A1" },
+          { text: "🍽️ Food Plaza", query: "Food Plaza" }
+        ];
+      }
+
+      this.addAiMessage({
+        text: `Welcome to <strong>${targetLayout.name}</strong> (${targetLayout.location})! 📍<br><br><strong>Are you trying to go to a specific ${uLabel} or place?</strong>`,
+        chips: chips
+      });
     },
 
     close() {
@@ -2189,197 +2617,310 @@
     },
 
     processQuery(query) {
-      const lower = query.toLowerCase();
+      const lower = query.toLowerCase().trim();
 
-      // Check for responses in conversational state
+      // Conversational State Machine: ASKING_SPECIFIC_PLACE
       if (this.state === 'ASKING_SPECIFIC_PLACE') {
+        const targetLayout = layouts[this.chosenLayoutId] || currentLayout;
         if (/^(yes|yeah|yep|y|sure|true|definitely|specific|correct|of course|i do|i am)/i.test(lower) || lower.includes('yes') || lower.includes('specific')) {
           this.state = 'ASKING_HOUSE_NUMBER';
-          this.addAiMessage({
-            text: "Which house, plot, or room number are you looking for?",
-            chips: [
+
+          let chips = [];
+          if (targetLayout.id === 'himagiri') {
+            chips = [
               { text: "Plot 142", query: "Plot 142" },
               { text: "Plot 55", query: "Plot 55" },
               { text: "Plot 250", query: "Plot 250" },
               { text: "Plot 318", query: "Plot 318" },
               { text: "Plot 77", query: "Plot 77" },
-              { text: "Plot 12B", query: "Plot 12B" },
               { text: "Plot 35/36", query: "Plot 35/36" }
-            ]
+            ];
+          } else if (targetLayout.id === 'greenwood') {
+            chips = [
+              { text: "Villa 12", query: "Villa 12" },
+              { text: "Villa 24", query: "Villa 24" },
+              { text: "Villa 45", query: "Villa 45" },
+              { text: "Villa 5", query: "Villa 5" },
+              { text: "Villa 36", query: "Villa 36" },
+              { text: "Villa 60", query: "Villa 60" }
+            ];
+          } else if (targetLayout.id === 'tech_horizon') {
+            chips = [
+              { text: "Tower A1", query: "Tower A1" },
+              { text: "Tower B2", query: "Tower B2" },
+              { text: "Block 102", query: "Block 102" },
+              { text: "Block 205", query: "Block 205" },
+              { text: "Block 304", query: "Block 304" },
+              { text: "Tower D4", query: "Tower D4" }
+            ];
+          }
+
+          this.addAiMessage({
+            text: `Which <strong>${targetLayout.unitType || 'house'} or room number</strong> are you looking for in <strong>${targetLayout.name}</strong>?`,
+            chips: chips
           });
           return;
-        } else if (/^(no|nope|nah|not really|just looking|exploring|browse)/i.test(lower) || lower.includes('no') || lower.includes('explor')) {
+        } else if (/^(no|nope|nah|not really|just looking|exploring|browse|all)/i.test(lower) || lower.includes('no') || lower.includes('explor')) {
           this.state = 'EXPLORING';
           this.addAiMessage({
-            text: "No problem! Take your time to explore the layout. 🌿<br><br>Here are the key landmarks you can visit:",
+            text: `Opening the full <strong>${targetLayout.name}</strong> layout map for you! 🌿<br><br>I'm launching your guided tour so you know where everything is located.`,
             chips: [
-              { text: "🛕 West Layout Temple", query: "West Temple" },
-              { text: "🛝 Children's Play Area", query: "Children Play Area" },
-              { text: "🏛️ Community Auditorium", query: "Auditorium" },
-              { text: "🕉️ Central Garden Temple", query: "Central Temple" },
-              { text: "🚪 Gate 1 (Main Entrance)", query: "Gate 1" },
-              { text: "🚪 Gate 2 (North-East)", query: "Gate 2" },
-              { text: "🌿 View All 8 Avenues", query: "Show all Avenues" }
+              { text: "🚀 Start Tour", query: "Start Tutorial" },
+              { text: "📍 My GPS Location", query: "Track live location" },
+              { text: "🗺️ All Layouts", query: "Where do I go?" }
+            ]
+          });
+          setTimeout(() => {
+            this.close();
+            loadLayout(targetLayout.id);
+            startLayoutTutorial(targetLayout);
+          }, 800);
+          return;
+        }
+      }
+
+      // Conversational State Machine: SELECTING_LAYOUT
+      if (this.state === 'SELECTING_LAYOUT') {
+        let chosenId = null;
+        if (lower.includes('himagiri') || lower.includes('south') || lower.includes('bannerghatta')) chosenId = 'himagiri';
+        else if (lower.includes('greenwood') || lower.includes('east') || lower.includes('sarjapur') || lower.includes('orchard')) chosenId = 'greenwood';
+        else if (lower.includes('tech') || lower.includes('horizon') || lower.includes('electronic') || lower.includes('campus')) chosenId = 'tech_horizon';
+
+        if (chosenId && layouts[chosenId]) {
+          this.chosenLayoutId = chosenId;
+          const targetLayout = layouts[chosenId];
+          this.state = 'ASKING_SPECIFIC_PLACE';
+
+          this.addAiMessage({
+            text: `Selected <strong>${targetLayout.name}</strong> in ${targetLayout.location}! 🗺️<br><br><strong>Are you trying to go to a specific ${targetLayout.unitType ? targetLayout.unitType.toLowerCase() : 'place'} or house?</strong>`,
+            chips: [
+              { text: `✅ Yes, a specific ${targetLayout.unitType || 'house'}`, query: "Yes" },
+              { text: `🌿 No, explore full layout`, query: "No" }
             ]
           });
           return;
         }
       }
 
-      // 1. Where do I go / Show layout query
+      // Check if user asked for tutorial directly
+      if (lower.includes('tutorial') || lower.includes('tour') || lower.includes('guide me') || lower.includes('walkthrough')) {
+        this.close();
+        startLayoutTutorial(currentLayout, state.selectedPlotId ? plots[state.selectedPlotId]?.number : null);
+        return;
+      }
+
+      // Detect direct Area queries ("where to go in Bangalore South", "Sarjapur", "Electronic City", etc.)
+      const isSouthQuery = lower.includes('south') || lower.includes('bannerghatta');
+      const isEastQuery = lower.includes('east') || lower.includes('sarjapur') || lower.includes('carmelaram');
+      const isEcityQuery = lower.includes('electronic city') || lower.includes('e-city') || lower.includes('ecity') || lower.includes('tech park');
+
+      // General "Where do I go?" / Area discovery query
       if (
         lower.includes('where do i go') ||
         lower.includes('where to go') ||
         lower.includes('how do i navigate') ||
-        lower.includes('show me the layout') ||
-        lower.includes('show layout') ||
         lower.includes('where should i go') ||
         lower.includes('help me find where to go') ||
-        lower.includes('take me somewhere') ||
+        lower.includes('show layout') ||
+        lower.includes('show me layout') ||
+        lower.includes('tell me the location') ||
         lower === 'navigate' ||
-        lower === 'layout'
+        lower === 'layout' ||
+        lower === 'layouts'
       ) {
-        showMapView('himagiri');
-        fitMapToView(true);
-        this.state = 'ASKING_SPECIFIC_PLACE';
-
-        this.addAiMessage({
-          text: "Here is the complete community layout area! 🗺️<br><br><strong>Are you trying to go to a specific place?</strong>",
-          chips: [
-            { text: "✅ Yes, a specific house / plot", query: "Yes" },
-            { text: "🌿 No, just exploring", query: "No" }
-          ]
-        });
-        return;
-      }
-
-      // 2. Extract Plot Number if present
-      const plotMatch = query.match(/\b(?:plot|house|no|room|site|h\.?no)?\s*#?\s*([0-9]{1,3}(?:\/[0-9A-Z]+|[A-Z])?)\b/i);
-      let matchedPlotId = null;
-
-      if (plotMatch && plotMatch[1]) {
-        const candidate = plotMatch[1].toUpperCase();
-        if (plots[candidate]) {
-          matchedPlotId = candidate;
-        }
-      }
-
-      if (matchedPlotId) {
-        showMapView('himagiri');
-        const p = plots[matchedPlotId];
-        selectPlot(matchedPlotId, true);
-
-        const startNode = state.startNodeId || 'gate_1';
-        const startName = startNode === 'gate_2' ? 'Gate 2' : (startNode === 'my_location' ? 'Your Live Location' : 'Gate 1 (Main Entrance)');
-        const routeResult = calculateAndDisplayRoute(startNode, matchedPlotId);
-
-        let distText = '';
-        let dirText = '';
-        if (routeResult && routeResult.totalDistMeters) {
-          distText = `🚶 <strong>Walking Distance:</strong> ~${routeResult.totalDistMeters} meters (~${routeResult.walkMins} min walk from ${startName})`;
-          dirText = `🧭 <strong>Directions:</strong> Enter via ${startName}, proceed along ${p.road}, turn into block. House <strong>#${p.number}</strong> faces ${p.facing}.`;
-        } else {
-          dirText = `Plot <strong>#${p.number}</strong> is located on <strong>${p.road}</strong> (${p.block}, facing ${p.facing}).`;
-        }
-
-        this.state = 'IDLE';
-        this.addAiMessage({
-          text: `Found it! 🎯<br><strong>Plot #${p.number}</strong> is located on <strong>${p.road}</strong> (${p.block}).<br><br>I've centered the map, highlighted the plot with a red pulse, and drawn your shortest route!`,
-          routeInfo: `${distText}<br>${dirText}`,
-          chips: [
-            { text: "🚪 Route from Gate 2 instead", query: `Route to ${p.number} from Gate 2` },
-            { text: "📡 Use Live GPS Location", query: "Track live location" },
-            { text: "🗺️ Full Layout Overview", query: "Where do I go?" }
-          ]
-        });
-        return;
-      }
-
-      // 3. Amenity query
-      const matchedAmenity = amenities.find(a => {
-        const nameLower = a.name.toLowerCase();
-        return lower.includes(nameLower) ||
-          (lower.includes('temple') && (nameLower.includes('temple') || a.id.includes('temple'))) ||
-          (lower.includes('play') && a.id.includes('play')) ||
-          (lower.includes('park') && (a.id.includes('play') || a.id.includes('garden'))) ||
-          (lower.includes('auditorium') && a.id.includes('auditorium')) ||
-          (lower.includes('gate 1') && a.id === 'gate_1') ||
-          (lower.includes('gate 2') && a.id === 'gate_2') ||
-          (lower.includes('wtp') && a.id.includes('wtp')) ||
-          (lower.includes('waste') && a.id.includes('waste'));
-      });
-
-      if (matchedAmenity) {
-        showMapView('himagiri');
-        selectAmenity(matchedAmenity.id, true);
-        calculateAndDisplayRoute(state.startNodeId || 'gate_1', matchedAmenity.id);
-
-        this.state = 'IDLE';
-        this.addAiMessage({
-          text: `Here is <strong>${matchedAmenity.name}</strong> 📍<br>${matchedAmenity.desc || 'Community amenity area'}.<br><br>I've centered the map on it and drawn your route from Gate 1!`,
-          chips: [
-            { text: "🚪 Route from Gate 2", query: `Route to ${matchedAmenity.name} from Gate 2` },
-            { text: "🏠 Find a House instead", query: "Where do I go?" },
-            { text: "🗺️ Layout Overview", query: "Where do I go?" }
-          ]
-        });
-        return;
-      }
-
-      // 4. Gate 2 query
-      if (lower.includes('from gate 2') || (lower.includes('gate 2') && state.selectedPlotId)) {
-        state.startNodeId = 'gate_2';
-        if (state.selectedPlotId) {
-          calculateAndDisplayRoute('gate_2', state.selectedPlotId);
+        if (isSouthQuery) {
+          this.chosenLayoutId = 'himagiri';
+          this.state = 'ASKING_SPECIFIC_PLACE';
           this.addAiMessage({
-            text: `Updated route to <strong>Plot #${state.selectedPlotId}</strong> starting from <strong>Gate 2 (North-East Entry)</strong>! 🚪`,
+            text: `In <strong>Bangalore South (Bannerghatta Road)</strong>, we have <strong>Himagiri Meadows</strong> 🏡.<br>A premier gated community featuring 344 residential plots, 8 tree-lined avenues, 2 entry gates, central park, and children's play area.<br><br><strong>Are you trying to go to a specific plot in Himagiri Meadows?</strong>`,
             chips: [
-              { text: "🚪 Switch back to Gate 1", query: `Route to ${state.selectedPlotId} from Gate 1` },
-              { text: "🗺️ Layout Overview", query: "Where do I go?" }
+              { text: "✅ Yes, a specific plot", query: "Yes" },
+              { text: "🌿 No, explore full layout", query: "No" },
+              { text: "🚪 Gate 1 Entry", query: "Gate 1" },
+              { text: "🛕 West Temple", query: "West Temple" }
+            ]
+          });
+          return;
+        } else if (isEastQuery) {
+          this.chosenLayoutId = 'greenwood';
+          this.state = 'ASKING_SPECIFIC_PLACE';
+          this.addAiMessage({
+            text: `In <strong>Bangalore East (Sarjapur / Carmelaram)</strong>, we have <strong>Greenwood Orchards</strong> 🌳.<br>An exclusive private community of 60 bespoke luxury villas, Orchard Boulevard, Pine Court, Grand Clubhouse, swimming pool, and lake promenade.<br><br><strong>Are you trying to go to a specific villa in Greenwood Orchards?</strong>`,
+            chips: [
+              { text: "✅ Yes, a specific villa", query: "Yes" },
+              { text: "🌿 No, explore full layout", query: "No" },
+              { text: "🏊 Grand Clubhouse", query: "Clubhouse" },
+              { text: "🌊 Lake Promenade", query: "Lake Promenade" }
+            ]
+          });
+          return;
+        } else if (isEcityQuery) {
+          this.chosenLayoutId = 'tech_horizon';
+          this.state = 'ASKING_SPECIFIC_PLACE';
+          this.addAiMessage({
+            text: `In <strong>Electronic City Phase 1</strong>, we have <strong>Tech Horizon Campus</strong> 🏢.<br>A premier corporate tech park featuring 36 enterprise blocks and towers (Towers A–D, Blocks 101–310), Innovation Boulevard, Food Plaza, and Multi-Level Car Parking.<br><br><strong>Are you trying to go to a specific tower or block in Tech Horizon?</strong>`,
+            chips: [
+              { text: "✅ Yes, a specific block/tower", query: "Yes" },
+              { text: "🌿 No, explore campus", query: "No" },
+              { text: "🍽️ Food Plaza", query: "Food Plaza" },
+              { text: "🅿️ Smart MLCP", query: "Smart MLCP" }
+            ]
+          });
+          return;
+        } else {
+          // General city-wide area overview:
+          this.state = 'SELECTING_LAYOUT';
+          this.addAiMessage({
+            text: `Here are the active layout locations in our digital system: 🗺️<br><br>• 📍 <strong>Bangalore South (Bannerghatta Road)</strong>: <strong>Himagiri Meadows</strong> — 344 residential plots, 8 avenues, central park & temple.<br>• 📍 <strong>Bangalore East (Sarjapur / Carmelaram)</strong>: <strong>Greenwood Orchards</strong> — 60 luxury villas, grand clubhouse, swimming pool & lake promenade.<br>• 📍 <strong>Electronic City Phase 1</strong>: <strong>Tech Horizon Campus</strong> — 36 corporate blocks, Towers A–D, food plaza & innovation boulevards.<br><br><strong>Which layout area would you like to explore, or are you trying to go to a specific place?</strong>`,
+            chips: [
+              { text: "🏡 Himagiri Meadows (South)", query: "Himagiri Meadows" },
+              { text: "🌳 Greenwood Orchards (East)", query: "Greenwood Orchards" },
+              { text: "🏢 Tech Horizon (Electronic City)", query: "Tech Horizon Campus" }
             ]
           });
           return;
         }
       }
 
-      // 5. GPS live tracking
+      // Check if user specifically named a layout
+      if (lower.includes('greenwood') || lower.includes('orchard')) {
+        this.chosenLayoutId = 'greenwood';
+        const targetLayout = layouts.greenwood;
+        this.state = 'ASKING_SPECIFIC_PLACE';
+        this.addAiMessage({
+          text: `Welcome to <strong>Greenwood Orchards</strong> (Sarjapur / Bangalore East)! 🌳<br>60 luxury villas, clubhouse, pool, and lake promenade.<br><br><strong>Are you trying to go to a specific villa or place in Greenwood?</strong>`,
+          chips: [
+            { text: "✅ Yes, a specific villa", query: "Yes" },
+            { text: "🌿 No, explore full layout", query: "No" },
+            { text: "🏊 Grand Clubhouse", query: "Clubhouse" }
+          ]
+        });
+        return;
+      }
+
+      if (lower.includes('tech horizon') || lower.includes('horizon campus')) {
+        this.chosenLayoutId = 'tech_horizon';
+        const targetLayout = layouts.tech_horizon;
+        this.state = 'ASKING_SPECIFIC_PLACE';
+        this.addAiMessage({
+          text: `Welcome to <strong>Tech Horizon Campus</strong> (Electronic City Phase 1)! 🏢<br>36 enterprise blocks and towers, food plaza, MLCP parking.<br><br><strong>Are you trying to go to a specific block, tower, or room?</strong>`,
+          chips: [
+            { text: "✅ Yes, a specific block/tower", query: "Yes" },
+            { text: "🌿 No, explore campus", query: "No" },
+            { text: "🍽️ Food Plaza", query: "Food Plaza" }
+          ]
+        });
+        return;
+      }
+
+      if (lower.includes('himagiri') || lower.includes('meadows')) {
+        this.chosenLayoutId = 'himagiri';
+        const targetLayout = layouts.himagiri;
+        this.state = 'ASKING_SPECIFIC_PLACE';
+        this.addAiMessage({
+          text: `Welcome to <strong>Himagiri Meadows</strong> (Bannerghatta Road, Bangalore South)! 🏡<br>344 residential plots across 8 avenues, 2 gates, and central parks.<br><br><strong>Are you trying to go to a specific plot or house?</strong>`,
+          chips: [
+            { text: "✅ Yes, a specific plot", query: "Yes" },
+            { text: "🌿 No, explore full layout", query: "No" },
+            { text: "Plot 142", query: "Plot 142" }
+          ]
+        });
+        return;
+      }
+
+      // UNIT LOOKUP: Check in chosen layout first, then active layout, then all layouts
+      const searchLayout = layouts[this.chosenLayoutId] || currentLayout;
+      let matchedPlot = findPlotInLayout(searchLayout, query);
+      let matchedLayout = searchLayout;
+
+      if (!matchedPlot) {
+        for (const [lid, lay] of Object.entries(layouts)) {
+          const found = findPlotInLayout(lay, query);
+          if (found) {
+            matchedPlot = found;
+            matchedLayout = lay;
+            this.chosenLayoutId = lid;
+            break;
+          }
+        }
+      }
+
+      if (matchedPlot) {
+        const uLabel = matchedLayout.unitType || 'Unit';
+        this.state = 'IDLE';
+        this.addAiMessage({
+          text: `Found it! 🎯<br><strong>${uLabel} #${matchedPlot.number}</strong> is located in <strong>${matchedLayout.name}</strong> on <strong>${matchedPlot.road}</strong> (${matchedPlot.block}, facing ${matchedPlot.facing}).<br><br>🚀 Loading the <strong>${matchedLayout.name}</strong> digital layout now and starting your feature walkthrough tutorial!`,
+          chips: [
+            { text: "🚀 Start Feature Tutorial", query: "Start Tutorial" },
+            { text: "📡 Live GPS Location", query: "Track live location" },
+            { text: "🗺️ Full Overview", query: "Where do I go?" }
+          ]
+        });
+
+        setTimeout(() => {
+          this.close();
+          loadLayout(matchedLayout.id, matchedPlot.id);
+        }, 900);
+        return;
+      }
+
+      // AMENITY LOOKUP across chosen layout and current layout
+      const searchAmenities = searchLayout.amenities || [];
+      const matchedAmenity = searchAmenities.find(a => {
+        const nameLower = a.name.toLowerCase();
+        const idLower = a.id.toLowerCase();
+        return lower.includes(nameLower) ||
+          (lower.includes('temple') && (nameLower.includes('temple') || idLower.includes('temple'))) ||
+          (lower.includes('play') && idLower.includes('play')) ||
+          (lower.includes('park') && (idLower.includes('play') || idLower.includes('garden') || idLower.includes('park') || idLower.includes('promenade'))) ||
+          (lower.includes('clubhouse') && idLower.includes('clubhouse')) ||
+          (lower.includes('pool') && idLower.includes('pool')) ||
+          (lower.includes('lake') && idLower.includes('lake')) ||
+          (lower.includes('food') && (idLower.includes('food') || idLower.includes('cafeteria'))) ||
+          (lower.includes('parking') && idLower.includes('parking')) ||
+          (lower.includes('ev') && idLower.includes('ev')) ||
+          (lower.includes('auditorium') && idLower.includes('auditorium')) ||
+          (lower.includes('gate 1') && idLower.includes('gate_1')) ||
+          (lower.includes('gate 2') && idLower.includes('gate_2')) ||
+          (lower.includes('wtp') && idLower.includes('wtp')) ||
+          (lower.includes('waste') && idLower.includes('waste'));
+      });
+
+      if (matchedAmenity) {
+        this.state = 'IDLE';
+        this.addAiMessage({
+          text: `Found <strong>${matchedAmenity.name}</strong> in <strong>${searchLayout.name}</strong>! 📍<br>${matchedAmenity.description || matchedAmenity.desc || 'Society landmark'}.<br><br>Loading layout and plotting route...`,
+          chips: [
+            { text: "🚀 Start Tutorial", query: "Start Tutorial" },
+            { text: "🧭 Where do I go?", query: "Where do I go?" }
+          ]
+        });
+
+        setTimeout(() => {
+          this.close();
+          loadLayout(searchLayout.id);
+          selectAmenity(matchedAmenity.id, true);
+        }, 800);
+        return;
+      }
+
+      // Live GPS tracking
       if (lower.includes('gps') || lower.includes('live location') || lower.includes('track')) {
-        showMapView('himagiri');
+        this.close();
+        showMapView(currentLayout.id);
         startLocationTracking(true);
-        this.addAiMessage({
-          text: "Starting live GPS location tracking! 📡<br>Your real-time position will appear as a pulsing blue radar pin on the map. As you walk, turn-by-turn routes will calculate from your exact spot.",
-          chips: [
-            { text: "Where do I go?", query: "Where do I go?" },
-            { text: "Find Plot 142", query: "Plot 142" }
-          ]
-        });
+        showToast("Started live GPS tracking 📡", 3000);
         return;
       }
 
-      // 6. Avenues list
-      if (lower.includes('avenue') || lower.includes('roads')) {
-        showMapView('himagiri');
-        fitMapToView(true);
-        this.addAiMessage({
-          text: "Himagiri Meadows has 8 scenic tree-lined avenues running North to South:<br>• <strong>Aster Road</strong> (Gate 1 Entry)<br>• <strong>Bluebell Road</strong><br>• <strong>Carnation Road</strong><br>• <strong>Dhalia Road</strong><br>• <strong>Exotica Road</strong><br>• <strong>Florentine Road</strong><br>• <strong>Gardenia Road</strong><br>• <strong>Hibiscus Road</strong><br><br>Which one are you looking for?",
-          chips: [
-            { text: "Aster Road", query: "Aster" },
-            { text: "Carnation Road", query: "Carnation" },
-            { text: "Exotica Road", query: "Exotica" },
-            { text: "Hibiscus Road", query: "Hibiscus" }
-          ]
-        });
-        return;
-      }
-
-      // Fallback response
+      // Fallback
       this.addAiMessage({
-        text: `I'm not quite sure about "${escapeHtml(query)}".<br><br>You can ask me:<br>• <strong>'Where do I go?'</strong> (to view the full layout and find your destination)<br>• A specific house number like <strong>'Plot 142'</strong> or <strong>'House 55'</strong><br>• Community landmarks like <strong>'West Temple'</strong> or <strong>'Children's Play Area'</strong>`,
+        text: `I'm here to guide you across all layouts! 🧭<br><br>You can ask me:<br>• <strong>'Where do I go?'</strong> (to view layouts in Bangalore South, East, and Electronic City)<br>• A house or villa number like <strong>'Plot 142'</strong>, <strong>'Villa 24'</strong>, or <strong>'Tower A1'</strong><br>• Society landmarks like <strong>'Grand Clubhouse'</strong>, <strong>'Food Plaza'</strong>, or <strong>'Temple'</strong>`,
         chips: [
           { text: "🧭 Where do I go?", query: "Where do I go?" },
-          { text: "🏠 Plot 142", query: "Plot 142" },
-          { text: "🛕 West Temple", query: "West Temple" },
-          { text: "🗺️ Full Layout", query: "Where do I go?" }
+          { text: "🏡 Himagiri Meadows", query: "Himagiri Meadows" },
+          { text: "🌳 Greenwood Orchards", query: "Greenwood Orchards" },
+          { text: "🏢 Tech Horizon Campus", query: "Tech Horizon Campus" }
         ]
       });
     }
@@ -2388,22 +2929,30 @@
   // Check URL parameters for direct delivery link sharing
   function checkUrlParams() {
     const params = new URLSearchParams(window.location.search);
-    const houseNum = params.get('house') || params.get('plot');
+    const houseNum = params.get('house') || params.get('plot') || params.get('villa') || params.get('unit');
     const gateNum = params.get('gate');
-    const mapParam = params.get('map');
+    const mapParam = params.get('map') || params.get('layout');
 
     if (gateNum === '2') {
       state.startNodeId = 'gate_2';
       startSelect.value = 'gate_2';
     }
 
-    if (houseNum || mapParam === 'himagiri') {
-      showMapView('himagiri', houseNum);
+    if (mapParam && layouts[mapParam]) {
+      loadLayout(mapParam, houseNum);
+    } else if (houseNum) {
+      loadLayout('himagiri', houseNum);
     } else {
       // By default: Show Portal View! Himagiri is NOT the first map that they see!
       showPortalView();
     }
   }
+
+  // Initialize on DOM load
+  document.addEventListener('DOMContentLoaded', () => {
+    initMap();
+    setupEventListeners();
+  });
 
   // Initialize on DOM load
   document.addEventListener('DOMContentLoaded', () => {

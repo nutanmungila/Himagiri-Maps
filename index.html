@@ -32,13 +32,13 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
   <script>
     // Aggressively purge older PWA caches so updates show instantly
     if ('caches' in window) {
       caches.keys().then(function(names) {
         for (let name of names) {
-          if (name !== 'himagiri-map-v8') {
+          if (name !== 'himagiri-map-v9') {
             caches.delete(name);
           }
         }
@@ -183,52 +183,60 @@
             </div>
           </div>
 
-          <!-- Card 2: Greenwood Orchards (Sample Layout) -->
-          <div class="community-card coming-soon-card">
-            <div class="card-badge preview-badge">Sample Layout</div>
+          <!-- Card 2: Greenwood Orchards (Active Luxury Villa Layout) -->
+          <div class="community-card active-card" id="card-greenwood">
+            <div class="card-badge live-badge">🟢 Live Verified Layout</div>
             <div class="card-header">
               <div class="community-avatar">🌳</div>
               <div>
                 <h3 class="community-name">Greenwood Orchards</h3>
-                <p class="community-loc">Sarjapur Road Corridor</p>
+                <p class="community-loc">Sarjapur Road • Bangalore East</p>
               </div>
             </div>
             <p class="community-desc">
-              Ecological villa development featuring 180 residential plots, central lakeside trail, community clubhouse, tennis court, and solar-powered amenities.
+              Gated luxury villa community with 60 bespoke villas, Orchard Boulevard, Pine Court, Palm Drive, Grand Clubhouse, swimming pool, and lake promenade.
             </p>
             <div class="community-tags">
-              <span class="tag">📍 180 Plots</span>
+              <span class="tag">🏡 60 Villas</span>
+              <span class="tag">🛣️ 5 Avenues</span>
               <span class="tag">🏊 Clubhouse</span>
-              <span class="tag">🎾 Sports Zone</span>
+              <span class="tag">🌊 Lake Park</span>
             </div>
             <div class="community-actions">
-              <button class="btn btn-secondary btn-preview-sample" data-name="Greenwood Orchards" style="width: 100%;">
-                🔍 Preview Layout
+              <button class="btn btn-primary btn-open-greenwood" style="flex: 1.3;">
+                🗺️ Explore Greenwood Map
+              </button>
+              <button class="btn btn-secondary btn-ask-ai-greenwood" style="flex: 1;">
+                ✨ Ask AI Guide
               </button>
             </div>
           </div>
 
-          <!-- Card 3: Tech Horizon Campus (Corporate Campus Sample) -->
-          <div class="community-card coming-soon-card">
-            <div class="card-badge preview-badge">Corporate Campus</div>
+          <!-- Card 3: Tech Horizon Campus (Active Tech Park Layout) -->
+          <div class="community-card active-card" id="card-tech-horizon">
+            <div class="card-badge live-badge">🟢 Live Verified Campus</div>
             <div class="card-header">
               <div class="community-avatar">🏢</div>
               <div>
                 <h3 class="community-name">Tech Horizon Campus</h3>
-                <p class="community-loc">Electronic City Phase 1</p>
+                <p class="community-loc">Electronic City Phase 1 • Bangalore</p>
               </div>
             </div>
             <p class="community-desc">
-              Modern 45-acre enterprise campus with 12 corporate towers, central amphitheater, multi-level visitor parking, EV charging hubs, and food court.
+              Premier corporate IT campus featuring Towers A to D, 36 tech enterprise blocks, Central Innovation Boulevard, food plaza, MLCP parking, and sports arena.
             </p>
             <div class="community-tags">
-              <span class="tag">🏢 12 Blocks</span>
-              <span class="tag">⚡ EV Hubs</span>
-              <span class="tag">🅿️ Smart Parking</span>
+              <span class="tag">🏢 36 Blocks</span>
+              <span class="tag">🛣️ 5 Boulevards</span>
+              <span class="tag">🍽️ Food Plaza</span>
+              <span class="tag">🅿️ Smart MLCP</span>
             </div>
             <div class="community-actions">
-              <button class="btn btn-secondary btn-preview-sample" data-name="Tech Horizon Campus" style="width: 100%;">
-                🔍 Preview Campus
+              <button class="btn btn-primary btn-open-tech-horizon" style="flex: 1.3;">
+                🗺️ Explore Campus Map
+              </button>
+              <button class="btn btn-secondary btn-ask-ai-tech-horizon" style="flex: 1;">
+                ✨ Ask AI Guide
               </button>
             </div>
           </div>
@@ -697,10 +705,35 @@
     </div>
   </div>
 
+  <!-- ======================================================== -->
+  <!-- GUIDED LAYOUT TUTORIAL WALKTHROUGH OVERLAY               -->
+  <!-- ======================================================== -->
+  <div id="layout-tutorial-overlay" class="tutorial-overlay" style="display: none;">
+    <div class="tutorial-card">
+      <div class="tutorial-header">
+        <div class="tutorial-badge"><span class="badge-dot"></span> <span id="tutorial-step-counter">Feature 1 of 5</span></div>
+        <button id="tutorial-close-btn" class="tutorial-close" title="Close tutorial">✕</button>
+      </div>
+      <div class="tutorial-content">
+        <div class="tutorial-icon" id="tutorial-icon">🧭</div>
+        <div class="tutorial-text-wrap">
+          <h4 class="tutorial-title" id="tutorial-title">Turn-by-Turn Route Navigation</h4>
+          <p class="tutorial-desc" id="tutorial-desc">Follow the glowing cyan navigation path from the security gate directly to your destination with live walking distance and time.</p>
+        </div>
+      </div>
+      <div class="tutorial-actions">
+        <button id="tutorial-prev-btn" class="btn btn-secondary" style="display: none;">← Prev</button>
+        <button id="tutorial-next-btn" class="btn btn-primary" style="flex: 1;">Next Feature ➔</button>
+        <button id="tutorial-finish-btn" class="btn btn-primary" style="display: none; flex: 1;">Start Navigating 🚀</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Load Scripts with Version Cache-Buster -->
-  <script src="analytics.js?v=8"></script>
-  <script src="qrcode.min.js?v=8"></script>
-  <script src="map_data.js?v=8"></script>
-  <script src="app.js?v=8"></script>
+  <script src="analytics.js?v=9"></script>
+  <script src="qrcode.min.js?v=9"></script>
+  <script src="map_data.js?v=9"></script>
+  <script src="layouts_data.js?v=9"></script>
+  <script src="app.js?v=9"></script>
 </body>
 </html>
