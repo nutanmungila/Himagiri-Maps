@@ -50,24 +50,51 @@
   let amenities = currentLayout.amenities;
   let graph = {};
 
-  // Universal Plot / Unit Lookup Helper
+  // Universal Plot / Apartment / Unit Lookup Helper
   function findPlotInLayout(layout, query) {
     if (!layout || !layout.plots || !query) return null;
     const qClean = String(query).trim().toUpperCase();
-    const qNorm = qClean.replace(/^(PLOT|VILLA|HOUSE|BLOCK|TOWER|ROOM|SITE|H\.?NO)\s*#?\s*/i, '').trim();
+    const isTowerOrBlock = /^(TOWER|BLOCK|WING)\s+/i.test(qClean);
+    const qNorm = qClean.replace(/^(FLAT|APT|APARTMENT|PLOT|VILLA|HOUSE|BLOCK|TOWER|ROOM|SITE|H\.?NO|WING)\s*#?\s*/i, '').trim();
 
+    // If user searched for a specific Tower or Block (e.g. 'Tower 5', 'Block A')
+    if (isTowerOrBlock) {
+      for (const pid in layout.plots) {
+        const p = layout.plots[pid];
+        if (p.number.toUpperCase().startsWith(qClean) || (p.block && p.block.toUpperCase().startsWith(qClean))) {
+          return p;
+        }
+      }
+    }
+
+    // Exact ID / Number matches
     if (layout.plots[qClean]) return layout.plots[qClean];
     if (layout.plots[qNorm]) return layout.plots[qNorm];
-    if (layout.plots[`T-${qNorm}`]) return layout.plots[`T-${qNorm}`];
-    if (layout.plots[`T-${qClean}`]) return layout.plots[`T-${qClean}`];
 
     for (const pid in layout.plots) {
       const p = layout.plots[pid];
       const numClean = p.number.toUpperCase();
+      const numNorm = numClean.replace(/^(FLAT|APT|APARTMENT|PLOT|VILLA|HOUSE|BLOCK|TOWER|ROOM|SITE|WING)\s*#?\s*/i, '').trim();
+
       if (numClean === qClean || numClean === qNorm) return p;
-      if (numClean.replace(/^(PLOT|VILLA|HOUSE|BLOCK|TOWER)\s*/i, '').trim() === qNorm) return p;
-      if (p.id.toUpperCase() === qNorm) return p;
+      if (numNorm === qClean || numNorm === qNorm) return p;
+
+      if (numClean.replace(/\s*-\s*/g, ' ').includes(qClean.replace(/\s*-\s*/g, ' '))) return p;
+      if (numClean.replace(/[\s-]/g, '').includes(qClean.replace(/[\s-]/g, ''))) return p;
+
+      if (/^\d+$/.test(qNorm)) {
+        if (numClean.endsWith(' ' + qNorm) || numClean.endsWith('-' + qNorm) || numClean.endsWith('- ' + qNorm)) return p;
+      }
     }
+
+    if (!isTowerOrBlock) {
+      for (const pid in layout.plots) {
+        const p = layout.plots[pid];
+        if (p.id.toUpperCase() === qNorm) return p;
+        if (p.block && p.block.toUpperCase().includes(qClean)) return p;
+      }
+    }
+
     return null;
   }
 
@@ -232,7 +259,7 @@
       roadPath.setAttribute("x2", v.x);
       roadPath.setAttribute("y2", v.y);
       roadPath.setAttribute("stroke", "#1e293b");
-      roadPath.setAttribute("stroke-width", currentLayout.id === 'tech_horizon' ? "26" : "22");
+      roadPath.setAttribute("stroke-width", "22");
       roadPath.setAttribute("stroke-linecap", "round");
       roadPath.setAttribute("stroke-linejoin", "round");
       corridorGroup.appendChild(roadPath);
@@ -593,7 +620,13 @@
     if (brandTitle) brandTitle.textContent = layout.name;
     if (brandSub) brandSub.textContent = layout.location;
     if (brandIcon) {
-      brandIcon.textContent = layout.id === 'tech_horizon' ? '🏢' : (layout.id === 'greenwood' ? '🌳' : '🗺️');
+      if (layout.id === 'prestige_falcon_city') brandIcon.textContent = '🏢';
+      else if (layout.id === 'prestige_elysian') brandIcon.textContent = '✨';
+      else if (layout.id === 'kristal_beryl') brandIcon.textContent = '💎';
+      else if (layout.id === 'sattva_greenage') brandIcon.textContent = '🌳';
+      else if (layout.id === 'sobha_dream_acres') brandIcon.textContent = '🌊';
+      else if (layout.id === 'himagiri') brandIcon.textContent = '🏡';
+      else brandIcon.textContent = (layout.unitType && layout.unitType.includes('Tower')) ? '🏢' : '🗺️';
     }
 
     if (headerBadges) {
@@ -2500,12 +2533,24 @@
 
       // Description
       let desc = '';
-      if (lay.id === 'himagiri') {
+      if (lay.id === 'prestige_falcon_city') {
+        desc = "Iconic 7-tower residential township on Kanakapura Road, connected to Forum Falcon City Mall & Konanakunte Cross Metro, with Olympic pool, tennis arena, and central amphitheatre.";
+      } else if (lay.id === 'prestige_elysian') {
+        desc = "Luxury high-rise residential community on Bannerghatta Main Road (opposite Meenakshi Mall), featuring Aurum, Argent, Cuprum & Platin towers, infinity pool, and Zen gardens.";
+      } else if (lay.id === 'kristal_beryl') {
+        desc = "Gated residential apartment enclave in Kasavanahalli (Sarjapur Road vicinity) with 5 residential blocks (A to E), central swimming pool, gymnasium, and play areas.";
+      } else if (lay.id === 'sattva_greenage') {
+        desc = "50-acre integrated gated community on Hosur Main Road with 10 residential towers (Alpine to Jasmine), 60,000 sq ft Clayey Park clubhouse, 4 pools, and sports arena.";
+      } else if (lay.id === 'sobha_dream_acres') {
+        desc = "Massive precast residential township in Panathur/Balagere with Rainforest, Coral, Palm & Spring wings, 5 clubhouses, lap pools, and sports courts.";
+      } else if (lay.id === 'prestige_song_south') {
+        desc = "Premier 17-tower high-rise township off Bannerghatta Road / Begur with Symphony clubhouse, natural lake promenade, and sports arenas.";
+      } else if (lay.id === 'brigade_millennium') {
+        desc = "Landmark integrated residential campus in JP Nagar 7th Phase with Cassia, Jacaranda, Laburnum, Magnolia & Mayflower towers, The Woodrose Club, and MLR Convention Centre.";
+      } else if (lay.id === 'purva_westend') {
+        desc = "Cinema-themed luxury high-rise community at Kudlu Gate (Hosur Main Road) featuring Broadway and Opera towers, open-air cinema amphitheatre, and resort wave pool.";
+      } else if (lay.id === 'himagiri') {
         desc = "Premium 344-plot gated community with 8 tree-lined avenues, dual security gates, West & Central temples, children's park, and auditorium.";
-      } else if (lay.id === 'greenwood') {
-        desc = "Gated luxury villa community with 60 bespoke villas, Orchard Boulevard, Pine Court, Palm Drive, Grand Clubhouse, swimming pool, and lake promenade.";
-      } else if (lay.id === 'tech_horizon') {
-        desc = "Premier corporate IT campus featuring Towers A to D, 36 tech enterprise blocks, Central Innovation Boulevard, food plaza, and smart MLCP parking.";
       } else {
         desc = `${lay.type || 'Verified residential layout'} featuring ${uCount} ${uType.toLowerCase()}s, ${amenCount} community amenities, and verified turn-by-turn routing.`;
       }
@@ -2672,14 +2717,15 @@
       const messagesContainer = document.getElementById('ai-chat-messages');
       if (messagesContainer && messagesContainer.children.length === 0) {
         this.addAiMessage({
-          text: "Hello! I am your <strong>HM Maps AI Navigator</strong> 🧭.<br>I know 50+ real residential layouts, villas, plots, corporate blocks, and avenues across Bangalore.<br><br>Where would you like to go today?",
+          text: "Hello! I am your <strong>HM Maps AI Navigator</strong> 🧭.<br>I know real Bangalore residential communities, apartments, and layouts like <strong>Prestige Falcon City</strong>, <strong>Prestige Elysian</strong>, <strong>Kristal Beryl</strong>, <strong>Salarpuria Sattva Greenage</strong>, and <strong>Sobha Dream Acres</strong>.<br><br>Where would you like to go today?",
           chips: [
             { text: "🧭 Where do I go?", query: "Where do I go?" },
-            { text: "🌳 Whitefield & East", query: "Layouts in Whitefield" },
-            { text: "🏡 South Bangalore", query: "Layouts in South Bangalore" },
-            { text: "🏢 Electronic City & ORR", query: "Layouts in Electronic City" },
-            { text: "✈️ North Bangalore", query: "Layouts in North Bangalore" },
-            { text: "🏛️ Central & West", query: "Layouts in Central Bangalore" },
+            { text: "🏢 Prestige Falcon City", query: "Prestige Falcon City" },
+            { text: "✨ Prestige Elysian", query: "Prestige Elysian" },
+            { text: "💎 Kristal Beryl", query: "Kristal Beryl" },
+            { text: "🌳 Salarpuria Greenage", query: "Salarpuria Sattva Greenage" },
+            { text: "🌊 Sobha Dream Acres", query: "Sobha Dream Acres" },
+            { text: "🏡 Himagiri Meadows", query: "Himagiri Meadows" },
             { text: "📡 Live GPS Tracking", query: "Track live location" }
           ]
         });
@@ -2712,7 +2758,7 @@
       ];
 
       samplePlots.forEach(p => {
-        chips.push({ text: `${targetLayout.unitType || 'Unit'} #${p.number}`, query: `${targetLayout.unitType || 'Unit'} ${p.number}` });
+        chips.push({ text: p.number, query: p.number });
       });
 
       if (sampleAmenity) {
@@ -2824,12 +2870,12 @@
           const plotKeys = Object.keys(targetLayout.plots);
           const samplePlots = plotKeys.slice(0, 6).map(k => targetLayout.plots[k]);
           const chips = samplePlots.map(p => ({
-            text: `${targetLayout.unitType || 'Unit'} #${p.number}`,
-            query: `${targetLayout.unitType || 'Unit'} ${p.number}`
+            text: p.number,
+            query: p.number
           }));
 
           this.addAiMessage({
-            text: `Which <strong>${targetLayout.unitType || 'house'} or room number</strong> are you looking for in <strong>${targetLayout.name}</strong>?`,
+            text: `Which <strong>${targetLayout.unitType || 'apartment / unit'} number</strong> are you looking for in <strong>${targetLayout.name}</strong>?`,
             chips: chips
           });
           return;
@@ -2868,7 +2914,7 @@
               { text: `🌿 No, explore full layout`, query: "No" }
             ];
             samplePlots.forEach(p => {
-              chips.push({ text: `${lay.unitType || 'Unit'} #${p.number}`, query: `${lay.unitType || 'Unit'} ${p.number}` });
+              chips.push({ text: p.number, query: p.number });
             });
             this.addAiMessage({
               text: `Selected <strong>${lay.name}</strong> in ${lay.location}! 🗺️<br>${plotKeys.length} ${uLabel}s, ${lay.amenities?.length || 0} amenities.<br><br><strong>Are you trying to go to a specific ${uLabel} or house?</strong>`,
@@ -2886,7 +2932,46 @@
         return;
       }
 
-      // Check if user asks about a specific layout name directly
+      // Direct match for user's requested premier real communities
+      let specificLayoutId = null;
+      if (lower.includes('falcon') || lower.includes('konanakunte')) specificLayoutId = 'prestige_falcon_city';
+      else if (lower.includes('elysian') || lower.includes('aurum')) specificLayoutId = 'prestige_elysian';
+      else if (lower.includes('beryl') || lower.includes('kristal') || lower.includes('kasavanahalli')) specificLayoutId = 'kristal_beryl';
+      else if (lower.includes('greenage') || lower.includes('sattva') || lower.includes('bommanahalli')) specificLayoutId = 'sattva_greenage';
+      else if (lower.includes('dream acres') || lower.includes('balagere')) specificLayoutId = 'sobha_dream_acres';
+      else if (lower.includes('song of the south') || lower.includes('song of south')) specificLayoutId = 'prestige_song_south';
+      else if (lower.includes('millennium') && (lower.includes('brigade') || lower.includes('jp nagar') || lower.includes('woodrose'))) specificLayoutId = 'brigade_millennium';
+      else if (lower.includes('westend') || lower.includes('kudlu')) specificLayoutId = 'purva_westend';
+      else if (lower.includes('himagiri') || lower.includes('gottigere')) specificLayoutId = 'himagiri';
+
+      if (specificLayoutId && layouts[specificLayoutId]) {
+        this.chosenLayoutId = specificLayoutId;
+        const targetLayout = layouts[specificLayoutId];
+        this.state = 'ASKING_SPECIFIC_PLACE';
+        const uLabel = targetLayout.unitType ? targetLayout.unitType.toLowerCase() : 'house';
+        const plotKeys = Object.keys(targetLayout.plots);
+        const samplePlots = plotKeys.slice(0, 4).map(k => targetLayout.plots[k]);
+        const sampleAmenity = targetLayout.amenities && targetLayout.amenities.length > 0 ? targetLayout.amenities[0] : null;
+
+        const chips = [
+          { text: `✅ Yes, a specific ${uLabel}`, query: "Yes" },
+          { text: `🌿 No, explore full layout`, query: "No" }
+        ];
+        samplePlots.forEach(p => {
+          chips.push({ text: p.number, query: p.number });
+        });
+        if (sampleAmenity) {
+          chips.push({ text: `📍 ${sampleAmenity.name}`, query: sampleAmenity.name });
+        }
+
+        this.addAiMessage({
+          text: `Welcome to <strong>${targetLayout.name}</strong> (${targetLayout.location})! 📍<br>${plotKeys.length} ${uLabel}s, ${targetLayout.amenities?.length || 0} community amenities.<br><br><strong>Are you trying to go to a specific ${uLabel} or place?</strong>`,
+          chips: chips
+        });
+        return;
+      }
+
+      // Check if user asks about ANY other layout name directly
       for (const [lid, lay] of Object.entries(layouts)) {
         const lName = lay.name.toLowerCase();
         const cleanName = lName.replace(/layout|phase|stage|block|residency|campus|homes|apartments|villas|city/g, '').trim();
@@ -2901,7 +2986,7 @@
             { text: `🌿 No, explore full layout`, query: "No" }
           ];
           samplePlots.forEach(p => {
-            chips.push({ text: `${lay.unitType || 'Unit'} #${p.number}`, query: `${lay.unitType || 'Unit'} ${p.number}` });
+            chips.push({ text: p.number, query: p.number });
           });
           this.addAiMessage({
             text: `Welcome to <strong>${lay.name}</strong> (${lay.location})! 📍<br>${plotKeys.length} ${uLabel}s, ${lay.amenities?.length || 0} community amenities.<br><br><strong>Are you trying to go to a specific ${uLabel} or place?</strong>`,
@@ -2913,9 +2998,9 @@
 
       // Area queries: "Where do I go?", "where should i go in whitefield", "layouts in south", etc.
       const isSouth = lower.includes('south') || lower.includes('bannerghatta') || lower.includes('kanakapura') || lower.includes('jp nagar') || lower.includes('jayanagar') || lower.includes('btm') || lower.includes('meenakshi');
-      const isEast = lower.includes('whitefield') || lower.includes('sarjapur') || lower.includes('east') || lower.includes('varthur') || lower.includes('marathahalli') || lower.includes('carmelaram');
+      const isEast = lower.includes('whitefield') || lower.includes('sarjapur') || lower.includes('east') || lower.includes('varthur') || lower.includes('marathahalli') || lower.includes('carmelaram') || lower.includes('kasavanahalli');
       const isEcity = lower.includes('electronic city') || lower.includes('ecity') || lower.includes('e-city') || lower.includes('hsr') || lower.includes('bellandur') || lower.includes('orr') || lower.includes('outer ring road') || lower.includes('green glen');
-      const isNorth = lower.includes('north') || lower.includes('hebbal') || lower.includes('manyata') || lower.includes('yelahanka') || lower.includes('airport') || lower.includes('jakkur') || lower.includes('sahakara');
+      const isNorth = lower.includes('north') || lower.includes('hebbal') || lower.includes('manyata') || lower.includes('yelahanka') || lower.includes('airport') || lower.includes('jakkur') || lower.includes('sahakara') || lower.includes('thanisandra');
       const isWest = lower.includes('central') || lower.includes('west') || lower.includes('koramangala') || lower.includes('indiranagar') || lower.includes('malleswaram') || lower.includes('rajajinagar') || lower.includes('sadashivanagar') || lower.includes('banashankari') || lower.includes('vijayanagar') || lower.includes('peenya');
 
       const isAreaDiscovery = lower.includes('where do i go') ||
@@ -2937,72 +3022,73 @@
         if (isSouth) {
           this.state = 'SELECTING_LAYOUT';
           this.addAiMessage({
-            text: `Here are the top residential layouts in <strong>Bangalore South</strong> (Bannerghatta, Kanakapura, JP Nagar & Jayanagar): 🏡<br><br>
-• <strong>Himagiri Meadows</strong> — 344 residential plots, 8 avenues, 2 gates & temples<br>
-• <strong>Brigade Meadows</strong> — 48 units, Kanakapura Road township<br>
-• <strong>Mantri Tranquil</strong> — 48 units, Gubbalala vicinity<br>
-• <strong>Concorde Napa Valley</strong> — 44 luxury villas, Kanakapura corridor<br>
-• <strong>JP Nagar 7th Phase & 2nd Phase</strong> — Premier BDA residential layouts<br>
-• <strong>Jayanagar 4th & 9th Block</strong> — Historic, prestigious South Bangalore layouts<br><br>
-<strong>Which layout would you like to explore, or are you trying to go to a specific house?</strong>`,
+            text: `Here are top real residential communities in <strong>Bangalore South</strong> (Kanakapura, Bannerghatta, JP Nagar): 🏡<br><br>
+• 🏢 <strong>Prestige Falcon City</strong> — 7 high-rise towers, Forum Mall link & Konanakunte Cross Metro<br>
+• ✨ <strong>Prestige Elysian</strong> — 4 luxury towers (Aurum, Argent, Cuprum, Platin) opposite Meenakshi Mall<br>
+• 🎶 <strong>Prestige Song of the South</strong> — 17 towers & lakefront promenade, Begur-Koppa Road<br>
+• 🏛️ <strong>Brigade Millennium</strong> — Cassia, Jacaranda, Laburnum, Magnolia & Mayflower, JP Nagar 7th Phase<br>
+• 🏡 <strong>Himagiri Meadows</strong> — 344 residential plots, 8 avenues, 2 gates & central park<br>
+• 🎬 <strong>Purva Westend</strong> — Broadway & Opera cinema towers at Kudlu Gate<br>
+• 🌿 <strong>Mantri Tranquil & Brigade Meadows</strong> — Premier Kanakapura corridor townships<br><br>
+<strong>Which community would you like to explore, or are you trying to visit a specific apartment?</strong>`,
             chips: [
-              { text: "🏡 Himagiri Meadows", query: "Himagiri Meadows" },
-              { text: "🌳 Brigade Meadows", query: "Brigade Meadows" },
-              { text: "✨ Mantri Tranquil", query: "Mantri Tranquil" },
-              { text: "🍇 Concorde Napa Valley", query: "Concorde Napa Valley" },
-              { text: "📍 JP Nagar 7th Phase", query: "JP Nagar 7th Phase" }
+              { text: "🏢 Prestige Falcon City", query: "Prestige Falcon City" },
+              { text: "✨ Prestige Elysian", query: "Prestige Elysian" },
+              { text: "🎶 Prestige Song of the South", query: "Prestige Song of the South" },
+              { text: "🏛️ Brigade Millennium", query: "Brigade Millennium" },
+              { text: "🏡 Himagiri Meadows", query: "Himagiri Meadows" }
             ]
           });
           return;
         } else if (isEast) {
           this.state = 'SELECTING_LAYOUT';
           this.addAiMessage({
-            text: `Here are the top residential layouts in <strong>East Bangalore & Whitefield</strong>: 🌳<br><br>
-• <strong>Palm Meadows</strong> — 44 luxury villas, Varthur Main Road<br>
-• <strong>Prestige Lakeside Habitat</strong> — 48 units, Varthur Lake township<br>
-• <strong>Greenwood Orchards</strong> — 60 bespoke villas, Sarjapur Road<br>
-• <strong>Prestige Shantiniketan</strong> — 44 high-rise units, ITPL Main Road<br>
-• <strong>Rainbow Drive</strong> — 44 gated villas, Sarjapur Road<br>
-• <strong>Divyasree Republic of Whitefield</strong> — 44 units, EPIP Zone<br><br>
-<strong>Which layout would you like to explore, or are you looking for a specific villa/apartment?</strong>`,
+            text: `Here are top real residential communities in <strong>East Bangalore & Whitefield</strong>: 🌳<br><br>
+• 💎 <strong>Kristal Beryl</strong> — 5 residential blocks (A to E), Kasavanahalli / Sarjapur Road<br>
+• 🌊 <strong>Sobha Dream Acres</strong> — 24 wings (Rainforest, Palm, Coral, Spring) in Panathur/Balagere<br>
+• 🏰 <strong>Prestige Lakeside Habitat</strong> — Disney-themed high-rise towers & villas, Varthur Lake<br>
+• 🌴 <strong>Palm Meadows</strong> — 44 luxury villas on Varthur Main Road<br>
+• 🏢 <strong>Prestige Shantiniketan</strong> — 24 towers with Forum Shantiniketan Mall, ITPL Road<br>
+• 🌈 <strong>Rainbow Drive</strong> — Gated eco-villas on Sarjapur Road<br><br>
+<strong>Which layout would you like to explore, or are you looking for a specific flat/villa?</strong>`,
             chips: [
-              { text: "🌳 Palm Meadows", query: "Palm Meadows" },
-              { text: "🌊 Prestige Lakeside", query: "Prestige Lakeside Habitat" },
-              { text: "🏡 Greenwood Orchards", query: "Greenwood Orchards" },
-              { text: "🏢 Prestige Shantiniketan", query: "Prestige Shantiniketan" },
-              { text: "🌈 Rainbow Drive", query: "Rainbow Drive" }
+              { text: "💎 Kristal Beryl", query: "Kristal Beryl" },
+              { text: "🌊 Sobha Dream Acres", query: "Sobha Dream Acres" },
+              { text: "🏰 Prestige Lakeside", query: "Prestige Lakeside Habitat" },
+              { text: "🌴 Palm Meadows", query: "Palm Meadows" },
+              { text: "🏢 Prestige Shantiniketan", query: "Prestige Shantiniketan" }
             ]
           });
           return;
         } else if (isEcity) {
           this.state = 'SELECTING_LAYOUT';
           this.addAiMessage({
-            text: `Here are the top layouts in <strong>Electronic City, HSR & Outer Ring Road (ORR)</strong>: 🏢<br><br>
-• <strong>Tech Horizon Campus</strong> — 36 enterprise blocks & tech towers, Electronic City Phase 1<br>
-• <strong>Adarsh Palm Retreat</strong> — 44 luxury villas, Bellandur ORR corridor<br>
-• <strong>HSR Layout Sectors 1, 2 & 3</strong> — Premier planned residential sectors<br>
-• <strong>Green Glen Layout</strong> — 40 units, Bellandur tech hub<br>
-• <strong>Neotown Electronic City</strong> — 44 units, Electronic City Phase 1<br><br>
+            text: `Here are top real communities in <strong>Electronic City, HSR & Outer Ring Road (ORR)</strong>: 🏢<br><br>
+• 🌴 <strong>Adarsh Palm Retreat</strong> — Luxury villas & towers, Bellandur ORR corridor<br>
+• 🌳 <strong>Salarpuria Sattva Greenage</strong> — 10 towers (Alpine to Jasmine), 60k sq ft clubhouse on Hosur Rd<br>
+• 📍 <strong>HSR Layout Sectors 1, 2 & 3</strong> — Premier planned residential sectors<br>
+• 🌿 <strong>Green Glen Layout</strong> — Bellandur tech hub residential enclave<br>
+• 🏙️ <strong>Concorde Cuppertino & Neotown</strong> — Electronic City Phase 1 townships<br><br>
 <strong>Which layout or campus are you trying to visit?</strong>`,
             chips: [
-              { text: "🏢 Tech Horizon Campus", query: "Tech Horizon Campus" },
               { text: "🌴 Adarsh Palm Retreat", query: "Adarsh Palm Retreat" },
+              { text: "🌳 Salarpuria Greenage", query: "Salarpuria Sattva Greenage" },
               { text: "📍 HSR Layout Sector 1", query: "HSR Layout Sector 1" },
               { text: "🌿 Green Glen Layout", query: "Green Glen Layout" },
-              { text: "🏙️ Neotown Electronic City", query: "Neotown Electronic City" }
+              { text: "🏡 Concorde Cuppertino", query: "Concorde Cuppertino" }
             ]
           });
           return;
         } else if (isNorth) {
           this.state = 'SELECTING_LAYOUT';
           this.addAiMessage({
-            text: `Here are the top residential layouts in <strong>North Bangalore & Airport Corridor</strong>: ✈️<br><br>
-• <strong>Sobha City</strong> — 48 units, Thanisandra Main Road luxury township<br>
-• <strong>Bhartiya City Nikoo Homes</strong> — 48 units, integrated smart city<br>
-• <strong>Manyata Tech Park Residency</strong> — 44 units, Nagavara IT corridor<br>
-• <strong>Prestige Golfshire</strong> — 40 signature golf villas, Nandi Hills road<br>
-• <strong>Ozone Urbana</strong> — 44 units, Devanahalli airport township<br>
-• <strong>RMZ Galleria & Prestige Misty Waters</strong> — Hebbal lake vicinity<br><br>
+            text: `Here are top real residential townships in <strong>North Bangalore & Airport Corridor</strong>: ✈️<br><br>
+• 🏙️ <strong>Sobha City</strong> — Santorini & Casa Serena luxury towers on Thanisandra Main Road<br>
+• 🌆 <strong>Bhartiya City Nikoo Homes</strong> — Integrated smart city with central park<br>
+• 🏢 <strong>Manyata Tech Park Residency</strong> — Nagavara IT corridor residential enclave<br>
+• ⛳ <strong>Prestige Golfshire</strong> — Signature golf villa resort, Nandi Hills foothills<br>
+• ✈️ <strong>Ozone Urbana</strong> — Devanahalli airport township<br>
+• 🌊 <strong>RMZ Galleria & Prestige Misty Waters</strong> — Hebbal lake vicinity<br><br>
 <strong>Which North Bangalore township would you like to explore?</strong>`,
             chips: [
               { text: "🏙️ Sobha City", query: "Sobha City" },
@@ -3016,18 +3102,18 @@
         } else if (isWest) {
           this.state = 'SELECTING_LAYOUT';
           this.addAiMessage({
-            text: `Here are the top layouts in <strong>Central & West Bangalore</strong>: 🏛️<br><br>
-• <strong>Koramangala 4th & 3rd Block</strong> — Bangalore's most prestigious central layouts<br>
-• <strong>Indiranagar Defence Colony & HAL 2nd Stage</strong> — Iconic East-Central neighborhoods<br>
-• <strong>Brigade Gateway</strong> — 44 units, Rajajinagar landmark township<br>
-• <strong>Sadashivanagar Royal Layout</strong> — Premier elite residential enclave<br>
-• <strong>Malleswaram 18th Cross</strong> — Historic heritage layout<br>
-• <strong>Banashankari 3rd Stage & Vijayanagar BDA</strong> — Major West Bangalore layouts<br><br>
+            text: `Here are top real layouts in <strong>Central & West Bangalore</strong>: 🏛️<br><br>
+• 🏢 <strong>Brigade Gateway</strong> — 12 residential towers with Orion Mall & World Trade Center, Rajajinagar<br>
+• ☕ <strong>Koramangala 4th & 3rd Block</strong> — Billionaire row and ST Bed residential layouts<br>
+• 🌳 <strong>Indiranagar Defence Colony & HAL 2nd Stage</strong> — Iconic central neighborhoods<br>
+• 👑 <strong>Sadashivanagar Royal Layout</strong> — Elite Palace Orchards enclave<br>
+• 🌺 <strong>Malleswaram 18th Cross</strong> — Historic cultural colony<br>
+• 🏛️ <strong>Banashankari 3rd Stage & Vijayanagar BDA</strong> — Major West Bangalore layouts<br><br>
 <strong>Which layout would you like to explore?</strong>`,
             chips: [
+              { text: "🏢 Brigade Gateway", query: "Brigade Gateway" },
               { text: "☕ Koramangala 4th Block", query: "Koramangala 4th Block" },
               { text: "🌳 Indiranagar Defence Colony", query: "Indiranagar Defence Colony" },
-              { text: "🏢 Brigade Gateway", query: "Brigade Gateway" },
               { text: "👑 Sadashivanagar", query: "Sadashivanagar Royal Layout" },
               { text: "🌺 Malleswaram 18th Cross", query: "Malleswaram 18th Cross" }
             ]
@@ -3037,19 +3123,22 @@
           // General citywide
           this.state = 'SELECTING_LAYOUT';
           this.addAiMessage({
-            text: `Welcome to HM Maps! We have <strong>53 verified layouts & townships</strong> across all 5 zones of Bangalore: 🗺️<br><br>
-• 🏡 <strong>South</strong>: Himagiri Meadows, Brigade Meadows, Mantri Tranquil, JP Nagar<br>
-• 🌳 <strong>Whitefield & East</strong>: Palm Meadows, Prestige Lakeside Habitat, Greenwood Orchards<br>
-• 🏢 <strong>Electronic City & ORR</strong>: Tech Horizon Campus, Adarsh Palm Retreat, HSR Layout<br>
-• ✈️ <strong>North Bangalore</strong>: Sobha City, Bhartiya City Nikoo Homes, Prestige Golfshire<br>
-• 🏛️ <strong>Central & West</strong>: Koramangala 4th Block, Indiranagar Defence Colony, Brigade Gateway<br><br>
-<strong>Which area or layout are you trying to visit?</strong>`,
+            text: `Welcome to HM Maps! We have verified digital maps for Bangalore's most famous real residential communities: 🗺️<br><br>
+• 🏢 <strong>Prestige Falcon City</strong> (Kanakapura Road) — 7 towers, Forum Mall link & Metro<br>
+• ✨ <strong>Prestige Elysian</strong> (Bannerghatta Main Road) — 4 luxury towers opposite Meenakshi Mall<br>
+• 💎 <strong>Kristal Beryl</strong> (Kasavanahalli / Sarjapur Road) — 5 residential blocks (A to E)<br>
+• 🌳 <strong>Salarpuria Sattva Greenage</strong> (Hosur Main Road) — 10 towers & 60k sq ft clubhouse<br>
+• 🌊 <strong>Sobha Dream Acres</strong> (Panathur / Balagere) — 24 residential wings & 5 clubhouses<br>
+• 🏡 <strong>Himagiri Meadows</strong> (Bannerghatta Road) — 344 residential plots, 8 avenues & 2 gates<br>
+• 🏰 <strong>Prestige Lakeside Habitat</strong> (Whitefield) — Disney-themed township with towers & villas<br><br>
+<strong>Which layout or apartment would you like to visit?</strong>`,
             chips: [
-              { text: "🏡 Himagiri Meadows (South)", query: "Himagiri Meadows" },
-              { text: "🌳 Palm Meadows (Whitefield)", query: "Palm Meadows" },
-              { text: "🏢 Tech Horizon (Electronic City)", query: "Tech Horizon Campus" },
-              { text: "✈️ Sobha City (North)", query: "Sobha City" },
-              { text: "☕ Koramangala (Central)", query: "Koramangala 4th Block" }
+              { text: "🏢 Prestige Falcon City", query: "Prestige Falcon City" },
+              { text: "✨ Prestige Elysian", query: "Prestige Elysian" },
+              { text: "💎 Kristal Beryl", query: "Kristal Beryl" },
+              { text: "🌳 Salarpuria Greenage", query: "Salarpuria Sattva Greenage" },
+              { text: "🌊 Sobha Dream Acres", query: "Sobha Dream Acres" },
+              { text: "🏡 Himagiri Meadows", query: "Himagiri Meadows" }
             ]
           });
           return;
