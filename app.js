@@ -211,19 +211,122 @@
       bgGroup.appendChild(borderTrees);
     }
 
+    // Water Body (Lakes, Lagoon, Reflection Pools, Olympic Swimming Facilities)
+    if (currentLayout.waterBody) {
+      const wb = currentLayout.waterBody;
+      const waterG = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      waterG.setAttribute("class", "water-body-element");
+
+      if (wb.points) {
+        const poly = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+        poly.setAttribute("points", wb.points);
+        poly.setAttribute("fill", "#075985");
+        poly.setAttribute("stroke", "#38bdf8");
+        poly.setAttribute("stroke-width", "2");
+        waterG.appendChild(poly);
+      } else {
+        const water = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        water.setAttribute("x", wb.x);
+        water.setAttribute("y", wb.y);
+        water.setAttribute("width", wb.w);
+        water.setAttribute("height", wb.h);
+        water.setAttribute("rx", wb.rx || "12");
+        water.setAttribute("fill", "#0c4a6e");
+        water.setAttribute("stroke", "#0284c7");
+        water.setAttribute("stroke-width", "2");
+        waterG.appendChild(water);
+      }
+
+      if (wb.label) {
+        const wtxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        const cx = wb.points ? (wb.cx || 620) : (wb.x + wb.w / 2);
+        const cy = wb.points ? (wb.cy || 480) : (wb.y + wb.h / 2 + 4);
+        wtxt.setAttribute("x", cx);
+        wtxt.setAttribute("y", cy);
+        wtxt.setAttribute("text-anchor", "middle");
+        wtxt.setAttribute("fill", "#7dd3fc");
+        wtxt.setAttribute("font-size", "11px");
+        wtxt.setAttribute("font-weight", "700");
+        wtxt.setAttribute("letter-spacing", "0.8px");
+        wtxt.textContent = `💧 ${wb.label.toUpperCase()}`;
+        waterG.appendChild(wtxt);
+      }
+      bgGroup.appendChild(waterG);
+    }
+
     // Central Garden Park Area polygon
     if (currentLayout.gardenPark) {
       const gp = currentLayout.gardenPark;
-      const gardenPark = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-      gardenPark.setAttribute("x", gp.x);
-      gardenPark.setAttribute("y", gp.y);
-      gardenPark.setAttribute("width", gp.w);
-      gardenPark.setAttribute("height", gp.h);
-      gardenPark.setAttribute("rx", gp.rx || "6");
-      gardenPark.setAttribute("fill", "#064e3b");
-      gardenPark.setAttribute("stroke", "#10b981");
-      gardenPark.setAttribute("stroke-width", "1.5");
-      bgGroup.appendChild(gardenPark);
+      const parkG = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      parkG.setAttribute("class", "garden-park-element");
+
+      if (gp.points) {
+        const poly = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+        poly.setAttribute("points", gp.points);
+        poly.setAttribute("fill", "#064e3b");
+        poly.setAttribute("stroke", "#10b981");
+        poly.setAttribute("stroke-width", "1.5");
+        parkG.appendChild(poly);
+      } else {
+        const gardenPark = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        gardenPark.setAttribute("x", gp.x);
+        gardenPark.setAttribute("y", gp.y);
+        gardenPark.setAttribute("width", gp.w);
+        gardenPark.setAttribute("height", gp.h);
+        gardenPark.setAttribute("rx", gp.rx || "6");
+        gardenPark.setAttribute("fill", "#064e3b");
+        gardenPark.setAttribute("stroke", "#10b981");
+        gardenPark.setAttribute("stroke-width", "1.5");
+        parkG.appendChild(gardenPark);
+      }
+
+      if (gp.label) {
+        const gtxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        const cx = gp.points ? (gp.cx || 620) : (gp.x + gp.w / 2);
+        const cy = gp.points ? (gp.cy || 480) : (gp.y + gp.h / 2 + 4);
+        gtxt.setAttribute("x", cx);
+        gtxt.setAttribute("y", cy);
+        gtxt.setAttribute("text-anchor", "middle");
+        gtxt.setAttribute("fill", "#a7f3d0");
+        gtxt.setAttribute("font-size", "11px");
+        gtxt.setAttribute("font-weight", "700");
+        gtxt.setAttribute("letter-spacing", "0.5px");
+        gtxt.textContent = `🌳 ${gp.label.toUpperCase()}`;
+        parkG.appendChild(gtxt);
+      }
+      bgGroup.appendChild(parkG);
+    }
+
+    // Landmark Architectural Complexes (Malls, Tech Parks, World Trade Centers, Convention Halls)
+    if (currentLayout.landmarks && Array.isArray(currentLayout.landmarks)) {
+      for (const lm of currentLayout.landmarks) {
+        const lmG = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        lmG.setAttribute("class", "landmark-element");
+
+        const lmRect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        lmRect.setAttribute("x", lm.x);
+        lmRect.setAttribute("y", lm.y);
+        lmRect.setAttribute("width", lm.w);
+        lmRect.setAttribute("height", lm.h);
+        lmRect.setAttribute("rx", lm.rx || "8");
+        lmRect.setAttribute("fill", lm.fill || "#1e1b4b");
+        lmRect.setAttribute("stroke", lm.stroke || "#818cf8");
+        lmRect.setAttribute("stroke-width", "2");
+        lmG.appendChild(lmRect);
+
+        if (lm.label) {
+          const lmtxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+          lmtxt.setAttribute("x", lm.x + lm.w / 2);
+          lmtxt.setAttribute("y", lm.y + lm.h / 2 + 4);
+          lmtxt.setAttribute("text-anchor", "middle");
+          lmtxt.setAttribute("fill", lm.textColor || "#c7d2fe");
+          lmtxt.setAttribute("font-size", lm.fontSize || "11px");
+          lmtxt.setAttribute("font-weight", "700");
+          lmtxt.textContent = lm.label;
+          lmG.appendChild(lmtxt);
+        }
+        bgGroup.appendChild(lmG);
+      }
     }
 
     // Children Play Area polygon (Himagiri specific)

@@ -27,6 +27,26 @@ window.LAYOUTS = {
       "rx": 8,
       "label": "Grand Central Lawn & Water Mirror"
     },
+    "waterBody": {
+      "x": 540,
+      "y": 430,
+      "w": 180,
+      "h": 70,
+      "rx": 14,
+      "label": "Grand Falcon Olympic Pool"
+    },
+    "landmarks": [
+      {
+        "x": 1000,
+        "y": 360,
+        "w": 140,
+        "h": 160,
+        "rx": 8,
+        "label": "\ud83d\udecd\ufe0f Forum Falcon City Mall & Metro",
+        "fill": "#1e1b4b",
+        "stroke": "#818cf8"
+      }
+    ],
     "roads": {
       "nodes": {
         "pfc_gate_main": {
@@ -1037,7 +1057,15 @@ window.LAYOUTS = {
       "w": 340,
       "h": 50,
       "rx": 8,
-      "label": "Central Zen Garden & Reflection Pool"
+      "label": "Central Zen Garden"
+    },
+    "waterBody": {
+      "x": 500,
+      "y": 430,
+      "w": 240,
+      "h": 70,
+      "rx": 16,
+      "label": "Zen Reflection Water Mirror & Heated Infinity Pool"
     },
     "roads": {
       "nodes": {
@@ -2029,11 +2057,19 @@ window.LAYOUTS = {
     "borderTreesPath": "M 90,480 L 220,170 L 620,150 L 1020,170 L 1100,480 L 1020,790 L 620,830 L 220,790 Z",
     "gardenPark": {
       "x": 450,
-      "y": 455,
+      "y": 360,
       "w": 340,
       "h": 50,
       "rx": 8,
       "label": "Central Crystal Fountain Plaza"
+    },
+    "waterBody": {
+      "x": 540,
+      "y": 430,
+      "w": 160,
+      "h": 70,
+      "rx": 14,
+      "label": "Beryl Courtyard Swimming Pool & Kids Splash"
     },
     "roads": {
       "nodes": {
@@ -8393,263 +8429,188 @@ window.LAYOUTS = {
     "zone": "south",
     "type": "Mega Residential Gated Community",
     "unitType": "Apartment / Tower",
-    "unitCount": 40,
+    "unitCount": 64,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "100,480 200,160 500,120 740,120 1040,160 1140,480 1040,800 740,840 500,840 200,800 Z",
+    "borderTreesPath": "M 100,480 Q 200,140 620,120 Q 1040,140 1140,480 Q 1040,820 620,840 Q 200,820 100,480 Z",
+    "waterBody": {
+      "x": 500,
+      "y": 430,
+      "w": 240,
+      "h": 100,
+      "rx": 20,
+      "label": "Clayey Park 4-Tier Resort Pools & Lagoon"
     },
+    "gardenPark": {
+      "x": 440,
+      "y": 310,
+      "w": 360,
+      "h": 60,
+      "rx": 8,
+      "label": "Greenage Central Botanical Lawns"
+    },
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "sattva_greenage_gate_1": {
-          "id": "sattva_greenage_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Salarpuria Sattva Greenage Gate 1 (Main Entrance)"
+        "sg_gate_hosur": {
+          "id": "sg_gate_hosur",
+          "x": 620,
+          "y": 840,
+          "label": "Gate 1 (Hosur Main Road)"
         },
-        "sattva_greenage_entry": {
-          "id": "sattva_greenage_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
+        "sg_gate_north": {
+          "id": "sg_gate_north",
+          "x": 620,
+          "y": 130,
+          "label": "Gate 2 (Bommanahalli Service Road)"
         },
-        "sattva_greenage_junc_w": {
-          "id": "sattva_greenage_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Alpine Avenue West Junction"
+        "sg_ring_s": {
+          "id": "sg_ring_s",
+          "x": 620,
+          "y": 740,
+          "label": "South Ring Boulevard"
         },
-        "sattva_greenage_junc_ctr": {
-          "id": "sattva_greenage_junc_ctr",
+        "sg_ring_sw": {
+          "id": "sg_ring_sw",
+          "x": 360,
+          "y": 680,
+          "label": "Elm & Oak Boulevard Curve"
+        },
+        "sg_ring_w": {
+          "id": "sg_ring_w",
+          "x": 240,
+          "y": 480,
+          "label": "Magnolia West Parkway"
+        },
+        "sg_ring_nw": {
+          "id": "sg_ring_nw",
+          "x": 360,
+          "y": 280,
+          "label": "Alpine & Aster Curve"
+        },
+        "sg_ring_n": {
+          "id": "sg_ring_n",
+          "x": 620,
+          "y": 220,
+          "label": "North Ring Boulevard"
+        },
+        "sg_ring_ne": {
+          "id": "sg_ring_ne",
+          "x": 880,
+          "y": 280,
+          "label": "Birch & Cedar Curve"
+        },
+        "sg_ring_e": {
+          "id": "sg_ring_e",
+          "x": 1000,
+          "y": 480,
+          "label": "Ebony East Promenade"
+        },
+        "sg_ring_se": {
+          "id": "sg_ring_se",
+          "x": 880,
+          "y": 680,
+          "label": "Cedar & Elm South Curve"
+        },
+        "sg_ctr_hub": {
+          "id": "sg_ctr_hub",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "sattva_greenage_junc_e": {
-          "id": "sattva_greenage_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Ebony Parkway East Junction"
-        },
-        "sattva_greenage_gate_2": {
-          "id": "sattva_greenage_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Salarpuria Sattva Greenage Gate 2 (Rear Entrance)"
-        },
-        "sattva_greenage_n_w": {
-          "id": "sattva_greenage_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Clayey Park Drive West"
-        },
-        "sattva_greenage_n_mid": {
-          "id": "sattva_greenage_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Clayey Park Drive North Plaza"
-        },
-        "sattva_greenage_n_e": {
-          "id": "sattva_greenage_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Clayey Park Drive East"
-        },
-        "sattva_greenage_s_w": {
-          "id": "sattva_greenage_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Lakeside Link West"
-        },
-        "sattva_greenage_s_mid": {
-          "id": "sattva_greenage_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Lakeside Link South Plaza"
-        },
-        "sattva_greenage_s_e": {
-          "id": "sattva_greenage_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Lakeside Link East"
-        },
-        "sattva_greenage_w_n_mid": {
-          "id": "sattva_greenage_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Alpine Avenue North Link"
-        },
-        "sattva_greenage_w_s_mid": {
-          "id": "sattva_greenage_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Alpine Avenue South Link"
-        },
-        "sattva_greenage_ctr_n_mid": {
-          "id": "sattva_greenage_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "sattva_greenage_ctr_s_mid": {
-          "id": "sattva_greenage_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "sattva_greenage_e_n_mid": {
-          "id": "sattva_greenage_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Ebony Parkway North Link"
-        },
-        "sattva_greenage_e_s_mid": {
-          "id": "sattva_greenage_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Ebony Parkway South Link"
+          "label": "Clayey Park Central Plaza"
         }
       },
       "edges": [
         {
-          "u": "sattva_greenage_gate_1",
-          "v": "sattva_greenage_entry",
-          "road": "Greenage Boulevard",
+          "u": "sg_gate_hosur",
+          "v": "sg_ring_s",
+          "road": "Hosur Access Way",
           "type": "primary"
         },
         {
-          "u": "sattva_greenage_entry",
-          "v": "sattva_greenage_junc_w",
-          "road": "Greenage Boulevard",
+          "u": "sg_gate_north",
+          "v": "sg_ring_n",
+          "road": "North Service Link",
           "type": "primary"
         },
         {
-          "u": "sattva_greenage_junc_w",
-          "v": "sattva_greenage_junc_ctr",
-          "road": "Greenage Boulevard",
+          "u": "sg_ring_s",
+          "v": "sg_ring_sw",
+          "road": "Greenage Ring Boulevard",
           "type": "primary"
         },
         {
-          "u": "sattva_greenage_junc_ctr",
-          "v": "sattva_greenage_junc_e",
-          "road": "Greenage Boulevard",
+          "u": "sg_ring_sw",
+          "v": "sg_ring_w",
+          "road": "Greenage Ring Boulevard",
           "type": "primary"
         },
         {
-          "u": "sattva_greenage_junc_e",
-          "v": "sattva_greenage_gate_2",
-          "road": "Greenage Boulevard",
+          "u": "sg_ring_w",
+          "v": "sg_ring_nw",
+          "road": "Greenage Ring Boulevard",
           "type": "primary"
         },
         {
-          "u": "sattva_greenage_n_w",
-          "v": "sattva_greenage_n_mid",
+          "u": "sg_ring_nw",
+          "v": "sg_ring_n",
+          "road": "Greenage Ring Boulevard",
+          "type": "primary"
+        },
+        {
+          "u": "sg_ring_n",
+          "v": "sg_ring_ne",
+          "road": "Greenage Ring Boulevard",
+          "type": "primary"
+        },
+        {
+          "u": "sg_ring_ne",
+          "v": "sg_ring_e",
+          "road": "Greenage Ring Boulevard",
+          "type": "primary"
+        },
+        {
+          "u": "sg_ring_e",
+          "v": "sg_ring_se",
+          "road": "Greenage Ring Boulevard",
+          "type": "primary"
+        },
+        {
+          "u": "sg_ring_se",
+          "v": "sg_ring_s",
+          "road": "Greenage Ring Boulevard",
+          "type": "primary"
+        },
+        {
+          "u": "sg_ring_w",
+          "v": "sg_ctr_hub",
           "road": "Clayey Park Drive",
           "type": "secondary"
         },
         {
-          "u": "sattva_greenage_n_mid",
-          "v": "sattva_greenage_n_e",
+          "u": "sg_ring_e",
+          "v": "sg_ctr_hub",
           "road": "Clayey Park Drive",
           "type": "secondary"
         },
         {
-          "u": "sattva_greenage_s_w",
-          "v": "sattva_greenage_s_mid",
-          "road": "Lakeside Link",
-          "type": "secondary"
-        },
-        {
-          "u": "sattva_greenage_s_mid",
-          "v": "sattva_greenage_s_e",
-          "road": "Lakeside Link",
-          "type": "secondary"
-        },
-        {
-          "u": "sattva_greenage_n_w",
-          "v": "sattva_greenage_w_n_mid",
-          "road": "Alpine Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "sattva_greenage_w_n_mid",
-          "v": "sattva_greenage_junc_w",
-          "road": "Alpine Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "sattva_greenage_junc_w",
-          "v": "sattva_greenage_w_s_mid",
-          "road": "Alpine Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "sattva_greenage_w_s_mid",
-          "v": "sattva_greenage_s_w",
-          "road": "Alpine Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "sattva_greenage_n_mid",
-          "v": "sattva_greenage_ctr_n_mid",
+          "u": "sg_ring_n",
+          "v": "sg_ctr_hub",
           "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sattva_greenage_ctr_n_mid",
-          "v": "sattva_greenage_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sattva_greenage_junc_ctr",
-          "v": "sattva_greenage_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sattva_greenage_ctr_s_mid",
-          "v": "sattva_greenage_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sattva_greenage_n_e",
-          "v": "sattva_greenage_e_n_mid",
-          "road": "Ebony Parkway",
           "type": "secondary"
         },
         {
-          "u": "sattva_greenage_e_n_mid",
-          "v": "sattva_greenage_junc_e",
-          "road": "Ebony Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "sattva_greenage_junc_e",
-          "v": "sattva_greenage_e_s_mid",
-          "road": "Ebony Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "sattva_greenage_e_s_mid",
-          "v": "sattva_greenage_s_e",
-          "road": "Ebony Parkway",
+          "u": "sg_ring_s",
+          "v": "sg_ctr_hub",
+          "road": "Central Link",
           "type": "secondary"
         }
       ]
@@ -8658,605 +8619,900 @@ window.LAYOUTS = {
       "1": {
         "id": "1",
         "number": "Alpine Tower - 101",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Alpine Tower",
         "facing": "South",
-        "x": 247,
+        "x": 287,
         "y": 189,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_w",
+        "roadNode": "sg_ring_nw",
         "color": "cyan"
       },
       "2": {
         "id": "2",
         "number": "Alpine Tower - 102",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Alpine Tower",
         "facing": "South",
-        "x": 269,
+        "x": 309,
         "y": 189,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_w",
+        "roadNode": "sg_ring_nw",
         "color": "cyan"
       },
       "3": {
         "id": "3",
         "number": "Alpine Tower - 201",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Alpine Tower",
         "facing": "South",
-        "x": 291,
+        "x": 331,
         "y": 189,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_w",
+        "roadNode": "sg_ring_nw",
         "color": "cyan"
       },
       "4": {
         "id": "4",
         "number": "Alpine Tower - 202",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Alpine Tower",
         "facing": "South",
-        "x": 313,
+        "x": 353,
         "y": 189,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_w",
+        "roadNode": "sg_ring_nw",
         "color": "cyan"
       },
       "5": {
         "id": "5",
         "number": "Alpine Tower - 301",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Alpine Tower",
         "facing": "South",
-        "x": 247,
+        "x": 287,
         "y": 211,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_w",
+        "roadNode": "sg_ring_nw",
         "color": "cyan"
       },
       "6": {
         "id": "6",
         "number": "Alpine Tower - 302",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Alpine Tower",
         "facing": "South",
-        "x": 269,
+        "x": 309,
         "y": 211,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_w",
+        "roadNode": "sg_ring_nw",
         "color": "cyan"
       },
       "7": {
         "id": "7",
         "number": "Alpine Tower - 401",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Alpine Tower",
         "facing": "South",
-        "x": 291,
+        "x": 331,
         "y": 211,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_w",
+        "roadNode": "sg_ring_nw",
         "color": "cyan"
       },
       "8": {
         "id": "8",
         "number": "Alpine Tower - 402",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Alpine Tower",
         "facing": "South",
-        "x": 313,
+        "x": 353,
         "y": 211,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_w",
+        "roadNode": "sg_ring_nw",
         "color": "cyan"
       },
       "9": {
         "id": "9",
         "number": "Aster Tower - 101",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Aster Tower",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 547,
+        "y": 149,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_mid",
+        "roadNode": "sg_ring_n",
         "color": "cyan"
       },
       "10": {
         "id": "10",
         "number": "Aster Tower - 102",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Aster Tower",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 569,
+        "y": 149,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_mid",
+        "roadNode": "sg_ring_n",
         "color": "cyan"
       },
       "11": {
         "id": "11",
         "number": "Aster Tower - 201",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Aster Tower",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 591,
+        "y": 149,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_mid",
+        "roadNode": "sg_ring_n",
         "color": "cyan"
       },
       "12": {
         "id": "12",
         "number": "Aster Tower - 202",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Aster Tower",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 613,
+        "y": 149,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_mid",
+        "roadNode": "sg_ring_n",
         "color": "cyan"
       },
       "13": {
         "id": "13",
         "number": "Aster Tower - 301",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Aster Tower",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 547,
+        "y": 171,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_mid",
+        "roadNode": "sg_ring_n",
         "color": "cyan"
       },
       "14": {
         "id": "14",
         "number": "Aster Tower - 302",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Aster Tower",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 569,
+        "y": 171,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_mid",
+        "roadNode": "sg_ring_n",
         "color": "cyan"
       },
       "15": {
         "id": "15",
         "number": "Aster Tower - 401",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Aster Tower",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 591,
+        "y": 171,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_mid",
+        "roadNode": "sg_ring_n",
         "color": "cyan"
       },
       "16": {
         "id": "16",
         "number": "Aster Tower - 402",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Aster Tower",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 613,
+        "y": 171,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_mid",
+        "roadNode": "sg_ring_n",
         "color": "cyan"
       },
       "17": {
         "id": "17",
         "number": "Birch Tower - 101",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Birch Tower",
         "facing": "South",
         "x": 807,
         "y": 189,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_e",
+        "roadNode": "sg_ring_ne",
         "color": "cyan"
       },
       "18": {
         "id": "18",
         "number": "Birch Tower - 102",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Birch Tower",
         "facing": "South",
         "x": 829,
         "y": 189,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_e",
+        "roadNode": "sg_ring_ne",
         "color": "cyan"
       },
       "19": {
         "id": "19",
         "number": "Birch Tower - 201",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Birch Tower",
         "facing": "South",
         "x": 851,
         "y": 189,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_e",
+        "roadNode": "sg_ring_ne",
         "color": "cyan"
       },
       "20": {
         "id": "20",
         "number": "Birch Tower - 202",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Birch Tower",
         "facing": "South",
         "x": 873,
         "y": 189,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_e",
+        "roadNode": "sg_ring_ne",
         "color": "cyan"
       },
       "21": {
         "id": "21",
         "number": "Birch Tower - 301",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Birch Tower",
         "facing": "South",
         "x": 807,
         "y": 211,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_e",
+        "roadNode": "sg_ring_ne",
         "color": "cyan"
       },
       "22": {
         "id": "22",
         "number": "Birch Tower - 302",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Birch Tower",
         "facing": "South",
         "x": 829,
         "y": 211,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_e",
+        "roadNode": "sg_ring_ne",
         "color": "cyan"
       },
       "23": {
         "id": "23",
         "number": "Birch Tower - 401",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Birch Tower",
         "facing": "South",
         "x": 851,
         "y": 211,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_e",
+        "roadNode": "sg_ring_ne",
         "color": "cyan"
       },
       "24": {
         "id": "24",
         "number": "Birch Tower - 402",
-        "road": "Clayey Park Drive",
+        "road": "Greenage Ring Boulevard",
         "block": "Birch Tower",
         "facing": "South",
         "x": 873,
         "y": 211,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_n_e",
+        "roadNode": "sg_ring_ne",
         "color": "cyan"
       },
       "25": {
         "id": "25",
         "number": "Cedar Tower - 101",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Cedar Tower",
-        "facing": "North",
-        "x": 347,
-        "y": 669,
+        "facing": "West",
+        "x": 927,
+        "y": 349,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_w",
+        "roadNode": "sg_ring_e",
         "color": "cyan"
       },
       "26": {
         "id": "26",
         "number": "Cedar Tower - 102",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Cedar Tower",
-        "facing": "North",
-        "x": 369,
-        "y": 669,
+        "facing": "West",
+        "x": 949,
+        "y": 349,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_w",
+        "roadNode": "sg_ring_e",
         "color": "cyan"
       },
       "27": {
         "id": "27",
         "number": "Cedar Tower - 201",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Cedar Tower",
-        "facing": "North",
-        "x": 391,
-        "y": 669,
+        "facing": "West",
+        "x": 971,
+        "y": 349,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_w",
+        "roadNode": "sg_ring_e",
         "color": "cyan"
       },
       "28": {
         "id": "28",
         "number": "Cedar Tower - 202",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Cedar Tower",
-        "facing": "North",
-        "x": 413,
-        "y": 669,
+        "facing": "West",
+        "x": 993,
+        "y": 349,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_w",
+        "roadNode": "sg_ring_e",
         "color": "cyan"
       },
       "29": {
         "id": "29",
         "number": "Cedar Tower - 301",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Cedar Tower",
-        "facing": "North",
-        "x": 347,
-        "y": 691,
+        "facing": "West",
+        "x": 927,
+        "y": 371,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_w",
+        "roadNode": "sg_ring_e",
         "color": "cyan"
       },
       "30": {
         "id": "30",
         "number": "Cedar Tower - 302",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Cedar Tower",
-        "facing": "North",
-        "x": 369,
-        "y": 691,
+        "facing": "West",
+        "x": 949,
+        "y": 371,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_w",
+        "roadNode": "sg_ring_e",
         "color": "cyan"
       },
       "31": {
         "id": "31",
         "number": "Cedar Tower - 401",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Cedar Tower",
-        "facing": "North",
-        "x": 391,
-        "y": 691,
+        "facing": "West",
+        "x": 971,
+        "y": 371,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_w",
+        "roadNode": "sg_ring_e",
         "color": "cyan"
       },
       "32": {
         "id": "32",
         "number": "Cedar Tower - 402",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Cedar Tower",
-        "facing": "North",
-        "x": 413,
-        "y": 691,
+        "facing": "West",
+        "x": 993,
+        "y": 371,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_w",
+        "roadNode": "sg_ring_e",
         "color": "cyan"
       },
       "33": {
         "id": "33",
         "number": "Ebony Tower - 101",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Ebony Tower",
-        "facing": "North",
-        "x": 587,
-        "y": 669,
+        "facing": "West",
+        "x": 907,
+        "y": 589,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_mid",
+        "roadNode": "sg_ring_se",
         "color": "cyan"
       },
       "34": {
         "id": "34",
         "number": "Ebony Tower - 102",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Ebony Tower",
-        "facing": "North",
-        "x": 609,
-        "y": 669,
+        "facing": "West",
+        "x": 929,
+        "y": 589,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_mid",
+        "roadNode": "sg_ring_se",
         "color": "cyan"
       },
       "35": {
         "id": "35",
         "number": "Ebony Tower - 201",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Ebony Tower",
-        "facing": "North",
-        "x": 631,
-        "y": 669,
+        "facing": "West",
+        "x": 951,
+        "y": 589,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_mid",
+        "roadNode": "sg_ring_se",
         "color": "cyan"
       },
       "36": {
         "id": "36",
         "number": "Ebony Tower - 202",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Ebony Tower",
-        "facing": "North",
-        "x": 653,
-        "y": 669,
+        "facing": "West",
+        "x": 973,
+        "y": 589,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_mid",
+        "roadNode": "sg_ring_se",
         "color": "cyan"
       },
       "37": {
         "id": "37",
         "number": "Ebony Tower - 301",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Ebony Tower",
-        "facing": "North",
-        "x": 587,
-        "y": 691,
+        "facing": "West",
+        "x": 907,
+        "y": 611,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_mid",
+        "roadNode": "sg_ring_se",
         "color": "cyan"
       },
       "38": {
         "id": "38",
         "number": "Ebony Tower - 302",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Ebony Tower",
-        "facing": "North",
-        "x": 609,
-        "y": 691,
+        "facing": "West",
+        "x": 929,
+        "y": 611,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_mid",
+        "roadNode": "sg_ring_se",
         "color": "cyan"
       },
       "39": {
         "id": "39",
         "number": "Ebony Tower - 401",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Ebony Tower",
-        "facing": "North",
-        "x": 631,
-        "y": 691,
+        "facing": "West",
+        "x": 951,
+        "y": 611,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_mid",
+        "roadNode": "sg_ring_se",
         "color": "cyan"
       },
       "40": {
         "id": "40",
         "number": "Ebony Tower - 402",
-        "road": "Lakeside Link",
+        "road": "Greenage Ring Boulevard",
         "block": "Ebony Tower",
-        "facing": "North",
-        "x": 653,
-        "y": 691,
+        "facing": "West",
+        "x": 973,
+        "y": 611,
         "w": 48,
         "h": 34,
-        "roadNode": "sattva_greenage_s_mid",
+        "roadNode": "sg_ring_se",
+        "color": "cyan"
+      },
+      "41": {
+        "id": "41",
+        "number": "Elm Tower - 101",
+        "road": "Greenage Ring Boulevard",
+        "block": "Elm Tower",
+        "facing": "North",
+        "x": 707,
+        "y": 719,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_s",
+        "color": "cyan"
+      },
+      "42": {
+        "id": "42",
+        "number": "Elm Tower - 102",
+        "road": "Greenage Ring Boulevard",
+        "block": "Elm Tower",
+        "facing": "North",
+        "x": 729,
+        "y": 719,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_s",
+        "color": "cyan"
+      },
+      "43": {
+        "id": "43",
+        "number": "Elm Tower - 201",
+        "road": "Greenage Ring Boulevard",
+        "block": "Elm Tower",
+        "facing": "North",
+        "x": 751,
+        "y": 719,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_s",
+        "color": "cyan"
+      },
+      "44": {
+        "id": "44",
+        "number": "Elm Tower - 202",
+        "road": "Greenage Ring Boulevard",
+        "block": "Elm Tower",
+        "facing": "North",
+        "x": 773,
+        "y": 719,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_s",
+        "color": "cyan"
+      },
+      "45": {
+        "id": "45",
+        "number": "Elm Tower - 301",
+        "road": "Greenage Ring Boulevard",
+        "block": "Elm Tower",
+        "facing": "North",
+        "x": 707,
+        "y": 741,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_s",
+        "color": "cyan"
+      },
+      "46": {
+        "id": "46",
+        "number": "Elm Tower - 302",
+        "road": "Greenage Ring Boulevard",
+        "block": "Elm Tower",
+        "facing": "North",
+        "x": 729,
+        "y": 741,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_s",
+        "color": "cyan"
+      },
+      "47": {
+        "id": "47",
+        "number": "Elm Tower - 401",
+        "road": "Greenage Ring Boulevard",
+        "block": "Elm Tower",
+        "facing": "North",
+        "x": 751,
+        "y": 741,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_s",
+        "color": "cyan"
+      },
+      "48": {
+        "id": "48",
+        "number": "Elm Tower - 402",
+        "road": "Greenage Ring Boulevard",
+        "block": "Elm Tower",
+        "facing": "North",
+        "x": 773,
+        "y": 741,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_s",
+        "color": "cyan"
+      },
+      "49": {
+        "id": "49",
+        "number": "Oak Tower - 101",
+        "road": "Greenage Ring Boulevard",
+        "block": "Oak Tower",
+        "facing": "North",
+        "x": 407,
+        "y": 719,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_sw",
+        "color": "cyan"
+      },
+      "50": {
+        "id": "50",
+        "number": "Oak Tower - 102",
+        "road": "Greenage Ring Boulevard",
+        "block": "Oak Tower",
+        "facing": "North",
+        "x": 429,
+        "y": 719,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_sw",
+        "color": "cyan"
+      },
+      "51": {
+        "id": "51",
+        "number": "Oak Tower - 201",
+        "road": "Greenage Ring Boulevard",
+        "block": "Oak Tower",
+        "facing": "North",
+        "x": 451,
+        "y": 719,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_sw",
+        "color": "cyan"
+      },
+      "52": {
+        "id": "52",
+        "number": "Oak Tower - 202",
+        "road": "Greenage Ring Boulevard",
+        "block": "Oak Tower",
+        "facing": "North",
+        "x": 473,
+        "y": 719,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_sw",
+        "color": "cyan"
+      },
+      "53": {
+        "id": "53",
+        "number": "Oak Tower - 301",
+        "road": "Greenage Ring Boulevard",
+        "block": "Oak Tower",
+        "facing": "North",
+        "x": 407,
+        "y": 741,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_sw",
+        "color": "cyan"
+      },
+      "54": {
+        "id": "54",
+        "number": "Oak Tower - 302",
+        "road": "Greenage Ring Boulevard",
+        "block": "Oak Tower",
+        "facing": "North",
+        "x": 429,
+        "y": 741,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_sw",
+        "color": "cyan"
+      },
+      "55": {
+        "id": "55",
+        "number": "Oak Tower - 401",
+        "road": "Greenage Ring Boulevard",
+        "block": "Oak Tower",
+        "facing": "North",
+        "x": 451,
+        "y": 741,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_sw",
+        "color": "cyan"
+      },
+      "56": {
+        "id": "56",
+        "number": "Oak Tower - 402",
+        "road": "Greenage Ring Boulevard",
+        "block": "Oak Tower",
+        "facing": "North",
+        "x": 473,
+        "y": 741,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_sw",
+        "color": "cyan"
+      },
+      "57": {
+        "id": "57",
+        "number": "Magnolia Tower - 101",
+        "road": "Greenage Ring Boulevard",
+        "block": "Magnolia Tower",
+        "facing": "East",
+        "x": 187,
+        "y": 399,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_w",
+        "color": "cyan"
+      },
+      "58": {
+        "id": "58",
+        "number": "Magnolia Tower - 102",
+        "road": "Greenage Ring Boulevard",
+        "block": "Magnolia Tower",
+        "facing": "East",
+        "x": 209,
+        "y": 399,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_w",
+        "color": "cyan"
+      },
+      "59": {
+        "id": "59",
+        "number": "Magnolia Tower - 201",
+        "road": "Greenage Ring Boulevard",
+        "block": "Magnolia Tower",
+        "facing": "East",
+        "x": 231,
+        "y": 399,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_w",
+        "color": "cyan"
+      },
+      "60": {
+        "id": "60",
+        "number": "Magnolia Tower - 202",
+        "road": "Greenage Ring Boulevard",
+        "block": "Magnolia Tower",
+        "facing": "East",
+        "x": 253,
+        "y": 399,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_w",
+        "color": "cyan"
+      },
+      "61": {
+        "id": "61",
+        "number": "Magnolia Tower - 301",
+        "road": "Greenage Ring Boulevard",
+        "block": "Magnolia Tower",
+        "facing": "East",
+        "x": 187,
+        "y": 421,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_w",
+        "color": "cyan"
+      },
+      "62": {
+        "id": "62",
+        "number": "Magnolia Tower - 302",
+        "road": "Greenage Ring Boulevard",
+        "block": "Magnolia Tower",
+        "facing": "East",
+        "x": 209,
+        "y": 421,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_w",
+        "color": "cyan"
+      },
+      "63": {
+        "id": "63",
+        "number": "Magnolia Tower - 401",
+        "road": "Greenage Ring Boulevard",
+        "block": "Magnolia Tower",
+        "facing": "East",
+        "x": 231,
+        "y": 421,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_w",
+        "color": "cyan"
+      },
+      "64": {
+        "id": "64",
+        "number": "Magnolia Tower - 402",
+        "road": "Greenage Ring Boulevard",
+        "block": "Magnolia Tower",
+        "facing": "East",
+        "x": 253,
+        "y": 421,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sg_ring_w",
         "color": "cyan"
       }
     },
     "amenities": [
-      {
-        "id": "sattva_greenage_gate_1",
-        "name": "Salarpuria Sattva Greenage Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "sattva_greenage_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "sattva_greenage_gate_2",
-        "name": "Salarpuria Sattva Greenage Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "sattva_greenage_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
       {
         "id": "sattva_greenage_club",
         "name": "Clayey Park Grand Clubhouse",
         "description": "60,000 sq ft clubhouse with 4 swimming pools, 2 squash courts & bowling alley",
         "x": 620,
         "y": 440,
-        "roadNode": "sattva_greenage_junc_ctr",
+        "roadNode": "sg_ctr_hub",
         "icon": "\ud83c\udfca",
         "type": "clubhouse"
       },
       {
         "id": "sattva_greenage_sports",
-        "name": "Greenage Sports Arena",
-        "description": "Tennis courts, skating rink and football turf",
-        "x": 620,
-        "y": 690,
-        "roadNode": "sattva_greenage_s_mid",
+        "name": "Greenage Multi-Sport Arena",
+        "description": "Tennis courts, skating rink, football turf and athletic tracks",
+        "x": 880,
+        "y": 680,
+        "roadNode": "sg_ring_se",
         "icon": "\ud83c\udfbe",
         "type": "sports"
       }
     ],
     "roadLabels": [
       {
-        "name": "GREENAGE BOULEVARD",
+        "name": "GREENAGE RING BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 200,
         "vertical": false
       },
       {
         "name": "CLAYEY PARK DRIVE",
         "x": 620,
-        "y": 255,
+        "y": 550,
+        "vertical": false
+      },
+      {
+        "name": "HOSUR ROAD CORRIDOR",
+        "x": 620,
+        "y": 800,
         "vertical": false
       },
       {
         "name": "LAKESIDE LINK",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "ALPINE AVENUE",
-        "x": 305,
-        "y": 375,
+        "x": 230,
+        "y": 480,
         "vertical": true
       },
       {
         "name": "EBONY PARKWAY",
-        "x": 935,
-        "y": 375,
+        "x": 990,
+        "y": 480,
         "vertical": true
       }
     ],
-    "defaultStartGate": "sattva_greenage_gate_1",
+    "defaultStartGate": "sg_gate_hosur",
     "sectors": [
       "Alpine Tower",
       "Aster Tower",
       "Birch Tower",
       "Cedar Tower",
-      "Ebony Tower"
+      "Ebony Tower",
+      "Elm Tower",
+      "Oak Tower",
+      "Magnolia Tower"
     ]
   },
   "prestige_song_south": {
@@ -9270,259 +9526,148 @@ window.LAYOUTS = {
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "90,520 220,200 620,150 1020,160 1130,420 1040,780 620,820 200,780 Z",
+    "borderTreesPath": "M 90,520 L 220,200 L 620,150 L 1020,160 L 1130,420 L 1040,780 L 620,820 L 200,780 Z",
+    "waterBody": {
+      "x": 780,
+      "y": 170,
+      "w": 280,
+      "h": 130,
+      "rx": 24,
+      "label": "Begur Lakefront Nature Promenade"
     },
+    "gardenPark": {
+      "x": 400,
+      "y": 440,
+      "w": 240,
+      "h": 80,
+      "rx": 10,
+      "label": "Musical Amphitheater & Gardens"
+    },
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "prestige_song_south_gate_1": {
-          "id": "prestige_song_south_gate_1",
+        "pss_gate_main": {
+          "id": "pss_gate_main",
           "x": 90,
-          "y": 480,
-          "label": "Prestige Song of the South Gate 1 (Main Entrance)"
+          "y": 520,
+          "label": "Gate 1 (Begur-Koppa Road)"
         },
-        "prestige_song_south_entry": {
-          "id": "prestige_song_south_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
+        "pss_entry": {
+          "id": "pss_entry",
+          "x": 220,
+          "y": 520,
+          "label": "Song Boulevard Entrance"
         },
-        "prestige_song_south_junc_w": {
-          "id": "prestige_song_south_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Rhythm Avenue West Junction"
+        "pss_junc_w": {
+          "id": "pss_junc_w",
+          "x": 340,
+          "y": 520,
+          "label": "Symphony Way Junction"
         },
-        "prestige_song_south_junc_ctr": {
-          "id": "prestige_song_south_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
+        "pss_junc_ctr": {
+          "id": "pss_junc_ctr",
+          "x": 580,
+          "y": 520,
+          "label": "Grand Symphony Plaza"
         },
-        "prestige_song_south_junc_e": {
-          "id": "prestige_song_south_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Melody Parkway East Junction"
+        "pss_junc_lake": {
+          "id": "pss_junc_lake",
+          "x": 840,
+          "y": 440,
+          "label": "Lakeview Promenade Cross"
         },
-        "prestige_song_south_gate_2": {
-          "id": "prestige_song_south_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Prestige Song of the South Gate 2 (Rear Entrance)"
+        "pss_gate_lake": {
+          "id": "pss_gate_lake",
+          "x": 1100,
+          "y": 420,
+          "label": "Gate 2 (Lakeview Trail Access)"
         },
-        "prestige_song_south_n_w": {
-          "id": "prestige_song_south_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Symphony Way West"
+        "pss_melody_n": {
+          "id": "pss_melody_n",
+          "x": 480,
+          "y": 300,
+          "label": "Melody Parkway North"
         },
-        "prestige_song_south_n_mid": {
-          "id": "prestige_song_south_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Symphony Way North Plaza"
+        "pss_rhythm_ne": {
+          "id": "pss_rhythm_ne",
+          "x": 780,
+          "y": 320,
+          "label": "Rhythm Avenue Promenade"
         },
-        "prestige_song_south_n_e": {
-          "id": "prestige_song_south_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Symphony Way East"
-        },
-        "prestige_song_south_s_w": {
-          "id": "prestige_song_south_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Lakeview Promenade West"
-        },
-        "prestige_song_south_s_mid": {
-          "id": "prestige_song_south_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Lakeview Promenade South Plaza"
-        },
-        "prestige_song_south_s_e": {
-          "id": "prestige_song_south_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Lakeview Promenade East"
-        },
-        "prestige_song_south_w_n_mid": {
-          "id": "prestige_song_south_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Rhythm Avenue North Link"
-        },
-        "prestige_song_south_w_s_mid": {
-          "id": "prestige_song_south_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Rhythm Avenue South Link"
-        },
-        "prestige_song_south_ctr_n_mid": {
-          "id": "prestige_song_south_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "prestige_song_south_ctr_s_mid": {
-          "id": "prestige_song_south_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "prestige_song_south_e_n_mid": {
-          "id": "prestige_song_south_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Melody Parkway North Link"
-        },
-        "prestige_song_south_e_s_mid": {
-          "id": "prestige_song_south_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Melody Parkway South Link"
+        "pss_harmony_s": {
+          "id": "pss_harmony_s",
+          "x": 580,
+          "y": 700,
+          "label": "Harmony Avenue South"
         }
       },
       "edges": [
         {
-          "u": "prestige_song_south_gate_1",
-          "v": "prestige_song_south_entry",
+          "u": "pss_gate_main",
+          "v": "pss_entry",
           "road": "Song of South Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_song_south_entry",
-          "v": "prestige_song_south_junc_w",
+          "u": "pss_entry",
+          "v": "pss_junc_w",
           "road": "Song of South Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_song_south_junc_w",
-          "v": "prestige_song_south_junc_ctr",
+          "u": "pss_junc_w",
+          "v": "pss_junc_ctr",
           "road": "Song of South Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_song_south_junc_ctr",
-          "v": "prestige_song_south_junc_e",
-          "road": "Song of South Boulevard",
+          "u": "pss_junc_ctr",
+          "v": "pss_junc_lake",
+          "road": "Lakeview Promenade",
           "type": "primary"
         },
         {
-          "u": "prestige_song_south_junc_e",
-          "v": "prestige_song_south_gate_2",
-          "road": "Song of South Boulevard",
+          "u": "pss_junc_lake",
+          "v": "pss_gate_lake",
+          "road": "Lakeview Promenade",
           "type": "primary"
         },
         {
-          "u": "prestige_song_south_n_w",
-          "v": "prestige_song_south_n_mid",
-          "road": "Symphony Way",
+          "u": "pss_junc_w",
+          "v": "pss_melody_n",
+          "road": "Melody Parkway",
           "type": "secondary"
         },
         {
-          "u": "prestige_song_south_n_mid",
-          "v": "prestige_song_south_n_e",
-          "road": "Symphony Way",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_song_south_s_w",
-          "v": "prestige_song_south_s_mid",
+          "u": "pss_melody_n",
+          "v": "pss_rhythm_ne",
           "road": "Lakeview Promenade",
           "type": "secondary"
         },
         {
-          "u": "prestige_song_south_s_mid",
-          "v": "prestige_song_south_s_e",
-          "road": "Lakeview Promenade",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_song_south_n_w",
-          "v": "prestige_song_south_w_n_mid",
+          "u": "pss_rhythm_ne",
+          "v": "pss_junc_lake",
           "road": "Rhythm Avenue",
           "type": "secondary"
         },
         {
-          "u": "prestige_song_south_w_n_mid",
-          "v": "prestige_song_south_junc_w",
-          "road": "Rhythm Avenue",
+          "u": "pss_junc_ctr",
+          "v": "pss_harmony_s",
+          "road": "Harmony Avenue",
           "type": "secondary"
         },
         {
-          "u": "prestige_song_south_junc_w",
-          "v": "prestige_song_south_w_s_mid",
-          "road": "Rhythm Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_song_south_w_s_mid",
-          "v": "prestige_song_south_s_w",
-          "road": "Rhythm Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_song_south_n_mid",
-          "v": "prestige_song_south_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_song_south_ctr_n_mid",
-          "v": "prestige_song_south_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_song_south_junc_ctr",
-          "v": "prestige_song_south_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_song_south_ctr_s_mid",
-          "v": "prestige_song_south_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_song_south_n_e",
-          "v": "prestige_song_south_e_n_mid",
-          "road": "Melody Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_song_south_e_n_mid",
-          "v": "prestige_song_south_junc_e",
-          "road": "Melody Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_song_south_junc_e",
-          "v": "prestige_song_south_e_s_mid",
-          "road": "Melody Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_song_south_e_s_mid",
-          "v": "prestige_song_south_s_e",
-          "road": "Melody Parkway",
+          "u": "pss_junc_w",
+          "v": "pss_harmony_s",
+          "road": "Symphony Way",
           "type": "secondary"
         }
       ]
@@ -9533,12 +9678,12 @@ window.LAYOUTS = {
         "number": "Symphony Tower - 101",
         "road": "Symphony Way",
         "block": "Symphony Tower",
-        "facing": "South",
-        "x": 247,
-        "y": 189,
+        "facing": "East",
+        "x": 227,
+        "y": 349,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_w",
+        "roadNode": "pss_junc_w",
         "color": "cyan"
       },
       "2": {
@@ -9546,12 +9691,12 @@ window.LAYOUTS = {
         "number": "Symphony Tower - 102",
         "road": "Symphony Way",
         "block": "Symphony Tower",
-        "facing": "South",
-        "x": 269,
-        "y": 189,
+        "facing": "East",
+        "x": 249,
+        "y": 349,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_w",
+        "roadNode": "pss_junc_w",
         "color": "cyan"
       },
       "3": {
@@ -9559,12 +9704,12 @@ window.LAYOUTS = {
         "number": "Symphony Tower - 201",
         "road": "Symphony Way",
         "block": "Symphony Tower",
-        "facing": "South",
-        "x": 291,
-        "y": 189,
+        "facing": "East",
+        "x": 271,
+        "y": 349,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_w",
+        "roadNode": "pss_junc_w",
         "color": "cyan"
       },
       "4": {
@@ -9572,12 +9717,12 @@ window.LAYOUTS = {
         "number": "Symphony Tower - 202",
         "road": "Symphony Way",
         "block": "Symphony Tower",
-        "facing": "South",
-        "x": 313,
-        "y": 189,
+        "facing": "East",
+        "x": 293,
+        "y": 349,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_w",
+        "roadNode": "pss_junc_w",
         "color": "cyan"
       },
       "5": {
@@ -9585,12 +9730,12 @@ window.LAYOUTS = {
         "number": "Symphony Tower - 301",
         "road": "Symphony Way",
         "block": "Symphony Tower",
-        "facing": "South",
-        "x": 247,
-        "y": 211,
+        "facing": "East",
+        "x": 227,
+        "y": 371,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_w",
+        "roadNode": "pss_junc_w",
         "color": "cyan"
       },
       "6": {
@@ -9598,12 +9743,12 @@ window.LAYOUTS = {
         "number": "Symphony Tower - 302",
         "road": "Symphony Way",
         "block": "Symphony Tower",
-        "facing": "South",
-        "x": 269,
-        "y": 211,
+        "facing": "East",
+        "x": 249,
+        "y": 371,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_w",
+        "roadNode": "pss_junc_w",
         "color": "cyan"
       },
       "7": {
@@ -9611,12 +9756,12 @@ window.LAYOUTS = {
         "number": "Symphony Tower - 401",
         "road": "Symphony Way",
         "block": "Symphony Tower",
-        "facing": "South",
-        "x": 291,
-        "y": 211,
+        "facing": "East",
+        "x": 271,
+        "y": 371,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_w",
+        "roadNode": "pss_junc_w",
         "color": "cyan"
       },
       "8": {
@@ -9624,220 +9769,220 @@ window.LAYOUTS = {
         "number": "Symphony Tower - 402",
         "road": "Symphony Way",
         "block": "Symphony Tower",
-        "facing": "South",
-        "x": 313,
-        "y": 211,
+        "facing": "East",
+        "x": 293,
+        "y": 371,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_w",
+        "roadNode": "pss_junc_w",
         "color": "cyan"
       },
       "9": {
         "id": "9",
         "number": "Melody Tower - 101",
-        "road": "Symphony Way",
+        "road": "Melody Parkway",
         "block": "Melody Tower",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 447,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_mid",
+        "roadNode": "pss_melody_n",
         "color": "cyan"
       },
       "10": {
         "id": "10",
         "number": "Melody Tower - 102",
-        "road": "Symphony Way",
+        "road": "Melody Parkway",
         "block": "Melody Tower",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 469,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_mid",
+        "roadNode": "pss_melody_n",
         "color": "cyan"
       },
       "11": {
         "id": "11",
         "number": "Melody Tower - 201",
-        "road": "Symphony Way",
+        "road": "Melody Parkway",
         "block": "Melody Tower",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 491,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_mid",
+        "roadNode": "pss_melody_n",
         "color": "cyan"
       },
       "12": {
         "id": "12",
         "number": "Melody Tower - 202",
-        "road": "Symphony Way",
+        "road": "Melody Parkway",
         "block": "Melody Tower",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 513,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_mid",
+        "roadNode": "pss_melody_n",
         "color": "cyan"
       },
       "13": {
         "id": "13",
         "number": "Melody Tower - 301",
-        "road": "Symphony Way",
+        "road": "Melody Parkway",
         "block": "Melody Tower",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 447,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_mid",
+        "roadNode": "pss_melody_n",
         "color": "cyan"
       },
       "14": {
         "id": "14",
         "number": "Melody Tower - 302",
-        "road": "Symphony Way",
+        "road": "Melody Parkway",
         "block": "Melody Tower",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 469,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_mid",
+        "roadNode": "pss_melody_n",
         "color": "cyan"
       },
       "15": {
         "id": "15",
         "number": "Melody Tower - 401",
-        "road": "Symphony Way",
+        "road": "Melody Parkway",
         "block": "Melody Tower",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 491,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_mid",
+        "roadNode": "pss_melody_n",
         "color": "cyan"
       },
       "16": {
         "id": "16",
         "number": "Melody Tower - 402",
-        "road": "Symphony Way",
+        "road": "Melody Parkway",
         "block": "Melody Tower",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 513,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_mid",
+        "roadNode": "pss_melody_n",
         "color": "cyan"
       },
       "17": {
         "id": "17",
         "number": "Harmony Tower - 101",
-        "road": "Symphony Way",
+        "road": "Harmony Avenue",
         "block": "Harmony Tower",
-        "facing": "South",
-        "x": 807,
-        "y": 189,
+        "facing": "North",
+        "x": 587,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_e",
+        "roadNode": "pss_harmony_s",
         "color": "cyan"
       },
       "18": {
         "id": "18",
         "number": "Harmony Tower - 102",
-        "road": "Symphony Way",
+        "road": "Harmony Avenue",
         "block": "Harmony Tower",
-        "facing": "South",
-        "x": 829,
-        "y": 189,
+        "facing": "North",
+        "x": 609,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_e",
+        "roadNode": "pss_harmony_s",
         "color": "cyan"
       },
       "19": {
         "id": "19",
         "number": "Harmony Tower - 201",
-        "road": "Symphony Way",
+        "road": "Harmony Avenue",
         "block": "Harmony Tower",
-        "facing": "South",
-        "x": 851,
-        "y": 189,
+        "facing": "North",
+        "x": 631,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_e",
+        "roadNode": "pss_harmony_s",
         "color": "cyan"
       },
       "20": {
         "id": "20",
         "number": "Harmony Tower - 202",
-        "road": "Symphony Way",
+        "road": "Harmony Avenue",
         "block": "Harmony Tower",
-        "facing": "South",
-        "x": 873,
-        "y": 189,
+        "facing": "North",
+        "x": 653,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_e",
+        "roadNode": "pss_harmony_s",
         "color": "cyan"
       },
       "21": {
         "id": "21",
         "number": "Harmony Tower - 301",
-        "road": "Symphony Way",
+        "road": "Harmony Avenue",
         "block": "Harmony Tower",
-        "facing": "South",
-        "x": 807,
-        "y": 211,
+        "facing": "North",
+        "x": 587,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_e",
+        "roadNode": "pss_harmony_s",
         "color": "cyan"
       },
       "22": {
         "id": "22",
         "number": "Harmony Tower - 302",
-        "road": "Symphony Way",
+        "road": "Harmony Avenue",
         "block": "Harmony Tower",
-        "facing": "South",
-        "x": 829,
-        "y": 211,
+        "facing": "North",
+        "x": 609,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_e",
+        "roadNode": "pss_harmony_s",
         "color": "cyan"
       },
       "23": {
         "id": "23",
         "number": "Harmony Tower - 401",
-        "road": "Symphony Way",
+        "road": "Harmony Avenue",
         "block": "Harmony Tower",
-        "facing": "South",
-        "x": 851,
-        "y": 211,
+        "facing": "North",
+        "x": 631,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_e",
+        "roadNode": "pss_harmony_s",
         "color": "cyan"
       },
       "24": {
         "id": "24",
         "number": "Harmony Tower - 402",
-        "road": "Symphony Way",
+        "road": "Harmony Avenue",
         "block": "Harmony Tower",
-        "facing": "South",
-        "x": 873,
-        "y": 211,
+        "facing": "North",
+        "x": 653,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_n_e",
+        "roadNode": "pss_harmony_s",
         "color": "cyan"
       },
       "25": {
@@ -9845,12 +9990,12 @@ window.LAYOUTS = {
         "number": "Rhythm Tower - 101",
         "road": "Lakeview Promenade",
         "block": "Rhythm Tower",
-        "facing": "North",
-        "x": 347,
-        "y": 669,
+        "facing": "West",
+        "x": 827,
+        "y": 409,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_s_w",
+        "roadNode": "pss_junc_lake",
         "color": "cyan"
       },
       "26": {
@@ -9858,12 +10003,12 @@ window.LAYOUTS = {
         "number": "Rhythm Tower - 102",
         "road": "Lakeview Promenade",
         "block": "Rhythm Tower",
-        "facing": "North",
-        "x": 369,
-        "y": 669,
+        "facing": "West",
+        "x": 849,
+        "y": 409,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_s_w",
+        "roadNode": "pss_junc_lake",
         "color": "cyan"
       },
       "27": {
@@ -9871,12 +10016,12 @@ window.LAYOUTS = {
         "number": "Rhythm Tower - 201",
         "road": "Lakeview Promenade",
         "block": "Rhythm Tower",
-        "facing": "North",
-        "x": 391,
-        "y": 669,
+        "facing": "West",
+        "x": 871,
+        "y": 409,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_s_w",
+        "roadNode": "pss_junc_lake",
         "color": "cyan"
       },
       "28": {
@@ -9884,12 +10029,12 @@ window.LAYOUTS = {
         "number": "Rhythm Tower - 202",
         "road": "Lakeview Promenade",
         "block": "Rhythm Tower",
-        "facing": "North",
-        "x": 413,
-        "y": 669,
+        "facing": "West",
+        "x": 893,
+        "y": 409,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_s_w",
+        "roadNode": "pss_junc_lake",
         "color": "cyan"
       },
       "29": {
@@ -9897,12 +10042,12 @@ window.LAYOUTS = {
         "number": "Rhythm Tower - 301",
         "road": "Lakeview Promenade",
         "block": "Rhythm Tower",
-        "facing": "North",
-        "x": 347,
-        "y": 691,
+        "facing": "West",
+        "x": 827,
+        "y": 431,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_s_w",
+        "roadNode": "pss_junc_lake",
         "color": "cyan"
       },
       "30": {
@@ -9910,12 +10055,12 @@ window.LAYOUTS = {
         "number": "Rhythm Tower - 302",
         "road": "Lakeview Promenade",
         "block": "Rhythm Tower",
-        "facing": "North",
-        "x": 369,
-        "y": 691,
+        "facing": "West",
+        "x": 849,
+        "y": 431,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_s_w",
+        "roadNode": "pss_junc_lake",
         "color": "cyan"
       },
       "31": {
@@ -9923,12 +10068,12 @@ window.LAYOUTS = {
         "number": "Rhythm Tower - 401",
         "road": "Lakeview Promenade",
         "block": "Rhythm Tower",
-        "facing": "North",
-        "x": 391,
-        "y": 691,
+        "facing": "West",
+        "x": 871,
+        "y": 431,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_s_w",
+        "roadNode": "pss_junc_lake",
         "color": "cyan"
       },
       "32": {
@@ -9936,43 +10081,23 @@ window.LAYOUTS = {
         "number": "Rhythm Tower - 402",
         "road": "Lakeview Promenade",
         "block": "Rhythm Tower",
-        "facing": "North",
-        "x": 413,
-        "y": 691,
+        "facing": "West",
+        "x": 893,
+        "y": 431,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_song_south_s_w",
+        "roadNode": "pss_junc_lake",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "prestige_song_south_gate_1",
-        "name": "Prestige Song of the South Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "prestige_song_south_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "prestige_song_south_gate_2",
-        "name": "Prestige Song of the South Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "prestige_song_south_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "prestige_song_south_club",
         "name": "Grand Symphony Clubhouse",
         "description": "Double-height clubhouse, gym, mini-theatre & banquet halls",
-        "x": 620,
-        "y": 270,
-        "roadNode": "prestige_song_south_n_mid",
+        "x": 580,
+        "y": 440,
+        "roadNode": "pss_junc_ctr",
         "icon": "\ud83c\udfad",
         "type": "clubhouse"
       },
@@ -9980,9 +10105,9 @@ window.LAYOUTS = {
         "id": "prestige_song_south_lake",
         "name": "Lake Promenade & Reflection Deck",
         "description": "Serene natural lakefront jogging track",
-        "x": 620,
-        "y": 690,
-        "roadNode": "prestige_song_south_s_mid",
+        "x": 840,
+        "y": 220,
+        "roadNode": "pss_junc_lake",
         "icon": "\ud83c\udf0a",
         "type": "nature"
       }
@@ -9990,36 +10115,30 @@ window.LAYOUTS = {
     "roadLabels": [
       {
         "name": "SONG OF SOUTH BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "SYMPHONY WAY",
-        "x": 620,
-        "y": 255,
+        "x": 440,
+        "y": 505,
         "vertical": false
       },
       {
         "name": "LAKEVIEW PROMENADE",
-        "x": 620,
-        "y": 705,
+        "x": 900,
+        "y": 390,
         "vertical": false
       },
       {
-        "name": "RHYTHM AVENUE",
-        "x": 305,
-        "y": 375,
+        "name": "MELODY PARKWAY",
+        "x": 430,
+        "y": 380,
         "vertical": true
       },
       {
-        "name": "MELODY PARKWAY",
-        "x": 935,
-        "y": 375,
+        "name": "HARMONY AVENUE",
+        "x": 590,
+        "y": 620,
         "vertical": true
       }
     ],
-    "defaultStartGate": "prestige_song_south_gate_1",
+    "defaultStartGate": "pss_gate_main",
     "sectors": [
       "Symphony Tower",
       "Melody Tower",
@@ -10038,259 +10157,183 @@ window.LAYOUTS = {
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "120,480 240,160 620,130 1000,160 1120,480 1000,800 620,830 240,800 Z",
+    "borderTreesPath": "M 120,480 L 240,160 L 620,130 L 1000,160 L 1120,480 L 1000,800 L 620,830 L 240,800 Z",
+    "waterBody": {
+      "x": 540,
+      "y": 430,
+      "w": 160,
+      "h": 80,
+      "rx": 12,
+      "label": "Woodrose Club Heated Pool"
     },
+    "gardenPark": {
+      "x": 440,
+      "y": 310,
+      "w": 360,
+      "h": 60,
+      "rx": 8,
+      "label": "Millennium Heritage Tree Park"
+    },
+    "landmarks": [
+      {
+        "x": 760,
+        "y": 430,
+        "w": 180,
+        "h": 110,
+        "rx": 8,
+        "label": "\ud83c\udfdb\ufe0f MLR Convention Centre",
+        "fill": "#1e293b",
+        "stroke": "#a855f7"
+      }
+    ],
     "roads": {
       "nodes": {
-        "brigade_millennium_gate_1": {
-          "id": "brigade_millennium_gate_1",
-          "x": 90,
+        "bm_gate_main": {
+          "id": "bm_gate_main",
+          "x": 120,
           "y": 480,
-          "label": "Brigade Millennium Gate 1 (Main Entrance)"
+          "label": "Main Gate (24th Main Road)"
         },
-        "brigade_millennium_entry": {
-          "id": "brigade_millennium_entry",
-          "x": 180,
+        "bm_junc_entry": {
+          "id": "bm_junc_entry",
+          "x": 260,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Millennium Boulevard Entrance"
         },
-        "brigade_millennium_junc_w": {
-          "id": "brigade_millennium_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Cassia Link West Junction"
-        },
-        "brigade_millennium_junc_ctr": {
-          "id": "brigade_millennium_junc_ctr",
+        "bm_junc_ctr": {
+          "id": "bm_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Woodrose Central Hub"
         },
-        "brigade_millennium_junc_e": {
-          "id": "brigade_millennium_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Mayflower Way East Junction"
-        },
-        "brigade_millennium_gate_2": {
-          "id": "brigade_millennium_gate_2",
+        "bm_gate_east": {
+          "id": "bm_gate_east",
           "x": 1110,
           "y": 480,
-          "label": "Brigade Millennium Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Puttenahalli Lake Link)"
         },
-        "brigade_millennium_n_w": {
-          "id": "brigade_millennium_n_w",
+        "bm_cassia_nw": {
+          "id": "bm_cassia_nw",
           "x": 320,
-          "y": 270,
-          "label": "Woodrose Club Avenue West"
+          "y": 280,
+          "label": "Cassia Link North"
         },
-        "brigade_millennium_n_mid": {
-          "id": "brigade_millennium_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Woodrose Club Avenue North Plaza"
+        "bm_jacaranda_ne": {
+          "id": "bm_jacaranda_ne",
+          "x": 800,
+          "y": 260,
+          "label": "Jacaranda Way North"
         },
-        "brigade_millennium_n_e": {
-          "id": "brigade_millennium_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Woodrose Club Avenue East"
+        "bm_laburnum_e": {
+          "id": "bm_laburnum_e",
+          "x": 960,
+          "y": 480,
+          "label": "Laburnum Court East"
         },
-        "brigade_millennium_s_w": {
-          "id": "brigade_millennium_s_w",
+        "bm_magnolia_se": {
+          "id": "bm_magnolia_se",
+          "x": 800,
+          "y": 680,
+          "label": "Magnolia Parkway South"
+        },
+        "bm_mayflower_sw": {
+          "id": "bm_mayflower_sw",
           "x": 320,
-          "y": 690,
-          "label": "MLR Parkway West"
-        },
-        "brigade_millennium_s_mid": {
-          "id": "brigade_millennium_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "MLR Parkway South Plaza"
-        },
-        "brigade_millennium_s_e": {
-          "id": "brigade_millennium_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "MLR Parkway East"
-        },
-        "brigade_millennium_w_n_mid": {
-          "id": "brigade_millennium_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Cassia Link North Link"
-        },
-        "brigade_millennium_w_s_mid": {
-          "id": "brigade_millennium_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Cassia Link South Link"
-        },
-        "brigade_millennium_ctr_n_mid": {
-          "id": "brigade_millennium_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "brigade_millennium_ctr_s_mid": {
-          "id": "brigade_millennium_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "brigade_millennium_e_n_mid": {
-          "id": "brigade_millennium_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Mayflower Way North Link"
-        },
-        "brigade_millennium_e_s_mid": {
-          "id": "brigade_millennium_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Mayflower Way South Link"
+          "y": 680,
+          "label": "Mayflower Way South"
         }
       },
       "edges": [
         {
-          "u": "brigade_millennium_gate_1",
-          "v": "brigade_millennium_entry",
+          "u": "bm_gate_main",
+          "v": "bm_junc_entry",
           "road": "Millennium Boulevard",
           "type": "primary"
         },
         {
-          "u": "brigade_millennium_entry",
-          "v": "brigade_millennium_junc_w",
+          "u": "bm_junc_entry",
+          "v": "bm_junc_ctr",
           "road": "Millennium Boulevard",
           "type": "primary"
         },
         {
-          "u": "brigade_millennium_junc_w",
-          "v": "brigade_millennium_junc_ctr",
-          "road": "Millennium Boulevard",
+          "u": "bm_junc_ctr",
+          "v": "bm_laburnum_e",
+          "road": "MLR Parkway",
           "type": "primary"
         },
         {
-          "u": "brigade_millennium_junc_ctr",
-          "v": "brigade_millennium_junc_e",
-          "road": "Millennium Boulevard",
+          "u": "bm_laburnum_e",
+          "v": "bm_gate_east",
+          "road": "MLR Parkway",
           "type": "primary"
         },
         {
-          "u": "brigade_millennium_junc_e",
-          "v": "brigade_millennium_gate_2",
-          "road": "Millennium Boulevard",
-          "type": "primary"
+          "u": "bm_junc_entry",
+          "v": "bm_cassia_nw",
+          "road": "Cassia Link",
+          "type": "secondary"
         },
         {
-          "u": "brigade_millennium_n_w",
-          "v": "brigade_millennium_n_mid",
+          "u": "bm_cassia_nw",
+          "v": "bm_jacaranda_ne",
           "road": "Woodrose Club Avenue",
           "type": "secondary"
         },
         {
-          "u": "brigade_millennium_n_mid",
-          "v": "brigade_millennium_n_e",
+          "u": "bm_jacaranda_ne",
+          "v": "bm_laburnum_e",
           "road": "Woodrose Club Avenue",
           "type": "secondary"
         },
         {
-          "u": "brigade_millennium_s_w",
-          "v": "brigade_millennium_s_mid",
-          "road": "MLR Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_millennium_s_mid",
-          "v": "brigade_millennium_s_e",
-          "road": "MLR Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_millennium_n_w",
-          "v": "brigade_millennium_w_n_mid",
-          "road": "Cassia Link",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_millennium_w_n_mid",
-          "v": "brigade_millennium_junc_w",
-          "road": "Cassia Link",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_millennium_junc_w",
-          "v": "brigade_millennium_w_s_mid",
-          "road": "Cassia Link",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_millennium_w_s_mid",
-          "v": "brigade_millennium_s_w",
-          "road": "Cassia Link",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_millennium_n_mid",
-          "v": "brigade_millennium_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "brigade_millennium_ctr_n_mid",
-          "v": "brigade_millennium_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "brigade_millennium_junc_ctr",
-          "v": "brigade_millennium_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "brigade_millennium_ctr_s_mid",
-          "v": "brigade_millennium_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "brigade_millennium_n_e",
-          "v": "brigade_millennium_e_n_mid",
+          "u": "bm_junc_entry",
+          "v": "bm_mayflower_sw",
           "road": "Mayflower Way",
           "type": "secondary"
         },
         {
-          "u": "brigade_millennium_e_n_mid",
-          "v": "brigade_millennium_junc_e",
-          "road": "Mayflower Way",
+          "u": "bm_mayflower_sw",
+          "v": "bm_magnolia_se",
+          "road": "Woodrose Club Avenue",
           "type": "secondary"
         },
         {
-          "u": "brigade_millennium_junc_e",
-          "v": "brigade_millennium_e_s_mid",
-          "road": "Mayflower Way",
+          "u": "bm_magnolia_se",
+          "v": "bm_laburnum_e",
+          "road": "Woodrose Club Avenue",
           "type": "secondary"
         },
         {
-          "u": "brigade_millennium_e_s_mid",
-          "v": "brigade_millennium_s_e",
-          "road": "Mayflower Way",
+          "u": "bm_junc_ctr",
+          "v": "bm_cassia_nw",
+          "road": "Central Link",
+          "type": "secondary"
+        },
+        {
+          "u": "bm_junc_ctr",
+          "v": "bm_jacaranda_ne",
+          "road": "Central Link",
+          "type": "secondary"
+        },
+        {
+          "u": "bm_junc_ctr",
+          "v": "bm_magnolia_se",
+          "road": "Central Link",
+          "type": "secondary"
+        },
+        {
+          "u": "bm_junc_ctr",
+          "v": "bm_mayflower_sw",
+          "road": "Central Link",
           "type": "secondary"
         }
       ]
@@ -10299,105 +10342,105 @@ window.LAYOUTS = {
       "1": {
         "id": "1",
         "number": "Cassia Block - 101",
-        "road": "Woodrose Club Avenue",
+        "road": "Cassia Link",
         "block": "Cassia Block",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 267,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_w",
+        "roadNode": "bm_cassia_nw",
         "color": "cyan"
       },
       "2": {
         "id": "2",
         "number": "Cassia Block - 102",
-        "road": "Woodrose Club Avenue",
+        "road": "Cassia Link",
         "block": "Cassia Block",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 289,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_w",
+        "roadNode": "bm_cassia_nw",
         "color": "cyan"
       },
       "3": {
         "id": "3",
         "number": "Cassia Block - 201",
-        "road": "Woodrose Club Avenue",
+        "road": "Cassia Link",
         "block": "Cassia Block",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 311,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_w",
+        "roadNode": "bm_cassia_nw",
         "color": "cyan"
       },
       "4": {
         "id": "4",
         "number": "Cassia Block - 202",
-        "road": "Woodrose Club Avenue",
+        "road": "Cassia Link",
         "block": "Cassia Block",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 333,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_w",
+        "roadNode": "bm_cassia_nw",
         "color": "cyan"
       },
       "5": {
         "id": "5",
         "number": "Cassia Block - 301",
-        "road": "Woodrose Club Avenue",
+        "road": "Cassia Link",
         "block": "Cassia Block",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 267,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_w",
+        "roadNode": "bm_cassia_nw",
         "color": "cyan"
       },
       "6": {
         "id": "6",
         "number": "Cassia Block - 302",
-        "road": "Woodrose Club Avenue",
+        "road": "Cassia Link",
         "block": "Cassia Block",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 289,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_w",
+        "roadNode": "bm_cassia_nw",
         "color": "cyan"
       },
       "7": {
         "id": "7",
         "number": "Cassia Block - 401",
-        "road": "Woodrose Club Avenue",
+        "road": "Cassia Link",
         "block": "Cassia Block",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 311,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_w",
+        "roadNode": "bm_cassia_nw",
         "color": "cyan"
       },
       "8": {
         "id": "8",
         "number": "Cassia Block - 402",
-        "road": "Woodrose Club Avenue",
+        "road": "Cassia Link",
         "block": "Cassia Block",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 333,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_w",
+        "roadNode": "bm_cassia_nw",
         "color": "cyan"
       },
       "9": {
@@ -10406,11 +10449,11 @@ window.LAYOUTS = {
         "road": "Woodrose Club Avenue",
         "block": "Jacaranda Block",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 767,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_mid",
+        "roadNode": "bm_jacaranda_ne",
         "color": "cyan"
       },
       "10": {
@@ -10419,11 +10462,11 @@ window.LAYOUTS = {
         "road": "Woodrose Club Avenue",
         "block": "Jacaranda Block",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 789,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_mid",
+        "roadNode": "bm_jacaranda_ne",
         "color": "cyan"
       },
       "11": {
@@ -10432,11 +10475,11 @@ window.LAYOUTS = {
         "road": "Woodrose Club Avenue",
         "block": "Jacaranda Block",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 811,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_mid",
+        "roadNode": "bm_jacaranda_ne",
         "color": "cyan"
       },
       "12": {
@@ -10445,11 +10488,11 @@ window.LAYOUTS = {
         "road": "Woodrose Club Avenue",
         "block": "Jacaranda Block",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 833,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_mid",
+        "roadNode": "bm_jacaranda_ne",
         "color": "cyan"
       },
       "13": {
@@ -10458,11 +10501,11 @@ window.LAYOUTS = {
         "road": "Woodrose Club Avenue",
         "block": "Jacaranda Block",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 767,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_mid",
+        "roadNode": "bm_jacaranda_ne",
         "color": "cyan"
       },
       "14": {
@@ -10471,11 +10514,11 @@ window.LAYOUTS = {
         "road": "Woodrose Club Avenue",
         "block": "Jacaranda Block",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 789,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_mid",
+        "roadNode": "bm_jacaranda_ne",
         "color": "cyan"
       },
       "15": {
@@ -10484,11 +10527,11 @@ window.LAYOUTS = {
         "road": "Woodrose Club Avenue",
         "block": "Jacaranda Block",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 811,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_mid",
+        "roadNode": "bm_jacaranda_ne",
         "color": "cyan"
       },
       "16": {
@@ -10497,354 +10540,334 @@ window.LAYOUTS = {
         "road": "Woodrose Club Avenue",
         "block": "Jacaranda Block",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 833,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_mid",
+        "roadNode": "bm_jacaranda_ne",
         "color": "cyan"
       },
       "17": {
         "id": "17",
         "number": "Laburnum Block - 101",
-        "road": "Woodrose Club Avenue",
+        "road": "MLR Parkway",
         "block": "Laburnum Block",
-        "facing": "South",
-        "x": 807,
-        "y": 189,
+        "facing": "West",
+        "x": 907,
+        "y": 469,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_e",
+        "roadNode": "bm_laburnum_e",
         "color": "cyan"
       },
       "18": {
         "id": "18",
         "number": "Laburnum Block - 102",
-        "road": "Woodrose Club Avenue",
+        "road": "MLR Parkway",
         "block": "Laburnum Block",
-        "facing": "South",
-        "x": 829,
-        "y": 189,
+        "facing": "West",
+        "x": 929,
+        "y": 469,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_e",
+        "roadNode": "bm_laburnum_e",
         "color": "cyan"
       },
       "19": {
         "id": "19",
         "number": "Laburnum Block - 201",
-        "road": "Woodrose Club Avenue",
+        "road": "MLR Parkway",
         "block": "Laburnum Block",
-        "facing": "South",
-        "x": 851,
-        "y": 189,
+        "facing": "West",
+        "x": 951,
+        "y": 469,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_e",
+        "roadNode": "bm_laburnum_e",
         "color": "cyan"
       },
       "20": {
         "id": "20",
         "number": "Laburnum Block - 202",
-        "road": "Woodrose Club Avenue",
+        "road": "MLR Parkway",
         "block": "Laburnum Block",
-        "facing": "South",
-        "x": 873,
-        "y": 189,
+        "facing": "West",
+        "x": 973,
+        "y": 469,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_e",
+        "roadNode": "bm_laburnum_e",
         "color": "cyan"
       },
       "21": {
         "id": "21",
         "number": "Laburnum Block - 301",
-        "road": "Woodrose Club Avenue",
+        "road": "MLR Parkway",
         "block": "Laburnum Block",
-        "facing": "South",
-        "x": 807,
-        "y": 211,
+        "facing": "West",
+        "x": 907,
+        "y": 491,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_e",
+        "roadNode": "bm_laburnum_e",
         "color": "cyan"
       },
       "22": {
         "id": "22",
         "number": "Laburnum Block - 302",
-        "road": "Woodrose Club Avenue",
+        "road": "MLR Parkway",
         "block": "Laburnum Block",
-        "facing": "South",
-        "x": 829,
-        "y": 211,
+        "facing": "West",
+        "x": 929,
+        "y": 491,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_e",
+        "roadNode": "bm_laburnum_e",
         "color": "cyan"
       },
       "23": {
         "id": "23",
         "number": "Laburnum Block - 401",
-        "road": "Woodrose Club Avenue",
+        "road": "MLR Parkway",
         "block": "Laburnum Block",
-        "facing": "South",
-        "x": 851,
-        "y": 211,
+        "facing": "West",
+        "x": 951,
+        "y": 491,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_e",
+        "roadNode": "bm_laburnum_e",
         "color": "cyan"
       },
       "24": {
         "id": "24",
         "number": "Laburnum Block - 402",
-        "road": "Woodrose Club Avenue",
+        "road": "MLR Parkway",
         "block": "Laburnum Block",
-        "facing": "South",
-        "x": 873,
-        "y": 211,
+        "facing": "West",
+        "x": 973,
+        "y": 491,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_n_e",
+        "roadNode": "bm_laburnum_e",
         "color": "cyan"
       },
       "25": {
         "id": "25",
         "number": "Magnolia Block - 101",
-        "road": "MLR Parkway",
+        "road": "Woodrose Club Avenue",
         "block": "Magnolia Block",
         "facing": "North",
-        "x": 347,
+        "x": 747,
         "y": 669,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_w",
+        "roadNode": "bm_magnolia_se",
         "color": "cyan"
       },
       "26": {
         "id": "26",
         "number": "Magnolia Block - 102",
-        "road": "MLR Parkway",
+        "road": "Woodrose Club Avenue",
         "block": "Magnolia Block",
         "facing": "North",
-        "x": 369,
+        "x": 769,
         "y": 669,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_w",
+        "roadNode": "bm_magnolia_se",
         "color": "cyan"
       },
       "27": {
         "id": "27",
         "number": "Magnolia Block - 201",
-        "road": "MLR Parkway",
+        "road": "Woodrose Club Avenue",
         "block": "Magnolia Block",
         "facing": "North",
-        "x": 391,
+        "x": 791,
         "y": 669,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_w",
+        "roadNode": "bm_magnolia_se",
         "color": "cyan"
       },
       "28": {
         "id": "28",
         "number": "Magnolia Block - 202",
-        "road": "MLR Parkway",
+        "road": "Woodrose Club Avenue",
         "block": "Magnolia Block",
         "facing": "North",
-        "x": 413,
+        "x": 813,
         "y": 669,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_w",
+        "roadNode": "bm_magnolia_se",
         "color": "cyan"
       },
       "29": {
         "id": "29",
         "number": "Magnolia Block - 301",
-        "road": "MLR Parkway",
+        "road": "Woodrose Club Avenue",
         "block": "Magnolia Block",
         "facing": "North",
-        "x": 347,
+        "x": 747,
         "y": 691,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_w",
+        "roadNode": "bm_magnolia_se",
         "color": "cyan"
       },
       "30": {
         "id": "30",
         "number": "Magnolia Block - 302",
-        "road": "MLR Parkway",
+        "road": "Woodrose Club Avenue",
         "block": "Magnolia Block",
         "facing": "North",
-        "x": 369,
+        "x": 769,
         "y": 691,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_w",
+        "roadNode": "bm_magnolia_se",
         "color": "cyan"
       },
       "31": {
         "id": "31",
         "number": "Magnolia Block - 401",
-        "road": "MLR Parkway",
+        "road": "Woodrose Club Avenue",
         "block": "Magnolia Block",
         "facing": "North",
-        "x": 391,
+        "x": 791,
         "y": 691,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_w",
+        "roadNode": "bm_magnolia_se",
         "color": "cyan"
       },
       "32": {
         "id": "32",
         "number": "Magnolia Block - 402",
-        "road": "MLR Parkway",
+        "road": "Woodrose Club Avenue",
         "block": "Magnolia Block",
         "facing": "North",
-        "x": 413,
+        "x": 813,
         "y": 691,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_w",
+        "roadNode": "bm_magnolia_se",
         "color": "cyan"
       },
       "33": {
         "id": "33",
         "number": "Mayflower Block - 101",
-        "road": "MLR Parkway",
+        "road": "Mayflower Way",
         "block": "Mayflower Block",
         "facing": "North",
-        "x": 587,
-        "y": 669,
+        "x": 267,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_mid",
+        "roadNode": "bm_mayflower_sw",
         "color": "cyan"
       },
       "34": {
         "id": "34",
         "number": "Mayflower Block - 102",
-        "road": "MLR Parkway",
+        "road": "Mayflower Way",
         "block": "Mayflower Block",
         "facing": "North",
-        "x": 609,
-        "y": 669,
+        "x": 289,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_mid",
+        "roadNode": "bm_mayflower_sw",
         "color": "cyan"
       },
       "35": {
         "id": "35",
         "number": "Mayflower Block - 201",
-        "road": "MLR Parkway",
+        "road": "Mayflower Way",
         "block": "Mayflower Block",
         "facing": "North",
-        "x": 631,
-        "y": 669,
+        "x": 311,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_mid",
+        "roadNode": "bm_mayflower_sw",
         "color": "cyan"
       },
       "36": {
         "id": "36",
         "number": "Mayflower Block - 202",
-        "road": "MLR Parkway",
+        "road": "Mayflower Way",
         "block": "Mayflower Block",
         "facing": "North",
-        "x": 653,
-        "y": 669,
+        "x": 333,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_mid",
+        "roadNode": "bm_mayflower_sw",
         "color": "cyan"
       },
       "37": {
         "id": "37",
         "number": "Mayflower Block - 301",
-        "road": "MLR Parkway",
+        "road": "Mayflower Way",
         "block": "Mayflower Block",
         "facing": "North",
-        "x": 587,
-        "y": 691,
+        "x": 267,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_mid",
+        "roadNode": "bm_mayflower_sw",
         "color": "cyan"
       },
       "38": {
         "id": "38",
         "number": "Mayflower Block - 302",
-        "road": "MLR Parkway",
+        "road": "Mayflower Way",
         "block": "Mayflower Block",
         "facing": "North",
-        "x": 609,
-        "y": 691,
+        "x": 289,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_mid",
+        "roadNode": "bm_mayflower_sw",
         "color": "cyan"
       },
       "39": {
         "id": "39",
         "number": "Mayflower Block - 401",
-        "road": "MLR Parkway",
+        "road": "Mayflower Way",
         "block": "Mayflower Block",
         "facing": "North",
-        "x": 631,
-        "y": 691,
+        "x": 311,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_mid",
+        "roadNode": "bm_mayflower_sw",
         "color": "cyan"
       },
       "40": {
         "id": "40",
         "number": "Mayflower Block - 402",
-        "road": "MLR Parkway",
+        "road": "Mayflower Way",
         "block": "Mayflower Block",
         "facing": "North",
-        "x": 653,
-        "y": 691,
+        "x": 333,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_millennium_s_mid",
+        "roadNode": "bm_mayflower_sw",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "brigade_millennium_gate_1",
-        "name": "Brigade Millennium Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "brigade_millennium_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "brigade_millennium_gate_2",
-        "name": "Brigade Millennium Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "brigade_millennium_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "brigade_millennium_club",
         "name": "The Woodrose Club",
         "description": "Renowned country club with swimming pool, squash, tennis, restaurants",
-        "x": 620,
-        "y": 270,
-        "roadNode": "brigade_millennium_n_mid",
+        "x": 540,
+        "y": 440,
+        "roadNode": "bm_junc_ctr",
         "icon": "\ud83c\udfca",
         "type": "clubhouse"
       },
@@ -10852,9 +10875,9 @@ window.LAYOUTS = {
         "id": "brigade_millennium_hall",
         "name": "MLR Convention Centre",
         "description": "Premier 500-seat cultural theatre and convention auditorium",
-        "x": 620,
-        "y": 690,
-        "roadNode": "brigade_millennium_s_mid",
+        "x": 760,
+        "y": 440,
+        "roadNode": "bm_laburnum_e",
         "icon": "\ud83c\udfdb\ufe0f",
         "type": "auditorium"
       }
@@ -10862,36 +10885,36 @@ window.LAYOUTS = {
     "roadLabels": [
       {
         "name": "MILLENNIUM BOULEVARD",
-        "x": 620,
-        "y": 490,
+        "x": 440,
+        "y": 465,
         "vertical": false
       },
       {
         "name": "WOODROSE CLUB AVENUE",
         "x": 620,
-        "y": 255,
+        "y": 245,
         "vertical": false
       },
       {
         "name": "MLR PARKWAY",
-        "x": 620,
-        "y": 705,
+        "x": 860,
+        "y": 465,
         "vertical": false
       },
       {
         "name": "CASSIA LINK",
-        "x": 305,
-        "y": 375,
+        "x": 310,
+        "y": 380,
         "vertical": true
       },
       {
         "name": "MAYFLOWER WAY",
-        "x": 935,
-        "y": 375,
+        "x": 310,
+        "y": 580,
         "vertical": true
       }
     ],
-    "defaultStartGate": "brigade_millennium_gate_1",
+    "defaultStartGate": "bm_gate_main",
     "sectors": [
       "Cassia Block",
       "Jacaranda Block",
@@ -10911,259 +10934,164 @@ window.LAYOUTS = {
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "100,480 220,160 620,140 1020,160 1120,480 1020,800 620,820 220,800 Z",
+    "borderTreesPath": "M 100,480 L 220,160 L 620,140 L 1020,160 L 1120,480 L 1020,800 L 620,820 L 220,800 Z",
+    "waterBody": {
+      "x": 500,
+      "y": 420,
+      "w": 240,
+      "h": 90,
+      "rx": 18,
+      "label": "Fantasy Beach Resort Wave Pool"
     },
+    "gardenPark": null,
+    "landmarks": [
+      {
+        "x": 440,
+        "y": 280,
+        "w": 360,
+        "h": 70,
+        "rx": 8,
+        "label": "\ud83c\udfac London West End Open Air Cinema",
+        "fill": "#1e1b4b",
+        "stroke": "#f43f5e"
+      }
+    ],
     "roads": {
       "nodes": {
-        "purva_westend_gate_1": {
-          "id": "purva_westend_gate_1",
-          "x": 90,
+        "pw_gate_main": {
+          "id": "pw_gate_main",
+          "x": 100,
           "y": 480,
-          "label": "Purva Westend Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Kudlu Gate Main Entry)"
         },
-        "purva_westend_entry": {
-          "id": "purva_westend_entry",
-          "x": 180,
+        "pw_junc_entry": {
+          "id": "pw_junc_entry",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Westend Boulevard Entrance"
         },
-        "purva_westend_junc_w": {
-          "id": "purva_westend_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Kudlu Link West Junction"
-        },
-        "purva_westend_junc_ctr": {
-          "id": "purva_westend_junc_ctr",
+        "pw_junc_ctr": {
+          "id": "pw_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Broadway Cinema Plaza"
         },
-        "purva_westend_junc_e": {
-          "id": "purva_westend_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Opera Court East Junction"
-        },
-        "purva_westend_gate_2": {
-          "id": "purva_westend_gate_2",
+        "pw_gate_east": {
+          "id": "pw_gate_east",
           "x": 1110,
           "y": 480,
-          "label": "Purva Westend Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Hosur Road Link)"
         },
-        "purva_westend_n_w": {
-          "id": "purva_westend_n_w",
-          "x": 320,
+        "pw_broadway_nw": {
+          "id": "pw_broadway_nw",
+          "x": 340,
           "y": 270,
-          "label": "Broadway Promenade West"
+          "label": "Broadway Promenade North"
         },
-        "purva_westend_n_mid": {
-          "id": "purva_westend_n_mid",
-          "x": 620,
+        "pw_opera_ne": {
+          "id": "pw_opera_ne",
+          "x": 860,
           "y": 270,
-          "label": "Broadway Promenade North Plaza"
+          "label": "Opera Court North"
         },
-        "purva_westend_n_e": {
-          "id": "purva_westend_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Broadway Promenade East"
-        },
-        "purva_westend_s_w": {
-          "id": "purva_westend_s_w",
-          "x": 320,
+        "pw_westend_sw": {
+          "id": "pw_westend_sw",
+          "x": 340,
           "y": 690,
-          "label": "Cinema Walkway West"
+          "label": "West End Drive South"
         },
-        "purva_westend_s_mid": {
-          "id": "purva_westend_s_mid",
-          "x": 620,
+        "pw_cinema_se": {
+          "id": "pw_cinema_se",
+          "x": 860,
           "y": 690,
-          "label": "Cinema Walkway South Plaza"
-        },
-        "purva_westend_s_e": {
-          "id": "purva_westend_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Cinema Walkway East"
-        },
-        "purva_westend_w_n_mid": {
-          "id": "purva_westend_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Kudlu Link North Link"
-        },
-        "purva_westend_w_s_mid": {
-          "id": "purva_westend_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Kudlu Link South Link"
-        },
-        "purva_westend_ctr_n_mid": {
-          "id": "purva_westend_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "purva_westend_ctr_s_mid": {
-          "id": "purva_westend_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "purva_westend_e_n_mid": {
-          "id": "purva_westend_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Opera Court North Link"
-        },
-        "purva_westend_e_s_mid": {
-          "id": "purva_westend_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Opera Court South Link"
+          "label": "Cinema Walkway South"
         }
       },
       "edges": [
         {
-          "u": "purva_westend_gate_1",
-          "v": "purva_westend_entry",
+          "u": "pw_gate_main",
+          "v": "pw_junc_entry",
           "road": "Westend Boulevard",
           "type": "primary"
         },
         {
-          "u": "purva_westend_entry",
-          "v": "purva_westend_junc_w",
+          "u": "pw_junc_entry",
+          "v": "pw_junc_ctr",
           "road": "Westend Boulevard",
           "type": "primary"
         },
         {
-          "u": "purva_westend_junc_w",
-          "v": "purva_westend_junc_ctr",
+          "u": "pw_junc_ctr",
+          "v": "pw_gate_east",
           "road": "Westend Boulevard",
           "type": "primary"
         },
         {
-          "u": "purva_westend_junc_ctr",
-          "v": "purva_westend_junc_e",
-          "road": "Westend Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "purva_westend_junc_e",
-          "v": "purva_westend_gate_2",
-          "road": "Westend Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "purva_westend_n_w",
-          "v": "purva_westend_n_mid",
+          "u": "pw_junc_entry",
+          "v": "pw_broadway_nw",
           "road": "Broadway Promenade",
           "type": "secondary"
         },
         {
-          "u": "purva_westend_n_mid",
-          "v": "purva_westend_n_e",
-          "road": "Broadway Promenade",
-          "type": "secondary"
-        },
-        {
-          "u": "purva_westend_s_w",
-          "v": "purva_westend_s_mid",
+          "u": "pw_broadway_nw",
+          "v": "pw_opera_ne",
           "road": "Cinema Walkway",
           "type": "secondary"
         },
         {
-          "u": "purva_westend_s_mid",
-          "v": "purva_westend_s_e",
+          "u": "pw_opera_ne",
+          "v": "pw_gate_east",
+          "road": "Opera Court",
+          "type": "secondary"
+        },
+        {
+          "u": "pw_junc_entry",
+          "v": "pw_westend_sw",
+          "road": "Kudlu Link",
+          "type": "secondary"
+        },
+        {
+          "u": "pw_westend_sw",
+          "v": "pw_cinema_se",
           "road": "Cinema Walkway",
           "type": "secondary"
         },
         {
-          "u": "purva_westend_n_w",
-          "v": "purva_westend_w_n_mid",
+          "u": "pw_cinema_se",
+          "v": "pw_gate_east",
           "road": "Kudlu Link",
           "type": "secondary"
         },
         {
-          "u": "purva_westend_w_n_mid",
-          "v": "purva_westend_junc_w",
-          "road": "Kudlu Link",
-          "type": "secondary"
-        },
-        {
-          "u": "purva_westend_junc_w",
-          "v": "purva_westend_w_s_mid",
-          "road": "Kudlu Link",
-          "type": "secondary"
-        },
-        {
-          "u": "purva_westend_w_s_mid",
-          "v": "purva_westend_s_w",
-          "road": "Kudlu Link",
-          "type": "secondary"
-        },
-        {
-          "u": "purva_westend_n_mid",
-          "v": "purva_westend_ctr_n_mid",
+          "u": "pw_junc_ctr",
+          "v": "pw_broadway_nw",
           "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "purva_westend_ctr_n_mid",
-          "v": "purva_westend_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "purva_westend_junc_ctr",
-          "v": "purva_westend_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "purva_westend_ctr_s_mid",
-          "v": "purva_westend_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "purva_westend_n_e",
-          "v": "purva_westend_e_n_mid",
-          "road": "Opera Court",
           "type": "secondary"
         },
         {
-          "u": "purva_westend_e_n_mid",
-          "v": "purva_westend_junc_e",
-          "road": "Opera Court",
+          "u": "pw_junc_ctr",
+          "v": "pw_opera_ne",
+          "road": "Central Link",
           "type": "secondary"
         },
         {
-          "u": "purva_westend_junc_e",
-          "v": "purva_westend_e_s_mid",
-          "road": "Opera Court",
+          "u": "pw_junc_ctr",
+          "v": "pw_westend_sw",
+          "road": "Central Link",
           "type": "secondary"
         },
         {
-          "u": "purva_westend_e_s_mid",
-          "v": "purva_westend_s_e",
-          "road": "Opera Court",
+          "u": "pw_junc_ctr",
+          "v": "pw_cinema_se",
+          "road": "Central Link",
           "type": "secondary"
         }
       ]
@@ -11175,11 +11103,11 @@ window.LAYOUTS = {
         "road": "Broadway Promenade",
         "block": "Broadway Tower",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 267,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_w",
+        "roadNode": "pw_broadway_nw",
         "color": "cyan"
       },
       "2": {
@@ -11188,11 +11116,11 @@ window.LAYOUTS = {
         "road": "Broadway Promenade",
         "block": "Broadway Tower",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 289,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_w",
+        "roadNode": "pw_broadway_nw",
         "color": "cyan"
       },
       "3": {
@@ -11201,11 +11129,11 @@ window.LAYOUTS = {
         "road": "Broadway Promenade",
         "block": "Broadway Tower",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 311,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_w",
+        "roadNode": "pw_broadway_nw",
         "color": "cyan"
       },
       "4": {
@@ -11214,11 +11142,11 @@ window.LAYOUTS = {
         "road": "Broadway Promenade",
         "block": "Broadway Tower",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 333,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_w",
+        "roadNode": "pw_broadway_nw",
         "color": "cyan"
       },
       "5": {
@@ -11227,11 +11155,11 @@ window.LAYOUTS = {
         "road": "Broadway Promenade",
         "block": "Broadway Tower",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 267,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_w",
+        "roadNode": "pw_broadway_nw",
         "color": "cyan"
       },
       "6": {
@@ -11240,11 +11168,11 @@ window.LAYOUTS = {
         "road": "Broadway Promenade",
         "block": "Broadway Tower",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 289,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_w",
+        "roadNode": "pw_broadway_nw",
         "color": "cyan"
       },
       "7": {
@@ -11253,11 +11181,11 @@ window.LAYOUTS = {
         "road": "Broadway Promenade",
         "block": "Broadway Tower",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 311,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_w",
+        "roadNode": "pw_broadway_nw",
         "color": "cyan"
       },
       "8": {
@@ -11266,219 +11194,219 @@ window.LAYOUTS = {
         "road": "Broadway Promenade",
         "block": "Broadway Tower",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 333,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_w",
+        "roadNode": "pw_broadway_nw",
         "color": "cyan"
       },
       "9": {
         "id": "9",
         "number": "Opera Tower - 101",
-        "road": "Broadway Promenade",
+        "road": "Opera Court",
         "block": "Opera Tower",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 827,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_mid",
+        "roadNode": "pw_opera_ne",
         "color": "cyan"
       },
       "10": {
         "id": "10",
         "number": "Opera Tower - 102",
-        "road": "Broadway Promenade",
+        "road": "Opera Court",
         "block": "Opera Tower",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 849,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_mid",
+        "roadNode": "pw_opera_ne",
         "color": "cyan"
       },
       "11": {
         "id": "11",
         "number": "Opera Tower - 201",
-        "road": "Broadway Promenade",
+        "road": "Opera Court",
         "block": "Opera Tower",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 871,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_mid",
+        "roadNode": "pw_opera_ne",
         "color": "cyan"
       },
       "12": {
         "id": "12",
         "number": "Opera Tower - 202",
-        "road": "Broadway Promenade",
+        "road": "Opera Court",
         "block": "Opera Tower",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 893,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_mid",
+        "roadNode": "pw_opera_ne",
         "color": "cyan"
       },
       "13": {
         "id": "13",
         "number": "Opera Tower - 301",
-        "road": "Broadway Promenade",
+        "road": "Opera Court",
         "block": "Opera Tower",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 827,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_mid",
+        "roadNode": "pw_opera_ne",
         "color": "cyan"
       },
       "14": {
         "id": "14",
         "number": "Opera Tower - 302",
-        "road": "Broadway Promenade",
+        "road": "Opera Court",
         "block": "Opera Tower",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 849,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_mid",
+        "roadNode": "pw_opera_ne",
         "color": "cyan"
       },
       "15": {
         "id": "15",
         "number": "Opera Tower - 401",
-        "road": "Broadway Promenade",
+        "road": "Opera Court",
         "block": "Opera Tower",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 871,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_mid",
+        "roadNode": "pw_opera_ne",
         "color": "cyan"
       },
       "16": {
         "id": "16",
         "number": "Opera Tower - 402",
-        "road": "Broadway Promenade",
+        "road": "Opera Court",
         "block": "Opera Tower",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 893,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_mid",
+        "roadNode": "pw_opera_ne",
         "color": "cyan"
       },
       "17": {
         "id": "17",
         "number": "West End Tower A - 101",
-        "road": "Broadway Promenade",
+        "road": "Westend Boulevard",
         "block": "West End Tower A",
-        "facing": "South",
-        "x": 807,
-        "y": 189,
+        "facing": "North",
+        "x": 267,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_e",
+        "roadNode": "pw_westend_sw",
         "color": "cyan"
       },
       "18": {
         "id": "18",
         "number": "West End Tower A - 102",
-        "road": "Broadway Promenade",
+        "road": "Westend Boulevard",
         "block": "West End Tower A",
-        "facing": "South",
-        "x": 829,
-        "y": 189,
+        "facing": "North",
+        "x": 289,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_e",
+        "roadNode": "pw_westend_sw",
         "color": "cyan"
       },
       "19": {
         "id": "19",
         "number": "West End Tower A - 201",
-        "road": "Broadway Promenade",
+        "road": "Westend Boulevard",
         "block": "West End Tower A",
-        "facing": "South",
-        "x": 851,
-        "y": 189,
+        "facing": "North",
+        "x": 311,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_e",
+        "roadNode": "pw_westend_sw",
         "color": "cyan"
       },
       "20": {
         "id": "20",
         "number": "West End Tower A - 202",
-        "road": "Broadway Promenade",
+        "road": "Westend Boulevard",
         "block": "West End Tower A",
-        "facing": "South",
-        "x": 873,
-        "y": 189,
+        "facing": "North",
+        "x": 333,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_e",
+        "roadNode": "pw_westend_sw",
         "color": "cyan"
       },
       "21": {
         "id": "21",
         "number": "West End Tower A - 301",
-        "road": "Broadway Promenade",
+        "road": "Westend Boulevard",
         "block": "West End Tower A",
-        "facing": "South",
-        "x": 807,
-        "y": 211,
+        "facing": "North",
+        "x": 267,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_e",
+        "roadNode": "pw_westend_sw",
         "color": "cyan"
       },
       "22": {
         "id": "22",
         "number": "West End Tower A - 302",
-        "road": "Broadway Promenade",
+        "road": "Westend Boulevard",
         "block": "West End Tower A",
-        "facing": "South",
-        "x": 829,
-        "y": 211,
+        "facing": "North",
+        "x": 289,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_e",
+        "roadNode": "pw_westend_sw",
         "color": "cyan"
       },
       "23": {
         "id": "23",
         "number": "West End Tower A - 401",
-        "road": "Broadway Promenade",
+        "road": "Westend Boulevard",
         "block": "West End Tower A",
-        "facing": "South",
-        "x": 851,
-        "y": 211,
+        "facing": "North",
+        "x": 311,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_e",
+        "roadNode": "pw_westend_sw",
         "color": "cyan"
       },
       "24": {
         "id": "24",
         "number": "West End Tower A - 402",
-        "road": "Broadway Promenade",
+        "road": "Westend Boulevard",
         "block": "West End Tower A",
-        "facing": "South",
-        "x": 873,
-        "y": 211,
+        "facing": "North",
+        "x": 333,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_n_e",
+        "roadNode": "pw_westend_sw",
         "color": "cyan"
       },
       "25": {
@@ -11487,11 +11415,11 @@ window.LAYOUTS = {
         "road": "Cinema Walkway",
         "block": "West End Tower B",
         "facing": "North",
-        "x": 347,
-        "y": 669,
+        "x": 827,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_s_w",
+        "roadNode": "pw_cinema_se",
         "color": "cyan"
       },
       "26": {
@@ -11500,11 +11428,11 @@ window.LAYOUTS = {
         "road": "Cinema Walkway",
         "block": "West End Tower B",
         "facing": "North",
-        "x": 369,
-        "y": 669,
+        "x": 849,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_s_w",
+        "roadNode": "pw_cinema_se",
         "color": "cyan"
       },
       "27": {
@@ -11513,11 +11441,11 @@ window.LAYOUTS = {
         "road": "Cinema Walkway",
         "block": "West End Tower B",
         "facing": "North",
-        "x": 391,
-        "y": 669,
+        "x": 871,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_s_w",
+        "roadNode": "pw_cinema_se",
         "color": "cyan"
       },
       "28": {
@@ -11526,11 +11454,11 @@ window.LAYOUTS = {
         "road": "Cinema Walkway",
         "block": "West End Tower B",
         "facing": "North",
-        "x": 413,
-        "y": 669,
+        "x": 893,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_s_w",
+        "roadNode": "pw_cinema_se",
         "color": "cyan"
       },
       "29": {
@@ -11539,11 +11467,11 @@ window.LAYOUTS = {
         "road": "Cinema Walkway",
         "block": "West End Tower B",
         "facing": "North",
-        "x": 347,
-        "y": 691,
+        "x": 827,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_s_w",
+        "roadNode": "pw_cinema_se",
         "color": "cyan"
       },
       "30": {
@@ -11552,11 +11480,11 @@ window.LAYOUTS = {
         "road": "Cinema Walkway",
         "block": "West End Tower B",
         "facing": "North",
-        "x": 369,
-        "y": 691,
+        "x": 849,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_s_w",
+        "roadNode": "pw_cinema_se",
         "color": "cyan"
       },
       "31": {
@@ -11565,11 +11493,11 @@ window.LAYOUTS = {
         "road": "Cinema Walkway",
         "block": "West End Tower B",
         "facing": "North",
-        "x": 391,
-        "y": 691,
+        "x": 871,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_s_w",
+        "roadNode": "pw_cinema_se",
         "color": "cyan"
       },
       "32": {
@@ -11578,42 +11506,22 @@ window.LAYOUTS = {
         "road": "Cinema Walkway",
         "block": "West End Tower B",
         "facing": "North",
-        "x": 413,
-        "y": 691,
+        "x": 893,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_westend_s_w",
+        "roadNode": "pw_cinema_se",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "purva_westend_gate_1",
-        "name": "Purva Westend Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "purva_westend_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "purva_westend_gate_2",
-        "name": "Purva Westend Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "purva_westend_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "purva_westend_cinema",
         "name": "Open Air Amphitheatre Cinema",
         "description": "Private outdoor amphitheatre cinema with acoustic surround sound",
         "x": 620,
-        "y": 270,
-        "roadNode": "purva_westend_n_mid",
+        "y": 310,
+        "roadNode": "pw_junc_ctr",
         "icon": "\ud83c\udfac",
         "type": "entertainment"
       },
@@ -11622,8 +11530,8 @@ window.LAYOUTS = {
         "name": "Fantasy Wave Pool & Resort Deck",
         "description": "Artificial beach wave pool, swimming pool and palm cabanas",
         "x": 620,
-        "y": 690,
-        "roadNode": "purva_westend_s_mid",
+        "y": 440,
+        "roadNode": "pw_junc_ctr",
         "icon": "\ud83c\udf0a",
         "type": "recreation"
       }
@@ -11632,35 +11540,29 @@ window.LAYOUTS = {
       {
         "name": "WESTEND BOULEVARD",
         "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "BROADWAY PROMENADE",
-        "x": 620,
-        "y": 255,
+        "y": 495,
         "vertical": false
       },
       {
         "name": "CINEMA WALKWAY",
         "x": 620,
-        "y": 705,
+        "y": 255,
         "vertical": false
       },
       {
-        "name": "KUDLU LINK",
-        "x": 305,
-        "y": 375,
+        "name": "BROADWAY PROMENADE",
+        "x": 330,
+        "y": 380,
         "vertical": true
       },
       {
         "name": "OPERA COURT",
-        "x": 935,
-        "y": 375,
+        "x": 870,
+        "y": 380,
         "vertical": true
       }
     ],
-    "defaultStartGate": "purva_westend_gate_1",
+    "defaultStartGate": "pw_gate_main",
     "sectors": [
       "Broadway Tower",
       "Opera Tower",
@@ -11679,259 +11581,146 @@ window.LAYOUTS = {
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "100,480 220,160 620,140 1020,160 1120,480 1020,800 620,830 220,800 Z",
+    "borderTreesPath": "M 100,480 L 220,160 L 620,140 L 1020,160 L 1120,480 L 1020,800 L 620,830 L 220,800 Z",
+    "waterBody": {
+      "x": 520,
+      "y": 440,
+      "w": 200,
+      "h": 75,
+      "rx": 14,
+      "label": "Meadows Sports Complex & Swimming Pool"
     },
+    "gardenPark": null,
+    "landmarks": [
+      {
+        "x": 740,
+        "y": 440,
+        "w": 180,
+        "h": 90,
+        "rx": 8,
+        "label": "\ud83c\udfea Meadows Commercial Arcade & Clinic",
+        "fill": "#1e1b4b",
+        "stroke": "#38bdf8"
+      }
+    ],
     "roads": {
       "nodes": {
-        "brigade_meadows_gate_1": {
-          "id": "brigade_meadows_gate_1",
-          "x": 90,
+        "bme_gate_main": {
+          "id": "bme_gate_main",
+          "x": 100,
           "y": 480,
-          "label": "Brigade Meadows Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Kanakapura Expressway)"
         },
-        "brigade_meadows_entry": {
-          "id": "brigade_meadows_entry",
-          "x": 180,
+        "bme_junc_w": {
+          "id": "bme_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Meadows West Junction"
         },
-        "brigade_meadows_junc_w": {
-          "id": "brigade_meadows_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Saaket Link West Junction"
-        },
-        "brigade_meadows_junc_ctr": {
-          "id": "brigade_meadows_junc_ctr",
+        "bme_junc_ctr": {
+          "id": "bme_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Central Arcade Plaza"
         },
-        "brigade_meadows_junc_e": {
-          "id": "brigade_meadows_junc_e",
-          "x": 920,
+        "bme_junc_e": {
+          "id": "bme_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Kanakapura Corridor East Junction"
+          "label": "Wisteria East Cross"
         },
-        "brigade_meadows_gate_2": {
-          "id": "brigade_meadows_gate_2",
+        "bme_gate_east": {
+          "id": "bme_gate_east",
           "x": 1110,
           "y": 480,
-          "label": "Brigade Meadows Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Koppa Link)"
         },
-        "brigade_meadows_n_w": {
-          "id": "brigade_meadows_n_w",
+        "bme_plumeria": {
+          "id": "bme_plumeria",
           "x": 320,
-          "y": 270,
-          "label": "Plumeria Drive West"
+          "y": 280,
+          "label": "Plumeria Drive"
         },
-        "brigade_meadows_n_mid": {
-          "id": "brigade_meadows_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Plumeria Drive North Plaza"
+        "bme_wisteria": {
+          "id": "bme_wisteria",
+          "x": 840,
+          "y": 280,
+          "label": "Wisteria Way"
         },
-        "brigade_meadows_n_e": {
-          "id": "brigade_meadows_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Plumeria Drive East"
-        },
-        "brigade_meadows_s_w": {
-          "id": "brigade_meadows_s_w",
-          "x": 320,
+        "bme_saaket": {
+          "id": "bme_saaket",
+          "x": 580,
           "y": 690,
-          "label": "Wisteria Way West"
-        },
-        "brigade_meadows_s_mid": {
-          "id": "brigade_meadows_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Wisteria Way South Plaza"
-        },
-        "brigade_meadows_s_e": {
-          "id": "brigade_meadows_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Wisteria Way East"
-        },
-        "brigade_meadows_w_n_mid": {
-          "id": "brigade_meadows_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Saaket Link North Link"
-        },
-        "brigade_meadows_w_s_mid": {
-          "id": "brigade_meadows_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Saaket Link South Link"
-        },
-        "brigade_meadows_ctr_n_mid": {
-          "id": "brigade_meadows_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "brigade_meadows_ctr_s_mid": {
-          "id": "brigade_meadows_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "brigade_meadows_e_n_mid": {
-          "id": "brigade_meadows_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Kanakapura Corridor North Link"
-        },
-        "brigade_meadows_e_s_mid": {
-          "id": "brigade_meadows_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Kanakapura Corridor South Link"
+          "label": "Saaket Link South"
         }
       },
       "edges": [
         {
-          "u": "brigade_meadows_gate_1",
-          "v": "brigade_meadows_entry",
+          "u": "bme_gate_main",
+          "v": "bme_junc_w",
           "road": "Meadows Boulevard",
           "type": "primary"
         },
         {
-          "u": "brigade_meadows_entry",
-          "v": "brigade_meadows_junc_w",
+          "u": "bme_junc_w",
+          "v": "bme_junc_ctr",
           "road": "Meadows Boulevard",
           "type": "primary"
         },
         {
-          "u": "brigade_meadows_junc_w",
-          "v": "brigade_meadows_junc_ctr",
+          "u": "bme_junc_ctr",
+          "v": "bme_junc_e",
           "road": "Meadows Boulevard",
           "type": "primary"
         },
         {
-          "u": "brigade_meadows_junc_ctr",
-          "v": "brigade_meadows_junc_e",
+          "u": "bme_junc_e",
+          "v": "bme_gate_east",
           "road": "Meadows Boulevard",
           "type": "primary"
         },
         {
-          "u": "brigade_meadows_junc_e",
-          "v": "brigade_meadows_gate_2",
-          "road": "Meadows Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "brigade_meadows_n_w",
-          "v": "brigade_meadows_n_mid",
+          "u": "bme_junc_w",
+          "v": "bme_plumeria",
           "road": "Plumeria Drive",
           "type": "secondary"
         },
         {
-          "u": "brigade_meadows_n_mid",
-          "v": "brigade_meadows_n_e",
-          "road": "Plumeria Drive",
+          "u": "bme_plumeria",
+          "v": "bme_wisteria",
+          "road": "Kanakapura Corridor",
           "type": "secondary"
         },
         {
-          "u": "brigade_meadows_s_w",
-          "v": "brigade_meadows_s_mid",
+          "u": "bme_wisteria",
+          "v": "bme_junc_e",
           "road": "Wisteria Way",
           "type": "secondary"
         },
         {
-          "u": "brigade_meadows_s_mid",
-          "v": "brigade_meadows_s_e",
-          "road": "Wisteria Way",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_meadows_n_w",
-          "v": "brigade_meadows_w_n_mid",
+          "u": "bme_junc_w",
+          "v": "bme_saaket",
           "road": "Saaket Link",
           "type": "secondary"
         },
         {
-          "u": "brigade_meadows_w_n_mid",
-          "v": "brigade_meadows_junc_w",
+          "u": "bme_saaket",
+          "v": "bme_junc_e",
           "road": "Saaket Link",
           "type": "secondary"
         },
         {
-          "u": "brigade_meadows_junc_w",
-          "v": "brigade_meadows_w_s_mid",
-          "road": "Saaket Link",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_meadows_w_s_mid",
-          "v": "brigade_meadows_s_w",
-          "road": "Saaket Link",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_meadows_n_mid",
-          "v": "brigade_meadows_ctr_n_mid",
+          "u": "bme_junc_ctr",
+          "v": "bme_saaket",
           "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "brigade_meadows_ctr_n_mid",
-          "v": "brigade_meadows_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "brigade_meadows_junc_ctr",
-          "v": "brigade_meadows_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "brigade_meadows_ctr_s_mid",
-          "v": "brigade_meadows_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "brigade_meadows_n_e",
-          "v": "brigade_meadows_e_n_mid",
-          "road": "Kanakapura Corridor",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_meadows_e_n_mid",
-          "v": "brigade_meadows_junc_e",
-          "road": "Kanakapura Corridor",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_meadows_junc_e",
-          "v": "brigade_meadows_e_s_mid",
-          "road": "Kanakapura Corridor",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_meadows_e_s_mid",
-          "v": "brigade_meadows_s_e",
-          "road": "Kanakapura Corridor",
           "type": "secondary"
         }
       ]
@@ -11943,11 +11732,11 @@ window.LAYOUTS = {
         "road": "Plumeria Drive",
         "block": "Plumeria Tower",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 267,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_w",
+        "roadNode": "bme_plumeria",
         "color": "cyan"
       },
       "2": {
@@ -11956,11 +11745,11 @@ window.LAYOUTS = {
         "road": "Plumeria Drive",
         "block": "Plumeria Tower",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 289,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_w",
+        "roadNode": "bme_plumeria",
         "color": "cyan"
       },
       "3": {
@@ -11969,11 +11758,11 @@ window.LAYOUTS = {
         "road": "Plumeria Drive",
         "block": "Plumeria Tower",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 311,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_w",
+        "roadNode": "bme_plumeria",
         "color": "cyan"
       },
       "4": {
@@ -11982,11 +11771,11 @@ window.LAYOUTS = {
         "road": "Plumeria Drive",
         "block": "Plumeria Tower",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 333,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_w",
+        "roadNode": "bme_plumeria",
         "color": "cyan"
       },
       "5": {
@@ -11995,11 +11784,11 @@ window.LAYOUTS = {
         "road": "Plumeria Drive",
         "block": "Plumeria Tower",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 267,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_w",
+        "roadNode": "bme_plumeria",
         "color": "cyan"
       },
       "6": {
@@ -12008,11 +11797,11 @@ window.LAYOUTS = {
         "road": "Plumeria Drive",
         "block": "Plumeria Tower",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 289,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_w",
+        "roadNode": "bme_plumeria",
         "color": "cyan"
       },
       "7": {
@@ -12021,11 +11810,11 @@ window.LAYOUTS = {
         "road": "Plumeria Drive",
         "block": "Plumeria Tower",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 311,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_w",
+        "roadNode": "bme_plumeria",
         "color": "cyan"
       },
       "8": {
@@ -12034,250 +11823,230 @@ window.LAYOUTS = {
         "road": "Plumeria Drive",
         "block": "Plumeria Tower",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 333,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_w",
+        "roadNode": "bme_plumeria",
         "color": "cyan"
       },
       "9": {
         "id": "9",
         "number": "Wisteria Tower - 101",
-        "road": "Plumeria Drive",
+        "road": "Wisteria Way",
         "block": "Wisteria Tower",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 807,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_mid",
+        "roadNode": "bme_wisteria",
         "color": "cyan"
       },
       "10": {
         "id": "10",
         "number": "Wisteria Tower - 102",
-        "road": "Plumeria Drive",
+        "road": "Wisteria Way",
         "block": "Wisteria Tower",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 829,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_mid",
+        "roadNode": "bme_wisteria",
         "color": "cyan"
       },
       "11": {
         "id": "11",
         "number": "Wisteria Tower - 201",
-        "road": "Plumeria Drive",
+        "road": "Wisteria Way",
         "block": "Wisteria Tower",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 851,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_mid",
+        "roadNode": "bme_wisteria",
         "color": "cyan"
       },
       "12": {
         "id": "12",
         "number": "Wisteria Tower - 202",
-        "road": "Plumeria Drive",
+        "road": "Wisteria Way",
         "block": "Wisteria Tower",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 873,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_mid",
+        "roadNode": "bme_wisteria",
         "color": "cyan"
       },
       "13": {
         "id": "13",
         "number": "Wisteria Tower - 301",
-        "road": "Plumeria Drive",
+        "road": "Wisteria Way",
         "block": "Wisteria Tower",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 807,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_mid",
+        "roadNode": "bme_wisteria",
         "color": "cyan"
       },
       "14": {
         "id": "14",
         "number": "Wisteria Tower - 302",
-        "road": "Plumeria Drive",
+        "road": "Wisteria Way",
         "block": "Wisteria Tower",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 829,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_mid",
+        "roadNode": "bme_wisteria",
         "color": "cyan"
       },
       "15": {
         "id": "15",
         "number": "Wisteria Tower - 401",
-        "road": "Plumeria Drive",
+        "road": "Wisteria Way",
         "block": "Wisteria Tower",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 851,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_mid",
+        "roadNode": "bme_wisteria",
         "color": "cyan"
       },
       "16": {
         "id": "16",
         "number": "Wisteria Tower - 402",
-        "road": "Plumeria Drive",
+        "road": "Wisteria Way",
         "block": "Wisteria Tower",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 873,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_mid",
+        "roadNode": "bme_wisteria",
         "color": "cyan"
       },
       "17": {
         "id": "17",
         "number": "Saaket Block - 101",
-        "road": "Plumeria Drive",
+        "road": "Saaket Link",
         "block": "Saaket Block",
-        "facing": "South",
-        "x": 807,
-        "y": 189,
+        "facing": "North",
+        "x": 547,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_e",
+        "roadNode": "bme_saaket",
         "color": "cyan"
       },
       "18": {
         "id": "18",
         "number": "Saaket Block - 102",
-        "road": "Plumeria Drive",
+        "road": "Saaket Link",
         "block": "Saaket Block",
-        "facing": "South",
-        "x": 829,
-        "y": 189,
+        "facing": "North",
+        "x": 569,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_e",
+        "roadNode": "bme_saaket",
         "color": "cyan"
       },
       "19": {
         "id": "19",
         "number": "Saaket Block - 201",
-        "road": "Plumeria Drive",
+        "road": "Saaket Link",
         "block": "Saaket Block",
-        "facing": "South",
-        "x": 851,
-        "y": 189,
+        "facing": "North",
+        "x": 591,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_e",
+        "roadNode": "bme_saaket",
         "color": "cyan"
       },
       "20": {
         "id": "20",
         "number": "Saaket Block - 202",
-        "road": "Plumeria Drive",
+        "road": "Saaket Link",
         "block": "Saaket Block",
-        "facing": "South",
-        "x": 873,
-        "y": 189,
+        "facing": "North",
+        "x": 613,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_e",
+        "roadNode": "bme_saaket",
         "color": "cyan"
       },
       "21": {
         "id": "21",
         "number": "Saaket Block - 301",
-        "road": "Plumeria Drive",
+        "road": "Saaket Link",
         "block": "Saaket Block",
-        "facing": "South",
-        "x": 807,
-        "y": 211,
+        "facing": "North",
+        "x": 547,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_e",
+        "roadNode": "bme_saaket",
         "color": "cyan"
       },
       "22": {
         "id": "22",
         "number": "Saaket Block - 302",
-        "road": "Plumeria Drive",
+        "road": "Saaket Link",
         "block": "Saaket Block",
-        "facing": "South",
-        "x": 829,
-        "y": 211,
+        "facing": "North",
+        "x": 569,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_e",
+        "roadNode": "bme_saaket",
         "color": "cyan"
       },
       "23": {
         "id": "23",
         "number": "Saaket Block - 401",
-        "road": "Plumeria Drive",
+        "road": "Saaket Link",
         "block": "Saaket Block",
-        "facing": "South",
-        "x": 851,
-        "y": 211,
+        "facing": "North",
+        "x": 591,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_e",
+        "roadNode": "bme_saaket",
         "color": "cyan"
       },
       "24": {
         "id": "24",
         "number": "Saaket Block - 402",
-        "road": "Plumeria Drive",
+        "road": "Saaket Link",
         "block": "Saaket Block",
-        "facing": "South",
-        "x": 873,
-        "y": 211,
+        "facing": "North",
+        "x": 613,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_meadows_n_e",
+        "roadNode": "bme_saaket",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "brigade_meadows_gate_1",
-        "name": "Brigade Meadows Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "brigade_meadows_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "brigade_meadows_gate_2",
-        "name": "Brigade Meadows Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "brigade_meadows_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "brigade_meadows_club",
         "name": "Club Meadows",
         "description": "Clubhouse, lap pool, badminton court, gym & banquet",
         "x": 620,
-        "y": 270,
-        "roadNode": "brigade_meadows_n_mid",
+        "y": 440,
+        "roadNode": "bme_junc_ctr",
         "icon": "\ud83c\udfca",
         "type": "clubhouse"
       },
@@ -12285,9 +12054,9 @@ window.LAYOUTS = {
         "id": "brigade_meadows_arcade",
         "name": "Signature Commercial Arcade",
         "description": "Supermarket, clinic, pharmacy and coffee shop",
-        "x": 620,
-        "y": 690,
-        "roadNode": "brigade_meadows_s_mid",
+        "x": 740,
+        "y": 440,
+        "roadNode": "bme_junc_ctr",
         "icon": "\ud83c\udfea",
         "type": "civic"
       }
@@ -12296,35 +12065,23 @@ window.LAYOUTS = {
       {
         "name": "MEADOWS BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
-        "name": "PLUMERIA DRIVE",
+        "name": "KANAKAPURA CORRIDOR",
         "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "WISTERIA WAY",
-        "x": 620,
-        "y": 705,
+        "y": 265,
         "vertical": false
       },
       {
         "name": "SAAKET LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "KANAKAPURA CORRIDOR",
-        "x": 935,
-        "y": 375,
-        "vertical": true
+        "x": 620,
+        "y": 675,
+        "vertical": false
       }
     ],
-    "defaultStartGate": "brigade_meadows_gate_1",
+    "defaultStartGate": "bme_gate_main",
     "sectors": [
       "Plumeria Tower",
       "Wisteria Tower",
@@ -12342,260 +12099,161 @@ window.LAYOUTS = {
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "100,480 220,160 620,140 1020,160 1120,480 1020,800 620,830 220,800 Z",
+    "borderTreesPath": "M 100,480 L 220,160 L 620,140 L 1020,160 L 1120,480 L 1020,800 L 620,830 L 220,800 Z",
+    "waterBody": {
+      "x": 540,
+      "y": 480,
+      "w": 160,
+      "h": 70,
+      "rx": 12,
+      "label": "Club Tranquil Heated Indoor Pool"
     },
+    "gardenPark": {
+      "x": 440,
+      "y": 380,
+      "w": 360,
+      "h": 80,
+      "rx": 10,
+      "label": "Turahalli Forest View Terraced Gardens"
+    },
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "mantri_tranquil_gate_1": {
-          "id": "mantri_tranquil_gate_1",
-          "x": 90,
+        "mt_gate_main": {
+          "id": "mt_gate_main",
+          "x": 100,
           "y": 480,
-          "label": "Mantri Tranquil Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Kanakapura Main Road)"
         },
-        "mantri_tranquil_entry": {
-          "id": "mantri_tranquil_entry",
-          "x": 180,
+        "mt_junc_w": {
+          "id": "mt_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "West Ridge Roundabout"
         },
-        "mantri_tranquil_junc_w": {
-          "id": "mantri_tranquil_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Central Promenade West Junction"
-        },
-        "mantri_tranquil_junc_ctr": {
-          "id": "mantri_tranquil_junc_ctr",
+        "mt_junc_ctr": {
+          "id": "mt_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Central Valley Plaza"
         },
-        "mantri_tranquil_junc_e": {
-          "id": "mantri_tranquil_junc_e",
-          "x": 920,
+        "mt_junc_e": {
+          "id": "mt_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Metro Parkway East Junction"
+          "label": "East Forest Junction"
         },
-        "mantri_tranquil_gate_2": {
-          "id": "mantri_tranquil_gate_2",
+        "mt_gate_forest": {
+          "id": "mt_gate_forest",
           "x": 1110,
           "y": 480,
-          "label": "Mantri Tranquil Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Turahalli Forest Link)"
         },
-        "mantri_tranquil_n_w": {
-          "id": "mantri_tranquil_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Gubbalala Parkway West"
+        "mt_ridge_w": {
+          "id": "mt_ridge_w",
+          "x": 300,
+          "y": 280,
+          "label": "Tower A-C Ridge Drive"
         },
-        "mantri_tranquil_n_mid": {
-          "id": "mantri_tranquil_n_mid",
+        "mt_ridge_n": {
+          "id": "mt_ridge_n",
           "x": 620,
-          "y": 270,
-          "label": "Gubbalala Parkway North Plaza"
+          "y": 240,
+          "label": "Tower D-F North Cross"
         },
-        "mantri_tranquil_n_e": {
-          "id": "mantri_tranquil_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Gubbalala Parkway East"
+        "mt_valley_e": {
+          "id": "mt_valley_e",
+          "x": 900,
+          "y": 340,
+          "label": "Tower G-H Valley Way"
         },
-        "mantri_tranquil_s_w": {
-          "id": "mantri_tranquil_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Forest View Link West"
-        },
-        "mantri_tranquil_s_mid": {
-          "id": "mantri_tranquil_s_mid",
+        "mt_ridge_s": {
+          "id": "mt_ridge_s",
           "x": 620,
           "y": 690,
-          "label": "Forest View Link South Plaza"
-        },
-        "mantri_tranquil_s_e": {
-          "id": "mantri_tranquil_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Forest View Link East"
-        },
-        "mantri_tranquil_w_n_mid": {
-          "id": "mantri_tranquil_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Central Promenade North Link"
-        },
-        "mantri_tranquil_w_s_mid": {
-          "id": "mantri_tranquil_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Central Promenade South Link"
-        },
-        "mantri_tranquil_ctr_n_mid": {
-          "id": "mantri_tranquil_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "mantri_tranquil_ctr_s_mid": {
-          "id": "mantri_tranquil_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "mantri_tranquil_e_n_mid": {
-          "id": "mantri_tranquil_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Metro Parkway North Link"
-        },
-        "mantri_tranquil_e_s_mid": {
-          "id": "mantri_tranquil_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Metro Parkway South Link"
+          "label": "Tower J South Ridge Drive"
         }
       },
       "edges": [
         {
-          "u": "mantri_tranquil_gate_1",
-          "v": "mantri_tranquil_entry",
+          "u": "mt_gate_main",
+          "v": "mt_junc_w",
           "road": "Tranquil Boulevard",
           "type": "primary"
         },
         {
-          "u": "mantri_tranquil_entry",
-          "v": "mantri_tranquil_junc_w",
+          "u": "mt_junc_w",
+          "v": "mt_junc_ctr",
           "road": "Tranquil Boulevard",
           "type": "primary"
         },
         {
-          "u": "mantri_tranquil_junc_w",
-          "v": "mantri_tranquil_junc_ctr",
+          "u": "mt_junc_ctr",
+          "v": "mt_junc_e",
           "road": "Tranquil Boulevard",
           "type": "primary"
         },
         {
-          "u": "mantri_tranquil_junc_ctr",
-          "v": "mantri_tranquil_junc_e",
+          "u": "mt_junc_e",
+          "v": "mt_gate_forest",
           "road": "Tranquil Boulevard",
           "type": "primary"
         },
         {
-          "u": "mantri_tranquil_junc_e",
-          "v": "mantri_tranquil_gate_2",
-          "road": "Tranquil Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "mantri_tranquil_n_w",
-          "v": "mantri_tranquil_n_mid",
-          "road": "Gubbalala Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "mantri_tranquil_n_mid",
-          "v": "mantri_tranquil_n_e",
-          "road": "Gubbalala Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "mantri_tranquil_s_w",
-          "v": "mantri_tranquil_s_mid",
+          "u": "mt_junc_w",
+          "v": "mt_ridge_w",
           "road": "Forest View Link",
           "type": "secondary"
         },
         {
-          "u": "mantri_tranquil_s_mid",
-          "v": "mantri_tranquil_s_e",
+          "u": "mt_ridge_w",
+          "v": "mt_ridge_n",
           "road": "Forest View Link",
           "type": "secondary"
         },
         {
-          "u": "mantri_tranquil_n_w",
-          "v": "mantri_tranquil_w_n_mid",
-          "road": "Central Promenade",
+          "u": "mt_ridge_n",
+          "v": "mt_valley_e",
+          "road": "Forest View Link",
           "type": "secondary"
         },
         {
-          "u": "mantri_tranquil_w_n_mid",
-          "v": "mantri_tranquil_junc_w",
-          "road": "Central Promenade",
+          "u": "mt_valley_e",
+          "v": "mt_junc_e",
+          "road": "Forest View Link",
           "type": "secondary"
         },
         {
-          "u": "mantri_tranquil_junc_w",
-          "v": "mantri_tranquil_w_s_mid",
-          "road": "Central Promenade",
+          "u": "mt_junc_w",
+          "v": "mt_ridge_s",
+          "road": "Gubbalala Parkway",
           "type": "secondary"
         },
         {
-          "u": "mantri_tranquil_w_s_mid",
-          "v": "mantri_tranquil_s_w",
-          "road": "Central Promenade",
+          "u": "mt_ridge_s",
+          "v": "mt_junc_e",
+          "road": "Gubbalala Parkway",
           "type": "secondary"
         },
         {
-          "u": "mantri_tranquil_n_mid",
-          "v": "mantri_tranquil_ctr_n_mid",
-          "road": "Central Link",
+          "u": "mt_junc_ctr",
+          "v": "mt_ridge_n",
+          "road": "Central Promenade",
           "type": "primary"
         },
         {
-          "u": "mantri_tranquil_ctr_n_mid",
-          "v": "mantri_tranquil_junc_ctr",
-          "road": "Central Link",
+          "u": "mt_junc_ctr",
+          "v": "mt_ridge_s",
+          "road": "Central Promenade",
           "type": "primary"
-        },
-        {
-          "u": "mantri_tranquil_junc_ctr",
-          "v": "mantri_tranquil_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "mantri_tranquil_ctr_s_mid",
-          "v": "mantri_tranquil_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "mantri_tranquil_n_e",
-          "v": "mantri_tranquil_e_n_mid",
-          "road": "Metro Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "mantri_tranquil_e_n_mid",
-          "v": "mantri_tranquil_junc_e",
-          "road": "Metro Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "mantri_tranquil_junc_e",
-          "v": "mantri_tranquil_e_s_mid",
-          "road": "Metro Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "mantri_tranquil_e_s_mid",
-          "v": "mantri_tranquil_s_e",
-          "road": "Metro Parkway",
-          "type": "secondary"
         }
       ]
     },
@@ -12603,485 +12261,463 @@ window.LAYOUTS = {
       "1": {
         "id": "1",
         "number": "Tower A-C - 101",
-        "road": "Gubbalala Parkway",
+        "road": "Tranquil Boulevard",
         "block": "Tower A-C",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 267,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_w",
+        "roadNode": "mt_ridge_w",
         "color": "cyan"
       },
       "2": {
         "id": "2",
         "number": "Tower A-C - 102",
-        "road": "Gubbalala Parkway",
+        "road": "Tranquil Boulevard",
         "block": "Tower A-C",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 289,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_w",
+        "roadNode": "mt_ridge_w",
         "color": "cyan"
       },
       "3": {
         "id": "3",
         "number": "Tower A-C - 201",
-        "road": "Gubbalala Parkway",
+        "road": "Tranquil Boulevard",
         "block": "Tower A-C",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 311,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_w",
+        "roadNode": "mt_ridge_w",
         "color": "cyan"
       },
       "4": {
         "id": "4",
         "number": "Tower A-C - 202",
-        "road": "Gubbalala Parkway",
+        "road": "Tranquil Boulevard",
         "block": "Tower A-C",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 333,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_w",
+        "roadNode": "mt_ridge_w",
         "color": "cyan"
       },
       "5": {
         "id": "5",
         "number": "Tower A-C - 301",
-        "road": "Gubbalala Parkway",
+        "road": "Tranquil Boulevard",
         "block": "Tower A-C",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 267,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_w",
+        "roadNode": "mt_ridge_w",
         "color": "cyan"
       },
       "6": {
         "id": "6",
         "number": "Tower A-C - 302",
-        "road": "Gubbalala Parkway",
+        "road": "Tranquil Boulevard",
         "block": "Tower A-C",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 289,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_w",
+        "roadNode": "mt_ridge_w",
         "color": "cyan"
       },
       "7": {
         "id": "7",
         "number": "Tower A-C - 401",
-        "road": "Gubbalala Parkway",
+        "road": "Tranquil Boulevard",
         "block": "Tower A-C",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 311,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_w",
+        "roadNode": "mt_ridge_w",
         "color": "cyan"
       },
       "8": {
         "id": "8",
         "number": "Tower A-C - 402",
-        "road": "Gubbalala Parkway",
+        "road": "Tranquil Boulevard",
         "block": "Tower A-C",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 333,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_w",
+        "roadNode": "mt_ridge_w",
         "color": "cyan"
       },
       "9": {
         "id": "9",
         "number": "Tower D-F - 101",
-        "road": "Gubbalala Parkway",
+        "road": "Forest View Link",
         "block": "Tower D-F",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 587,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_mid",
+        "roadNode": "mt_ridge_n",
         "color": "cyan"
       },
       "10": {
         "id": "10",
         "number": "Tower D-F - 102",
-        "road": "Gubbalala Parkway",
+        "road": "Forest View Link",
         "block": "Tower D-F",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 609,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_mid",
+        "roadNode": "mt_ridge_n",
         "color": "cyan"
       },
       "11": {
         "id": "11",
         "number": "Tower D-F - 201",
-        "road": "Gubbalala Parkway",
+        "road": "Forest View Link",
         "block": "Tower D-F",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 631,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_mid",
+        "roadNode": "mt_ridge_n",
         "color": "cyan"
       },
       "12": {
         "id": "12",
         "number": "Tower D-F - 202",
-        "road": "Gubbalala Parkway",
+        "road": "Forest View Link",
         "block": "Tower D-F",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 653,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_mid",
+        "roadNode": "mt_ridge_n",
         "color": "cyan"
       },
       "13": {
         "id": "13",
         "number": "Tower D-F - 301",
-        "road": "Gubbalala Parkway",
+        "road": "Forest View Link",
         "block": "Tower D-F",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 587,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_mid",
+        "roadNode": "mt_ridge_n",
         "color": "cyan"
       },
       "14": {
         "id": "14",
         "number": "Tower D-F - 302",
-        "road": "Gubbalala Parkway",
+        "road": "Forest View Link",
         "block": "Tower D-F",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 609,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_mid",
+        "roadNode": "mt_ridge_n",
         "color": "cyan"
       },
       "15": {
         "id": "15",
         "number": "Tower D-F - 401",
-        "road": "Gubbalala Parkway",
+        "road": "Forest View Link",
         "block": "Tower D-F",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 631,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_mid",
+        "roadNode": "mt_ridge_n",
         "color": "cyan"
       },
       "16": {
         "id": "16",
         "number": "Tower D-F - 402",
-        "road": "Gubbalala Parkway",
+        "road": "Forest View Link",
         "block": "Tower D-F",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 653,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_mid",
+        "roadNode": "mt_ridge_n",
         "color": "cyan"
       },
       "17": {
         "id": "17",
         "number": "Tower G-H - 101",
-        "road": "Gubbalala Parkway",
+        "road": "Central Promenade",
         "block": "Tower G-H",
-        "facing": "South",
-        "x": 807,
-        "y": 189,
+        "facing": "West",
+        "x": 847,
+        "y": 309,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_e",
+        "roadNode": "mt_valley_e",
         "color": "cyan"
       },
       "18": {
         "id": "18",
         "number": "Tower G-H - 102",
-        "road": "Gubbalala Parkway",
+        "road": "Central Promenade",
         "block": "Tower G-H",
-        "facing": "South",
-        "x": 829,
-        "y": 189,
+        "facing": "West",
+        "x": 869,
+        "y": 309,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_e",
+        "roadNode": "mt_valley_e",
         "color": "cyan"
       },
       "19": {
         "id": "19",
         "number": "Tower G-H - 201",
-        "road": "Gubbalala Parkway",
+        "road": "Central Promenade",
         "block": "Tower G-H",
-        "facing": "South",
-        "x": 851,
-        "y": 189,
+        "facing": "West",
+        "x": 891,
+        "y": 309,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_e",
+        "roadNode": "mt_valley_e",
         "color": "cyan"
       },
       "20": {
         "id": "20",
         "number": "Tower G-H - 202",
-        "road": "Gubbalala Parkway",
+        "road": "Central Promenade",
         "block": "Tower G-H",
-        "facing": "South",
-        "x": 873,
-        "y": 189,
+        "facing": "West",
+        "x": 913,
+        "y": 309,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_e",
+        "roadNode": "mt_valley_e",
         "color": "cyan"
       },
       "21": {
         "id": "21",
         "number": "Tower G-H - 301",
-        "road": "Gubbalala Parkway",
+        "road": "Central Promenade",
         "block": "Tower G-H",
-        "facing": "South",
-        "x": 807,
-        "y": 211,
+        "facing": "West",
+        "x": 847,
+        "y": 331,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_e",
+        "roadNode": "mt_valley_e",
         "color": "cyan"
       },
       "22": {
         "id": "22",
         "number": "Tower G-H - 302",
-        "road": "Gubbalala Parkway",
+        "road": "Central Promenade",
         "block": "Tower G-H",
-        "facing": "South",
-        "x": 829,
-        "y": 211,
+        "facing": "West",
+        "x": 869,
+        "y": 331,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_e",
+        "roadNode": "mt_valley_e",
         "color": "cyan"
       },
       "23": {
         "id": "23",
         "number": "Tower G-H - 401",
-        "road": "Gubbalala Parkway",
+        "road": "Central Promenade",
         "block": "Tower G-H",
-        "facing": "South",
-        "x": 851,
-        "y": 211,
+        "facing": "West",
+        "x": 891,
+        "y": 331,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_e",
+        "roadNode": "mt_valley_e",
         "color": "cyan"
       },
       "24": {
         "id": "24",
         "number": "Tower G-H - 402",
-        "road": "Gubbalala Parkway",
+        "road": "Central Promenade",
         "block": "Tower G-H",
-        "facing": "South",
-        "x": 873,
-        "y": 211,
+        "facing": "West",
+        "x": 913,
+        "y": 331,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_n_e",
+        "roadNode": "mt_valley_e",
         "color": "cyan"
       },
       "25": {
         "id": "25",
         "number": "Tower J - 101",
-        "road": "Forest View Link",
+        "road": "Gubbalala Parkway",
         "block": "Tower J",
         "facing": "North",
-        "x": 347,
-        "y": 669,
+        "x": 587,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_s_w",
+        "roadNode": "mt_ridge_s",
         "color": "cyan"
       },
       "26": {
         "id": "26",
         "number": "Tower J - 102",
-        "road": "Forest View Link",
+        "road": "Gubbalala Parkway",
         "block": "Tower J",
         "facing": "North",
-        "x": 369,
-        "y": 669,
+        "x": 609,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_s_w",
+        "roadNode": "mt_ridge_s",
         "color": "cyan"
       },
       "27": {
         "id": "27",
         "number": "Tower J - 201",
-        "road": "Forest View Link",
+        "road": "Gubbalala Parkway",
         "block": "Tower J",
         "facing": "North",
-        "x": 391,
-        "y": 669,
+        "x": 631,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_s_w",
+        "roadNode": "mt_ridge_s",
         "color": "cyan"
       },
       "28": {
         "id": "28",
         "number": "Tower J - 202",
-        "road": "Forest View Link",
+        "road": "Gubbalala Parkway",
         "block": "Tower J",
         "facing": "North",
-        "x": 413,
-        "y": 669,
+        "x": 653,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_s_w",
+        "roadNode": "mt_ridge_s",
         "color": "cyan"
       },
       "29": {
         "id": "29",
         "number": "Tower J - 301",
-        "road": "Forest View Link",
+        "road": "Gubbalala Parkway",
         "block": "Tower J",
         "facing": "North",
-        "x": 347,
-        "y": 691,
+        "x": 587,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_s_w",
+        "roadNode": "mt_ridge_s",
         "color": "cyan"
       },
       "30": {
         "id": "30",
         "number": "Tower J - 302",
-        "road": "Forest View Link",
+        "road": "Gubbalala Parkway",
         "block": "Tower J",
         "facing": "North",
-        "x": 369,
-        "y": 691,
+        "x": 609,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_s_w",
+        "roadNode": "mt_ridge_s",
         "color": "cyan"
       },
       "31": {
         "id": "31",
         "number": "Tower J - 401",
-        "road": "Forest View Link",
+        "road": "Gubbalala Parkway",
         "block": "Tower J",
         "facing": "North",
-        "x": 391,
-        "y": 691,
+        "x": 631,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_s_w",
+        "roadNode": "mt_ridge_s",
         "color": "cyan"
       },
       "32": {
         "id": "32",
         "number": "Tower J - 402",
-        "road": "Forest View Link",
+        "road": "Gubbalala Parkway",
         "block": "Tower J",
         "facing": "North",
-        "x": 413,
-        "y": 691,
+        "x": 653,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "mantri_tranquil_s_w",
+        "roadNode": "mt_ridge_s",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "mantri_tranquil_gate_1",
-        "name": "Mantri Tranquil Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "mantri_tranquil_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "mantri_tranquil_gate_2",
-        "name": "Mantri Tranquil Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "mantri_tranquil_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "mantri_tranquil_club",
         "name": "Club Tranquil",
         "description": "Indoor badminton, squash, heated pool, sauna & health spa",
         "x": 620,
-        "y": 270,
-        "roadNode": "mantri_tranquil_n_mid",
+        "y": 440,
+        "roadNode": "mt_junc_ctr",
         "icon": "\ud83c\udfca",
         "type": "clubhouse"
+      },
+      {
+        "id": "mantri_tranquil_nature",
+        "name": "Turahalli Forest Trail Access",
+        "description": "Direct private gateway to Turahalli rock hillocks & nature preserve",
+        "x": 960,
+        "y": 480,
+        "roadNode": "mt_gate_forest",
+        "icon": "\ud83c\udf32",
+        "type": "nature"
       }
     ],
     "roadLabels": [
       {
         "name": "TRANQUIL BOULEVARD",
         "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "GUBBALALA PARKWAY",
-        "x": 620,
-        "y": 255,
+        "y": 495,
         "vertical": false
       },
       {
         "name": "FOREST VIEW LINK",
         "x": 620,
-        "y": 705,
+        "y": 225,
         "vertical": false
       },
       {
-        "name": "CENTRAL PROMENADE",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "METRO PARKWAY",
-        "x": 935,
-        "y": 375,
-        "vertical": true
+        "name": "GUBBALALA PARKWAY",
+        "x": 620,
+        "y": 675,
+        "vertical": false
       }
     ],
-    "defaultStartGate": "mantri_tranquil_gate_1",
+    "defaultStartGate": "mt_gate_main",
     "sectors": [
       "Tower A-C",
       "Tower D-F",
@@ -13096,263 +12732,164 @@ window.LAYOUTS = {
     "zone": "south",
     "type": "California-Themed Luxury Villa Township",
     "unitType": "Villa",
-    "unitCount": 24,
+    "unitCount": 32,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "80,480 180,140 1060,140 1160,480 1060,820 180,820 Z",
+    "borderTreesPath": "M 80,480 L 180,140 L 1060,140 L 1160,480 L 1060,820 L 180,820 Z",
+    "waterBody": {
+      "x": 520,
+      "y": 440,
+      "w": 200,
+      "h": 75,
+      "rx": 14,
+      "label": "Napa Valley Lakeside Heated Pool & Spa"
     },
+    "gardenPark": {
+      "x": 440,
+      "y": 310,
+      "w": 360,
+      "h": 60,
+      "rx": 8,
+      "label": "Sonoma Vineyard Lawns & Olive Groves"
+    },
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "concorde_napa_valley_gate_1": {
-          "id": "concorde_napa_valley_gate_1",
-          "x": 90,
+        "cnv_gate_main": {
+          "id": "cnv_gate_main",
+          "x": 80,
           "y": 480,
-          "label": "Concorde Napa Valley Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Kanakapura Main Road)"
         },
-        "concorde_napa_valley_entry": {
-          "id": "concorde_napa_valley_entry",
-          "x": 180,
+        "cnv_junc_w": {
+          "id": "cnv_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Napa Court West Roundabout"
         },
-        "concorde_napa_valley_junc_w": {
-          "id": "concorde_napa_valley_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Sonoma Drive West Junction"
-        },
-        "concorde_napa_valley_junc_ctr": {
-          "id": "concorde_napa_valley_junc_ctr",
+        "cnv_junc_ctr": {
+          "id": "cnv_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Grand Napa Plaza"
         },
-        "concorde_napa_valley_junc_e": {
-          "id": "concorde_napa_valley_junc_e",
-          "x": 920,
+        "cnv_junc_e": {
+          "id": "cnv_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Valley Link East Junction"
+          "label": "Sonoma Way East Roundabout"
         },
-        "concorde_napa_valley_gate_2": {
-          "id": "concorde_napa_valley_gate_2",
-          "x": 1110,
+        "cnv_gate_east": {
+          "id": "cnv_gate_east",
+          "x": 1140,
           "y": 480,
-          "label": "Concorde Napa Valley Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Valley Link Access)"
         },
-        "concorde_napa_valley_n_w": {
-          "id": "concorde_napa_valley_n_w",
+        "cnv_napa_nw": {
+          "id": "cnv_napa_nw",
           "x": 320,
           "y": 270,
-          "label": "Vineyard Parkway West"
+          "label": "Napa Court North Drive"
         },
-        "concorde_napa_valley_n_mid": {
-          "id": "concorde_napa_valley_n_mid",
-          "x": 620,
+        "cnv_vine_ne": {
+          "id": "cnv_vine_ne",
+          "x": 860,
           "y": 270,
-          "label": "Vineyard Parkway North Plaza"
+          "label": "Vineyard Parkway North"
         },
-        "concorde_napa_valley_n_e": {
-          "id": "concorde_napa_valley_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Vineyard Parkway East"
-        },
-        "concorde_napa_valley_s_w": {
-          "id": "concorde_napa_valley_s_w",
+        "cnv_sonoma_sw": {
+          "id": "cnv_sonoma_sw",
           "x": 320,
           "y": 690,
-          "label": "Oak Knoll Way West"
+          "label": "Sonoma Drive South"
         },
-        "concorde_napa_valley_s_mid": {
-          "id": "concorde_napa_valley_s_mid",
-          "x": 620,
+        "cnv_valley_se": {
+          "id": "cnv_valley_se",
+          "x": 860,
           "y": 690,
-          "label": "Oak Knoll Way South Plaza"
-        },
-        "concorde_napa_valley_s_e": {
-          "id": "concorde_napa_valley_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Oak Knoll Way East"
-        },
-        "concorde_napa_valley_w_n_mid": {
-          "id": "concorde_napa_valley_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Sonoma Drive North Link"
-        },
-        "concorde_napa_valley_w_s_mid": {
-          "id": "concorde_napa_valley_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Sonoma Drive South Link"
-        },
-        "concorde_napa_valley_ctr_n_mid": {
-          "id": "concorde_napa_valley_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "concorde_napa_valley_ctr_s_mid": {
-          "id": "concorde_napa_valley_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "concorde_napa_valley_e_n_mid": {
-          "id": "concorde_napa_valley_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Valley Link North Link"
-        },
-        "concorde_napa_valley_e_s_mid": {
-          "id": "concorde_napa_valley_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Valley Link South Link"
+          "label": "Valley Link South"
         }
       },
       "edges": [
         {
-          "u": "concorde_napa_valley_gate_1",
-          "v": "concorde_napa_valley_entry",
+          "u": "cnv_gate_main",
+          "v": "cnv_junc_w",
           "road": "Napa Boulevard",
           "type": "primary"
         },
         {
-          "u": "concorde_napa_valley_entry",
-          "v": "concorde_napa_valley_junc_w",
+          "u": "cnv_junc_w",
+          "v": "cnv_junc_ctr",
           "road": "Napa Boulevard",
           "type": "primary"
         },
         {
-          "u": "concorde_napa_valley_junc_w",
-          "v": "concorde_napa_valley_junc_ctr",
+          "u": "cnv_junc_ctr",
+          "v": "cnv_junc_e",
           "road": "Napa Boulevard",
           "type": "primary"
         },
         {
-          "u": "concorde_napa_valley_junc_ctr",
-          "v": "concorde_napa_valley_junc_e",
+          "u": "cnv_junc_e",
+          "v": "cnv_gate_east",
           "road": "Napa Boulevard",
           "type": "primary"
         },
         {
-          "u": "concorde_napa_valley_junc_e",
-          "v": "concorde_napa_valley_gate_2",
-          "road": "Napa Boulevard",
-          "type": "primary"
+          "u": "cnv_junc_w",
+          "v": "cnv_napa_nw",
+          "road": "Napa Court Drive",
+          "type": "secondary"
         },
         {
-          "u": "concorde_napa_valley_n_w",
-          "v": "concorde_napa_valley_n_mid",
+          "u": "cnv_napa_nw",
+          "v": "cnv_vine_ne",
           "road": "Vineyard Parkway",
           "type": "secondary"
         },
         {
-          "u": "concorde_napa_valley_n_mid",
-          "v": "concorde_napa_valley_n_e",
+          "u": "cnv_vine_ne",
+          "v": "cnv_junc_e",
           "road": "Vineyard Parkway",
           "type": "secondary"
         },
         {
-          "u": "concorde_napa_valley_s_w",
-          "v": "concorde_napa_valley_s_mid",
-          "road": "Oak Knoll Way",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_napa_valley_s_mid",
-          "v": "concorde_napa_valley_s_e",
-          "road": "Oak Knoll Way",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_napa_valley_n_w",
-          "v": "concorde_napa_valley_w_n_mid",
+          "u": "cnv_junc_w",
+          "v": "cnv_sonoma_sw",
           "road": "Sonoma Drive",
           "type": "secondary"
         },
         {
-          "u": "concorde_napa_valley_w_n_mid",
-          "v": "concorde_napa_valley_junc_w",
-          "road": "Sonoma Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_napa_valley_junc_w",
-          "v": "concorde_napa_valley_w_s_mid",
-          "road": "Sonoma Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_napa_valley_w_s_mid",
-          "v": "concorde_napa_valley_s_w",
-          "road": "Sonoma Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_napa_valley_n_mid",
-          "v": "concorde_napa_valley_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "concorde_napa_valley_ctr_n_mid",
-          "v": "concorde_napa_valley_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "concorde_napa_valley_junc_ctr",
-          "v": "concorde_napa_valley_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "concorde_napa_valley_ctr_s_mid",
-          "v": "concorde_napa_valley_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "concorde_napa_valley_n_e",
-          "v": "concorde_napa_valley_e_n_mid",
+          "u": "cnv_sonoma_sw",
+          "v": "cnv_valley_se",
           "road": "Valley Link",
           "type": "secondary"
         },
         {
-          "u": "concorde_napa_valley_e_n_mid",
-          "v": "concorde_napa_valley_junc_e",
+          "u": "cnv_valley_se",
+          "v": "cnv_junc_e",
           "road": "Valley Link",
           "type": "secondary"
         },
         {
-          "u": "concorde_napa_valley_junc_e",
-          "v": "concorde_napa_valley_e_s_mid",
-          "road": "Valley Link",
+          "u": "cnv_junc_ctr",
+          "v": "cnv_napa_nw",
+          "road": "Central Link",
           "type": "secondary"
         },
         {
-          "u": "concorde_napa_valley_e_s_mid",
-          "v": "concorde_napa_valley_s_e",
-          "road": "Valley Link",
+          "u": "cnv_junc_ctr",
+          "v": "cnv_sonoma_sw",
+          "road": "Central Link",
           "type": "secondary"
         }
       ]
@@ -13360,345 +12897,429 @@ window.LAYOUTS = {
     "plots": {
       "1": {
         "id": "1",
-        "number": "Napa Court - 101",
-        "road": "Vineyard Parkway",
-        "block": "Napa Court",
+        "number": "Napa Court Villas - 101",
+        "road": "Napa Boulevard",
+        "block": "Napa Court Villas",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 267,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_w",
+        "roadNode": "cnv_napa_nw",
         "color": "cyan"
       },
       "2": {
         "id": "2",
-        "number": "Napa Court - 102",
-        "road": "Vineyard Parkway",
-        "block": "Napa Court",
+        "number": "Napa Court Villas - 102",
+        "road": "Napa Boulevard",
+        "block": "Napa Court Villas",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 289,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_w",
+        "roadNode": "cnv_napa_nw",
         "color": "cyan"
       },
       "3": {
         "id": "3",
-        "number": "Napa Court - 201",
-        "road": "Vineyard Parkway",
-        "block": "Napa Court",
+        "number": "Napa Court Villas - 201",
+        "road": "Napa Boulevard",
+        "block": "Napa Court Villas",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 311,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_w",
+        "roadNode": "cnv_napa_nw",
         "color": "cyan"
       },
       "4": {
         "id": "4",
-        "number": "Napa Court - 202",
-        "road": "Vineyard Parkway",
-        "block": "Napa Court",
+        "number": "Napa Court Villas - 202",
+        "road": "Napa Boulevard",
+        "block": "Napa Court Villas",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 333,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_w",
+        "roadNode": "cnv_napa_nw",
         "color": "cyan"
       },
       "5": {
         "id": "5",
-        "number": "Napa Court - 301",
-        "road": "Vineyard Parkway",
-        "block": "Napa Court",
+        "number": "Napa Court Villas - 301",
+        "road": "Napa Boulevard",
+        "block": "Napa Court Villas",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 267,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_w",
+        "roadNode": "cnv_napa_nw",
         "color": "cyan"
       },
       "6": {
         "id": "6",
-        "number": "Napa Court - 302",
-        "road": "Vineyard Parkway",
-        "block": "Napa Court",
+        "number": "Napa Court Villas - 302",
+        "road": "Napa Boulevard",
+        "block": "Napa Court Villas",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 289,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_w",
+        "roadNode": "cnv_napa_nw",
         "color": "cyan"
       },
       "7": {
         "id": "7",
-        "number": "Napa Court - 401",
-        "road": "Vineyard Parkway",
-        "block": "Napa Court",
+        "number": "Napa Court Villas - 401",
+        "road": "Napa Boulevard",
+        "block": "Napa Court Villas",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 311,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_w",
+        "roadNode": "cnv_napa_nw",
         "color": "cyan"
       },
       "8": {
         "id": "8",
-        "number": "Napa Court - 402",
-        "road": "Vineyard Parkway",
-        "block": "Napa Court",
+        "number": "Napa Court Villas - 402",
+        "road": "Napa Boulevard",
+        "block": "Napa Court Villas",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 333,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_w",
+        "roadNode": "cnv_napa_nw",
         "color": "cyan"
       },
       "9": {
         "id": "9",
-        "number": "Sonoma Way - 101",
+        "number": "Vineyard Villas - 101",
         "road": "Vineyard Parkway",
-        "block": "Sonoma Way",
+        "block": "Vineyard Villas",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 827,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_mid",
+        "roadNode": "cnv_vine_ne",
         "color": "cyan"
       },
       "10": {
         "id": "10",
-        "number": "Sonoma Way - 102",
+        "number": "Vineyard Villas - 102",
         "road": "Vineyard Parkway",
-        "block": "Sonoma Way",
+        "block": "Vineyard Villas",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 849,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_mid",
+        "roadNode": "cnv_vine_ne",
         "color": "cyan"
       },
       "11": {
         "id": "11",
-        "number": "Sonoma Way - 201",
+        "number": "Vineyard Villas - 201",
         "road": "Vineyard Parkway",
-        "block": "Sonoma Way",
+        "block": "Vineyard Villas",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 871,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_mid",
+        "roadNode": "cnv_vine_ne",
         "color": "cyan"
       },
       "12": {
         "id": "12",
-        "number": "Sonoma Way - 202",
+        "number": "Vineyard Villas - 202",
         "road": "Vineyard Parkway",
-        "block": "Sonoma Way",
+        "block": "Vineyard Villas",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 893,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_mid",
+        "roadNode": "cnv_vine_ne",
         "color": "cyan"
       },
       "13": {
         "id": "13",
-        "number": "Sonoma Way - 301",
+        "number": "Vineyard Villas - 301",
         "road": "Vineyard Parkway",
-        "block": "Sonoma Way",
+        "block": "Vineyard Villas",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 827,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_mid",
+        "roadNode": "cnv_vine_ne",
         "color": "cyan"
       },
       "14": {
         "id": "14",
-        "number": "Sonoma Way - 302",
+        "number": "Vineyard Villas - 302",
         "road": "Vineyard Parkway",
-        "block": "Sonoma Way",
+        "block": "Vineyard Villas",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 849,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_mid",
+        "roadNode": "cnv_vine_ne",
         "color": "cyan"
       },
       "15": {
         "id": "15",
-        "number": "Sonoma Way - 401",
+        "number": "Vineyard Villas - 401",
         "road": "Vineyard Parkway",
-        "block": "Sonoma Way",
+        "block": "Vineyard Villas",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 871,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_mid",
+        "roadNode": "cnv_vine_ne",
         "color": "cyan"
       },
       "16": {
         "id": "16",
-        "number": "Sonoma Way - 402",
+        "number": "Vineyard Villas - 402",
         "road": "Vineyard Parkway",
-        "block": "Sonoma Way",
+        "block": "Vineyard Villas",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 893,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_mid",
+        "roadNode": "cnv_vine_ne",
         "color": "cyan"
       },
       "17": {
         "id": "17",
-        "number": "Vineyard Promenade - 101",
-        "road": "Vineyard Parkway",
-        "block": "Vineyard Promenade",
-        "facing": "South",
-        "x": 807,
-        "y": 189,
+        "number": "Sonoma Way Villas - 101",
+        "road": "Sonoma Drive",
+        "block": "Sonoma Way Villas",
+        "facing": "North",
+        "x": 267,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_e",
+        "roadNode": "cnv_sonoma_sw",
         "color": "cyan"
       },
       "18": {
         "id": "18",
-        "number": "Vineyard Promenade - 102",
-        "road": "Vineyard Parkway",
-        "block": "Vineyard Promenade",
-        "facing": "South",
-        "x": 829,
-        "y": 189,
+        "number": "Sonoma Way Villas - 102",
+        "road": "Sonoma Drive",
+        "block": "Sonoma Way Villas",
+        "facing": "North",
+        "x": 289,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_e",
+        "roadNode": "cnv_sonoma_sw",
         "color": "cyan"
       },
       "19": {
         "id": "19",
-        "number": "Vineyard Promenade - 201",
-        "road": "Vineyard Parkway",
-        "block": "Vineyard Promenade",
-        "facing": "South",
-        "x": 851,
-        "y": 189,
+        "number": "Sonoma Way Villas - 201",
+        "road": "Sonoma Drive",
+        "block": "Sonoma Way Villas",
+        "facing": "North",
+        "x": 311,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_e",
+        "roadNode": "cnv_sonoma_sw",
         "color": "cyan"
       },
       "20": {
         "id": "20",
-        "number": "Vineyard Promenade - 202",
-        "road": "Vineyard Parkway",
-        "block": "Vineyard Promenade",
-        "facing": "South",
-        "x": 873,
-        "y": 189,
+        "number": "Sonoma Way Villas - 202",
+        "road": "Sonoma Drive",
+        "block": "Sonoma Way Villas",
+        "facing": "North",
+        "x": 333,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_e",
+        "roadNode": "cnv_sonoma_sw",
         "color": "cyan"
       },
       "21": {
         "id": "21",
-        "number": "Vineyard Promenade - 301",
-        "road": "Vineyard Parkway",
-        "block": "Vineyard Promenade",
-        "facing": "South",
-        "x": 807,
-        "y": 211,
+        "number": "Sonoma Way Villas - 301",
+        "road": "Sonoma Drive",
+        "block": "Sonoma Way Villas",
+        "facing": "North",
+        "x": 267,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_e",
+        "roadNode": "cnv_sonoma_sw",
         "color": "cyan"
       },
       "22": {
         "id": "22",
-        "number": "Vineyard Promenade - 302",
-        "road": "Vineyard Parkway",
-        "block": "Vineyard Promenade",
-        "facing": "South",
-        "x": 829,
-        "y": 211,
+        "number": "Sonoma Way Villas - 302",
+        "road": "Sonoma Drive",
+        "block": "Sonoma Way Villas",
+        "facing": "North",
+        "x": 289,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_e",
+        "roadNode": "cnv_sonoma_sw",
         "color": "cyan"
       },
       "23": {
         "id": "23",
-        "number": "Vineyard Promenade - 401",
-        "road": "Vineyard Parkway",
-        "block": "Vineyard Promenade",
-        "facing": "South",
-        "x": 851,
-        "y": 211,
+        "number": "Sonoma Way Villas - 401",
+        "road": "Sonoma Drive",
+        "block": "Sonoma Way Villas",
+        "facing": "North",
+        "x": 311,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_e",
+        "roadNode": "cnv_sonoma_sw",
         "color": "cyan"
       },
       "24": {
         "id": "24",
-        "number": "Vineyard Promenade - 402",
-        "road": "Vineyard Parkway",
-        "block": "Vineyard Promenade",
-        "facing": "South",
-        "x": 873,
-        "y": 211,
+        "number": "Sonoma Way Villas - 402",
+        "road": "Sonoma Drive",
+        "block": "Sonoma Way Villas",
+        "facing": "North",
+        "x": 333,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "concorde_napa_valley_n_e",
+        "roadNode": "cnv_sonoma_sw",
+        "color": "cyan"
+      },
+      "25": {
+        "id": "25",
+        "number": "Valley View Villas - 101",
+        "road": "Valley Link",
+        "block": "Valley View Villas",
+        "facing": "North",
+        "x": 827,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "cnv_valley_se",
+        "color": "cyan"
+      },
+      "26": {
+        "id": "26",
+        "number": "Valley View Villas - 102",
+        "road": "Valley Link",
+        "block": "Valley View Villas",
+        "facing": "North",
+        "x": 849,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "cnv_valley_se",
+        "color": "cyan"
+      },
+      "27": {
+        "id": "27",
+        "number": "Valley View Villas - 201",
+        "road": "Valley Link",
+        "block": "Valley View Villas",
+        "facing": "North",
+        "x": 871,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "cnv_valley_se",
+        "color": "cyan"
+      },
+      "28": {
+        "id": "28",
+        "number": "Valley View Villas - 202",
+        "road": "Valley Link",
+        "block": "Valley View Villas",
+        "facing": "North",
+        "x": 893,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "cnv_valley_se",
+        "color": "cyan"
+      },
+      "29": {
+        "id": "29",
+        "number": "Valley View Villas - 301",
+        "road": "Valley Link",
+        "block": "Valley View Villas",
+        "facing": "North",
+        "x": 827,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "cnv_valley_se",
+        "color": "cyan"
+      },
+      "30": {
+        "id": "30",
+        "number": "Valley View Villas - 302",
+        "road": "Valley Link",
+        "block": "Valley View Villas",
+        "facing": "North",
+        "x": 849,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "cnv_valley_se",
+        "color": "cyan"
+      },
+      "31": {
+        "id": "31",
+        "number": "Valley View Villas - 401",
+        "road": "Valley Link",
+        "block": "Valley View Villas",
+        "facing": "North",
+        "x": 871,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "cnv_valley_se",
+        "color": "cyan"
+      },
+      "32": {
+        "id": "32",
+        "number": "Valley View Villas - 402",
+        "road": "Valley Link",
+        "block": "Valley View Villas",
+        "facing": "North",
+        "x": 893,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "cnv_valley_se",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "concorde_napa_valley_gate_1",
-        "name": "Concorde Napa Valley Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "concorde_napa_valley_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "concorde_napa_valley_gate_2",
-        "name": "Concorde Napa Valley Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "concorde_napa_valley_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "concorde_napa_valley_club",
         "name": "Club Napa Grande",
         "description": "Lakeside clubhouse, tennis courts, infinity pool and bowling alley",
         "x": 620,
-        "y": 270,
-        "roadNode": "concorde_napa_valley_n_mid",
+        "y": 440,
+        "roadNode": "cnv_junc_ctr",
         "icon": "\ud83c\udf77",
         "type": "clubhouse"
       }
@@ -13707,7 +13328,7 @@ window.LAYOUTS = {
       {
         "name": "NAPA BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
@@ -13717,29 +13338,18 @@ window.LAYOUTS = {
         "vertical": false
       },
       {
-        "name": "OAK KNOLL WAY",
+        "name": "SONOMA DRIVE",
         "x": 620,
         "y": 705,
         "vertical": false
-      },
-      {
-        "name": "SONOMA DRIVE",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "VALLEY LINK",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "concorde_napa_valley_gate_1",
+    "defaultStartGate": "cnv_gate_main",
     "sectors": [
-      "Napa Court",
-      "Sonoma Way",
-      "Vineyard Promenade"
+      "Napa Court Villas",
+      "Vineyard Villas",
+      "Sonoma Way Villas",
+      "Valley View Villas"
     ]
   },
   "jp_nagar_phase7": {
@@ -18316,259 +17926,117 @@ window.LAYOUTS = {
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "110,480 220,180 620,160 1020,180 1110,480 1020,780 620,800 220,780 Z",
+    "borderTreesPath": "M 110,480 L 220,180 L 620,160 L 1020,180 L 1110,480 L 1020,780 L 620,800 L 220,780 Z",
+    "waterBody": {
+      "x": 520,
+      "y": 430,
+      "w": 200,
+      "h": 75,
+      "rx": 14,
+      "label": "Panorama Infinity Edge Pool & Spa"
     },
+    "gardenPark": null,
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "purva_panorama_gate_1": {
-          "id": "purva_panorama_gate_1",
-          "x": 90,
+        "pp_gate_main": {
+          "id": "pp_gate_main",
+          "x": 110,
           "y": 480,
-          "label": "Purva Panorama Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Bannerghatta Main Road)"
         },
-        "purva_panorama_entry": {
-          "id": "purva_panorama_entry",
-          "x": 180,
+        "pp_junc_w": {
+          "id": "pp_junc_w",
+          "x": 260,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Panorama Boulevard West"
         },
-        "purva_panorama_junc_w": {
-          "id": "purva_panorama_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Kalena Link West Junction"
-        },
-        "purva_panorama_junc_ctr": {
-          "id": "purva_panorama_junc_ctr",
+        "pp_junc_ctr": {
+          "id": "pp_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Central Infinity Pool Plaza"
         },
-        "purva_panorama_junc_e": {
-          "id": "purva_panorama_junc_e",
-          "x": 920,
+        "pp_junc_e": {
+          "id": "pp_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Bannerghatta Access Way East Junction"
+          "label": "Kalena Agrahara East Cross"
         },
-        "purva_panorama_gate_2": {
-          "id": "purva_panorama_gate_2",
-          "x": 1110,
+        "pp_gate_east": {
+          "id": "pp_gate_east",
+          "x": 1100,
           "y": 480,
-          "label": "Purva Panorama Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Noble Residency Link)"
         },
-        "purva_panorama_n_w": {
-          "id": "purva_panorama_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Hilltop Avenue West"
+        "pp_tower_a": {
+          "id": "pp_tower_a",
+          "x": 360,
+          "y": 310,
+          "label": "Tower A Parkway"
         },
-        "purva_panorama_n_mid": {
-          "id": "purva_panorama_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Hilltop Avenue North Plaza"
-        },
-        "purva_panorama_n_e": {
-          "id": "purva_panorama_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Hilltop Avenue East"
-        },
-        "purva_panorama_s_w": {
-          "id": "purva_panorama_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Central Garden Drive West"
-        },
-        "purva_panorama_s_mid": {
-          "id": "purva_panorama_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Central Garden Drive South Plaza"
-        },
-        "purva_panorama_s_e": {
-          "id": "purva_panorama_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Central Garden Drive East"
-        },
-        "purva_panorama_w_n_mid": {
-          "id": "purva_panorama_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Kalena Link North Link"
-        },
-        "purva_panorama_w_s_mid": {
-          "id": "purva_panorama_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Kalena Link South Link"
-        },
-        "purva_panorama_ctr_n_mid": {
-          "id": "purva_panorama_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "purva_panorama_ctr_s_mid": {
-          "id": "purva_panorama_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "purva_panorama_e_n_mid": {
-          "id": "purva_panorama_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Bannerghatta Access Way North Link"
-        },
-        "purva_panorama_e_s_mid": {
-          "id": "purva_panorama_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Bannerghatta Access Way South Link"
+        "pp_tower_b": {
+          "id": "pp_tower_b",
+          "x": 860,
+          "y": 510,
+          "label": "Tower B Promenade"
         }
       },
       "edges": [
         {
-          "u": "purva_panorama_gate_1",
-          "v": "purva_panorama_entry",
+          "u": "pp_gate_main",
+          "v": "pp_junc_w",
           "road": "Panorama Boulevard",
           "type": "primary"
         },
         {
-          "u": "purva_panorama_entry",
-          "v": "purva_panorama_junc_w",
+          "u": "pp_junc_w",
+          "v": "pp_junc_ctr",
           "road": "Panorama Boulevard",
           "type": "primary"
         },
         {
-          "u": "purva_panorama_junc_w",
-          "v": "purva_panorama_junc_ctr",
+          "u": "pp_junc_ctr",
+          "v": "pp_junc_e",
           "road": "Panorama Boulevard",
           "type": "primary"
         },
         {
-          "u": "purva_panorama_junc_ctr",
-          "v": "purva_panorama_junc_e",
+          "u": "pp_junc_e",
+          "v": "pp_gate_east",
           "road": "Panorama Boulevard",
           "type": "primary"
         },
         {
-          "u": "purva_panorama_junc_e",
-          "v": "purva_panorama_gate_2",
-          "road": "Panorama Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "purva_panorama_n_w",
-          "v": "purva_panorama_n_mid",
-          "road": "Hilltop Avenue",
+          "u": "pp_junc_w",
+          "v": "pp_tower_a",
+          "road": "Kalena Agrahara Link",
           "type": "secondary"
         },
         {
-          "u": "purva_panorama_n_mid",
-          "v": "purva_panorama_n_e",
-          "road": "Hilltop Avenue",
+          "u": "pp_tower_a",
+          "v": "pp_junc_ctr",
+          "road": "Kalena Agrahara Link",
           "type": "secondary"
         },
         {
-          "u": "purva_panorama_s_w",
-          "v": "purva_panorama_s_mid",
-          "road": "Central Garden Drive",
+          "u": "pp_junc_ctr",
+          "v": "pp_tower_b",
+          "road": "Valley View Way",
           "type": "secondary"
         },
         {
-          "u": "purva_panorama_s_mid",
-          "v": "purva_panorama_s_e",
-          "road": "Central Garden Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "purva_panorama_n_w",
-          "v": "purva_panorama_w_n_mid",
-          "road": "Kalena Link",
-          "type": "secondary"
-        },
-        {
-          "u": "purva_panorama_w_n_mid",
-          "v": "purva_panorama_junc_w",
-          "road": "Kalena Link",
-          "type": "secondary"
-        },
-        {
-          "u": "purva_panorama_junc_w",
-          "v": "purva_panorama_w_s_mid",
-          "road": "Kalena Link",
-          "type": "secondary"
-        },
-        {
-          "u": "purva_panorama_w_s_mid",
-          "v": "purva_panorama_s_w",
-          "road": "Kalena Link",
-          "type": "secondary"
-        },
-        {
-          "u": "purva_panorama_n_mid",
-          "v": "purva_panorama_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "purva_panorama_ctr_n_mid",
-          "v": "purva_panorama_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "purva_panorama_junc_ctr",
-          "v": "purva_panorama_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "purva_panorama_ctr_s_mid",
-          "v": "purva_panorama_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "purva_panorama_n_e",
-          "v": "purva_panorama_e_n_mid",
-          "road": "Bannerghatta Access Way",
-          "type": "secondary"
-        },
-        {
-          "u": "purva_panorama_e_n_mid",
-          "v": "purva_panorama_junc_e",
-          "road": "Bannerghatta Access Way",
-          "type": "secondary"
-        },
-        {
-          "u": "purva_panorama_junc_e",
-          "v": "purva_panorama_e_s_mid",
-          "road": "Bannerghatta Access Way",
-          "type": "secondary"
-        },
-        {
-          "u": "purva_panorama_e_s_mid",
-          "v": "purva_panorama_s_e",
-          "road": "Bannerghatta Access Way",
+          "u": "pp_tower_b",
+          "v": "pp_junc_e",
+          "road": "Valley View Way",
           "type": "secondary"
         }
       ]
@@ -18577,240 +18045,220 @@ window.LAYOUTS = {
       "1": {
         "id": "1",
         "number": "Tower A - 101",
-        "road": "Hilltop Avenue",
+        "road": "Panorama Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 327,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_w",
+        "roadNode": "pp_tower_a",
         "color": "cyan"
       },
       "2": {
         "id": "2",
         "number": "Tower A - 102",
-        "road": "Hilltop Avenue",
+        "road": "Panorama Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 349,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_w",
+        "roadNode": "pp_tower_a",
         "color": "cyan"
       },
       "3": {
         "id": "3",
         "number": "Tower A - 201",
-        "road": "Hilltop Avenue",
+        "road": "Panorama Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 371,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_w",
+        "roadNode": "pp_tower_a",
         "color": "cyan"
       },
       "4": {
         "id": "4",
         "number": "Tower A - 202",
-        "road": "Hilltop Avenue",
+        "road": "Panorama Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 393,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_w",
+        "roadNode": "pp_tower_a",
         "color": "cyan"
       },
       "5": {
         "id": "5",
         "number": "Tower A - 301",
-        "road": "Hilltop Avenue",
+        "road": "Panorama Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 327,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_w",
+        "roadNode": "pp_tower_a",
         "color": "cyan"
       },
       "6": {
         "id": "6",
         "number": "Tower A - 302",
-        "road": "Hilltop Avenue",
+        "road": "Panorama Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 349,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_w",
+        "roadNode": "pp_tower_a",
         "color": "cyan"
       },
       "7": {
         "id": "7",
         "number": "Tower A - 401",
-        "road": "Hilltop Avenue",
+        "road": "Panorama Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 371,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_w",
+        "roadNode": "pp_tower_a",
         "color": "cyan"
       },
       "8": {
         "id": "8",
         "number": "Tower A - 402",
-        "road": "Hilltop Avenue",
+        "road": "Panorama Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 393,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_w",
+        "roadNode": "pp_tower_a",
         "color": "cyan"
       },
       "9": {
         "id": "9",
         "number": "Tower B - 101",
-        "road": "Hilltop Avenue",
+        "road": "Kalena Agrahara Link",
         "block": "Tower B",
-        "facing": "South",
-        "x": 527,
-        "y": 189,
+        "facing": "West",
+        "x": 787,
+        "y": 489,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_mid",
+        "roadNode": "pp_tower_b",
         "color": "cyan"
       },
       "10": {
         "id": "10",
         "number": "Tower B - 102",
-        "road": "Hilltop Avenue",
+        "road": "Kalena Agrahara Link",
         "block": "Tower B",
-        "facing": "South",
-        "x": 549,
-        "y": 189,
+        "facing": "West",
+        "x": 809,
+        "y": 489,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_mid",
+        "roadNode": "pp_tower_b",
         "color": "cyan"
       },
       "11": {
         "id": "11",
         "number": "Tower B - 201",
-        "road": "Hilltop Avenue",
+        "road": "Kalena Agrahara Link",
         "block": "Tower B",
-        "facing": "South",
-        "x": 571,
-        "y": 189,
+        "facing": "West",
+        "x": 831,
+        "y": 489,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_mid",
+        "roadNode": "pp_tower_b",
         "color": "cyan"
       },
       "12": {
         "id": "12",
         "number": "Tower B - 202",
-        "road": "Hilltop Avenue",
+        "road": "Kalena Agrahara Link",
         "block": "Tower B",
-        "facing": "South",
-        "x": 593,
-        "y": 189,
+        "facing": "West",
+        "x": 853,
+        "y": 489,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_mid",
+        "roadNode": "pp_tower_b",
         "color": "cyan"
       },
       "13": {
         "id": "13",
         "number": "Tower B - 301",
-        "road": "Hilltop Avenue",
+        "road": "Kalena Agrahara Link",
         "block": "Tower B",
-        "facing": "South",
-        "x": 527,
-        "y": 211,
+        "facing": "West",
+        "x": 787,
+        "y": 511,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_mid",
+        "roadNode": "pp_tower_b",
         "color": "cyan"
       },
       "14": {
         "id": "14",
         "number": "Tower B - 302",
-        "road": "Hilltop Avenue",
+        "road": "Kalena Agrahara Link",
         "block": "Tower B",
-        "facing": "South",
-        "x": 549,
-        "y": 211,
+        "facing": "West",
+        "x": 809,
+        "y": 511,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_mid",
+        "roadNode": "pp_tower_b",
         "color": "cyan"
       },
       "15": {
         "id": "15",
         "number": "Tower B - 401",
-        "road": "Hilltop Avenue",
+        "road": "Kalena Agrahara Link",
         "block": "Tower B",
-        "facing": "South",
-        "x": 571,
-        "y": 211,
+        "facing": "West",
+        "x": 831,
+        "y": 511,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_mid",
+        "roadNode": "pp_tower_b",
         "color": "cyan"
       },
       "16": {
         "id": "16",
         "number": "Tower B - 402",
-        "road": "Hilltop Avenue",
+        "road": "Kalena Agrahara Link",
         "block": "Tower B",
-        "facing": "South",
-        "x": 593,
-        "y": 211,
+        "facing": "West",
+        "x": 853,
+        "y": 511,
         "w": 48,
         "h": 34,
-        "roadNode": "purva_panorama_n_mid",
+        "roadNode": "pp_tower_b",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "purva_panorama_gate_1",
-        "name": "Purva Panorama Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "purva_panorama_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "purva_panorama_gate_2",
-        "name": "Purva Panorama Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "purva_panorama_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "purva_panorama_club",
-        "name": "Panorama Club & Pool",
-        "description": "Clubhouse, rooftop tennis court, pool and squash",
+        "name": "Panorama Vista Club",
+        "description": "Infinity pool, gymnasium, multi-purpose hall & squash",
         "x": 620,
-        "y": 270,
-        "roadNode": "purva_panorama_n_mid",
+        "y": 430,
+        "roadNode": "pp_junc_ctr",
         "icon": "\ud83c\udfca",
         "type": "clubhouse"
       }
@@ -18819,35 +18267,23 @@ window.LAYOUTS = {
       {
         "name": "PANORAMA BOULEVARD",
         "x": 620,
+        "y": 495,
+        "vertical": false
+      },
+      {
+        "name": "KALENA AGRAHARA LINK",
+        "x": 360,
+        "y": 290,
+        "vertical": false
+      },
+      {
+        "name": "VALLEY VIEW WAY",
+        "x": 860,
         "y": 490,
         "vertical": false
-      },
-      {
-        "name": "HILLTOP AVENUE",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "CENTRAL GARDEN DRIVE",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "KALENA LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "BANNERGHATTA ACCESS WAY",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "purva_panorama_gate_1",
+    "defaultStartGate": "pp_gate_main",
     "sectors": [
       "Tower A",
       "Tower B"
@@ -19776,259 +19212,142 @@ window.LAYOUTS = {
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "90,480 200,160 620,140 1040,160 1120,480 1040,820 620,850 200,820 Z",
+    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1120,480 L 1040,820 L 620,850 L 200,820 Z",
+    "waterBody": {
+      "x": 360,
+      "y": 730,
+      "w": 520,
+      "h": 80,
+      "rx": 16,
+      "label": "Arekere Lakefront Boardwalk & Wetland Bird Zone"
     },
+    "gardenPark": {
+      "x": 440,
+      "y": 440,
+      "w": 360,
+      "h": 70,
+      "rx": 10,
+      "label": "South City Central Woodlands Park"
+    },
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "south_city_layout_gate_1": {
-          "id": "south_city_layout_gate_1",
+        "scl_gate_main": {
+          "id": "scl_gate_main",
           "x": 90,
           "y": 480,
-          "label": "South City Layout Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Bannerghatta Main Road)"
         },
-        "south_city_layout_entry": {
-          "id": "south_city_layout_entry",
-          "x": 180,
+        "scl_junc_w": {
+          "id": "scl_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "South City West Boulevard Cross"
         },
-        "south_city_layout_junc_w": {
-          "id": "south_city_layout_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Mico Link Avenue West Junction"
-        },
-        "south_city_layout_junc_ctr": {
-          "id": "south_city_layout_junc_ctr",
+        "scl_junc_ctr": {
+          "id": "scl_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Central Woodlands Plaza"
         },
-        "south_city_layout_junc_e": {
-          "id": "south_city_layout_junc_e",
-          "x": 920,
+        "scl_junc_e": {
+          "id": "scl_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Lake Access Road East Junction"
+          "label": "Parkside East Junction"
         },
-        "south_city_layout_gate_2": {
-          "id": "south_city_layout_gate_2",
+        "scl_gate_lake": {
+          "id": "scl_gate_lake",
           "x": 1110,
           "y": 480,
-          "label": "South City Layout Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Arekere Lake Trail Link)"
         },
-        "south_city_layout_n_w": {
-          "id": "south_city_layout_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Arekere Parkway West"
+        "scl_north_quad": {
+          "id": "scl_north_quad",
+          "x": 360,
+          "y": 260,
+          "label": "North Quad Drive"
         },
-        "south_city_layout_n_mid": {
-          "id": "south_city_layout_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Arekere Parkway North Plaza"
+        "scl_park_ne": {
+          "id": "scl_park_ne",
+          "x": 780,
+          "y": 260,
+          "label": "Central Parkside Way"
         },
-        "south_city_layout_n_e": {
-          "id": "south_city_layout_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Arekere Parkway East"
-        },
-        "south_city_layout_s_w": {
-          "id": "south_city_layout_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Central Garden Way West"
-        },
-        "south_city_layout_s_mid": {
-          "id": "south_city_layout_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Central Garden Way South Plaza"
-        },
-        "south_city_layout_s_e": {
-          "id": "south_city_layout_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Central Garden Way East"
-        },
-        "south_city_layout_w_n_mid": {
-          "id": "south_city_layout_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Mico Link Avenue North Link"
-        },
-        "south_city_layout_w_s_mid": {
-          "id": "south_city_layout_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Mico Link Avenue South Link"
-        },
-        "south_city_layout_ctr_n_mid": {
-          "id": "south_city_layout_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "south_city_layout_ctr_s_mid": {
-          "id": "south_city_layout_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "south_city_layout_e_n_mid": {
-          "id": "south_city_layout_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Lake Access Road North Link"
-        },
-        "south_city_layout_e_s_mid": {
-          "id": "south_city_layout_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Lake Access Road South Link"
+        "scl_south_lake": {
+          "id": "scl_south_lake",
+          "x": 520,
+          "y": 680,
+          "label": "South Lake Promenade"
         }
       },
       "edges": [
         {
-          "u": "south_city_layout_gate_1",
-          "v": "south_city_layout_entry",
+          "u": "scl_gate_main",
+          "v": "scl_junc_w",
           "road": "South City Boulevard",
           "type": "primary"
         },
         {
-          "u": "south_city_layout_entry",
-          "v": "south_city_layout_junc_w",
+          "u": "scl_junc_w",
+          "v": "scl_junc_ctr",
           "road": "South City Boulevard",
           "type": "primary"
         },
         {
-          "u": "south_city_layout_junc_w",
-          "v": "south_city_layout_junc_ctr",
+          "u": "scl_junc_ctr",
+          "v": "scl_junc_e",
           "road": "South City Boulevard",
           "type": "primary"
         },
         {
-          "u": "south_city_layout_junc_ctr",
-          "v": "south_city_layout_junc_e",
+          "u": "scl_junc_e",
+          "v": "scl_gate_lake",
           "road": "South City Boulevard",
           "type": "primary"
         },
         {
-          "u": "south_city_layout_junc_e",
-          "v": "south_city_layout_gate_2",
-          "road": "South City Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "south_city_layout_n_w",
-          "v": "south_city_layout_n_mid",
-          "road": "Arekere Parkway",
+          "u": "scl_junc_w",
+          "v": "scl_north_quad",
+          "road": "North Quad Drive",
           "type": "secondary"
         },
         {
-          "u": "south_city_layout_n_mid",
-          "v": "south_city_layout_n_e",
-          "road": "Arekere Parkway",
+          "u": "scl_north_quad",
+          "v": "scl_park_ne",
+          "road": "Woodlands Parkway",
           "type": "secondary"
         },
         {
-          "u": "south_city_layout_s_w",
-          "v": "south_city_layout_s_mid",
-          "road": "Central Garden Way",
+          "u": "scl_park_ne",
+          "v": "scl_junc_e",
+          "road": "Central Parkside Way",
           "type": "secondary"
         },
         {
-          "u": "south_city_layout_s_mid",
-          "v": "south_city_layout_s_e",
-          "road": "Central Garden Way",
+          "u": "scl_junc_w",
+          "v": "scl_south_lake",
+          "road": "South Lake Promenade",
           "type": "secondary"
         },
         {
-          "u": "south_city_layout_n_w",
-          "v": "south_city_layout_w_n_mid",
-          "road": "Mico Link Avenue",
+          "u": "scl_south_lake",
+          "v": "scl_junc_e",
+          "road": "South Lake Promenade",
           "type": "secondary"
         },
         {
-          "u": "south_city_layout_w_n_mid",
-          "v": "south_city_layout_junc_w",
-          "road": "Mico Link Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "south_city_layout_junc_w",
-          "v": "south_city_layout_w_s_mid",
-          "road": "Mico Link Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "south_city_layout_w_s_mid",
-          "v": "south_city_layout_s_w",
-          "road": "Mico Link Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "south_city_layout_n_mid",
-          "v": "south_city_layout_ctr_n_mid",
+          "u": "scl_junc_ctr",
+          "v": "scl_south_lake",
           "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "south_city_layout_ctr_n_mid",
-          "v": "south_city_layout_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "south_city_layout_junc_ctr",
-          "v": "south_city_layout_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "south_city_layout_ctr_s_mid",
-          "v": "south_city_layout_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "south_city_layout_n_e",
-          "v": "south_city_layout_e_n_mid",
-          "road": "Lake Access Road",
-          "type": "secondary"
-        },
-        {
-          "u": "south_city_layout_e_n_mid",
-          "v": "south_city_layout_junc_e",
-          "road": "Lake Access Road",
-          "type": "secondary"
-        },
-        {
-          "u": "south_city_layout_junc_e",
-          "v": "south_city_layout_e_s_mid",
-          "road": "Lake Access Road",
-          "type": "secondary"
-        },
-        {
-          "u": "south_city_layout_e_s_mid",
-          "v": "south_city_layout_s_e",
-          "road": "Lake Access Road",
           "type": "secondary"
         }
       ]
@@ -20036,386 +19355,364 @@ window.LAYOUTS = {
     "plots": {
       "1": {
         "id": "1",
-        "number": "Block A-D - 101",
-        "road": "Arekere Parkway",
-        "block": "Block A-D",
+        "number": "North Quad Tower - 101",
+        "road": "North Quad Drive",
+        "block": "North Quad Tower",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 327,
+        "y": 199,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_w",
+        "roadNode": "scl_north_quad",
         "color": "cyan"
       },
       "2": {
         "id": "2",
-        "number": "Block A-D - 102",
-        "road": "Arekere Parkway",
-        "block": "Block A-D",
+        "number": "North Quad Tower - 102",
+        "road": "North Quad Drive",
+        "block": "North Quad Tower",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 349,
+        "y": 199,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_w",
+        "roadNode": "scl_north_quad",
         "color": "cyan"
       },
       "3": {
         "id": "3",
-        "number": "Block A-D - 201",
-        "road": "Arekere Parkway",
-        "block": "Block A-D",
+        "number": "North Quad Tower - 201",
+        "road": "North Quad Drive",
+        "block": "North Quad Tower",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 371,
+        "y": 199,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_w",
+        "roadNode": "scl_north_quad",
         "color": "cyan"
       },
       "4": {
         "id": "4",
-        "number": "Block A-D - 202",
-        "road": "Arekere Parkway",
-        "block": "Block A-D",
+        "number": "North Quad Tower - 202",
+        "road": "North Quad Drive",
+        "block": "North Quad Tower",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 393,
+        "y": 199,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_w",
+        "roadNode": "scl_north_quad",
         "color": "cyan"
       },
       "5": {
         "id": "5",
-        "number": "Block A-D - 301",
-        "road": "Arekere Parkway",
-        "block": "Block A-D",
+        "number": "North Quad Tower - 301",
+        "road": "North Quad Drive",
+        "block": "North Quad Tower",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 327,
+        "y": 221,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_w",
+        "roadNode": "scl_north_quad",
         "color": "cyan"
       },
       "6": {
         "id": "6",
-        "number": "Block A-D - 302",
-        "road": "Arekere Parkway",
-        "block": "Block A-D",
+        "number": "North Quad Tower - 302",
+        "road": "North Quad Drive",
+        "block": "North Quad Tower",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 349,
+        "y": 221,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_w",
+        "roadNode": "scl_north_quad",
         "color": "cyan"
       },
       "7": {
         "id": "7",
-        "number": "Block A-D - 401",
-        "road": "Arekere Parkway",
-        "block": "Block A-D",
+        "number": "North Quad Tower - 401",
+        "road": "North Quad Drive",
+        "block": "North Quad Tower",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 371,
+        "y": 221,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_w",
+        "roadNode": "scl_north_quad",
         "color": "cyan"
       },
       "8": {
         "id": "8",
-        "number": "Block A-D - 402",
-        "road": "Arekere Parkway",
-        "block": "Block A-D",
+        "number": "North Quad Tower - 402",
+        "road": "North Quad Drive",
+        "block": "North Quad Tower",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 393,
+        "y": 221,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_w",
+        "roadNode": "scl_north_quad",
         "color": "cyan"
       },
       "9": {
         "id": "9",
-        "number": "Block E-H - 101",
-        "road": "Arekere Parkway",
-        "block": "Block E-H",
+        "number": "Central Parkside Tower - 101",
+        "road": "Central Parkside Way",
+        "block": "Central Parkside Tower",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 707,
+        "y": 199,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_mid",
+        "roadNode": "scl_park_ne",
         "color": "cyan"
       },
       "10": {
         "id": "10",
-        "number": "Block E-H - 102",
-        "road": "Arekere Parkway",
-        "block": "Block E-H",
+        "number": "Central Parkside Tower - 102",
+        "road": "Central Parkside Way",
+        "block": "Central Parkside Tower",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 729,
+        "y": 199,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_mid",
+        "roadNode": "scl_park_ne",
         "color": "cyan"
       },
       "11": {
         "id": "11",
-        "number": "Block E-H - 201",
-        "road": "Arekere Parkway",
-        "block": "Block E-H",
+        "number": "Central Parkside Tower - 201",
+        "road": "Central Parkside Way",
+        "block": "Central Parkside Tower",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 751,
+        "y": 199,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_mid",
+        "roadNode": "scl_park_ne",
         "color": "cyan"
       },
       "12": {
         "id": "12",
-        "number": "Block E-H - 202",
-        "road": "Arekere Parkway",
-        "block": "Block E-H",
+        "number": "Central Parkside Tower - 202",
+        "road": "Central Parkside Way",
+        "block": "Central Parkside Tower",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 773,
+        "y": 199,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_mid",
+        "roadNode": "scl_park_ne",
         "color": "cyan"
       },
       "13": {
         "id": "13",
-        "number": "Block E-H - 301",
-        "road": "Arekere Parkway",
-        "block": "Block E-H",
+        "number": "Central Parkside Tower - 301",
+        "road": "Central Parkside Way",
+        "block": "Central Parkside Tower",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 707,
+        "y": 221,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_mid",
+        "roadNode": "scl_park_ne",
         "color": "cyan"
       },
       "14": {
         "id": "14",
-        "number": "Block E-H - 302",
-        "road": "Arekere Parkway",
-        "block": "Block E-H",
+        "number": "Central Parkside Tower - 302",
+        "road": "Central Parkside Way",
+        "block": "Central Parkside Tower",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 729,
+        "y": 221,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_mid",
+        "roadNode": "scl_park_ne",
         "color": "cyan"
       },
       "15": {
         "id": "15",
-        "number": "Block E-H - 401",
-        "road": "Arekere Parkway",
-        "block": "Block E-H",
+        "number": "Central Parkside Tower - 401",
+        "road": "Central Parkside Way",
+        "block": "Central Parkside Tower",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 751,
+        "y": 221,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_mid",
+        "roadNode": "scl_park_ne",
         "color": "cyan"
       },
       "16": {
         "id": "16",
-        "number": "Block E-H - 402",
-        "road": "Arekere Parkway",
-        "block": "Block E-H",
+        "number": "Central Parkside Tower - 402",
+        "road": "Central Parkside Way",
+        "block": "Central Parkside Tower",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 773,
+        "y": 221,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_mid",
+        "roadNode": "scl_park_ne",
         "color": "cyan"
       },
       "17": {
         "id": "17",
-        "number": "Block J-L - 101",
-        "road": "Arekere Parkway",
-        "block": "Block J-L",
-        "facing": "South",
-        "x": 807,
-        "y": 189,
+        "number": "South Lakeview Tower - 101",
+        "road": "South Lake Promenade",
+        "block": "South Lakeview Tower",
+        "facing": "North",
+        "x": 487,
+        "y": 619,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_e",
+        "roadNode": "scl_south_lake",
         "color": "cyan"
       },
       "18": {
         "id": "18",
-        "number": "Block J-L - 102",
-        "road": "Arekere Parkway",
-        "block": "Block J-L",
-        "facing": "South",
-        "x": 829,
-        "y": 189,
+        "number": "South Lakeview Tower - 102",
+        "road": "South Lake Promenade",
+        "block": "South Lakeview Tower",
+        "facing": "North",
+        "x": 509,
+        "y": 619,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_e",
+        "roadNode": "scl_south_lake",
         "color": "cyan"
       },
       "19": {
         "id": "19",
-        "number": "Block J-L - 201",
-        "road": "Arekere Parkway",
-        "block": "Block J-L",
-        "facing": "South",
-        "x": 851,
-        "y": 189,
+        "number": "South Lakeview Tower - 201",
+        "road": "South Lake Promenade",
+        "block": "South Lakeview Tower",
+        "facing": "North",
+        "x": 531,
+        "y": 619,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_e",
+        "roadNode": "scl_south_lake",
         "color": "cyan"
       },
       "20": {
         "id": "20",
-        "number": "Block J-L - 202",
-        "road": "Arekere Parkway",
-        "block": "Block J-L",
-        "facing": "South",
-        "x": 873,
-        "y": 189,
+        "number": "South Lakeview Tower - 202",
+        "road": "South Lake Promenade",
+        "block": "South Lakeview Tower",
+        "facing": "North",
+        "x": 553,
+        "y": 619,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_e",
+        "roadNode": "scl_south_lake",
         "color": "cyan"
       },
       "21": {
         "id": "21",
-        "number": "Block J-L - 301",
-        "road": "Arekere Parkway",
-        "block": "Block J-L",
-        "facing": "South",
-        "x": 807,
-        "y": 211,
+        "number": "South Lakeview Tower - 301",
+        "road": "South Lake Promenade",
+        "block": "South Lakeview Tower",
+        "facing": "North",
+        "x": 487,
+        "y": 641,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_e",
+        "roadNode": "scl_south_lake",
         "color": "cyan"
       },
       "22": {
         "id": "22",
-        "number": "Block J-L - 302",
-        "road": "Arekere Parkway",
-        "block": "Block J-L",
-        "facing": "South",
-        "x": 829,
-        "y": 211,
+        "number": "South Lakeview Tower - 302",
+        "road": "South Lake Promenade",
+        "block": "South Lakeview Tower",
+        "facing": "North",
+        "x": 509,
+        "y": 641,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_e",
+        "roadNode": "scl_south_lake",
         "color": "cyan"
       },
       "23": {
         "id": "23",
-        "number": "Block J-L - 401",
-        "road": "Arekere Parkway",
-        "block": "Block J-L",
-        "facing": "South",
-        "x": 851,
-        "y": 211,
+        "number": "South Lakeview Tower - 401",
+        "road": "South Lake Promenade",
+        "block": "South Lakeview Tower",
+        "facing": "North",
+        "x": 531,
+        "y": 641,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_e",
+        "roadNode": "scl_south_lake",
         "color": "cyan"
       },
       "24": {
         "id": "24",
-        "number": "Block J-L - 402",
-        "road": "Arekere Parkway",
-        "block": "Block J-L",
-        "facing": "South",
-        "x": 873,
-        "y": 211,
+        "number": "South Lakeview Tower - 402",
+        "road": "South Lake Promenade",
+        "block": "South Lakeview Tower",
+        "facing": "North",
+        "x": 553,
+        "y": 641,
         "w": 48,
         "h": 34,
-        "roadNode": "south_city_layout_n_e",
+        "roadNode": "scl_south_lake",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "south_city_layout_gate_1",
-        "name": "South City Layout Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "south_city_layout_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "south_city_layout_gate_2",
-        "name": "South City Layout Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "south_city_layout_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "south_city_layout_club",
-        "name": "South City Club & Sports Complex",
-        "description": "Indoor badminton, tennis courts, pool, gym & parks",
+        "name": "South City Clubhouse & Sports Deck",
+        "description": "Tennis courts, squash, swimming pool and fitness center",
         "x": 620,
-        "y": 480,
-        "roadNode": "south_city_layout_junc_ctr",
+        "y": 440,
+        "roadNode": "scl_junc_ctr",
         "icon": "\ud83c\udfca",
         "type": "clubhouse"
+      },
+      {
+        "id": "south_city_layout_lake",
+        "name": "Arekere Lake Boardwalk",
+        "description": "Restored lakefront jogging tracks and wetland bird watching zone",
+        "x": 620,
+        "y": 730,
+        "roadNode": "scl_south_lake",
+        "icon": "\ud83e\udd86",
+        "type": "nature"
       }
     ],
     "roadLabels": [
       {
         "name": "SOUTH CITY BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
-        "name": "AREKERE PARKWAY",
+        "name": "WOODLANDS PARKWAY",
         "x": 620,
-        "y": 255,
+        "y": 245,
         "vertical": false
       },
       {
-        "name": "CENTRAL GARDEN WAY",
+        "name": "SOUTH LAKE PROMENADE",
         "x": 620,
-        "y": 705,
+        "y": 665,
         "vertical": false
-      },
-      {
-        "name": "MICO LINK AVENUE",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "LAKE ACCESS ROAD",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "south_city_layout_gate_1",
+    "defaultStartGate": "scl_gate_main",
     "sectors": [
-      "Block A-D",
-      "Block E-H",
-      "Block J-L"
+      "North Quad Tower",
+      "Central Parkside Tower",
+      "South Lakeview Tower"
     ]
   },
   "sobha_dream_acres": {
@@ -20425,263 +19722,199 @@ window.LAYOUTS = {
     "zone": "whitefield",
     "type": "Mega Precast Residential Township",
     "unitType": "Apartment / Wing",
-    "unitCount": 32,
+    "unitCount": 48,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "80,480 180,140 1060,140 1160,480 1060,820 180,820 Z",
+    "borderTreesPath": "M 80,480 L 180,140 L 1060,140 L 1160,480 L 1060,820 L 180,820 Z",
+    "waterBody": {
+      "x": 520,
+      "y": 440,
+      "w": 200,
+      "h": 80,
+      "rx": 16,
+      "label": "Sobha Club Oasis 5-Lane Lap Pool"
     },
+    "gardenPark": {
+      "x": 440,
+      "y": 310,
+      "w": 360,
+      "h": 60,
+      "rx": 8,
+      "label": "Dream Acres Central Forest Park"
+    },
+    "landmarks": [
+      {
+        "x": 980,
+        "y": 410,
+        "w": 140,
+        "h": 140,
+        "rx": 8,
+        "label": "Sobha Precast Engineering Hub",
+        "fill": "#0f172a",
+        "stroke": "#0ea5e9"
+      }
+    ],
     "roads": {
       "nodes": {
-        "sobha_dream_acres_gate_1": {
-          "id": "sobha_dream_acres_gate_1",
+        "sda_gate_west": {
+          "id": "sda_gate_west",
           "x": 90,
           "y": 480,
-          "label": "Sobha Dream Acres Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Balagere Main Road)"
         },
-        "sobha_dream_acres_entry": {
-          "id": "sobha_dream_acres_entry",
-          "x": 180,
+        "sda_junc_w": {
+          "id": "sda_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "West Radial Roundabout"
         },
-        "sobha_dream_acres_junc_w": {
-          "id": "sobha_dream_acres_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Balagere Parkway West Junction"
-        },
-        "sobha_dream_acres_junc_ctr": {
-          "id": "sobha_dream_acres_junc_ctr",
+        "sda_junc_ctr": {
+          "id": "sda_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Central Oasis Plaza"
         },
-        "sobha_dream_acres_junc_e": {
-          "id": "sobha_dream_acres_junc_e",
-          "x": 920,
+        "sda_junc_e": {
+          "id": "sda_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Outer Ring Expressway East Junction"
+          "label": "East Radial Roundabout"
         },
-        "sobha_dream_acres_gate_2": {
-          "id": "sobha_dream_acres_gate_2",
-          "x": 1110,
+        "sda_gate_east": {
+          "id": "sda_gate_east",
+          "x": 1140,
           "y": 480,
-          "label": "Sobha Dream Acres Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Panathur Tech Link)"
         },
-        "sobha_dream_acres_n_w": {
-          "id": "sobha_dream_acres_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Panathur Link West"
+        "sda_wing_nw": {
+          "id": "sda_wing_nw",
+          "x": 280,
+          "y": 260,
+          "label": "Rainforest Radial Cross"
         },
-        "sobha_dream_acres_n_mid": {
-          "id": "sobha_dream_acres_n_mid",
+        "sda_wing_n_ctr": {
+          "id": "sda_wing_n_ctr",
           "x": 620,
-          "y": 270,
-          "label": "Panathur Link North Plaza"
+          "y": 240,
+          "label": "Pine Radial Cross"
         },
-        "sobha_dream_acres_n_e": {
-          "id": "sobha_dream_acres_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Panathur Link East"
+        "sda_wing_ne": {
+          "id": "sda_wing_ne",
+          "x": 940,
+          "y": 260,
+          "label": "Coral Radial Cross"
         },
-        "sobha_dream_acres_s_w": {
-          "id": "sobha_dream_acres_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Clubhouse Central Way West"
+        "sda_wing_sw": {
+          "id": "sda_wing_sw",
+          "x": 280,
+          "y": 700,
+          "label": "Palm Radial Cross"
         },
-        "sobha_dream_acres_s_mid": {
-          "id": "sobha_dream_acres_s_mid",
+        "sda_wing_s_ctr": {
+          "id": "sda_wing_s_ctr",
           "x": 620,
-          "y": 690,
-          "label": "Clubhouse Central Way South Plaza"
+          "y": 720,
+          "label": "Cedar Radial Cross"
         },
-        "sobha_dream_acres_s_e": {
-          "id": "sobha_dream_acres_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Clubhouse Central Way East"
-        },
-        "sobha_dream_acres_w_n_mid": {
-          "id": "sobha_dream_acres_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Balagere Parkway North Link"
-        },
-        "sobha_dream_acres_w_s_mid": {
-          "id": "sobha_dream_acres_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Balagere Parkway South Link"
-        },
-        "sobha_dream_acres_ctr_n_mid": {
-          "id": "sobha_dream_acres_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "sobha_dream_acres_ctr_s_mid": {
-          "id": "sobha_dream_acres_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "sobha_dream_acres_e_n_mid": {
-          "id": "sobha_dream_acres_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Outer Ring Expressway North Link"
-        },
-        "sobha_dream_acres_e_s_mid": {
-          "id": "sobha_dream_acres_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Outer Ring Expressway South Link"
+        "sda_wing_se": {
+          "id": "sda_wing_se",
+          "x": 940,
+          "y": 700,
+          "label": "Spring Radial Cross"
         }
       },
       "edges": [
         {
-          "u": "sobha_dream_acres_gate_1",
-          "v": "sobha_dream_acres_entry",
-          "road": "Dream Acres Boulevard",
+          "u": "sda_gate_west",
+          "v": "sda_junc_w",
+          "road": "Dream Acres Parkway",
           "type": "primary"
         },
         {
-          "u": "sobha_dream_acres_entry",
-          "v": "sobha_dream_acres_junc_w",
-          "road": "Dream Acres Boulevard",
+          "u": "sda_junc_w",
+          "v": "sda_junc_ctr",
+          "road": "Dream Acres Parkway",
           "type": "primary"
         },
         {
-          "u": "sobha_dream_acres_junc_w",
-          "v": "sobha_dream_acres_junc_ctr",
-          "road": "Dream Acres Boulevard",
+          "u": "sda_junc_ctr",
+          "v": "sda_junc_e",
+          "road": "Dream Acres Parkway",
           "type": "primary"
         },
         {
-          "u": "sobha_dream_acres_junc_ctr",
-          "v": "sobha_dream_acres_junc_e",
-          "road": "Dream Acres Boulevard",
+          "u": "sda_junc_e",
+          "v": "sda_gate_east",
+          "road": "Dream Acres Parkway",
           "type": "primary"
         },
         {
-          "u": "sobha_dream_acres_junc_e",
-          "v": "sobha_dream_acres_gate_2",
-          "road": "Dream Acres Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "sobha_dream_acres_n_w",
-          "v": "sobha_dream_acres_n_mid",
-          "road": "Panathur Link",
+          "u": "sda_junc_w",
+          "v": "sda_wing_nw",
+          "road": "Rainforest Boulevard",
           "type": "secondary"
         },
         {
-          "u": "sobha_dream_acres_n_mid",
-          "v": "sobha_dream_acres_n_e",
-          "road": "Panathur Link",
+          "u": "sda_junc_w",
+          "v": "sda_wing_sw",
+          "road": "Palm Boulevard",
           "type": "secondary"
         },
         {
-          "u": "sobha_dream_acres_s_w",
-          "v": "sobha_dream_acres_s_mid",
-          "road": "Clubhouse Central Way",
+          "u": "sda_junc_ctr",
+          "v": "sda_wing_n_ctr",
+          "road": "Oasis Central Drive",
           "type": "secondary"
         },
         {
-          "u": "sobha_dream_acres_s_mid",
-          "v": "sobha_dream_acres_s_e",
-          "road": "Clubhouse Central Way",
+          "u": "sda_junc_ctr",
+          "v": "sda_wing_s_ctr",
+          "road": "Oasis Central Drive",
           "type": "secondary"
         },
         {
-          "u": "sobha_dream_acres_n_w",
-          "v": "sobha_dream_acres_w_n_mid",
-          "road": "Balagere Parkway",
+          "u": "sda_junc_e",
+          "v": "sda_wing_ne",
+          "road": "Coral Boulevard",
           "type": "secondary"
         },
         {
-          "u": "sobha_dream_acres_w_n_mid",
-          "v": "sobha_dream_acres_junc_w",
-          "road": "Balagere Parkway",
+          "u": "sda_junc_e",
+          "v": "sda_wing_se",
+          "road": "Spring Avenue",
           "type": "secondary"
         },
         {
-          "u": "sobha_dream_acres_junc_w",
-          "v": "sobha_dream_acres_w_s_mid",
-          "road": "Balagere Parkway",
+          "u": "sda_wing_nw",
+          "v": "sda_wing_n_ctr",
+          "road": "North Perimeter Ring",
           "type": "secondary"
         },
         {
-          "u": "sobha_dream_acres_w_s_mid",
-          "v": "sobha_dream_acres_s_w",
-          "road": "Balagere Parkway",
+          "u": "sda_wing_n_ctr",
+          "v": "sda_wing_ne",
+          "road": "North Perimeter Ring",
           "type": "secondary"
         },
         {
-          "u": "sobha_dream_acres_n_mid",
-          "v": "sobha_dream_acres_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sobha_dream_acres_ctr_n_mid",
-          "v": "sobha_dream_acres_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sobha_dream_acres_junc_ctr",
-          "v": "sobha_dream_acres_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sobha_dream_acres_ctr_s_mid",
-          "v": "sobha_dream_acres_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sobha_dream_acres_n_e",
-          "v": "sobha_dream_acres_e_n_mid",
-          "road": "Outer Ring Expressway",
+          "u": "sda_wing_sw",
+          "v": "sda_wing_s_ctr",
+          "road": "South Perimeter Ring",
           "type": "secondary"
         },
         {
-          "u": "sobha_dream_acres_e_n_mid",
-          "v": "sobha_dream_acres_junc_e",
-          "road": "Outer Ring Expressway",
-          "type": "secondary"
-        },
-        {
-          "u": "sobha_dream_acres_junc_e",
-          "v": "sobha_dream_acres_e_s_mid",
-          "road": "Outer Ring Expressway",
-          "type": "secondary"
-        },
-        {
-          "u": "sobha_dream_acres_e_s_mid",
-          "v": "sobha_dream_acres_s_e",
-          "road": "Outer Ring Expressway",
+          "u": "sda_wing_s_ctr",
+          "v": "sda_wing_se",
+          "road": "South Perimeter Ring",
           "type": "secondary"
         }
       ]
@@ -20690,489 +19923,689 @@ window.LAYOUTS = {
       "1": {
         "id": "1",
         "number": "Rainforest Wing - 101",
-        "road": "Panathur Link",
+        "road": "Rainforest Boulevard",
         "block": "Rainforest Wing",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 227,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_w",
+        "roadNode": "sda_wing_nw",
         "color": "cyan"
       },
       "2": {
         "id": "2",
         "number": "Rainforest Wing - 102",
-        "road": "Panathur Link",
+        "road": "Rainforest Boulevard",
         "block": "Rainforest Wing",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 249,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_w",
+        "roadNode": "sda_wing_nw",
         "color": "cyan"
       },
       "3": {
         "id": "3",
         "number": "Rainforest Wing - 201",
-        "road": "Panathur Link",
+        "road": "Rainforest Boulevard",
         "block": "Rainforest Wing",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 271,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_w",
+        "roadNode": "sda_wing_nw",
         "color": "cyan"
       },
       "4": {
         "id": "4",
         "number": "Rainforest Wing - 202",
-        "road": "Panathur Link",
+        "road": "Rainforest Boulevard",
         "block": "Rainforest Wing",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 293,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_w",
+        "roadNode": "sda_wing_nw",
         "color": "cyan"
       },
       "5": {
         "id": "5",
         "number": "Rainforest Wing - 301",
-        "road": "Panathur Link",
+        "road": "Rainforest Boulevard",
         "block": "Rainforest Wing",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 227,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_w",
+        "roadNode": "sda_wing_nw",
         "color": "cyan"
       },
       "6": {
         "id": "6",
         "number": "Rainforest Wing - 302",
-        "road": "Panathur Link",
+        "road": "Rainforest Boulevard",
         "block": "Rainforest Wing",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 249,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_w",
+        "roadNode": "sda_wing_nw",
         "color": "cyan"
       },
       "7": {
         "id": "7",
         "number": "Rainforest Wing - 401",
-        "road": "Panathur Link",
+        "road": "Rainforest Boulevard",
         "block": "Rainforest Wing",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 271,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_w",
+        "roadNode": "sda_wing_nw",
         "color": "cyan"
       },
       "8": {
         "id": "8",
         "number": "Rainforest Wing - 402",
-        "road": "Panathur Link",
+        "road": "Rainforest Boulevard",
         "block": "Rainforest Wing",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 293,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_w",
+        "roadNode": "sda_wing_nw",
         "color": "cyan"
       },
       "9": {
         "id": "9",
-        "number": "Coral Wing - 101",
-        "road": "Panathur Link",
-        "block": "Coral Wing",
+        "number": "Pine Wing - 101",
+        "road": "Oasis Central Drive",
+        "block": "Pine Wing",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 547,
+        "y": 159,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_mid",
+        "roadNode": "sda_wing_n_ctr",
         "color": "cyan"
       },
       "10": {
         "id": "10",
-        "number": "Coral Wing - 102",
-        "road": "Panathur Link",
-        "block": "Coral Wing",
+        "number": "Pine Wing - 102",
+        "road": "Oasis Central Drive",
+        "block": "Pine Wing",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 569,
+        "y": 159,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_mid",
+        "roadNode": "sda_wing_n_ctr",
         "color": "cyan"
       },
       "11": {
         "id": "11",
-        "number": "Coral Wing - 201",
-        "road": "Panathur Link",
-        "block": "Coral Wing",
+        "number": "Pine Wing - 201",
+        "road": "Oasis Central Drive",
+        "block": "Pine Wing",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 591,
+        "y": 159,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_mid",
+        "roadNode": "sda_wing_n_ctr",
         "color": "cyan"
       },
       "12": {
         "id": "12",
-        "number": "Coral Wing - 202",
-        "road": "Panathur Link",
-        "block": "Coral Wing",
+        "number": "Pine Wing - 202",
+        "road": "Oasis Central Drive",
+        "block": "Pine Wing",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 613,
+        "y": 159,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_mid",
+        "roadNode": "sda_wing_n_ctr",
         "color": "cyan"
       },
       "13": {
         "id": "13",
-        "number": "Coral Wing - 301",
-        "road": "Panathur Link",
-        "block": "Coral Wing",
+        "number": "Pine Wing - 301",
+        "road": "Oasis Central Drive",
+        "block": "Pine Wing",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 547,
+        "y": 181,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_mid",
+        "roadNode": "sda_wing_n_ctr",
         "color": "cyan"
       },
       "14": {
         "id": "14",
-        "number": "Coral Wing - 302",
-        "road": "Panathur Link",
-        "block": "Coral Wing",
+        "number": "Pine Wing - 302",
+        "road": "Oasis Central Drive",
+        "block": "Pine Wing",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 569,
+        "y": 181,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_mid",
+        "roadNode": "sda_wing_n_ctr",
         "color": "cyan"
       },
       "15": {
         "id": "15",
-        "number": "Coral Wing - 401",
-        "road": "Panathur Link",
-        "block": "Coral Wing",
+        "number": "Pine Wing - 401",
+        "road": "Oasis Central Drive",
+        "block": "Pine Wing",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 591,
+        "y": 181,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_mid",
+        "roadNode": "sda_wing_n_ctr",
         "color": "cyan"
       },
       "16": {
         "id": "16",
-        "number": "Coral Wing - 402",
-        "road": "Panathur Link",
-        "block": "Coral Wing",
+        "number": "Pine Wing - 402",
+        "road": "Oasis Central Drive",
+        "block": "Pine Wing",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 613,
+        "y": 181,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_mid",
+        "roadNode": "sda_wing_n_ctr",
         "color": "cyan"
       },
       "17": {
         "id": "17",
-        "number": "Palm Wing - 101",
-        "road": "Panathur Link",
-        "block": "Palm Wing",
+        "number": "Coral Wing - 101",
+        "road": "Coral Boulevard",
+        "block": "Coral Wing",
         "facing": "South",
-        "x": 807,
-        "y": 189,
+        "x": 867,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_e",
+        "roadNode": "sda_wing_ne",
         "color": "cyan"
       },
       "18": {
         "id": "18",
-        "number": "Palm Wing - 102",
-        "road": "Panathur Link",
-        "block": "Palm Wing",
+        "number": "Coral Wing - 102",
+        "road": "Coral Boulevard",
+        "block": "Coral Wing",
         "facing": "South",
-        "x": 829,
-        "y": 189,
+        "x": 889,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_e",
+        "roadNode": "sda_wing_ne",
         "color": "cyan"
       },
       "19": {
         "id": "19",
-        "number": "Palm Wing - 201",
-        "road": "Panathur Link",
-        "block": "Palm Wing",
+        "number": "Coral Wing - 201",
+        "road": "Coral Boulevard",
+        "block": "Coral Wing",
         "facing": "South",
-        "x": 851,
-        "y": 189,
+        "x": 911,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_e",
+        "roadNode": "sda_wing_ne",
         "color": "cyan"
       },
       "20": {
         "id": "20",
-        "number": "Palm Wing - 202",
-        "road": "Panathur Link",
-        "block": "Palm Wing",
+        "number": "Coral Wing - 202",
+        "road": "Coral Boulevard",
+        "block": "Coral Wing",
         "facing": "South",
-        "x": 873,
-        "y": 189,
+        "x": 933,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_e",
+        "roadNode": "sda_wing_ne",
         "color": "cyan"
       },
       "21": {
         "id": "21",
-        "number": "Palm Wing - 301",
-        "road": "Panathur Link",
-        "block": "Palm Wing",
+        "number": "Coral Wing - 301",
+        "road": "Coral Boulevard",
+        "block": "Coral Wing",
         "facing": "South",
-        "x": 807,
-        "y": 211,
+        "x": 867,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_e",
+        "roadNode": "sda_wing_ne",
         "color": "cyan"
       },
       "22": {
         "id": "22",
-        "number": "Palm Wing - 302",
-        "road": "Panathur Link",
-        "block": "Palm Wing",
+        "number": "Coral Wing - 302",
+        "road": "Coral Boulevard",
+        "block": "Coral Wing",
         "facing": "South",
-        "x": 829,
-        "y": 211,
+        "x": 889,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_e",
+        "roadNode": "sda_wing_ne",
         "color": "cyan"
       },
       "23": {
         "id": "23",
-        "number": "Palm Wing - 401",
-        "road": "Panathur Link",
-        "block": "Palm Wing",
+        "number": "Coral Wing - 401",
+        "road": "Coral Boulevard",
+        "block": "Coral Wing",
         "facing": "South",
-        "x": 851,
-        "y": 211,
+        "x": 911,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_e",
+        "roadNode": "sda_wing_ne",
         "color": "cyan"
       },
       "24": {
         "id": "24",
-        "number": "Palm Wing - 402",
-        "road": "Panathur Link",
-        "block": "Palm Wing",
+        "number": "Coral Wing - 402",
+        "road": "Coral Boulevard",
+        "block": "Coral Wing",
         "facing": "South",
-        "x": 873,
-        "y": 211,
+        "x": 933,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_n_e",
+        "roadNode": "sda_wing_ne",
         "color": "cyan"
       },
       "25": {
         "id": "25",
-        "number": "Spring Wing - 101",
-        "road": "Clubhouse Central Way",
-        "block": "Spring Wing",
+        "number": "Palm Wing - 101",
+        "road": "Palm Boulevard",
+        "block": "Palm Wing",
         "facing": "North",
-        "x": 347,
-        "y": 669,
+        "x": 227,
+        "y": 709,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_s_w",
+        "roadNode": "sda_wing_sw",
         "color": "cyan"
       },
       "26": {
         "id": "26",
-        "number": "Spring Wing - 102",
-        "road": "Clubhouse Central Way",
-        "block": "Spring Wing",
+        "number": "Palm Wing - 102",
+        "road": "Palm Boulevard",
+        "block": "Palm Wing",
         "facing": "North",
-        "x": 369,
-        "y": 669,
+        "x": 249,
+        "y": 709,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_s_w",
+        "roadNode": "sda_wing_sw",
         "color": "cyan"
       },
       "27": {
         "id": "27",
-        "number": "Spring Wing - 201",
-        "road": "Clubhouse Central Way",
-        "block": "Spring Wing",
+        "number": "Palm Wing - 201",
+        "road": "Palm Boulevard",
+        "block": "Palm Wing",
         "facing": "North",
-        "x": 391,
-        "y": 669,
+        "x": 271,
+        "y": 709,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_s_w",
+        "roadNode": "sda_wing_sw",
         "color": "cyan"
       },
       "28": {
         "id": "28",
-        "number": "Spring Wing - 202",
-        "road": "Clubhouse Central Way",
-        "block": "Spring Wing",
+        "number": "Palm Wing - 202",
+        "road": "Palm Boulevard",
+        "block": "Palm Wing",
         "facing": "North",
-        "x": 413,
-        "y": 669,
+        "x": 293,
+        "y": 709,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_s_w",
+        "roadNode": "sda_wing_sw",
         "color": "cyan"
       },
       "29": {
         "id": "29",
-        "number": "Spring Wing - 301",
-        "road": "Clubhouse Central Way",
-        "block": "Spring Wing",
+        "number": "Palm Wing - 301",
+        "road": "Palm Boulevard",
+        "block": "Palm Wing",
         "facing": "North",
-        "x": 347,
-        "y": 691,
+        "x": 227,
+        "y": 731,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_s_w",
+        "roadNode": "sda_wing_sw",
         "color": "cyan"
       },
       "30": {
         "id": "30",
-        "number": "Spring Wing - 302",
-        "road": "Clubhouse Central Way",
-        "block": "Spring Wing",
+        "number": "Palm Wing - 302",
+        "road": "Palm Boulevard",
+        "block": "Palm Wing",
         "facing": "North",
-        "x": 369,
-        "y": 691,
+        "x": 249,
+        "y": 731,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_s_w",
+        "roadNode": "sda_wing_sw",
         "color": "cyan"
       },
       "31": {
         "id": "31",
-        "number": "Spring Wing - 401",
-        "road": "Clubhouse Central Way",
-        "block": "Spring Wing",
+        "number": "Palm Wing - 401",
+        "road": "Palm Boulevard",
+        "block": "Palm Wing",
         "facing": "North",
-        "x": 391,
-        "y": 691,
+        "x": 271,
+        "y": 731,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_s_w",
+        "roadNode": "sda_wing_sw",
         "color": "cyan"
       },
       "32": {
         "id": "32",
-        "number": "Spring Wing - 402",
-        "road": "Clubhouse Central Way",
-        "block": "Spring Wing",
+        "number": "Palm Wing - 402",
+        "road": "Palm Boulevard",
+        "block": "Palm Wing",
         "facing": "North",
-        "x": 413,
-        "y": 691,
+        "x": 293,
+        "y": 731,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_dream_acres_s_w",
+        "roadNode": "sda_wing_sw",
+        "color": "cyan"
+      },
+      "33": {
+        "id": "33",
+        "number": "Cedar Wing - 101",
+        "road": "Oasis Central Drive",
+        "block": "Cedar Wing",
+        "facing": "North",
+        "x": 547,
+        "y": 729,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_s_ctr",
+        "color": "cyan"
+      },
+      "34": {
+        "id": "34",
+        "number": "Cedar Wing - 102",
+        "road": "Oasis Central Drive",
+        "block": "Cedar Wing",
+        "facing": "North",
+        "x": 569,
+        "y": 729,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_s_ctr",
+        "color": "cyan"
+      },
+      "35": {
+        "id": "35",
+        "number": "Cedar Wing - 201",
+        "road": "Oasis Central Drive",
+        "block": "Cedar Wing",
+        "facing": "North",
+        "x": 591,
+        "y": 729,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_s_ctr",
+        "color": "cyan"
+      },
+      "36": {
+        "id": "36",
+        "number": "Cedar Wing - 202",
+        "road": "Oasis Central Drive",
+        "block": "Cedar Wing",
+        "facing": "North",
+        "x": 613,
+        "y": 729,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_s_ctr",
+        "color": "cyan"
+      },
+      "37": {
+        "id": "37",
+        "number": "Cedar Wing - 301",
+        "road": "Oasis Central Drive",
+        "block": "Cedar Wing",
+        "facing": "North",
+        "x": 547,
+        "y": 751,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_s_ctr",
+        "color": "cyan"
+      },
+      "38": {
+        "id": "38",
+        "number": "Cedar Wing - 302",
+        "road": "Oasis Central Drive",
+        "block": "Cedar Wing",
+        "facing": "North",
+        "x": 569,
+        "y": 751,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_s_ctr",
+        "color": "cyan"
+      },
+      "39": {
+        "id": "39",
+        "number": "Cedar Wing - 401",
+        "road": "Oasis Central Drive",
+        "block": "Cedar Wing",
+        "facing": "North",
+        "x": 591,
+        "y": 751,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_s_ctr",
+        "color": "cyan"
+      },
+      "40": {
+        "id": "40",
+        "number": "Cedar Wing - 402",
+        "road": "Oasis Central Drive",
+        "block": "Cedar Wing",
+        "facing": "North",
+        "x": 613,
+        "y": 751,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_s_ctr",
+        "color": "cyan"
+      },
+      "41": {
+        "id": "41",
+        "number": "Spring Wing - 101",
+        "road": "Spring Avenue",
+        "block": "Spring Wing",
+        "facing": "North",
+        "x": 867,
+        "y": 709,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_se",
+        "color": "cyan"
+      },
+      "42": {
+        "id": "42",
+        "number": "Spring Wing - 102",
+        "road": "Spring Avenue",
+        "block": "Spring Wing",
+        "facing": "North",
+        "x": 889,
+        "y": 709,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_se",
+        "color": "cyan"
+      },
+      "43": {
+        "id": "43",
+        "number": "Spring Wing - 201",
+        "road": "Spring Avenue",
+        "block": "Spring Wing",
+        "facing": "North",
+        "x": 911,
+        "y": 709,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_se",
+        "color": "cyan"
+      },
+      "44": {
+        "id": "44",
+        "number": "Spring Wing - 202",
+        "road": "Spring Avenue",
+        "block": "Spring Wing",
+        "facing": "North",
+        "x": 933,
+        "y": 709,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_se",
+        "color": "cyan"
+      },
+      "45": {
+        "id": "45",
+        "number": "Spring Wing - 301",
+        "road": "Spring Avenue",
+        "block": "Spring Wing",
+        "facing": "North",
+        "x": 867,
+        "y": 731,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_se",
+        "color": "cyan"
+      },
+      "46": {
+        "id": "46",
+        "number": "Spring Wing - 302",
+        "road": "Spring Avenue",
+        "block": "Spring Wing",
+        "facing": "North",
+        "x": 889,
+        "y": 731,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_se",
+        "color": "cyan"
+      },
+      "47": {
+        "id": "47",
+        "number": "Spring Wing - 401",
+        "road": "Spring Avenue",
+        "block": "Spring Wing",
+        "facing": "North",
+        "x": 911,
+        "y": 731,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_se",
+        "color": "cyan"
+      },
+      "48": {
+        "id": "48",
+        "number": "Spring Wing - 402",
+        "road": "Spring Avenue",
+        "block": "Spring Wing",
+        "facing": "North",
+        "x": 933,
+        "y": 731,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sda_wing_se",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "sobha_dream_acres_gate_1",
-        "name": "Sobha Dream Acres Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "sobha_dream_acres_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "sobha_dream_acres_gate_2",
-        "name": "Sobha Dream Acres Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "sobha_dream_acres_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "sobha_dream_acres_club",
-        "name": "Clubhouse 1 & Olympic Lap Pool",
-        "description": "Massive clubhouse, 5 swimming pools, tennis and squash courts",
+        "name": "Clubhouse Oasis 1",
+        "description": "Grand 5-pool sports complex with squash, badminton and bowling",
         "x": 620,
         "y": 440,
-        "roadNode": "sobha_dream_acres_junc_ctr",
+        "roadNode": "sda_junc_ctr",
         "icon": "\ud83c\udfca",
         "type": "clubhouse"
+      },
+      {
+        "id": "sobha_dream_acres_sports",
+        "name": "Sobha Athletic Stadium",
+        "description": "Full-size cricket ground, football pitch and synthetic running tracks",
+        "x": 960,
+        "y": 260,
+        "roadNode": "sda_wing_ne",
+        "icon": "\ud83c\udfcf",
+        "type": "sports"
       }
     ],
     "roadLabels": [
       {
-        "name": "DREAM ACRES BOULEVARD",
+        "name": "DREAM ACRES GRAND PARKWAY",
         "x": 620,
-        "y": 490,
+        "y": 460,
         "vertical": false
       },
       {
-        "name": "PANATHUR LINK",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "CLUBHOUSE CENTRAL WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "BALAGERE PARKWAY",
-        "x": 305,
-        "y": 375,
+        "name": "RAINFOREST BOULEVARD",
+        "x": 270,
+        "y": 350,
         "vertical": true
       },
       {
-        "name": "OUTER RING EXPRESSWAY",
-        "x": 935,
-        "y": 375,
+        "name": "CORAL BOULEVARD",
+        "x": 950,
+        "y": 350,
+        "vertical": true
+      },
+      {
+        "name": "PALM BOULEVARD",
+        "x": 270,
+        "y": 610,
+        "vertical": true
+      },
+      {
+        "name": "SPRING AVENUE",
+        "x": 950,
+        "y": 610,
         "vertical": true
       }
     ],
-    "defaultStartGate": "sobha_dream_acres_gate_1",
+    "defaultStartGate": "sda_gate_west",
     "sectors": [
       "Rainforest Wing",
+      "Pine Wing",
       "Coral Wing",
       "Palm Wing",
+      "Cedar Wing",
       "Spring Wing"
     ]
   },
@@ -21183,263 +20616,164 @@ window.LAYOUTS = {
     "zone": "whitefield",
     "type": "Disney-Themed Township (Villas & High-Rises)",
     "unitType": "Apartment / Tower",
-    "unitCount": 24,
+    "unitCount": 32,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "90,480 200,160 620,130 1040,160 1120,480 1040,820 620,840 200,820 Z",
+    "borderTreesPath": "M 90,480 L 200,160 L 620,130 L 1040,160 L 1120,480 L 1040,820 L 620,840 L 200,820 Z",
+    "waterBody": {
+      "x": 200,
+      "y": 140,
+      "w": 820,
+      "h": 80,
+      "rx": 18,
+      "label": "Varthur Lakefront Promenade & Water Sports"
     },
+    "gardenPark": {
+      "x": 440,
+      "y": 440,
+      "w": 360,
+      "h": 70,
+      "rx": 10,
+      "label": "Disney Fantasy Fairway Gardens"
+    },
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "prestige_lakeside_gate_1": {
-          "id": "prestige_lakeside_gate_1",
+        "plh_gate_main": {
+          "id": "plh_gate_main",
           "x": 90,
           "y": 480,
-          "label": "Prestige Lakeside Habitat Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Varthur Main Road)"
         },
-        "prestige_lakeside_entry": {
-          "id": "prestige_lakeside_entry",
-          "x": 180,
+        "plh_junc_w": {
+          "id": "plh_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Lakeside Boulevard West"
         },
-        "prestige_lakeside_junc_w": {
-          "id": "prestige_lakeside_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Fairytale Way West Junction"
-        },
-        "prestige_lakeside_junc_ctr": {
-          "id": "prestige_lakeside_junc_ctr",
+        "plh_junc_ctr": {
+          "id": "plh_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Disney Fantasy Plaza"
         },
-        "prestige_lakeside_junc_e": {
-          "id": "prestige_lakeside_junc_e",
-          "x": 920,
+        "plh_junc_e": {
+          "id": "plh_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Orchard Link East Junction"
+          "label": "Lakeside Boulevard East"
         },
-        "prestige_lakeside_gate_2": {
-          "id": "prestige_lakeside_gate_2",
+        "plh_gate_lake": {
+          "id": "plh_gate_lake",
           "x": 1110,
           "y": 480,
-          "label": "Prestige Lakeside Habitat Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Lake Promenade Link)"
         },
-        "prestige_lakeside_n_w": {
-          "id": "prestige_lakeside_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Disney Promenade West"
+        "plh_lake_a": {
+          "id": "plh_lake_a",
+          "x": 300,
+          "y": 280,
+          "label": "Lakeview Tower A Parkway"
         },
-        "prestige_lakeside_n_mid": {
-          "id": "prestige_lakeside_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Disney Promenade North Plaza"
+        "plh_lake_b": {
+          "id": "plh_lake_b",
+          "x": 600,
+          "y": 260,
+          "label": "Lakeview Tower B Parkway"
         },
-        "prestige_lakeside_n_e": {
-          "id": "prestige_lakeside_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Disney Promenade East"
+        "plh_lake_c": {
+          "id": "plh_lake_c",
+          "x": 900,
+          "y": 280,
+          "label": "Lakeview Tower C Parkway"
         },
-        "prestige_lakeside_s_w": {
-          "id": "prestige_lakeside_s_w",
-          "x": 320,
+        "plh_villa_s": {
+          "id": "plh_villa_s",
+          "x": 600,
           "y": 690,
-          "label": "Varthur Lake Parkway West"
-        },
-        "prestige_lakeside_s_mid": {
-          "id": "prestige_lakeside_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Varthur Lake Parkway South Plaza"
-        },
-        "prestige_lakeside_s_e": {
-          "id": "prestige_lakeside_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Varthur Lake Parkway East"
-        },
-        "prestige_lakeside_w_n_mid": {
-          "id": "prestige_lakeside_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Fairytale Way North Link"
-        },
-        "prestige_lakeside_w_s_mid": {
-          "id": "prestige_lakeside_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Fairytale Way South Link"
-        },
-        "prestige_lakeside_ctr_n_mid": {
-          "id": "prestige_lakeside_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "prestige_lakeside_ctr_s_mid": {
-          "id": "prestige_lakeside_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "prestige_lakeside_e_n_mid": {
-          "id": "prestige_lakeside_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Orchard Link North Link"
-        },
-        "prestige_lakeside_e_s_mid": {
-          "id": "prestige_lakeside_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Orchard Link South Link"
+          "label": "Disney Villa Fairway Cross"
         }
       },
       "edges": [
         {
-          "u": "prestige_lakeside_gate_1",
-          "v": "prestige_lakeside_entry",
+          "u": "plh_gate_main",
+          "v": "plh_junc_w",
           "road": "Lakeside Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_lakeside_entry",
-          "v": "prestige_lakeside_junc_w",
+          "u": "plh_junc_w",
+          "v": "plh_junc_ctr",
           "road": "Lakeside Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_lakeside_junc_w",
-          "v": "prestige_lakeside_junc_ctr",
+          "u": "plh_junc_ctr",
+          "v": "plh_junc_e",
           "road": "Lakeside Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_lakeside_junc_ctr",
-          "v": "prestige_lakeside_junc_e",
+          "u": "plh_junc_e",
+          "v": "plh_gate_lake",
           "road": "Lakeside Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_lakeside_junc_e",
-          "v": "prestige_lakeside_gate_2",
-          "road": "Lakeside Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_lakeside_n_w",
-          "v": "prestige_lakeside_n_mid",
-          "road": "Disney Promenade",
+          "u": "plh_junc_w",
+          "v": "plh_lake_a",
+          "road": "Lakeview Drive",
           "type": "secondary"
         },
         {
-          "u": "prestige_lakeside_n_mid",
-          "v": "prestige_lakeside_n_e",
-          "road": "Disney Promenade",
+          "u": "plh_lake_a",
+          "v": "plh_lake_b",
+          "road": "Lakeview Drive",
           "type": "secondary"
         },
         {
-          "u": "prestige_lakeside_s_w",
-          "v": "prestige_lakeside_s_mid",
-          "road": "Varthur Lake Parkway",
+          "u": "plh_lake_b",
+          "v": "plh_lake_c",
+          "road": "Lakeview Drive",
           "type": "secondary"
         },
         {
-          "u": "prestige_lakeside_s_mid",
-          "v": "prestige_lakeside_s_e",
-          "road": "Varthur Lake Parkway",
+          "u": "plh_lake_c",
+          "v": "plh_junc_e",
+          "road": "Lakeview Drive",
           "type": "secondary"
         },
         {
-          "u": "prestige_lakeside_n_w",
-          "v": "prestige_lakeside_w_n_mid",
-          "road": "Fairytale Way",
+          "u": "plh_junc_w",
+          "v": "plh_villa_s",
+          "road": "Disney Fairway",
           "type": "secondary"
         },
         {
-          "u": "prestige_lakeside_w_n_mid",
-          "v": "prestige_lakeside_junc_w",
-          "road": "Fairytale Way",
+          "u": "plh_villa_s",
+          "v": "plh_junc_e",
+          "road": "Disney Fairway",
           "type": "secondary"
         },
         {
-          "u": "prestige_lakeside_junc_w",
-          "v": "prestige_lakeside_w_s_mid",
-          "road": "Fairytale Way",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_lakeside_w_s_mid",
-          "v": "prestige_lakeside_s_w",
-          "road": "Fairytale Way",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_lakeside_n_mid",
-          "v": "prestige_lakeside_ctr_n_mid",
+          "u": "plh_junc_ctr",
+          "v": "plh_villa_s",
           "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_lakeside_ctr_n_mid",
-          "v": "prestige_lakeside_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_lakeside_junc_ctr",
-          "v": "prestige_lakeside_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_lakeside_ctr_s_mid",
-          "v": "prestige_lakeside_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_lakeside_n_e",
-          "v": "prestige_lakeside_e_n_mid",
-          "road": "Orchard Link",
           "type": "secondary"
         },
         {
-          "u": "prestige_lakeside_e_n_mid",
-          "v": "prestige_lakeside_junc_e",
-          "road": "Orchard Link",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_lakeside_junc_e",
-          "v": "prestige_lakeside_e_s_mid",
-          "road": "Orchard Link",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_lakeside_e_s_mid",
-          "v": "prestige_lakeside_s_e",
-          "road": "Orchard Link",
+          "u": "plh_junc_ctr",
+          "v": "plh_lake_b",
+          "road": "Central Link",
           "type": "secondary"
         }
       ]
@@ -21447,385 +20781,468 @@ window.LAYOUTS = {
     "plots": {
       "1": {
         "id": "1",
-        "number": "Tower A - 101",
-        "road": "Disney Promenade",
-        "block": "Tower A",
+        "number": "Lakeview Tower A - 101",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower A",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 267,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_w",
+        "roadNode": "plh_lake_a",
         "color": "cyan"
       },
       "2": {
         "id": "2",
-        "number": "Tower A - 102",
-        "road": "Disney Promenade",
-        "block": "Tower A",
+        "number": "Lakeview Tower A - 102",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower A",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 289,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_w",
+        "roadNode": "plh_lake_a",
         "color": "cyan"
       },
       "3": {
         "id": "3",
-        "number": "Tower A - 201",
-        "road": "Disney Promenade",
-        "block": "Tower A",
+        "number": "Lakeview Tower A - 201",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower A",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 311,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_w",
+        "roadNode": "plh_lake_a",
         "color": "cyan"
       },
       "4": {
         "id": "4",
-        "number": "Tower A - 202",
-        "road": "Disney Promenade",
-        "block": "Tower A",
+        "number": "Lakeview Tower A - 202",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower A",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 333,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_w",
+        "roadNode": "plh_lake_a",
         "color": "cyan"
       },
       "5": {
         "id": "5",
-        "number": "Tower A - 301",
-        "road": "Disney Promenade",
-        "block": "Tower A",
+        "number": "Lakeview Tower A - 301",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower A",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 267,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_w",
+        "roadNode": "plh_lake_a",
         "color": "cyan"
       },
       "6": {
         "id": "6",
-        "number": "Tower A - 302",
-        "road": "Disney Promenade",
-        "block": "Tower A",
+        "number": "Lakeview Tower A - 302",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower A",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 289,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_w",
+        "roadNode": "plh_lake_a",
         "color": "cyan"
       },
       "7": {
         "id": "7",
-        "number": "Tower A - 401",
-        "road": "Disney Promenade",
-        "block": "Tower A",
+        "number": "Lakeview Tower A - 401",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower A",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 311,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_w",
+        "roadNode": "plh_lake_a",
         "color": "cyan"
       },
       "8": {
         "id": "8",
-        "number": "Tower A - 402",
-        "road": "Disney Promenade",
-        "block": "Tower A",
+        "number": "Lakeview Tower A - 402",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower A",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 333,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_w",
+        "roadNode": "plh_lake_a",
         "color": "cyan"
       },
       "9": {
         "id": "9",
-        "number": "Tower B - 101",
-        "road": "Disney Promenade",
-        "block": "Tower B",
+        "number": "Lakeview Tower B - 101",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower B",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 567,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_mid",
+        "roadNode": "plh_lake_b",
         "color": "cyan"
       },
       "10": {
         "id": "10",
-        "number": "Tower B - 102",
-        "road": "Disney Promenade",
-        "block": "Tower B",
+        "number": "Lakeview Tower B - 102",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower B",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 589,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_mid",
+        "roadNode": "plh_lake_b",
         "color": "cyan"
       },
       "11": {
         "id": "11",
-        "number": "Tower B - 201",
-        "road": "Disney Promenade",
-        "block": "Tower B",
+        "number": "Lakeview Tower B - 201",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower B",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 611,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_mid",
+        "roadNode": "plh_lake_b",
         "color": "cyan"
       },
       "12": {
         "id": "12",
-        "number": "Tower B - 202",
-        "road": "Disney Promenade",
-        "block": "Tower B",
+        "number": "Lakeview Tower B - 202",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower B",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 633,
+        "y": 209,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_mid",
+        "roadNode": "plh_lake_b",
         "color": "cyan"
       },
       "13": {
         "id": "13",
-        "number": "Tower B - 301",
-        "road": "Disney Promenade",
-        "block": "Tower B",
+        "number": "Lakeview Tower B - 301",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower B",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 567,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_mid",
+        "roadNode": "plh_lake_b",
         "color": "cyan"
       },
       "14": {
         "id": "14",
-        "number": "Tower B - 302",
-        "road": "Disney Promenade",
-        "block": "Tower B",
+        "number": "Lakeview Tower B - 302",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower B",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 589,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_mid",
+        "roadNode": "plh_lake_b",
         "color": "cyan"
       },
       "15": {
         "id": "15",
-        "number": "Tower B - 401",
-        "road": "Disney Promenade",
-        "block": "Tower B",
+        "number": "Lakeview Tower B - 401",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower B",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 611,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_mid",
+        "roadNode": "plh_lake_b",
         "color": "cyan"
       },
       "16": {
         "id": "16",
-        "number": "Tower B - 402",
-        "road": "Disney Promenade",
-        "block": "Tower B",
+        "number": "Lakeview Tower B - 402",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower B",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 633,
+        "y": 231,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_mid",
+        "roadNode": "plh_lake_b",
         "color": "cyan"
       },
       "17": {
         "id": "17",
-        "number": "Disney Villa Enclave - 101",
-        "road": "Disney Promenade",
-        "block": "Disney Villa Enclave",
+        "number": "Lakeview Tower C - 101",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower C",
         "facing": "South",
-        "x": 807,
-        "y": 189,
+        "x": 867,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_e",
+        "roadNode": "plh_lake_c",
         "color": "cyan"
       },
       "18": {
         "id": "18",
-        "number": "Disney Villa Enclave - 102",
-        "road": "Disney Promenade",
-        "block": "Disney Villa Enclave",
+        "number": "Lakeview Tower C - 102",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower C",
         "facing": "South",
-        "x": 829,
-        "y": 189,
+        "x": 889,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_e",
+        "roadNode": "plh_lake_c",
         "color": "cyan"
       },
       "19": {
         "id": "19",
-        "number": "Disney Villa Enclave - 201",
-        "road": "Disney Promenade",
-        "block": "Disney Villa Enclave",
+        "number": "Lakeview Tower C - 201",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower C",
         "facing": "South",
-        "x": 851,
-        "y": 189,
+        "x": 911,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_e",
+        "roadNode": "plh_lake_c",
         "color": "cyan"
       },
       "20": {
         "id": "20",
-        "number": "Disney Villa Enclave - 202",
-        "road": "Disney Promenade",
-        "block": "Disney Villa Enclave",
+        "number": "Lakeview Tower C - 202",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower C",
         "facing": "South",
-        "x": 873,
-        "y": 189,
+        "x": 933,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_e",
+        "roadNode": "plh_lake_c",
         "color": "cyan"
       },
       "21": {
         "id": "21",
-        "number": "Disney Villa Enclave - 301",
-        "road": "Disney Promenade",
-        "block": "Disney Villa Enclave",
+        "number": "Lakeview Tower C - 301",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower C",
         "facing": "South",
-        "x": 807,
-        "y": 211,
+        "x": 867,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_e",
+        "roadNode": "plh_lake_c",
         "color": "cyan"
       },
       "22": {
         "id": "22",
-        "number": "Disney Villa Enclave - 302",
-        "road": "Disney Promenade",
-        "block": "Disney Villa Enclave",
+        "number": "Lakeview Tower C - 302",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower C",
         "facing": "South",
-        "x": 829,
-        "y": 211,
+        "x": 889,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_e",
+        "roadNode": "plh_lake_c",
         "color": "cyan"
       },
       "23": {
         "id": "23",
-        "number": "Disney Villa Enclave - 401",
-        "road": "Disney Promenade",
-        "block": "Disney Villa Enclave",
+        "number": "Lakeview Tower C - 401",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower C",
         "facing": "South",
-        "x": 851,
-        "y": 211,
+        "x": 911,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_e",
+        "roadNode": "plh_lake_c",
         "color": "cyan"
       },
       "24": {
         "id": "24",
-        "number": "Disney Villa Enclave - 402",
-        "road": "Disney Promenade",
-        "block": "Disney Villa Enclave",
+        "number": "Lakeview Tower C - 402",
+        "road": "Lakeside Boulevard",
+        "block": "Lakeview Tower C",
         "facing": "South",
-        "x": 873,
-        "y": 211,
+        "x": 933,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_lakeside_n_e",
+        "roadNode": "plh_lake_c",
+        "color": "cyan"
+      },
+      "25": {
+        "id": "25",
+        "number": "Disney Villa Enclave - 101",
+        "road": "Disney Fairway",
+        "block": "Disney Villa Enclave",
+        "facing": "North",
+        "x": 567,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "plh_villa_s",
+        "color": "cyan"
+      },
+      "26": {
+        "id": "26",
+        "number": "Disney Villa Enclave - 102",
+        "road": "Disney Fairway",
+        "block": "Disney Villa Enclave",
+        "facing": "North",
+        "x": 589,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "plh_villa_s",
+        "color": "cyan"
+      },
+      "27": {
+        "id": "27",
+        "number": "Disney Villa Enclave - 201",
+        "road": "Disney Fairway",
+        "block": "Disney Villa Enclave",
+        "facing": "North",
+        "x": 611,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "plh_villa_s",
+        "color": "cyan"
+      },
+      "28": {
+        "id": "28",
+        "number": "Disney Villa Enclave - 202",
+        "road": "Disney Fairway",
+        "block": "Disney Villa Enclave",
+        "facing": "North",
+        "x": 633,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "plh_villa_s",
+        "color": "cyan"
+      },
+      "29": {
+        "id": "29",
+        "number": "Disney Villa Enclave - 301",
+        "road": "Disney Fairway",
+        "block": "Disney Villa Enclave",
+        "facing": "North",
+        "x": 567,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "plh_villa_s",
+        "color": "cyan"
+      },
+      "30": {
+        "id": "30",
+        "number": "Disney Villa Enclave - 302",
+        "road": "Disney Fairway",
+        "block": "Disney Villa Enclave",
+        "facing": "North",
+        "x": 589,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "plh_villa_s",
+        "color": "cyan"
+      },
+      "31": {
+        "id": "31",
+        "number": "Disney Villa Enclave - 401",
+        "road": "Disney Fairway",
+        "block": "Disney Villa Enclave",
+        "facing": "North",
+        "x": 611,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "plh_villa_s",
+        "color": "cyan"
+      },
+      "32": {
+        "id": "32",
+        "number": "Disney Villa Enclave - 402",
+        "road": "Disney Fairway",
+        "block": "Disney Villa Enclave",
+        "facing": "North",
+        "x": 633,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "plh_villa_s",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "prestige_lakeside_gate_1",
-        "name": "Prestige Lakeside Habitat Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "prestige_lakeside_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "prestige_lakeside_gate_2",
-        "name": "Prestige Lakeside Habitat Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "prestige_lakeside_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "prestige_lakeside_club",
-        "name": "Disney Themed Central Clubhouse",
-        "description": "4 massive clubhouses, multiple pools, cricket pitch & lakefront view",
+        "name": "Disney Grand Fantasy Clubhouse",
+        "description": "Double-deck Olympic pool, bowling alley, cricket pitch & cafe",
         "x": 620,
         "y": 440,
-        "roadNode": "prestige_lakeside_junc_ctr",
+        "roadNode": "plh_junc_ctr",
         "icon": "\ud83c\udff0",
         "type": "clubhouse"
+      },
+      {
+        "id": "prestige_lakeside_lake",
+        "name": "Varthur Lake Viewing Promenade",
+        "description": "Scenic pedestrian boardwalk and sunset pavilion on Varthur waters",
+        "x": 600,
+        "y": 150,
+        "roadNode": "plh_lake_b",
+        "icon": "\ud83c\udf0a",
+        "type": "nature"
       }
     ],
     "roadLabels": [
       {
         "name": "LAKESIDE BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
-        "name": "DISNEY PROMENADE",
-        "x": 620,
-        "y": 255,
+        "name": "LAKEVIEW DRIVE",
+        "x": 600,
+        "y": 245,
         "vertical": false
       },
       {
-        "name": "VARTHUR LAKE PARKWAY",
-        "x": 620,
-        "y": 705,
+        "name": "DISNEY FAIRWAY",
+        "x": 600,
+        "y": 675,
         "vertical": false
-      },
-      {
-        "name": "FAIRYTALE WAY",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "ORCHARD LINK",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "prestige_lakeside_gate_1",
+    "defaultStartGate": "plh_gate_main",
     "sectors": [
-      "Tower A",
-      "Tower B",
+      "Lakeview Tower A",
+      "Lakeview Tower B",
+      "Lakeview Tower C",
       "Disney Villa Enclave"
     ]
   },
@@ -21836,263 +21253,164 @@ window.LAYOUTS = {
     "zone": "whitefield",
     "type": "Iconic Luxury Gated Villa Township",
     "unitType": "Villa",
-    "unitCount": 24,
+    "unitCount": 32,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "80,480 180,140 1060,140 1160,480 1060,820 180,820 Z",
+    "borderTreesPath": "M 80,480 L 180,140 L 1060,140 L 1160,480 L 1060,820 L 180,820 Z",
+    "waterBody": {
+      "x": 520,
+      "y": 440,
+      "w": 200,
+      "h": 75,
+      "rx": 14,
+      "label": "Club Palm Meadows Lagoon Pool"
     },
+    "gardenPark": {
+      "x": 440,
+      "y": 310,
+      "w": 360,
+      "h": 60,
+      "rx": 8,
+      "label": "Royal Palm Tree Avenues & Central Park"
+    },
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "palm_meadows_gate_1": {
-          "id": "palm_meadows_gate_1",
-          "x": 90,
+        "pm_gate_main": {
+          "id": "pm_gate_main",
+          "x": 80,
           "y": 480,
-          "label": "Palm Meadows Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Varthur Main Road)"
         },
-        "palm_meadows_entry": {
-          "id": "palm_meadows_entry",
-          "x": 180,
+        "pm_junc_w": {
+          "id": "pm_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Royal Palm West Cross"
         },
-        "palm_meadows_junc_w": {
-          "id": "palm_meadows_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Meadow Drive West Junction"
-        },
-        "palm_meadows_junc_ctr": {
-          "id": "palm_meadows_junc_ctr",
+        "pm_junc_ctr": {
+          "id": "pm_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Palm Meadows Club Plaza"
         },
-        "palm_meadows_junc_e": {
-          "id": "palm_meadows_junc_e",
-          "x": 920,
+        "pm_junc_e": {
+          "id": "pm_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Whitefield Link East Junction"
+          "label": "Orchid Way East Cross"
         },
-        "palm_meadows_gate_2": {
-          "id": "palm_meadows_gate_2",
-          "x": 1110,
+        "pm_gate_east": {
+          "id": "pm_gate_east",
+          "x": 1140,
           "y": 480,
-          "label": "Palm Meadows Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Airport Link)"
         },
-        "palm_meadows_n_w": {
-          "id": "palm_meadows_n_w",
+        "pm_royal_nw": {
+          "id": "pm_royal_nw",
           "x": 320,
           "y": 270,
-          "label": "Windmill Avenue West"
+          "label": "Royal Palm Drive"
         },
-        "palm_meadows_n_mid": {
-          "id": "palm_meadows_n_mid",
-          "x": 620,
+        "pm_meadow_ne": {
+          "id": "pm_meadow_ne",
+          "x": 860,
           "y": 270,
-          "label": "Windmill Avenue North Plaza"
+          "label": "Meadows Boulevard North"
         },
-        "palm_meadows_n_e": {
-          "id": "palm_meadows_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Windmill Avenue East"
-        },
-        "palm_meadows_s_w": {
-          "id": "palm_meadows_s_w",
+        "pm_orchid_sw": {
+          "id": "pm_orchid_sw",
           "x": 320,
           "y": 690,
-          "label": "Lakeview Parkway West"
+          "label": "Orchid Way South"
         },
-        "palm_meadows_s_mid": {
-          "id": "palm_meadows_s_mid",
-          "x": 620,
+        "pm_hibiscus_se": {
+          "id": "pm_hibiscus_se",
+          "x": 860,
           "y": 690,
-          "label": "Lakeview Parkway South Plaza"
-        },
-        "palm_meadows_s_e": {
-          "id": "palm_meadows_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Lakeview Parkway East"
-        },
-        "palm_meadows_w_n_mid": {
-          "id": "palm_meadows_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Meadow Drive North Link"
-        },
-        "palm_meadows_w_s_mid": {
-          "id": "palm_meadows_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Meadow Drive South Link"
-        },
-        "palm_meadows_ctr_n_mid": {
-          "id": "palm_meadows_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "palm_meadows_ctr_s_mid": {
-          "id": "palm_meadows_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "palm_meadows_e_n_mid": {
-          "id": "palm_meadows_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Whitefield Link North Link"
-        },
-        "palm_meadows_e_s_mid": {
-          "id": "palm_meadows_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Whitefield Link South Link"
+          "label": "Hibiscus Court South"
         }
       },
       "edges": [
         {
-          "u": "palm_meadows_gate_1",
-          "v": "palm_meadows_entry",
+          "u": "pm_gate_main",
+          "v": "pm_junc_w",
           "road": "Palm Meadows Boulevard",
           "type": "primary"
         },
         {
-          "u": "palm_meadows_entry",
-          "v": "palm_meadows_junc_w",
+          "u": "pm_junc_w",
+          "v": "pm_junc_ctr",
           "road": "Palm Meadows Boulevard",
           "type": "primary"
         },
         {
-          "u": "palm_meadows_junc_w",
-          "v": "palm_meadows_junc_ctr",
+          "u": "pm_junc_ctr",
+          "v": "pm_junc_e",
           "road": "Palm Meadows Boulevard",
           "type": "primary"
         },
         {
-          "u": "palm_meadows_junc_ctr",
-          "v": "palm_meadows_junc_e",
+          "u": "pm_junc_e",
+          "v": "pm_gate_east",
           "road": "Palm Meadows Boulevard",
           "type": "primary"
         },
         {
-          "u": "palm_meadows_junc_e",
-          "v": "palm_meadows_gate_2",
-          "road": "Palm Meadows Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "palm_meadows_n_w",
-          "v": "palm_meadows_n_mid",
-          "road": "Windmill Avenue",
+          "u": "pm_junc_w",
+          "v": "pm_royal_nw",
+          "road": "Royal Palm Drive",
           "type": "secondary"
         },
         {
-          "u": "palm_meadows_n_mid",
-          "v": "palm_meadows_n_e",
-          "road": "Windmill Avenue",
+          "u": "pm_royal_nw",
+          "v": "pm_meadow_ne",
+          "road": "Meadows Boulevard",
           "type": "secondary"
         },
         {
-          "u": "palm_meadows_s_w",
-          "v": "palm_meadows_s_mid",
-          "road": "Lakeview Parkway",
+          "u": "pm_meadow_ne",
+          "v": "pm_junc_e",
+          "road": "Meadows Boulevard",
           "type": "secondary"
         },
         {
-          "u": "palm_meadows_s_mid",
-          "v": "palm_meadows_s_e",
-          "road": "Lakeview Parkway",
+          "u": "pm_junc_w",
+          "v": "pm_orchid_sw",
+          "road": "Orchid Way",
           "type": "secondary"
         },
         {
-          "u": "palm_meadows_n_w",
-          "v": "palm_meadows_w_n_mid",
-          "road": "Meadow Drive",
+          "u": "pm_orchid_sw",
+          "v": "pm_hibiscus_se",
+          "road": "Hibiscus Court",
           "type": "secondary"
         },
         {
-          "u": "palm_meadows_w_n_mid",
-          "v": "palm_meadows_junc_w",
-          "road": "Meadow Drive",
+          "u": "pm_hibiscus_se",
+          "v": "pm_junc_e",
+          "road": "Hibiscus Court",
           "type": "secondary"
         },
         {
-          "u": "palm_meadows_junc_w",
-          "v": "palm_meadows_w_s_mid",
-          "road": "Meadow Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "palm_meadows_w_s_mid",
-          "v": "palm_meadows_s_w",
-          "road": "Meadow Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "palm_meadows_n_mid",
-          "v": "palm_meadows_ctr_n_mid",
+          "u": "pm_junc_ctr",
+          "v": "pm_royal_nw",
           "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "palm_meadows_ctr_n_mid",
-          "v": "palm_meadows_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "palm_meadows_junc_ctr",
-          "v": "palm_meadows_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "palm_meadows_ctr_s_mid",
-          "v": "palm_meadows_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "palm_meadows_n_e",
-          "v": "palm_meadows_e_n_mid",
-          "road": "Whitefield Link",
           "type": "secondary"
         },
         {
-          "u": "palm_meadows_e_n_mid",
-          "v": "palm_meadows_junc_e",
-          "road": "Whitefield Link",
-          "type": "secondary"
-        },
-        {
-          "u": "palm_meadows_junc_e",
-          "v": "palm_meadows_e_s_mid",
-          "road": "Whitefield Link",
-          "type": "secondary"
-        },
-        {
-          "u": "palm_meadows_e_s_mid",
-          "v": "palm_meadows_s_e",
-          "road": "Whitefield Link",
+          "u": "pm_junc_ctr",
+          "v": "pm_orchid_sw",
+          "road": "Central Link",
           "type": "secondary"
         }
       ]
@@ -22100,345 +21418,429 @@ window.LAYOUTS = {
     "plots": {
       "1": {
         "id": "1",
-        "number": "Windmill Sector - 101",
-        "road": "Windmill Avenue",
-        "block": "Windmill Sector",
+        "number": "Royal Palm Villas - 101",
+        "road": "Palm Meadows Boulevard",
+        "block": "Royal Palm Villas",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 267,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_w",
+        "roadNode": "pm_royal_nw",
         "color": "cyan"
       },
       "2": {
         "id": "2",
-        "number": "Windmill Sector - 102",
-        "road": "Windmill Avenue",
-        "block": "Windmill Sector",
+        "number": "Royal Palm Villas - 102",
+        "road": "Palm Meadows Boulevard",
+        "block": "Royal Palm Villas",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 289,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_w",
+        "roadNode": "pm_royal_nw",
         "color": "cyan"
       },
       "3": {
         "id": "3",
-        "number": "Windmill Sector - 201",
-        "road": "Windmill Avenue",
-        "block": "Windmill Sector",
+        "number": "Royal Palm Villas - 201",
+        "road": "Palm Meadows Boulevard",
+        "block": "Royal Palm Villas",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 311,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_w",
+        "roadNode": "pm_royal_nw",
         "color": "cyan"
       },
       "4": {
         "id": "4",
-        "number": "Windmill Sector - 202",
-        "road": "Windmill Avenue",
-        "block": "Windmill Sector",
+        "number": "Royal Palm Villas - 202",
+        "road": "Palm Meadows Boulevard",
+        "block": "Royal Palm Villas",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 333,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_w",
+        "roadNode": "pm_royal_nw",
         "color": "cyan"
       },
       "5": {
         "id": "5",
-        "number": "Windmill Sector - 301",
-        "road": "Windmill Avenue",
-        "block": "Windmill Sector",
+        "number": "Royal Palm Villas - 301",
+        "road": "Palm Meadows Boulevard",
+        "block": "Royal Palm Villas",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 267,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_w",
+        "roadNode": "pm_royal_nw",
         "color": "cyan"
       },
       "6": {
         "id": "6",
-        "number": "Windmill Sector - 302",
-        "road": "Windmill Avenue",
-        "block": "Windmill Sector",
+        "number": "Royal Palm Villas - 302",
+        "road": "Palm Meadows Boulevard",
+        "block": "Royal Palm Villas",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 289,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_w",
+        "roadNode": "pm_royal_nw",
         "color": "cyan"
       },
       "7": {
         "id": "7",
-        "number": "Windmill Sector - 401",
-        "road": "Windmill Avenue",
-        "block": "Windmill Sector",
+        "number": "Royal Palm Villas - 401",
+        "road": "Palm Meadows Boulevard",
+        "block": "Royal Palm Villas",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 311,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_w",
+        "roadNode": "pm_royal_nw",
         "color": "cyan"
       },
       "8": {
         "id": "8",
-        "number": "Windmill Sector - 402",
-        "road": "Windmill Avenue",
-        "block": "Windmill Sector",
+        "number": "Royal Palm Villas - 402",
+        "road": "Palm Meadows Boulevard",
+        "block": "Royal Palm Villas",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 333,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_w",
+        "roadNode": "pm_royal_nw",
         "color": "cyan"
       },
       "9": {
         "id": "9",
-        "number": "Palm Boulevard - 101",
-        "road": "Windmill Avenue",
-        "block": "Palm Boulevard",
+        "number": "Meadows Court Villas - 101",
+        "road": "Meadows Boulevard",
+        "block": "Meadows Court Villas",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 827,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_mid",
+        "roadNode": "pm_meadow_ne",
         "color": "cyan"
       },
       "10": {
         "id": "10",
-        "number": "Palm Boulevard - 102",
-        "road": "Windmill Avenue",
-        "block": "Palm Boulevard",
+        "number": "Meadows Court Villas - 102",
+        "road": "Meadows Boulevard",
+        "block": "Meadows Court Villas",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 849,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_mid",
+        "roadNode": "pm_meadow_ne",
         "color": "cyan"
       },
       "11": {
         "id": "11",
-        "number": "Palm Boulevard - 201",
-        "road": "Windmill Avenue",
-        "block": "Palm Boulevard",
+        "number": "Meadows Court Villas - 201",
+        "road": "Meadows Boulevard",
+        "block": "Meadows Court Villas",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 871,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_mid",
+        "roadNode": "pm_meadow_ne",
         "color": "cyan"
       },
       "12": {
         "id": "12",
-        "number": "Palm Boulevard - 202",
-        "road": "Windmill Avenue",
-        "block": "Palm Boulevard",
+        "number": "Meadows Court Villas - 202",
+        "road": "Meadows Boulevard",
+        "block": "Meadows Court Villas",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 893,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_mid",
+        "roadNode": "pm_meadow_ne",
         "color": "cyan"
       },
       "13": {
         "id": "13",
-        "number": "Palm Boulevard - 301",
-        "road": "Windmill Avenue",
-        "block": "Palm Boulevard",
+        "number": "Meadows Court Villas - 301",
+        "road": "Meadows Boulevard",
+        "block": "Meadows Court Villas",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 827,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_mid",
+        "roadNode": "pm_meadow_ne",
         "color": "cyan"
       },
       "14": {
         "id": "14",
-        "number": "Palm Boulevard - 302",
-        "road": "Windmill Avenue",
-        "block": "Palm Boulevard",
+        "number": "Meadows Court Villas - 302",
+        "road": "Meadows Boulevard",
+        "block": "Meadows Court Villas",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 849,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_mid",
+        "roadNode": "pm_meadow_ne",
         "color": "cyan"
       },
       "15": {
         "id": "15",
-        "number": "Palm Boulevard - 401",
-        "road": "Windmill Avenue",
-        "block": "Palm Boulevard",
+        "number": "Meadows Court Villas - 401",
+        "road": "Meadows Boulevard",
+        "block": "Meadows Court Villas",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 871,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_mid",
+        "roadNode": "pm_meadow_ne",
         "color": "cyan"
       },
       "16": {
         "id": "16",
-        "number": "Palm Boulevard - 402",
-        "road": "Windmill Avenue",
-        "block": "Palm Boulevard",
+        "number": "Meadows Court Villas - 402",
+        "road": "Meadows Boulevard",
+        "block": "Meadows Court Villas",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 893,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_mid",
+        "roadNode": "pm_meadow_ne",
         "color": "cyan"
       },
       "17": {
         "id": "17",
-        "number": "Lakeside Court - 101",
-        "road": "Windmill Avenue",
-        "block": "Lakeside Court",
-        "facing": "South",
-        "x": 807,
-        "y": 189,
+        "number": "Orchid Enclave Villas - 101",
+        "road": "Orchid Way",
+        "block": "Orchid Enclave Villas",
+        "facing": "North",
+        "x": 267,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_e",
+        "roadNode": "pm_orchid_sw",
         "color": "cyan"
       },
       "18": {
         "id": "18",
-        "number": "Lakeside Court - 102",
-        "road": "Windmill Avenue",
-        "block": "Lakeside Court",
-        "facing": "South",
-        "x": 829,
-        "y": 189,
+        "number": "Orchid Enclave Villas - 102",
+        "road": "Orchid Way",
+        "block": "Orchid Enclave Villas",
+        "facing": "North",
+        "x": 289,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_e",
+        "roadNode": "pm_orchid_sw",
         "color": "cyan"
       },
       "19": {
         "id": "19",
-        "number": "Lakeside Court - 201",
-        "road": "Windmill Avenue",
-        "block": "Lakeside Court",
-        "facing": "South",
-        "x": 851,
-        "y": 189,
+        "number": "Orchid Enclave Villas - 201",
+        "road": "Orchid Way",
+        "block": "Orchid Enclave Villas",
+        "facing": "North",
+        "x": 311,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_e",
+        "roadNode": "pm_orchid_sw",
         "color": "cyan"
       },
       "20": {
         "id": "20",
-        "number": "Lakeside Court - 202",
-        "road": "Windmill Avenue",
-        "block": "Lakeside Court",
-        "facing": "South",
-        "x": 873,
-        "y": 189,
+        "number": "Orchid Enclave Villas - 202",
+        "road": "Orchid Way",
+        "block": "Orchid Enclave Villas",
+        "facing": "North",
+        "x": 333,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_e",
+        "roadNode": "pm_orchid_sw",
         "color": "cyan"
       },
       "21": {
         "id": "21",
-        "number": "Lakeside Court - 301",
-        "road": "Windmill Avenue",
-        "block": "Lakeside Court",
-        "facing": "South",
-        "x": 807,
-        "y": 211,
+        "number": "Orchid Enclave Villas - 301",
+        "road": "Orchid Way",
+        "block": "Orchid Enclave Villas",
+        "facing": "North",
+        "x": 267,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_e",
+        "roadNode": "pm_orchid_sw",
         "color": "cyan"
       },
       "22": {
         "id": "22",
-        "number": "Lakeside Court - 302",
-        "road": "Windmill Avenue",
-        "block": "Lakeside Court",
-        "facing": "South",
-        "x": 829,
-        "y": 211,
+        "number": "Orchid Enclave Villas - 302",
+        "road": "Orchid Way",
+        "block": "Orchid Enclave Villas",
+        "facing": "North",
+        "x": 289,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_e",
+        "roadNode": "pm_orchid_sw",
         "color": "cyan"
       },
       "23": {
         "id": "23",
-        "number": "Lakeside Court - 401",
-        "road": "Windmill Avenue",
-        "block": "Lakeside Court",
-        "facing": "South",
-        "x": 851,
-        "y": 211,
+        "number": "Orchid Enclave Villas - 401",
+        "road": "Orchid Way",
+        "block": "Orchid Enclave Villas",
+        "facing": "North",
+        "x": 311,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_e",
+        "roadNode": "pm_orchid_sw",
         "color": "cyan"
       },
       "24": {
         "id": "24",
-        "number": "Lakeside Court - 402",
-        "road": "Windmill Avenue",
-        "block": "Lakeside Court",
-        "facing": "South",
-        "x": 873,
-        "y": 211,
+        "number": "Orchid Enclave Villas - 402",
+        "road": "Orchid Way",
+        "block": "Orchid Enclave Villas",
+        "facing": "North",
+        "x": 333,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "palm_meadows_n_e",
+        "roadNode": "pm_orchid_sw",
+        "color": "cyan"
+      },
+      "25": {
+        "id": "25",
+        "number": "Hibiscus View Villas - 101",
+        "road": "Hibiscus Court",
+        "block": "Hibiscus View Villas",
+        "facing": "North",
+        "x": 827,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pm_hibiscus_se",
+        "color": "cyan"
+      },
+      "26": {
+        "id": "26",
+        "number": "Hibiscus View Villas - 102",
+        "road": "Hibiscus Court",
+        "block": "Hibiscus View Villas",
+        "facing": "North",
+        "x": 849,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pm_hibiscus_se",
+        "color": "cyan"
+      },
+      "27": {
+        "id": "27",
+        "number": "Hibiscus View Villas - 201",
+        "road": "Hibiscus Court",
+        "block": "Hibiscus View Villas",
+        "facing": "North",
+        "x": 871,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pm_hibiscus_se",
+        "color": "cyan"
+      },
+      "28": {
+        "id": "28",
+        "number": "Hibiscus View Villas - 202",
+        "road": "Hibiscus Court",
+        "block": "Hibiscus View Villas",
+        "facing": "North",
+        "x": 893,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pm_hibiscus_se",
+        "color": "cyan"
+      },
+      "29": {
+        "id": "29",
+        "number": "Hibiscus View Villas - 301",
+        "road": "Hibiscus Court",
+        "block": "Hibiscus View Villas",
+        "facing": "North",
+        "x": 827,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pm_hibiscus_se",
+        "color": "cyan"
+      },
+      "30": {
+        "id": "30",
+        "number": "Hibiscus View Villas - 302",
+        "road": "Hibiscus Court",
+        "block": "Hibiscus View Villas",
+        "facing": "North",
+        "x": 849,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pm_hibiscus_se",
+        "color": "cyan"
+      },
+      "31": {
+        "id": "31",
+        "number": "Hibiscus View Villas - 401",
+        "road": "Hibiscus Court",
+        "block": "Hibiscus View Villas",
+        "facing": "North",
+        "x": 871,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pm_hibiscus_se",
+        "color": "cyan"
+      },
+      "32": {
+        "id": "32",
+        "number": "Hibiscus View Villas - 402",
+        "road": "Hibiscus Court",
+        "block": "Hibiscus View Villas",
+        "facing": "North",
+        "x": 893,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pm_hibiscus_se",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "palm_meadows_gate_1",
-        "name": "Palm Meadows Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "palm_meadows_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "palm_meadows_gate_2",
-        "name": "Palm Meadows Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "palm_meadows_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "palm_meadows_club",
-        "name": "The Palm Meadows Club",
-        "description": "Exclusive 5-star resort club, indoor/outdoor pools, squash & fine dining",
+        "name": "Club Palm Meadows & Spa",
+        "description": "World-class country resort with 3 pools, squash, tennis, gym & dining",
         "x": 620,
-        "y": 270,
-        "roadNode": "palm_meadows_n_mid",
+        "y": 440,
+        "roadNode": "pm_junc_ctr",
         "icon": "\ud83c\udf34",
         "type": "clubhouse"
       }
@@ -22447,39 +21849,28 @@ window.LAYOUTS = {
       {
         "name": "PALM MEADOWS BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
-        "name": "WINDMILL AVENUE",
+        "name": "MEADOWS BOULEVARD",
         "x": 620,
         "y": 255,
         "vertical": false
       },
       {
-        "name": "LAKEVIEW PARKWAY",
+        "name": "ORCHID WAY",
         "x": 620,
         "y": 705,
         "vertical": false
-      },
-      {
-        "name": "MEADOW DRIVE",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "WHITEFIELD LINK",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "palm_meadows_gate_1",
+    "defaultStartGate": "pm_gate_main",
     "sectors": [
-      "Windmill Sector",
-      "Palm Boulevard",
-      "Lakeside Court"
+      "Royal Palm Villas",
+      "Meadows Court Villas",
+      "Orchid Enclave Villas",
+      "Hibiscus View Villas"
     ]
   },
   "prestige_shantiniketan": {
@@ -22493,259 +21884,168 @@ window.LAYOUTS = {
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
+    "groundPolygon": "90,480 200,140 620,120 1050,140 1140,480 1050,820 620,840 200,820 Z",
+    "borderTreesPath": "M 90,480 L 200,140 L 620,120 L 1050,140 L 1140,480 L 1050,820 L 620,840 L 200,820 Z",
+    "waterBody": null,
     "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+      "x": 440,
+      "y": 360,
+      "w": 360,
+      "h": 110,
+      "rx": 12,
+      "label": "8-Acre Central Shantiniketan Urban Park"
     },
+    "landmarks": [
+      {
+        "x": 420,
+        "y": 690,
+        "w": 420,
+        "h": 90,
+        "rx": 8,
+        "label": "\ud83d\udecd\ufe0f Forum Shantiniketan Mall & Multiplex",
+        "fill": "#1e1b4b",
+        "stroke": "#ec4899"
+      },
+      {
+        "x": 180,
+        "y": 650,
+        "w": 180,
+        "h": 120,
+        "rx": 8,
+        "label": "\ud83d\udcbc Crescent Business Campus",
+        "fill": "#0f172a",
+        "stroke": "#38bdf8"
+      }
+    ],
     "roads": {
       "nodes": {
-        "prestige_shantiniketan_gate_1": {
-          "id": "prestige_shantiniketan_gate_1",
+        "psn_gate_main": {
+          "id": "psn_gate_main",
           "x": 90,
           "y": 480,
-          "label": "Prestige Shantiniketan Gate 1 (Main Entrance)"
+          "label": "Gate 1 (ITPL Main Road)"
         },
-        "prestige_shantiniketan_entry": {
-          "id": "prestige_shantiniketan_entry",
-          "x": 180,
+        "psn_junc_w": {
+          "id": "psn_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Crescent Boulevard West"
         },
-        "prestige_shantiniketan_junc_w": {
-          "id": "prestige_shantiniketan_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Urban Terrace Way West Junction"
-        },
-        "prestige_shantiniketan_junc_ctr": {
-          "id": "prestige_shantiniketan_junc_ctr",
+        "psn_junc_ctr": {
+          "id": "psn_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Central Shantiniketan Plaza"
         },
-        "prestige_shantiniketan_junc_e": {
-          "id": "prestige_shantiniketan_junc_e",
-          "x": 920,
+        "psn_junc_e": {
+          "id": "psn_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Metro Link East Junction"
+          "label": "Manor Way East Junction"
         },
-        "prestige_shantiniketan_gate_2": {
-          "id": "prestige_shantiniketan_gate_2",
-          "x": 1110,
+        "psn_gate_hoodi": {
+          "id": "psn_gate_hoodi",
+          "x": 1130,
           "y": 480,
-          "label": "Prestige Shantiniketan Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Hoodi Railway Station Link)"
         },
-        "prestige_shantiniketan_n_w": {
-          "id": "prestige_shantiniketan_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "ITPL Access Parkway West"
+        "psn_crescent_nw": {
+          "id": "psn_crescent_nw",
+          "x": 340,
+          "y": 250,
+          "label": "Crescent Towers Cross"
         },
-        "prestige_shantiniketan_n_mid": {
-          "id": "prestige_shantiniketan_n_mid",
+        "psn_windsor_n": {
+          "id": "psn_windsor_n",
           "x": 620,
-          "y": 270,
-          "label": "ITPL Access Parkway North Plaza"
+          "y": 230,
+          "label": "Windsor Park Boulevard"
         },
-        "prestige_shantiniketan_n_e": {
-          "id": "prestige_shantiniketan_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "ITPL Access Parkway East"
+        "psn_manor_ne": {
+          "id": "psn_manor_ne",
+          "x": 900,
+          "y": 260,
+          "label": "Manor Crest Way"
         },
-        "prestige_shantiniketan_s_w": {
-          "id": "prestige_shantiniketan_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Forum Mall Promenade West"
-        },
-        "prestige_shantiniketan_s_mid": {
-          "id": "prestige_shantiniketan_s_mid",
+        "psn_forum_s": {
+          "id": "psn_forum_s",
           "x": 620,
-          "y": 690,
-          "label": "Forum Mall Promenade South Plaza"
-        },
-        "prestige_shantiniketan_s_e": {
-          "id": "prestige_shantiniketan_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Forum Mall Promenade East"
-        },
-        "prestige_shantiniketan_w_n_mid": {
-          "id": "prestige_shantiniketan_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Urban Terrace Way North Link"
-        },
-        "prestige_shantiniketan_w_s_mid": {
-          "id": "prestige_shantiniketan_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Urban Terrace Way South Link"
-        },
-        "prestige_shantiniketan_ctr_n_mid": {
-          "id": "prestige_shantiniketan_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "prestige_shantiniketan_ctr_s_mid": {
-          "id": "prestige_shantiniketan_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "prestige_shantiniketan_e_n_mid": {
-          "id": "prestige_shantiniketan_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Metro Link North Link"
-        },
-        "prestige_shantiniketan_e_s_mid": {
-          "id": "prestige_shantiniketan_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Metro Link South Link"
+          "y": 670,
+          "label": "Forum Mall Access Avenue"
         }
       },
       "edges": [
         {
-          "u": "prestige_shantiniketan_gate_1",
-          "v": "prestige_shantiniketan_entry",
+          "u": "psn_gate_main",
+          "v": "psn_junc_w",
           "road": "Shantiniketan Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_shantiniketan_entry",
-          "v": "prestige_shantiniketan_junc_w",
+          "u": "psn_junc_w",
+          "v": "psn_junc_ctr",
           "road": "Shantiniketan Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_shantiniketan_junc_w",
-          "v": "prestige_shantiniketan_junc_ctr",
+          "u": "psn_junc_ctr",
+          "v": "psn_junc_e",
           "road": "Shantiniketan Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_shantiniketan_junc_ctr",
-          "v": "prestige_shantiniketan_junc_e",
+          "u": "psn_junc_e",
+          "v": "psn_gate_hoodi",
           "road": "Shantiniketan Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_shantiniketan_junc_e",
-          "v": "prestige_shantiniketan_gate_2",
-          "road": "Shantiniketan Boulevard",
+          "u": "psn_junc_w",
+          "v": "psn_crescent_nw",
+          "road": "Crescent Way",
+          "type": "secondary"
+        },
+        {
+          "u": "psn_crescent_nw",
+          "v": "psn_windsor_n",
+          "road": "Urban Park Drive",
+          "type": "secondary"
+        },
+        {
+          "u": "psn_windsor_n",
+          "v": "psn_manor_ne",
+          "road": "Urban Park Drive",
+          "type": "secondary"
+        },
+        {
+          "u": "psn_manor_ne",
+          "v": "psn_junc_e",
+          "road": "Manor Way",
+          "type": "secondary"
+        },
+        {
+          "u": "psn_junc_ctr",
+          "v": "psn_forum_s",
+          "road": "Forum Mall Access Avenue",
           "type": "primary"
         },
         {
-          "u": "prestige_shantiniketan_n_w",
-          "v": "prestige_shantiniketan_n_mid",
-          "road": "ITPL Access Parkway",
+          "u": "psn_junc_w",
+          "v": "psn_forum_s",
+          "road": "Mall Ring Link",
           "type": "secondary"
         },
         {
-          "u": "prestige_shantiniketan_n_mid",
-          "v": "prestige_shantiniketan_n_e",
-          "road": "ITPL Access Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_shantiniketan_s_w",
-          "v": "prestige_shantiniketan_s_mid",
-          "road": "Forum Mall Promenade",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_shantiniketan_s_mid",
-          "v": "prestige_shantiniketan_s_e",
-          "road": "Forum Mall Promenade",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_shantiniketan_n_w",
-          "v": "prestige_shantiniketan_w_n_mid",
-          "road": "Urban Terrace Way",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_shantiniketan_w_n_mid",
-          "v": "prestige_shantiniketan_junc_w",
-          "road": "Urban Terrace Way",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_shantiniketan_junc_w",
-          "v": "prestige_shantiniketan_w_s_mid",
-          "road": "Urban Terrace Way",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_shantiniketan_w_s_mid",
-          "v": "prestige_shantiniketan_s_w",
-          "road": "Urban Terrace Way",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_shantiniketan_n_mid",
-          "v": "prestige_shantiniketan_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_shantiniketan_ctr_n_mid",
-          "v": "prestige_shantiniketan_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_shantiniketan_junc_ctr",
-          "v": "prestige_shantiniketan_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_shantiniketan_ctr_s_mid",
-          "v": "prestige_shantiniketan_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_shantiniketan_n_e",
-          "v": "prestige_shantiniketan_e_n_mid",
-          "road": "Metro Link",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_shantiniketan_e_n_mid",
-          "v": "prestige_shantiniketan_junc_e",
-          "road": "Metro Link",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_shantiniketan_junc_e",
-          "v": "prestige_shantiniketan_e_s_mid",
-          "road": "Metro Link",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_shantiniketan_e_s_mid",
-          "v": "prestige_shantiniketan_s_e",
-          "road": "Metro Link",
+          "u": "psn_junc_e",
+          "v": "psn_forum_s",
+          "road": "Mall Ring Link",
           "type": "secondary"
         }
       ]
@@ -22753,491 +22053,475 @@ window.LAYOUTS = {
     "plots": {
       "1": {
         "id": "1",
-        "number": "Crescent Tower - 101",
-        "road": "ITPL Access Parkway",
-        "block": "Crescent Tower",
+        "number": "Crescent North Tower - 101",
+        "road": "Crescent Way",
+        "block": "Crescent North Tower",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 307,
+        "y": 199,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_w",
+        "roadNode": "psn_crescent_nw",
         "color": "cyan"
       },
       "2": {
         "id": "2",
-        "number": "Crescent Tower - 102",
-        "road": "ITPL Access Parkway",
-        "block": "Crescent Tower",
+        "number": "Crescent North Tower - 102",
+        "road": "Crescent Way",
+        "block": "Crescent North Tower",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 329,
+        "y": 199,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_w",
+        "roadNode": "psn_crescent_nw",
         "color": "cyan"
       },
       "3": {
         "id": "3",
-        "number": "Crescent Tower - 201",
-        "road": "ITPL Access Parkway",
-        "block": "Crescent Tower",
+        "number": "Crescent North Tower - 201",
+        "road": "Crescent Way",
+        "block": "Crescent North Tower",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 351,
+        "y": 199,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_w",
+        "roadNode": "psn_crescent_nw",
         "color": "cyan"
       },
       "4": {
         "id": "4",
-        "number": "Crescent Tower - 202",
-        "road": "ITPL Access Parkway",
-        "block": "Crescent Tower",
+        "number": "Crescent North Tower - 202",
+        "road": "Crescent Way",
+        "block": "Crescent North Tower",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 373,
+        "y": 199,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_w",
+        "roadNode": "psn_crescent_nw",
         "color": "cyan"
       },
       "5": {
         "id": "5",
-        "number": "Crescent Tower - 301",
-        "road": "ITPL Access Parkway",
-        "block": "Crescent Tower",
+        "number": "Crescent North Tower - 301",
+        "road": "Crescent Way",
+        "block": "Crescent North Tower",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 307,
+        "y": 221,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_w",
+        "roadNode": "psn_crescent_nw",
         "color": "cyan"
       },
       "6": {
         "id": "6",
-        "number": "Crescent Tower - 302",
-        "road": "ITPL Access Parkway",
-        "block": "Crescent Tower",
+        "number": "Crescent North Tower - 302",
+        "road": "Crescent Way",
+        "block": "Crescent North Tower",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 329,
+        "y": 221,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_w",
+        "roadNode": "psn_crescent_nw",
         "color": "cyan"
       },
       "7": {
         "id": "7",
-        "number": "Crescent Tower - 401",
-        "road": "ITPL Access Parkway",
-        "block": "Crescent Tower",
+        "number": "Crescent North Tower - 401",
+        "road": "Crescent Way",
+        "block": "Crescent North Tower",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 351,
+        "y": 221,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_w",
+        "roadNode": "psn_crescent_nw",
         "color": "cyan"
       },
       "8": {
         "id": "8",
-        "number": "Crescent Tower - 402",
-        "road": "ITPL Access Parkway",
-        "block": "Crescent Tower",
+        "number": "Crescent North Tower - 402",
+        "road": "Crescent Way",
+        "block": "Crescent North Tower",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 373,
+        "y": 221,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_w",
+        "roadNode": "psn_crescent_nw",
         "color": "cyan"
       },
       "9": {
         "id": "9",
-        "number": "Tower A - 101",
-        "road": "ITPL Access Parkway",
-        "block": "Tower A",
+        "number": "Windsor Park Tower - 101",
+        "road": "Urban Park Drive",
+        "block": "Windsor Park Tower",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 587,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_mid",
+        "roadNode": "psn_windsor_n",
         "color": "cyan"
       },
       "10": {
         "id": "10",
-        "number": "Tower A - 102",
-        "road": "ITPL Access Parkway",
-        "block": "Tower A",
+        "number": "Windsor Park Tower - 102",
+        "road": "Urban Park Drive",
+        "block": "Windsor Park Tower",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 609,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_mid",
+        "roadNode": "psn_windsor_n",
         "color": "cyan"
       },
       "11": {
         "id": "11",
-        "number": "Tower A - 201",
-        "road": "ITPL Access Parkway",
-        "block": "Tower A",
+        "number": "Windsor Park Tower - 201",
+        "road": "Urban Park Drive",
+        "block": "Windsor Park Tower",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 631,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_mid",
+        "roadNode": "psn_windsor_n",
         "color": "cyan"
       },
       "12": {
         "id": "12",
-        "number": "Tower A - 202",
-        "road": "ITPL Access Parkway",
-        "block": "Tower A",
+        "number": "Windsor Park Tower - 202",
+        "road": "Urban Park Drive",
+        "block": "Windsor Park Tower",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 653,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_mid",
+        "roadNode": "psn_windsor_n",
         "color": "cyan"
       },
       "13": {
         "id": "13",
-        "number": "Tower A - 301",
-        "road": "ITPL Access Parkway",
-        "block": "Tower A",
+        "number": "Windsor Park Tower - 301",
+        "road": "Urban Park Drive",
+        "block": "Windsor Park Tower",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 587,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_mid",
+        "roadNode": "psn_windsor_n",
         "color": "cyan"
       },
       "14": {
         "id": "14",
-        "number": "Tower A - 302",
-        "road": "ITPL Access Parkway",
-        "block": "Tower A",
+        "number": "Windsor Park Tower - 302",
+        "road": "Urban Park Drive",
+        "block": "Windsor Park Tower",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 609,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_mid",
+        "roadNode": "psn_windsor_n",
         "color": "cyan"
       },
       "15": {
         "id": "15",
-        "number": "Tower A - 401",
-        "road": "ITPL Access Parkway",
-        "block": "Tower A",
+        "number": "Windsor Park Tower - 401",
+        "road": "Urban Park Drive",
+        "block": "Windsor Park Tower",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 631,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_mid",
+        "roadNode": "psn_windsor_n",
         "color": "cyan"
       },
       "16": {
         "id": "16",
-        "number": "Tower A - 402",
-        "road": "ITPL Access Parkway",
-        "block": "Tower A",
+        "number": "Windsor Park Tower - 402",
+        "road": "Urban Park Drive",
+        "block": "Windsor Park Tower",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 653,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_mid",
+        "roadNode": "psn_windsor_n",
         "color": "cyan"
       },
       "17": {
         "id": "17",
-        "number": "Tower B - 101",
-        "road": "ITPL Access Parkway",
-        "block": "Tower B",
+        "number": "Manor Crest Tower - 101",
+        "road": "Manor Way",
+        "block": "Manor Crest Tower",
         "facing": "South",
-        "x": 807,
-        "y": 189,
+        "x": 867,
+        "y": 219,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_e",
+        "roadNode": "psn_manor_ne",
         "color": "cyan"
       },
       "18": {
         "id": "18",
-        "number": "Tower B - 102",
-        "road": "ITPL Access Parkway",
-        "block": "Tower B",
+        "number": "Manor Crest Tower - 102",
+        "road": "Manor Way",
+        "block": "Manor Crest Tower",
         "facing": "South",
-        "x": 829,
-        "y": 189,
+        "x": 889,
+        "y": 219,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_e",
+        "roadNode": "psn_manor_ne",
         "color": "cyan"
       },
       "19": {
         "id": "19",
-        "number": "Tower B - 201",
-        "road": "ITPL Access Parkway",
-        "block": "Tower B",
+        "number": "Manor Crest Tower - 201",
+        "road": "Manor Way",
+        "block": "Manor Crest Tower",
         "facing": "South",
-        "x": 851,
-        "y": 189,
+        "x": 911,
+        "y": 219,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_e",
+        "roadNode": "psn_manor_ne",
         "color": "cyan"
       },
       "20": {
         "id": "20",
-        "number": "Tower B - 202",
-        "road": "ITPL Access Parkway",
-        "block": "Tower B",
+        "number": "Manor Crest Tower - 202",
+        "road": "Manor Way",
+        "block": "Manor Crest Tower",
         "facing": "South",
-        "x": 873,
-        "y": 189,
+        "x": 933,
+        "y": 219,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_e",
+        "roadNode": "psn_manor_ne",
         "color": "cyan"
       },
       "21": {
         "id": "21",
-        "number": "Tower B - 301",
-        "road": "ITPL Access Parkway",
-        "block": "Tower B",
+        "number": "Manor Crest Tower - 301",
+        "road": "Manor Way",
+        "block": "Manor Crest Tower",
         "facing": "South",
-        "x": 807,
-        "y": 211,
+        "x": 867,
+        "y": 241,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_e",
+        "roadNode": "psn_manor_ne",
         "color": "cyan"
       },
       "22": {
         "id": "22",
-        "number": "Tower B - 302",
-        "road": "ITPL Access Parkway",
-        "block": "Tower B",
+        "number": "Manor Crest Tower - 302",
+        "road": "Manor Way",
+        "block": "Manor Crest Tower",
         "facing": "South",
-        "x": 829,
-        "y": 211,
+        "x": 889,
+        "y": 241,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_e",
+        "roadNode": "psn_manor_ne",
         "color": "cyan"
       },
       "23": {
         "id": "23",
-        "number": "Tower B - 401",
-        "road": "ITPL Access Parkway",
-        "block": "Tower B",
+        "number": "Manor Crest Tower - 401",
+        "road": "Manor Way",
+        "block": "Manor Crest Tower",
         "facing": "South",
-        "x": 851,
-        "y": 211,
+        "x": 911,
+        "y": 241,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_e",
+        "roadNode": "psn_manor_ne",
         "color": "cyan"
       },
       "24": {
         "id": "24",
-        "number": "Tower B - 402",
-        "road": "ITPL Access Parkway",
-        "block": "Tower B",
+        "number": "Manor Crest Tower - 402",
+        "road": "Manor Way",
+        "block": "Manor Crest Tower",
         "facing": "South",
-        "x": 873,
-        "y": 211,
+        "x": 933,
+        "y": 241,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_n_e",
+        "roadNode": "psn_manor_ne",
         "color": "cyan"
       },
       "25": {
         "id": "25",
-        "number": "Tower C - 101",
-        "road": "Forum Mall Promenade",
-        "block": "Tower C",
-        "facing": "North",
-        "x": 347,
-        "y": 669,
+        "number": "Springs Residential Tower - 101",
+        "road": "Shantiniketan Boulevard",
+        "block": "Springs Residential Tower",
+        "facing": "East",
+        "x": 287,
+        "y": 429,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_s_w",
+        "roadNode": "psn_junc_w",
         "color": "cyan"
       },
       "26": {
         "id": "26",
-        "number": "Tower C - 102",
-        "road": "Forum Mall Promenade",
-        "block": "Tower C",
-        "facing": "North",
-        "x": 369,
-        "y": 669,
+        "number": "Springs Residential Tower - 102",
+        "road": "Shantiniketan Boulevard",
+        "block": "Springs Residential Tower",
+        "facing": "East",
+        "x": 309,
+        "y": 429,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_s_w",
+        "roadNode": "psn_junc_w",
         "color": "cyan"
       },
       "27": {
         "id": "27",
-        "number": "Tower C - 201",
-        "road": "Forum Mall Promenade",
-        "block": "Tower C",
-        "facing": "North",
-        "x": 391,
-        "y": 669,
+        "number": "Springs Residential Tower - 201",
+        "road": "Shantiniketan Boulevard",
+        "block": "Springs Residential Tower",
+        "facing": "East",
+        "x": 331,
+        "y": 429,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_s_w",
+        "roadNode": "psn_junc_w",
         "color": "cyan"
       },
       "28": {
         "id": "28",
-        "number": "Tower C - 202",
-        "road": "Forum Mall Promenade",
-        "block": "Tower C",
-        "facing": "North",
-        "x": 413,
-        "y": 669,
+        "number": "Springs Residential Tower - 202",
+        "road": "Shantiniketan Boulevard",
+        "block": "Springs Residential Tower",
+        "facing": "East",
+        "x": 353,
+        "y": 429,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_s_w",
+        "roadNode": "psn_junc_w",
         "color": "cyan"
       },
       "29": {
         "id": "29",
-        "number": "Tower C - 301",
-        "road": "Forum Mall Promenade",
-        "block": "Tower C",
-        "facing": "North",
-        "x": 347,
-        "y": 691,
+        "number": "Springs Residential Tower - 301",
+        "road": "Shantiniketan Boulevard",
+        "block": "Springs Residential Tower",
+        "facing": "East",
+        "x": 287,
+        "y": 451,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_s_w",
+        "roadNode": "psn_junc_w",
         "color": "cyan"
       },
       "30": {
         "id": "30",
-        "number": "Tower C - 302",
-        "road": "Forum Mall Promenade",
-        "block": "Tower C",
-        "facing": "North",
-        "x": 369,
-        "y": 691,
+        "number": "Springs Residential Tower - 302",
+        "road": "Shantiniketan Boulevard",
+        "block": "Springs Residential Tower",
+        "facing": "East",
+        "x": 309,
+        "y": 451,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_s_w",
+        "roadNode": "psn_junc_w",
         "color": "cyan"
       },
       "31": {
         "id": "31",
-        "number": "Tower C - 401",
-        "road": "Forum Mall Promenade",
-        "block": "Tower C",
-        "facing": "North",
-        "x": 391,
-        "y": 691,
+        "number": "Springs Residential Tower - 401",
+        "road": "Shantiniketan Boulevard",
+        "block": "Springs Residential Tower",
+        "facing": "East",
+        "x": 331,
+        "y": 451,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_s_w",
+        "roadNode": "psn_junc_w",
         "color": "cyan"
       },
       "32": {
         "id": "32",
-        "number": "Tower C - 402",
-        "road": "Forum Mall Promenade",
-        "block": "Tower C",
-        "facing": "North",
-        "x": 413,
-        "y": 691,
+        "number": "Springs Residential Tower - 402",
+        "road": "Shantiniketan Boulevard",
+        "block": "Springs Residential Tower",
+        "facing": "East",
+        "x": 353,
+        "y": 451,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_shantiniketan_s_w",
+        "roadNode": "psn_junc_w",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "prestige_shantiniketan_gate_1",
-        "name": "Prestige Shantiniketan Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "prestige_shantiniketan_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "prestige_shantiniketan_gate_2",
-        "name": "Prestige Shantiniketan Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "prestige_shantiniketan_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "prestige_shantiniketan_mall",
         "name": "Forum Shantiniketan Mall",
-        "description": "Direct pedestrian access to Forum Mall, PVR, food court and high-street shopping",
+        "description": "Flagship lifestyle destination with 200+ brands, IMAX cinema and open-air plaza",
         "x": 620,
-        "y": 690,
-        "roadNode": "prestige_shantiniketan_s_mid",
+        "y": 730,
+        "roadNode": "psn_forum_s",
         "icon": "\ud83d\udecd\ufe0f",
         "type": "mall"
+      },
+      {
+        "id": "prestige_shantiniketan_club",
+        "name": "Shantiniketan Club",
+        "description": "Expansive sports pavilion, squash courts, tennis, gym and swimming pool",
+        "x": 620,
+        "y": 410,
+        "roadNode": "psn_junc_ctr",
+        "icon": "\ud83c\udfca",
+        "type": "clubhouse"
       }
     ],
     "roadLabels": [
       {
         "name": "SHANTINIKETAN BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
-        "name": "ITPL ACCESS PARKWAY",
+        "name": "URBAN PARK DRIVE",
         "x": 620,
-        "y": 255,
+        "y": 215,
         "vertical": false
       },
       {
-        "name": "FORUM MALL PROMENADE",
+        "name": "FORUM MALL ACCESS AVENUE",
         "x": 620,
-        "y": 705,
+        "y": 635,
         "vertical": false
       },
       {
-        "name": "URBAN TERRACE WAY",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "METRO LINK",
-        "x": 935,
-        "y": 375,
+        "name": "CRESCENT WAY",
+        "x": 250,
+        "y": 365,
         "vertical": true
       }
     ],
-    "defaultStartGate": "prestige_shantiniketan_gate_1",
+    "defaultStartGate": "psn_gate_main",
     "sectors": [
-      "Crescent Tower",
-      "Tower A",
-      "Tower B",
-      "Tower C"
+      "Crescent North Tower",
+      "Windsor Park Tower",
+      "Manor Crest Tower",
+      "Springs Residential Tower"
     ]
   },
   "rainbow_drive": {
@@ -24160,263 +23444,176 @@ window.LAYOUTS = {
     "zone": "whitefield",
     "type": "Contemporary Urban High-Rise",
     "unitType": "Apartment / Tower",
-    "unitCount": 16,
+    "unitCount": 32,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "100,480 220,160 620,140 1020,160 1120,480 1020,800 620,820 220,800 Z",
+    "borderTreesPath": "M 100,480 L 220,160 L 620,140 L 1020,160 L 1120,480 L 1020,800 L 620,820 L 220,800 Z",
+    "waterBody": {
+      "x": 520,
+      "y": 440,
+      "w": 200,
+      "h": 80,
+      "rx": 14,
+      "label": "Republic Olympic Swimming Facility"
     },
+    "gardenPark": {
+      "x": 440,
+      "y": 310,
+      "w": 360,
+      "h": 60,
+      "rx": 8,
+      "label": "Contemporary Sculpture & Sunken Plaza"
+    },
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "divyasree_republic_gate_1": {
-          "id": "divyasree_republic_gate_1",
-          "x": 90,
+        "dr_gate_main": {
+          "id": "dr_gate_main",
+          "x": 100,
           "y": 480,
-          "label": "Divyasree Republic of Whitefield Gate 1 (Main Entrance)"
+          "label": "Gate 1 (EPIP Main Road)"
         },
-        "divyasree_republic_entry": {
-          "id": "divyasree_republic_entry",
-          "x": 180,
+        "dr_junc_w": {
+          "id": "dr_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Republic West Cross"
         },
-        "divyasree_republic_junc_w": {
-          "id": "divyasree_republic_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Tech Link Avenue West Junction"
-        },
-        "divyasree_republic_junc_ctr": {
-          "id": "divyasree_republic_junc_ctr",
+        "dr_junc_ctr": {
+          "id": "dr_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Central Sunken Plaza"
         },
-        "divyasree_republic_junc_e": {
-          "id": "divyasree_republic_junc_e",
-          "x": 920,
+        "dr_junc_e": {
+          "id": "dr_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Kundalahalli Way East Junction"
+          "label": "Republic East Cross"
         },
-        "divyasree_republic_gate_2": {
-          "id": "divyasree_republic_gate_2",
+        "dr_gate_east": {
+          "id": "dr_gate_east",
           "x": 1110,
           "y": 480,
-          "label": "Divyasree Republic of Whitefield Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Kundalahalli Link)"
         },
-        "divyasree_republic_n_w": {
-          "id": "divyasree_republic_n_w",
-          "x": 320,
+        "dr_alpha": {
+          "id": "dr_alpha",
+          "x": 340,
           "y": 270,
-          "label": "EPIP Parkway West"
+          "label": "Tower Alpha Parkway"
         },
-        "divyasree_republic_n_mid": {
-          "id": "divyasree_republic_n_mid",
-          "x": 620,
+        "dr_beta": {
+          "id": "dr_beta",
+          "x": 860,
           "y": 270,
-          "label": "EPIP Parkway North Plaza"
+          "label": "Tower Beta Parkway"
         },
-        "divyasree_republic_n_e": {
-          "id": "divyasree_republic_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "EPIP Parkway East"
-        },
-        "divyasree_republic_s_w": {
-          "id": "divyasree_republic_s_w",
-          "x": 320,
+        "dr_gamma": {
+          "id": "dr_gamma",
+          "x": 340,
           "y": 690,
-          "label": "Central Garden Walk West"
+          "label": "Tower Gamma Drive"
         },
-        "divyasree_republic_s_mid": {
-          "id": "divyasree_republic_s_mid",
-          "x": 620,
+        "dr_delta": {
+          "id": "dr_delta",
+          "x": 860,
           "y": 690,
-          "label": "Central Garden Walk South Plaza"
-        },
-        "divyasree_republic_s_e": {
-          "id": "divyasree_republic_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Central Garden Walk East"
-        },
-        "divyasree_republic_w_n_mid": {
-          "id": "divyasree_republic_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Tech Link Avenue North Link"
-        },
-        "divyasree_republic_w_s_mid": {
-          "id": "divyasree_republic_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Tech Link Avenue South Link"
-        },
-        "divyasree_republic_ctr_n_mid": {
-          "id": "divyasree_republic_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "divyasree_republic_ctr_s_mid": {
-          "id": "divyasree_republic_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "divyasree_republic_e_n_mid": {
-          "id": "divyasree_republic_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Kundalahalli Way North Link"
-        },
-        "divyasree_republic_e_s_mid": {
-          "id": "divyasree_republic_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Kundalahalli Way South Link"
+          "label": "Tower Delta Drive"
         }
       },
       "edges": [
         {
-          "u": "divyasree_republic_gate_1",
-          "v": "divyasree_republic_entry",
+          "u": "dr_gate_main",
+          "v": "dr_junc_w",
           "road": "Republic Boulevard",
           "type": "primary"
         },
         {
-          "u": "divyasree_republic_entry",
-          "v": "divyasree_republic_junc_w",
+          "u": "dr_junc_w",
+          "v": "dr_junc_ctr",
           "road": "Republic Boulevard",
           "type": "primary"
         },
         {
-          "u": "divyasree_republic_junc_w",
-          "v": "divyasree_republic_junc_ctr",
+          "u": "dr_junc_ctr",
+          "v": "dr_junc_e",
           "road": "Republic Boulevard",
           "type": "primary"
         },
         {
-          "u": "divyasree_republic_junc_ctr",
-          "v": "divyasree_republic_junc_e",
+          "u": "dr_junc_e",
+          "v": "dr_gate_east",
           "road": "Republic Boulevard",
           "type": "primary"
         },
         {
-          "u": "divyasree_republic_junc_e",
-          "v": "divyasree_republic_gate_2",
-          "road": "Republic Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "divyasree_republic_n_w",
-          "v": "divyasree_republic_n_mid",
-          "road": "EPIP Parkway",
+          "u": "dr_junc_w",
+          "v": "dr_alpha",
+          "road": "Alpha Parkway",
           "type": "secondary"
         },
         {
-          "u": "divyasree_republic_n_mid",
-          "v": "divyasree_republic_n_e",
-          "road": "EPIP Parkway",
+          "u": "dr_alpha",
+          "v": "dr_beta",
+          "road": "Alpha Parkway",
           "type": "secondary"
         },
         {
-          "u": "divyasree_republic_s_w",
-          "v": "divyasree_republic_s_mid",
-          "road": "Central Garden Walk",
+          "u": "dr_beta",
+          "v": "dr_junc_e",
+          "road": "Beta Promenade",
           "type": "secondary"
         },
         {
-          "u": "divyasree_republic_s_mid",
-          "v": "divyasree_republic_s_e",
-          "road": "Central Garden Walk",
+          "u": "dr_junc_w",
+          "v": "dr_gamma",
+          "road": "EPIP Access Way",
           "type": "secondary"
         },
         {
-          "u": "divyasree_republic_n_w",
-          "v": "divyasree_republic_w_n_mid",
-          "road": "Tech Link Avenue",
+          "u": "dr_gamma",
+          "v": "dr_delta",
+          "road": "EPIP Access Way",
           "type": "secondary"
         },
         {
-          "u": "divyasree_republic_w_n_mid",
-          "v": "divyasree_republic_junc_w",
-          "road": "Tech Link Avenue",
+          "u": "dr_delta",
+          "v": "dr_junc_e",
+          "road": "Beta Promenade",
           "type": "secondary"
         },
         {
-          "u": "divyasree_republic_junc_w",
-          "v": "divyasree_republic_w_s_mid",
-          "road": "Tech Link Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "divyasree_republic_w_s_mid",
-          "v": "divyasree_republic_s_w",
-          "road": "Tech Link Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "divyasree_republic_n_mid",
-          "v": "divyasree_republic_ctr_n_mid",
+          "u": "dr_junc_ctr",
+          "v": "dr_alpha",
           "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "divyasree_republic_ctr_n_mid",
-          "v": "divyasree_republic_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "divyasree_republic_junc_ctr",
-          "v": "divyasree_republic_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "divyasree_republic_ctr_s_mid",
-          "v": "divyasree_republic_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "divyasree_republic_n_e",
-          "v": "divyasree_republic_e_n_mid",
-          "road": "Kundalahalli Way",
           "type": "secondary"
         },
         {
-          "u": "divyasree_republic_e_n_mid",
-          "v": "divyasree_republic_junc_e",
-          "road": "Kundalahalli Way",
+          "u": "dr_junc_ctr",
+          "v": "dr_beta",
+          "road": "Central Link",
           "type": "secondary"
         },
         {
-          "u": "divyasree_republic_junc_e",
-          "v": "divyasree_republic_e_s_mid",
-          "road": "Kundalahalli Way",
+          "u": "dr_junc_ctr",
+          "v": "dr_gamma",
+          "road": "Central Link",
           "type": "secondary"
         },
         {
-          "u": "divyasree_republic_e_s_mid",
-          "v": "divyasree_republic_s_e",
-          "road": "Kundalahalli Way",
+          "u": "dr_junc_ctr",
+          "v": "dr_delta",
+          "road": "Central Link",
           "type": "secondary"
         }
       ]
@@ -24424,242 +23621,430 @@ window.LAYOUTS = {
     "plots": {
       "1": {
         "id": "1",
-        "number": "Tower A-D - 101",
-        "road": "EPIP Parkway",
-        "block": "Tower A-D",
+        "number": "Tower Alpha - 101",
+        "road": "Republic Boulevard",
+        "block": "Tower Alpha",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 267,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_w",
+        "roadNode": "dr_alpha",
         "color": "cyan"
       },
       "2": {
         "id": "2",
-        "number": "Tower A-D - 102",
-        "road": "EPIP Parkway",
-        "block": "Tower A-D",
+        "number": "Tower Alpha - 102",
+        "road": "Republic Boulevard",
+        "block": "Tower Alpha",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 289,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_w",
+        "roadNode": "dr_alpha",
         "color": "cyan"
       },
       "3": {
         "id": "3",
-        "number": "Tower A-D - 201",
-        "road": "EPIP Parkway",
-        "block": "Tower A-D",
+        "number": "Tower Alpha - 201",
+        "road": "Republic Boulevard",
+        "block": "Tower Alpha",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 311,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_w",
+        "roadNode": "dr_alpha",
         "color": "cyan"
       },
       "4": {
         "id": "4",
-        "number": "Tower A-D - 202",
-        "road": "EPIP Parkway",
-        "block": "Tower A-D",
+        "number": "Tower Alpha - 202",
+        "road": "Republic Boulevard",
+        "block": "Tower Alpha",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 333,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_w",
+        "roadNode": "dr_alpha",
         "color": "cyan"
       },
       "5": {
         "id": "5",
-        "number": "Tower A-D - 301",
-        "road": "EPIP Parkway",
-        "block": "Tower A-D",
+        "number": "Tower Alpha - 301",
+        "road": "Republic Boulevard",
+        "block": "Tower Alpha",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 267,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_w",
+        "roadNode": "dr_alpha",
         "color": "cyan"
       },
       "6": {
         "id": "6",
-        "number": "Tower A-D - 302",
-        "road": "EPIP Parkway",
-        "block": "Tower A-D",
+        "number": "Tower Alpha - 302",
+        "road": "Republic Boulevard",
+        "block": "Tower Alpha",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 289,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_w",
+        "roadNode": "dr_alpha",
         "color": "cyan"
       },
       "7": {
         "id": "7",
-        "number": "Tower A-D - 401",
-        "road": "EPIP Parkway",
-        "block": "Tower A-D",
+        "number": "Tower Alpha - 401",
+        "road": "Republic Boulevard",
+        "block": "Tower Alpha",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 311,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_w",
+        "roadNode": "dr_alpha",
         "color": "cyan"
       },
       "8": {
         "id": "8",
-        "number": "Tower A-D - 402",
-        "road": "EPIP Parkway",
-        "block": "Tower A-D",
+        "number": "Tower Alpha - 402",
+        "road": "Republic Boulevard",
+        "block": "Tower Alpha",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 333,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_w",
+        "roadNode": "dr_alpha",
         "color": "cyan"
       },
       "9": {
         "id": "9",
-        "number": "Tower E-H - 101",
-        "road": "EPIP Parkway",
-        "block": "Tower E-H",
+        "number": "Tower Beta - 101",
+        "road": "Alpha Parkway",
+        "block": "Tower Beta",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 827,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_mid",
+        "roadNode": "dr_beta",
         "color": "cyan"
       },
       "10": {
         "id": "10",
-        "number": "Tower E-H - 102",
-        "road": "EPIP Parkway",
-        "block": "Tower E-H",
+        "number": "Tower Beta - 102",
+        "road": "Alpha Parkway",
+        "block": "Tower Beta",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 849,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_mid",
+        "roadNode": "dr_beta",
         "color": "cyan"
       },
       "11": {
         "id": "11",
-        "number": "Tower E-H - 201",
-        "road": "EPIP Parkway",
-        "block": "Tower E-H",
+        "number": "Tower Beta - 201",
+        "road": "Alpha Parkway",
+        "block": "Tower Beta",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 871,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_mid",
+        "roadNode": "dr_beta",
         "color": "cyan"
       },
       "12": {
         "id": "12",
-        "number": "Tower E-H - 202",
-        "road": "EPIP Parkway",
-        "block": "Tower E-H",
+        "number": "Tower Beta - 202",
+        "road": "Alpha Parkway",
+        "block": "Tower Beta",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 893,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_mid",
+        "roadNode": "dr_beta",
         "color": "cyan"
       },
       "13": {
         "id": "13",
-        "number": "Tower E-H - 301",
-        "road": "EPIP Parkway",
-        "block": "Tower E-H",
+        "number": "Tower Beta - 301",
+        "road": "Alpha Parkway",
+        "block": "Tower Beta",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 827,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_mid",
+        "roadNode": "dr_beta",
         "color": "cyan"
       },
       "14": {
         "id": "14",
-        "number": "Tower E-H - 302",
-        "road": "EPIP Parkway",
-        "block": "Tower E-H",
+        "number": "Tower Beta - 302",
+        "road": "Alpha Parkway",
+        "block": "Tower Beta",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 849,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_mid",
+        "roadNode": "dr_beta",
         "color": "cyan"
       },
       "15": {
         "id": "15",
-        "number": "Tower E-H - 401",
-        "road": "EPIP Parkway",
-        "block": "Tower E-H",
+        "number": "Tower Beta - 401",
+        "road": "Alpha Parkway",
+        "block": "Tower Beta",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 871,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_mid",
+        "roadNode": "dr_beta",
         "color": "cyan"
       },
       "16": {
         "id": "16",
-        "number": "Tower E-H - 402",
-        "road": "EPIP Parkway",
-        "block": "Tower E-H",
+        "number": "Tower Beta - 402",
+        "road": "Alpha Parkway",
+        "block": "Tower Beta",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 893,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "divyasree_republic_n_mid",
+        "roadNode": "dr_beta",
+        "color": "cyan"
+      },
+      "17": {
+        "id": "17",
+        "number": "Tower Gamma - 101",
+        "road": "EPIP Access Way",
+        "block": "Tower Gamma",
+        "facing": "North",
+        "x": 267,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_gamma",
+        "color": "cyan"
+      },
+      "18": {
+        "id": "18",
+        "number": "Tower Gamma - 102",
+        "road": "EPIP Access Way",
+        "block": "Tower Gamma",
+        "facing": "North",
+        "x": 289,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_gamma",
+        "color": "cyan"
+      },
+      "19": {
+        "id": "19",
+        "number": "Tower Gamma - 201",
+        "road": "EPIP Access Way",
+        "block": "Tower Gamma",
+        "facing": "North",
+        "x": 311,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_gamma",
+        "color": "cyan"
+      },
+      "20": {
+        "id": "20",
+        "number": "Tower Gamma - 202",
+        "road": "EPIP Access Way",
+        "block": "Tower Gamma",
+        "facing": "North",
+        "x": 333,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_gamma",
+        "color": "cyan"
+      },
+      "21": {
+        "id": "21",
+        "number": "Tower Gamma - 301",
+        "road": "EPIP Access Way",
+        "block": "Tower Gamma",
+        "facing": "North",
+        "x": 267,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_gamma",
+        "color": "cyan"
+      },
+      "22": {
+        "id": "22",
+        "number": "Tower Gamma - 302",
+        "road": "EPIP Access Way",
+        "block": "Tower Gamma",
+        "facing": "North",
+        "x": 289,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_gamma",
+        "color": "cyan"
+      },
+      "23": {
+        "id": "23",
+        "number": "Tower Gamma - 401",
+        "road": "EPIP Access Way",
+        "block": "Tower Gamma",
+        "facing": "North",
+        "x": 311,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_gamma",
+        "color": "cyan"
+      },
+      "24": {
+        "id": "24",
+        "number": "Tower Gamma - 402",
+        "road": "EPIP Access Way",
+        "block": "Tower Gamma",
+        "facing": "North",
+        "x": 333,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_gamma",
+        "color": "cyan"
+      },
+      "25": {
+        "id": "25",
+        "number": "Tower Delta - 101",
+        "road": "Beta Promenade",
+        "block": "Tower Delta",
+        "facing": "North",
+        "x": 827,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_delta",
+        "color": "cyan"
+      },
+      "26": {
+        "id": "26",
+        "number": "Tower Delta - 102",
+        "road": "Beta Promenade",
+        "block": "Tower Delta",
+        "facing": "North",
+        "x": 849,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_delta",
+        "color": "cyan"
+      },
+      "27": {
+        "id": "27",
+        "number": "Tower Delta - 201",
+        "road": "Beta Promenade",
+        "block": "Tower Delta",
+        "facing": "North",
+        "x": 871,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_delta",
+        "color": "cyan"
+      },
+      "28": {
+        "id": "28",
+        "number": "Tower Delta - 202",
+        "road": "Beta Promenade",
+        "block": "Tower Delta",
+        "facing": "North",
+        "x": 893,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_delta",
+        "color": "cyan"
+      },
+      "29": {
+        "id": "29",
+        "number": "Tower Delta - 301",
+        "road": "Beta Promenade",
+        "block": "Tower Delta",
+        "facing": "North",
+        "x": 827,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_delta",
+        "color": "cyan"
+      },
+      "30": {
+        "id": "30",
+        "number": "Tower Delta - 302",
+        "road": "Beta Promenade",
+        "block": "Tower Delta",
+        "facing": "North",
+        "x": 849,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_delta",
+        "color": "cyan"
+      },
+      "31": {
+        "id": "31",
+        "number": "Tower Delta - 401",
+        "road": "Beta Promenade",
+        "block": "Tower Delta",
+        "facing": "North",
+        "x": 871,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_delta",
+        "color": "cyan"
+      },
+      "32": {
+        "id": "32",
+        "number": "Tower Delta - 402",
+        "road": "Beta Promenade",
+        "block": "Tower Delta",
+        "facing": "North",
+        "x": 893,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "dr_delta",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "divyasree_republic_gate_1",
-        "name": "Divyasree Republic of Whitefield Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "divyasree_republic_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "divyasree_republic_gate_2",
-        "name": "Divyasree Republic of Whitefield Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "divyasree_republic_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "divyasree_republic_club",
         "name": "Republic Central Club",
-        "description": "Sports arena, rooftop pool, co-working lounge and spa",
+        "description": "Olympic pool, squash, badminton, co-working hub and cafe",
         "x": 620,
-        "y": 270,
-        "roadNode": "divyasree_republic_n_mid",
-        "icon": "\ud83c\udfd9\ufe0f",
+        "y": 440,
+        "roadNode": "dr_junc_ctr",
+        "icon": "\ud83c\udfca",
         "type": "clubhouse"
       }
     ],
@@ -24667,38 +24052,28 @@ window.LAYOUTS = {
       {
         "name": "REPUBLIC BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
-        "name": "EPIP PARKWAY",
+        "name": "ALPHA PARKWAY",
         "x": 620,
         "y": 255,
         "vertical": false
       },
       {
-        "name": "CENTRAL GARDEN WALK",
+        "name": "EPIP ACCESS WAY",
         "x": 620,
         "y": 705,
         "vertical": false
-      },
-      {
-        "name": "TECH LINK AVENUE",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "KUNDALAHALLI WAY",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "divyasree_republic_gate_1",
+    "defaultStartGate": "dr_gate_main",
     "sectors": [
-      "Tower A-D",
-      "Tower E-H"
+      "Tower Alpha",
+      "Tower Beta",
+      "Tower Gamma",
+      "Tower Delta"
     ]
   },
   "confident_anthea": {
@@ -26532,263 +25907,193 @@ window.LAYOUTS = {
     "zone": "whitefield",
     "type": "Historic Heritage Circular Layout",
     "unitType": "Plot",
-    "unitCount": 44,
+    "unitCount": 16,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
+    "groundPolygon": "620,120 900,180 1080,360 1140,480 1080,600 900,780 620,840 340,780 160,600 100,480 160,360 340,180 Z",
+    "borderTreesPath": "M 620,120 L 900,180 L 1080,360 L 1140,480 L 1080,600 L 900,780 L 620,840 L 340,780 L 160,600 L 100,480 L 160,360 L 340,180 Z",
+    "waterBody": null,
     "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+      "x": 480,
+      "y": 380,
+      "w": 280,
+      "h": 200,
+      "rx": 100,
+      "label": "Historic Whitefield Inner Circle Heritage Park"
     },
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "whitefield_inner_circle_gate_1": {
-          "id": "whitefield_inner_circle_gate_1",
-          "x": 90,
+        "wic_gate_west": {
+          "id": "wic_gate_west",
+          "x": 100,
           "y": 480,
-          "label": "Whitefield Inner Circle Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Whitefield Main Road)"
         },
-        "whitefield_inner_circle_entry": {
-          "id": "whitefield_inner_circle_entry",
-          "x": 180,
+        "wic_out_w": {
+          "id": "wic_out_w",
+          "x": 220,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Outer Circle West Cross"
         },
-        "whitefield_inner_circle_junc_w": {
-          "id": "whitefield_inner_circle_junc_w",
-          "x": 320,
+        "wic_in_w": {
+          "id": "wic_in_w",
+          "x": 380,
           "y": 480,
-          "label": "Church Street Link West Junction"
+          "label": "Inner Circle West"
         },
-        "whitefield_inner_circle_junc_ctr": {
-          "id": "whitefield_inner_circle_junc_ctr",
+        "wic_park_ctr": {
+          "id": "wic_park_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Historic Gazebo Hub"
         },
-        "whitefield_inner_circle_junc_e": {
-          "id": "whitefield_inner_circle_junc_e",
-          "x": 920,
+        "wic_in_e": {
+          "id": "wic_in_e",
+          "x": 860,
           "y": 480,
-          "label": "Post Office Road East Junction"
+          "label": "Inner Circle East"
         },
-        "whitefield_inner_circle_gate_2": {
-          "id": "whitefield_inner_circle_gate_2",
-          "x": 1110,
+        "wic_out_e": {
+          "id": "wic_out_e",
+          "x": 1020,
           "y": 480,
-          "label": "Whitefield Inner Circle Gate 2 (Rear Entrance)"
+          "label": "Outer Circle East Cross"
         },
-        "whitefield_inner_circle_n_w": {
-          "id": "whitefield_inner_circle_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Waverly Road Parkway West"
+        "wic_gate_east": {
+          "id": "wic_gate_east",
+          "x": 1130,
+          "y": 480,
+          "label": "Gate 2 (Post Office Road Link)"
         },
-        "whitefield_inner_circle_n_mid": {
-          "id": "whitefield_inner_circle_n_mid",
+        "wic_in_n": {
+          "id": "wic_in_n",
           "x": 620,
-          "y": 270,
-          "label": "Waverly Road Parkway North Plaza"
+          "y": 280,
+          "label": "Inner Circle North"
         },
-        "whitefield_inner_circle_n_e": {
-          "id": "whitefield_inner_circle_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Waverly Road Parkway East"
-        },
-        "whitefield_inner_circle_s_w": {
-          "id": "whitefield_inner_circle_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Outer Circle Way West"
-        },
-        "whitefield_inner_circle_s_mid": {
-          "id": "whitefield_inner_circle_s_mid",
+        "wic_out_n": {
+          "id": "wic_out_n",
           "x": 620,
-          "y": 690,
-          "label": "Outer Circle Way South Plaza"
+          "y": 160,
+          "label": "Outer Circle North (Waverly Way)"
         },
-        "whitefield_inner_circle_s_e": {
-          "id": "whitefield_inner_circle_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Outer Circle Way East"
-        },
-        "whitefield_inner_circle_w_n_mid": {
-          "id": "whitefield_inner_circle_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Church Street Link North Link"
-        },
-        "whitefield_inner_circle_w_s_mid": {
-          "id": "whitefield_inner_circle_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Church Street Link South Link"
-        },
-        "whitefield_inner_circle_ctr_n_mid": {
-          "id": "whitefield_inner_circle_ctr_n_mid",
+        "wic_in_s": {
+          "id": "wic_in_s",
           "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
+          "y": 680,
+          "label": "Inner Circle South"
         },
-        "whitefield_inner_circle_ctr_s_mid": {
-          "id": "whitefield_inner_circle_ctr_s_mid",
+        "wic_out_s": {
+          "id": "wic_out_s",
           "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "whitefield_inner_circle_e_n_mid": {
-          "id": "whitefield_inner_circle_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Post Office Road North Link"
-        },
-        "whitefield_inner_circle_e_s_mid": {
-          "id": "whitefield_inner_circle_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Post Office Road South Link"
+          "y": 800,
+          "label": "Outer Circle South"
         }
       },
       "edges": [
         {
-          "u": "whitefield_inner_circle_gate_1",
-          "v": "whitefield_inner_circle_entry",
+          "u": "wic_gate_west",
+          "v": "wic_out_w",
+          "road": "Church Street Link",
+          "type": "primary"
+        },
+        {
+          "u": "wic_out_w",
+          "v": "wic_in_w",
+          "road": "Church Street Link",
+          "type": "primary"
+        },
+        {
+          "u": "wic_in_w",
+          "v": "wic_park_ctr",
           "road": "Inner Circle Boulevard",
           "type": "primary"
         },
         {
-          "u": "whitefield_inner_circle_entry",
-          "v": "whitefield_inner_circle_junc_w",
+          "u": "wic_park_ctr",
+          "v": "wic_in_e",
           "road": "Inner Circle Boulevard",
           "type": "primary"
         },
         {
-          "u": "whitefield_inner_circle_junc_w",
-          "v": "whitefield_inner_circle_junc_ctr",
-          "road": "Inner Circle Boulevard",
+          "u": "wic_in_e",
+          "v": "wic_out_e",
+          "road": "Post Office Road",
           "type": "primary"
         },
         {
-          "u": "whitefield_inner_circle_junc_ctr",
-          "v": "whitefield_inner_circle_junc_e",
-          "road": "Inner Circle Boulevard",
+          "u": "wic_out_e",
+          "v": "wic_gate_east",
+          "road": "Post Office Road",
           "type": "primary"
         },
         {
-          "u": "whitefield_inner_circle_junc_e",
-          "v": "whitefield_inner_circle_gate_2",
+          "u": "wic_in_w",
+          "v": "wic_in_n",
           "road": "Inner Circle Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "whitefield_inner_circle_n_w",
-          "v": "whitefield_inner_circle_n_mid",
-          "road": "Waverly Road Parkway",
           "type": "secondary"
         },
         {
-          "u": "whitefield_inner_circle_n_mid",
-          "v": "whitefield_inner_circle_n_e",
-          "road": "Waverly Road Parkway",
+          "u": "wic_in_n",
+          "v": "wic_in_e",
+          "road": "Inner Circle Boulevard",
           "type": "secondary"
         },
         {
-          "u": "whitefield_inner_circle_s_w",
-          "v": "whitefield_inner_circle_s_mid",
+          "u": "wic_in_e",
+          "v": "wic_in_s",
+          "road": "Inner Circle Boulevard",
+          "type": "secondary"
+        },
+        {
+          "u": "wic_in_s",
+          "v": "wic_in_w",
+          "road": "Inner Circle Boulevard",
+          "type": "secondary"
+        },
+        {
+          "u": "wic_out_w",
+          "v": "wic_out_n",
           "road": "Outer Circle Way",
           "type": "secondary"
         },
         {
-          "u": "whitefield_inner_circle_s_mid",
-          "v": "whitefield_inner_circle_s_e",
+          "u": "wic_out_n",
+          "v": "wic_out_e",
           "road": "Outer Circle Way",
           "type": "secondary"
         },
         {
-          "u": "whitefield_inner_circle_n_w",
-          "v": "whitefield_inner_circle_w_n_mid",
-          "road": "Church Street Link",
+          "u": "wic_out_e",
+          "v": "wic_out_s",
+          "road": "Outer Circle Way",
           "type": "secondary"
         },
         {
-          "u": "whitefield_inner_circle_w_n_mid",
-          "v": "whitefield_inner_circle_junc_w",
-          "road": "Church Street Link",
+          "u": "wic_out_s",
+          "v": "wic_out_w",
+          "road": "Outer Circle Way",
           "type": "secondary"
         },
         {
-          "u": "whitefield_inner_circle_junc_w",
-          "v": "whitefield_inner_circle_w_s_mid",
-          "road": "Church Street Link",
+          "u": "wic_in_n",
+          "v": "wic_out_n",
+          "road": "Waverly Road Parkway",
           "type": "secondary"
         },
         {
-          "u": "whitefield_inner_circle_w_s_mid",
-          "v": "whitefield_inner_circle_s_w",
-          "road": "Church Street Link",
-          "type": "secondary"
-        },
-        {
-          "u": "whitefield_inner_circle_n_mid",
-          "v": "whitefield_inner_circle_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "whitefield_inner_circle_ctr_n_mid",
-          "v": "whitefield_inner_circle_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "whitefield_inner_circle_junc_ctr",
-          "v": "whitefield_inner_circle_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "whitefield_inner_circle_ctr_s_mid",
-          "v": "whitefield_inner_circle_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "whitefield_inner_circle_n_e",
-          "v": "whitefield_inner_circle_e_n_mid",
-          "road": "Post Office Road",
-          "type": "secondary"
-        },
-        {
-          "u": "whitefield_inner_circle_e_n_mid",
-          "v": "whitefield_inner_circle_junc_e",
-          "road": "Post Office Road",
-          "type": "secondary"
-        },
-        {
-          "u": "whitefield_inner_circle_junc_e",
-          "v": "whitefield_inner_circle_e_s_mid",
-          "road": "Post Office Road",
-          "type": "secondary"
-        },
-        {
-          "u": "whitefield_inner_circle_e_s_mid",
-          "v": "whitefield_inner_circle_s_e",
-          "road": "Post Office Road",
+          "u": "wic_in_s",
+          "v": "wic_out_s",
+          "road": "Waverly Road Parkway",
           "type": "secondary"
         }
       ]
@@ -26797,604 +26102,220 @@ window.LAYOUTS = {
       "1": {
         "id": "1",
         "number": "Plot 1",
-        "road": "Waverly Road Parkway",
+        "road": "Outer Circle West Cross",
         "block": "Circle Park Sector",
         "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_w",
+        "x": 205,
+        "y": 455,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_out_w",
         "color": "cyan"
       },
       "2": {
         "id": "2",
         "number": "Plot 2",
-        "road": "Waverly Road Parkway",
+        "road": "Outer Circle West Cross",
         "block": "Circle Park Sector",
         "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_w",
+        "x": 235,
+        "y": 455,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_out_w",
         "color": "cyan"
       },
       "3": {
         "id": "3",
         "number": "Plot 3",
-        "road": "Waverly Road Parkway",
+        "road": "Inner Circle West",
         "block": "Circle Park Sector",
         "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_w",
+        "x": 365,
+        "y": 455,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_in_w",
         "color": "cyan"
       },
       "4": {
         "id": "4",
         "number": "Plot 4",
-        "road": "Waverly Road Parkway",
+        "road": "Inner Circle West",
         "block": "Circle Park Sector",
         "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_mid",
+        "x": 395,
+        "y": 455,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_in_w",
         "color": "cyan"
       },
       "5": {
         "id": "5",
         "number": "Plot 5",
-        "road": "Waverly Road Parkway",
+        "road": "Inner Circle East",
         "block": "Circle Park Sector",
         "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_mid",
+        "x": 845,
+        "y": 455,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_in_e",
         "color": "cyan"
       },
       "6": {
         "id": "6",
         "number": "Plot 6",
-        "road": "Waverly Road Parkway",
+        "road": "Inner Circle East",
         "block": "Circle Park Sector",
         "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_e",
+        "x": 875,
+        "y": 455,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_in_e",
         "color": "cyan"
       },
       "7": {
         "id": "7",
         "number": "Plot 7",
-        "road": "Waverly Road Parkway",
+        "road": "Outer Circle East Cross",
         "block": "Circle Park Sector",
         "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_e",
+        "x": 1005,
+        "y": 455,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_out_e",
         "color": "cyan"
       },
       "8": {
         "id": "8",
         "number": "Plot 8",
-        "road": "Waverly Road Parkway",
+        "road": "Outer Circle East Cross",
         "block": "Circle Park Sector",
         "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_e",
+        "x": 1035,
+        "y": 455,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_out_e",
         "color": "cyan"
       },
       "9": {
         "id": "9",
         "number": "Plot 9",
-        "road": "Waverly Road Parkway",
+        "road": "Inner Circle North",
         "block": "Waverly Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_w",
+        "facing": "South",
+        "x": 605,
+        "y": 255,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_in_n",
         "color": "cyan"
       },
       "10": {
         "id": "10",
         "number": "Plot 10",
-        "road": "Waverly Road Parkway",
+        "road": "Inner Circle North",
         "block": "Waverly Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_w",
+        "facing": "South",
+        "x": 635,
+        "y": 255,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_in_n",
         "color": "cyan"
       },
       "11": {
         "id": "11",
         "number": "Plot 11",
-        "road": "Waverly Road Parkway",
+        "road": "Outer Circle North (Waverly Way)",
         "block": "Waverly Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_w",
+        "facing": "South",
+        "x": 605,
+        "y": 135,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_out_n",
         "color": "cyan"
       },
       "12": {
         "id": "12",
         "number": "Plot 12",
-        "road": "Waverly Road Parkway",
+        "road": "Outer Circle North (Waverly Way)",
         "block": "Waverly Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_mid",
+        "facing": "South",
+        "x": 635,
+        "y": 135,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_out_n",
         "color": "cyan"
       },
       "13": {
         "id": "13",
         "number": "Plot 13",
-        "road": "Waverly Road Parkway",
+        "road": "Inner Circle South",
         "block": "Waverly Sector",
         "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_mid",
+        "x": 605,
+        "y": 705,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_in_s",
         "color": "cyan"
       },
       "14": {
         "id": "14",
         "number": "Plot 14",
-        "road": "Waverly Road Parkway",
+        "road": "Inner Circle South",
         "block": "Waverly Sector",
         "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_e",
+        "x": 635,
+        "y": 705,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_in_s",
         "color": "cyan"
       },
       "15": {
         "id": "15",
         "number": "Plot 15",
-        "road": "Waverly Road Parkway",
+        "road": "Outer Circle South",
         "block": "Waverly Sector",
         "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_e",
+        "x": 605,
+        "y": 825,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_out_s",
         "color": "cyan"
       },
       "16": {
         "id": "16",
         "number": "Plot 16",
-        "road": "Waverly Road Parkway",
+        "road": "Outer Circle South",
         "block": "Waverly Sector",
         "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "Outer Circle Way",
-        "block": "Waverly Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "Outer Circle Way",
-        "block": "Waverly Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "Outer Circle Way",
-        "block": "Waverly Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "Outer Circle Way",
-        "block": "Waverly Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "Outer Circle Way",
-        "block": "Waverly Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "Outer Circle Way",
-        "block": "Waverly Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "Outer Circle Way",
-        "block": "Waverly Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "Outer Circle Way",
-        "block": "Waverly Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "Outer Circle Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "Outer Circle Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "Outer Circle Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "Outer Circle Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "Outer Circle Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "Outer Circle Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "Outer Circle Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "Outer Circle Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Church Street Link",
-        "block": "Circle Park Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Church Street Link",
-        "block": "Circle Park Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Church Street Link",
-        "block": "Circle Park Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Church Street Link",
-        "block": "Circle Park Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Church Street Link",
-        "block": "Circle Park Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Church Street Link",
-        "block": "Circle Park Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Post Office Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Post Office Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Post Office Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Post Office Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Post Office Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Post Office Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "whitefield_inner_circle_e_s_mid",
+        "x": 635,
+        "y": 825,
+        "w": 44,
+        "h": 32,
+        "roadNode": "wic_out_s",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "whitefield_inner_circle_gate_1",
-        "name": "Whitefield Inner Circle Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "whitefield_inner_circle_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "whitefield_inner_circle_gate_2",
-        "name": "Whitefield Inner Circle Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "whitefield_inner_circle_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "whitefield_inner_circle_park",
-        "name": "Whitefield Inner Circle Park",
+        "name": "Whitefield Inner Circle Heritage Park",
         "description": "Colonial circular park with giant rain trees and heritage gazebo",
         "x": 620,
         "y": 480,
-        "roadNode": "whitefield_inner_circle_junc_ctr",
+        "roadNode": "wic_park_ctr",
         "icon": "\ud83c\udf33",
         "type": "park"
       }
@@ -27403,35 +26324,29 @@ window.LAYOUTS = {
       {
         "name": "INNER CIRCLE BOULEVARD",
         "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "WAVERLY ROAD PARKWAY",
-        "x": 620,
-        "y": 255,
+        "y": 265,
         "vertical": false
       },
       {
         "name": "OUTER CIRCLE WAY",
         "x": 620,
-        "y": 705,
+        "y": 145,
         "vertical": false
       },
       {
         "name": "CHURCH STREET LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
+        "x": 250,
+        "y": 495,
+        "vertical": false
       },
       {
-        "name": "POST OFFICE ROAD",
-        "x": 935,
-        "y": 375,
+        "name": "WAVERLY ROAD PARKWAY",
+        "x": 630,
+        "y": 740,
         "vertical": true
       }
     ],
-    "defaultStartGate": "whitefield_inner_circle_gate_1",
+    "defaultStartGate": "wic_gate_west",
     "sectors": [
       "Circle Park Sector",
       "Waverly Sector"
@@ -27444,263 +26359,169 @@ window.LAYOUTS = {
     "zone": "whitefield",
     "type": "Modern Residential Society",
     "unitType": "Apartment / Block",
-    "unitCount": 24,
+    "unitCount": 32,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
+    "groundPolygon": "100,480 220,160 620,140 1020,160 1120,480 1020,800 620,820 220,800 Z",
+    "borderTreesPath": "M 100,480 L 220,160 L 620,140 L 1020,160 L 1120,480 L 1020,800 L 620,820 L 220,800 Z",
+    "waterBody": null,
     "gardenPark": {
       "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+      "y": 430,
+      "w": 280,
+      "h": 80,
+      "rx": 12,
+      "label": "Roman Column Piazza & Classical Fountain"
     },
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "sowparnika_columns_gate_1": {
-          "id": "sowparnika_columns_gate_1",
-          "x": 90,
+        "scol_gate_main": {
+          "id": "scol_gate_main",
+          "x": 100,
           "y": 480,
-          "label": "Sowparnika The Columns Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Whitefield Main Entry)"
         },
-        "sowparnika_columns_entry": {
-          "id": "sowparnika_columns_entry",
-          "x": 180,
+        "scol_junc_w": {
+          "id": "scol_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "West Colonnade Cross"
         },
-        "sowparnika_columns_junc_w": {
-          "id": "sowparnika_columns_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Gardenia Link West Junction"
-        },
-        "sowparnika_columns_junc_ctr": {
-          "id": "sowparnika_columns_junc_ctr",
+        "scol_junc_ctr": {
+          "id": "scol_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Roman Fountain Forum"
         },
-        "sowparnika_columns_junc_e": {
-          "id": "sowparnika_columns_junc_e",
-          "x": 920,
+        "scol_junc_e": {
+          "id": "scol_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Whitefield Road East Junction"
+          "label": "East Colonnade Cross"
         },
-        "sowparnika_columns_gate_2": {
-          "id": "sowparnika_columns_gate_2",
+        "scol_gate_east": {
+          "id": "scol_gate_east",
           "x": 1110,
           "y": 480,
-          "label": "Sowparnika The Columns Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Hope Farm Link)"
         },
-        "sowparnika_columns_n_w": {
-          "id": "sowparnika_columns_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Central Promenade West"
+        "scol_corinth": {
+          "id": "scol_corinth",
+          "x": 340,
+          "y": 280,
+          "label": "Corinthian Way"
         },
-        "sowparnika_columns_n_mid": {
-          "id": "sowparnika_columns_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Central Promenade North Plaza"
+        "scol_doric": {
+          "id": "scol_doric",
+          "x": 860,
+          "y": 280,
+          "label": "Doric Avenue"
         },
-        "sowparnika_columns_n_e": {
-          "id": "sowparnika_columns_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Central Promenade East"
+        "scol_ionic": {
+          "id": "scol_ionic",
+          "x": 340,
+          "y": 680,
+          "label": "Ionic Parkway"
         },
-        "sowparnika_columns_s_w": {
-          "id": "sowparnika_columns_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "East Access Way West"
-        },
-        "sowparnika_columns_s_mid": {
-          "id": "sowparnika_columns_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "East Access Way South Plaza"
-        },
-        "sowparnika_columns_s_e": {
-          "id": "sowparnika_columns_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "East Access Way East"
-        },
-        "sowparnika_columns_w_n_mid": {
-          "id": "sowparnika_columns_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Gardenia Link North Link"
-        },
-        "sowparnika_columns_w_s_mid": {
-          "id": "sowparnika_columns_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Gardenia Link South Link"
-        },
-        "sowparnika_columns_ctr_n_mid": {
-          "id": "sowparnika_columns_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "sowparnika_columns_ctr_s_mid": {
-          "id": "sowparnika_columns_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "sowparnika_columns_e_n_mid": {
-          "id": "sowparnika_columns_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Whitefield Road North Link"
-        },
-        "sowparnika_columns_e_s_mid": {
-          "id": "sowparnika_columns_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Whitefield Road South Link"
+        "scol_tuscan": {
+          "id": "scol_tuscan",
+          "x": 860,
+          "y": 680,
+          "label": "Tuscan Walkway"
         }
       },
       "edges": [
         {
-          "u": "sowparnika_columns_gate_1",
-          "v": "sowparnika_columns_entry",
+          "u": "scol_gate_main",
+          "v": "scol_junc_w",
           "road": "Columns Boulevard",
           "type": "primary"
         },
         {
-          "u": "sowparnika_columns_entry",
-          "v": "sowparnika_columns_junc_w",
+          "u": "scol_junc_w",
+          "v": "scol_junc_ctr",
           "road": "Columns Boulevard",
           "type": "primary"
         },
         {
-          "u": "sowparnika_columns_junc_w",
-          "v": "sowparnika_columns_junc_ctr",
+          "u": "scol_junc_ctr",
+          "v": "scol_junc_e",
           "road": "Columns Boulevard",
           "type": "primary"
         },
         {
-          "u": "sowparnika_columns_junc_ctr",
-          "v": "sowparnika_columns_junc_e",
+          "u": "scol_junc_e",
+          "v": "scol_gate_east",
           "road": "Columns Boulevard",
           "type": "primary"
         },
         {
-          "u": "sowparnika_columns_junc_e",
-          "v": "sowparnika_columns_gate_2",
-          "road": "Columns Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "sowparnika_columns_n_w",
-          "v": "sowparnika_columns_n_mid",
-          "road": "Central Promenade",
+          "u": "scol_junc_w",
+          "v": "scol_corinth",
+          "road": "Corinthian Way",
           "type": "secondary"
         },
         {
-          "u": "sowparnika_columns_n_mid",
-          "v": "sowparnika_columns_n_e",
-          "road": "Central Promenade",
+          "u": "scol_corinth",
+          "v": "scol_doric",
+          "road": "Classical Promenade",
           "type": "secondary"
         },
         {
-          "u": "sowparnika_columns_s_w",
-          "v": "sowparnika_columns_s_mid",
-          "road": "East Access Way",
+          "u": "scol_doric",
+          "v": "scol_junc_e",
+          "road": "Doric Avenue",
           "type": "secondary"
         },
         {
-          "u": "sowparnika_columns_s_mid",
-          "v": "sowparnika_columns_s_e",
-          "road": "East Access Way",
+          "u": "scol_junc_w",
+          "v": "scol_ionic",
+          "road": "Ionic Parkway",
           "type": "secondary"
         },
         {
-          "u": "sowparnika_columns_n_w",
-          "v": "sowparnika_columns_w_n_mid",
-          "road": "Gardenia Link",
+          "u": "scol_ionic",
+          "v": "scol_tuscan",
+          "road": "Classical Promenade",
           "type": "secondary"
         },
         {
-          "u": "sowparnika_columns_w_n_mid",
-          "v": "sowparnika_columns_junc_w",
-          "road": "Gardenia Link",
+          "u": "scol_tuscan",
+          "v": "scol_junc_e",
+          "road": "Tuscan Walkway",
           "type": "secondary"
         },
         {
-          "u": "sowparnika_columns_junc_w",
-          "v": "sowparnika_columns_w_s_mid",
-          "road": "Gardenia Link",
-          "type": "secondary"
-        },
-        {
-          "u": "sowparnika_columns_w_s_mid",
-          "v": "sowparnika_columns_s_w",
-          "road": "Gardenia Link",
-          "type": "secondary"
-        },
-        {
-          "u": "sowparnika_columns_n_mid",
-          "v": "sowparnika_columns_ctr_n_mid",
+          "u": "scol_junc_ctr",
+          "v": "scol_corinth",
           "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sowparnika_columns_ctr_n_mid",
-          "v": "sowparnika_columns_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sowparnika_columns_junc_ctr",
-          "v": "sowparnika_columns_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sowparnika_columns_ctr_s_mid",
-          "v": "sowparnika_columns_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sowparnika_columns_n_e",
-          "v": "sowparnika_columns_e_n_mid",
-          "road": "Whitefield Road",
           "type": "secondary"
         },
         {
-          "u": "sowparnika_columns_e_n_mid",
-          "v": "sowparnika_columns_junc_e",
-          "road": "Whitefield Road",
+          "u": "scol_junc_ctr",
+          "v": "scol_doric",
+          "road": "Central Link",
           "type": "secondary"
         },
         {
-          "u": "sowparnika_columns_junc_e",
-          "v": "sowparnika_columns_e_s_mid",
-          "road": "Whitefield Road",
+          "u": "scol_junc_ctr",
+          "v": "scol_ionic",
+          "road": "Central Link",
           "type": "secondary"
         },
         {
-          "u": "sowparnika_columns_e_s_mid",
-          "v": "sowparnika_columns_s_e",
-          "road": "Whitefield Road",
+          "u": "scol_junc_ctr",
+          "v": "scol_tuscan",
+          "road": "Central Link",
           "type": "secondary"
         }
       ]
@@ -27708,346 +26529,430 @@ window.LAYOUTS = {
     "plots": {
       "1": {
         "id": "1",
-        "number": "Block A - 101",
-        "road": "Central Promenade",
-        "block": "Block A",
+        "number": "Corinthian Tower - 101",
+        "road": "Corinthian Way",
+        "block": "Corinthian Tower",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 287,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_w",
+        "roadNode": "scol_corinth",
         "color": "cyan"
       },
       "2": {
         "id": "2",
-        "number": "Block A - 102",
-        "road": "Central Promenade",
-        "block": "Block A",
+        "number": "Corinthian Tower - 102",
+        "road": "Corinthian Way",
+        "block": "Corinthian Tower",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 309,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_w",
+        "roadNode": "scol_corinth",
         "color": "cyan"
       },
       "3": {
         "id": "3",
-        "number": "Block A - 201",
-        "road": "Central Promenade",
-        "block": "Block A",
+        "number": "Corinthian Tower - 201",
+        "road": "Corinthian Way",
+        "block": "Corinthian Tower",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 331,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_w",
+        "roadNode": "scol_corinth",
         "color": "cyan"
       },
       "4": {
         "id": "4",
-        "number": "Block A - 202",
-        "road": "Central Promenade",
-        "block": "Block A",
+        "number": "Corinthian Tower - 202",
+        "road": "Corinthian Way",
+        "block": "Corinthian Tower",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 353,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_w",
+        "roadNode": "scol_corinth",
         "color": "cyan"
       },
       "5": {
         "id": "5",
-        "number": "Block A - 301",
-        "road": "Central Promenade",
-        "block": "Block A",
+        "number": "Corinthian Tower - 301",
+        "road": "Corinthian Way",
+        "block": "Corinthian Tower",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 287,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_w",
+        "roadNode": "scol_corinth",
         "color": "cyan"
       },
       "6": {
         "id": "6",
-        "number": "Block A - 302",
-        "road": "Central Promenade",
-        "block": "Block A",
+        "number": "Corinthian Tower - 302",
+        "road": "Corinthian Way",
+        "block": "Corinthian Tower",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 309,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_w",
+        "roadNode": "scol_corinth",
         "color": "cyan"
       },
       "7": {
         "id": "7",
-        "number": "Block A - 401",
-        "road": "Central Promenade",
-        "block": "Block A",
+        "number": "Corinthian Tower - 401",
+        "road": "Corinthian Way",
+        "block": "Corinthian Tower",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 331,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_w",
+        "roadNode": "scol_corinth",
         "color": "cyan"
       },
       "8": {
         "id": "8",
-        "number": "Block A - 402",
-        "road": "Central Promenade",
-        "block": "Block A",
+        "number": "Corinthian Tower - 402",
+        "road": "Corinthian Way",
+        "block": "Corinthian Tower",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 353,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_w",
+        "roadNode": "scol_corinth",
         "color": "cyan"
       },
       "9": {
         "id": "9",
-        "number": "Block B - 101",
-        "road": "Central Promenade",
-        "block": "Block B",
+        "number": "Doric Tower - 101",
+        "road": "Doric Avenue",
+        "block": "Doric Tower",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 807,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_mid",
+        "roadNode": "scol_doric",
         "color": "cyan"
       },
       "10": {
         "id": "10",
-        "number": "Block B - 102",
-        "road": "Central Promenade",
-        "block": "Block B",
+        "number": "Doric Tower - 102",
+        "road": "Doric Avenue",
+        "block": "Doric Tower",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 829,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_mid",
+        "roadNode": "scol_doric",
         "color": "cyan"
       },
       "11": {
         "id": "11",
-        "number": "Block B - 201",
-        "road": "Central Promenade",
-        "block": "Block B",
+        "number": "Doric Tower - 201",
+        "road": "Doric Avenue",
+        "block": "Doric Tower",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 851,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_mid",
+        "roadNode": "scol_doric",
         "color": "cyan"
       },
       "12": {
         "id": "12",
-        "number": "Block B - 202",
-        "road": "Central Promenade",
-        "block": "Block B",
+        "number": "Doric Tower - 202",
+        "road": "Doric Avenue",
+        "block": "Doric Tower",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 873,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_mid",
+        "roadNode": "scol_doric",
         "color": "cyan"
       },
       "13": {
         "id": "13",
-        "number": "Block B - 301",
-        "road": "Central Promenade",
-        "block": "Block B",
+        "number": "Doric Tower - 301",
+        "road": "Doric Avenue",
+        "block": "Doric Tower",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 807,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_mid",
+        "roadNode": "scol_doric",
         "color": "cyan"
       },
       "14": {
         "id": "14",
-        "number": "Block B - 302",
-        "road": "Central Promenade",
-        "block": "Block B",
+        "number": "Doric Tower - 302",
+        "road": "Doric Avenue",
+        "block": "Doric Tower",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 829,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_mid",
+        "roadNode": "scol_doric",
         "color": "cyan"
       },
       "15": {
         "id": "15",
-        "number": "Block B - 401",
-        "road": "Central Promenade",
-        "block": "Block B",
+        "number": "Doric Tower - 401",
+        "road": "Doric Avenue",
+        "block": "Doric Tower",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 851,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_mid",
+        "roadNode": "scol_doric",
         "color": "cyan"
       },
       "16": {
         "id": "16",
-        "number": "Block B - 402",
-        "road": "Central Promenade",
-        "block": "Block B",
+        "number": "Doric Tower - 402",
+        "road": "Doric Avenue",
+        "block": "Doric Tower",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 873,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_mid",
+        "roadNode": "scol_doric",
         "color": "cyan"
       },
       "17": {
         "id": "17",
-        "number": "Block C - 101",
-        "road": "Central Promenade",
-        "block": "Block C",
-        "facing": "South",
-        "x": 807,
-        "y": 189,
+        "number": "Ionic Tower - 101",
+        "road": "Ionic Parkway",
+        "block": "Ionic Tower",
+        "facing": "North",
+        "x": 287,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_e",
+        "roadNode": "scol_ionic",
         "color": "cyan"
       },
       "18": {
         "id": "18",
-        "number": "Block C - 102",
-        "road": "Central Promenade",
-        "block": "Block C",
-        "facing": "South",
-        "x": 829,
-        "y": 189,
+        "number": "Ionic Tower - 102",
+        "road": "Ionic Parkway",
+        "block": "Ionic Tower",
+        "facing": "North",
+        "x": 309,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_e",
+        "roadNode": "scol_ionic",
         "color": "cyan"
       },
       "19": {
         "id": "19",
-        "number": "Block C - 201",
-        "road": "Central Promenade",
-        "block": "Block C",
-        "facing": "South",
-        "x": 851,
-        "y": 189,
+        "number": "Ionic Tower - 201",
+        "road": "Ionic Parkway",
+        "block": "Ionic Tower",
+        "facing": "North",
+        "x": 331,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_e",
+        "roadNode": "scol_ionic",
         "color": "cyan"
       },
       "20": {
         "id": "20",
-        "number": "Block C - 202",
-        "road": "Central Promenade",
-        "block": "Block C",
-        "facing": "South",
-        "x": 873,
-        "y": 189,
+        "number": "Ionic Tower - 202",
+        "road": "Ionic Parkway",
+        "block": "Ionic Tower",
+        "facing": "North",
+        "x": 353,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_e",
+        "roadNode": "scol_ionic",
         "color": "cyan"
       },
       "21": {
         "id": "21",
-        "number": "Block C - 301",
-        "road": "Central Promenade",
-        "block": "Block C",
-        "facing": "South",
-        "x": 807,
-        "y": 211,
+        "number": "Ionic Tower - 301",
+        "road": "Ionic Parkway",
+        "block": "Ionic Tower",
+        "facing": "North",
+        "x": 287,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_e",
+        "roadNode": "scol_ionic",
         "color": "cyan"
       },
       "22": {
         "id": "22",
-        "number": "Block C - 302",
-        "road": "Central Promenade",
-        "block": "Block C",
-        "facing": "South",
-        "x": 829,
-        "y": 211,
+        "number": "Ionic Tower - 302",
+        "road": "Ionic Parkway",
+        "block": "Ionic Tower",
+        "facing": "North",
+        "x": 309,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_e",
+        "roadNode": "scol_ionic",
         "color": "cyan"
       },
       "23": {
         "id": "23",
-        "number": "Block C - 401",
-        "road": "Central Promenade",
-        "block": "Block C",
-        "facing": "South",
-        "x": 851,
-        "y": 211,
+        "number": "Ionic Tower - 401",
+        "road": "Ionic Parkway",
+        "block": "Ionic Tower",
+        "facing": "North",
+        "x": 331,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_e",
+        "roadNode": "scol_ionic",
         "color": "cyan"
       },
       "24": {
         "id": "24",
-        "number": "Block C - 402",
-        "road": "Central Promenade",
-        "block": "Block C",
-        "facing": "South",
-        "x": 873,
-        "y": 211,
+        "number": "Ionic Tower - 402",
+        "road": "Ionic Parkway",
+        "block": "Ionic Tower",
+        "facing": "North",
+        "x": 353,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "sowparnika_columns_n_e",
+        "roadNode": "scol_ionic",
+        "color": "cyan"
+      },
+      "25": {
+        "id": "25",
+        "number": "Tuscan Tower - 101",
+        "road": "Tuscan Walkway",
+        "block": "Tuscan Tower",
+        "facing": "North",
+        "x": 807,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "scol_tuscan",
+        "color": "cyan"
+      },
+      "26": {
+        "id": "26",
+        "number": "Tuscan Tower - 102",
+        "road": "Tuscan Walkway",
+        "block": "Tuscan Tower",
+        "facing": "North",
+        "x": 829,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "scol_tuscan",
+        "color": "cyan"
+      },
+      "27": {
+        "id": "27",
+        "number": "Tuscan Tower - 201",
+        "road": "Tuscan Walkway",
+        "block": "Tuscan Tower",
+        "facing": "North",
+        "x": 851,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "scol_tuscan",
+        "color": "cyan"
+      },
+      "28": {
+        "id": "28",
+        "number": "Tuscan Tower - 202",
+        "road": "Tuscan Walkway",
+        "block": "Tuscan Tower",
+        "facing": "North",
+        "x": 873,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "scol_tuscan",
+        "color": "cyan"
+      },
+      "29": {
+        "id": "29",
+        "number": "Tuscan Tower - 301",
+        "road": "Tuscan Walkway",
+        "block": "Tuscan Tower",
+        "facing": "North",
+        "x": 807,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "scol_tuscan",
+        "color": "cyan"
+      },
+      "30": {
+        "id": "30",
+        "number": "Tuscan Tower - 302",
+        "road": "Tuscan Walkway",
+        "block": "Tuscan Tower",
+        "facing": "North",
+        "x": 829,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "scol_tuscan",
+        "color": "cyan"
+      },
+      "31": {
+        "id": "31",
+        "number": "Tuscan Tower - 401",
+        "road": "Tuscan Walkway",
+        "block": "Tuscan Tower",
+        "facing": "North",
+        "x": 851,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "scol_tuscan",
+        "color": "cyan"
+      },
+      "32": {
+        "id": "32",
+        "number": "Tuscan Tower - 402",
+        "road": "Tuscan Walkway",
+        "block": "Tuscan Tower",
+        "facing": "North",
+        "x": 873,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "scol_tuscan",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "sowparnika_columns_gate_1",
-        "name": "Sowparnika The Columns Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "sowparnika_columns_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "sowparnika_columns_gate_2",
-        "name": "Sowparnika The Columns Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "sowparnika_columns_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "sowparnika_columns_club",
-        "name": "The Columns Clubhouse",
-        "description": "Rooftop clubhouse and indoor games arena",
+        "name": "The Colosseum Clubhouse",
+        "description": "Roman amphitheater, heated pool, gym, banquet & squash",
         "x": 620,
-        "y": 270,
-        "roadNode": "sowparnika_columns_n_mid",
-        "icon": "\ud83c\udfe2",
+        "y": 430,
+        "roadNode": "scol_junc_ctr",
+        "icon": "\ud83c\udfdb\ufe0f",
         "type": "clubhouse"
       }
     ],
@@ -28055,39 +26960,22 @@ window.LAYOUTS = {
       {
         "name": "COLUMNS BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
-        "name": "CENTRAL PROMENADE",
+        "name": "CLASSICAL PROMENADE",
         "x": 620,
-        "y": 255,
+        "y": 265,
         "vertical": false
-      },
-      {
-        "name": "EAST ACCESS WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "GARDENIA LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "WHITEFIELD ROAD",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "sowparnika_columns_gate_1",
+    "defaultStartGate": "scol_gate_main",
     "sectors": [
-      "Block A",
-      "Block B",
-      "Block C"
+      "Corinthian Tower",
+      "Doric Tower",
+      "Ionic Tower",
+      "Tuscan Tower"
     ]
   },
   "doddakannelli_greens": {
@@ -29921,263 +28809,164 @@ window.LAYOUTS = {
     "zone": "ecity",
     "type": "Premier Luxury Villa & Tower Township",
     "unitType": "Villa",
-    "unitCount": 24,
+    "unitCount": 32,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "80,480 180,140 1060,140 1160,480 1060,820 180,820 Z",
+    "borderTreesPath": "M 80,480 L 180,140 L 1060,140 L 1160,480 L 1060,820 L 180,820 Z",
+    "waterBody": {
+      "x": 520,
+      "y": 440,
+      "w": 200,
+      "h": 75,
+      "rx": 14,
+      "label": "Club Retreat Heated Pool & Lagoon"
     },
+    "gardenPark": {
+      "x": 440,
+      "y": 310,
+      "w": 360,
+      "h": 60,
+      "rx": 8,
+      "label": "Palm Tree Avenues & Botanical Lawns"
+    },
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "adarsh_palm_retreat_gate_1": {
-          "id": "adarsh_palm_retreat_gate_1",
-          "x": 90,
+        "apr_gate_main": {
+          "id": "apr_gate_main",
+          "x": 80,
           "y": 480,
-          "label": "Adarsh Palm Retreat Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Outer Ring Road Bellandur)"
         },
-        "adarsh_palm_retreat_entry": {
-          "id": "adarsh_palm_retreat_entry",
-          "x": 180,
+        "apr_junc_w": {
+          "id": "apr_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Palm Retreat Boulevard West"
         },
-        "adarsh_palm_retreat_junc_w": {
-          "id": "adarsh_palm_retreat_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Orchard Drive West Junction"
-        },
-        "adarsh_palm_retreat_junc_ctr": {
-          "id": "adarsh_palm_retreat_junc_ctr",
+        "apr_junc_ctr": {
+          "id": "apr_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Club Retreat Central Plaza"
         },
-        "adarsh_palm_retreat_junc_e": {
-          "id": "adarsh_palm_retreat_junc_e",
-          "x": 920,
+        "apr_junc_e": {
+          "id": "apr_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Devarabisanahalli Parkway East Junction"
+          "label": "Villa Enclave East Roundabout"
         },
-        "adarsh_palm_retreat_gate_2": {
-          "id": "adarsh_palm_retreat_gate_2",
-          "x": 1110,
+        "apr_gate_east": {
+          "id": "apr_gate_east",
+          "x": 1140,
           "y": 480,
-          "label": "Adarsh Palm Retreat Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Devarabisanahalli Link)"
         },
-        "adarsh_palm_retreat_n_w": {
-          "id": "adarsh_palm_retreat_n_w",
+        "apr_redroof_nw": {
+          "id": "apr_redroof_nw",
           "x": 320,
           "y": 270,
-          "label": "Lake Promenade West"
+          "label": "Red Roof Villa Parkway"
         },
-        "adarsh_palm_retreat_n_mid": {
-          "id": "adarsh_palm_retreat_n_mid",
-          "x": 620,
+        "apr_tower_ne": {
+          "id": "apr_tower_ne",
+          "x": 860,
           "y": 270,
-          "label": "Lake Promenade North Plaza"
+          "label": "Retreat Towers Drive"
         },
-        "adarsh_palm_retreat_n_e": {
-          "id": "adarsh_palm_retreat_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Lake Promenade East"
-        },
-        "adarsh_palm_retreat_s_w": {
-          "id": "adarsh_palm_retreat_s_w",
+        "apr_villa_sw": {
+          "id": "apr_villa_sw",
           "x": 320,
           "y": 690,
-          "label": "Bellandur Link Way West"
+          "label": "Palm Way South"
         },
-        "adarsh_palm_retreat_s_mid": {
-          "id": "adarsh_palm_retreat_s_mid",
-          "x": 620,
+        "apr_lake_se": {
+          "id": "apr_lake_se",
+          "x": 860,
           "y": 690,
-          "label": "Bellandur Link Way South Plaza"
-        },
-        "adarsh_palm_retreat_s_e": {
-          "id": "adarsh_palm_retreat_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Bellandur Link Way East"
-        },
-        "adarsh_palm_retreat_w_n_mid": {
-          "id": "adarsh_palm_retreat_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Orchard Drive North Link"
-        },
-        "adarsh_palm_retreat_w_s_mid": {
-          "id": "adarsh_palm_retreat_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Orchard Drive South Link"
-        },
-        "adarsh_palm_retreat_ctr_n_mid": {
-          "id": "adarsh_palm_retreat_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "adarsh_palm_retreat_ctr_s_mid": {
-          "id": "adarsh_palm_retreat_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "adarsh_palm_retreat_e_n_mid": {
-          "id": "adarsh_palm_retreat_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Devarabisanahalli Parkway North Link"
-        },
-        "adarsh_palm_retreat_e_s_mid": {
-          "id": "adarsh_palm_retreat_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Devarabisanahalli Parkway South Link"
+          "label": "Lakeside Link South"
         }
       },
       "edges": [
         {
-          "u": "adarsh_palm_retreat_gate_1",
-          "v": "adarsh_palm_retreat_entry",
+          "u": "apr_gate_main",
+          "v": "apr_junc_w",
           "road": "Palm Retreat Boulevard",
           "type": "primary"
         },
         {
-          "u": "adarsh_palm_retreat_entry",
-          "v": "adarsh_palm_retreat_junc_w",
+          "u": "apr_junc_w",
+          "v": "apr_junc_ctr",
           "road": "Palm Retreat Boulevard",
           "type": "primary"
         },
         {
-          "u": "adarsh_palm_retreat_junc_w",
-          "v": "adarsh_palm_retreat_junc_ctr",
+          "u": "apr_junc_ctr",
+          "v": "apr_junc_e",
           "road": "Palm Retreat Boulevard",
           "type": "primary"
         },
         {
-          "u": "adarsh_palm_retreat_junc_ctr",
-          "v": "adarsh_palm_retreat_junc_e",
+          "u": "apr_junc_e",
+          "v": "apr_gate_east",
           "road": "Palm Retreat Boulevard",
           "type": "primary"
         },
         {
-          "u": "adarsh_palm_retreat_junc_e",
-          "v": "adarsh_palm_retreat_gate_2",
-          "road": "Palm Retreat Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "adarsh_palm_retreat_n_w",
-          "v": "adarsh_palm_retreat_n_mid",
-          "road": "Lake Promenade",
+          "u": "apr_junc_w",
+          "v": "apr_redroof_nw",
+          "road": "Red Roof Villa Parkway",
           "type": "secondary"
         },
         {
-          "u": "adarsh_palm_retreat_n_mid",
-          "v": "adarsh_palm_retreat_n_e",
-          "road": "Lake Promenade",
+          "u": "apr_redroof_nw",
+          "v": "apr_tower_ne",
+          "road": "Retreat Towers Drive",
           "type": "secondary"
         },
         {
-          "u": "adarsh_palm_retreat_s_w",
-          "v": "adarsh_palm_retreat_s_mid",
-          "road": "Bellandur Link Way",
+          "u": "apr_tower_ne",
+          "v": "apr_junc_e",
+          "road": "Retreat Towers Drive",
           "type": "secondary"
         },
         {
-          "u": "adarsh_palm_retreat_s_mid",
-          "v": "adarsh_palm_retreat_s_e",
-          "road": "Bellandur Link Way",
+          "u": "apr_junc_w",
+          "v": "apr_villa_sw",
+          "road": "Palm Way",
           "type": "secondary"
         },
         {
-          "u": "adarsh_palm_retreat_n_w",
-          "v": "adarsh_palm_retreat_w_n_mid",
-          "road": "Orchard Drive",
+          "u": "apr_villa_sw",
+          "v": "apr_lake_se",
+          "road": "Lakeside Link",
           "type": "secondary"
         },
         {
-          "u": "adarsh_palm_retreat_w_n_mid",
-          "v": "adarsh_palm_retreat_junc_w",
-          "road": "Orchard Drive",
+          "u": "apr_lake_se",
+          "v": "apr_junc_e",
+          "road": "Lakeside Link",
           "type": "secondary"
         },
         {
-          "u": "adarsh_palm_retreat_junc_w",
-          "v": "adarsh_palm_retreat_w_s_mid",
-          "road": "Orchard Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "adarsh_palm_retreat_w_s_mid",
-          "v": "adarsh_palm_retreat_s_w",
-          "road": "Orchard Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "adarsh_palm_retreat_n_mid",
-          "v": "adarsh_palm_retreat_ctr_n_mid",
+          "u": "apr_junc_ctr",
+          "v": "apr_redroof_nw",
           "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "adarsh_palm_retreat_ctr_n_mid",
-          "v": "adarsh_palm_retreat_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "adarsh_palm_retreat_junc_ctr",
-          "v": "adarsh_palm_retreat_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "adarsh_palm_retreat_ctr_s_mid",
-          "v": "adarsh_palm_retreat_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "adarsh_palm_retreat_n_e",
-          "v": "adarsh_palm_retreat_e_n_mid",
-          "road": "Devarabisanahalli Parkway",
           "type": "secondary"
         },
         {
-          "u": "adarsh_palm_retreat_e_n_mid",
-          "v": "adarsh_palm_retreat_junc_e",
-          "road": "Devarabisanahalli Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "adarsh_palm_retreat_junc_e",
-          "v": "adarsh_palm_retreat_e_s_mid",
-          "road": "Devarabisanahalli Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "adarsh_palm_retreat_e_s_mid",
-          "v": "adarsh_palm_retreat_s_e",
-          "road": "Devarabisanahalli Parkway",
+          "u": "apr_junc_ctr",
+          "v": "apr_villa_sw",
+          "road": "Central Link",
           "type": "secondary"
         }
       ]
@@ -30185,345 +28974,429 @@ window.LAYOUTS = {
     "plots": {
       "1": {
         "id": "1",
-        "number": "Palm Boulevard - 101",
-        "road": "Lake Promenade",
-        "block": "Palm Boulevard",
+        "number": "Red Roof Villas - 101",
+        "road": "Palm Retreat Boulevard",
+        "block": "Red Roof Villas",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 267,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_w",
+        "roadNode": "apr_redroof_nw",
         "color": "cyan"
       },
       "2": {
         "id": "2",
-        "number": "Palm Boulevard - 102",
-        "road": "Lake Promenade",
-        "block": "Palm Boulevard",
+        "number": "Red Roof Villas - 102",
+        "road": "Palm Retreat Boulevard",
+        "block": "Red Roof Villas",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 289,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_w",
+        "roadNode": "apr_redroof_nw",
         "color": "cyan"
       },
       "3": {
         "id": "3",
-        "number": "Palm Boulevard - 201",
-        "road": "Lake Promenade",
-        "block": "Palm Boulevard",
+        "number": "Red Roof Villas - 201",
+        "road": "Palm Retreat Boulevard",
+        "block": "Red Roof Villas",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 311,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_w",
+        "roadNode": "apr_redroof_nw",
         "color": "cyan"
       },
       "4": {
         "id": "4",
-        "number": "Palm Boulevard - 202",
-        "road": "Lake Promenade",
-        "block": "Palm Boulevard",
+        "number": "Red Roof Villas - 202",
+        "road": "Palm Retreat Boulevard",
+        "block": "Red Roof Villas",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 333,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_w",
+        "roadNode": "apr_redroof_nw",
         "color": "cyan"
       },
       "5": {
         "id": "5",
-        "number": "Palm Boulevard - 301",
-        "road": "Lake Promenade",
-        "block": "Palm Boulevard",
+        "number": "Red Roof Villas - 301",
+        "road": "Palm Retreat Boulevard",
+        "block": "Red Roof Villas",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 267,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_w",
+        "roadNode": "apr_redroof_nw",
         "color": "cyan"
       },
       "6": {
         "id": "6",
-        "number": "Palm Boulevard - 302",
-        "road": "Lake Promenade",
-        "block": "Palm Boulevard",
+        "number": "Red Roof Villas - 302",
+        "road": "Palm Retreat Boulevard",
+        "block": "Red Roof Villas",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 289,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_w",
+        "roadNode": "apr_redroof_nw",
         "color": "cyan"
       },
       "7": {
         "id": "7",
-        "number": "Palm Boulevard - 401",
-        "road": "Lake Promenade",
-        "block": "Palm Boulevard",
+        "number": "Red Roof Villas - 401",
+        "road": "Palm Retreat Boulevard",
+        "block": "Red Roof Villas",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 311,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_w",
+        "roadNode": "apr_redroof_nw",
         "color": "cyan"
       },
       "8": {
         "id": "8",
-        "number": "Palm Boulevard - 402",
-        "road": "Lake Promenade",
-        "block": "Palm Boulevard",
+        "number": "Red Roof Villas - 402",
+        "road": "Palm Retreat Boulevard",
+        "block": "Red Roof Villas",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 333,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_w",
+        "roadNode": "apr_redroof_nw",
         "color": "cyan"
       },
       "9": {
         "id": "9",
-        "number": "Retreat Villas - 101",
-        "road": "Lake Promenade",
-        "block": "Retreat Villas",
+        "number": "Retreat Towers - 101",
+        "road": "Retreat Towers Drive",
+        "block": "Retreat Towers",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 827,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_mid",
+        "roadNode": "apr_tower_ne",
         "color": "cyan"
       },
       "10": {
         "id": "10",
-        "number": "Retreat Villas - 102",
-        "road": "Lake Promenade",
-        "block": "Retreat Villas",
+        "number": "Retreat Towers - 102",
+        "road": "Retreat Towers Drive",
+        "block": "Retreat Towers",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 849,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_mid",
+        "roadNode": "apr_tower_ne",
         "color": "cyan"
       },
       "11": {
         "id": "11",
-        "number": "Retreat Villas - 201",
-        "road": "Lake Promenade",
-        "block": "Retreat Villas",
+        "number": "Retreat Towers - 201",
+        "road": "Retreat Towers Drive",
+        "block": "Retreat Towers",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 871,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_mid",
+        "roadNode": "apr_tower_ne",
         "color": "cyan"
       },
       "12": {
         "id": "12",
-        "number": "Retreat Villas - 202",
-        "road": "Lake Promenade",
-        "block": "Retreat Villas",
+        "number": "Retreat Towers - 202",
+        "road": "Retreat Towers Drive",
+        "block": "Retreat Towers",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 893,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_mid",
+        "roadNode": "apr_tower_ne",
         "color": "cyan"
       },
       "13": {
         "id": "13",
-        "number": "Retreat Villas - 301",
-        "road": "Lake Promenade",
-        "block": "Retreat Villas",
+        "number": "Retreat Towers - 301",
+        "road": "Retreat Towers Drive",
+        "block": "Retreat Towers",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 827,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_mid",
+        "roadNode": "apr_tower_ne",
         "color": "cyan"
       },
       "14": {
         "id": "14",
-        "number": "Retreat Villas - 302",
-        "road": "Lake Promenade",
-        "block": "Retreat Villas",
+        "number": "Retreat Towers - 302",
+        "road": "Retreat Towers Drive",
+        "block": "Retreat Towers",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 849,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_mid",
+        "roadNode": "apr_tower_ne",
         "color": "cyan"
       },
       "15": {
         "id": "15",
-        "number": "Retreat Villas - 401",
-        "road": "Lake Promenade",
-        "block": "Retreat Villas",
+        "number": "Retreat Towers - 401",
+        "road": "Retreat Towers Drive",
+        "block": "Retreat Towers",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 871,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_mid",
+        "roadNode": "apr_tower_ne",
         "color": "cyan"
       },
       "16": {
         "id": "16",
-        "number": "Retreat Villas - 402",
-        "road": "Lake Promenade",
-        "block": "Retreat Villas",
+        "number": "Retreat Towers - 402",
+        "road": "Retreat Towers Drive",
+        "block": "Retreat Towers",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 893,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_mid",
+        "roadNode": "apr_tower_ne",
         "color": "cyan"
       },
       "17": {
         "id": "17",
-        "number": "Condoville Towers - 101",
-        "road": "Lake Promenade",
-        "block": "Condoville Towers",
-        "facing": "South",
-        "x": 807,
-        "y": 189,
+        "number": "Palm Grove Villas - 101",
+        "road": "Palm Way",
+        "block": "Palm Grove Villas",
+        "facing": "North",
+        "x": 267,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_e",
+        "roadNode": "apr_villa_sw",
         "color": "cyan"
       },
       "18": {
         "id": "18",
-        "number": "Condoville Towers - 102",
-        "road": "Lake Promenade",
-        "block": "Condoville Towers",
-        "facing": "South",
-        "x": 829,
-        "y": 189,
+        "number": "Palm Grove Villas - 102",
+        "road": "Palm Way",
+        "block": "Palm Grove Villas",
+        "facing": "North",
+        "x": 289,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_e",
+        "roadNode": "apr_villa_sw",
         "color": "cyan"
       },
       "19": {
         "id": "19",
-        "number": "Condoville Towers - 201",
-        "road": "Lake Promenade",
-        "block": "Condoville Towers",
-        "facing": "South",
-        "x": 851,
-        "y": 189,
+        "number": "Palm Grove Villas - 201",
+        "road": "Palm Way",
+        "block": "Palm Grove Villas",
+        "facing": "North",
+        "x": 311,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_e",
+        "roadNode": "apr_villa_sw",
         "color": "cyan"
       },
       "20": {
         "id": "20",
-        "number": "Condoville Towers - 202",
-        "road": "Lake Promenade",
-        "block": "Condoville Towers",
-        "facing": "South",
-        "x": 873,
-        "y": 189,
+        "number": "Palm Grove Villas - 202",
+        "road": "Palm Way",
+        "block": "Palm Grove Villas",
+        "facing": "North",
+        "x": 333,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_e",
+        "roadNode": "apr_villa_sw",
         "color": "cyan"
       },
       "21": {
         "id": "21",
-        "number": "Condoville Towers - 301",
-        "road": "Lake Promenade",
-        "block": "Condoville Towers",
-        "facing": "South",
-        "x": 807,
-        "y": 211,
+        "number": "Palm Grove Villas - 301",
+        "road": "Palm Way",
+        "block": "Palm Grove Villas",
+        "facing": "North",
+        "x": 267,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_e",
+        "roadNode": "apr_villa_sw",
         "color": "cyan"
       },
       "22": {
         "id": "22",
-        "number": "Condoville Towers - 302",
-        "road": "Lake Promenade",
-        "block": "Condoville Towers",
-        "facing": "South",
-        "x": 829,
-        "y": 211,
+        "number": "Palm Grove Villas - 302",
+        "road": "Palm Way",
+        "block": "Palm Grove Villas",
+        "facing": "North",
+        "x": 289,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_e",
+        "roadNode": "apr_villa_sw",
         "color": "cyan"
       },
       "23": {
         "id": "23",
-        "number": "Condoville Towers - 401",
-        "road": "Lake Promenade",
-        "block": "Condoville Towers",
-        "facing": "South",
-        "x": 851,
-        "y": 211,
+        "number": "Palm Grove Villas - 401",
+        "road": "Palm Way",
+        "block": "Palm Grove Villas",
+        "facing": "North",
+        "x": 311,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_e",
+        "roadNode": "apr_villa_sw",
         "color": "cyan"
       },
       "24": {
         "id": "24",
-        "number": "Condoville Towers - 402",
-        "road": "Lake Promenade",
-        "block": "Condoville Towers",
-        "facing": "South",
-        "x": 873,
-        "y": 211,
+        "number": "Palm Grove Villas - 402",
+        "road": "Palm Way",
+        "block": "Palm Grove Villas",
+        "facing": "North",
+        "x": 333,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "adarsh_palm_retreat_n_e",
+        "roadNode": "apr_villa_sw",
+        "color": "cyan"
+      },
+      "25": {
+        "id": "25",
+        "number": "Lakeside Enclave - 101",
+        "road": "Lakeside Link",
+        "block": "Lakeside Enclave",
+        "facing": "North",
+        "x": 827,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "apr_lake_se",
+        "color": "cyan"
+      },
+      "26": {
+        "id": "26",
+        "number": "Lakeside Enclave - 102",
+        "road": "Lakeside Link",
+        "block": "Lakeside Enclave",
+        "facing": "North",
+        "x": 849,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "apr_lake_se",
+        "color": "cyan"
+      },
+      "27": {
+        "id": "27",
+        "number": "Lakeside Enclave - 201",
+        "road": "Lakeside Link",
+        "block": "Lakeside Enclave",
+        "facing": "North",
+        "x": 871,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "apr_lake_se",
+        "color": "cyan"
+      },
+      "28": {
+        "id": "28",
+        "number": "Lakeside Enclave - 202",
+        "road": "Lakeside Link",
+        "block": "Lakeside Enclave",
+        "facing": "North",
+        "x": 893,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "apr_lake_se",
+        "color": "cyan"
+      },
+      "29": {
+        "id": "29",
+        "number": "Lakeside Enclave - 301",
+        "road": "Lakeside Link",
+        "block": "Lakeside Enclave",
+        "facing": "North",
+        "x": 827,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "apr_lake_se",
+        "color": "cyan"
+      },
+      "30": {
+        "id": "30",
+        "number": "Lakeside Enclave - 302",
+        "road": "Lakeside Link",
+        "block": "Lakeside Enclave",
+        "facing": "North",
+        "x": 849,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "apr_lake_se",
+        "color": "cyan"
+      },
+      "31": {
+        "id": "31",
+        "number": "Lakeside Enclave - 401",
+        "road": "Lakeside Link",
+        "block": "Lakeside Enclave",
+        "facing": "North",
+        "x": 871,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "apr_lake_se",
+        "color": "cyan"
+      },
+      "32": {
+        "id": "32",
+        "number": "Lakeside Enclave - 402",
+        "road": "Lakeside Link",
+        "block": "Lakeside Enclave",
+        "facing": "North",
+        "x": 893,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "apr_lake_se",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "adarsh_palm_retreat_gate_1",
-        "name": "Adarsh Palm Retreat Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "adarsh_palm_retreat_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "adarsh_palm_retreat_gate_2",
-        "name": "Adarsh Palm Retreat Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "adarsh_palm_retreat_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "adarsh_palm_retreat_club",
-        "name": "The Palm Retreat Clubhouse",
-        "description": "World-class clubhouse, Olympic swimming pool, squash and gym",
+        "name": "Adarsh Palm Retreat Club",
+        "description": "Double-deck heated pool, squash courts, gymnasium & dining",
         "x": 620,
-        "y": 270,
-        "roadNode": "adarsh_palm_retreat_n_mid",
+        "y": 440,
+        "roadNode": "apr_junc_ctr",
         "icon": "\ud83c\udfca",
         "type": "clubhouse"
       }
@@ -30532,39 +29405,28 @@ window.LAYOUTS = {
       {
         "name": "PALM RETREAT BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
-        "name": "LAKE PROMENADE",
+        "name": "RETREAT TOWERS DRIVE",
         "x": 620,
         "y": 255,
         "vertical": false
       },
       {
-        "name": "BELLANDUR LINK WAY",
+        "name": "PALM WAY",
         "x": 620,
         "y": 705,
         "vertical": false
-      },
-      {
-        "name": "ORCHARD DRIVE",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "DEVARABISANAHALLI PARKWAY",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "adarsh_palm_retreat_gate_1",
+    "defaultStartGate": "apr_gate_main",
     "sectors": [
-      "Palm Boulevard",
-      "Retreat Villas",
-      "Condoville Towers"
+      "Red Roof Villas",
+      "Retreat Towers",
+      "Palm Grove Villas",
+      "Lakeside Enclave"
     ]
   },
   "hsr_sector_1": {
@@ -33311,263 +32173,139 @@ window.LAYOUTS = {
     "zone": "ecity",
     "type": "Tech Residential Layout",
     "unitType": "Apartment / Block",
-    "unitCount": 16,
+    "unitCount": 24,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "100,480 220,160 620,140 1020,160 1120,480 1020,800 620,820 220,800 Z",
+    "borderTreesPath": "M 100,480 L 220,160 L 620,140 L 1020,160 L 1120,480 L 1020,800 L 620,820 L 220,800 Z",
+    "waterBody": {
+      "x": 260,
+      "y": 150,
+      "w": 700,
+      "h": 70,
+      "rx": 16,
+      "label": "Bellandur Lake Waterfront Trail"
     },
+    "gardenPark": null,
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "green_glen_gate_1": {
-          "id": "green_glen_gate_1",
-          "x": 90,
+        "gg_gate_main": {
+          "id": "gg_gate_main",
+          "x": 100,
           "y": 480,
-          "label": "Green Glen Layout Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Outer Ring Road Access)"
         },
-        "green_glen_entry": {
-          "id": "green_glen_entry",
-          "x": 180,
+        "gg_junc_w": {
+          "id": "gg_junc_w",
+          "x": 260,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Green Glen Boulevard West"
         },
-        "green_glen_junc_w": {
-          "id": "green_glen_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Ecospace Link Way West Junction"
-        },
-        "green_glen_junc_ctr": {
-          "id": "green_glen_junc_ctr",
+        "gg_junc_ctr": {
+          "id": "gg_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Central Glen Roundabout"
         },
-        "green_glen_junc_e": {
-          "id": "green_glen_junc_e",
-          "x": 920,
+        "gg_junc_e": {
+          "id": "gg_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Sobha Drive East Junction"
+          "label": "Lakeview Way East"
         },
-        "green_glen_gate_2": {
-          "id": "green_glen_gate_2",
+        "gg_gate_east": {
+          "id": "gg_gate_east",
           "x": 1110,
           "y": 480,
-          "label": "Green Glen Layout Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Sobha Dahlia Link)"
         },
-        "green_glen_n_w": {
-          "id": "green_glen_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Bellandur Main Avenue West"
+        "gg_north": {
+          "id": "gg_north",
+          "x": 360,
+          "y": 290,
+          "label": "Glen North Promenade"
         },
-        "green_glen_n_mid": {
-          "id": "green_glen_n_mid",
+        "gg_east": {
+          "id": "gg_east",
+          "x": 860,
+          "y": 290,
+          "label": "Lakeview Way North"
+        },
+        "gg_south": {
+          "id": "gg_south",
           "x": 620,
-          "y": 270,
-          "label": "Bellandur Main Avenue North Plaza"
-        },
-        "green_glen_n_e": {
-          "id": "green_glen_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Bellandur Main Avenue East"
-        },
-        "green_glen_s_w": {
-          "id": "green_glen_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Lakeview Parkway West"
-        },
-        "green_glen_s_mid": {
-          "id": "green_glen_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Lakeview Parkway South Plaza"
-        },
-        "green_glen_s_e": {
-          "id": "green_glen_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Lakeview Parkway East"
-        },
-        "green_glen_w_n_mid": {
-          "id": "green_glen_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Ecospace Link Way North Link"
-        },
-        "green_glen_w_s_mid": {
-          "id": "green_glen_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Ecospace Link Way South Link"
-        },
-        "green_glen_ctr_n_mid": {
-          "id": "green_glen_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "green_glen_ctr_s_mid": {
-          "id": "green_glen_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "green_glen_e_n_mid": {
-          "id": "green_glen_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Sobha Drive North Link"
-        },
-        "green_glen_e_s_mid": {
-          "id": "green_glen_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Sobha Drive South Link"
+          "y": 680,
+          "label": "Bellandur Ring Link South"
         }
       },
       "edges": [
         {
-          "u": "green_glen_gate_1",
-          "v": "green_glen_entry",
+          "u": "gg_gate_main",
+          "v": "gg_junc_w",
           "road": "Green Glen Boulevard",
           "type": "primary"
         },
         {
-          "u": "green_glen_entry",
-          "v": "green_glen_junc_w",
+          "u": "gg_junc_w",
+          "v": "gg_junc_ctr",
           "road": "Green Glen Boulevard",
           "type": "primary"
         },
         {
-          "u": "green_glen_junc_w",
-          "v": "green_glen_junc_ctr",
+          "u": "gg_junc_ctr",
+          "v": "gg_junc_e",
           "road": "Green Glen Boulevard",
           "type": "primary"
         },
         {
-          "u": "green_glen_junc_ctr",
-          "v": "green_glen_junc_e",
+          "u": "gg_junc_e",
+          "v": "gg_gate_east",
           "road": "Green Glen Boulevard",
           "type": "primary"
         },
         {
-          "u": "green_glen_junc_e",
-          "v": "green_glen_gate_2",
-          "road": "Green Glen Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "green_glen_n_w",
-          "v": "green_glen_n_mid",
-          "road": "Bellandur Main Avenue",
+          "u": "gg_junc_w",
+          "v": "gg_north",
+          "road": "Glen North Way",
           "type": "secondary"
         },
         {
-          "u": "green_glen_n_mid",
-          "v": "green_glen_n_e",
-          "road": "Bellandur Main Avenue",
+          "u": "gg_north",
+          "v": "gg_east",
+          "road": "Lakeview Way",
           "type": "secondary"
         },
         {
-          "u": "green_glen_s_w",
-          "v": "green_glen_s_mid",
-          "road": "Lakeview Parkway",
+          "u": "gg_east",
+          "v": "gg_junc_e",
+          "road": "Lakeview Way",
           "type": "secondary"
         },
         {
-          "u": "green_glen_s_mid",
-          "v": "green_glen_s_e",
-          "road": "Lakeview Parkway",
+          "u": "gg_junc_w",
+          "v": "gg_south",
+          "road": "Bellandur Ring Link",
           "type": "secondary"
         },
         {
-          "u": "green_glen_n_w",
-          "v": "green_glen_w_n_mid",
-          "road": "Ecospace Link Way",
+          "u": "gg_south",
+          "v": "gg_junc_e",
+          "road": "Bellandur Ring Link",
           "type": "secondary"
         },
         {
-          "u": "green_glen_w_n_mid",
-          "v": "green_glen_junc_w",
-          "road": "Ecospace Link Way",
-          "type": "secondary"
-        },
-        {
-          "u": "green_glen_junc_w",
-          "v": "green_glen_w_s_mid",
-          "road": "Ecospace Link Way",
-          "type": "secondary"
-        },
-        {
-          "u": "green_glen_w_s_mid",
-          "v": "green_glen_s_w",
-          "road": "Ecospace Link Way",
-          "type": "secondary"
-        },
-        {
-          "u": "green_glen_n_mid",
-          "v": "green_glen_ctr_n_mid",
+          "u": "gg_junc_ctr",
+          "v": "gg_south",
           "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "green_glen_ctr_n_mid",
-          "v": "green_glen_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "green_glen_junc_ctr",
-          "v": "green_glen_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "green_glen_ctr_s_mid",
-          "v": "green_glen_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "green_glen_n_e",
-          "v": "green_glen_e_n_mid",
-          "road": "Sobha Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "green_glen_e_n_mid",
-          "v": "green_glen_junc_e",
-          "road": "Sobha Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "green_glen_junc_e",
-          "v": "green_glen_e_s_mid",
-          "road": "Sobha Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "green_glen_e_s_mid",
-          "v": "green_glen_s_e",
-          "road": "Sobha Drive",
           "type": "secondary"
         }
       ]
@@ -33575,241 +32313,325 @@ window.LAYOUTS = {
     "plots": {
       "1": {
         "id": "1",
-        "number": "Sobha Hibiscus Enclave - 101",
-        "road": "Bellandur Main Avenue",
-        "block": "Sobha Hibiscus Enclave",
+        "number": "Glen North Block - 101",
+        "road": "Green Glen Boulevard",
+        "block": "Glen North Block",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 317,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_w",
+        "roadNode": "gg_north",
         "color": "cyan"
       },
       "2": {
         "id": "2",
-        "number": "Sobha Hibiscus Enclave - 102",
-        "road": "Bellandur Main Avenue",
-        "block": "Sobha Hibiscus Enclave",
+        "number": "Glen North Block - 102",
+        "road": "Green Glen Boulevard",
+        "block": "Glen North Block",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 339,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_w",
+        "roadNode": "gg_north",
         "color": "cyan"
       },
       "3": {
         "id": "3",
-        "number": "Sobha Hibiscus Enclave - 201",
-        "road": "Bellandur Main Avenue",
-        "block": "Sobha Hibiscus Enclave",
+        "number": "Glen North Block - 201",
+        "road": "Green Glen Boulevard",
+        "block": "Glen North Block",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 361,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_w",
+        "roadNode": "gg_north",
         "color": "cyan"
       },
       "4": {
         "id": "4",
-        "number": "Sobha Hibiscus Enclave - 202",
-        "road": "Bellandur Main Avenue",
-        "block": "Sobha Hibiscus Enclave",
+        "number": "Glen North Block - 202",
+        "road": "Green Glen Boulevard",
+        "block": "Glen North Block",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 383,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_w",
+        "roadNode": "gg_north",
         "color": "cyan"
       },
       "5": {
         "id": "5",
-        "number": "Sobha Hibiscus Enclave - 301",
-        "road": "Bellandur Main Avenue",
-        "block": "Sobha Hibiscus Enclave",
+        "number": "Glen North Block - 301",
+        "road": "Green Glen Boulevard",
+        "block": "Glen North Block",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 317,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_w",
+        "roadNode": "gg_north",
         "color": "cyan"
       },
       "6": {
         "id": "6",
-        "number": "Sobha Hibiscus Enclave - 302",
-        "road": "Bellandur Main Avenue",
-        "block": "Sobha Hibiscus Enclave",
+        "number": "Glen North Block - 302",
+        "road": "Green Glen Boulevard",
+        "block": "Glen North Block",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 339,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_w",
+        "roadNode": "gg_north",
         "color": "cyan"
       },
       "7": {
         "id": "7",
-        "number": "Sobha Hibiscus Enclave - 401",
-        "road": "Bellandur Main Avenue",
-        "block": "Sobha Hibiscus Enclave",
+        "number": "Glen North Block - 401",
+        "road": "Green Glen Boulevard",
+        "block": "Glen North Block",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 361,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_w",
+        "roadNode": "gg_north",
         "color": "cyan"
       },
       "8": {
         "id": "8",
-        "number": "Sobha Hibiscus Enclave - 402",
-        "road": "Bellandur Main Avenue",
-        "block": "Sobha Hibiscus Enclave",
+        "number": "Glen North Block - 402",
+        "road": "Green Glen Boulevard",
+        "block": "Glen North Block",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 383,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_w",
+        "roadNode": "gg_north",
         "color": "cyan"
       },
       "9": {
         "id": "9",
-        "number": "Bellandur Lake Enclave - 101",
-        "road": "Bellandur Main Avenue",
-        "block": "Bellandur Lake Enclave",
+        "number": "Glen South Block - 101",
+        "road": "Lakeview Way",
+        "block": "Glen South Block",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 747,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_mid",
+        "roadNode": "gg_east",
         "color": "cyan"
       },
       "10": {
         "id": "10",
-        "number": "Bellandur Lake Enclave - 102",
-        "road": "Bellandur Main Avenue",
-        "block": "Bellandur Lake Enclave",
+        "number": "Glen South Block - 102",
+        "road": "Lakeview Way",
+        "block": "Glen South Block",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 769,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_mid",
+        "roadNode": "gg_east",
         "color": "cyan"
       },
       "11": {
         "id": "11",
-        "number": "Bellandur Lake Enclave - 201",
-        "road": "Bellandur Main Avenue",
-        "block": "Bellandur Lake Enclave",
+        "number": "Glen South Block - 201",
+        "road": "Lakeview Way",
+        "block": "Glen South Block",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 791,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_mid",
+        "roadNode": "gg_east",
         "color": "cyan"
       },
       "12": {
         "id": "12",
-        "number": "Bellandur Lake Enclave - 202",
-        "road": "Bellandur Main Avenue",
-        "block": "Bellandur Lake Enclave",
+        "number": "Glen South Block - 202",
+        "road": "Lakeview Way",
+        "block": "Glen South Block",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 813,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_mid",
+        "roadNode": "gg_east",
         "color": "cyan"
       },
       "13": {
         "id": "13",
-        "number": "Bellandur Lake Enclave - 301",
-        "road": "Bellandur Main Avenue",
-        "block": "Bellandur Lake Enclave",
+        "number": "Glen South Block - 301",
+        "road": "Lakeview Way",
+        "block": "Glen South Block",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 747,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_mid",
+        "roadNode": "gg_east",
         "color": "cyan"
       },
       "14": {
         "id": "14",
-        "number": "Bellandur Lake Enclave - 302",
-        "road": "Bellandur Main Avenue",
-        "block": "Bellandur Lake Enclave",
+        "number": "Glen South Block - 302",
+        "road": "Lakeview Way",
+        "block": "Glen South Block",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 769,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_mid",
+        "roadNode": "gg_east",
         "color": "cyan"
       },
       "15": {
         "id": "15",
-        "number": "Bellandur Lake Enclave - 401",
-        "road": "Bellandur Main Avenue",
-        "block": "Bellandur Lake Enclave",
+        "number": "Glen South Block - 401",
+        "road": "Lakeview Way",
+        "block": "Glen South Block",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 791,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_mid",
+        "roadNode": "gg_east",
         "color": "cyan"
       },
       "16": {
         "id": "16",
-        "number": "Bellandur Lake Enclave - 402",
-        "road": "Bellandur Main Avenue",
-        "block": "Bellandur Lake Enclave",
+        "number": "Glen South Block - 402",
+        "road": "Lakeview Way",
+        "block": "Glen South Block",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 813,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "green_glen_n_mid",
+        "roadNode": "gg_east",
+        "color": "cyan"
+      },
+      "17": {
+        "id": "17",
+        "number": "Lakeview Residency - 101",
+        "road": "Bellandur Ring Link",
+        "block": "Lakeview Residency",
+        "facing": "North",
+        "x": 527,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "gg_south",
+        "color": "cyan"
+      },
+      "18": {
+        "id": "18",
+        "number": "Lakeview Residency - 102",
+        "road": "Bellandur Ring Link",
+        "block": "Lakeview Residency",
+        "facing": "North",
+        "x": 549,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "gg_south",
+        "color": "cyan"
+      },
+      "19": {
+        "id": "19",
+        "number": "Lakeview Residency - 201",
+        "road": "Bellandur Ring Link",
+        "block": "Lakeview Residency",
+        "facing": "North",
+        "x": 571,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "gg_south",
+        "color": "cyan"
+      },
+      "20": {
+        "id": "20",
+        "number": "Lakeview Residency - 202",
+        "road": "Bellandur Ring Link",
+        "block": "Lakeview Residency",
+        "facing": "North",
+        "x": 593,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "gg_south",
+        "color": "cyan"
+      },
+      "21": {
+        "id": "21",
+        "number": "Lakeview Residency - 301",
+        "road": "Bellandur Ring Link",
+        "block": "Lakeview Residency",
+        "facing": "North",
+        "x": 527,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "gg_south",
+        "color": "cyan"
+      },
+      "22": {
+        "id": "22",
+        "number": "Lakeview Residency - 302",
+        "road": "Bellandur Ring Link",
+        "block": "Lakeview Residency",
+        "facing": "North",
+        "x": 549,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "gg_south",
+        "color": "cyan"
+      },
+      "23": {
+        "id": "23",
+        "number": "Lakeview Residency - 401",
+        "road": "Bellandur Ring Link",
+        "block": "Lakeview Residency",
+        "facing": "North",
+        "x": 571,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "gg_south",
+        "color": "cyan"
+      },
+      "24": {
+        "id": "24",
+        "number": "Lakeview Residency - 402",
+        "road": "Bellandur Ring Link",
+        "block": "Lakeview Residency",
+        "facing": "North",
+        "x": 593,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "gg_south",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "green_glen_gate_1",
-        "name": "Green Glen Layout Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "green_glen_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "green_glen_gate_2",
-        "name": "Green Glen Layout Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "green_glen_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "green_glen_park",
-        "name": "Green Glen Community Park",
-        "description": "Children play park, basketball court & green pathway",
+        "name": "Green Glen Recreation Park",
+        "description": "Children park, jogging path and basketball court",
         "x": 620,
-        "y": 480,
-        "roadNode": "green_glen_junc_ctr",
+        "y": 440,
+        "roadNode": "gg_junc_ctr",
         "icon": "\ud83c\udf33",
         "type": "park"
       }
@@ -33818,38 +32640,27 @@ window.LAYOUTS = {
       {
         "name": "GREEN GLEN BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
-        "name": "BELLANDUR MAIN AVENUE",
+        "name": "LAKEVIEW WAY",
         "x": 620,
-        "y": 255,
+        "y": 275,
         "vertical": false
       },
       {
-        "name": "LAKEVIEW PARKWAY",
+        "name": "BELLANDUR RING LINK",
         "x": 620,
-        "y": 705,
+        "y": 665,
         "vertical": false
-      },
-      {
-        "name": "ECOSPACE LINK WAY",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "SOBHA DRIVE",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "green_glen_gate_1",
+    "defaultStartGate": "gg_gate_main",
     "sectors": [
-      "Sobha Hibiscus Enclave",
-      "Bellandur Lake Enclave"
+      "Glen North Block",
+      "Glen South Block",
+      "Lakeview Residency"
     ]
   },
   "concorde_cuppertino": {
@@ -34771,263 +33582,139 @@ window.LAYOUTS = {
     "zone": "ecity",
     "type": "Integrated Residential Township",
     "unitType": "Apartment / Tower",
-    "unitCount": 16,
+    "unitCount": 24,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
+    "groundPolygon": "100,480 220,160 620,140 1020,160 1120,480 1020,800 620,820 220,800 Z",
+    "borderTreesPath": "M 100,480 L 220,160 L 620,140 L 1020,160 L 1120,480 L 1020,800 L 620,820 L 220,800 Z",
+    "waterBody": null,
     "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+      "x": 440,
+      "y": 430,
+      "w": 360,
+      "h": 70,
+      "rx": 10,
+      "label": "Neotown Central Smart Solar Plaza"
     },
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "neo_town_gate_1": {
-          "id": "neo_town_gate_1",
-          "x": 90,
+        "nt_gate_main": {
+          "id": "nt_gate_main",
+          "x": 100,
           "y": 480,
-          "label": "Neotown Electronic City Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Electronic City Elevated Flyover)"
         },
-        "neo_town_entry": {
-          "id": "neo_town_entry",
-          "x": 180,
+        "nt_junc_w": {
+          "id": "nt_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Smondo Boulevard West"
         },
-        "neo_town_junc_w": {
-          "id": "neo_town_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Helipad Way West Junction"
-        },
-        "neo_town_junc_ctr": {
-          "id": "neo_town_junc_ctr",
+        "nt_junc_ctr": {
+          "id": "nt_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Central Neotown Plaza"
         },
-        "neo_town_junc_e": {
-          "id": "neo_town_junc_e",
-          "x": 920,
+        "nt_junc_e": {
+          "id": "nt_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Electronic City Expressway East Junction"
+          "label": "Silicon Way East"
         },
-        "neo_town_gate_2": {
-          "id": "neo_town_gate_2",
+        "nt_gate_east": {
+          "id": "nt_gate_east",
           "x": 1110,
           "y": 480,
-          "label": "Neotown Electronic City Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Wipro Campus Link)"
         },
-        "neo_town_n_w": {
-          "id": "neo_town_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Smondo Parkway West"
+        "nt_smondo": {
+          "id": "nt_smondo",
+          "x": 340,
+          "y": 280,
+          "label": "Smondoville Parkway"
         },
-        "neo_town_n_mid": {
-          "id": "neo_town_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Smondo Parkway North Plaza"
+        "nt_silicon": {
+          "id": "nt_silicon",
+          "x": 860,
+          "y": 380,
+          "label": "Neo Silicon Court"
         },
-        "neo_town_n_e": {
-          "id": "neo_town_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Smondo Parkway East"
-        },
-        "neo_town_s_w": {
-          "id": "neo_town_s_w",
-          "x": 320,
+        "nt_infy": {
+          "id": "nt_infy",
+          "x": 440,
           "y": 690,
-          "label": "Tech Boulevard Link West"
-        },
-        "neo_town_s_mid": {
-          "id": "neo_town_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Tech Boulevard Link South Plaza"
-        },
-        "neo_town_s_e": {
-          "id": "neo_town_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Tech Boulevard Link East"
-        },
-        "neo_town_w_n_mid": {
-          "id": "neo_town_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Helipad Way North Link"
-        },
-        "neo_town_w_s_mid": {
-          "id": "neo_town_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Helipad Way South Link"
-        },
-        "neo_town_ctr_n_mid": {
-          "id": "neo_town_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "neo_town_ctr_s_mid": {
-          "id": "neo_town_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "neo_town_e_n_mid": {
-          "id": "neo_town_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Electronic City Expressway North Link"
-        },
-        "neo_town_e_s_mid": {
-          "id": "neo_town_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Electronic City Expressway South Link"
+          "label": "Infy View Drive"
         }
       },
       "edges": [
         {
-          "u": "neo_town_gate_1",
-          "v": "neo_town_entry",
+          "u": "nt_gate_main",
+          "v": "nt_junc_w",
           "road": "Neotown Boulevard",
           "type": "primary"
         },
         {
-          "u": "neo_town_entry",
-          "v": "neo_town_junc_w",
+          "u": "nt_junc_w",
+          "v": "nt_junc_ctr",
           "road": "Neotown Boulevard",
           "type": "primary"
         },
         {
-          "u": "neo_town_junc_w",
-          "v": "neo_town_junc_ctr",
+          "u": "nt_junc_ctr",
+          "v": "nt_junc_e",
           "road": "Neotown Boulevard",
           "type": "primary"
         },
         {
-          "u": "neo_town_junc_ctr",
-          "v": "neo_town_junc_e",
+          "u": "nt_junc_e",
+          "v": "nt_gate_east",
           "road": "Neotown Boulevard",
           "type": "primary"
         },
         {
-          "u": "neo_town_junc_e",
-          "v": "neo_town_gate_2",
-          "road": "Neotown Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "neo_town_n_w",
-          "v": "neo_town_n_mid",
-          "road": "Smondo Parkway",
+          "u": "nt_junc_w",
+          "v": "nt_smondo",
+          "road": "Smondoville Parkway",
           "type": "secondary"
         },
         {
-          "u": "neo_town_n_mid",
-          "v": "neo_town_n_e",
-          "road": "Smondo Parkway",
+          "u": "nt_smondo",
+          "v": "nt_silicon",
+          "road": "Tech City Link",
           "type": "secondary"
         },
         {
-          "u": "neo_town_s_w",
-          "v": "neo_town_s_mid",
-          "road": "Tech Boulevard Link",
+          "u": "nt_silicon",
+          "v": "nt_junc_e",
+          "road": "Silicon Way",
           "type": "secondary"
         },
         {
-          "u": "neo_town_s_mid",
-          "v": "neo_town_s_e",
-          "road": "Tech Boulevard Link",
+          "u": "nt_junc_w",
+          "v": "nt_infy",
+          "road": "Infy View Drive",
           "type": "secondary"
         },
         {
-          "u": "neo_town_n_w",
-          "v": "neo_town_w_n_mid",
-          "road": "Helipad Way",
+          "u": "nt_infy",
+          "v": "nt_junc_e",
+          "road": "Tech City Link",
           "type": "secondary"
         },
         {
-          "u": "neo_town_w_n_mid",
-          "v": "neo_town_junc_w",
-          "road": "Helipad Way",
-          "type": "secondary"
-        },
-        {
-          "u": "neo_town_junc_w",
-          "v": "neo_town_w_s_mid",
-          "road": "Helipad Way",
-          "type": "secondary"
-        },
-        {
-          "u": "neo_town_w_s_mid",
-          "v": "neo_town_s_w",
-          "road": "Helipad Way",
-          "type": "secondary"
-        },
-        {
-          "u": "neo_town_n_mid",
-          "v": "neo_town_ctr_n_mid",
+          "u": "nt_junc_ctr",
+          "v": "nt_infy",
           "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "neo_town_ctr_n_mid",
-          "v": "neo_town_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "neo_town_junc_ctr",
-          "v": "neo_town_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "neo_town_ctr_s_mid",
-          "v": "neo_town_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "neo_town_n_e",
-          "v": "neo_town_e_n_mid",
-          "road": "Electronic City Expressway",
-          "type": "secondary"
-        },
-        {
-          "u": "neo_town_e_n_mid",
-          "v": "neo_town_junc_e",
-          "road": "Electronic City Expressway",
-          "type": "secondary"
-        },
-        {
-          "u": "neo_town_junc_e",
-          "v": "neo_town_e_s_mid",
-          "road": "Electronic City Expressway",
-          "type": "secondary"
-        },
-        {
-          "u": "neo_town_e_s_mid",
-          "v": "neo_town_s_e",
-          "road": "Electronic City Expressway",
           "type": "secondary"
         }
       ]
@@ -35035,242 +33722,326 @@ window.LAYOUTS = {
     "plots": {
       "1": {
         "id": "1",
-        "number": "Smondoville - 101",
-        "road": "Smondo Parkway",
-        "block": "Smondoville",
+        "number": "Smondoville Tower - 101",
+        "road": "Smondo Boulevard",
+        "block": "Smondoville Tower",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 287,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_w",
+        "roadNode": "nt_smondo",
         "color": "cyan"
       },
       "2": {
         "id": "2",
-        "number": "Smondoville - 102",
-        "road": "Smondo Parkway",
-        "block": "Smondoville",
+        "number": "Smondoville Tower - 102",
+        "road": "Smondo Boulevard",
+        "block": "Smondoville Tower",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 309,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_w",
+        "roadNode": "nt_smondo",
         "color": "cyan"
       },
       "3": {
         "id": "3",
-        "number": "Smondoville - 201",
-        "road": "Smondo Parkway",
-        "block": "Smondoville",
+        "number": "Smondoville Tower - 201",
+        "road": "Smondo Boulevard",
+        "block": "Smondoville Tower",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 331,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_w",
+        "roadNode": "nt_smondo",
         "color": "cyan"
       },
       "4": {
         "id": "4",
-        "number": "Smondoville - 202",
-        "road": "Smondo Parkway",
-        "block": "Smondoville",
+        "number": "Smondoville Tower - 202",
+        "road": "Smondo Boulevard",
+        "block": "Smondoville Tower",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 353,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_w",
+        "roadNode": "nt_smondo",
         "color": "cyan"
       },
       "5": {
         "id": "5",
-        "number": "Smondoville - 301",
-        "road": "Smondo Parkway",
-        "block": "Smondoville",
+        "number": "Smondoville Tower - 301",
+        "road": "Smondo Boulevard",
+        "block": "Smondoville Tower",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 287,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_w",
+        "roadNode": "nt_smondo",
         "color": "cyan"
       },
       "6": {
         "id": "6",
-        "number": "Smondoville - 302",
-        "road": "Smondo Parkway",
-        "block": "Smondoville",
+        "number": "Smondoville Tower - 302",
+        "road": "Smondo Boulevard",
+        "block": "Smondoville Tower",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 309,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_w",
+        "roadNode": "nt_smondo",
         "color": "cyan"
       },
       "7": {
         "id": "7",
-        "number": "Smondoville - 401",
-        "road": "Smondo Parkway",
-        "block": "Smondoville",
+        "number": "Smondoville Tower - 401",
+        "road": "Smondo Boulevard",
+        "block": "Smondoville Tower",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 331,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_w",
+        "roadNode": "nt_smondo",
         "color": "cyan"
       },
       "8": {
         "id": "8",
-        "number": "Smondoville - 402",
-        "road": "Smondo Parkway",
-        "block": "Smondoville",
+        "number": "Smondoville Tower - 402",
+        "road": "Smondo Boulevard",
+        "block": "Smondoville Tower",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 353,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_w",
+        "roadNode": "nt_smondo",
         "color": "cyan"
       },
       "9": {
         "id": "9",
-        "number": "Neo Towers - 101",
-        "road": "Smondo Parkway",
-        "block": "Neo Towers",
-        "facing": "South",
-        "x": 527,
-        "y": 189,
+        "number": "Neo Silicon Block - 101",
+        "road": "Silicon Way",
+        "block": "Neo Silicon Block",
+        "facing": "West",
+        "x": 827,
+        "y": 369,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_mid",
+        "roadNode": "nt_silicon",
         "color": "cyan"
       },
       "10": {
         "id": "10",
-        "number": "Neo Towers - 102",
-        "road": "Smondo Parkway",
-        "block": "Neo Towers",
-        "facing": "South",
-        "x": 549,
-        "y": 189,
+        "number": "Neo Silicon Block - 102",
+        "road": "Silicon Way",
+        "block": "Neo Silicon Block",
+        "facing": "West",
+        "x": 849,
+        "y": 369,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_mid",
+        "roadNode": "nt_silicon",
         "color": "cyan"
       },
       "11": {
         "id": "11",
-        "number": "Neo Towers - 201",
-        "road": "Smondo Parkway",
-        "block": "Neo Towers",
-        "facing": "South",
-        "x": 571,
-        "y": 189,
+        "number": "Neo Silicon Block - 201",
+        "road": "Silicon Way",
+        "block": "Neo Silicon Block",
+        "facing": "West",
+        "x": 871,
+        "y": 369,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_mid",
+        "roadNode": "nt_silicon",
         "color": "cyan"
       },
       "12": {
         "id": "12",
-        "number": "Neo Towers - 202",
-        "road": "Smondo Parkway",
-        "block": "Neo Towers",
-        "facing": "South",
-        "x": 593,
-        "y": 189,
+        "number": "Neo Silicon Block - 202",
+        "road": "Silicon Way",
+        "block": "Neo Silicon Block",
+        "facing": "West",
+        "x": 893,
+        "y": 369,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_mid",
+        "roadNode": "nt_silicon",
         "color": "cyan"
       },
       "13": {
         "id": "13",
-        "number": "Neo Towers - 301",
-        "road": "Smondo Parkway",
-        "block": "Neo Towers",
-        "facing": "South",
-        "x": 527,
-        "y": 211,
+        "number": "Neo Silicon Block - 301",
+        "road": "Silicon Way",
+        "block": "Neo Silicon Block",
+        "facing": "West",
+        "x": 827,
+        "y": 391,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_mid",
+        "roadNode": "nt_silicon",
         "color": "cyan"
       },
       "14": {
         "id": "14",
-        "number": "Neo Towers - 302",
-        "road": "Smondo Parkway",
-        "block": "Neo Towers",
-        "facing": "South",
-        "x": 549,
-        "y": 211,
+        "number": "Neo Silicon Block - 302",
+        "road": "Silicon Way",
+        "block": "Neo Silicon Block",
+        "facing": "West",
+        "x": 849,
+        "y": 391,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_mid",
+        "roadNode": "nt_silicon",
         "color": "cyan"
       },
       "15": {
         "id": "15",
-        "number": "Neo Towers - 401",
-        "road": "Smondo Parkway",
-        "block": "Neo Towers",
-        "facing": "South",
-        "x": 571,
-        "y": 211,
+        "number": "Neo Silicon Block - 401",
+        "road": "Silicon Way",
+        "block": "Neo Silicon Block",
+        "facing": "West",
+        "x": 871,
+        "y": 391,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_mid",
+        "roadNode": "nt_silicon",
         "color": "cyan"
       },
       "16": {
         "id": "16",
-        "number": "Neo Towers - 402",
-        "road": "Smondo Parkway",
-        "block": "Neo Towers",
-        "facing": "South",
-        "x": 593,
-        "y": 211,
+        "number": "Neo Silicon Block - 402",
+        "road": "Silicon Way",
+        "block": "Neo Silicon Block",
+        "facing": "West",
+        "x": 893,
+        "y": 391,
         "w": 48,
         "h": 34,
-        "roadNode": "neo_town_n_mid",
+        "roadNode": "nt_silicon",
+        "color": "cyan"
+      },
+      "17": {
+        "id": "17",
+        "number": "Infy View Tower - 101",
+        "road": "Tech City Link",
+        "block": "Infy View Tower",
+        "facing": "North",
+        "x": 407,
+        "y": 669,
+        "w": 48,
+        "h": 34,
+        "roadNode": "nt_infy",
+        "color": "cyan"
+      },
+      "18": {
+        "id": "18",
+        "number": "Infy View Tower - 102",
+        "road": "Tech City Link",
+        "block": "Infy View Tower",
+        "facing": "North",
+        "x": 429,
+        "y": 669,
+        "w": 48,
+        "h": 34,
+        "roadNode": "nt_infy",
+        "color": "cyan"
+      },
+      "19": {
+        "id": "19",
+        "number": "Infy View Tower - 201",
+        "road": "Tech City Link",
+        "block": "Infy View Tower",
+        "facing": "North",
+        "x": 451,
+        "y": 669,
+        "w": 48,
+        "h": 34,
+        "roadNode": "nt_infy",
+        "color": "cyan"
+      },
+      "20": {
+        "id": "20",
+        "number": "Infy View Tower - 202",
+        "road": "Tech City Link",
+        "block": "Infy View Tower",
+        "facing": "North",
+        "x": 473,
+        "y": 669,
+        "w": 48,
+        "h": 34,
+        "roadNode": "nt_infy",
+        "color": "cyan"
+      },
+      "21": {
+        "id": "21",
+        "number": "Infy View Tower - 301",
+        "road": "Tech City Link",
+        "block": "Infy View Tower",
+        "facing": "North",
+        "x": 407,
+        "y": 691,
+        "w": 48,
+        "h": 34,
+        "roadNode": "nt_infy",
+        "color": "cyan"
+      },
+      "22": {
+        "id": "22",
+        "number": "Infy View Tower - 302",
+        "road": "Tech City Link",
+        "block": "Infy View Tower",
+        "facing": "North",
+        "x": 429,
+        "y": 691,
+        "w": 48,
+        "h": 34,
+        "roadNode": "nt_infy",
+        "color": "cyan"
+      },
+      "23": {
+        "id": "23",
+        "number": "Infy View Tower - 401",
+        "road": "Tech City Link",
+        "block": "Infy View Tower",
+        "facing": "North",
+        "x": 451,
+        "y": 691,
+        "w": 48,
+        "h": 34,
+        "roadNode": "nt_infy",
+        "color": "cyan"
+      },
+      "24": {
+        "id": "24",
+        "number": "Infy View Tower - 402",
+        "road": "Tech City Link",
+        "block": "Infy View Tower",
+        "facing": "North",
+        "x": 473,
+        "y": 691,
+        "w": 48,
+        "h": 34,
+        "roadNode": "nt_infy",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "neo_town_gate_1",
-        "name": "Neotown Electronic City Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "neo_town_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "neo_town_gate_2",
-        "name": "Neotown Electronic City Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "neo_town_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "neo_town_club",
-        "name": "Neotown Clubhouse & Sports Court",
-        "description": "Infinity pool, badminton court, supermarket & clinic",
+        "name": "Neotown Grand Clubhouse",
+        "description": "Infinity pool, gym, bowling alley and co-working lounge",
         "x": 620,
-        "y": 480,
-        "roadNode": "neo_town_junc_ctr",
-        "icon": "\ud83c\udfe2",
+        "y": 440,
+        "roadNode": "nt_junc_ctr",
+        "icon": "\ud83c\udfca",
         "type": "clubhouse"
       }
     ],
@@ -35278,38 +34049,27 @@ window.LAYOUTS = {
       {
         "name": "NEOTOWN BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
-        "name": "SMONDO PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "TECH BOULEVARD LINK",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "HELIPAD WAY",
-        "x": 305,
-        "y": 375,
+        "name": "SMONDOVILLE PARKWAY",
+        "x": 340,
+        "y": 380,
         "vertical": true
       },
       {
-        "name": "ELECTRONIC CITY EXPRESSWAY",
-        "x": 935,
-        "y": 375,
+        "name": "SILICON WAY",
+        "x": 860,
+        "y": 440,
         "vertical": true
       }
     ],
-    "defaultStartGate": "neo_town_gate_1",
+    "defaultStartGate": "nt_gate_main",
     "sectors": [
-      "Smondoville",
-      "Neo Towers"
+      "Smondoville Tower",
+      "Neo Silicon Block",
+      "Infy View Tower"
     ]
   },
   "sobha_city": {
@@ -35319,263 +34079,176 @@ window.LAYOUTS = {
     "zone": "north",
     "type": "Mediterranean-Themed Luxury Township",
     "unitType": "Apartment / Tower",
-    "unitCount": 24,
+    "unitCount": 32,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
+    "groundPolygon": "100,480 220,150 620,120 1020,150 1140,480 1020,810 620,840 220,810 Z",
+    "borderTreesPath": "M 100,480 Q 220,130 620,120 Q 1020,130 1140,480 Q 1020,830 620,840 Q 220,830 100,480 Z",
+    "waterBody": {
       "x": 460,
-      "y": 455,
+      "y": 380,
       "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+      "h": 140,
+      "rx": 28,
+      "label": "4-Acre Mediterranean Sand Lagoon & Water Sports"
     },
+    "gardenPark": {
+      "x": 440,
+      "y": 250,
+      "w": 360,
+      "h": 60,
+      "rx": 8,
+      "label": "Mediterranean Pebble Promenade & Lawns"
+    },
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "sobha_city_gate_1": {
-          "id": "sobha_city_gate_1",
-          "x": 90,
+        "sc_gate_main": {
+          "id": "sc_gate_main",
+          "x": 100,
           "y": 480,
-          "label": "Sobha City Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Thanisandra Main Road)"
         },
-        "sobha_city_entry": {
-          "id": "sobha_city_entry",
-          "x": 180,
+        "sc_junc_w": {
+          "id": "sc_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Sobha City Boulevard West"
         },
-        "sobha_city_junc_w": {
-          "id": "sobha_city_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Thanisandra Link West Junction"
-        },
-        "sobha_city_junc_ctr": {
-          "id": "sobha_city_junc_ctr",
+        "sc_junc_ctr": {
+          "id": "sc_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Grand Mediterranean Plaza"
         },
-        "sobha_city_junc_e": {
-          "id": "sobha_city_junc_e",
-          "x": 920,
+        "sc_junc_e": {
+          "id": "sc_junc_e",
+          "x": 980,
           "y": 480,
-          "label": "Amphitheater Drive East Junction"
-        },
-        "sobha_city_gate_2": {
-          "id": "sobha_city_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Sobha City Gate 2 (Rear Entrance)"
-        },
-        "sobha_city_n_w": {
-          "id": "sobha_city_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Santorini Way West"
-        },
-        "sobha_city_n_mid": {
-          "id": "sobha_city_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Santorini Way North Plaza"
-        },
-        "sobha_city_n_e": {
-          "id": "sobha_city_n_e",
-          "x": 920,
-          "y": 270,
           "label": "Santorini Way East"
         },
-        "sobha_city_s_w": {
-          "id": "sobha_city_s_w",
+        "sc_gate_east": {
+          "id": "sc_gate_east",
+          "x": 1130,
+          "y": 480,
+          "label": "Gate 2 (Service Exit)"
+        },
+        "sc_santorini_nw": {
+          "id": "sc_santorini_nw",
           "x": 320,
-          "y": 690,
-          "label": "Casa Serena Parkway West"
+          "y": 280,
+          "label": "Santorini Way North"
         },
-        "sobha_city_s_mid": {
-          "id": "sobha_city_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Casa Serena Parkway South Plaza"
+        "sc_casaserena_ne": {
+          "id": "sc_casaserena_ne",
+          "x": 900,
+          "y": 280,
+          "label": "Casa Serena Parkway"
         },
-        "sobha_city_s_e": {
-          "id": "sobha_city_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Casa Serena Parkway East"
-        },
-        "sobha_city_w_n_mid": {
-          "id": "sobha_city_w_n_mid",
+        "sc_amalfi_sw": {
+          "id": "sc_amalfi_sw",
           "x": 320,
-          "y": 375,
-          "label": "Thanisandra Link North Link"
+          "y": 680,
+          "label": "Amalfi Way South"
         },
-        "sobha_city_w_s_mid": {
-          "id": "sobha_city_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Thanisandra Link South Link"
-        },
-        "sobha_city_ctr_n_mid": {
-          "id": "sobha_city_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "sobha_city_ctr_s_mid": {
-          "id": "sobha_city_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "sobha_city_e_n_mid": {
-          "id": "sobha_city_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Amphitheater Drive North Link"
-        },
-        "sobha_city_e_s_mid": {
-          "id": "sobha_city_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Amphitheater Drive South Link"
+        "sc_mykonos_se": {
+          "id": "sc_mykonos_se",
+          "x": 900,
+          "y": 680,
+          "label": "Mykonos & Amphitheater Cross"
         }
       },
       "edges": [
         {
-          "u": "sobha_city_gate_1",
-          "v": "sobha_city_entry",
+          "u": "sc_gate_main",
+          "v": "sc_junc_w",
           "road": "Sobha City Boulevard",
           "type": "primary"
         },
         {
-          "u": "sobha_city_entry",
-          "v": "sobha_city_junc_w",
+          "u": "sc_junc_w",
+          "v": "sc_junc_ctr",
           "road": "Sobha City Boulevard",
           "type": "primary"
         },
         {
-          "u": "sobha_city_junc_w",
-          "v": "sobha_city_junc_ctr",
+          "u": "sc_junc_ctr",
+          "v": "sc_junc_e",
           "road": "Sobha City Boulevard",
           "type": "primary"
         },
         {
-          "u": "sobha_city_junc_ctr",
-          "v": "sobha_city_junc_e",
+          "u": "sc_junc_e",
+          "v": "sc_gate_east",
           "road": "Sobha City Boulevard",
           "type": "primary"
         },
         {
-          "u": "sobha_city_junc_e",
-          "v": "sobha_city_gate_2",
-          "road": "Sobha City Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "sobha_city_n_w",
-          "v": "sobha_city_n_mid",
+          "u": "sc_junc_w",
+          "v": "sc_santorini_nw",
           "road": "Santorini Way",
           "type": "secondary"
         },
         {
-          "u": "sobha_city_n_mid",
-          "v": "sobha_city_n_e",
-          "road": "Santorini Way",
-          "type": "secondary"
-        },
-        {
-          "u": "sobha_city_s_w",
-          "v": "sobha_city_s_mid",
+          "u": "sc_santorini_nw",
+          "v": "sc_casaserena_ne",
           "road": "Casa Serena Parkway",
           "type": "secondary"
         },
         {
-          "u": "sobha_city_s_mid",
-          "v": "sobha_city_s_e",
+          "u": "sc_casaserena_ne",
+          "v": "sc_junc_e",
           "road": "Casa Serena Parkway",
           "type": "secondary"
         },
         {
-          "u": "sobha_city_n_w",
-          "v": "sobha_city_w_n_mid",
-          "road": "Thanisandra Link",
+          "u": "sc_junc_w",
+          "v": "sc_amalfi_sw",
+          "road": "Amalfi Way",
           "type": "secondary"
         },
         {
-          "u": "sobha_city_w_n_mid",
-          "v": "sobha_city_junc_w",
-          "road": "Thanisandra Link",
-          "type": "secondary"
-        },
-        {
-          "u": "sobha_city_junc_w",
-          "v": "sobha_city_w_s_mid",
-          "road": "Thanisandra Link",
-          "type": "secondary"
-        },
-        {
-          "u": "sobha_city_w_s_mid",
-          "v": "sobha_city_s_w",
-          "road": "Thanisandra Link",
-          "type": "secondary"
-        },
-        {
-          "u": "sobha_city_n_mid",
-          "v": "sobha_city_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sobha_city_ctr_n_mid",
-          "v": "sobha_city_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sobha_city_junc_ctr",
-          "v": "sobha_city_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sobha_city_ctr_s_mid",
-          "v": "sobha_city_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sobha_city_n_e",
-          "v": "sobha_city_e_n_mid",
+          "u": "sc_amalfi_sw",
+          "v": "sc_mykonos_se",
           "road": "Amphitheater Drive",
           "type": "secondary"
         },
         {
-          "u": "sobha_city_e_n_mid",
-          "v": "sobha_city_junc_e",
+          "u": "sc_mykonos_se",
+          "v": "sc_junc_e",
           "road": "Amphitheater Drive",
           "type": "secondary"
         },
         {
-          "u": "sobha_city_junc_e",
-          "v": "sobha_city_e_s_mid",
-          "road": "Amphitheater Drive",
+          "u": "sc_junc_ctr",
+          "v": "sc_santorini_nw",
+          "road": "Central Link",
           "type": "secondary"
         },
         {
-          "u": "sobha_city_e_s_mid",
-          "v": "sobha_city_s_e",
-          "road": "Amphitheater Drive",
+          "u": "sc_junc_ctr",
+          "v": "sc_casaserena_ne",
+          "road": "Central Link",
+          "type": "secondary"
+        },
+        {
+          "u": "sc_junc_ctr",
+          "v": "sc_amalfi_sw",
+          "road": "Central Link",
+          "type": "secondary"
+        },
+        {
+          "u": "sc_junc_ctr",
+          "v": "sc_mykonos_se",
+          "road": "Central Link",
           "type": "secondary"
         }
       ]
@@ -35588,10 +34261,10 @@ window.LAYOUTS = {
         "block": "Santorini Tower",
         "facing": "South",
         "x": 247,
-        "y": 189,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_w",
+        "roadNode": "sc_santorini_nw",
         "color": "cyan"
       },
       "2": {
@@ -35601,10 +34274,10 @@ window.LAYOUTS = {
         "block": "Santorini Tower",
         "facing": "South",
         "x": 269,
-        "y": 189,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_w",
+        "roadNode": "sc_santorini_nw",
         "color": "cyan"
       },
       "3": {
@@ -35614,10 +34287,10 @@ window.LAYOUTS = {
         "block": "Santorini Tower",
         "facing": "South",
         "x": 291,
-        "y": 189,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_w",
+        "roadNode": "sc_santorini_nw",
         "color": "cyan"
       },
       "4": {
@@ -35627,10 +34300,10 @@ window.LAYOUTS = {
         "block": "Santorini Tower",
         "facing": "South",
         "x": 313,
-        "y": 189,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_w",
+        "roadNode": "sc_santorini_nw",
         "color": "cyan"
       },
       "5": {
@@ -35640,10 +34313,10 @@ window.LAYOUTS = {
         "block": "Santorini Tower",
         "facing": "South",
         "x": 247,
-        "y": 211,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_w",
+        "roadNode": "sc_santorini_nw",
         "color": "cyan"
       },
       "6": {
@@ -35653,10 +34326,10 @@ window.LAYOUTS = {
         "block": "Santorini Tower",
         "facing": "South",
         "x": 269,
-        "y": 211,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_w",
+        "roadNode": "sc_santorini_nw",
         "color": "cyan"
       },
       "7": {
@@ -35666,10 +34339,10 @@ window.LAYOUTS = {
         "block": "Santorini Tower",
         "facing": "South",
         "x": 291,
-        "y": 211,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_w",
+        "roadNode": "sc_santorini_nw",
         "color": "cyan"
       },
       "8": {
@@ -35679,250 +34352,344 @@ window.LAYOUTS = {
         "block": "Santorini Tower",
         "facing": "South",
         "x": 313,
-        "y": 211,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_w",
+        "roadNode": "sc_santorini_nw",
         "color": "cyan"
       },
       "9": {
         "id": "9",
         "number": "Casa Serena Tower - 101",
-        "road": "Santorini Way",
+        "road": "Casa Serena Parkway",
         "block": "Casa Serena Tower",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 827,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_mid",
+        "roadNode": "sc_casaserena_ne",
         "color": "cyan"
       },
       "10": {
         "id": "10",
         "number": "Casa Serena Tower - 102",
-        "road": "Santorini Way",
+        "road": "Casa Serena Parkway",
         "block": "Casa Serena Tower",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 849,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_mid",
+        "roadNode": "sc_casaserena_ne",
         "color": "cyan"
       },
       "11": {
         "id": "11",
         "number": "Casa Serena Tower - 201",
-        "road": "Santorini Way",
+        "road": "Casa Serena Parkway",
         "block": "Casa Serena Tower",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 871,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_mid",
+        "roadNode": "sc_casaserena_ne",
         "color": "cyan"
       },
       "12": {
         "id": "12",
         "number": "Casa Serena Tower - 202",
-        "road": "Santorini Way",
+        "road": "Casa Serena Parkway",
         "block": "Casa Serena Tower",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 893,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_mid",
+        "roadNode": "sc_casaserena_ne",
         "color": "cyan"
       },
       "13": {
         "id": "13",
         "number": "Casa Serena Tower - 301",
-        "road": "Santorini Way",
+        "road": "Casa Serena Parkway",
         "block": "Casa Serena Tower",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 827,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_mid",
+        "roadNode": "sc_casaserena_ne",
         "color": "cyan"
       },
       "14": {
         "id": "14",
         "number": "Casa Serena Tower - 302",
-        "road": "Santorini Way",
+        "road": "Casa Serena Parkway",
         "block": "Casa Serena Tower",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 849,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_mid",
+        "roadNode": "sc_casaserena_ne",
         "color": "cyan"
       },
       "15": {
         "id": "15",
         "number": "Casa Serena Tower - 401",
-        "road": "Santorini Way",
+        "road": "Casa Serena Parkway",
         "block": "Casa Serena Tower",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 871,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_mid",
+        "roadNode": "sc_casaserena_ne",
         "color": "cyan"
       },
       "16": {
         "id": "16",
         "number": "Casa Serena Tower - 402",
-        "road": "Santorini Way",
+        "road": "Casa Serena Parkway",
         "block": "Casa Serena Tower",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 893,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_mid",
+        "roadNode": "sc_casaserena_ne",
         "color": "cyan"
       },
       "17": {
         "id": "17",
         "number": "Mykonos Block - 101",
-        "road": "Santorini Way",
+        "road": "Amphitheater Drive",
         "block": "Mykonos Block",
-        "facing": "South",
-        "x": 807,
-        "y": 189,
+        "facing": "North",
+        "x": 827,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_e",
+        "roadNode": "sc_mykonos_se",
         "color": "cyan"
       },
       "18": {
         "id": "18",
         "number": "Mykonos Block - 102",
-        "road": "Santorini Way",
+        "road": "Amphitheater Drive",
         "block": "Mykonos Block",
-        "facing": "South",
-        "x": 829,
-        "y": 189,
+        "facing": "North",
+        "x": 849,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_e",
+        "roadNode": "sc_mykonos_se",
         "color": "cyan"
       },
       "19": {
         "id": "19",
         "number": "Mykonos Block - 201",
-        "road": "Santorini Way",
+        "road": "Amphitheater Drive",
         "block": "Mykonos Block",
-        "facing": "South",
-        "x": 851,
-        "y": 189,
+        "facing": "North",
+        "x": 871,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_e",
+        "roadNode": "sc_mykonos_se",
         "color": "cyan"
       },
       "20": {
         "id": "20",
         "number": "Mykonos Block - 202",
-        "road": "Santorini Way",
+        "road": "Amphitheater Drive",
         "block": "Mykonos Block",
-        "facing": "South",
-        "x": 873,
-        "y": 189,
+        "facing": "North",
+        "x": 893,
+        "y": 649,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_e",
+        "roadNode": "sc_mykonos_se",
         "color": "cyan"
       },
       "21": {
         "id": "21",
         "number": "Mykonos Block - 301",
-        "road": "Santorini Way",
+        "road": "Amphitheater Drive",
         "block": "Mykonos Block",
-        "facing": "South",
-        "x": 807,
-        "y": 211,
+        "facing": "North",
+        "x": 827,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_e",
+        "roadNode": "sc_mykonos_se",
         "color": "cyan"
       },
       "22": {
         "id": "22",
         "number": "Mykonos Block - 302",
-        "road": "Santorini Way",
+        "road": "Amphitheater Drive",
         "block": "Mykonos Block",
-        "facing": "South",
-        "x": 829,
-        "y": 211,
+        "facing": "North",
+        "x": 849,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_e",
+        "roadNode": "sc_mykonos_se",
         "color": "cyan"
       },
       "23": {
         "id": "23",
         "number": "Mykonos Block - 401",
-        "road": "Santorini Way",
+        "road": "Amphitheater Drive",
         "block": "Mykonos Block",
-        "facing": "South",
-        "x": 851,
-        "y": 211,
+        "facing": "North",
+        "x": 871,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_e",
+        "roadNode": "sc_mykonos_se",
         "color": "cyan"
       },
       "24": {
         "id": "24",
         "number": "Mykonos Block - 402",
-        "road": "Santorini Way",
+        "road": "Amphitheater Drive",
         "block": "Mykonos Block",
-        "facing": "South",
-        "x": 873,
-        "y": 211,
+        "facing": "North",
+        "x": 893,
+        "y": 671,
         "w": 48,
         "h": 34,
-        "roadNode": "sobha_city_n_e",
+        "roadNode": "sc_mykonos_se",
+        "color": "cyan"
+      },
+      "25": {
+        "id": "25",
+        "number": "Amalfi Wing - 101",
+        "road": "Amalfi Way",
+        "block": "Amalfi Wing",
+        "facing": "North",
+        "x": 247,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sc_amalfi_sw",
+        "color": "cyan"
+      },
+      "26": {
+        "id": "26",
+        "number": "Amalfi Wing - 102",
+        "road": "Amalfi Way",
+        "block": "Amalfi Wing",
+        "facing": "North",
+        "x": 269,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sc_amalfi_sw",
+        "color": "cyan"
+      },
+      "27": {
+        "id": "27",
+        "number": "Amalfi Wing - 201",
+        "road": "Amalfi Way",
+        "block": "Amalfi Wing",
+        "facing": "North",
+        "x": 291,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sc_amalfi_sw",
+        "color": "cyan"
+      },
+      "28": {
+        "id": "28",
+        "number": "Amalfi Wing - 202",
+        "road": "Amalfi Way",
+        "block": "Amalfi Wing",
+        "facing": "North",
+        "x": 313,
+        "y": 649,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sc_amalfi_sw",
+        "color": "cyan"
+      },
+      "29": {
+        "id": "29",
+        "number": "Amalfi Wing - 301",
+        "road": "Amalfi Way",
+        "block": "Amalfi Wing",
+        "facing": "North",
+        "x": 247,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sc_amalfi_sw",
+        "color": "cyan"
+      },
+      "30": {
+        "id": "30",
+        "number": "Amalfi Wing - 302",
+        "road": "Amalfi Way",
+        "block": "Amalfi Wing",
+        "facing": "North",
+        "x": 269,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sc_amalfi_sw",
+        "color": "cyan"
+      },
+      "31": {
+        "id": "31",
+        "number": "Amalfi Wing - 401",
+        "road": "Amalfi Way",
+        "block": "Amalfi Wing",
+        "facing": "North",
+        "x": 291,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sc_amalfi_sw",
+        "color": "cyan"
+      },
+      "32": {
+        "id": "32",
+        "number": "Amalfi Wing - 402",
+        "road": "Amalfi Way",
+        "block": "Amalfi Wing",
+        "facing": "North",
+        "x": 313,
+        "y": 671,
+        "w": 48,
+        "h": 34,
+        "roadNode": "sc_amalfi_sw",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "sobha_city_gate_1",
-        "name": "Sobha City Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "sobha_city_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "sobha_city_gate_2",
-        "name": "Sobha City Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "sobha_city_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
+        "id": "sobha_city_lagoon",
+        "name": "Mediterranean Beach Lagoon",
+        "description": "4-acre sand beach lagoon with canoeing, beach volleyball and boardwalk",
+        "x": 620,
+        "y": 440,
+        "roadNode": "sc_junc_ctr",
+        "icon": "\ud83c\udfd6\ufe0f",
+        "type": "water"
       },
       {
         "id": "sobha_city_club",
         "name": "Club Santorini",
-        "description": "60,000 sq ft luxury clubhouse, 50m lap pool and squash court",
+        "description": "Grand Mediterranean clubhouse, Olympic pool and amphitheater",
         "x": 620,
-        "y": 270,
-        "roadNode": "sobha_city_n_mid",
-        "icon": "\ud83c\udfca",
+        "y": 250,
+        "roadNode": "sc_junc_ctr",
+        "icon": "\ud83c\udfdb\ufe0f",
         "type": "clubhouse"
       }
     ],
@@ -35930,39 +34697,34 @@ window.LAYOUTS = {
       {
         "name": "SOBHA CITY BOULEVARD",
         "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "SANTORINI WAY",
-        "x": 620,
-        "y": 255,
+        "y": 495,
         "vertical": false
       },
       {
         "name": "CASA SERENA PARKWAY",
         "x": 620,
+        "y": 265,
+        "vertical": false
+      },
+      {
+        "name": "AMPHITHEATER DRIVE",
+        "x": 620,
         "y": 705,
         "vertical": false
       },
       {
-        "name": "THANISANDRA LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "AMPHITHEATER DRIVE",
-        "x": 935,
-        "y": 375,
+        "name": "SANTORINI WAY",
+        "x": 310,
+        "y": 380,
         "vertical": true
       }
     ],
-    "defaultStartGate": "sobha_city_gate_1",
+    "defaultStartGate": "sc_gate_main",
     "sectors": [
       "Santorini Tower",
       "Casa Serena Tower",
-      "Mykonos Block"
+      "Mykonos Block",
+      "Amalfi Wing"
     ]
   },
   "bhartiya_city": {
@@ -35972,263 +34734,175 @@ window.LAYOUTS = {
     "zone": "north",
     "type": "125-Acre Smart Integrated City",
     "unitType": "Apartment / Tower",
-    "unitCount": 24,
+    "unitCount": 32,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
+    "groundPolygon": "80,480 180,140 620,130 1060,140 1150,480 1060,820 620,830 180,820 Z",
+    "borderTreesPath": "M 80,480 L 180,140 L 620,130 L 1060,140 L 1150,480 L 1060,820 L 620,830 L 180,820 Z",
+    "waterBody": {
+      "x": 540,
+      "y": 440,
+      "w": 180,
       "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+      "rx": 10,
+      "label": "Smart Lake & Swan Pond"
     },
+    "gardenPark": {
+      "x": 500,
+      "y": 380,
+      "w": 260,
+      "h": 120,
+      "rx": 14,
+      "label": "7-Acre Smart Central Park & Lake"
+    },
+    "landmarks": [
+      {
+        "x": 420,
+        "y": 260,
+        "w": 420,
+        "h": 55,
+        "rx": 6,
+        "label": "\ud83d\udecd\ufe0f Bhartiya Rambler High Street Retail",
+        "fill": "#1e1b4b",
+        "stroke": "#3b82f6"
+      }
+    ],
     "roads": {
       "nodes": {
-        "bhartiya_city_gate_1": {
-          "id": "bhartiya_city_gate_1",
-          "x": 90,
+        "bc_gate_main": {
+          "id": "bc_gate_main",
+          "x": 80,
           "y": 480,
-          "label": "Bhartiya City Nikoo Homes Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Thanisandra Main Road)"
         },
-        "bhartiya_city_entry": {
-          "id": "bhartiya_city_entry",
-          "x": 180,
+        "bc_junc_w": {
+          "id": "bc_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Nikoo Boulevard West"
         },
-        "bhartiya_city_junc_w": {
-          "id": "bhartiya_city_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Rambler Way West Junction"
-        },
-        "bhartiya_city_junc_ctr": {
-          "id": "bhartiya_city_junc_ctr",
+        "bc_junc_ctr": {
+          "id": "bc_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Central Smart Park Plaza"
         },
-        "bhartiya_city_junc_e": {
-          "id": "bhartiya_city_junc_e",
+        "bc_junc_e": {
+          "id": "bc_junc_e",
           "x": 920,
           "y": 480,
-          "label": "Thanisandra Highway East Junction"
+          "label": "Bhartiya High Street Cross"
         },
-        "bhartiya_city_gate_2": {
-          "id": "bhartiya_city_gate_2",
-          "x": 1110,
+        "bc_gate_east": {
+          "id": "bc_gate_east",
+          "x": 1130,
           "y": 480,
-          "label": "Bhartiya City Nikoo Homes Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Chikkagubbi Link)"
         },
-        "bhartiya_city_n_w": {
-          "id": "bhartiya_city_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Central Park Parkway West"
+        "bc_nikoo_nw": {
+          "id": "bc_nikoo_nw",
+          "x": 340,
+          "y": 280,
+          "label": "Nikoo Homes A Parkway"
         },
-        "bhartiya_city_n_mid": {
-          "id": "bhartiya_city_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Central Park Parkway North Plaza"
+        "bc_rambler_ne": {
+          "id": "bc_rambler_ne",
+          "x": 860,
+          "y": 280,
+          "label": "Rambler High Street North"
         },
-        "bhartiya_city_n_e": {
-          "id": "bhartiya_city_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Central Park Parkway East"
-        },
-        "bhartiya_city_s_w": {
-          "id": "bhartiya_city_s_w",
-          "x": 320,
+        "bc_nikoo_sw": {
+          "id": "bc_nikoo_sw",
+          "x": 340,
           "y": 690,
-          "label": "Bhartiya High Street West"
+          "label": "Nikoo Homes B Parkway"
         },
-        "bhartiya_city_s_mid": {
-          "id": "bhartiya_city_s_mid",
-          "x": 620,
+        "bc_park_se": {
+          "id": "bc_park_se",
+          "x": 860,
           "y": 690,
-          "label": "Bhartiya High Street South Plaza"
-        },
-        "bhartiya_city_s_e": {
-          "id": "bhartiya_city_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Bhartiya High Street East"
-        },
-        "bhartiya_city_w_n_mid": {
-          "id": "bhartiya_city_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Rambler Way North Link"
-        },
-        "bhartiya_city_w_s_mid": {
-          "id": "bhartiya_city_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Rambler Way South Link"
-        },
-        "bhartiya_city_ctr_n_mid": {
-          "id": "bhartiya_city_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "bhartiya_city_ctr_s_mid": {
-          "id": "bhartiya_city_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "bhartiya_city_e_n_mid": {
-          "id": "bhartiya_city_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Thanisandra Highway North Link"
-        },
-        "bhartiya_city_e_s_mid": {
-          "id": "bhartiya_city_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Thanisandra Highway South Link"
+          "label": "Central Park South Drive"
         }
       },
       "edges": [
         {
-          "u": "bhartiya_city_gate_1",
-          "v": "bhartiya_city_entry",
+          "u": "bc_gate_main",
+          "v": "bc_junc_w",
           "road": "Nikoo Boulevard",
           "type": "primary"
         },
         {
-          "u": "bhartiya_city_entry",
-          "v": "bhartiya_city_junc_w",
+          "u": "bc_junc_w",
+          "v": "bc_junc_ctr",
           "road": "Nikoo Boulevard",
           "type": "primary"
         },
         {
-          "u": "bhartiya_city_junc_w",
-          "v": "bhartiya_city_junc_ctr",
+          "u": "bc_junc_ctr",
+          "v": "bc_junc_e",
           "road": "Nikoo Boulevard",
           "type": "primary"
         },
         {
-          "u": "bhartiya_city_junc_ctr",
-          "v": "bhartiya_city_junc_e",
-          "road": "Nikoo Boulevard",
+          "u": "bc_junc_e",
+          "v": "bc_gate_east",
+          "road": "Bhartiya High Street",
           "type": "primary"
         },
         {
-          "u": "bhartiya_city_junc_e",
-          "v": "bhartiya_city_gate_2",
+          "u": "bc_junc_w",
+          "v": "bc_nikoo_nw",
           "road": "Nikoo Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "bhartiya_city_n_w",
-          "v": "bhartiya_city_n_mid",
-          "road": "Central Park Parkway",
           "type": "secondary"
         },
         {
-          "u": "bhartiya_city_n_mid",
-          "v": "bhartiya_city_n_e",
-          "road": "Central Park Parkway",
+          "u": "bc_nikoo_nw",
+          "v": "bc_rambler_ne",
+          "road": "Rambler Way",
           "type": "secondary"
         },
         {
-          "u": "bhartiya_city_s_w",
-          "v": "bhartiya_city_s_mid",
+          "u": "bc_rambler_ne",
+          "v": "bc_junc_e",
           "road": "Bhartiya High Street",
           "type": "secondary"
         },
         {
-          "u": "bhartiya_city_s_mid",
-          "v": "bhartiya_city_s_e",
+          "u": "bc_junc_w",
+          "v": "bc_nikoo_sw",
+          "road": "Central Park Parkway",
+          "type": "secondary"
+        },
+        {
+          "u": "bc_nikoo_sw",
+          "v": "bc_park_se",
+          "road": "Central Park Parkway",
+          "type": "secondary"
+        },
+        {
+          "u": "bc_park_se",
+          "v": "bc_junc_e",
           "road": "Bhartiya High Street",
           "type": "secondary"
         },
         {
-          "u": "bhartiya_city_n_w",
-          "v": "bhartiya_city_w_n_mid",
-          "road": "Rambler Way",
-          "type": "secondary"
-        },
-        {
-          "u": "bhartiya_city_w_n_mid",
-          "v": "bhartiya_city_junc_w",
-          "road": "Rambler Way",
-          "type": "secondary"
-        },
-        {
-          "u": "bhartiya_city_junc_w",
-          "v": "bhartiya_city_w_s_mid",
-          "road": "Rambler Way",
-          "type": "secondary"
-        },
-        {
-          "u": "bhartiya_city_w_s_mid",
-          "v": "bhartiya_city_s_w",
-          "road": "Rambler Way",
-          "type": "secondary"
-        },
-        {
-          "u": "bhartiya_city_n_mid",
-          "v": "bhartiya_city_ctr_n_mid",
+          "u": "bc_junc_ctr",
+          "v": "bc_nikoo_nw",
           "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "bhartiya_city_ctr_n_mid",
-          "v": "bhartiya_city_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "bhartiya_city_junc_ctr",
-          "v": "bhartiya_city_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "bhartiya_city_ctr_s_mid",
-          "v": "bhartiya_city_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "bhartiya_city_n_e",
-          "v": "bhartiya_city_e_n_mid",
-          "road": "Thanisandra Highway",
           "type": "secondary"
         },
         {
-          "u": "bhartiya_city_e_n_mid",
-          "v": "bhartiya_city_junc_e",
-          "road": "Thanisandra Highway",
-          "type": "secondary"
-        },
-        {
-          "u": "bhartiya_city_junc_e",
-          "v": "bhartiya_city_e_s_mid",
-          "road": "Thanisandra Highway",
-          "type": "secondary"
-        },
-        {
-          "u": "bhartiya_city_e_s_mid",
-          "v": "bhartiya_city_s_e",
-          "road": "Thanisandra Highway",
+          "u": "bc_junc_ctr",
+          "v": "bc_nikoo_sw",
+          "road": "Central Link",
           "type": "secondary"
         }
       ]
@@ -36237,105 +34911,105 @@ window.LAYOUTS = {
       "1": {
         "id": "1",
         "number": "Nikoo Homes A - 101",
-        "road": "Central Park Parkway",
+        "road": "Nikoo Boulevard",
         "block": "Nikoo Homes A",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 307,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_w",
+        "roadNode": "bc_nikoo_nw",
         "color": "cyan"
       },
       "2": {
         "id": "2",
         "number": "Nikoo Homes A - 102",
-        "road": "Central Park Parkway",
+        "road": "Nikoo Boulevard",
         "block": "Nikoo Homes A",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 329,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_w",
+        "roadNode": "bc_nikoo_nw",
         "color": "cyan"
       },
       "3": {
         "id": "3",
         "number": "Nikoo Homes A - 201",
-        "road": "Central Park Parkway",
+        "road": "Nikoo Boulevard",
         "block": "Nikoo Homes A",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 351,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_w",
+        "roadNode": "bc_nikoo_nw",
         "color": "cyan"
       },
       "4": {
         "id": "4",
         "number": "Nikoo Homes A - 202",
-        "road": "Central Park Parkway",
+        "road": "Nikoo Boulevard",
         "block": "Nikoo Homes A",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 373,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_w",
+        "roadNode": "bc_nikoo_nw",
         "color": "cyan"
       },
       "5": {
         "id": "5",
         "number": "Nikoo Homes A - 301",
-        "road": "Central Park Parkway",
+        "road": "Nikoo Boulevard",
         "block": "Nikoo Homes A",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 307,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_w",
+        "roadNode": "bc_nikoo_nw",
         "color": "cyan"
       },
       "6": {
         "id": "6",
         "number": "Nikoo Homes A - 302",
-        "road": "Central Park Parkway",
+        "road": "Nikoo Boulevard",
         "block": "Nikoo Homes A",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 329,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_w",
+        "roadNode": "bc_nikoo_nw",
         "color": "cyan"
       },
       "7": {
         "id": "7",
         "number": "Nikoo Homes A - 401",
-        "road": "Central Park Parkway",
+        "road": "Nikoo Boulevard",
         "block": "Nikoo Homes A",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 351,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_w",
+        "roadNode": "bc_nikoo_nw",
         "color": "cyan"
       },
       "8": {
         "id": "8",
         "number": "Nikoo Homes A - 402",
-        "road": "Central Park Parkway",
+        "road": "Nikoo Boulevard",
         "block": "Nikoo Homes A",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 373,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_w",
+        "roadNode": "bc_nikoo_nw",
         "color": "cyan"
       },
       "9": {
@@ -36343,12 +35017,12 @@ window.LAYOUTS = {
         "number": "Nikoo Homes B - 101",
         "road": "Central Park Parkway",
         "block": "Nikoo Homes B",
-        "facing": "South",
-        "x": 527,
-        "y": 189,
+        "facing": "North",
+        "x": 307,
+        "y": 669,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_mid",
+        "roadNode": "bc_nikoo_sw",
         "color": "cyan"
       },
       "10": {
@@ -36356,12 +35030,12 @@ window.LAYOUTS = {
         "number": "Nikoo Homes B - 102",
         "road": "Central Park Parkway",
         "block": "Nikoo Homes B",
-        "facing": "South",
-        "x": 549,
-        "y": 189,
+        "facing": "North",
+        "x": 329,
+        "y": 669,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_mid",
+        "roadNode": "bc_nikoo_sw",
         "color": "cyan"
       },
       "11": {
@@ -36369,12 +35043,12 @@ window.LAYOUTS = {
         "number": "Nikoo Homes B - 201",
         "road": "Central Park Parkway",
         "block": "Nikoo Homes B",
-        "facing": "South",
-        "x": 571,
-        "y": 189,
+        "facing": "North",
+        "x": 351,
+        "y": 669,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_mid",
+        "roadNode": "bc_nikoo_sw",
         "color": "cyan"
       },
       "12": {
@@ -36382,12 +35056,12 @@ window.LAYOUTS = {
         "number": "Nikoo Homes B - 202",
         "road": "Central Park Parkway",
         "block": "Nikoo Homes B",
-        "facing": "South",
-        "x": 593,
-        "y": 189,
+        "facing": "North",
+        "x": 373,
+        "y": 669,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_mid",
+        "roadNode": "bc_nikoo_sw",
         "color": "cyan"
       },
       "13": {
@@ -36395,12 +35069,12 @@ window.LAYOUTS = {
         "number": "Nikoo Homes B - 301",
         "road": "Central Park Parkway",
         "block": "Nikoo Homes B",
-        "facing": "South",
-        "x": 527,
-        "y": 211,
+        "facing": "North",
+        "x": 307,
+        "y": 691,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_mid",
+        "roadNode": "bc_nikoo_sw",
         "color": "cyan"
       },
       "14": {
@@ -36408,12 +35082,12 @@ window.LAYOUTS = {
         "number": "Nikoo Homes B - 302",
         "road": "Central Park Parkway",
         "block": "Nikoo Homes B",
-        "facing": "South",
-        "x": 549,
-        "y": 211,
+        "facing": "North",
+        "x": 329,
+        "y": 691,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_mid",
+        "roadNode": "bc_nikoo_sw",
         "color": "cyan"
       },
       "15": {
@@ -36421,12 +35095,12 @@ window.LAYOUTS = {
         "number": "Nikoo Homes B - 401",
         "road": "Central Park Parkway",
         "block": "Nikoo Homes B",
-        "facing": "South",
-        "x": 571,
-        "y": 211,
+        "facing": "North",
+        "x": 351,
+        "y": 691,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_mid",
+        "roadNode": "bc_nikoo_sw",
         "color": "cyan"
       },
       "16": {
@@ -36434,147 +35108,241 @@ window.LAYOUTS = {
         "number": "Nikoo Homes B - 402",
         "road": "Central Park Parkway",
         "block": "Nikoo Homes B",
-        "facing": "South",
-        "x": 593,
-        "y": 211,
+        "facing": "North",
+        "x": 373,
+        "y": 691,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_mid",
+        "roadNode": "bc_nikoo_sw",
         "color": "cyan"
       },
       "17": {
         "id": "17",
         "number": "Central Park Enclave - 101",
-        "road": "Central Park Parkway",
+        "road": "Bhartiya High Street",
         "block": "Central Park Enclave",
-        "facing": "South",
-        "x": 807,
-        "y": 189,
+        "facing": "West",
+        "x": 827,
+        "y": 439,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_e",
+        "roadNode": "bc_junc_e",
         "color": "cyan"
       },
       "18": {
         "id": "18",
         "number": "Central Park Enclave - 102",
-        "road": "Central Park Parkway",
+        "road": "Bhartiya High Street",
         "block": "Central Park Enclave",
-        "facing": "South",
-        "x": 829,
-        "y": 189,
+        "facing": "West",
+        "x": 849,
+        "y": 439,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_e",
+        "roadNode": "bc_junc_e",
         "color": "cyan"
       },
       "19": {
         "id": "19",
         "number": "Central Park Enclave - 201",
-        "road": "Central Park Parkway",
+        "road": "Bhartiya High Street",
         "block": "Central Park Enclave",
-        "facing": "South",
-        "x": 851,
-        "y": 189,
+        "facing": "West",
+        "x": 871,
+        "y": 439,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_e",
+        "roadNode": "bc_junc_e",
         "color": "cyan"
       },
       "20": {
         "id": "20",
         "number": "Central Park Enclave - 202",
-        "road": "Central Park Parkway",
+        "road": "Bhartiya High Street",
         "block": "Central Park Enclave",
-        "facing": "South",
-        "x": 873,
-        "y": 189,
+        "facing": "West",
+        "x": 893,
+        "y": 439,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_e",
+        "roadNode": "bc_junc_e",
         "color": "cyan"
       },
       "21": {
         "id": "21",
         "number": "Central Park Enclave - 301",
-        "road": "Central Park Parkway",
+        "road": "Bhartiya High Street",
         "block": "Central Park Enclave",
-        "facing": "South",
-        "x": 807,
-        "y": 211,
+        "facing": "West",
+        "x": 827,
+        "y": 461,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_e",
+        "roadNode": "bc_junc_e",
         "color": "cyan"
       },
       "22": {
         "id": "22",
         "number": "Central Park Enclave - 302",
-        "road": "Central Park Parkway",
+        "road": "Bhartiya High Street",
         "block": "Central Park Enclave",
-        "facing": "South",
-        "x": 829,
-        "y": 211,
+        "facing": "West",
+        "x": 849,
+        "y": 461,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_e",
+        "roadNode": "bc_junc_e",
         "color": "cyan"
       },
       "23": {
         "id": "23",
         "number": "Central Park Enclave - 401",
-        "road": "Central Park Parkway",
+        "road": "Bhartiya High Street",
         "block": "Central Park Enclave",
-        "facing": "South",
-        "x": 851,
-        "y": 211,
+        "facing": "West",
+        "x": 871,
+        "y": 461,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_e",
+        "roadNode": "bc_junc_e",
         "color": "cyan"
       },
       "24": {
         "id": "24",
         "number": "Central Park Enclave - 402",
-        "road": "Central Park Parkway",
+        "road": "Bhartiya High Street",
         "block": "Central Park Enclave",
-        "facing": "South",
-        "x": 873,
-        "y": 211,
+        "facing": "West",
+        "x": 893,
+        "y": 461,
         "w": 48,
         "h": 34,
-        "roadNode": "bhartiya_city_n_e",
+        "roadNode": "bc_junc_e",
+        "color": "cyan"
+      },
+      "25": {
+        "id": "25",
+        "number": "Sky Villa Tower - 101",
+        "road": "Rambler Way",
+        "block": "Sky Villa Tower",
+        "facing": "South",
+        "x": 827,
+        "y": 209,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bc_rambler_ne",
+        "color": "cyan"
+      },
+      "26": {
+        "id": "26",
+        "number": "Sky Villa Tower - 102",
+        "road": "Rambler Way",
+        "block": "Sky Villa Tower",
+        "facing": "South",
+        "x": 849,
+        "y": 209,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bc_rambler_ne",
+        "color": "cyan"
+      },
+      "27": {
+        "id": "27",
+        "number": "Sky Villa Tower - 201",
+        "road": "Rambler Way",
+        "block": "Sky Villa Tower",
+        "facing": "South",
+        "x": 871,
+        "y": 209,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bc_rambler_ne",
+        "color": "cyan"
+      },
+      "28": {
+        "id": "28",
+        "number": "Sky Villa Tower - 202",
+        "road": "Rambler Way",
+        "block": "Sky Villa Tower",
+        "facing": "South",
+        "x": 893,
+        "y": 209,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bc_rambler_ne",
+        "color": "cyan"
+      },
+      "29": {
+        "id": "29",
+        "number": "Sky Villa Tower - 301",
+        "road": "Rambler Way",
+        "block": "Sky Villa Tower",
+        "facing": "South",
+        "x": 827,
+        "y": 231,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bc_rambler_ne",
+        "color": "cyan"
+      },
+      "30": {
+        "id": "30",
+        "number": "Sky Villa Tower - 302",
+        "road": "Rambler Way",
+        "block": "Sky Villa Tower",
+        "facing": "South",
+        "x": 849,
+        "y": 231,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bc_rambler_ne",
+        "color": "cyan"
+      },
+      "31": {
+        "id": "31",
+        "number": "Sky Villa Tower - 401",
+        "road": "Rambler Way",
+        "block": "Sky Villa Tower",
+        "facing": "South",
+        "x": 871,
+        "y": 231,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bc_rambler_ne",
+        "color": "cyan"
+      },
+      "32": {
+        "id": "32",
+        "number": "Sky Villa Tower - 402",
+        "road": "Rambler Way",
+        "block": "Sky Villa Tower",
+        "facing": "South",
+        "x": 893,
+        "y": 231,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bc_rambler_ne",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "bhartiya_city_gate_1",
-        "name": "Bhartiya City Nikoo Homes Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "bhartiya_city_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "bhartiya_city_gate_2",
-        "name": "Bhartiya City Nikoo Homes Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "bhartiya_city_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
+        "id": "bhartiya_city_club",
+        "name": "The Black Swan Clubhouse",
+        "description": "Smart city clubhouse, infinity rooftop pool, cycling track and theatre",
+        "x": 620,
+        "y": 380,
+        "roadNode": "bc_junc_ctr",
+        "icon": "\ud83e\udda2",
+        "type": "clubhouse"
       },
       {
         "id": "bhartiya_city_park",
-        "name": "Bhartiya Central Park & Amphitheatre",
-        "description": "7-acre central park, open-air cinema and shopping boulevard",
+        "name": "Central Park Smart Promenade",
+        "description": "7-acre smart park with interactive water features and outdoor fitness",
         "x": 620,
-        "y": 480,
-        "roadNode": "bhartiya_city_junc_ctr",
+        "y": 440,
+        "roadNode": "bc_junc_ctr",
         "icon": "\ud83c\udf33",
         "type": "park"
       }
@@ -36582,40 +35350,35 @@ window.LAYOUTS = {
     "roadLabels": [
       {
         "name": "NIKOO BOULEVARD",
+        "x": 440,
+        "y": 495,
+        "vertical": false
+      },
+      {
+        "name": "BHARTIYA HIGH STREET",
+        "x": 920,
+        "y": 380,
+        "vertical": true
+      },
+      {
+        "name": "RAMBLER WAY",
         "x": 620,
-        "y": 490,
+        "y": 245,
         "vertical": false
       },
       {
         "name": "CENTRAL PARK PARKWAY",
         "x": 620,
-        "y": 255,
+        "y": 715,
         "vertical": false
-      },
-      {
-        "name": "BHARTIYA HIGH STREET",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "RAMBLER WAY",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "THANISANDRA HIGHWAY",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "bhartiya_city_gate_1",
+    "defaultStartGate": "bc_gate_main",
     "sectors": [
       "Nikoo Homes A",
       "Nikoo Homes B",
-      "Central Park Enclave"
+      "Central Park Enclave",
+      "Sky Villa Tower"
     ]
   },
   "manyata_residency": {
@@ -36625,263 +35388,143 @@ window.LAYOUTS = {
     "zone": "north",
     "type": "Gated Executive Tech Township",
     "unitType": "Apartment / Tower",
-    "unitCount": 16,
+    "unitCount": 24,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
+    "groundPolygon": "100,480 220,160 620,140 1020,160 1120,480 1020,800 620,820 220,800 Z",
+    "borderTreesPath": "M 100,480 L 220,160 L 620,140 L 1020,160 L 1120,480 L 1020,800 L 620,820 L 220,800 Z",
+    "waterBody": null,
+    "gardenPark": null,
+    "landmarks": [
+      {
+        "x": 760,
+        "y": 420,
+        "w": 220,
+        "h": 180,
+        "rx": 8,
+        "label": "\ud83d\udcbc Embassy Manyata Tech Park",
+        "fill": "#0f172a",
+        "stroke": "#38bdf8"
+      }
+    ],
     "roads": {
       "nodes": {
-        "manyata_residency_gate_1": {
-          "id": "manyata_residency_gate_1",
-          "x": 90,
+        "mr_gate_main": {
+          "id": "mr_gate_main",
+          "x": 100,
           "y": 480,
-          "label": "Manyata Tech Park Residency Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Outer Ring Road Flyover)"
         },
-        "manyata_residency_entry": {
-          "id": "manyata_residency_entry",
-          "x": 180,
+        "mr_junc_w": {
+          "id": "mr_junc_w",
+          "x": 260,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Manyata Boulevard West"
         },
-        "manyata_residency_junc_w": {
-          "id": "manyata_residency_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Residency Way West Junction"
-        },
-        "manyata_residency_junc_ctr": {
-          "id": "manyata_residency_junc_ctr",
+        "mr_junc_ctr": {
+          "id": "mr_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Executive Plaza Cross"
         },
-        "manyata_residency_junc_e": {
-          "id": "manyata_residency_junc_e",
-          "x": 920,
+        "mr_junc_e": {
+          "id": "mr_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Lumbini Access Road East Junction"
+          "label": "Tech Park Skywalk Access"
         },
-        "manyata_residency_gate_2": {
-          "id": "manyata_residency_gate_2",
+        "mr_gate_tech": {
+          "id": "mr_gate_tech",
           "x": 1110,
           "y": 480,
-          "label": "Manyata Tech Park Residency Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Nagavara Lake & Metro Link)"
         },
-        "manyata_residency_n_w": {
-          "id": "manyata_residency_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Nagavara Ring Parkway West"
+        "mr_north": {
+          "id": "mr_north",
+          "x": 360,
+          "y": 280,
+          "label": "Residency North Drive"
         },
-        "manyata_residency_n_mid": {
-          "id": "manyata_residency_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Nagavara Ring Parkway North Plaza"
+        "mr_ne": {
+          "id": "mr_ne",
+          "x": 780,
+          "y": 260,
+          "label": "Nagavara Ring Parkway"
         },
-        "manyata_residency_n_e": {
-          "id": "manyata_residency_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Nagavara Ring Parkway East"
-        },
-        "manyata_residency_s_w": {
-          "id": "manyata_residency_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Tech Park Link West"
-        },
-        "manyata_residency_s_mid": {
-          "id": "manyata_residency_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Tech Park Link South Plaza"
-        },
-        "manyata_residency_s_e": {
-          "id": "manyata_residency_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Tech Park Link East"
-        },
-        "manyata_residency_w_n_mid": {
-          "id": "manyata_residency_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Residency Way North Link"
-        },
-        "manyata_residency_w_s_mid": {
-          "id": "manyata_residency_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Residency Way South Link"
-        },
-        "manyata_residency_ctr_n_mid": {
-          "id": "manyata_residency_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "manyata_residency_ctr_s_mid": {
-          "id": "manyata_residency_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "manyata_residency_e_n_mid": {
-          "id": "manyata_residency_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Lumbini Access Road North Link"
-        },
-        "manyata_residency_e_s_mid": {
-          "id": "manyata_residency_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Lumbini Access Road South Link"
+        "mr_south": {
+          "id": "mr_south",
+          "x": 460,
+          "y": 680,
+          "label": "Tech Park Link South"
         }
       },
       "edges": [
         {
-          "u": "manyata_residency_gate_1",
-          "v": "manyata_residency_entry",
+          "u": "mr_gate_main",
+          "v": "mr_junc_w",
           "road": "Manyata Boulevard",
           "type": "primary"
         },
         {
-          "u": "manyata_residency_entry",
-          "v": "manyata_residency_junc_w",
+          "u": "mr_junc_w",
+          "v": "mr_junc_ctr",
           "road": "Manyata Boulevard",
           "type": "primary"
         },
         {
-          "u": "manyata_residency_junc_w",
-          "v": "manyata_residency_junc_ctr",
+          "u": "mr_junc_ctr",
+          "v": "mr_junc_e",
           "road": "Manyata Boulevard",
           "type": "primary"
         },
         {
-          "u": "manyata_residency_junc_ctr",
-          "v": "manyata_residency_junc_e",
+          "u": "mr_junc_e",
+          "v": "mr_gate_tech",
           "road": "Manyata Boulevard",
           "type": "primary"
         },
         {
-          "u": "manyata_residency_junc_e",
-          "v": "manyata_residency_gate_2",
-          "road": "Manyata Boulevard",
-          "type": "primary"
+          "u": "mr_junc_w",
+          "v": "mr_north",
+          "road": "Residency Way",
+          "type": "secondary"
         },
         {
-          "u": "manyata_residency_n_w",
-          "v": "manyata_residency_n_mid",
+          "u": "mr_north",
+          "v": "mr_ne",
           "road": "Nagavara Ring Parkway",
           "type": "secondary"
         },
         {
-          "u": "manyata_residency_n_mid",
-          "v": "manyata_residency_n_e",
+          "u": "mr_ne",
+          "v": "mr_junc_e",
           "road": "Nagavara Ring Parkway",
           "type": "secondary"
         },
         {
-          "u": "manyata_residency_s_w",
-          "v": "manyata_residency_s_mid",
+          "u": "mr_junc_w",
+          "v": "mr_south",
           "road": "Tech Park Link",
           "type": "secondary"
         },
         {
-          "u": "manyata_residency_s_mid",
-          "v": "manyata_residency_s_e",
+          "u": "mr_south",
+          "v": "mr_junc_e",
           "road": "Tech Park Link",
           "type": "secondary"
         },
         {
-          "u": "manyata_residency_n_w",
-          "v": "manyata_residency_w_n_mid",
-          "road": "Residency Way",
-          "type": "secondary"
-        },
-        {
-          "u": "manyata_residency_w_n_mid",
-          "v": "manyata_residency_junc_w",
-          "road": "Residency Way",
-          "type": "secondary"
-        },
-        {
-          "u": "manyata_residency_junc_w",
-          "v": "manyata_residency_w_s_mid",
-          "road": "Residency Way",
-          "type": "secondary"
-        },
-        {
-          "u": "manyata_residency_w_s_mid",
-          "v": "manyata_residency_s_w",
-          "road": "Residency Way",
-          "type": "secondary"
-        },
-        {
-          "u": "manyata_residency_n_mid",
-          "v": "manyata_residency_ctr_n_mid",
+          "u": "mr_junc_ctr",
+          "v": "mr_south",
           "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "manyata_residency_ctr_n_mid",
-          "v": "manyata_residency_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "manyata_residency_junc_ctr",
-          "v": "manyata_residency_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "manyata_residency_ctr_s_mid",
-          "v": "manyata_residency_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "manyata_residency_n_e",
-          "v": "manyata_residency_e_n_mid",
-          "road": "Lumbini Access Road",
-          "type": "secondary"
-        },
-        {
-          "u": "manyata_residency_e_n_mid",
-          "v": "manyata_residency_junc_e",
-          "road": "Lumbini Access Road",
-          "type": "secondary"
-        },
-        {
-          "u": "manyata_residency_junc_e",
-          "v": "manyata_residency_e_s_mid",
-          "road": "Lumbini Access Road",
-          "type": "secondary"
-        },
-        {
-          "u": "manyata_residency_e_s_mid",
-          "v": "manyata_residency_s_e",
-          "road": "Lumbini Access Road",
           "type": "secondary"
         }
       ]
@@ -36890,105 +35533,105 @@ window.LAYOUTS = {
       "1": {
         "id": "1",
         "number": "Residency North - 101",
-        "road": "Nagavara Ring Parkway",
+        "road": "Manyata Boulevard",
         "block": "Residency North",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 327,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_w",
+        "roadNode": "mr_north",
         "color": "cyan"
       },
       "2": {
         "id": "2",
         "number": "Residency North - 102",
-        "road": "Nagavara Ring Parkway",
+        "road": "Manyata Boulevard",
         "block": "Residency North",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 349,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_w",
+        "roadNode": "mr_north",
         "color": "cyan"
       },
       "3": {
         "id": "3",
         "number": "Residency North - 201",
-        "road": "Nagavara Ring Parkway",
+        "road": "Manyata Boulevard",
         "block": "Residency North",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 371,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_w",
+        "roadNode": "mr_north",
         "color": "cyan"
       },
       "4": {
         "id": "4",
         "number": "Residency North - 202",
-        "road": "Nagavara Ring Parkway",
+        "road": "Manyata Boulevard",
         "block": "Residency North",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 393,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_w",
+        "roadNode": "mr_north",
         "color": "cyan"
       },
       "5": {
         "id": "5",
         "number": "Residency North - 301",
-        "road": "Nagavara Ring Parkway",
+        "road": "Manyata Boulevard",
         "block": "Residency North",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 327,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_w",
+        "roadNode": "mr_north",
         "color": "cyan"
       },
       "6": {
         "id": "6",
         "number": "Residency North - 302",
-        "road": "Nagavara Ring Parkway",
+        "road": "Manyata Boulevard",
         "block": "Residency North",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 349,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_w",
+        "roadNode": "mr_north",
         "color": "cyan"
       },
       "7": {
         "id": "7",
         "number": "Residency North - 401",
-        "road": "Nagavara Ring Parkway",
+        "road": "Manyata Boulevard",
         "block": "Residency North",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 371,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_w",
+        "roadNode": "mr_north",
         "color": "cyan"
       },
       "8": {
         "id": "8",
         "number": "Residency North - 402",
-        "road": "Nagavara Ring Parkway",
+        "road": "Manyata Boulevard",
         "block": "Residency North",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 393,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_w",
+        "roadNode": "mr_north",
         "color": "cyan"
       },
       "9": {
@@ -36997,11 +35640,11 @@ window.LAYOUTS = {
         "road": "Nagavara Ring Parkway",
         "block": "Residency South",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 747,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_mid",
+        "roadNode": "mr_ne",
         "color": "cyan"
       },
       "10": {
@@ -37010,11 +35653,11 @@ window.LAYOUTS = {
         "road": "Nagavara Ring Parkway",
         "block": "Residency South",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 769,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_mid",
+        "roadNode": "mr_ne",
         "color": "cyan"
       },
       "11": {
@@ -37023,11 +35666,11 @@ window.LAYOUTS = {
         "road": "Nagavara Ring Parkway",
         "block": "Residency South",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 791,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_mid",
+        "roadNode": "mr_ne",
         "color": "cyan"
       },
       "12": {
@@ -37036,11 +35679,11 @@ window.LAYOUTS = {
         "road": "Nagavara Ring Parkway",
         "block": "Residency South",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 813,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_mid",
+        "roadNode": "mr_ne",
         "color": "cyan"
       },
       "13": {
@@ -37049,11 +35692,11 @@ window.LAYOUTS = {
         "road": "Nagavara Ring Parkway",
         "block": "Residency South",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 747,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_mid",
+        "roadNode": "mr_ne",
         "color": "cyan"
       },
       "14": {
@@ -37062,11 +35705,11 @@ window.LAYOUTS = {
         "road": "Nagavara Ring Parkway",
         "block": "Residency South",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 769,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_mid",
+        "roadNode": "mr_ne",
         "color": "cyan"
       },
       "15": {
@@ -37075,11 +35718,11 @@ window.LAYOUTS = {
         "road": "Nagavara Ring Parkway",
         "block": "Residency South",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 791,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_mid",
+        "roadNode": "mr_ne",
         "color": "cyan"
       },
       "16": {
@@ -37088,82 +35731,155 @@ window.LAYOUTS = {
         "road": "Nagavara Ring Parkway",
         "block": "Residency South",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 813,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "manyata_residency_n_mid",
+        "roadNode": "mr_ne",
+        "color": "cyan"
+      },
+      "17": {
+        "id": "17",
+        "number": "Tech Enclave Block - 101",
+        "road": "Tech Park Link",
+        "block": "Tech Enclave Block",
+        "facing": "North",
+        "x": 427,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "mr_south",
+        "color": "cyan"
+      },
+      "18": {
+        "id": "18",
+        "number": "Tech Enclave Block - 102",
+        "road": "Tech Park Link",
+        "block": "Tech Enclave Block",
+        "facing": "North",
+        "x": 449,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "mr_south",
+        "color": "cyan"
+      },
+      "19": {
+        "id": "19",
+        "number": "Tech Enclave Block - 201",
+        "road": "Tech Park Link",
+        "block": "Tech Enclave Block",
+        "facing": "North",
+        "x": 471,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "mr_south",
+        "color": "cyan"
+      },
+      "20": {
+        "id": "20",
+        "number": "Tech Enclave Block - 202",
+        "road": "Tech Park Link",
+        "block": "Tech Enclave Block",
+        "facing": "North",
+        "x": 493,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "mr_south",
+        "color": "cyan"
+      },
+      "21": {
+        "id": "21",
+        "number": "Tech Enclave Block - 301",
+        "road": "Tech Park Link",
+        "block": "Tech Enclave Block",
+        "facing": "North",
+        "x": 427,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "mr_south",
+        "color": "cyan"
+      },
+      "22": {
+        "id": "22",
+        "number": "Tech Enclave Block - 302",
+        "road": "Tech Park Link",
+        "block": "Tech Enclave Block",
+        "facing": "North",
+        "x": 449,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "mr_south",
+        "color": "cyan"
+      },
+      "23": {
+        "id": "23",
+        "number": "Tech Enclave Block - 401",
+        "road": "Tech Park Link",
+        "block": "Tech Enclave Block",
+        "facing": "North",
+        "x": 471,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "mr_south",
+        "color": "cyan"
+      },
+      "24": {
+        "id": "24",
+        "number": "Tech Enclave Block - 402",
+        "road": "Tech Park Link",
+        "block": "Tech Enclave Block",
+        "facing": "North",
+        "x": 493,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "mr_south",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "manyata_residency_gate_1",
-        "name": "Manyata Tech Park Residency Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "manyata_residency_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "manyata_residency_gate_2",
-        "name": "Manyata Tech Park Residency Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "manyata_residency_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "manyata_residency_lake",
-        "name": "Lumbini Gardens Waterfront",
-        "description": "Eco-park, boating, wave pool and lake promenade",
+        "id": "manyata_residency_tech",
+        "name": "Manyata Executive Club & Spa",
+        "description": "Rooftop pool, executive conference center, squash and dining",
         "x": 620,
-        "y": 690,
-        "roadNode": "manyata_residency_s_mid",
-        "icon": "\u26f5",
-        "type": "nature"
+        "y": 440,
+        "roadNode": "mr_junc_ctr",
+        "icon": "\ud83c\udfca",
+        "type": "clubhouse"
       }
     ],
     "roadLabels": [
       {
         "name": "MANYATA BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
         "name": "NAGAVARA RING PARKWAY",
         "x": 620,
-        "y": 255,
+        "y": 245,
         "vertical": false
       },
       {
         "name": "TECH PARK LINK",
         "x": 620,
-        "y": 705,
+        "y": 665,
         "vertical": false
-      },
-      {
-        "name": "RESIDENCY WAY",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "LUMBINI ACCESS ROAD",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "manyata_residency_gate_1",
+    "defaultStartGate": "mr_gate_main",
     "sectors": [
       "Residency North",
-      "Residency South"
+      "Residency South",
+      "Tech Enclave Block"
     ]
   },
   "prestige_golfshire": {
@@ -37173,263 +35889,175 @@ window.LAYOUTS = {
     "zone": "north",
     "type": "Signature Golf Villa Resort Township",
     "unitType": "Villa",
-    "unitCount": 16,
+    "unitCount": 32,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "80,480 180,140 1060,140 1160,480 1060,820 180,820 Z",
+    "borderTreesPath": "M 80,480 L 180,140 L 1060,140 L 1160,480 L 1060,820 L 180,820 Z",
+    "waterBody": {
+      "x": 480,
+      "y": 430,
+      "w": 280,
+      "h": 90,
+      "rx": 20,
+      "label": "Nandi Foothills Golf Lake & Water Hazard"
     },
+    "gardenPark": {
+      "x": 440,
+      "y": 280,
+      "w": 360,
+      "h": 70,
+      "rx": 10,
+      "label": "18-Hole Championship Golf Course & Greens"
+    },
+    "landmarks": [
+      {
+        "x": 760,
+        "y": 430,
+        "w": 200,
+        "h": 100,
+        "rx": 8,
+        "label": "\ud83c\udfe8 JW Marriott Golf Resort & Spa",
+        "fill": "#1e1b4b",
+        "stroke": "#f59e0b"
+      }
+    ],
     "roads": {
       "nodes": {
-        "prestige_golfshire_gate_1": {
-          "id": "prestige_golfshire_gate_1",
-          "x": 90,
+        "pg_gate_main": {
+          "id": "pg_gate_main",
+          "x": 80,
           "y": 480,
-          "label": "Prestige Golfshire Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Nandi Hills Highway)"
         },
-        "prestige_golfshire_entry": {
-          "id": "prestige_golfshire_entry",
-          "x": 180,
+        "pg_junc_w": {
+          "id": "pg_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Fairway Green West Cross"
         },
-        "prestige_golfshire_junc_w": {
-          "id": "prestige_golfshire_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Clubhouse Link West Junction"
-        },
-        "prestige_golfshire_junc_ctr": {
-          "id": "prestige_golfshire_junc_ctr",
+        "pg_junc_ctr": {
+          "id": "pg_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Golfshire Clubhouse Hub"
         },
-        "prestige_golfshire_junc_e": {
-          "id": "prestige_golfshire_junc_e",
-          "x": 920,
+        "pg_junc_e": {
+          "id": "pg_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Airport Expressway East Junction"
+          "label": "Nandi Foothill East Cross"
         },
-        "prestige_golfshire_gate_2": {
-          "id": "prestige_golfshire_gate_2",
-          "x": 1110,
+        "pg_gate_resort": {
+          "id": "pg_gate_resort",
+          "x": 1140,
           "y": 480,
-          "label": "Prestige Golfshire Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (JW Marriott Resort Link)"
         },
-        "prestige_golfshire_n_w": {
-          "id": "prestige_golfshire_n_w",
+        "pg_fairway_nw": {
+          "id": "pg_fairway_nw",
           "x": 320,
           "y": 270,
-          "label": "Fairway Green Parkway West"
+          "label": "Fairway Green Parkway"
         },
-        "prestige_golfshire_n_mid": {
-          "id": "prestige_golfshire_n_mid",
-          "x": 620,
+        "pg_nandi_ne": {
+          "id": "pg_nandi_ne",
+          "x": 860,
           "y": 270,
-          "label": "Fairway Green Parkway North Plaza"
+          "label": "Nandi Foothill Drive"
         },
-        "prestige_golfshire_n_e": {
-          "id": "prestige_golfshire_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Fairway Green Parkway East"
-        },
-        "prestige_golfshire_s_w": {
-          "id": "prestige_golfshire_s_w",
+        "pg_lake_sw": {
+          "id": "pg_lake_sw",
           "x": 320,
           "y": 690,
-          "label": "Nandi Foothill Drive West"
+          "label": "Golf Lake Promenade South"
         },
-        "prestige_golfshire_s_mid": {
-          "id": "prestige_golfshire_s_mid",
-          "x": 620,
+        "pg_greens_se": {
+          "id": "pg_greens_se",
+          "x": 860,
           "y": 690,
-          "label": "Nandi Foothill Drive South Plaza"
-        },
-        "prestige_golfshire_s_e": {
-          "id": "prestige_golfshire_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Nandi Foothill Drive East"
-        },
-        "prestige_golfshire_w_n_mid": {
-          "id": "prestige_golfshire_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Clubhouse Link North Link"
-        },
-        "prestige_golfshire_w_s_mid": {
-          "id": "prestige_golfshire_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Clubhouse Link South Link"
-        },
-        "prestige_golfshire_ctr_n_mid": {
-          "id": "prestige_golfshire_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "prestige_golfshire_ctr_s_mid": {
-          "id": "prestige_golfshire_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "prestige_golfshire_e_n_mid": {
-          "id": "prestige_golfshire_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Airport Expressway North Link"
-        },
-        "prestige_golfshire_e_s_mid": {
-          "id": "prestige_golfshire_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Airport Expressway South Link"
+          "label": "Clubhouse Link South"
         }
       },
       "edges": [
         {
-          "u": "prestige_golfshire_gate_1",
-          "v": "prestige_golfshire_entry",
+          "u": "pg_gate_main",
+          "v": "pg_junc_w",
           "road": "Golfshire Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_golfshire_entry",
-          "v": "prestige_golfshire_junc_w",
+          "u": "pg_junc_w",
+          "v": "pg_junc_ctr",
           "road": "Golfshire Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_golfshire_junc_w",
-          "v": "prestige_golfshire_junc_ctr",
+          "u": "pg_junc_ctr",
+          "v": "pg_junc_e",
           "road": "Golfshire Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_golfshire_junc_ctr",
-          "v": "prestige_golfshire_junc_e",
+          "u": "pg_junc_e",
+          "v": "pg_gate_resort",
           "road": "Golfshire Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_golfshire_junc_e",
-          "v": "prestige_golfshire_gate_2",
-          "road": "Golfshire Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_golfshire_n_w",
-          "v": "prestige_golfshire_n_mid",
+          "u": "pg_junc_w",
+          "v": "pg_fairway_nw",
           "road": "Fairway Green Parkway",
           "type": "secondary"
         },
         {
-          "u": "prestige_golfshire_n_mid",
-          "v": "prestige_golfshire_n_e",
+          "u": "pg_fairway_nw",
+          "v": "pg_nandi_ne",
           "road": "Fairway Green Parkway",
           "type": "secondary"
         },
         {
-          "u": "prestige_golfshire_s_w",
-          "v": "prestige_golfshire_s_mid",
+          "u": "pg_nandi_ne",
+          "v": "pg_junc_e",
           "road": "Nandi Foothill Drive",
           "type": "secondary"
         },
         {
-          "u": "prestige_golfshire_s_mid",
-          "v": "prestige_golfshire_s_e",
-          "road": "Nandi Foothill Drive",
+          "u": "pg_junc_w",
+          "v": "pg_lake_sw",
+          "road": "Golf Lake Promenade",
           "type": "secondary"
         },
         {
-          "u": "prestige_golfshire_n_w",
-          "v": "prestige_golfshire_w_n_mid",
+          "u": "pg_lake_sw",
+          "v": "pg_greens_se",
+          "road": "Golf Lake Promenade",
+          "type": "secondary"
+        },
+        {
+          "u": "pg_greens_se",
+          "v": "pg_junc_e",
           "road": "Clubhouse Link",
           "type": "secondary"
         },
         {
-          "u": "prestige_golfshire_w_n_mid",
-          "v": "prestige_golfshire_junc_w",
-          "road": "Clubhouse Link",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_golfshire_junc_w",
-          "v": "prestige_golfshire_w_s_mid",
-          "road": "Clubhouse Link",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_golfshire_w_s_mid",
-          "v": "prestige_golfshire_s_w",
-          "road": "Clubhouse Link",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_golfshire_n_mid",
-          "v": "prestige_golfshire_ctr_n_mid",
+          "u": "pg_junc_ctr",
+          "v": "pg_fairway_nw",
           "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_golfshire_ctr_n_mid",
-          "v": "prestige_golfshire_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_golfshire_junc_ctr",
-          "v": "prestige_golfshire_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_golfshire_ctr_s_mid",
-          "v": "prestige_golfshire_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_golfshire_n_e",
-          "v": "prestige_golfshire_e_n_mid",
-          "road": "Airport Expressway",
           "type": "secondary"
         },
         {
-          "u": "prestige_golfshire_e_n_mid",
-          "v": "prestige_golfshire_junc_e",
-          "road": "Airport Expressway",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_golfshire_junc_e",
-          "v": "prestige_golfshire_e_s_mid",
-          "road": "Airport Expressway",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_golfshire_e_s_mid",
-          "v": "prestige_golfshire_s_e",
-          "road": "Airport Expressway",
+          "u": "pg_junc_ctr",
+          "v": "pg_lake_sw",
+          "road": "Central Link",
           "type": "secondary"
         }
       ]
@@ -37437,250 +36065,448 @@ window.LAYOUTS = {
     "plots": {
       "1": {
         "id": "1",
-        "number": "Fairway Enclave - 101",
-        "road": "Fairway Green Parkway",
-        "block": "Fairway Enclave",
+        "number": "Fairway Enclave Villas - 101",
+        "road": "Golfshire Boulevard",
+        "block": "Fairway Enclave Villas",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 267,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_w",
+        "roadNode": "pg_fairway_nw",
         "color": "cyan"
       },
       "2": {
         "id": "2",
-        "number": "Fairway Enclave - 102",
-        "road": "Fairway Green Parkway",
-        "block": "Fairway Enclave",
+        "number": "Fairway Enclave Villas - 102",
+        "road": "Golfshire Boulevard",
+        "block": "Fairway Enclave Villas",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 289,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_w",
+        "roadNode": "pg_fairway_nw",
         "color": "cyan"
       },
       "3": {
         "id": "3",
-        "number": "Fairway Enclave - 201",
-        "road": "Fairway Green Parkway",
-        "block": "Fairway Enclave",
+        "number": "Fairway Enclave Villas - 201",
+        "road": "Golfshire Boulevard",
+        "block": "Fairway Enclave Villas",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 311,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_w",
+        "roadNode": "pg_fairway_nw",
         "color": "cyan"
       },
       "4": {
         "id": "4",
-        "number": "Fairway Enclave - 202",
-        "road": "Fairway Green Parkway",
-        "block": "Fairway Enclave",
+        "number": "Fairway Enclave Villas - 202",
+        "road": "Golfshire Boulevard",
+        "block": "Fairway Enclave Villas",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 333,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_w",
+        "roadNode": "pg_fairway_nw",
         "color": "cyan"
       },
       "5": {
         "id": "5",
-        "number": "Fairway Enclave - 301",
-        "road": "Fairway Green Parkway",
-        "block": "Fairway Enclave",
+        "number": "Fairway Enclave Villas - 301",
+        "road": "Golfshire Boulevard",
+        "block": "Fairway Enclave Villas",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 267,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_w",
+        "roadNode": "pg_fairway_nw",
         "color": "cyan"
       },
       "6": {
         "id": "6",
-        "number": "Fairway Enclave - 302",
-        "road": "Fairway Green Parkway",
-        "block": "Fairway Enclave",
+        "number": "Fairway Enclave Villas - 302",
+        "road": "Golfshire Boulevard",
+        "block": "Fairway Enclave Villas",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 289,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_w",
+        "roadNode": "pg_fairway_nw",
         "color": "cyan"
       },
       "7": {
         "id": "7",
-        "number": "Fairway Enclave - 401",
-        "road": "Fairway Green Parkway",
-        "block": "Fairway Enclave",
+        "number": "Fairway Enclave Villas - 401",
+        "road": "Golfshire Boulevard",
+        "block": "Fairway Enclave Villas",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 311,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_w",
+        "roadNode": "pg_fairway_nw",
         "color": "cyan"
       },
       "8": {
         "id": "8",
-        "number": "Fairway Enclave - 402",
-        "road": "Fairway Green Parkway",
-        "block": "Fairway Enclave",
+        "number": "Fairway Enclave Villas - 402",
+        "road": "Golfshire Boulevard",
+        "block": "Fairway Enclave Villas",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 333,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_w",
+        "roadNode": "pg_fairway_nw",
         "color": "cyan"
       },
       "9": {
         "id": "9",
-        "number": "Nandi View Enclave - 101",
-        "road": "Fairway Green Parkway",
-        "block": "Nandi View Enclave",
+        "number": "Nandi View Mansions - 101",
+        "road": "Nandi Foothill Drive",
+        "block": "Nandi View Mansions",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 827,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_mid",
+        "roadNode": "pg_nandi_ne",
         "color": "cyan"
       },
       "10": {
         "id": "10",
-        "number": "Nandi View Enclave - 102",
-        "road": "Fairway Green Parkway",
-        "block": "Nandi View Enclave",
+        "number": "Nandi View Mansions - 102",
+        "road": "Nandi Foothill Drive",
+        "block": "Nandi View Mansions",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 849,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_mid",
+        "roadNode": "pg_nandi_ne",
         "color": "cyan"
       },
       "11": {
         "id": "11",
-        "number": "Nandi View Enclave - 201",
-        "road": "Fairway Green Parkway",
-        "block": "Nandi View Enclave",
+        "number": "Nandi View Mansions - 201",
+        "road": "Nandi Foothill Drive",
+        "block": "Nandi View Mansions",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 871,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_mid",
+        "roadNode": "pg_nandi_ne",
         "color": "cyan"
       },
       "12": {
         "id": "12",
-        "number": "Nandi View Enclave - 202",
-        "road": "Fairway Green Parkway",
-        "block": "Nandi View Enclave",
+        "number": "Nandi View Mansions - 202",
+        "road": "Nandi Foothill Drive",
+        "block": "Nandi View Mansions",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 893,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_mid",
+        "roadNode": "pg_nandi_ne",
         "color": "cyan"
       },
       "13": {
         "id": "13",
-        "number": "Nandi View Enclave - 301",
-        "road": "Fairway Green Parkway",
-        "block": "Nandi View Enclave",
+        "number": "Nandi View Mansions - 301",
+        "road": "Nandi Foothill Drive",
+        "block": "Nandi View Mansions",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 827,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_mid",
+        "roadNode": "pg_nandi_ne",
         "color": "cyan"
       },
       "14": {
         "id": "14",
-        "number": "Nandi View Enclave - 302",
-        "road": "Fairway Green Parkway",
-        "block": "Nandi View Enclave",
+        "number": "Nandi View Mansions - 302",
+        "road": "Nandi Foothill Drive",
+        "block": "Nandi View Mansions",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 849,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_mid",
+        "roadNode": "pg_nandi_ne",
         "color": "cyan"
       },
       "15": {
         "id": "15",
-        "number": "Nandi View Enclave - 401",
-        "road": "Fairway Green Parkway",
-        "block": "Nandi View Enclave",
+        "number": "Nandi View Mansions - 401",
+        "road": "Nandi Foothill Drive",
+        "block": "Nandi View Mansions",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 871,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_mid",
+        "roadNode": "pg_nandi_ne",
         "color": "cyan"
       },
       "16": {
         "id": "16",
-        "number": "Nandi View Enclave - 402",
-        "road": "Fairway Green Parkway",
-        "block": "Nandi View Enclave",
+        "number": "Nandi View Mansions - 402",
+        "road": "Nandi Foothill Drive",
+        "block": "Nandi View Mansions",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 893,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_golfshire_n_mid",
+        "roadNode": "pg_nandi_ne",
+        "color": "cyan"
+      },
+      "17": {
+        "id": "17",
+        "number": "Lakeview Golf Villas - 101",
+        "road": "Golf Lake Promenade",
+        "block": "Lakeview Golf Villas",
+        "facing": "North",
+        "x": 267,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_lake_sw",
+        "color": "cyan"
+      },
+      "18": {
+        "id": "18",
+        "number": "Lakeview Golf Villas - 102",
+        "road": "Golf Lake Promenade",
+        "block": "Lakeview Golf Villas",
+        "facing": "North",
+        "x": 289,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_lake_sw",
+        "color": "cyan"
+      },
+      "19": {
+        "id": "19",
+        "number": "Lakeview Golf Villas - 201",
+        "road": "Golf Lake Promenade",
+        "block": "Lakeview Golf Villas",
+        "facing": "North",
+        "x": 311,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_lake_sw",
+        "color": "cyan"
+      },
+      "20": {
+        "id": "20",
+        "number": "Lakeview Golf Villas - 202",
+        "road": "Golf Lake Promenade",
+        "block": "Lakeview Golf Villas",
+        "facing": "North",
+        "x": 333,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_lake_sw",
+        "color": "cyan"
+      },
+      "21": {
+        "id": "21",
+        "number": "Lakeview Golf Villas - 301",
+        "road": "Golf Lake Promenade",
+        "block": "Lakeview Golf Villas",
+        "facing": "North",
+        "x": 267,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_lake_sw",
+        "color": "cyan"
+      },
+      "22": {
+        "id": "22",
+        "number": "Lakeview Golf Villas - 302",
+        "road": "Golf Lake Promenade",
+        "block": "Lakeview Golf Villas",
+        "facing": "North",
+        "x": 289,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_lake_sw",
+        "color": "cyan"
+      },
+      "23": {
+        "id": "23",
+        "number": "Lakeview Golf Villas - 401",
+        "road": "Golf Lake Promenade",
+        "block": "Lakeview Golf Villas",
+        "facing": "North",
+        "x": 311,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_lake_sw",
+        "color": "cyan"
+      },
+      "24": {
+        "id": "24",
+        "number": "Lakeview Golf Villas - 402",
+        "road": "Golf Lake Promenade",
+        "block": "Lakeview Golf Villas",
+        "facing": "North",
+        "x": 333,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_lake_sw",
+        "color": "cyan"
+      },
+      "25": {
+        "id": "25",
+        "number": "Putting Green Villas - 101",
+        "road": "Clubhouse Link",
+        "block": "Putting Green Villas",
+        "facing": "North",
+        "x": 827,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_greens_se",
+        "color": "cyan"
+      },
+      "26": {
+        "id": "26",
+        "number": "Putting Green Villas - 102",
+        "road": "Clubhouse Link",
+        "block": "Putting Green Villas",
+        "facing": "North",
+        "x": 849,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_greens_se",
+        "color": "cyan"
+      },
+      "27": {
+        "id": "27",
+        "number": "Putting Green Villas - 201",
+        "road": "Clubhouse Link",
+        "block": "Putting Green Villas",
+        "facing": "North",
+        "x": 871,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_greens_se",
+        "color": "cyan"
+      },
+      "28": {
+        "id": "28",
+        "number": "Putting Green Villas - 202",
+        "road": "Clubhouse Link",
+        "block": "Putting Green Villas",
+        "facing": "North",
+        "x": 893,
+        "y": 659,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_greens_se",
+        "color": "cyan"
+      },
+      "29": {
+        "id": "29",
+        "number": "Putting Green Villas - 301",
+        "road": "Clubhouse Link",
+        "block": "Putting Green Villas",
+        "facing": "North",
+        "x": 827,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_greens_se",
+        "color": "cyan"
+      },
+      "30": {
+        "id": "30",
+        "number": "Putting Green Villas - 302",
+        "road": "Clubhouse Link",
+        "block": "Putting Green Villas",
+        "facing": "North",
+        "x": 849,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_greens_se",
+        "color": "cyan"
+      },
+      "31": {
+        "id": "31",
+        "number": "Putting Green Villas - 401",
+        "road": "Clubhouse Link",
+        "block": "Putting Green Villas",
+        "facing": "North",
+        "x": 871,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_greens_se",
+        "color": "cyan"
+      },
+      "32": {
+        "id": "32",
+        "number": "Putting Green Villas - 402",
+        "road": "Clubhouse Link",
+        "block": "Putting Green Villas",
+        "facing": "North",
+        "x": 893,
+        "y": 681,
+        "w": 48,
+        "h": 34,
+        "roadNode": "pg_greens_se",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "prestige_golfshire_gate_1",
-        "name": "Prestige Golfshire Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "prestige_golfshire_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "prestige_golfshire_gate_2",
-        "name": "Prestige Golfshire Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "prestige_golfshire_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "prestige_golfshire_golf",
-        "name": "18-Hole Championship Golf Course",
-        "description": "Bob Hunt designed golf course, JW Marriott luxury resort & spa",
+        "name": "Falcon Greens Golf Clubhouse",
+        "description": "Bob Hunt designed 18-hole championship golf course & pro shop",
         "x": 620,
-        "y": 270,
-        "roadNode": "prestige_golfshire_n_mid",
+        "y": 440,
+        "roadNode": "pg_junc_ctr",
         "icon": "\u26f3",
-        "type": "golf"
+        "type": "sports"
+      },
+      {
+        "id": "prestige_golfshire_hotel",
+        "name": "JW Marriott Bengaluru Prestige Golfshire Resort",
+        "description": "5-star luxury resort, convention center & helipad",
+        "x": 760,
+        "y": 430,
+        "roadNode": "pg_junc_e",
+        "icon": "\ud83c\udfe8",
+        "type": "hotel"
       }
     ],
     "roadLabels": [
       {
         "name": "GOLFSHIRE BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
@@ -37690,28 +36516,18 @@ window.LAYOUTS = {
         "vertical": false
       },
       {
-        "name": "NANDI FOOTHILL DRIVE",
+        "name": "GOLF LAKE PROMENADE",
         "x": 620,
         "y": 705,
         "vertical": false
-      },
-      {
-        "name": "CLUBHOUSE LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "AIRPORT EXPRESSWAY",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "prestige_golfshire_gate_1",
+    "defaultStartGate": "pg_gate_main",
     "sectors": [
-      "Fairway Enclave",
-      "Nandi View Enclave"
+      "Fairway Enclave Villas",
+      "Nandi View Mansions",
+      "Lakeview Golf Villas",
+      "Putting Green Villas"
     ]
   },
   "ozone_urbana": {
@@ -37725,259 +36541,142 @@ window.LAYOUTS = {
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "80,480 180,140 1060,140 1160,480 1060,820 180,820 Z",
+    "borderTreesPath": "M 80,480 L 180,140 L 1060,140 L 1160,480 L 1060,820 L 180,820 Z",
+    "waterBody": {
+      "x": 520,
+      "y": 480,
+      "w": 200,
+      "h": 70,
+      "rx": 12,
+      "label": "Olympic Swimming Complex"
     },
+    "gardenPark": {
+      "x": 440,
+      "y": 380,
+      "w": 360,
+      "h": 80,
+      "rx": 10,
+      "label": "Urbana Central 7-Acre Sports Ground & Park"
+    },
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "ozone_urbana_gate_1": {
-          "id": "ozone_urbana_gate_1",
-          "x": 90,
+        "ou_gate_main": {
+          "id": "ou_gate_main",
+          "x": 80,
           "y": 480,
-          "label": "Ozone Urbana Gate 1 (Main Entrance)"
+          "label": "Gate 1 (NH-44 Airport Highway)"
         },
-        "ozone_urbana_entry": {
-          "id": "ozone_urbana_entry",
-          "x": 180,
+        "ou_junc_w": {
+          "id": "ou_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Urbana Boulevard West"
         },
-        "ozone_urbana_junc_w": {
-          "id": "ozone_urbana_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Central Promenade West Junction"
-        },
-        "ozone_urbana_junc_ctr": {
-          "id": "ozone_urbana_junc_ctr",
+        "ou_junc_ctr": {
+          "id": "ou_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Central Urbana Roundabout"
         },
-        "ozone_urbana_junc_e": {
-          "id": "ozone_urbana_junc_e",
-          "x": 920,
+        "ou_junc_e": {
+          "id": "ou_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Sports Arena Way East Junction"
+          "label": "Sports Arena Junction"
         },
-        "ozone_urbana_gate_2": {
-          "id": "ozone_urbana_gate_2",
-          "x": 1110,
+        "ou_gate_east": {
+          "id": "ou_gate_east",
+          "x": 1140,
           "y": 480,
-          "label": "Ozone Urbana Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Devanahalli Airport Road)"
         },
-        "ozone_urbana_n_w": {
-          "id": "ozone_urbana_n_w",
+        "ou_prime": {
+          "id": "ou_prime",
           "x": 320,
-          "y": 270,
-          "label": "National Highway Link West"
+          "y": 280,
+          "label": "Urbana Prime Drive"
         },
-        "ozone_urbana_n_mid": {
-          "id": "ozone_urbana_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "National Highway Link North Plaza"
+        "ou_aqua": {
+          "id": "ou_aqua",
+          "x": 840,
+          "y": 260,
+          "label": "Urbana Aqua Parkway"
         },
-        "ozone_urbana_n_e": {
-          "id": "ozone_urbana_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "National Highway Link East"
-        },
-        "ozone_urbana_s_w": {
-          "id": "ozone_urbana_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Airport Parkway West"
-        },
-        "ozone_urbana_s_mid": {
-          "id": "ozone_urbana_s_mid",
+        "ou_meadows": {
+          "id": "ou_meadows",
           "x": 620,
           "y": 690,
-          "label": "Airport Parkway South Plaza"
-        },
-        "ozone_urbana_s_e": {
-          "id": "ozone_urbana_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Airport Parkway East"
-        },
-        "ozone_urbana_w_n_mid": {
-          "id": "ozone_urbana_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Central Promenade North Link"
-        },
-        "ozone_urbana_w_s_mid": {
-          "id": "ozone_urbana_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Central Promenade South Link"
-        },
-        "ozone_urbana_ctr_n_mid": {
-          "id": "ozone_urbana_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "ozone_urbana_ctr_s_mid": {
-          "id": "ozone_urbana_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "ozone_urbana_e_n_mid": {
-          "id": "ozone_urbana_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Sports Arena Way North Link"
-        },
-        "ozone_urbana_e_s_mid": {
-          "id": "ozone_urbana_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Sports Arena Way South Link"
+          "label": "Urbana Meadows Avenue"
         }
       },
       "edges": [
         {
-          "u": "ozone_urbana_gate_1",
-          "v": "ozone_urbana_entry",
+          "u": "ou_gate_main",
+          "v": "ou_junc_w",
           "road": "Urbana Boulevard",
           "type": "primary"
         },
         {
-          "u": "ozone_urbana_entry",
-          "v": "ozone_urbana_junc_w",
+          "u": "ou_junc_w",
+          "v": "ou_junc_ctr",
           "road": "Urbana Boulevard",
           "type": "primary"
         },
         {
-          "u": "ozone_urbana_junc_w",
-          "v": "ozone_urbana_junc_ctr",
+          "u": "ou_junc_ctr",
+          "v": "ou_junc_e",
           "road": "Urbana Boulevard",
           "type": "primary"
         },
         {
-          "u": "ozone_urbana_junc_ctr",
-          "v": "ozone_urbana_junc_e",
+          "u": "ou_junc_e",
+          "v": "ou_gate_east",
           "road": "Urbana Boulevard",
           "type": "primary"
         },
         {
-          "u": "ozone_urbana_junc_e",
-          "v": "ozone_urbana_gate_2",
-          "road": "Urbana Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "ozone_urbana_n_w",
-          "v": "ozone_urbana_n_mid",
-          "road": "National Highway Link",
-          "type": "secondary"
-        },
-        {
-          "u": "ozone_urbana_n_mid",
-          "v": "ozone_urbana_n_e",
-          "road": "National Highway Link",
-          "type": "secondary"
-        },
-        {
-          "u": "ozone_urbana_s_w",
-          "v": "ozone_urbana_s_mid",
+          "u": "ou_junc_w",
+          "v": "ou_prime",
           "road": "Airport Parkway",
           "type": "secondary"
         },
         {
-          "u": "ozone_urbana_s_mid",
-          "v": "ozone_urbana_s_e",
-          "road": "Airport Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "ozone_urbana_n_w",
-          "v": "ozone_urbana_w_n_mid",
-          "road": "Central Promenade",
-          "type": "secondary"
-        },
-        {
-          "u": "ozone_urbana_w_n_mid",
-          "v": "ozone_urbana_junc_w",
-          "road": "Central Promenade",
-          "type": "secondary"
-        },
-        {
-          "u": "ozone_urbana_junc_w",
-          "v": "ozone_urbana_w_s_mid",
-          "road": "Central Promenade",
-          "type": "secondary"
-        },
-        {
-          "u": "ozone_urbana_w_s_mid",
-          "v": "ozone_urbana_s_w",
-          "road": "Central Promenade",
-          "type": "secondary"
-        },
-        {
-          "u": "ozone_urbana_n_mid",
-          "v": "ozone_urbana_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "ozone_urbana_ctr_n_mid",
-          "v": "ozone_urbana_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "ozone_urbana_junc_ctr",
-          "v": "ozone_urbana_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "ozone_urbana_ctr_s_mid",
-          "v": "ozone_urbana_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "ozone_urbana_n_e",
-          "v": "ozone_urbana_e_n_mid",
+          "u": "ou_prime",
+          "v": "ou_aqua",
           "road": "Sports Arena Way",
           "type": "secondary"
         },
         {
-          "u": "ozone_urbana_e_n_mid",
-          "v": "ozone_urbana_junc_e",
+          "u": "ou_aqua",
+          "v": "ou_junc_e",
           "road": "Sports Arena Way",
           "type": "secondary"
         },
         {
-          "u": "ozone_urbana_junc_e",
-          "v": "ozone_urbana_e_s_mid",
-          "road": "Sports Arena Way",
+          "u": "ou_junc_w",
+          "v": "ou_meadows",
+          "road": "Central Promenade",
           "type": "secondary"
         },
         {
-          "u": "ozone_urbana_e_s_mid",
-          "v": "ozone_urbana_s_e",
-          "road": "Sports Arena Way",
+          "u": "ou_meadows",
+          "v": "ou_junc_e",
+          "road": "Central Promenade",
+          "type": "secondary"
+        },
+        {
+          "u": "ou_junc_ctr",
+          "v": "ou_meadows",
+          "road": "Central Link",
           "type": "secondary"
         }
       ]
@@ -37986,381 +36685,349 @@ window.LAYOUTS = {
       "1": {
         "id": "1",
         "number": "Urbana Prime - 101",
-        "road": "National Highway Link",
+        "road": "Urbana Boulevard",
         "block": "Urbana Prime",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 267,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_w",
+        "roadNode": "ou_prime",
         "color": "cyan"
       },
       "2": {
         "id": "2",
         "number": "Urbana Prime - 102",
-        "road": "National Highway Link",
+        "road": "Urbana Boulevard",
         "block": "Urbana Prime",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 289,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_w",
+        "roadNode": "ou_prime",
         "color": "cyan"
       },
       "3": {
         "id": "3",
         "number": "Urbana Prime - 201",
-        "road": "National Highway Link",
+        "road": "Urbana Boulevard",
         "block": "Urbana Prime",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 311,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_w",
+        "roadNode": "ou_prime",
         "color": "cyan"
       },
       "4": {
         "id": "4",
         "number": "Urbana Prime - 202",
-        "road": "National Highway Link",
+        "road": "Urbana Boulevard",
         "block": "Urbana Prime",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 333,
+        "y": 249,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_w",
+        "roadNode": "ou_prime",
         "color": "cyan"
       },
       "5": {
         "id": "5",
         "number": "Urbana Prime - 301",
-        "road": "National Highway Link",
+        "road": "Urbana Boulevard",
         "block": "Urbana Prime",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 267,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_w",
+        "roadNode": "ou_prime",
         "color": "cyan"
       },
       "6": {
         "id": "6",
         "number": "Urbana Prime - 302",
-        "road": "National Highway Link",
+        "road": "Urbana Boulevard",
         "block": "Urbana Prime",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 289,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_w",
+        "roadNode": "ou_prime",
         "color": "cyan"
       },
       "7": {
         "id": "7",
         "number": "Urbana Prime - 401",
-        "road": "National Highway Link",
+        "road": "Urbana Boulevard",
         "block": "Urbana Prime",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 311,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_w",
+        "roadNode": "ou_prime",
         "color": "cyan"
       },
       "8": {
         "id": "8",
         "number": "Urbana Prime - 402",
-        "road": "National Highway Link",
+        "road": "Urbana Boulevard",
         "block": "Urbana Prime",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 333,
+        "y": 271,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_w",
+        "roadNode": "ou_prime",
         "color": "cyan"
       },
       "9": {
         "id": "9",
         "number": "Urbana Aqua - 101",
-        "road": "National Highway Link",
+        "road": "Sports Arena Way",
         "block": "Urbana Aqua",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 807,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_mid",
+        "roadNode": "ou_aqua",
         "color": "cyan"
       },
       "10": {
         "id": "10",
         "number": "Urbana Aqua - 102",
-        "road": "National Highway Link",
+        "road": "Sports Arena Way",
         "block": "Urbana Aqua",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 829,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_mid",
+        "roadNode": "ou_aqua",
         "color": "cyan"
       },
       "11": {
         "id": "11",
         "number": "Urbana Aqua - 201",
-        "road": "National Highway Link",
+        "road": "Sports Arena Way",
         "block": "Urbana Aqua",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 851,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_mid",
+        "roadNode": "ou_aqua",
         "color": "cyan"
       },
       "12": {
         "id": "12",
         "number": "Urbana Aqua - 202",
-        "road": "National Highway Link",
+        "road": "Sports Arena Way",
         "block": "Urbana Aqua",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 873,
+        "y": 229,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_mid",
+        "roadNode": "ou_aqua",
         "color": "cyan"
       },
       "13": {
         "id": "13",
         "number": "Urbana Aqua - 301",
-        "road": "National Highway Link",
+        "road": "Sports Arena Way",
         "block": "Urbana Aqua",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 807,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_mid",
+        "roadNode": "ou_aqua",
         "color": "cyan"
       },
       "14": {
         "id": "14",
         "number": "Urbana Aqua - 302",
-        "road": "National Highway Link",
+        "road": "Sports Arena Way",
         "block": "Urbana Aqua",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 829,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_mid",
+        "roadNode": "ou_aqua",
         "color": "cyan"
       },
       "15": {
         "id": "15",
         "number": "Urbana Aqua - 401",
-        "road": "National Highway Link",
+        "road": "Sports Arena Way",
         "block": "Urbana Aqua",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 851,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_mid",
+        "roadNode": "ou_aqua",
         "color": "cyan"
       },
       "16": {
         "id": "16",
         "number": "Urbana Aqua - 402",
-        "road": "National Highway Link",
+        "road": "Sports Arena Way",
         "block": "Urbana Aqua",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 873,
+        "y": 251,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_mid",
+        "roadNode": "ou_aqua",
         "color": "cyan"
       },
       "17": {
         "id": "17",
         "number": "Urbana Meadows - 101",
-        "road": "National Highway Link",
+        "road": "Airport Parkway",
         "block": "Urbana Meadows",
-        "facing": "South",
-        "x": 807,
-        "y": 189,
+        "facing": "North",
+        "x": 587,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_e",
+        "roadNode": "ou_meadows",
         "color": "cyan"
       },
       "18": {
         "id": "18",
         "number": "Urbana Meadows - 102",
-        "road": "National Highway Link",
+        "road": "Airport Parkway",
         "block": "Urbana Meadows",
-        "facing": "South",
-        "x": 829,
-        "y": 189,
+        "facing": "North",
+        "x": 609,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_e",
+        "roadNode": "ou_meadows",
         "color": "cyan"
       },
       "19": {
         "id": "19",
         "number": "Urbana Meadows - 201",
-        "road": "National Highway Link",
+        "road": "Airport Parkway",
         "block": "Urbana Meadows",
-        "facing": "South",
-        "x": 851,
-        "y": 189,
+        "facing": "North",
+        "x": 631,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_e",
+        "roadNode": "ou_meadows",
         "color": "cyan"
       },
       "20": {
         "id": "20",
         "number": "Urbana Meadows - 202",
-        "road": "National Highway Link",
+        "road": "Airport Parkway",
         "block": "Urbana Meadows",
-        "facing": "South",
-        "x": 873,
-        "y": 189,
+        "facing": "North",
+        "x": 653,
+        "y": 659,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_e",
+        "roadNode": "ou_meadows",
         "color": "cyan"
       },
       "21": {
         "id": "21",
         "number": "Urbana Meadows - 301",
-        "road": "National Highway Link",
+        "road": "Airport Parkway",
         "block": "Urbana Meadows",
-        "facing": "South",
-        "x": 807,
-        "y": 211,
+        "facing": "North",
+        "x": 587,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_e",
+        "roadNode": "ou_meadows",
         "color": "cyan"
       },
       "22": {
         "id": "22",
         "number": "Urbana Meadows - 302",
-        "road": "National Highway Link",
+        "road": "Airport Parkway",
         "block": "Urbana Meadows",
-        "facing": "South",
-        "x": 829,
-        "y": 211,
+        "facing": "North",
+        "x": 609,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_e",
+        "roadNode": "ou_meadows",
         "color": "cyan"
       },
       "23": {
         "id": "23",
         "number": "Urbana Meadows - 401",
-        "road": "National Highway Link",
+        "road": "Airport Parkway",
         "block": "Urbana Meadows",
-        "facing": "South",
-        "x": 851,
-        "y": 211,
+        "facing": "North",
+        "x": 631,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_e",
+        "roadNode": "ou_meadows",
         "color": "cyan"
       },
       "24": {
         "id": "24",
         "number": "Urbana Meadows - 402",
-        "road": "National Highway Link",
+        "road": "Airport Parkway",
         "block": "Urbana Meadows",
-        "facing": "South",
-        "x": 873,
-        "y": 211,
+        "facing": "North",
+        "x": 653,
+        "y": 681,
         "w": 48,
         "h": 34,
-        "roadNode": "ozone_urbana_n_e",
+        "roadNode": "ou_meadows",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "ozone_urbana_gate_1",
-        "name": "Ozone Urbana Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "ozone_urbana_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "ozone_urbana_gate_2",
-        "name": "Ozone Urbana Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "ozone_urbana_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "ozone_urbana_club",
-        "name": "Club Urbana",
-        "description": "Multiple clubhouses, swimming pools, Olympic tracks and retail mall",
+        "id": "ozone_urbana_sports",
+        "name": "National Cricket Academy & Sports Arena",
+        "description": "Floodlit cricket stadium, athletic track, tennis courts and Olympic pool",
         "x": 620,
-        "y": 480,
-        "roadNode": "ozone_urbana_junc_ctr",
-        "icon": "\ud83c\udfe2",
-        "type": "clubhouse"
+        "y": 440,
+        "roadNode": "ou_junc_ctr",
+        "icon": "\ud83c\udfcf",
+        "type": "sports"
       }
     ],
     "roadLabels": [
       {
         "name": "URBANA BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
-        "name": "NATIONAL HIGHWAY LINK",
+        "name": "SPORTS ARENA WAY",
         "x": 620,
-        "y": 255,
+        "y": 245,
         "vertical": false
       },
       {
         "name": "AIRPORT PARKWAY",
         "x": 620,
-        "y": 705,
+        "y": 675,
         "vertical": false
-      },
-      {
-        "name": "CENTRAL PROMENADE",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "SPORTS ARENA WAY",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "ozone_urbana_gate_1",
+    "defaultStartGate": "ou_gate_main",
     "sectors": [
       "Urbana Prime",
       "Urbana Aqua",
@@ -38374,264 +37041,151 @@ window.LAYOUTS = {
     "zone": "north",
     "type": "Integrated Mall & High-Rise Residences",
     "unitType": "Apartment / Tower",
-    "unitCount": 24,
+    "unitCount": 16,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "110,480 220,180 620,160 1020,180 1110,480 1020,780 620,800 220,780 Z",
+    "borderTreesPath": "M 110,480 L 220,180 L 620,160 L 1020,180 L 1110,480 L 1020,780 L 620,800 L 220,780 Z",
+    "waterBody": {
+      "x": 520,
+      "y": 420,
+      "w": 200,
+      "h": 70,
+      "rx": 14,
+      "label": "Podium Sky Infinity Pool & Sun Deck"
     },
+    "gardenPark": null,
+    "landmarks": [
+      {
+        "x": 360,
+        "y": 640,
+        "w": 520,
+        "h": 110,
+        "rx": 8,
+        "label": "\ud83d\udecd\ufe0f RMZ Galleria Mall & INOX Multiplex",
+        "fill": "#1e1b4b",
+        "stroke": "#6366f1"
+      }
+    ],
     "roads": {
       "nodes": {
-        "rmz_galleria_gate_1": {
-          "id": "rmz_galleria_gate_1",
-          "x": 90,
+        "rmz_gate_main": {
+          "id": "rmz_gate_main",
+          "x": 110,
           "y": 480,
-          "label": "RMZ Galleria Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Yelahanka Main Road)"
         },
-        "rmz_galleria_entry": {
-          "id": "rmz_galleria_entry",
-          "x": 180,
+        "rmz_junc_w": {
+          "id": "rmz_junc_w",
+          "x": 260,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Galleria Boulevard West"
         },
-        "rmz_galleria_junc_w": {
-          "id": "rmz_galleria_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "BBMP Office Way West Junction"
-        },
-        "rmz_galleria_junc_ctr": {
-          "id": "rmz_galleria_junc_ctr",
+        "rmz_junc_ctr": {
+          "id": "rmz_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Central Galleria Plaza"
         },
-        "rmz_galleria_junc_e": {
-          "id": "rmz_galleria_junc_e",
-          "x": 920,
+        "rmz_junc_e": {
+          "id": "rmz_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Kogilu Link Road East Junction"
-        },
-        "rmz_galleria_gate_2": {
-          "id": "rmz_galleria_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "RMZ Galleria Gate 2 (Rear Entrance)"
-        },
-        "rmz_galleria_n_w": {
-          "id": "rmz_galleria_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Yelahanka Main Parkway West"
-        },
-        "rmz_galleria_n_mid": {
-          "id": "rmz_galleria_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Yelahanka Main Parkway North Plaza"
-        },
-        "rmz_galleria_n_e": {
-          "id": "rmz_galleria_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Yelahanka Main Parkway East"
-        },
-        "rmz_galleria_s_w": {
-          "id": "rmz_galleria_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Mall Ring Link West"
-        },
-        "rmz_galleria_s_mid": {
-          "id": "rmz_galleria_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Mall Ring Link South Plaza"
-        },
-        "rmz_galleria_s_e": {
-          "id": "rmz_galleria_s_e",
-          "x": 920,
-          "y": 690,
           "label": "Mall Ring Link East"
         },
-        "rmz_galleria_w_n_mid": {
-          "id": "rmz_galleria_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "BBMP Office Way North Link"
+        "rmz_gate_east": {
+          "id": "rmz_gate_east",
+          "x": 1100,
+          "y": 480,
+          "label": "Gate 2 (BBMP Office Link)"
         },
-        "rmz_galleria_w_s_mid": {
-          "id": "rmz_galleria_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "BBMP Office Way South Link"
+        "rmz_tower_a": {
+          "id": "rmz_tower_a",
+          "x": 360,
+          "y": 310,
+          "label": "Tower A Podium Access"
         },
-        "rmz_galleria_ctr_n_mid": {
-          "id": "rmz_galleria_ctr_n_mid",
+        "rmz_tower_b": {
+          "id": "rmz_tower_b",
+          "x": 860,
+          "y": 310,
+          "label": "Tower B Podium Access"
+        },
+        "rmz_mall_s": {
+          "id": "rmz_mall_s",
           "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "rmz_galleria_ctr_s_mid": {
-          "id": "rmz_galleria_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "rmz_galleria_e_n_mid": {
-          "id": "rmz_galleria_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Kogilu Link Road North Link"
-        },
-        "rmz_galleria_e_s_mid": {
-          "id": "rmz_galleria_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Kogilu Link Road South Link"
+          "y": 620,
+          "label": "Galleria Mall Entrance Court"
         }
       },
       "edges": [
         {
-          "u": "rmz_galleria_gate_1",
-          "v": "rmz_galleria_entry",
+          "u": "rmz_gate_main",
+          "v": "rmz_junc_w",
           "road": "Galleria Boulevard",
           "type": "primary"
         },
         {
-          "u": "rmz_galleria_entry",
-          "v": "rmz_galleria_junc_w",
+          "u": "rmz_junc_w",
+          "v": "rmz_junc_ctr",
           "road": "Galleria Boulevard",
           "type": "primary"
         },
         {
-          "u": "rmz_galleria_junc_w",
-          "v": "rmz_galleria_junc_ctr",
+          "u": "rmz_junc_ctr",
+          "v": "rmz_junc_e",
           "road": "Galleria Boulevard",
           "type": "primary"
         },
         {
-          "u": "rmz_galleria_junc_ctr",
-          "v": "rmz_galleria_junc_e",
+          "u": "rmz_junc_e",
+          "v": "rmz_gate_east",
           "road": "Galleria Boulevard",
           "type": "primary"
         },
         {
-          "u": "rmz_galleria_junc_e",
-          "v": "rmz_galleria_gate_2",
-          "road": "Galleria Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "rmz_galleria_n_w",
-          "v": "rmz_galleria_n_mid",
+          "u": "rmz_junc_w",
+          "v": "rmz_tower_a",
           "road": "Yelahanka Main Parkway",
           "type": "secondary"
         },
         {
-          "u": "rmz_galleria_n_mid",
-          "v": "rmz_galleria_n_e",
-          "road": "Yelahanka Main Parkway",
+          "u": "rmz_tower_a",
+          "v": "rmz_tower_b",
+          "road": "Sky Deck Promenade",
           "type": "secondary"
         },
         {
-          "u": "rmz_galleria_s_w",
-          "v": "rmz_galleria_s_mid",
+          "u": "rmz_tower_b",
+          "v": "rmz_junc_e",
           "road": "Mall Ring Link",
           "type": "secondary"
         },
         {
-          "u": "rmz_galleria_s_mid",
-          "v": "rmz_galleria_s_e",
+          "u": "rmz_junc_w",
+          "v": "rmz_mall_s",
           "road": "Mall Ring Link",
-          "type": "secondary"
-        },
-        {
-          "u": "rmz_galleria_n_w",
-          "v": "rmz_galleria_w_n_mid",
-          "road": "BBMP Office Way",
-          "type": "secondary"
-        },
-        {
-          "u": "rmz_galleria_w_n_mid",
-          "v": "rmz_galleria_junc_w",
-          "road": "BBMP Office Way",
-          "type": "secondary"
-        },
-        {
-          "u": "rmz_galleria_junc_w",
-          "v": "rmz_galleria_w_s_mid",
-          "road": "BBMP Office Way",
-          "type": "secondary"
-        },
-        {
-          "u": "rmz_galleria_w_s_mid",
-          "v": "rmz_galleria_s_w",
-          "road": "BBMP Office Way",
-          "type": "secondary"
-        },
-        {
-          "u": "rmz_galleria_n_mid",
-          "v": "rmz_galleria_ctr_n_mid",
-          "road": "Central Link",
           "type": "primary"
         },
         {
-          "u": "rmz_galleria_ctr_n_mid",
-          "v": "rmz_galleria_junc_ctr",
-          "road": "Central Link",
+          "u": "rmz_mall_s",
+          "v": "rmz_junc_e",
+          "road": "Mall Ring Link",
           "type": "primary"
         },
         {
-          "u": "rmz_galleria_junc_ctr",
-          "v": "rmz_galleria_ctr_s_mid",
+          "u": "rmz_junc_ctr",
+          "v": "rmz_mall_s",
           "road": "Central Link",
           "type": "primary"
-        },
-        {
-          "u": "rmz_galleria_ctr_s_mid",
-          "v": "rmz_galleria_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "rmz_galleria_n_e",
-          "v": "rmz_galleria_e_n_mid",
-          "road": "Kogilu Link Road",
-          "type": "secondary"
-        },
-        {
-          "u": "rmz_galleria_e_n_mid",
-          "v": "rmz_galleria_junc_e",
-          "road": "Kogilu Link Road",
-          "type": "secondary"
-        },
-        {
-          "u": "rmz_galleria_junc_e",
-          "v": "rmz_galleria_e_s_mid",
-          "road": "Kogilu Link Road",
-          "type": "secondary"
-        },
-        {
-          "u": "rmz_galleria_e_s_mid",
-          "v": "rmz_galleria_s_e",
-          "road": "Kogilu Link Road",
-          "type": "secondary"
         }
       ]
     },
@@ -38639,385 +37193,258 @@ window.LAYOUTS = {
       "1": {
         "id": "1",
         "number": "Tower A - 101",
-        "road": "Yelahanka Main Parkway",
+        "road": "Galleria Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 327,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_w",
+        "roadNode": "rmz_tower_a",
         "color": "cyan"
       },
       "2": {
         "id": "2",
         "number": "Tower A - 102",
-        "road": "Yelahanka Main Parkway",
+        "road": "Galleria Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 349,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_w",
+        "roadNode": "rmz_tower_a",
         "color": "cyan"
       },
       "3": {
         "id": "3",
         "number": "Tower A - 201",
-        "road": "Yelahanka Main Parkway",
+        "road": "Galleria Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 371,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_w",
+        "roadNode": "rmz_tower_a",
         "color": "cyan"
       },
       "4": {
         "id": "4",
         "number": "Tower A - 202",
-        "road": "Yelahanka Main Parkway",
+        "road": "Galleria Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 393,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_w",
+        "roadNode": "rmz_tower_a",
         "color": "cyan"
       },
       "5": {
         "id": "5",
         "number": "Tower A - 301",
-        "road": "Yelahanka Main Parkway",
+        "road": "Galleria Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 327,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_w",
+        "roadNode": "rmz_tower_a",
         "color": "cyan"
       },
       "6": {
         "id": "6",
         "number": "Tower A - 302",
-        "road": "Yelahanka Main Parkway",
+        "road": "Galleria Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 349,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_w",
+        "roadNode": "rmz_tower_a",
         "color": "cyan"
       },
       "7": {
         "id": "7",
         "number": "Tower A - 401",
-        "road": "Yelahanka Main Parkway",
+        "road": "Galleria Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 371,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_w",
+        "roadNode": "rmz_tower_a",
         "color": "cyan"
       },
       "8": {
         "id": "8",
         "number": "Tower A - 402",
-        "road": "Yelahanka Main Parkway",
+        "road": "Galleria Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 393,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_w",
+        "roadNode": "rmz_tower_a",
         "color": "cyan"
       },
       "9": {
         "id": "9",
         "number": "Tower B - 101",
-        "road": "Yelahanka Main Parkway",
+        "road": "Mall Ring Link",
         "block": "Tower B",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 747,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_mid",
+        "roadNode": "rmz_tower_b",
         "color": "cyan"
       },
       "10": {
         "id": "10",
         "number": "Tower B - 102",
-        "road": "Yelahanka Main Parkway",
+        "road": "Mall Ring Link",
         "block": "Tower B",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 769,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_mid",
+        "roadNode": "rmz_tower_b",
         "color": "cyan"
       },
       "11": {
         "id": "11",
         "number": "Tower B - 201",
-        "road": "Yelahanka Main Parkway",
+        "road": "Mall Ring Link",
         "block": "Tower B",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 791,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_mid",
+        "roadNode": "rmz_tower_b",
         "color": "cyan"
       },
       "12": {
         "id": "12",
         "number": "Tower B - 202",
-        "road": "Yelahanka Main Parkway",
+        "road": "Mall Ring Link",
         "block": "Tower B",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 813,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_mid",
+        "roadNode": "rmz_tower_b",
         "color": "cyan"
       },
       "13": {
         "id": "13",
         "number": "Tower B - 301",
-        "road": "Yelahanka Main Parkway",
+        "road": "Mall Ring Link",
         "block": "Tower B",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 747,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_mid",
+        "roadNode": "rmz_tower_b",
         "color": "cyan"
       },
       "14": {
         "id": "14",
         "number": "Tower B - 302",
-        "road": "Yelahanka Main Parkway",
+        "road": "Mall Ring Link",
         "block": "Tower B",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 769,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_mid",
+        "roadNode": "rmz_tower_b",
         "color": "cyan"
       },
       "15": {
         "id": "15",
         "number": "Tower B - 401",
-        "road": "Yelahanka Main Parkway",
+        "road": "Mall Ring Link",
         "block": "Tower B",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 791,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_mid",
+        "roadNode": "rmz_tower_b",
         "color": "cyan"
       },
       "16": {
         "id": "16",
         "number": "Tower B - 402",
-        "road": "Yelahanka Main Parkway",
+        "road": "Mall Ring Link",
         "block": "Tower B",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 813,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "rmz_galleria_n_mid",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Galleria Mall - 101",
-        "road": "Yelahanka Main Parkway",
-        "block": "Galleria Mall",
-        "facing": "South",
-        "x": 807,
-        "y": 189,
-        "w": 48,
-        "h": 34,
-        "roadNode": "rmz_galleria_n_e",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Galleria Mall - 102",
-        "road": "Yelahanka Main Parkway",
-        "block": "Galleria Mall",
-        "facing": "South",
-        "x": 829,
-        "y": 189,
-        "w": 48,
-        "h": 34,
-        "roadNode": "rmz_galleria_n_e",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Galleria Mall - 201",
-        "road": "Yelahanka Main Parkway",
-        "block": "Galleria Mall",
-        "facing": "South",
-        "x": 851,
-        "y": 189,
-        "w": 48,
-        "h": 34,
-        "roadNode": "rmz_galleria_n_e",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Galleria Mall - 202",
-        "road": "Yelahanka Main Parkway",
-        "block": "Galleria Mall",
-        "facing": "South",
-        "x": 873,
-        "y": 189,
-        "w": 48,
-        "h": 34,
-        "roadNode": "rmz_galleria_n_e",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Galleria Mall - 301",
-        "road": "Yelahanka Main Parkway",
-        "block": "Galleria Mall",
-        "facing": "South",
-        "x": 807,
-        "y": 211,
-        "w": 48,
-        "h": 34,
-        "roadNode": "rmz_galleria_n_e",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Galleria Mall - 302",
-        "road": "Yelahanka Main Parkway",
-        "block": "Galleria Mall",
-        "facing": "South",
-        "x": 829,
-        "y": 211,
-        "w": 48,
-        "h": 34,
-        "roadNode": "rmz_galleria_n_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Galleria Mall - 401",
-        "road": "Yelahanka Main Parkway",
-        "block": "Galleria Mall",
-        "facing": "South",
-        "x": 851,
-        "y": 211,
-        "w": 48,
-        "h": 34,
-        "roadNode": "rmz_galleria_n_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Galleria Mall - 402",
-        "road": "Yelahanka Main Parkway",
-        "block": "Galleria Mall",
-        "facing": "South",
-        "x": 873,
-        "y": 211,
-        "w": 48,
-        "h": 34,
-        "roadNode": "rmz_galleria_n_e",
+        "roadNode": "rmz_tower_b",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "rmz_galleria_gate_1",
-        "name": "RMZ Galleria Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "rmz_galleria_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "rmz_galleria_gate_2",
-        "name": "RMZ Galleria Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "rmz_galleria_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "rmz_galleria_mall",
         "name": "RMZ Galleria Mall",
-        "description": "Direct pedestrian access to shopping mall, INOX multiplex and food court",
+        "description": "Iconic Yelahanka lifestyle destination with 100+ stores & food court",
         "x": 620,
-        "y": 690,
-        "roadNode": "rmz_galleria_s_mid",
+        "y": 680,
+        "roadNode": "rmz_mall_s",
         "icon": "\ud83d\udecd\ufe0f",
         "type": "mall"
+      },
+      {
+        "id": "rmz_galleria_deck",
+        "name": "Podium Sky Club",
+        "description": "Rooftop infinity swimming pool, sky lounge and gym",
+        "x": 620,
+        "y": 420,
+        "roadNode": "rmz_junc_ctr",
+        "icon": "\ud83c\udfca",
+        "type": "clubhouse"
       }
     ],
     "roadLabels": [
       {
         "name": "GALLERIA BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
-        "name": "YELAHANKA MAIN PARKWAY",
+        "name": "SKY DECK PROMENADE",
         "x": 620,
-        "y": 255,
+        "y": 295,
         "vertical": false
       },
       {
         "name": "MALL RING LINK",
         "x": 620,
-        "y": 705,
+        "y": 605,
         "vertical": false
-      },
-      {
-        "name": "BBMP OFFICE WAY",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "KOGILU LINK ROAD",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "rmz_galleria_gate_1",
+    "defaultStartGate": "rmz_gate_main",
     "sectors": [
       "Tower A",
-      "Tower B",
-      "Galleria Mall"
+      "Tower B"
     ]
   },
   "prestige_misty_waters": {
@@ -39031,259 +37458,117 @@ window.LAYOUTS = {
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "110,480 220,180 620,160 1020,180 1110,480 1020,780 620,800 220,780 Z",
+    "borderTreesPath": "M 110,480 L 220,180 L 620,160 L 1020,180 L 1110,480 L 1020,780 L 620,800 L 220,780 Z",
+    "waterBody": {
+      "x": 260,
+      "y": 150,
+      "w": 700,
+      "h": 70,
+      "rx": 16,
+      "label": "Hebbal Lake Observation Waterfront"
     },
+    "gardenPark": null,
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "prestige_misty_waters_gate_1": {
-          "id": "prestige_misty_waters_gate_1",
-          "x": 90,
+        "pmw_gate_main": {
+          "id": "pmw_gate_main",
+          "x": 110,
           "y": 480,
-          "label": "Prestige Misty Waters Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Hebbal Outer Ring Road)"
         },
-        "prestige_misty_waters_entry": {
-          "id": "prestige_misty_waters_entry",
-          "x": 180,
+        "pmw_junc_w": {
+          "id": "pmw_junc_w",
+          "x": 260,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Misty Waters Boulevard West"
         },
-        "prestige_misty_waters_junc_w": {
-          "id": "prestige_misty_waters_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Central Pool Way West Junction"
-        },
-        "prestige_misty_waters_junc_ctr": {
-          "id": "prestige_misty_waters_junc_ctr",
+        "pmw_junc_ctr": {
+          "id": "pmw_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Central Cascade Plaza"
         },
-        "prestige_misty_waters_junc_e": {
-          "id": "prestige_misty_waters_junc_e",
-          "x": 920,
+        "pmw_junc_e": {
+          "id": "pmw_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Nagavara Approach Road East Junction"
+          "label": "Lakeview Promenade East"
         },
-        "prestige_misty_waters_gate_2": {
-          "id": "prestige_misty_waters_gate_2",
-          "x": 1110,
+        "pmw_gate_east": {
+          "id": "pmw_gate_east",
+          "x": 1100,
           "y": 480,
-          "label": "Prestige Misty Waters Gate 2 (Rear Entrance)"
+          "label": "Gate 2 (Nagavara Approach Link)"
         },
-        "prestige_misty_waters_n_w": {
-          "id": "prestige_misty_waters_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Hebbal Ring Link West"
+        "pmw_a": {
+          "id": "pmw_a",
+          "x": 360,
+          "y": 310,
+          "label": "Tower A Parkway"
         },
-        "prestige_misty_waters_n_mid": {
-          "id": "prestige_misty_waters_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Hebbal Ring Link North Plaza"
-        },
-        "prestige_misty_waters_n_e": {
-          "id": "prestige_misty_waters_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Hebbal Ring Link East"
-        },
-        "prestige_misty_waters_s_w": {
-          "id": "prestige_misty_waters_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Lakeview Parkway West"
-        },
-        "prestige_misty_waters_s_mid": {
-          "id": "prestige_misty_waters_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Lakeview Parkway South Plaza"
-        },
-        "prestige_misty_waters_s_e": {
-          "id": "prestige_misty_waters_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Lakeview Parkway East"
-        },
-        "prestige_misty_waters_w_n_mid": {
-          "id": "prestige_misty_waters_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Central Pool Way North Link"
-        },
-        "prestige_misty_waters_w_s_mid": {
-          "id": "prestige_misty_waters_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Central Pool Way South Link"
-        },
-        "prestige_misty_waters_ctr_n_mid": {
-          "id": "prestige_misty_waters_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "prestige_misty_waters_ctr_s_mid": {
-          "id": "prestige_misty_waters_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "prestige_misty_waters_e_n_mid": {
-          "id": "prestige_misty_waters_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Nagavara Approach Road North Link"
-        },
-        "prestige_misty_waters_e_s_mid": {
-          "id": "prestige_misty_waters_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Nagavara Approach Road South Link"
+        "pmw_b": {
+          "id": "pmw_b",
+          "x": 800,
+          "y": 490,
+          "label": "Tower B Parkway"
         }
       },
       "edges": [
         {
-          "u": "prestige_misty_waters_gate_1",
-          "v": "prestige_misty_waters_entry",
+          "u": "pmw_gate_main",
+          "v": "pmw_junc_w",
           "road": "Misty Waters Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_misty_waters_entry",
-          "v": "prestige_misty_waters_junc_w",
+          "u": "pmw_junc_w",
+          "v": "pmw_junc_ctr",
           "road": "Misty Waters Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_misty_waters_junc_w",
-          "v": "prestige_misty_waters_junc_ctr",
+          "u": "pmw_junc_ctr",
+          "v": "pmw_junc_e",
           "road": "Misty Waters Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_misty_waters_junc_ctr",
-          "v": "prestige_misty_waters_junc_e",
+          "u": "pmw_junc_e",
+          "v": "pmw_gate_east",
           "road": "Misty Waters Boulevard",
           "type": "primary"
         },
         {
-          "u": "prestige_misty_waters_junc_e",
-          "v": "prestige_misty_waters_gate_2",
-          "road": "Misty Waters Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_misty_waters_n_w",
-          "v": "prestige_misty_waters_n_mid",
-          "road": "Hebbal Ring Link",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_misty_waters_n_mid",
-          "v": "prestige_misty_waters_n_e",
-          "road": "Hebbal Ring Link",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_misty_waters_s_w",
-          "v": "prestige_misty_waters_s_mid",
+          "u": "pmw_junc_w",
+          "v": "pmw_a",
           "road": "Lakeview Parkway",
           "type": "secondary"
         },
         {
-          "u": "prestige_misty_waters_s_mid",
-          "v": "prestige_misty_waters_s_e",
-          "road": "Lakeview Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_misty_waters_n_w",
-          "v": "prestige_misty_waters_w_n_mid",
+          "u": "pmw_a",
+          "v": "pmw_junc_ctr",
           "road": "Central Pool Way",
           "type": "secondary"
         },
         {
-          "u": "prestige_misty_waters_w_n_mid",
-          "v": "prestige_misty_waters_junc_w",
-          "road": "Central Pool Way",
+          "u": "pmw_junc_ctr",
+          "v": "pmw_b",
+          "road": "Hebbal Ring Link",
           "type": "secondary"
         },
         {
-          "u": "prestige_misty_waters_junc_w",
-          "v": "prestige_misty_waters_w_s_mid",
-          "road": "Central Pool Way",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_misty_waters_w_s_mid",
-          "v": "prestige_misty_waters_s_w",
-          "road": "Central Pool Way",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_misty_waters_n_mid",
-          "v": "prestige_misty_waters_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_misty_waters_ctr_n_mid",
-          "v": "prestige_misty_waters_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_misty_waters_junc_ctr",
-          "v": "prestige_misty_waters_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_misty_waters_ctr_s_mid",
-          "v": "prestige_misty_waters_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "prestige_misty_waters_n_e",
-          "v": "prestige_misty_waters_e_n_mid",
-          "road": "Nagavara Approach Road",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_misty_waters_e_n_mid",
-          "v": "prestige_misty_waters_junc_e",
-          "road": "Nagavara Approach Road",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_misty_waters_junc_e",
-          "v": "prestige_misty_waters_e_s_mid",
-          "road": "Nagavara Approach Road",
-          "type": "secondary"
-        },
-        {
-          "u": "prestige_misty_waters_e_s_mid",
-          "v": "prestige_misty_waters_s_e",
-          "road": "Nagavara Approach Road",
+          "u": "pmw_b",
+          "v": "pmw_junc_e",
+          "road": "Hebbal Ring Link",
           "type": "secondary"
         }
       ]
@@ -39292,240 +37577,220 @@ window.LAYOUTS = {
       "1": {
         "id": "1",
         "number": "Tower A - 101",
-        "road": "Hebbal Ring Link",
+        "road": "Misty Waters Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 327,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_w",
+        "roadNode": "pmw_a",
         "color": "cyan"
       },
       "2": {
         "id": "2",
         "number": "Tower A - 102",
-        "road": "Hebbal Ring Link",
+        "road": "Misty Waters Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 349,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_w",
+        "roadNode": "pmw_a",
         "color": "cyan"
       },
       "3": {
         "id": "3",
         "number": "Tower A - 201",
-        "road": "Hebbal Ring Link",
+        "road": "Misty Waters Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 371,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_w",
+        "roadNode": "pmw_a",
         "color": "cyan"
       },
       "4": {
         "id": "4",
         "number": "Tower A - 202",
-        "road": "Hebbal Ring Link",
+        "road": "Misty Waters Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 393,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_w",
+        "roadNode": "pmw_a",
         "color": "cyan"
       },
       "5": {
         "id": "5",
         "number": "Tower A - 301",
-        "road": "Hebbal Ring Link",
+        "road": "Misty Waters Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 327,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_w",
+        "roadNode": "pmw_a",
         "color": "cyan"
       },
       "6": {
         "id": "6",
         "number": "Tower A - 302",
-        "road": "Hebbal Ring Link",
+        "road": "Misty Waters Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 349,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_w",
+        "roadNode": "pmw_a",
         "color": "cyan"
       },
       "7": {
         "id": "7",
         "number": "Tower A - 401",
-        "road": "Hebbal Ring Link",
+        "road": "Misty Waters Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 371,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_w",
+        "roadNode": "pmw_a",
         "color": "cyan"
       },
       "8": {
         "id": "8",
         "number": "Tower A - 402",
-        "road": "Hebbal Ring Link",
+        "road": "Misty Waters Boulevard",
         "block": "Tower A",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 393,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_w",
+        "roadNode": "pmw_a",
         "color": "cyan"
       },
       "9": {
         "id": "9",
         "number": "Tower B - 101",
-        "road": "Hebbal Ring Link",
+        "road": "Lakeview Parkway",
         "block": "Tower B",
-        "facing": "South",
-        "x": 527,
-        "y": 189,
+        "facing": "West",
+        "x": 767,
+        "y": 459,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_mid",
+        "roadNode": "pmw_b",
         "color": "cyan"
       },
       "10": {
         "id": "10",
         "number": "Tower B - 102",
-        "road": "Hebbal Ring Link",
+        "road": "Lakeview Parkway",
         "block": "Tower B",
-        "facing": "South",
-        "x": 549,
-        "y": 189,
+        "facing": "West",
+        "x": 789,
+        "y": 459,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_mid",
+        "roadNode": "pmw_b",
         "color": "cyan"
       },
       "11": {
         "id": "11",
         "number": "Tower B - 201",
-        "road": "Hebbal Ring Link",
+        "road": "Lakeview Parkway",
         "block": "Tower B",
-        "facing": "South",
-        "x": 571,
-        "y": 189,
+        "facing": "West",
+        "x": 811,
+        "y": 459,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_mid",
+        "roadNode": "pmw_b",
         "color": "cyan"
       },
       "12": {
         "id": "12",
         "number": "Tower B - 202",
-        "road": "Hebbal Ring Link",
+        "road": "Lakeview Parkway",
         "block": "Tower B",
-        "facing": "South",
-        "x": 593,
-        "y": 189,
+        "facing": "West",
+        "x": 833,
+        "y": 459,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_mid",
+        "roadNode": "pmw_b",
         "color": "cyan"
       },
       "13": {
         "id": "13",
         "number": "Tower B - 301",
-        "road": "Hebbal Ring Link",
+        "road": "Lakeview Parkway",
         "block": "Tower B",
-        "facing": "South",
-        "x": 527,
-        "y": 211,
+        "facing": "West",
+        "x": 767,
+        "y": 481,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_mid",
+        "roadNode": "pmw_b",
         "color": "cyan"
       },
       "14": {
         "id": "14",
         "number": "Tower B - 302",
-        "road": "Hebbal Ring Link",
+        "road": "Lakeview Parkway",
         "block": "Tower B",
-        "facing": "South",
-        "x": 549,
-        "y": 211,
+        "facing": "West",
+        "x": 789,
+        "y": 481,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_mid",
+        "roadNode": "pmw_b",
         "color": "cyan"
       },
       "15": {
         "id": "15",
         "number": "Tower B - 401",
-        "road": "Hebbal Ring Link",
+        "road": "Lakeview Parkway",
         "block": "Tower B",
-        "facing": "South",
-        "x": 571,
-        "y": 211,
+        "facing": "West",
+        "x": 811,
+        "y": 481,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_mid",
+        "roadNode": "pmw_b",
         "color": "cyan"
       },
       "16": {
         "id": "16",
         "number": "Tower B - 402",
-        "road": "Hebbal Ring Link",
+        "road": "Lakeview Parkway",
         "block": "Tower B",
-        "facing": "South",
-        "x": 593,
-        "y": 211,
+        "facing": "West",
+        "x": 833,
+        "y": 481,
         "w": 48,
         "h": 34,
-        "roadNode": "prestige_misty_waters_n_mid",
+        "roadNode": "pmw_b",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "prestige_misty_waters_gate_1",
-        "name": "Prestige Misty Waters Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "prestige_misty_waters_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "prestige_misty_waters_gate_2",
-        "name": "Prestige Misty Waters Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "prestige_misty_waters_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "prestige_misty_waters_club",
-        "name": "Misty Waters Clubhouse",
-        "description": "Heated swimming pool, badminton, squash and banquet",
+        "name": "Cascade Lakefront Clubhouse",
+        "description": "Heated pool, waterfall lounge, squash and sky deck",
         "x": 620,
-        "y": 270,
-        "roadNode": "prestige_misty_waters_n_mid",
+        "y": 440,
+        "roadNode": "pmw_junc_ctr",
         "icon": "\ud83c\udfca",
         "type": "clubhouse"
       }
@@ -39534,35 +37799,17 @@ window.LAYOUTS = {
       {
         "name": "MISTY WATERS BOULEVARD",
         "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "HEBBAL RING LINK",
-        "x": 620,
-        "y": 255,
+        "y": 495,
         "vertical": false
       },
       {
         "name": "LAKEVIEW PARKWAY",
-        "x": 620,
-        "y": 705,
+        "x": 360,
+        "y": 290,
         "vertical": false
-      },
-      {
-        "name": "CENTRAL POOL WAY",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "NAGAVARA APPROACH ROAD",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "prestige_misty_waters_gate_1",
+    "defaultStartGate": "pmw_gate_main",
     "sectors": [
       "Tower A",
       "Tower B"
@@ -39579,259 +37826,117 @@ window.LAYOUTS = {
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
+    "groundPolygon": "110,480 220,180 620,160 1020,180 1110,480 1020,780 620,800 220,780 Z",
+    "borderTreesPath": "M 110,480 L 220,180 L 620,160 L 1020,180 L 1110,480 L 1020,780 L 620,800 L 220,780 Z",
+    "waterBody": null,
     "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+      "x": 440,
+      "y": 380,
+      "w": 360,
+      "h": 80,
+      "rx": 10,
+      "label": "70-Year-Old Preserved Rain Tree Park"
     },
+    "landmarks": null,
     "roads": {
       "nodes": {
-        "godrej_woodsman_gate_1": {
-          "id": "godrej_woodsman_gate_1",
-          "x": 90,
+        "gw_gate_main": {
+          "id": "gw_gate_main",
+          "x": 110,
           "y": 480,
-          "label": "Godrej Woodsman Estate Gate 1 (Main Entrance)"
+          "label": "Gate 1 (Bellary Airport Highway)"
         },
-        "godrej_woodsman_entry": {
-          "id": "godrej_woodsman_entry",
-          "x": 180,
+        "gw_junc_w": {
+          "id": "gw_junc_w",
+          "x": 260,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Woodsman Boulevard West"
         },
-        "godrej_woodsman_junc_w": {
-          "id": "godrej_woodsman_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Hebbal Flyover Way West Junction"
-        },
-        "godrej_woodsman_junc_ctr": {
-          "id": "godrej_woodsman_junc_ctr",
+        "gw_junc_ctr": {
+          "id": "gw_junc_ctr",
           "x": 620,
           "y": 480,
-          "label": "Central Plaza Roundabout"
+          "label": "Rain Tree Central Hub"
         },
-        "godrej_woodsman_junc_e": {
-          "id": "godrej_woodsman_junc_e",
-          "x": 920,
+        "gw_junc_e": {
+          "id": "gw_junc_e",
+          "x": 960,
           "y": 480,
-          "label": "Lakeview Drive East Junction"
-        },
-        "godrej_woodsman_gate_2": {
-          "id": "godrej_woodsman_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Godrej Woodsman Estate Gate 2 (Rear Entrance)"
-        },
-        "godrej_woodsman_n_w": {
-          "id": "godrej_woodsman_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Bellary Road Parkway West"
-        },
-        "godrej_woodsman_n_mid": {
-          "id": "godrej_woodsman_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Bellary Road Parkway North Plaza"
-        },
-        "godrej_woodsman_n_e": {
-          "id": "godrej_woodsman_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Bellary Road Parkway East"
-        },
-        "godrej_woodsman_s_w": {
-          "id": "godrej_woodsman_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Airport Highway Link West"
-        },
-        "godrej_woodsman_s_mid": {
-          "id": "godrej_woodsman_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Airport Highway Link South Plaza"
-        },
-        "godrej_woodsman_s_e": {
-          "id": "godrej_woodsman_s_e",
-          "x": 920,
-          "y": 690,
           "label": "Airport Highway Link East"
         },
-        "godrej_woodsman_w_n_mid": {
-          "id": "godrej_woodsman_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Hebbal Flyover Way North Link"
+        "gw_gate_east": {
+          "id": "gw_gate_east",
+          "x": 1100,
+          "y": 480,
+          "label": "Gate 2 (Hebbal Flyover Link)"
         },
-        "godrej_woodsman_w_s_mid": {
-          "id": "godrej_woodsman_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Hebbal Flyover Way South Link"
+        "gw_a": {
+          "id": "gw_a",
+          "x": 360,
+          "y": 310,
+          "label": "Woodsman Tower A Parkway"
         },
-        "godrej_woodsman_ctr_n_mid": {
-          "id": "godrej_woodsman_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "godrej_woodsman_ctr_s_mid": {
-          "id": "godrej_woodsman_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "godrej_woodsman_e_n_mid": {
-          "id": "godrej_woodsman_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Lakeview Drive North Link"
-        },
-        "godrej_woodsman_e_s_mid": {
-          "id": "godrej_woodsman_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Lakeview Drive South Link"
+        "gw_b": {
+          "id": "gw_b",
+          "x": 800,
+          "y": 490,
+          "label": "Woodsman Tower B Parkway"
         }
       },
       "edges": [
         {
-          "u": "godrej_woodsman_gate_1",
-          "v": "godrej_woodsman_entry",
+          "u": "gw_gate_main",
+          "v": "gw_junc_w",
           "road": "Woodsman Boulevard",
           "type": "primary"
         },
         {
-          "u": "godrej_woodsman_entry",
-          "v": "godrej_woodsman_junc_w",
+          "u": "gw_junc_w",
+          "v": "gw_junc_ctr",
           "road": "Woodsman Boulevard",
           "type": "primary"
         },
         {
-          "u": "godrej_woodsman_junc_w",
-          "v": "godrej_woodsman_junc_ctr",
+          "u": "gw_junc_ctr",
+          "v": "gw_junc_e",
           "road": "Woodsman Boulevard",
           "type": "primary"
         },
         {
-          "u": "godrej_woodsman_junc_ctr",
-          "v": "godrej_woodsman_junc_e",
+          "u": "gw_junc_e",
+          "v": "gw_gate_east",
           "road": "Woodsman Boulevard",
           "type": "primary"
         },
         {
-          "u": "godrej_woodsman_junc_e",
-          "v": "godrej_woodsman_gate_2",
-          "road": "Woodsman Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "godrej_woodsman_n_w",
-          "v": "godrej_woodsman_n_mid",
+          "u": "gw_junc_w",
+          "v": "gw_a",
           "road": "Bellary Road Parkway",
           "type": "secondary"
         },
         {
-          "u": "godrej_woodsman_n_mid",
-          "v": "godrej_woodsman_n_e",
+          "u": "gw_a",
+          "v": "gw_junc_ctr",
           "road": "Bellary Road Parkway",
           "type": "secondary"
         },
         {
-          "u": "godrej_woodsman_s_w",
-          "v": "godrej_woodsman_s_mid",
+          "u": "gw_junc_ctr",
+          "v": "gw_b",
           "road": "Airport Highway Link",
           "type": "secondary"
         },
         {
-          "u": "godrej_woodsman_s_mid",
-          "v": "godrej_woodsman_s_e",
+          "u": "gw_b",
+          "v": "gw_junc_e",
           "road": "Airport Highway Link",
-          "type": "secondary"
-        },
-        {
-          "u": "godrej_woodsman_n_w",
-          "v": "godrej_woodsman_w_n_mid",
-          "road": "Hebbal Flyover Way",
-          "type": "secondary"
-        },
-        {
-          "u": "godrej_woodsman_w_n_mid",
-          "v": "godrej_woodsman_junc_w",
-          "road": "Hebbal Flyover Way",
-          "type": "secondary"
-        },
-        {
-          "u": "godrej_woodsman_junc_w",
-          "v": "godrej_woodsman_w_s_mid",
-          "road": "Hebbal Flyover Way",
-          "type": "secondary"
-        },
-        {
-          "u": "godrej_woodsman_w_s_mid",
-          "v": "godrej_woodsman_s_w",
-          "road": "Hebbal Flyover Way",
-          "type": "secondary"
-        },
-        {
-          "u": "godrej_woodsman_n_mid",
-          "v": "godrej_woodsman_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "godrej_woodsman_ctr_n_mid",
-          "v": "godrej_woodsman_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "godrej_woodsman_junc_ctr",
-          "v": "godrej_woodsman_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "godrej_woodsman_ctr_s_mid",
-          "v": "godrej_woodsman_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "godrej_woodsman_n_e",
-          "v": "godrej_woodsman_e_n_mid",
-          "road": "Lakeview Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "godrej_woodsman_e_n_mid",
-          "v": "godrej_woodsman_junc_e",
-          "road": "Lakeview Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "godrej_woodsman_junc_e",
-          "v": "godrej_woodsman_e_s_mid",
-          "road": "Lakeview Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "godrej_woodsman_e_s_mid",
-          "v": "godrej_woodsman_s_e",
-          "road": "Lakeview Drive",
           "type": "secondary"
         }
       ]
@@ -39839,242 +37944,222 @@ window.LAYOUTS = {
     "plots": {
       "1": {
         "id": "1",
-        "number": "Tower A - 101",
-        "road": "Bellary Road Parkway",
-        "block": "Tower A",
+        "number": "Woodsman Tower A - 101",
+        "road": "Woodsman Boulevard",
+        "block": "Woodsman Tower A",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 327,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_w",
+        "roadNode": "gw_a",
         "color": "cyan"
       },
       "2": {
         "id": "2",
-        "number": "Tower A - 102",
-        "road": "Bellary Road Parkway",
-        "block": "Tower A",
+        "number": "Woodsman Tower A - 102",
+        "road": "Woodsman Boulevard",
+        "block": "Woodsman Tower A",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 349,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_w",
+        "roadNode": "gw_a",
         "color": "cyan"
       },
       "3": {
         "id": "3",
-        "number": "Tower A - 201",
-        "road": "Bellary Road Parkway",
-        "block": "Tower A",
+        "number": "Woodsman Tower A - 201",
+        "road": "Woodsman Boulevard",
+        "block": "Woodsman Tower A",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 371,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_w",
+        "roadNode": "gw_a",
         "color": "cyan"
       },
       "4": {
         "id": "4",
-        "number": "Tower A - 202",
-        "road": "Bellary Road Parkway",
-        "block": "Tower A",
+        "number": "Woodsman Tower A - 202",
+        "road": "Woodsman Boulevard",
+        "block": "Woodsman Tower A",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 393,
+        "y": 259,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_w",
+        "roadNode": "gw_a",
         "color": "cyan"
       },
       "5": {
         "id": "5",
-        "number": "Tower A - 301",
-        "road": "Bellary Road Parkway",
-        "block": "Tower A",
+        "number": "Woodsman Tower A - 301",
+        "road": "Woodsman Boulevard",
+        "block": "Woodsman Tower A",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 327,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_w",
+        "roadNode": "gw_a",
         "color": "cyan"
       },
       "6": {
         "id": "6",
-        "number": "Tower A - 302",
-        "road": "Bellary Road Parkway",
-        "block": "Tower A",
+        "number": "Woodsman Tower A - 302",
+        "road": "Woodsman Boulevard",
+        "block": "Woodsman Tower A",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 349,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_w",
+        "roadNode": "gw_a",
         "color": "cyan"
       },
       "7": {
         "id": "7",
-        "number": "Tower A - 401",
-        "road": "Bellary Road Parkway",
-        "block": "Tower A",
+        "number": "Woodsman Tower A - 401",
+        "road": "Woodsman Boulevard",
+        "block": "Woodsman Tower A",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 371,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_w",
+        "roadNode": "gw_a",
         "color": "cyan"
       },
       "8": {
         "id": "8",
-        "number": "Tower A - 402",
-        "road": "Bellary Road Parkway",
-        "block": "Tower A",
+        "number": "Woodsman Tower A - 402",
+        "road": "Woodsman Boulevard",
+        "block": "Woodsman Tower A",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 393,
+        "y": 281,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_w",
+        "roadNode": "gw_a",
         "color": "cyan"
       },
       "9": {
         "id": "9",
-        "number": "Tower B - 101",
-        "road": "Bellary Road Parkway",
-        "block": "Tower B",
-        "facing": "South",
-        "x": 527,
-        "y": 189,
+        "number": "Woodsman Tower B - 101",
+        "road": "Airport Highway Link",
+        "block": "Woodsman Tower B",
+        "facing": "West",
+        "x": 767,
+        "y": 459,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_mid",
+        "roadNode": "gw_b",
         "color": "cyan"
       },
       "10": {
         "id": "10",
-        "number": "Tower B - 102",
-        "road": "Bellary Road Parkway",
-        "block": "Tower B",
-        "facing": "South",
-        "x": 549,
-        "y": 189,
+        "number": "Woodsman Tower B - 102",
+        "road": "Airport Highway Link",
+        "block": "Woodsman Tower B",
+        "facing": "West",
+        "x": 789,
+        "y": 459,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_mid",
+        "roadNode": "gw_b",
         "color": "cyan"
       },
       "11": {
         "id": "11",
-        "number": "Tower B - 201",
-        "road": "Bellary Road Parkway",
-        "block": "Tower B",
-        "facing": "South",
-        "x": 571,
-        "y": 189,
+        "number": "Woodsman Tower B - 201",
+        "road": "Airport Highway Link",
+        "block": "Woodsman Tower B",
+        "facing": "West",
+        "x": 811,
+        "y": 459,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_mid",
+        "roadNode": "gw_b",
         "color": "cyan"
       },
       "12": {
         "id": "12",
-        "number": "Tower B - 202",
-        "road": "Bellary Road Parkway",
-        "block": "Tower B",
-        "facing": "South",
-        "x": 593,
-        "y": 189,
+        "number": "Woodsman Tower B - 202",
+        "road": "Airport Highway Link",
+        "block": "Woodsman Tower B",
+        "facing": "West",
+        "x": 833,
+        "y": 459,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_mid",
+        "roadNode": "gw_b",
         "color": "cyan"
       },
       "13": {
         "id": "13",
-        "number": "Tower B - 301",
-        "road": "Bellary Road Parkway",
-        "block": "Tower B",
-        "facing": "South",
-        "x": 527,
-        "y": 211,
+        "number": "Woodsman Tower B - 301",
+        "road": "Airport Highway Link",
+        "block": "Woodsman Tower B",
+        "facing": "West",
+        "x": 767,
+        "y": 481,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_mid",
+        "roadNode": "gw_b",
         "color": "cyan"
       },
       "14": {
         "id": "14",
-        "number": "Tower B - 302",
-        "road": "Bellary Road Parkway",
-        "block": "Tower B",
-        "facing": "South",
-        "x": 549,
-        "y": 211,
+        "number": "Woodsman Tower B - 302",
+        "road": "Airport Highway Link",
+        "block": "Woodsman Tower B",
+        "facing": "West",
+        "x": 789,
+        "y": 481,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_mid",
+        "roadNode": "gw_b",
         "color": "cyan"
       },
       "15": {
         "id": "15",
-        "number": "Tower B - 401",
-        "road": "Bellary Road Parkway",
-        "block": "Tower B",
-        "facing": "South",
-        "x": 571,
-        "y": 211,
+        "number": "Woodsman Tower B - 401",
+        "road": "Airport Highway Link",
+        "block": "Woodsman Tower B",
+        "facing": "West",
+        "x": 811,
+        "y": 481,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_mid",
+        "roadNode": "gw_b",
         "color": "cyan"
       },
       "16": {
         "id": "16",
-        "number": "Tower B - 402",
-        "road": "Bellary Road Parkway",
-        "block": "Tower B",
-        "facing": "South",
-        "x": 593,
-        "y": 211,
+        "number": "Woodsman Tower B - 402",
+        "road": "Airport Highway Link",
+        "block": "Woodsman Tower B",
+        "facing": "West",
+        "x": 833,
+        "y": 481,
         "w": 48,
         "h": 34,
-        "roadNode": "godrej_woodsman_n_mid",
+        "roadNode": "gw_b",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "godrej_woodsman_gate_1",
-        "name": "Godrej Woodsman Estate Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "godrej_woodsman_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "godrej_woodsman_gate_2",
-        "name": "Godrej Woodsman Estate Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "godrej_woodsman_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
         "id": "godrej_woodsman_club",
-        "name": "The Woodsman Club",
-        "description": "Gymnasium, tennis court, pool and landscaped gardens",
+        "name": "Woodsman Rain Tree Clubhouse",
+        "description": "Half-acre infinity pool, gym, squash and golf putting green",
         "x": 620,
-        "y": 270,
-        "roadNode": "godrej_woodsman_n_mid",
-        "icon": "\ud83c\udf33",
+        "y": 440,
+        "roadNode": "gw_junc_ctr",
+        "icon": "\ud83c\udfca",
         "type": "clubhouse"
       }
     ],
@@ -40082,38 +38167,20 @@ window.LAYOUTS = {
       {
         "name": "WOODSMAN BOULEVARD",
         "x": 620,
-        "y": 490,
+        "y": 495,
         "vertical": false
       },
       {
         "name": "BELLARY ROAD PARKWAY",
-        "x": 620,
-        "y": 255,
+        "x": 360,
+        "y": 290,
         "vertical": false
-      },
-      {
-        "name": "AIRPORT HIGHWAY LINK",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "HEBBAL FLYOVER WAY",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "LAKEVIEW DRIVE",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "godrej_woodsman_gate_1",
+    "defaultStartGate": "gw_gate_main",
     "sectors": [
-      "Tower A",
-      "Tower B"
+      "Woodsman Tower A",
+      "Woodsman Tower B"
     ]
   },
   "jakkur_aerodrome": {
@@ -45595,263 +43662,209 @@ window.LAYOUTS = {
     "zone": "west",
     "type": "Integrated Lifestyle City with Orion Mall & WTC",
     "unitType": "Apartment / Tower",
-    "unitCount": 24,
+    "unitCount": 56,
     "bounds": {
       "minX": 60,
       "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
+      "minY": 140,
+      "maxY": 860
     },
     "center": {
-      "x": 600,
+      "x": 620,
       "y": 480
     },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
+    "groundPolygon": "80,480 180,140 600,120 1080,140 1140,480 1080,820 600,840 180,820 Z",
+    "borderTreesPath": "M 80,480 L 180,140 L 600,120 L 1080,140 L 1140,480 L 1080,820 L 600,840 L 180,820 Z",
+    "waterBody": {
+      "x": 540,
+      "y": 380,
+      "w": 240,
+      "h": 160,
+      "rx": 30,
+      "label": "Orion Gateway Lake & Promenade"
     },
+    "gardenPark": {
+      "x": 400,
+      "y": 240,
+      "w": 180,
+      "h": 60,
+      "rx": 8,
+      "label": "Sheraton Grand Garden Lawn"
+    },
+    "landmarks": [
+      {
+        "x": 840,
+        "y": 440,
+        "w": 220,
+        "h": 230,
+        "rx": 8,
+        "label": "\ud83d\udecd\ufe0f Orion Mall & Waterfront Multiplex",
+        "fill": "#1e1b4b",
+        "stroke": "#818cf8"
+      },
+      {
+        "x": 840,
+        "y": 170,
+        "w": 220,
+        "h": 190,
+        "rx": 8,
+        "label": "\ud83c\udfe2 World Trade Center (32-Floor Tower)",
+        "fill": "#0f172a",
+        "stroke": "#38bdf8"
+      }
+    ],
     "roads": {
       "nodes": {
-        "brigade_gateway_gate_1": {
-          "id": "brigade_gateway_gate_1",
-          "x": 90,
+        "bg_gate_main": {
+          "id": "bg_gate_main",
+          "x": 80,
           "y": 480,
-          "label": "Brigade Gateway Gate 1 (Main Entrance)"
+          "label": "Main Gate (Dr. Rajkumar Road)"
         },
-        "brigade_gateway_entry": {
-          "id": "brigade_gateway_entry",
-          "x": 180,
+        "bg_junc_w": {
+          "id": "bg_junc_w",
+          "x": 240,
           "y": 480,
-          "label": "Entrance Boulevard"
+          "label": "Gateway West Roundabout"
         },
-        "brigade_gateway_junc_w": {
-          "id": "brigade_gateway_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Lake Promenade Way West Junction"
+        "bg_junc_nw": {
+          "id": "bg_junc_nw",
+          "x": 240,
+          "y": 260,
+          "label": "Aster & Banyan Crescent Cross"
         },
-        "brigade_gateway_junc_ctr": {
-          "id": "brigade_gateway_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
+        "bg_junc_n": {
+          "id": "bg_junc_n",
+          "x": 540,
+          "y": 220,
+          "label": "North Lake Boulevard Cross"
         },
-        "brigade_gateway_junc_e": {
-          "id": "brigade_gateway_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Dr. Rajkumar Highway East Junction"
+        "bg_junc_ne": {
+          "id": "bg_junc_ne",
+          "x": 800,
+          "y": 220,
+          "label": "WTC Malleswaram Plaza"
         },
-        "brigade_gateway_gate_2": {
-          "id": "brigade_gateway_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Brigade Gateway Gate 2 (Rear Entrance)"
+        "bg_gate_wtc": {
+          "id": "bg_gate_wtc",
+          "x": 1080,
+          "y": 170,
+          "label": "Gate 2 (WTC Malleswaram Link)"
         },
-        "brigade_gateway_n_w": {
-          "id": "brigade_gateway_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Orion Mall Parkway West"
+        "bg_lake_n": {
+          "id": "bg_lake_n",
+          "x": 540,
+          "y": 340,
+          "label": "Lake Boardwalk North"
         },
-        "brigade_gateway_n_mid": {
-          "id": "brigade_gateway_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Orion Mall Parkway North Plaza"
+        "bg_lake_s": {
+          "id": "bg_lake_s",
+          "x": 540,
+          "y": 580,
+          "label": "Lake Boardwalk South"
         },
-        "brigade_gateway_n_e": {
-          "id": "brigade_gateway_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Orion Mall Parkway East"
+        "bg_junc_sw": {
+          "id": "bg_junc_sw",
+          "x": 240,
+          "y": 700,
+          "label": "Ebony & Fern Crescent Cross"
         },
-        "brigade_gateway_s_w": {
-          "id": "brigade_gateway_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "WTC Ring Link West"
+        "bg_junc_s": {
+          "id": "bg_junc_s",
+          "x": 540,
+          "y": 740,
+          "label": "South Gate Access Link"
         },
-        "brigade_gateway_s_mid": {
-          "id": "brigade_gateway_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "WTC Ring Link South Plaza"
+        "bg_junc_se": {
+          "id": "bg_junc_se",
+          "x": 800,
+          "y": 720,
+          "label": "Orion South Promenade Cross"
         },
-        "brigade_gateway_s_e": {
-          "id": "brigade_gateway_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "WTC Ring Link East"
-        },
-        "brigade_gateway_w_n_mid": {
-          "id": "brigade_gateway_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Lake Promenade Way North Link"
-        },
-        "brigade_gateway_w_s_mid": {
-          "id": "brigade_gateway_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Lake Promenade Way South Link"
-        },
-        "brigade_gateway_ctr_n_mid": {
-          "id": "brigade_gateway_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "brigade_gateway_ctr_s_mid": {
-          "id": "brigade_gateway_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "brigade_gateway_e_n_mid": {
-          "id": "brigade_gateway_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Dr. Rajkumar Highway North Link"
-        },
-        "brigade_gateway_e_s_mid": {
-          "id": "brigade_gateway_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Dr. Rajkumar Highway South Link"
+        "bg_gate_orion": {
+          "id": "bg_gate_orion",
+          "x": 1090,
+          "y": 560,
+          "label": "Gate 3 (Orion Mall Lake Entry)"
         }
       },
       "edges": [
         {
-          "u": "brigade_gateway_gate_1",
-          "v": "brigade_gateway_entry",
+          "u": "bg_gate_main",
+          "v": "bg_junc_w",
           "road": "Gateway Boulevard",
           "type": "primary"
         },
         {
-          "u": "brigade_gateway_entry",
-          "v": "brigade_gateway_junc_w",
+          "u": "bg_junc_w",
+          "v": "bg_junc_nw",
           "road": "Gateway Boulevard",
           "type": "primary"
         },
         {
-          "u": "brigade_gateway_junc_w",
-          "v": "brigade_gateway_junc_ctr",
+          "u": "bg_junc_nw",
+          "v": "bg_junc_n",
           "road": "Gateway Boulevard",
           "type": "primary"
         },
         {
-          "u": "brigade_gateway_junc_ctr",
-          "v": "brigade_gateway_junc_e",
-          "road": "Gateway Boulevard",
+          "u": "bg_junc_n",
+          "v": "bg_junc_ne",
+          "road": "WTC Ring Link",
           "type": "primary"
         },
         {
-          "u": "brigade_gateway_junc_e",
-          "v": "brigade_gateway_gate_2",
-          "road": "Gateway Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "brigade_gateway_n_w",
-          "v": "brigade_gateway_n_mid",
-          "road": "Orion Mall Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_gateway_n_mid",
-          "v": "brigade_gateway_n_e",
-          "road": "Orion Mall Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_gateway_s_w",
-          "v": "brigade_gateway_s_mid",
+          "u": "bg_junc_ne",
+          "v": "bg_gate_wtc",
           "road": "WTC Ring Link",
           "type": "secondary"
         },
         {
-          "u": "brigade_gateway_s_mid",
-          "v": "brigade_gateway_s_e",
-          "road": "WTC Ring Link",
-          "type": "secondary"
+          "u": "bg_junc_w",
+          "v": "bg_junc_sw",
+          "road": "Gateway Boulevard",
+          "type": "primary"
         },
         {
-          "u": "brigade_gateway_n_w",
-          "v": "brigade_gateway_w_n_mid",
+          "u": "bg_junc_sw",
+          "v": "bg_junc_s",
+          "road": "Gateway Boulevard",
+          "type": "primary"
+        },
+        {
+          "u": "bg_junc_s",
+          "v": "bg_junc_se",
+          "road": "Orion Mall Parkway",
+          "type": "primary"
+        },
+        {
+          "u": "bg_junc_se",
+          "v": "bg_gate_orion",
+          "road": "Orion Mall Parkway",
+          "type": "primary"
+        },
+        {
+          "u": "bg_junc_n",
+          "v": "bg_lake_n",
           "road": "Lake Promenade Way",
           "type": "secondary"
         },
         {
-          "u": "brigade_gateway_w_n_mid",
-          "v": "brigade_gateway_junc_w",
+          "u": "bg_lake_n",
+          "v": "bg_lake_s",
           "road": "Lake Promenade Way",
           "type": "secondary"
         },
         {
-          "u": "brigade_gateway_junc_w",
-          "v": "brigade_gateway_w_s_mid",
+          "u": "bg_lake_s",
+          "v": "bg_junc_s",
           "road": "Lake Promenade Way",
           "type": "secondary"
         },
         {
-          "u": "brigade_gateway_w_s_mid",
-          "v": "brigade_gateway_s_w",
-          "road": "Lake Promenade Way",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_gateway_n_mid",
-          "v": "brigade_gateway_ctr_n_mid",
+          "u": "bg_junc_w",
+          "v": "bg_lake_n",
           "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "brigade_gateway_ctr_n_mid",
-          "v": "brigade_gateway_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "brigade_gateway_junc_ctr",
-          "v": "brigade_gateway_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "brigade_gateway_ctr_s_mid",
-          "v": "brigade_gateway_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "brigade_gateway_n_e",
-          "v": "brigade_gateway_e_n_mid",
-          "road": "Dr. Rajkumar Highway",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_gateway_e_n_mid",
-          "v": "brigade_gateway_junc_e",
-          "road": "Dr. Rajkumar Highway",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_gateway_junc_e",
-          "v": "brigade_gateway_e_s_mid",
-          "road": "Dr. Rajkumar Highway",
-          "type": "secondary"
-        },
-        {
-          "u": "brigade_gateway_e_s_mid",
-          "v": "brigade_gateway_s_e",
-          "road": "Dr. Rajkumar Highway",
           "type": "secondary"
         }
       ]
@@ -45859,396 +43872,806 @@ window.LAYOUTS = {
     "plots": {
       "1": {
         "id": "1",
-        "number": "Residential Towers A-L - 101",
-        "road": "Orion Mall Parkway",
-        "block": "Residential Towers A-L",
+        "number": "Aster Tower - 101",
+        "road": "Gateway Boulevard",
+        "block": "Aster Tower",
         "facing": "South",
-        "x": 247,
-        "y": 189,
+        "x": 207,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_w",
+        "roadNode": "bg_junc_nw",
         "color": "cyan"
       },
       "2": {
         "id": "2",
-        "number": "Residential Towers A-L - 102",
-        "road": "Orion Mall Parkway",
-        "block": "Residential Towers A-L",
+        "number": "Aster Tower - 102",
+        "road": "Gateway Boulevard",
+        "block": "Aster Tower",
         "facing": "South",
-        "x": 269,
-        "y": 189,
+        "x": 229,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_w",
+        "roadNode": "bg_junc_nw",
         "color": "cyan"
       },
       "3": {
         "id": "3",
-        "number": "Residential Towers A-L - 201",
-        "road": "Orion Mall Parkway",
-        "block": "Residential Towers A-L",
+        "number": "Aster Tower - 201",
+        "road": "Gateway Boulevard",
+        "block": "Aster Tower",
         "facing": "South",
-        "x": 291,
-        "y": 189,
+        "x": 251,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_w",
+        "roadNode": "bg_junc_nw",
         "color": "cyan"
       },
       "4": {
         "id": "4",
-        "number": "Residential Towers A-L - 202",
-        "road": "Orion Mall Parkway",
-        "block": "Residential Towers A-L",
+        "number": "Aster Tower - 202",
+        "road": "Gateway Boulevard",
+        "block": "Aster Tower",
         "facing": "South",
-        "x": 313,
-        "y": 189,
+        "x": 273,
+        "y": 179,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_w",
+        "roadNode": "bg_junc_nw",
         "color": "cyan"
       },
       "5": {
         "id": "5",
-        "number": "Residential Towers A-L - 301",
-        "road": "Orion Mall Parkway",
-        "block": "Residential Towers A-L",
+        "number": "Aster Tower - 301",
+        "road": "Gateway Boulevard",
+        "block": "Aster Tower",
         "facing": "South",
-        "x": 247,
-        "y": 211,
+        "x": 207,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_w",
+        "roadNode": "bg_junc_nw",
         "color": "cyan"
       },
       "6": {
         "id": "6",
-        "number": "Residential Towers A-L - 302",
-        "road": "Orion Mall Parkway",
-        "block": "Residential Towers A-L",
+        "number": "Aster Tower - 302",
+        "road": "Gateway Boulevard",
+        "block": "Aster Tower",
         "facing": "South",
-        "x": 269,
-        "y": 211,
+        "x": 229,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_w",
+        "roadNode": "bg_junc_nw",
         "color": "cyan"
       },
       "7": {
         "id": "7",
-        "number": "Residential Towers A-L - 401",
-        "road": "Orion Mall Parkway",
-        "block": "Residential Towers A-L",
+        "number": "Aster Tower - 401",
+        "road": "Gateway Boulevard",
+        "block": "Aster Tower",
         "facing": "South",
-        "x": 291,
-        "y": 211,
+        "x": 251,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_w",
+        "roadNode": "bg_junc_nw",
         "color": "cyan"
       },
       "8": {
         "id": "8",
-        "number": "Residential Towers A-L - 402",
-        "road": "Orion Mall Parkway",
-        "block": "Residential Towers A-L",
+        "number": "Aster Tower - 402",
+        "road": "Gateway Boulevard",
+        "block": "Aster Tower",
         "facing": "South",
-        "x": 313,
-        "y": 211,
+        "x": 273,
+        "y": 201,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_w",
+        "roadNode": "bg_junc_nw",
         "color": "cyan"
       },
       "9": {
         "id": "9",
-        "number": "World Trade Center - 101",
-        "road": "Orion Mall Parkway",
-        "block": "World Trade Center",
+        "number": "Banyan Tower - 101",
+        "road": "Gateway Boulevard",
+        "block": "Banyan Tower",
         "facing": "South",
-        "x": 527,
-        "y": 189,
+        "x": 427,
+        "y": 159,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_mid",
+        "roadNode": "bg_junc_n",
         "color": "cyan"
       },
       "10": {
         "id": "10",
-        "number": "World Trade Center - 102",
-        "road": "Orion Mall Parkway",
-        "block": "World Trade Center",
+        "number": "Banyan Tower - 102",
+        "road": "Gateway Boulevard",
+        "block": "Banyan Tower",
         "facing": "South",
-        "x": 549,
-        "y": 189,
+        "x": 449,
+        "y": 159,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_mid",
+        "roadNode": "bg_junc_n",
         "color": "cyan"
       },
       "11": {
         "id": "11",
-        "number": "World Trade Center - 201",
-        "road": "Orion Mall Parkway",
-        "block": "World Trade Center",
+        "number": "Banyan Tower - 201",
+        "road": "Gateway Boulevard",
+        "block": "Banyan Tower",
         "facing": "South",
-        "x": 571,
-        "y": 189,
+        "x": 471,
+        "y": 159,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_mid",
+        "roadNode": "bg_junc_n",
         "color": "cyan"
       },
       "12": {
         "id": "12",
-        "number": "World Trade Center - 202",
-        "road": "Orion Mall Parkway",
-        "block": "World Trade Center",
+        "number": "Banyan Tower - 202",
+        "road": "Gateway Boulevard",
+        "block": "Banyan Tower",
         "facing": "South",
-        "x": 593,
-        "y": 189,
+        "x": 493,
+        "y": 159,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_mid",
+        "roadNode": "bg_junc_n",
         "color": "cyan"
       },
       "13": {
         "id": "13",
-        "number": "World Trade Center - 301",
-        "road": "Orion Mall Parkway",
-        "block": "World Trade Center",
+        "number": "Banyan Tower - 301",
+        "road": "Gateway Boulevard",
+        "block": "Banyan Tower",
         "facing": "South",
-        "x": 527,
-        "y": 211,
+        "x": 427,
+        "y": 181,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_mid",
+        "roadNode": "bg_junc_n",
         "color": "cyan"
       },
       "14": {
         "id": "14",
-        "number": "World Trade Center - 302",
-        "road": "Orion Mall Parkway",
-        "block": "World Trade Center",
+        "number": "Banyan Tower - 302",
+        "road": "Gateway Boulevard",
+        "block": "Banyan Tower",
         "facing": "South",
-        "x": 549,
-        "y": 211,
+        "x": 449,
+        "y": 181,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_mid",
+        "roadNode": "bg_junc_n",
         "color": "cyan"
       },
       "15": {
         "id": "15",
-        "number": "World Trade Center - 401",
-        "road": "Orion Mall Parkway",
-        "block": "World Trade Center",
+        "number": "Banyan Tower - 401",
+        "road": "Gateway Boulevard",
+        "block": "Banyan Tower",
         "facing": "South",
-        "x": 571,
-        "y": 211,
+        "x": 471,
+        "y": 181,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_mid",
+        "roadNode": "bg_junc_n",
         "color": "cyan"
       },
       "16": {
         "id": "16",
-        "number": "World Trade Center - 402",
-        "road": "Orion Mall Parkway",
-        "block": "World Trade Center",
+        "number": "Banyan Tower - 402",
+        "road": "Gateway Boulevard",
+        "block": "Banyan Tower",
         "facing": "South",
-        "x": 593,
-        "y": 211,
+        "x": 493,
+        "y": 181,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_mid",
+        "roadNode": "bg_junc_n",
         "color": "cyan"
       },
       "17": {
         "id": "17",
-        "number": "Orion Mall Complex - 101",
-        "road": "Orion Mall Parkway",
-        "block": "Orion Mall Complex",
-        "facing": "South",
-        "x": 807,
-        "y": 189,
+        "number": "Cedar Tower - 101",
+        "road": "Gateway Boulevard",
+        "block": "Cedar Tower",
+        "facing": "East",
+        "x": 167,
+        "y": 359,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_e",
+        "roadNode": "bg_junc_w",
         "color": "cyan"
       },
       "18": {
         "id": "18",
-        "number": "Orion Mall Complex - 102",
-        "road": "Orion Mall Parkway",
-        "block": "Orion Mall Complex",
-        "facing": "South",
-        "x": 829,
-        "y": 189,
+        "number": "Cedar Tower - 102",
+        "road": "Gateway Boulevard",
+        "block": "Cedar Tower",
+        "facing": "East",
+        "x": 189,
+        "y": 359,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_e",
+        "roadNode": "bg_junc_w",
         "color": "cyan"
       },
       "19": {
         "id": "19",
-        "number": "Orion Mall Complex - 201",
-        "road": "Orion Mall Parkway",
-        "block": "Orion Mall Complex",
-        "facing": "South",
-        "x": 851,
-        "y": 189,
+        "number": "Cedar Tower - 201",
+        "road": "Gateway Boulevard",
+        "block": "Cedar Tower",
+        "facing": "East",
+        "x": 211,
+        "y": 359,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_e",
+        "roadNode": "bg_junc_w",
         "color": "cyan"
       },
       "20": {
         "id": "20",
-        "number": "Orion Mall Complex - 202",
-        "road": "Orion Mall Parkway",
-        "block": "Orion Mall Complex",
-        "facing": "South",
-        "x": 873,
-        "y": 189,
+        "number": "Cedar Tower - 202",
+        "road": "Gateway Boulevard",
+        "block": "Cedar Tower",
+        "facing": "East",
+        "x": 233,
+        "y": 359,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_e",
+        "roadNode": "bg_junc_w",
         "color": "cyan"
       },
       "21": {
         "id": "21",
-        "number": "Orion Mall Complex - 301",
-        "road": "Orion Mall Parkway",
-        "block": "Orion Mall Complex",
-        "facing": "South",
-        "x": 807,
-        "y": 211,
+        "number": "Cedar Tower - 301",
+        "road": "Gateway Boulevard",
+        "block": "Cedar Tower",
+        "facing": "East",
+        "x": 167,
+        "y": 381,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_e",
+        "roadNode": "bg_junc_w",
         "color": "cyan"
       },
       "22": {
         "id": "22",
-        "number": "Orion Mall Complex - 302",
-        "road": "Orion Mall Parkway",
-        "block": "Orion Mall Complex",
-        "facing": "South",
-        "x": 829,
-        "y": 211,
+        "number": "Cedar Tower - 302",
+        "road": "Gateway Boulevard",
+        "block": "Cedar Tower",
+        "facing": "East",
+        "x": 189,
+        "y": 381,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_e",
+        "roadNode": "bg_junc_w",
         "color": "cyan"
       },
       "23": {
         "id": "23",
-        "number": "Orion Mall Complex - 401",
-        "road": "Orion Mall Parkway",
-        "block": "Orion Mall Complex",
-        "facing": "South",
-        "x": 851,
-        "y": 211,
+        "number": "Cedar Tower - 401",
+        "road": "Gateway Boulevard",
+        "block": "Cedar Tower",
+        "facing": "East",
+        "x": 211,
+        "y": 381,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_e",
+        "roadNode": "bg_junc_w",
         "color": "cyan"
       },
       "24": {
         "id": "24",
-        "number": "Orion Mall Complex - 402",
-        "road": "Orion Mall Parkway",
-        "block": "Orion Mall Complex",
-        "facing": "South",
-        "x": 873,
-        "y": 211,
+        "number": "Cedar Tower - 402",
+        "road": "Gateway Boulevard",
+        "block": "Cedar Tower",
+        "facing": "East",
+        "x": 233,
+        "y": 381,
         "w": 48,
         "h": 34,
-        "roadNode": "brigade_gateway_n_e",
+        "roadNode": "bg_junc_w",
+        "color": "cyan"
+      },
+      "25": {
+        "id": "25",
+        "number": "Deodar Tower - 101",
+        "road": "Gateway Boulevard",
+        "block": "Deodar Tower",
+        "facing": "East",
+        "x": 167,
+        "y": 579,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "26": {
+        "id": "26",
+        "number": "Deodar Tower - 102",
+        "road": "Gateway Boulevard",
+        "block": "Deodar Tower",
+        "facing": "East",
+        "x": 189,
+        "y": 579,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "27": {
+        "id": "27",
+        "number": "Deodar Tower - 201",
+        "road": "Gateway Boulevard",
+        "block": "Deodar Tower",
+        "facing": "East",
+        "x": 211,
+        "y": 579,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "28": {
+        "id": "28",
+        "number": "Deodar Tower - 202",
+        "road": "Gateway Boulevard",
+        "block": "Deodar Tower",
+        "facing": "East",
+        "x": 233,
+        "y": 579,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "29": {
+        "id": "29",
+        "number": "Deodar Tower - 301",
+        "road": "Gateway Boulevard",
+        "block": "Deodar Tower",
+        "facing": "East",
+        "x": 167,
+        "y": 601,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "30": {
+        "id": "30",
+        "number": "Deodar Tower - 302",
+        "road": "Gateway Boulevard",
+        "block": "Deodar Tower",
+        "facing": "East",
+        "x": 189,
+        "y": 601,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "31": {
+        "id": "31",
+        "number": "Deodar Tower - 401",
+        "road": "Gateway Boulevard",
+        "block": "Deodar Tower",
+        "facing": "East",
+        "x": 211,
+        "y": 601,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "32": {
+        "id": "32",
+        "number": "Deodar Tower - 402",
+        "road": "Gateway Boulevard",
+        "block": "Deodar Tower",
+        "facing": "East",
+        "x": 233,
+        "y": 601,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "33": {
+        "id": "33",
+        "number": "Ebony Tower - 101",
+        "road": "Gateway Boulevard",
+        "block": "Ebony Tower",
+        "facing": "North",
+        "x": 287,
+        "y": 729,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "34": {
+        "id": "34",
+        "number": "Ebony Tower - 102",
+        "road": "Gateway Boulevard",
+        "block": "Ebony Tower",
+        "facing": "North",
+        "x": 309,
+        "y": 729,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "35": {
+        "id": "35",
+        "number": "Ebony Tower - 201",
+        "road": "Gateway Boulevard",
+        "block": "Ebony Tower",
+        "facing": "North",
+        "x": 331,
+        "y": 729,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "36": {
+        "id": "36",
+        "number": "Ebony Tower - 202",
+        "road": "Gateway Boulevard",
+        "block": "Ebony Tower",
+        "facing": "North",
+        "x": 353,
+        "y": 729,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "37": {
+        "id": "37",
+        "number": "Ebony Tower - 301",
+        "road": "Gateway Boulevard",
+        "block": "Ebony Tower",
+        "facing": "North",
+        "x": 287,
+        "y": 751,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "38": {
+        "id": "38",
+        "number": "Ebony Tower - 302",
+        "road": "Gateway Boulevard",
+        "block": "Ebony Tower",
+        "facing": "North",
+        "x": 309,
+        "y": 751,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "39": {
+        "id": "39",
+        "number": "Ebony Tower - 401",
+        "road": "Gateway Boulevard",
+        "block": "Ebony Tower",
+        "facing": "North",
+        "x": 331,
+        "y": 751,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "40": {
+        "id": "40",
+        "number": "Ebony Tower - 402",
+        "road": "Gateway Boulevard",
+        "block": "Ebony Tower",
+        "facing": "North",
+        "x": 353,
+        "y": 751,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_sw",
+        "color": "cyan"
+      },
+      "41": {
+        "id": "41",
+        "number": "Fern Tower - 101",
+        "road": "Gateway Boulevard",
+        "block": "Fern Tower",
+        "facing": "North",
+        "x": 527,
+        "y": 769,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_s",
+        "color": "cyan"
+      },
+      "42": {
+        "id": "42",
+        "number": "Fern Tower - 102",
+        "road": "Gateway Boulevard",
+        "block": "Fern Tower",
+        "facing": "North",
+        "x": 549,
+        "y": 769,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_s",
+        "color": "cyan"
+      },
+      "43": {
+        "id": "43",
+        "number": "Fern Tower - 201",
+        "road": "Gateway Boulevard",
+        "block": "Fern Tower",
+        "facing": "North",
+        "x": 571,
+        "y": 769,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_s",
+        "color": "cyan"
+      },
+      "44": {
+        "id": "44",
+        "number": "Fern Tower - 202",
+        "road": "Gateway Boulevard",
+        "block": "Fern Tower",
+        "facing": "North",
+        "x": 593,
+        "y": 769,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_s",
+        "color": "cyan"
+      },
+      "45": {
+        "id": "45",
+        "number": "Fern Tower - 301",
+        "road": "Gateway Boulevard",
+        "block": "Fern Tower",
+        "facing": "North",
+        "x": 527,
+        "y": 791,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_s",
+        "color": "cyan"
+      },
+      "46": {
+        "id": "46",
+        "number": "Fern Tower - 302",
+        "road": "Gateway Boulevard",
+        "block": "Fern Tower",
+        "facing": "North",
+        "x": 549,
+        "y": 791,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_s",
+        "color": "cyan"
+      },
+      "47": {
+        "id": "47",
+        "number": "Fern Tower - 401",
+        "road": "Gateway Boulevard",
+        "block": "Fern Tower",
+        "facing": "North",
+        "x": 571,
+        "y": 791,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_s",
+        "color": "cyan"
+      },
+      "48": {
+        "id": "48",
+        "number": "Fern Tower - 402",
+        "road": "Gateway Boulevard",
+        "block": "Fern Tower",
+        "facing": "North",
+        "x": 593,
+        "y": 791,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_s",
+        "color": "cyan"
+      },
+      "49": {
+        "id": "49",
+        "number": "Gulmohar Tower - 101",
+        "road": "Orion Mall Parkway",
+        "block": "Gulmohar Tower",
+        "facing": "North",
+        "x": 727,
+        "y": 739,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_se",
+        "color": "cyan"
+      },
+      "50": {
+        "id": "50",
+        "number": "Gulmohar Tower - 102",
+        "road": "Orion Mall Parkway",
+        "block": "Gulmohar Tower",
+        "facing": "North",
+        "x": 749,
+        "y": 739,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_se",
+        "color": "cyan"
+      },
+      "51": {
+        "id": "51",
+        "number": "Gulmohar Tower - 201",
+        "road": "Orion Mall Parkway",
+        "block": "Gulmohar Tower",
+        "facing": "North",
+        "x": 771,
+        "y": 739,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_se",
+        "color": "cyan"
+      },
+      "52": {
+        "id": "52",
+        "number": "Gulmohar Tower - 202",
+        "road": "Orion Mall Parkway",
+        "block": "Gulmohar Tower",
+        "facing": "North",
+        "x": 793,
+        "y": 739,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_se",
+        "color": "cyan"
+      },
+      "53": {
+        "id": "53",
+        "number": "Gulmohar Tower - 301",
+        "road": "Orion Mall Parkway",
+        "block": "Gulmohar Tower",
+        "facing": "North",
+        "x": 727,
+        "y": 761,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_se",
+        "color": "cyan"
+      },
+      "54": {
+        "id": "54",
+        "number": "Gulmohar Tower - 302",
+        "road": "Orion Mall Parkway",
+        "block": "Gulmohar Tower",
+        "facing": "North",
+        "x": 749,
+        "y": 761,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_se",
+        "color": "cyan"
+      },
+      "55": {
+        "id": "55",
+        "number": "Gulmohar Tower - 401",
+        "road": "Orion Mall Parkway",
+        "block": "Gulmohar Tower",
+        "facing": "North",
+        "x": 771,
+        "y": 761,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_se",
+        "color": "cyan"
+      },
+      "56": {
+        "id": "56",
+        "number": "Gulmohar Tower - 402",
+        "road": "Orion Mall Parkway",
+        "block": "Gulmohar Tower",
+        "facing": "North",
+        "x": 793,
+        "y": 761,
+        "w": 48,
+        "h": 34,
+        "roadNode": "bg_junc_se",
         "color": "cyan"
       }
     },
     "amenities": [
       {
-        "id": "brigade_gateway_gate_1",
-        "name": "Brigade Gateway Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "brigade_gateway_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
+        "id": "brigade_gateway_club",
+        "name": "Sheraton Grand Club & Spa",
+        "description": "Heated indoor pool, spa, fine dining, ballroom & helipad",
+        "x": 400,
+        "y": 240,
+        "roadNode": "bg_junc_nw",
+        "icon": "\ud83c\udfca",
+        "type": "clubhouse"
       },
       {
-        "id": "brigade_gateway_gate_2",
-        "name": "Brigade Gateway Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "brigade_gateway_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
+        "id": "brigade_gateway_wtc",
+        "name": "World Trade Center Bangalore",
+        "description": "32 floors premier commercial tower and global trade hub",
+        "x": 840,
+        "y": 170,
+        "roadNode": "bg_junc_ne",
+        "icon": "\ud83c\udfe2",
+        "type": "civic"
       },
       {
         "id": "brigade_gateway_mall",
-        "name": "Orion Mall & Man-Made Gateway Lake",
-        "description": "Iconic lakeside shopping mall, PVR IMAX, lakeside open dining promenade",
-        "x": 620,
-        "y": 690,
-        "roadNode": "brigade_gateway_s_mid",
+        "name": "Orion Mall & PVR Cinemas",
+        "description": "Bangalore flagship waterfront mall with 150+ international stores",
+        "x": 840,
+        "y": 440,
+        "roadNode": "bg_gate_orion",
         "icon": "\ud83d\udecd\ufe0f",
         "type": "mall"
-      },
-      {
-        "id": "brigade_gateway_club",
-        "name": "The Gateway Galaxy Club",
-        "description": "5-star resident clubhouse, Olympic pool, indoor badminton & spa",
-        "x": 620,
-        "y": 270,
-        "roadNode": "brigade_gateway_n_mid",
-        "icon": "\ud83c\udfca",
-        "type": "clubhouse"
       }
     ],
     "roadLabels": [
       {
         "name": "GATEWAY BOULEVARD",
+        "x": 230,
+        "y": 480,
+        "vertical": true
+      },
+      {
+        "name": "ORION LAKE PROMENADE",
         "x": 620,
+        "y": 360,
+        "vertical": false
+      },
+      {
+        "name": "WTC RING LINK",
+        "x": 780,
+        "y": 205,
+        "vertical": false
+      },
+      {
+        "name": "DR. RAJKUMAR CORRIDOR",
+        "x": 160,
         "y": 490,
         "vertical": false
       },
       {
         "name": "ORION MALL PARKWAY",
-        "x": 620,
-        "y": 255,
+        "x": 800,
+        "y": 690,
         "vertical": false
-      },
-      {
-        "name": "WTC RING LINK",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "LAKE PROMENADE WAY",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "DR. RAJKUMAR HIGHWAY",
-        "x": 935,
-        "y": 375,
-        "vertical": true
       }
     ],
-    "defaultStartGate": "brigade_gateway_gate_1",
+    "defaultStartGate": "bg_gate_main",
     "sectors": [
-      "Residential Towers A-L",
-      "World Trade Center",
-      "Orion Mall Complex"
+      "Aster Tower",
+      "Banyan Tower",
+      "Cedar Tower",
+      "Deodar Tower",
+      "Ebony Tower",
+      "Fern Tower",
+      "Gulmohar Tower"
     ]
   },
   "sadashivanagar": {

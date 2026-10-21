@@ -1,6 +1,14 @@
 import json
 import math
 import os
+import sys
+
+# Ensure current directory is on path for importing blueprints
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.insert(0, current_dir)
+
+from layout_blueprints import BLUEPRINTS
 
 # 1. Himagiri Meadows (Master Layout from actual map_data.json)
 with open('himagiri-meadows/map_data.json', 'r', encoding='utf-8') as f:
@@ -153,6 +161,8 @@ prestige_falcon_city = {
     'groundPolygon': "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
     'borderTreesPath': "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
     'gardenPark': {'x': 440, 'y': 455, 'w': 360, 'h': 50, 'rx': 8, 'label': "Grand Central Lawn & Water Mirror"},
+    'waterBody': {'x': 540, 'y': 430, 'w': 180, 'h': 70, 'rx': 14, 'label': 'Grand Falcon Olympic Pool'},
+    'landmarks': [{'x': 1000, 'y': 360, 'w': 140, 'h': 160, 'rx': 8, 'label': '🛍️ Forum Falcon City Mall & Metro', 'fill': '#1e1b4b', 'stroke': '#818cf8'}],
     'roads': {'nodes': pfc_nodes, 'edges': pfc_edges},
     'plots': pfc_plots,
     'amenities': pfc_amenities,
@@ -273,7 +283,8 @@ prestige_elysian = {
     'center': {'x': 620, 'y': 480},
     'groundPolygon': "90,480 220,170 620,150 1020,170 1100,480 1020,790 620,830 220,790 Z",
     'borderTreesPath': "M 90,480 L 220,170 L 620,150 L 1020,170 L 1100,480 L 1020,790 L 620,830 L 220,790 Z",
-    'gardenPark': {'x': 450, 'y': 455, 'w': 340, 'h': 50, 'rx': 8, 'label': "Central Zen Garden & Reflection Pool"},
+    'gardenPark': {'x': 450, 'y': 455, 'w': 340, 'h': 50, 'rx': 8, 'label': "Central Zen Garden"},
+    'waterBody': {'x': 500, 'y': 430, 'w': 240, 'h': 70, 'rx': 16, 'label': 'Zen Reflection Water Mirror & Heated Infinity Pool'},
     'roads': {'nodes': pe_nodes, 'edges': pe_edges},
     'plots': pe_plots,
     'amenities': pe_amenities,
@@ -394,7 +405,8 @@ kristal_beryl = {
     'center': {'x': 620, 'y': 480},
     'groundPolygon': "90,480 220,170 620,150 1020,170 1100,480 1020,790 620,830 220,790 Z",
     'borderTreesPath': "M 90,480 L 220,170 L 620,150 L 1020,170 L 1100,480 L 1020,790 L 620,830 L 220,790 Z",
-    'gardenPark': {'x': 450, 'y': 455, 'w': 340, 'h': 50, 'rx': 8, 'label': "Central Crystal Fountain Plaza"},
+    'gardenPark': {'x': 450, 'y': 360, 'w': 340, 'h': 50, 'rx': 8, 'label': "Central Crystal Fountain Plaza"},
+    'waterBody': {'x': 540, 'y': 430, 'w': 160, 'h': 70, 'rx': 14, 'label': 'Beryl Courtyard Swimming Pool & Kids Splash'},
     'roads': {'nodes': kb_nodes, 'edges': kb_edges},
     'plots': kb_plots,
     'amenities': kb_amenities,
@@ -423,6 +435,104 @@ def build_custom_layout(spec):
     amenities_info = spec.get('amenities', [])
     color_theme = spec.get('colorTheme', 'cyan')
     sectors = spec.get('sectors', [f'{avenues[1]} Sector', f'{avenues[2]} Sector', f'{avenues[3]} Sector', f'{avenues[4]} Sector'])
+
+    # 1. Custom Architectural Blueprint for Bangalore Flagship Communities
+    if lid in BLUEPRINTS:
+        bp = BLUEPRINTS[lid]
+        nodes = bp['nodes']
+        edges = [{'u': u, 'v': v, 'road': r, 'type': t} for u, v, r, t in bp['edges']]
+        ground_poly = bp.get('groundPolygon', "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z")
+        border_trees = bp.get('borderTreesPath', f"M {ground_poly.replace(' ', ' L ')} Z")
+        water_body = bp.get('waterBody', None)
+        garden_park = bp.get('gardenPark', None)
+        landmarks = bp.get('landmarks', None)
+        road_labels = bp.get('roadLabels', [])
+        default_gate = bp.get('defaultStartGate', list(nodes.keys())[0])
+
+        amenities = []
+        for am in bp.get('amenities', []):
+            amenities.append({
+                'id': f"{lid}_{am['id']}",
+                'name': am['name'],
+                'description': am.get('desc', 'Community facility'),
+                'x': am.get('x', 620),
+                'y': am.get('y', 480),
+                'roadNode': am['node'],
+                'icon': am.get('icon', '📍'),
+                'type': am.get('type', 'general')
+            })
+
+        plots = {}
+        uid = 1
+        blocks = bp.get('blocks', [])
+        custom_sectors = []
+
+        if blocks:
+            flats = [101, 102, 201, 202, 301, 302, 401, 402]
+            for b_name, bx, by, b_node, b_road, b_facing in blocks:
+                custom_sectors.append(b_name)
+                for f_idx, fl in enumerate(flats):
+                    pid = str(uid)
+                    num_str = f"{b_name} - {fl}"
+                    plots[pid] = {
+                        'id': pid,
+                        'number': num_str,
+                        'road': b_road,
+                        'block': b_name,
+                        'facing': b_facing,
+                        'x': bx + (f_idx % 4) * 22 - 33,
+                        'y': by + (f_idx // 4) * 22 - 11,
+                        'w': 48,
+                        'h': 34,
+                        'roadNode': b_node,
+                        'color': color_theme
+                    }
+                    uid += 1
+        else:
+            custom_sectors = spec.get('sectors', ['Sector A', 'Sector B'])
+            circle_nodes = [k for k in nodes.keys() if 'in_' in k or 'out_' in k]
+            for i, cn in enumerate(circle_nodes):
+                for sub in range(2):
+                    pid = str(uid)
+                    plots[pid] = {
+                        'id': pid,
+                        'number': f"Plot {uid}",
+                        'road': nodes[cn]['label'],
+                        'block': custom_sectors[0] if i < len(circle_nodes)//2 else custom_sectors[-1],
+                        'facing': 'North' if nodes[cn]['y'] > 480 else 'South',
+                        'x': nodes[cn]['x'] + (sub * 30 - 15),
+                        'y': nodes[cn]['y'] + (25 if nodes[cn]['y'] > 480 else -25),
+                        'w': 44,
+                        'h': 32,
+                        'roadNode': cn,
+                        'color': color_theme
+                    }
+                    uid += 1
+
+        return {
+            'id': lid,
+            'name': name,
+            'location': location,
+            'zone': zone,
+            'type': ltype,
+            'unitType': unitType,
+            'unitCount': len(plots),
+            'bounds': {'minX': 60, 'maxX': 1180, 'minY': 140, 'maxY': 860},
+            'center': {'x': 620, 'y': 480},
+            'groundPolygon': ground_poly,
+            'borderTreesPath': border_trees,
+            'waterBody': water_body,
+            'gardenPark': garden_park,
+            'landmarks': landmarks,
+            'roads': {'nodes': nodes, 'edges': edges},
+            'plots': plots,
+            'amenities': amenities,
+            'roadLabels': road_labels,
+            'defaultStartGate': default_gate,
+            'sectors': custom_sectors if custom_sectors else sectors
+        }
+
+    # 2. Fallback Plotted Layout Generator for BDA & Heritage layouts
 
     bounds = {'minX': 60, 'maxX': 1180, 'minY': 160, 'maxY': 840}
     center = {'x': 600, 'y': 480}
