@@ -120,7 +120,7 @@ for t_num, tx, ty, tnode, troad in tower_configs_pfc:
             'id': pid,
             'number': num_str,
             'road': troad,
-            'block': f"Tower {t_num} (Block {'ABCDEFG'[t_num-1]})",
+            'block': f"Block {'ABCDEFG'[t_num-1]}",
             'facing': 'East' if t_num <= 4 else 'North',
             'x': tx + (idx % 3) * 24 - 24,
             'y': ty + (idx // 3) * 20 - 10,
@@ -164,7 +164,7 @@ prestige_falcon_city = {
         {'name': "FORUM PROMENADE", 'x': 915, 'y': 365, 'vertical': True}
     ],
     'defaultStartGate': 'pfc_gate_main',
-    'sectors': ['Tower 1 (Block A)', 'Tower 2 (Block B)', 'Tower 3 (Block C)', 'Tower 4 (Block D)', 'Tower 5 (Block E)', 'Tower 6 (Block F)', 'Tower 7 (Block G)']
+    'sectors': ['Block A', 'Block B', 'Block C', 'Block D', 'Block E', 'Block F', 'Block G']
 }
 
 
@@ -241,7 +241,7 @@ for t_num, t_name, tx, ty, tnode, troad in tower_configs_pe:
             'id': pid,
             'number': num_str,
             'road': troad,
-            'block': f"Tower {t_num} ({t_name})",
+            'block': f"{t_name} Tower",
             'facing': 'East' if t_num in [1, 3] else 'West',
             'x': tx + (idx % 3) * 26 - 26,
             'y': ty + (idx // 3) * 20 - 12,
@@ -285,7 +285,7 @@ prestige_elysian = {
         {'name': "ARGENT AVENUE", 'x': 895, 'y': 370, 'vertical': True}
     ],
     'defaultStartGate': 'pe_gate_main',
-    'sectors': ['Tower 1 (Aurum)', 'Tower 2 (Argent)', 'Tower 3 (Cuprum)', 'Tower 4 (Platin)']
+    'sectors': ['Aurum Tower', 'Argent Tower', 'Cuprum Tower', 'Platin Tower']
 }
 
 
@@ -488,7 +488,7 @@ def build_custom_layout(spec):
                         any(term in ltype.lower() for term in ['apartment', 'township', 'high-rise', 'condominium'])
 
     if is_apartment_type:
-        block_names = sectors if sectors and len(sectors) >= 2 else [f'{unitPrefix} {i+1}' for i in range(4)]
+        block_names = sectors if sectors and len(sectors) >= 2 else [f'{unitPrefix} {chr(65+i)}' for i in range(4)]
         num_blocks = min(len(block_names), 6)
         block_positions = [
             (280, 200, f'{lid}_n_w', avenues[1], 'South'),
@@ -654,7 +654,7 @@ specs = [
     {
         'id': 'prestige_song_south', 'name': 'Prestige Song of the South', 'location': 'Begur-Koppa Road, off Bannerghatta Road, Bangalore South',
         'zone': 'south', 'type': 'High-Rise Residential Township', 'unitType': 'Apartment / Tower', 'unitPrefix': 'Tower', 'colorTheme': 'cyan',
-        'sectors': ['Tower 1-4 (Symphony)', 'Tower 5-8 (Melody)', 'Tower 9-12 (Harmony)', 'Tower 13-17 (Rhythm)'],
+        'sectors': ['Symphony Tower', 'Melody Tower', 'Harmony Tower', 'Rhythm Tower'],
         'avenues': ['Song of South Boulevard', 'Symphony Way', 'Lakeview Promenade', 'Rhythm Avenue', 'Melody Parkway'],
         'amenities': [
             {'id': 'club', 'name': 'Grand Symphony Clubhouse', 'desc': 'Double-height clubhouse, gym, mini-theatre & banquet halls', 'x': 620, 'y': 270, 'node': 'n_mid', 'type': 'clubhouse', 'icon': '🎭'},
@@ -674,7 +674,7 @@ specs = [
     {
         'id': 'purva_westend', 'name': 'Purva Westend', 'location': 'Kudlu Gate, Hosur Main Road, Bangalore South',
         'zone': 'south', 'type': 'Cinema-Themed Luxury High-Rise', 'unitType': 'Apartment / Tower', 'unitPrefix': 'Tower', 'colorTheme': 'cyan',
-        'sectors': ['Broadway Tower', 'Opera Tower', 'West End Tower 1', 'West End Tower 2'],
+        'sectors': ['Broadway Tower', 'Opera Tower', 'West End Tower A', 'West End Tower B'],
         'avenues': ['Westend Boulevard', 'Broadway Promenade', 'Cinema Walkway', 'Kudlu Link', 'Opera Court'],
         'amenities': [
             {'id': 'cinema', 'name': 'Open Air Amphitheatre Cinema', 'desc': 'Private outdoor amphitheatre cinema with acoustic surround sound', 'x': 620, 'y': 270, 'node': 'n_mid', 'type': 'entertainment', 'icon': '🎬'},
@@ -757,7 +757,7 @@ specs = [
     {
         'id': 'purva_panorama', 'name': 'Purva Panorama', 'location': 'Bannerghatta Main Road / Kalena Agrahara, Bangalore South',
         'zone': 'south', 'type': 'High-Rise Residential Society', 'unitType': 'Apartment / Tower', 'unitPrefix': 'Tower', 'colorTheme': 'cyan',
-        'sectors': ['Tower 1-3', 'Tower 4-6'],
+        'sectors': ['Tower A', 'Tower B'],
         'avenues': ['Panorama Boulevard', 'Hilltop Avenue', 'Central Garden Drive', 'Kalena Link', 'Bannerghatta Access Way'],
         'amenities': [
             {'id': 'club', 'name': 'Panorama Club & Pool', 'desc': 'Clubhouse, rooftop tennis court, pool and squash', 'x': 620, 'y': 270, 'node': 'n_mid', 'type': 'clubhouse', 'icon': '🏊'}
@@ -795,7 +795,7 @@ specs = [
     {
         'id': 'prestige_lakeside', 'name': 'Prestige Lakeside Habitat', 'location': 'Varthur Main Road, Whitefield Corridor, Bangalore East',
         'zone': 'whitefield', 'type': 'Disney-Themed Township (Villas & High-Rises)', 'unitType': 'Apartment / Tower', 'unitPrefix': 'Tower', 'colorTheme': 'cyan',
-        'sectors': ['Tower 1-6', 'Tower 7-12', 'Disney Villa Enclave'],
+        'sectors': ['Tower A', 'Tower B', 'Disney Villa Enclave'],
         'avenues': ['Lakeside Boulevard', 'Disney Promenade', 'Varthur Lake Parkway', 'Fairytale Way', 'Orchard Link'],
         'amenities': [
             {'id': 'club', 'name': 'Disney Themed Central Clubhouse', 'desc': '4 massive clubhouses, multiple pools, cricket pitch & lakefront view', 'x': 620, 'y': 440, 'node': 'junc_ctr', 'type': 'clubhouse', 'icon': '🏰'}
@@ -813,7 +813,7 @@ specs = [
     {
         'id': 'prestige_shantiniketan', 'name': 'Prestige Shantiniketan', 'location': 'ITPL Main Road, Whitefield, Bangalore East',
         'zone': 'whitefield', 'type': 'Integrated Township with Forum Shantiniketan Mall', 'unitType': 'Apartment / Tower', 'unitPrefix': 'Tower', 'colorTheme': 'cyan',
-        'sectors': ['Crescent Tower', 'Tower 1-8', 'Tower 9-16', 'Tower 17-24'],
+        'sectors': ['Crescent Tower', 'Tower A', 'Tower B', 'Tower C'],
         'avenues': ['Shantiniketan Boulevard', 'ITPL Access Parkway', 'Forum Mall Promenade', 'Urban Terrace Way', 'Metro Link'],
         'amenities': [
             {'id': 'mall', 'name': 'Forum Shantiniketan Mall', 'desc': 'Direct pedestrian access to Forum Mall, PVR, food court and high-street shopping', 'x': 620, 'y': 690, 'node': 's_mid', 'type': 'mall', 'icon': '🛍️'}
@@ -970,7 +970,7 @@ specs = [
     {
         'id': 'bhartiya_city', 'name': 'Bhartiya City Nikoo Homes', 'location': 'Thanisandra Main Road, Bangalore North',
         'zone': 'north', 'type': '125-Acre Smart Integrated City', 'unitType': 'Apartment / Tower', 'unitPrefix': 'Tower', 'colorTheme': 'cyan',
-        'sectors': ['Nikoo Homes 1', 'Nikoo Homes 2', 'Central Park Enclave'],
+        'sectors': ['Nikoo Homes A', 'Nikoo Homes B', 'Central Park Enclave'],
         'avenues': ['Nikoo Boulevard', 'Central Park Parkway', 'Bhartiya High Street', 'Rambler Way', 'Thanisandra Highway'],
         'amenities': [
             {'id': 'park', 'name': 'Bhartiya Central Park & Amphitheatre', 'desc': '7-acre central park, open-air cinema and shopping boulevard', 'x': 620, 'y': 480, 'node': 'junc_ctr', 'type': 'park', 'icon': '🌳'}
@@ -1015,7 +1015,7 @@ specs = [
     {
         'id': 'prestige_misty_waters', 'name': 'Prestige Misty Waters', 'location': 'Hebbal / Outer Ring Road, Bangalore North',
         'zone': 'north', 'type': 'Luxury High-Rise Society', 'unitType': 'Apartment / Tower', 'unitPrefix': 'Tower', 'colorTheme': 'cyan',
-        'sectors': ['Tower 1-2', 'Tower 3-4'],
+        'sectors': ['Tower A', 'Tower B'],
         'avenues': ['Misty Waters Boulevard', 'Hebbal Ring Link', 'Lakeview Parkway', 'Central Pool Way', 'Nagavara Approach Road'],
         'amenities': [
             {'id': 'club', 'name': 'Misty Waters Clubhouse', 'desc': 'Heated swimming pool, badminton, squash and banquet', 'x': 620, 'y': 270, 'node': 'n_mid', 'type': 'clubhouse', 'icon': '🏊'}
@@ -1024,7 +1024,7 @@ specs = [
     {
         'id': 'godrej_woodsman', 'name': 'Godrej Woodsman Estate', 'location': 'Bellary Road, Hebbal, Bangalore North',
         'zone': 'north', 'type': 'High-Rise Residential Society', 'unitType': 'Apartment / Tower', 'unitPrefix': 'Tower', 'colorTheme': 'cyan',
-        'sectors': ['Tower 1-4', 'Tower 5-7'],
+        'sectors': ['Tower A', 'Tower B'],
         'avenues': ['Woodsman Boulevard', 'Bellary Road Parkway', 'Airport Highway Link', 'Hebbal Flyover Way', 'Lakeview Drive'],
         'amenities': [
             {'id': 'club', 'name': 'The Woodsman Club', 'desc': 'Gymnasium, tennis court, pool and landscaped gardens', 'x': 620, 'y': 270, 'node': 'n_mid', 'type': 'clubhouse', 'icon': '🌳'}
@@ -1144,7 +1144,7 @@ specs = [
     {
         'id': 'peenya_industrial', 'name': 'Peenya Industrial Township', 'location': 'Tumkur Road, Bangalore West',
         'zone': 'west', 'type': 'Manufacturing & Enterprise Township', 'unitType': 'Block', 'unitPrefix': 'Block', 'colorTheme': 'cyan',
-        'sectors': ['1st Stage Sector', '4th Cross Sector'],
+        'sectors': ['Stage A Sector', 'Cross B Sector'],
         'avenues': ['Peenya Main Boulevard', '1st Stage Parkway', '4th Cross Way', 'Outer Ring Link', 'Tumkur Highway'],
         'amenities': [
             {'id': 'hub', 'name': 'Peenya Industries Association Hub', 'desc': 'Business auditorium, conference center and banking hub', 'x': 620, 'y': 480, 'node': 'junc_ctr', 'type': 'civic', 'icon': '🏢'}

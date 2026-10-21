@@ -132,8 +132,7 @@
     activeFilter: 'ALL',
     userLocation: null,
     isGeoTracking: false,
-    geoWatchId: null,
-    expandedBlocks: new Set()
+    geoWatchId: null
   };
 
   // DOM Elements
@@ -313,6 +312,52 @@
     return false;
   }
 
+  // Clean block/apartment names to guarantee ZERO numbers or digits inside apartment shapes & UI
+  function cleanBlockTitle(bName) {
+    if (!bName) return 'Residential Block';
+    let str = String(bName).trim();
+
+    // Extract inside parentheses if present, e.g. "Tower 1 (Block A)" -> "Block A", "Tower 1 (Aurum)" -> "Aurum Tower"
+    const paren = str.match(/\(([^)]+)\)/);
+    if (paren) {
+      let inside = paren[1].trim();
+      if (/block\s+[A-Za-z]/i.test(inside)) {
+        return inside;
+      }
+      if (!/tower|block|wing/i.test(inside)) {
+        inside += ' Tower';
+      }
+      return inside;
+    }
+
+    // Common named tower range / number conversions
+    str = str.replace(/Tower\s+1[-–—]\d+/gi, 'Tower A');
+    str = str.replace(/Tower\s+2[-–—]\d+/gi, 'Tower B');
+    str = str.replace(/Tower\s+[3-5][-–—]\d+/gi, 'Tower B');
+    str = str.replace(/Tower\s+[6-9][-–—]\d+/gi, 'Tower B');
+    str = str.replace(/Tower\s+1[0-9][-–—]\d+/gi, 'Tower C');
+    str = str.replace(/Tower\s+1\b/gi, 'Tower A');
+    str = str.replace(/Tower\s+2\b/gi, 'Tower B');
+    str = str.replace(/Tower\s+3\b/gi, 'Tower C');
+    str = str.replace(/Tower\s+4\b/gi, 'Tower D');
+    str = str.replace(/Tower\s+5\b/gi, 'Tower E');
+    str = str.replace(/Tower\s+6\b/gi, 'Tower F');
+    str = str.replace(/Tower\s+7\b/gi, 'Tower G');
+    str = str.replace(/Nikoo\s+Homes\s+1/gi, 'Nikoo Homes A');
+    str = str.replace(/Nikoo\s+Homes\s+2/gi, 'Nikoo Homes B');
+    str = str.replace(/West\s+End\s+Tower\s+1/gi, 'West End Tower A');
+    str = str.replace(/West\s+End\s+Tower\s+2/gi, 'West End Tower B');
+    str = str.replace(/1st\s+Stage/gi, 'Stage A');
+    str = str.replace(/4th\s+Cross/gi, 'Cross B');
+
+    // Remove any remaining numbers or digits from apartment/block titles
+    str = str.replace(/\b[0-9]+(?:st|nd|rd|th)?\b/gi, '').replace(/\d+/g, '').replace(/\s+/g, ' ').trim();
+    if (!str || str.toLowerCase() === 'tower' || str.toLowerCase() === 'block') {
+      return (bName.replace(/\d+/g, '').trim() || 'Block');
+    }
+    return str;
+  }
+
   // Short clean unit number helper (e.g. "Tower 1 - 101" -> "101", "Block A - 202" -> "202")
   function getShortUnitNumber(p) {
     if (!p) return '';
@@ -362,12 +407,13 @@
         const bx = cx - blockW / 2;
         const by = cy - blockH / 2;
 
-        const safeBlockId = bName.replace(/[^a-zA-Z0-9]/g, '_');
+        const cleanName = cleanBlockTitle(bName);
+        const safeBlockId = cleanName.replace(/[^a-zA-Z0-9]/g, '_');
         const blockG = document.createElementNS("http://www.w3.org/2000/svg", "g");
         blockG.setAttribute("class", `svg-building-block svg-plot ${isBlockActive ? 'block-has-active active-target' : ''}`);
         blockG.setAttribute("id", `building-block-${safeBlockId}`);
         blockG.setAttribute("data-id", uList[0].id);
-        blockG.setAttribute("data-block", bName);
+        blockG.setAttribute("data-block", cleanName);
         blockG.setAttribute("data-road", uList[0].road);
         blockG.style.cursor = "pointer";
 
@@ -401,7 +447,7 @@
         accent.setAttribute("fill", isBlockActive ? "#f59e0b" : "#38bdf8");
         blockG.appendChild(accent);
 
-        // Block Title text (e.g. 🏢 Tower 1 or 🏢 Block A) - No numbers inside
+        // Block Title text (e.g. 🏢 Block A, 🏢 Aurum Tower) - Absolutely NO numbers or digits inside
         const titleTxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
         titleTxt.setAttribute("class", "building-title");
         titleTxt.setAttribute("x", cx);
@@ -410,7 +456,7 @@
         titleTxt.setAttribute("font-size", "12px");
         titleTxt.setAttribute("font-weight", "700");
         titleTxt.setAttribute("fill", isBlockActive ? "#fbbf24" : "#f1f5f9");
-        titleTxt.textContent = `🏢 ${bName}`;
+        titleTxt.textContent = `🏢 ${cleanName}`;
         blockG.appendChild(titleTxt);
 
         // Subtitle text (e.g. Apartment Tower / Block)
@@ -422,7 +468,7 @@
         subTxt.setAttribute("font-size", "9.5px");
         subTxt.setAttribute("font-weight", "500");
         subTxt.setAttribute("fill", isBlockActive ? "#fde68a" : "#94a3b8");
-        subTxt.textContent = currentLayout.unitType ? currentLayout.unitType.replace(/ \/ .*/, '') : 'Apartment Tower';
+        subTxt.textContent = (currentLayout.unitType ? currentLayout.unitType.replace(/ \/ .*/, '') : 'Apartment Tower').replace(/\d+/g, '').trim();
         blockG.appendChild(subTxt);
 
         // Click to select block & calculate route
@@ -431,11 +477,11 @@
           selectPlot(uList[0].id, true);
         });
 
-        // Hover Tooltip
+        // Hover Tooltip (clean name with NO digits)
         blockG.addEventListener('mouseenter', (e) => {
           showPlotTooltip(e, {
-            number: bName,
-            block: bName,
+            number: cleanName,
+            block: cleanName,
             road: uList[0].road,
             facing: uList[0].facing
           });
@@ -504,7 +550,11 @@
       txt.textContent = p.number;
 
       g.appendChild(rect);
-      g.appendChild(txt);
+
+      // Only append number label for standard plotted layouts (never inside apartments/blocks)
+      if (!isApartmentOrBlockLayout(currentLayout)) {
+        g.appendChild(txt);
+      }
 
       // Interactions
       g.addEventListener('click', () => selectPlot(p.id, true));
@@ -676,7 +726,7 @@
       const seenBlocks = new Set();
       for (const pid in plots) {
         const p = plots[pid];
-        const b = p.block || p.number;
+        const b = cleanBlockTitle(p.block || p.number);
         if (!seenBlocks.has(b)) {
           seenBlocks.add(b);
           const opt = document.createElement('option');
@@ -733,7 +783,6 @@
     state.startNodeId = gateNodes.length > 0 ? gateNodes[0] : Object.keys(nodes)[0];
     state.selectedPlotId = null;
     state.activeRoute = null;
-    state.expandedBlocks = new Set();
 
     buildGraph();
 
@@ -1488,7 +1537,11 @@
       selectPlot(matchedPlot.id, true);
       const startName = (nodes[detectedStart]?.label || 'the main entrance').split(' (')[0];
       const uType = currentLayout.unitType || 'House';
-      const resp = `${uType} #${matchedPlot.number} is on ${matchedPlot.road} in ${matchedPlot.block}. I have highlighted its location and plotted your turn-by-turn directions from ${startName}!`;
+      const isApt = isApartmentOrBlockLayout(currentLayout);
+      const bTitle = cleanBlockTitle(matchedPlot.block);
+      const resp = isApt
+        ? `${bTitle} is on ${matchedPlot.road}. Directions plotted from ${startName}!`
+        : `${uType} #${matchedPlot.number} is on ${matchedPlot.road} in ${matchedPlot.block}. Directions plotted from ${startName}!`;
       displayAssistantResponse(resp);
       speakText(resp);
     } else {
@@ -1579,9 +1632,10 @@
 
     // Update House Info Card
     const isApt = isApartmentOrBlockLayout(currentLayout);
-    document.getElementById('card-house-num').textContent = isApt ? (plot.block || plot.number) : `#${plot.number}`;
+    const displayNum = isApt ? cleanBlockTitle(plot.block || currentLayout.name) : `#${plot.number}`;
+    document.getElementById('card-house-num').textContent = displayNum;
     document.getElementById('card-road').textContent = plot.road;
-    document.getElementById('card-block').textContent = plot.block;
+    document.getElementById('card-block').textContent = isApt ? cleanBlockTitle(plot.block) : plot.block;
     document.getElementById('card-facing').textContent = `${plot.facing} Facing`;
 
     // Distances from primary & secondary gates
@@ -1674,12 +1728,13 @@
       document.querySelectorAll('.svg-building-block').forEach(b => {
         b.classList.remove('block-has-active');
         const s = b.querySelector('.building-shell');
-        if (s && !b.classList.contains('block-expanded')) {
-          s.setAttribute('stroke', '#475569');
+        if (s) {
+          s.setAttribute('stroke', '#3b82f6');
           s.setAttribute('stroke-width', '1.5');
         }
       });
-      const safeBlockId = targetPlot.block.replace(/[^a-zA-Z0-9]/g, '_');
+      const cleanName = cleanBlockTitle(targetPlot.block);
+      const safeBlockId = cleanName.replace(/[^a-zA-Z0-9]/g, '_');
       const blk = document.getElementById(`building-block-${safeBlockId}`);
       if (blk) {
         blk.classList.add('block-has-active');
@@ -1699,11 +1754,14 @@
     const distG1 = routeG1 ? Math.round(routeG1.totalDist * 0.95) : '~180';
     const gateLabel = nodes[gate1]?.label ? nodes[gate1].label.split(' (')[0] : 'Entrance Gate';
     const uLabel = currentLayout.unitType || 'Unit';
+    const isApt = isApartmentOrBlockLayout(currentLayout);
+    const titleText = isApt ? `🏢 ${cleanBlockTitle(p.block || p.number)}` : `${uLabel} #${p.number}`;
+    const blockLabel = isApt ? cleanBlockTitle(p.block) : p.block;
 
     tooltip.innerHTML = `
-      <div style="font-weight:800;font-size:13px;color:#38bdf8;margin-bottom:2px;">${uLabel} #${p.number}</div>
+      <div style="font-weight:800;font-size:13px;color:#38bdf8;margin-bottom:2px;">${titleText}</div>
       <div style="font-size:11px;color:#cbd5e1;">Road: <strong>${p.road}</strong></div>
-      <div style="font-size:11px;color:#cbd5e1;">Sector: ${p.block} (${p.facing}-facing)</div>
+      <div style="font-size:11px;color:#cbd5e1;">Sector: ${blockLabel} (${p.facing}-facing)</div>
       <div style="font-size:10px;color:#10b981;margin-top:4px;">📍 ${distG1}m from ${gateLabel}</div>
     `;
     tooltip.style.display = 'block';
@@ -2596,10 +2654,9 @@
     if (isApartmentOrBlockLayout(currentLayout)) {
       const allPlots = Object.values(plots);
       const matchPlot = allPlots.find(p => p.block && (p.block.toLowerCase().includes(sector.toLowerCase()) || sector.toLowerCase().includes(p.block.toLowerCase())));
-      if (matchPlot && matchPlot.block) {
-        if (!state.expandedBlocks) state.expandedBlocks = new Set();
-        state.expandedBlocks.add(matchPlot.block);
-        renderPlots();
+      if (matchPlot) {
+        selectPlot(matchPlot.id, true);
+        return;
       }
     }
 
@@ -2969,7 +3026,7 @@
 
       let sampleChips = [];
       if (isApt) {
-        const blocks = [...new Set(Object.values(targetLayout.plots).map(p => p.block).filter(Boolean))];
+        const blocks = [...new Set(Object.values(targetLayout.plots).map(p => cleanBlockTitle(p.block)).filter(Boolean))];
         sampleChips = blocks.slice(0, 3).map(b => ({ text: b, query: b }));
       } else {
         const plotKeys = Object.keys(targetLayout.plots);
@@ -3335,7 +3392,7 @@
 
         let sampleChips = [];
         if (isApt) {
-          const blocks = [...new Set(Object.values(targetLayout.plots).map(p => p.block).filter(Boolean))];
+          const blocks = [...new Set(Object.values(targetLayout.plots).map(p => cleanBlockTitle(p.block)).filter(Boolean))];
           sampleChips = blocks.slice(0, 3).map(b => ({ text: b, query: b }));
         } else {
           const plotKeys = Object.keys(targetLayout.plots);
