@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
-  <title>Himagiri Meadows — Smart Community Layout & Navigator</title>
-  <meta name="description" content="Official interactive digital map and wayfinding navigator for Himagiri Meadows layout. Easily search house numbers, navigate avenues, and get turn-by-turn driving and walking directions.">
+  <title>HM Maps — Bangalore Layouts, Townships & Plot Navigator</title>
+  <meta name="description" content="Interactive digital map and wayfinding navigator for Bangalore residential layouts, gated communities, and plot areas. Search plot numbers, explore avenues, and get turn-by-turn driving and walking directions.">
   <link rel="canonical" href="https://hmmaps.in/">
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
@@ -13,14 +13,14 @@
   <!-- Open Graph / WhatsApp Preview Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://hmmaps.in/">
-  <meta property="og:title" content="Himagiri Meadows — Smart Community Layout & Navigator">
-  <meta property="og:description" content="Official interactive digital map and wayfinding navigator for Himagiri Meadows layout. Search house numbers, explore amenities, and get real-time directions.">
+  <meta property="og:title" content="HM Maps — Bangalore Layouts, Townships & Plot Navigator">
+  <meta property="og:description" content="Interactive digital map and wayfinding navigator for Bangalore residential layouts, gated communities, and plot areas. Search plot numbers, explore amenities, and get real-time directions.">
   <meta property="og:image" content="https://hmmaps.in/icon-512.png">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Himagiri Meadows — Smart Community Layout & Navigator">
-  <meta name="twitter:description" content="Search house numbers, explore amenities, and get real-time turn-by-turn directions across Himagiri Meadows.">
+  <meta name="twitter:title" content="HM Maps — Bangalore Layouts, Townships & Plot Navigator">
+  <meta name="twitter:description" content="Search plot numbers, explore amenities, and get real-time turn-by-turn directions across Bangalore residential layouts.">
   <meta name="twitter:image" content="https://hmmaps.in/icon-512.png">
 
   <link rel="manifest" href="manifest.json">
@@ -28,17 +28,17 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Himagiri Map">
+  <meta name="apple-mobile-web-app-title" content="HM Maps">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="style.css?v=22">
+  <link rel="stylesheet" href="style.css?v=23">
   <script>
     // Aggressively purge older PWA caches so updates show instantly
     if ('caches' in window) {
       caches.keys().then(function(names) {
         for (let name of names) {
-          if (name !== 'himagiri-map-v20') {
+          if (name !== 'himagiri-map-v23') {
             caches.delete(name);
           }
         }
@@ -62,7 +62,7 @@
         <div class="brand-icon" id="brand-icon">🌐</div>
         <div class="brand-titles">
           <h1 id="brand-title">HM Maps</h1>
-          <p id="brand-subtitle">Smart Layout & Community Wayfinding</p>
+          <p id="brand-subtitle">Bangalore Layout Navigator & Directory</p>
         </div>
       </div>
     </div>
@@ -74,11 +74,6 @@
     </div>
 
     <div class="header-actions">
-      <!-- Universal AI Assistant Button -->
-      <button id="header-ai-guide-btn" class="btn btn-ai-guide" title="Open AI Spatial Assistant">
-        <span class="ai-sparkle">✨</span> <span class="btn-text-full">AI Guide</span><span class="btn-text-mobile">AI</span>
-      </button>
-
       <!-- Map-specific controls (shown in map view) -->
       <div id="header-map-controls" style="display: none; align-items: center; gap: 4px;">
         <button id="header-map-toggle-btn" class="btn btn-secondary" title="Toggle Fullscreen Map / Split View">
@@ -105,43 +100,76 @@
       <!-- Hero Section -->
       <section class="portal-hero">
         <div class="portal-hero-badge">
-          <span class="badge-dot"></span> AI-Powered Spatial Navigation
+          <span class="badge-dot"></span> Interactive Digital Layout Navigator
         </div>
         <h1 class="portal-hero-title">
           Find Any House, Plot or Landmark <br />
-          <span class="text-gradient">with Intelligent AI</span>
+          <span class="text-gradient">Across Bangalore Layouts</span>
         </h1>
         <p class="portal-hero-sub">
-          Search across residential layouts, gated communities, and campuses. Ask our AI Navigator where to go to explore its interactive map and get turn-by-turn directions.
+          Search across 59+ residential layouts, gated communities, and plot areas. Select your layout to explore its interactive street map and get curb-to-curb turn-by-turn directions.
         </p>
 
-        <!-- Interactive AI Prompt Box on Hero -->
+        <!-- Quick Layout Search & Selector on Hero -->
         <div class="portal-ai-card">
           <div class="portal-ai-input-wrapper">
-            <span class="ai-sparkle-icon">✨</span>
+            <span class="ai-sparkle-icon">🔍</span>
             <input 
               type="text" 
-              id="portal-ai-input" 
+              id="portal-layout-search-input" 
               class="portal-ai-input" 
-              placeholder="Ask AI: where to go, layout or flat #..." 
+              placeholder="Search layout by name or locality (e.g. Prestige, Kristal, Himagiri, Sobha, Whitefield...)" 
               autocomplete="off"
             />
-            <button id="portal-ai-voice-btn" class="portal-ai-voice-btn" title="Speak to AI">🎤</button>
-            <button id="portal-ai-submit-btn" class="portal-ai-submit-btn">
-              <span>Ask AI</span> ➔
-            </button>
+            <button id="portal-search-clear-btn" class="clear-btn" title="Clear input" style="display: none; background: transparent; border: none; color: #94a3b8; font-size: 14px; cursor: pointer; padding: 0 8px;">✕</button>
           </div>
 
           <div class="portal-quick-chips">
-            <span class="quick-chip-label">Try Asking:</span>
-            <button class="portal-chip active-chip" data-query="Where do I go?">🧭 Where do I go?</button>
-            <button class="portal-chip" data-query="Prestige Falcon City">🏢 Prestige Falcon City</button>
-            <button class="portal-chip" data-query="Prestige Elysian">✨ Prestige Elysian</button>
-            <button class="portal-chip" data-query="Kristal Beryl">💎 Kristal Beryl</button>
-            <button class="portal-chip" data-query="Salarpuria Sattva Greenage">🌳 Salarpuria Greenage</button>
-            <button class="portal-chip" data-query="Sobha Dream Acres">🌊 Sobha Dream Acres</button>
-            <button class="portal-chip" data-query="Himagiri Meadows">🏡 Himagiri Meadows</button>
+            <span class="quick-chip-label">Quick Jump:</span>
+            <button class="portal-chip active-chip" data-layout="prestige_falcon_city">🏢 Prestige Falcon City</button>
+            <button class="portal-chip" data-layout="kristal_beryl">💎 Kristal Beryl</button>
+            <button class="portal-chip" data-layout="prestige_elysian">✨ Prestige Elysian</button>
+            <button class="portal-chip" data-layout="himagiri">🏡 Himagiri Meadows</button>
+            <button class="portal-chip" data-layout="sobha_dream_acres">🌊 Sobha Dream Acres</button>
+            <button class="portal-chip" data-layout="sattva_greenage">🌳 Salarpuria Greenage</button>
           </div>
+        </div>
+      </section>
+
+      <!-- Community Layouts Directory Grid -->
+      <section class="portal-directory">
+        <div class="directory-header">
+          <div>
+            <h2 class="directory-title">Bangalore Residential Layouts & Townships</h2>
+            <p class="directory-sub">Select your verified residential community or township across Bangalore to launch turn-by-turn wayfinding</p>
+          </div>
+        </div>
+
+        <!-- Directory Controls: Live Search & Zone Filter Tabs -->
+        <div class="directory-controls">
+          <div class="directory-search-wrapper">
+            <span class="search-icon">🔍</span>
+            <input 
+              type="text" 
+              id="directory-search-input" 
+              class="directory-search-input" 
+              placeholder="Filter 59+ layouts by name, zone (Whitefield, HSR, Hebbal...) or locality..." 
+              autocomplete="off"
+            />
+            <button id="directory-clear-search" class="directory-clear-btn" style="display: none;" title="Clear search">✕</button>
+          </div>
+          <div class="directory-zone-tabs" id="directory-zone-tabs">
+            <button class="zone-tab active" data-zone="all">🌐 All Communities (<span id="count-all">59</span>)</button>
+            <button class="zone-tab" data-zone="south">Bangalore South (<span id="count-south">18</span>)</button>
+            <button class="zone-tab" data-zone="whitefield">East & Whitefield (<span id="count-whitefield">13</span>)</button>
+            <button class="zone-tab" data-zone="ecity">Electronic City & ORR (<span id="count-ecity">7</span>)</button>
+            <button class="zone-tab" data-zone="north">North & Airport (<span id="count-north">10</span>)</button>
+            <button class="zone-tab" data-zone="west">Central & West (<span id="count-west">11</span>)</button>
+          </div>
+        </div>
+
+        <div class="communities-grid" id="communities-grid">
+          <!-- Dynamically populated by app.js from window.LAYOUTS -->
         </div>
       </section>
 
@@ -155,14 +183,14 @@
           </div>
         </div>
         <div class="feat-item">
-          <span class="feat-icon">✨</span>
+          <span class="feat-icon">📍</span>
           <div>
-            <h4>Spatial AI Assistant</h4>
-            <p>Conversational guide that pinpoints houses, rooms, gates, and amenities.</p>
+            <h4>House & Plot Locator</h4>
+            <p>Instantly pinpoint any plot number, villa, or amenity with clear street-level navigation.</p>
           </div>
         </div>
         <div class="feat-item">
-          <span class="feat-icon">📍</span>
+          <span class="feat-icon">📡</span>
           <div>
             <h4>Live GPS Location</h4>
             <p>Watch your live blue radar pin advance as you walk through avenues.</p>
@@ -372,13 +400,6 @@
         <span>↕ Expand Map</span>
       </button>
 
-      <!-- Floating AI Guide Action Button on Map View -->
-      <button id="floating-ai-btn" class="floating-ai-btn" title="Ask AI Spatial Navigator">
-        <span class="ai-sparkle-dot"></span>
-        <span class="floating-ai-icon">✨</span>
-        <span class="floating-ai-text">AI Guide</span>
-      </button>
-
       <!-- Layer Toggles on Bottom Left -->
       <div class="layer-controls">
         <label class="layer-toggle">
@@ -441,7 +462,7 @@
         <button id="close-modal-btn" class="close-card-btn" style="font-size: 18px;">✕</button>
       </div>
       <div class="modal-body">
-        <img src="original_map.png" alt="Himagiri Meadows Layout Board Photo">
+        <img src="original_map.png" alt="Community Layout Board Photo Reference">
       </div>
     </div>
   </div>
@@ -602,57 +623,6 @@
   </div>
 
   <!-- ======================================================== -->
-  <!-- AI SPATIAL ASSISTANT MODAL / DRAWER                      -->
-  <!-- ======================================================== -->
-  <div id="ai-chat-drawer" class="ai-chat-drawer" style="display: none;">
-    <div class="ai-drawer-backdrop" id="ai-drawer-backdrop"></div>
-    <div class="ai-drawer-panel">
-      <!-- Drawer Header -->
-      <div class="ai-drawer-header">
-        <div class="ai-drawer-title-wrap">
-          <div class="ai-avatar">✨</div>
-          <div>
-            <h3 class="ai-name">HM Maps AI Navigator</h3>
-            <p class="ai-status"><span class="ai-status-dot"></span> Online • Community Spatial Guide</p>
-          </div>
-        </div>
-        <div class="ai-drawer-actions">
-          <button id="ai-clear-btn" class="ai-action-btn" title="Reset Conversation">🔄</button>
-          <button id="ai-close-btn" class="ai-action-btn" title="Close AI Assistant">✕</button>
-        </div>
-      </div>
-
-      <!-- Messages Body -->
-      <div id="ai-chat-messages" class="ai-chat-messages">
-        <!-- Messages injected dynamically by app.js -->
-      </div>
-
-      <!-- Typing Indicator -->
-      <div id="ai-typing-indicator" class="ai-typing-indicator" style="display: none;">
-        <span class="typing-dot"></span>
-        <span class="typing-dot"></span>
-        <span class="typing-dot"></span>
-        <span class="typing-text">AI is locating on layout...</span>
-      </div>
-
-      <!-- Chat Input Area -->
-      <div class="ai-drawer-input-area">
-        <div class="ai-input-wrapper">
-          <input 
-            type="text" 
-            id="ai-drawer-input" 
-            class="ai-drawer-input" 
-            placeholder="Ask where to go, or enter house/plot #..." 
-            autocomplete="off"
-          />
-          <button id="ai-drawer-voice-btn" class="ai-input-btn voice-btn" title="Voice Search">🎤</button>
-          <button id="ai-drawer-send-btn" class="ai-input-btn send-btn" title="Send">➔</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ======================================================== -->
   <!-- GUIDED LAYOUT TUTORIAL WALKTHROUGH OVERLAY               -->
   <!-- ======================================================== -->
   <div id="layout-tutorial-overlay" class="tutorial-overlay" style="display: none;">
@@ -677,10 +647,10 @@
   </div>
 
   <!-- Load Scripts with Version Cache-Buster -->
-  <script src="analytics.js?v=22"></script>
-  <script src="qrcode.min.js?v=22"></script>
-  <script src="map_data.js?v=22"></script>
-  <script src="layouts_data.js?v=22"></script>
-  <script src="app.js?v=22"></script>
+  <script src="analytics.js?v=23"></script>
+  <script src="qrcode.min.js?v=23"></script>
+  <script src="map_data.js?v=23"></script>
+  <script src="layouts_data.js?v=23"></script>
+  <script src="app.js?v=23"></script>
 </body>
 </html>

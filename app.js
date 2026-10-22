@@ -1018,6 +1018,18 @@
 
     updateHeaderForLayout(currentLayout);
 
+    // Update document title and URL parameters for this layout
+    document.title = `${currentLayout.name} — HM Maps Layout Navigator`;
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set('map', layoutId);
+      if (!targetPlotId) {
+        url.searchParams.delete('house');
+        url.searchParams.delete('plot');
+      }
+      window.history.replaceState({}, '', url.toString());
+    } catch (_) {}
+
     // Switch view
     const portal = document.getElementById('portal-view');
     const mapApp = document.getElementById('app-container');
@@ -1038,10 +1050,29 @@
     setTimeout(() => {
       fitMapToView(true);
       if (targetPlotId) {
-        selectPlot(targetPlotId, true);
-        calculateAndDisplayRoute(state.startNodeId, targetPlotId);
-        const p = plots[targetPlotId];
-        startLayoutTutorial(currentLayout, p ? p.number : targetPlotId);
+        let resolvedPlotId = targetPlotId;
+        if (!plots[targetPlotId]) {
+          const cleanTarget = String(targetPlotId).toLowerCase().replace(/^(house|plot|villa|flat|unit)\s*#?/i, '').trim();
+          for (const [pid, p] of Object.entries(plots)) {
+            const pNum = String(p.number || '').toLowerCase();
+            if (pNum === cleanTarget || pid.toLowerCase() === cleanTarget || pNum.endsWith(cleanTarget) || pid.endsWith(`_${cleanTarget}`)) {
+              resolvedPlotId = pid;
+              break;
+            }
+          }
+        }
+        if (plots[resolvedPlotId]) {
+          selectPlot(resolvedPlotId, true);
+          calculateAndDisplayRoute(state.startNodeId, resolvedPlotId);
+          const p = plots[resolvedPlotId];
+          startLayoutTutorial(currentLayout, p ? p.number : resolvedPlotId);
+          try {
+            const url = new URL(window.location.href);
+            url.searchParams.set('map', layoutId);
+            url.searchParams.set('plot', (p && p.number) ? p.number : resolvedPlotId);
+            window.history.replaceState({}, '', url.toString());
+          } catch (_) {}
+        }
       }
     }, 120);
   }
@@ -2523,20 +2554,26 @@
     // Share Route / Copy Link
     document.getElementById('share-link-btn').addEventListener('click', () => {
       if (!state.selectedPlotId) {
-        alert("Please select a house first to generate a shareable delivery link!");
+        alert("Please select a house/plot first to generate a shareable delivery link!");
         return;
       }
-      const url = new URL(window.location.href);
-      url.searchParams.set('house', plots[state.selectedPlotId].number);
-      url.searchParams.set('gate', state.startNodeId === 'gate_2' ? '2' : '1');
-      navigator.clipboard.writeText(url.toString()).then(() => {
+      const plot = plots[state.selectedPlotId];
+      const plotNum = plot ? (plot.number || state.selectedPlotId) : state.selectedPlotId;
+      const shareUrl = new URL(window.location.origin + window.location.pathname);
+      shareUrl.searchParams.set('map', currentLayoutId);
+      shareUrl.searchParams.set('plot', plotNum);
+      if (state.startNodeId) {
+        const gateVal = state.startNodeId === 'gate_2' ? '2' : (state.startNodeId === 'gate_1' ? '1' : state.startNodeId);
+        shareUrl.searchParams.set('gate', gateVal);
+      }
+      navigator.clipboard.writeText(shareUrl.toString()).then(() => {
         const btn = document.getElementById('share-link-btn');
         const origText = btn.innerHTML;
-        btn.innerHTML = `✓ Copied!`;
+        btn.innerHTML = `✓ Copied Link!`;
         setTimeout(() => { btn.innerHTML = origText; }, 2500);
       });
       if (window.HimagiriAnalytics) {
-        window.HimagiriAnalytics.trackShare(plots[state.selectedPlotId].number, 'link');
+        window.HimagiriAnalytics.trackShare(plotNum, 'link');
       }
     });
 
@@ -2545,20 +2582,29 @@
     if (nativeShareBtn) {
       nativeShareBtn.addEventListener('click', async () => {
         if (!state.selectedPlotId) {
-          alert("Please select a house first to share directions!");
+          alert("Please select a house/plot first to share directions!");
           return;
         }
         const plot = plots[state.selectedPlotId];
-        const gateLabel = state.startNodeId === 'gate_2' ? 'Gate 2' : 'Gate 1';
-        const url = new URL(window.location.href);
-        url.searchParams.set('house', plot.number);
-        url.searchParams.set('gate', state.startNodeId === 'gate_2' ? '2' : '1');
+        const plotNum = plot ? (plot.number || state.selectedPlotId) : state.selectedPlotId;
+        const layoutName = (currentLayout && currentLayout.name) ? currentLayout.name : 'Community Map';
+        const unitLabel = (currentLayout && currentLayout.unitType) ? currentLayout.unitType : 'House / Plot';
+        const gateLabel = (nodes && nodes[state.startNodeId]) ? nodes[state.startNodeId].label.split(' (')[0] : (state.startNodeId === 'gate_2' ? 'Gate 2' : 'Gate 1');
+        
+        const shareUrl = new URL(window.location.origin + window.location.pathname);
+        shareUrl.searchParams.set('map', currentLayoutId);
+        shareUrl.searchParams.set('plot', plotNum);
+        if (state.startNodeId) {
+          const gateVal = state.startNodeId === 'gate_2' ? '2' : (state.startNodeId === 'gate_1' ? '1' : state.startNodeId);
+          shareUrl.searchParams.set('gate', gateVal);
+        }
 
-        const shareTitle = `Directions to House #${plot.number} - Himagiri Meadows`;
-        const shareText = `Here are the directions to House #${plot.number} (${plot.road}) from ${gateLabel} in Himagiri Meadows Layout:\n${url.toString()}`;
+        const roadInfo = plot.road ? ` (${plot.road})` : '';
+        const shareTitle = `Directions to ${unitLabel} #${plotNum} — ${layoutName}`;
+        const shareText = `Here are the directions to ${unitLabel} #${plotNum}${roadInfo} from ${gateLabel} in ${layoutName}:\n${shareUrl.toString()}`;
 
         if (window.HimagiriAnalytics) {
-          window.HimagiriAnalytics.trackShare(plot.number, 'whatsapp_native');
+          window.HimagiriAnalytics.trackShare(plotNum, 'whatsapp_native');
         }
 
         if (navigator.share) {
@@ -2566,7 +2612,7 @@
             await navigator.share({
               title: shareTitle,
               text: shareText,
-              url: url.toString()
+              url: shareUrl.toString()
             });
           } catch (err) {
             // Fallback or user canceled
@@ -2862,17 +2908,6 @@
       });
     }
 
-    // AI Assistant Toggle Buttons
-    const headerAiBtn = document.getElementById('header-ai-guide-btn');
-    if (headerAiBtn) {
-      headerAiBtn.addEventListener('click', () => aiAssistant.open());
-    }
-
-    const floatingAiBtn = document.getElementById('floating-ai-btn');
-    if (floatingAiBtn) {
-      floatingAiBtn.addEventListener('click', () => aiAssistant.open());
-    }
-
     // Portal Directory Live Search & Zone Filter Listeners
     const dirSearchInput = document.getElementById('directory-search-input');
     const dirClearBtn = document.getElementById('directory-clear-search');
@@ -2978,95 +3013,47 @@
       });
     }
 
-    // Portal Prompt Chips
-    document.querySelectorAll('.portal-chip').forEach(chip => {
+    // Portal Hero Layout Search & Quick Jump
+    const heroLayoutSearch = document.getElementById('portal-layout-search-input');
+    const heroSearchClear = document.getElementById('portal-search-clear-btn');
+    if (heroLayoutSearch) {
+      const handleHeroSearch = (e) => {
+        const val = e.target.value;
+        if (heroSearchClear) heroSearchClear.style.display = val ? 'block' : 'none';
+        if (dirSearchInput) {
+          dirSearchInput.value = val;
+          if (dirClearBtn) dirClearBtn.style.display = val ? 'flex' : 'none';
+        }
+        renderPortalDirectory('all', val);
+      };
+      heroLayoutSearch.addEventListener('input', handleHeroSearch);
+      heroLayoutSearch.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const val = heroLayoutSearch.value.trim().toLowerCase();
+          const match = Object.values(layouts).find(l => l.name.toLowerCase().includes(val) || l.id.toLowerCase().includes(val));
+          if (match) loadLayout(match.id);
+        }
+      });
+    }
+    if (heroSearchClear) {
+      heroSearchClear.addEventListener('click', () => {
+        if (heroLayoutSearch) {
+          heroLayoutSearch.value = '';
+          heroLayoutSearch.focus();
+        }
+        heroSearchClear.style.display = 'none';
+        if (dirSearchInput) dirSearchInput.value = '';
+        renderPortalDirectory(currentDirectoryZone, '');
+      });
+    }
+
+    // Portal Quick Jump Chips
+    document.querySelectorAll('.portal-chip[data-layout]').forEach(chip => {
       chip.addEventListener('click', () => {
-        const q = chip.getAttribute('data-query');
-        aiAssistant.open(q);
+        const lid = chip.getAttribute('data-layout');
+        if (lid) loadLayout(lid);
       });
     });
-
-    // Portal AI Search Input
-    const portalAiSubmit = document.getElementById('portal-ai-submit-btn');
-    const portalAiInput = document.getElementById('portal-ai-input');
-    if (portalAiSubmit && portalAiInput) {
-      const runPortalAi = () => {
-        const q = portalAiInput.value.trim();
-        aiAssistant.open(q || "Where do I go?");
-      };
-      portalAiSubmit.addEventListener('click', runPortalAi);
-      portalAiInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') runPortalAi();
-      });
-    }
-
-    const portalVoice = document.getElementById('portal-ai-voice-btn');
-    if (portalVoice) {
-      portalVoice.addEventListener('click', () => {
-        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
-          const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-          const rec = new SpeechRecognition();
-          rec.lang = 'en-IN';
-          rec.start();
-          showToast("Listening to voice... 🎙️", 2500);
-          rec.onresult = (e) => {
-            const transcript = e.results[0][0].transcript;
-            if (portalAiInput) portalAiInput.value = transcript;
-            aiAssistant.open(transcript);
-          };
-        } else {
-          showToast("Speech recognition not supported in this browser", 2500);
-        }
-      });
-    }
-
-    // AI Drawer close & clear
-    document.querySelectorAll('#ai-close-btn, #ai-drawer-backdrop').forEach(el => {
-      el.addEventListener('click', () => aiAssistant.close());
-    });
-
-    const aiClearBtn = document.getElementById('ai-clear-btn');
-    if (aiClearBtn) {
-      aiClearBtn.addEventListener('click', () => aiAssistant.reset());
-    }
-
-    // AI Drawer input send
-    const aiDrawerSend = document.getElementById('ai-drawer-send-btn');
-    const aiDrawerInput = document.getElementById('ai-drawer-input');
-    if (aiDrawerSend && aiDrawerInput) {
-      const sendFromDrawer = () => {
-        const val = aiDrawerInput.value.trim();
-        if (val) {
-          aiDrawerInput.value = '';
-          aiAssistant.handleUserQuery(val);
-        }
-      };
-      aiDrawerSend.addEventListener('click', sendFromDrawer);
-      aiDrawerInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') sendFromDrawer();
-      });
-    }
-
-    // AI Drawer voice recognition
-    const aiDrawerVoice = document.getElementById('ai-drawer-voice-btn');
-    if (aiDrawerVoice && aiDrawerInput) {
-      aiDrawerVoice.addEventListener('click', () => {
-        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
-          const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-          const rec = new SpeechRecognition();
-          rec.lang = 'en-IN';
-          rec.start();
-          showToast("Listening to voice... 🎙️", 2500);
-          rec.onresult = (e) => {
-            const transcript = e.results[0][0].transcript;
-            aiDrawerInput.value = transcript;
-            aiAssistant.handleUserQuery(transcript);
-          };
-        } else {
-          showToast("Speech recognition not supported in this browser", 2500);
-        }
-      });
-    }
 
     // Sample preview buttons
     document.querySelectorAll('.btn-preview-sample, .btn-demo-card').forEach(btn => {
@@ -4511,11 +4498,8 @@
             <span class="tag">📡 Live GPS</span>
           </div>
           <div class="community-actions">
-            <button class="btn btn-primary btn-open-card-map" data-layout-id="${lay.id}" style="flex: 1.3;">
-              🗺️ Explore Map
-            </button>
-            <button class="btn btn-secondary btn-ask-card-ai" data-layout-id="${lay.id}" style="flex: 1;">
-              ✨ Ask AI Guide
+            <button class="btn btn-primary btn-open-card-map" data-layout-id="${lay.id}" style="width: 100%;">
+              🗺️ Explore Layout & Navigator
             </button>
           </div>
         </div>
@@ -4534,11 +4518,11 @@
           </div>
         </div>
         <p class="community-desc">
-          Have a physical layout board or blueprint photo? Turn it into a smart, GPS-enabled digital map with turn-by-turn AI wayfinding for your residents and delivery visitors.
+          Have a physical layout board or blueprint photo? Turn it into a smart, GPS-enabled digital map with turn-by-turn wayfinding for your residents and delivery visitors.
         </p>
         <div class="community-tags">
           <span class="tag">⚡ 24hr Digitization</span>
-          <span class="tag">🧭 AI Navigator</span>
+          <span class="tag">🧭 Live Wayfinding</span>
           <span class="tag">📱 Instant PWA</span>
         </div>
         <div class="community-actions">
@@ -4557,14 +4541,6 @@
         e.stopPropagation();
         const lid = btn.getAttribute('data-layout-id');
         loadLayout(lid);
-      });
-    });
-
-    grid.querySelectorAll('.btn-ask-card-ai').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const lid = btn.getAttribute('data-layout-id');
-        aiAssistant.openForLayout(lid);
       });
     });
 
@@ -4602,14 +4578,19 @@
     if (headerBadges) headerBadges.style.display = 'none';
     if (headerMapControls) headerMapControls.style.display = 'none';
     if (brandTitle) brandTitle.textContent = 'HM Maps';
-    if (brandSub) brandSub.textContent = 'Smart Layout & Community Wayfinding';
+    if (brandSub) brandSub.textContent = 'Bangalore Layout Navigator & Directory';
     if (brandIcon) brandIcon.textContent = '🌐';
 
-    if (typeof aiAssistant !== 'undefined' && aiAssistant) {
-      aiAssistant.chosenLayoutId = null;
-      aiAssistant.state = 'IDLE';
-      aiAssistant.pendingUnitNumber = null;
-    }
+    document.title = 'HM Maps — Bangalore Layouts, Townships & Plot Navigator';
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('map');
+      url.searchParams.delete('layout');
+      url.searchParams.delete('house');
+      url.searchParams.delete('plot');
+      url.searchParams.delete('gate');
+      window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''));
+    } catch (_) {}
 
     renderPortalDirectory(currentDirectoryZone, currentDirectorySearch);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -4645,669 +4626,47 @@
     }, 120);
   }
 
-  // --- AI SPATIAL ASSISTANT MODULE ---
+  // Safe helper stub for legacy or external callers
   const aiAssistant = {
-    state: 'IDLE', // 'IDLE', 'SELECTING_LAYOUT', 'ASKING_SPECIFIC_PLACE', 'ASKING_HOUSE_NUMBER', 'EXPLORING'
+    state: 'IDLE',
     chosenLayoutId: null,
     pendingUnitNumber: null,
     isOpen: false,
-
-    open(initialQuery = null) {
-      const drawer = document.getElementById('ai-chat-drawer');
-      if (!drawer) return;
-      drawer.style.display = 'flex';
-      void drawer.offsetWidth;
-      drawer.classList.add('open');
-      this.isOpen = true;
-
-      const messagesContainer = document.getElementById('ai-chat-messages');
-      if (messagesContainer && messagesContainer.children.length === 0) {
-        this.addAiMessage({
-          text: "Where would you like to go?",
-          chips: [
-            { text: "Prestige Falcon City", query: "Prestige Falcon City" },
-            { text: "Prestige Elysian", query: "Prestige Elysian" },
-            { text: "Kristal Beryl", query: "Kristal Beryl" },
-            { text: "Salarpuria Greenage", query: "Salarpuria Sattva Greenage" },
-            { text: "Sobha Dream Acres", query: "Sobha Dream Acres" },
-            { text: "Himagiri Meadows", query: "Himagiri Meadows" }
-          ]
-        });
-      }
-
-      if (initialQuery) {
-        this.handleUserQuery(initialQuery);
-      } else {
-        const input = document.getElementById('ai-drawer-input');
-        if (input) input.focus();
-      }
+    open(q) {
+      if (q && layouts[q]) loadLayout(q);
     },
-
-    openForLayout(layoutId) {
-      if (!layouts[layoutId]) layoutId = ('prestige_falcon_city' in layouts) ? 'prestige_falcon_city' : Object.keys(layouts)[0];
-      this.chosenLayoutId = layoutId;
-      const targetLayout = layouts[layoutId];
-      loadLayout(layoutId);
-      showMapView(layoutId);
-      this.open();
-
-      this.state = 'ASKING_SPECIFIC_PLACE';
-      const uLabel = targetLayout.unitType ? targetLayout.unitType.toLowerCase() : 'house';
-      const isApt = isApartmentOrBlockLayout(targetLayout);
-
-      let sampleChips = [];
-      if (isApt) {
-        const blocks = [...new Set(Object.values(targetLayout.plots).map(p => cleanBlockTitle(p.block)).filter(Boolean))];
-        sampleChips = blocks.slice(0, 3).map(b => ({ text: b, query: b }));
-      } else {
-        const plotKeys = Object.keys(targetLayout.plots);
-        sampleChips = plotKeys.slice(0, 3).map(k => ({ text: targetLayout.plots[k].number, query: targetLayout.plots[k].number }));
-      }
-
-      let chips = [
-        { text: "Yes", query: "Yes" },
-        { text: "Explore Map", query: "No" },
-        ...sampleChips
-      ];
-
-      this.addAiMessage({
-        text: `<strong>${targetLayout.name}</strong> loaded. Looking for a specific ${uLabel}?`,
-        chips: chips
-      });
+    openForLayout(lid) {
+      if (lid && layouts[lid]) loadLayout(lid);
     },
-
-    close() {
-      const drawer = document.getElementById('ai-chat-drawer');
-      if (!drawer) return;
-      drawer.classList.remove('open');
-      setTimeout(() => {
-        if (!this.isOpen) drawer.style.display = 'none';
-      }, 300);
-      this.isOpen = false;
+    close() {},
+    reset() {},
+    setTyping() {},
+    scrollToBottom() {},
+    addAiMessage() {},
+    addUserMessage() {},
+    handleUserQuery(query) {
+      if (!query) return;
+      const q = query.toLowerCase().trim();
+      const match = Object.values(layouts).find(l => l.name.toLowerCase().includes(q) || l.id.toLowerCase().includes(q));
+      if (match) loadLayout(match.id);
     },
-
-    reset() {
-      const messagesContainer = document.getElementById('ai-chat-messages');
-      if (messagesContainer) messagesContainer.innerHTML = '';
-      this.state = 'IDLE';
-      this.chosenLayoutId = null;
-      this.pendingUnitNumber = null;
-      this.open();
-    },
-
-    setTyping(isTyping) {
-      const indicator = document.getElementById('ai-typing-indicator');
-      if (indicator) {
-        indicator.style.display = isTyping ? 'flex' : 'none';
-      }
-      this.scrollToBottom();
-    },
-
-    scrollToBottom() {
-      const messagesContainer = document.getElementById('ai-chat-messages');
-      if (messagesContainer) {
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-      }
-    },
-
-    addUserMessage(text) {
-      const messagesContainer = document.getElementById('ai-chat-messages');
-      if (!messagesContainer) return;
-      const msgDiv = document.createElement('div');
-      msgDiv.className = 'ai-msg user';
-      msgDiv.innerHTML = `<div class="ai-bubble user-bubble">${escapeHtml(text)}</div>`;
-      messagesContainer.appendChild(msgDiv);
-      this.scrollToBottom();
-    },
-
-    addAiMessage({ text, chips = [], routeInfo = null }) {
-      const messagesContainer = document.getElementById('ai-chat-messages');
-      if (!messagesContainer) return;
-      const msgDiv = document.createElement('div');
-      msgDiv.className = 'ai-msg ai';
-
-      let html = `<div class="ai-bubble">${text}`;
-      if (routeInfo) {
-        html += `<div class="ai-route-info">${routeInfo}</div>`;
-      }
-      html += `</div>`;
-
-      if (chips && chips.length > 0) {
-        html += `<div class="ai-chips-wrap">`;
-        chips.forEach(c => {
-          html += `<button class="ai-action-chip" data-query="${escapeHtml(c.query)}">${escapeHtml(c.text)}</button>`;
-        });
-        html += `</div>`;
-      }
-
-      msgDiv.innerHTML = html;
-      messagesContainer.appendChild(msgDiv);
-
-      msgDiv.querySelectorAll('.ai-action-chip').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const q = btn.getAttribute('data-query');
-          this.handleUserQuery(q);
-        });
-      });
-
-      this.scrollToBottom();
-    },
-
-    handleUserQuery(rawText) {
-      if (!rawText || !rawText.trim()) return;
-      const text = rawText.trim();
-      this.addUserMessage(text);
-      this.setTyping(true);
-
-      setTimeout(() => {
-        this.setTyping(false);
-        this.processQuery(text);
-      }, 180);
-    },
-
-    detectCommunity(text) {
-      if (!text) return null;
-      const lower = text.toLowerCase().trim();
-
-      // Explicit layout matching
-      if (lower.includes('falcon') || lower.includes('konanakunte')) return 'prestige_falcon_city';
-      if (lower.includes('elysian') || lower.includes('aurum') || lower.includes('argent') || lower.includes('cuprum') || lower.includes('platin')) return 'prestige_elysian';
-      if (lower.includes('beryl') || lower.includes('kristal') || lower.includes('kasavanahalli')) return 'kristal_beryl';
-      if (lower.includes('greenage') || lower.includes('sattva') || lower.includes('salarpuria') || lower.includes('bommanahalli')) return 'sattva_greenage';
-      if (lower.includes('dream acres') || lower.includes('balagere') || lower.includes('panathur')) return 'sobha_dream_acres';
-      if (lower.includes('song of the south') || lower.includes('song of south')) return 'prestige_song_south';
-      if (lower.includes('millennium') || (lower.includes('brigade') && lower.includes('jp nagar'))) return 'brigade_millennium';
-      if (lower.includes('westend') || lower.includes('kudlu')) return 'purva_westend';
-      if (lower.includes('lakeside') || lower.includes('varthur')) return 'prestige_lakeside';
-      if (lower.includes('palm meadows')) return 'palm_meadows';
-      if (lower.includes('shantiniketan') || lower.includes('itpl')) return 'prestige_shantiniketan';
-      if (lower.includes('rainbow drive') || lower.includes('carmelaram')) return 'rainbow_drive';
-      if (lower.includes('republic of whitefield') || lower.includes('divyasree')) return 'divyasree_republic';
-      if (lower.includes('palm retreat') || lower.includes('adarsh')) return 'adarsh_palm_retreat';
-      if (lower.includes('brigade gateway') || lower.includes('orion') || lower.includes('world trade center')) return 'brigade_gateway';
-      if (lower.includes('sobha city') || lower.includes('santorini') || lower.includes('casa serena')) return 'sobha_city';
-      if (lower.includes('bhartiya city') || lower.includes('nikoo')) return 'bhartiya_city';
-      if (lower.includes('manyata')) return 'manyata_residency';
-      if (lower.includes('golfshire') || lower.includes('nandi hills')) return 'prestige_golfshire';
-      if (lower.includes('ozone urbana') || lower.includes('devanahalli')) return 'ozone_urbana';
-      if (lower.includes('rmz galleria')) return 'rmz_galleria';
-      if (lower.includes('misty waters')) return 'prestige_misty_waters';
-      if (lower.includes('godrej woodsman')) return 'godrej_woodsman';
-      if (lower.includes('jakkur')) return 'jakkur_aerodrome';
-      if (lower.includes('kempapura')) return 'kempapura_lakeview';
-      if (lower.includes('mantri tranquil') || lower.includes('gubbalala')) return 'mantri_tranquil';
-      if (lower.includes('brigade meadows')) return 'brigade_meadows';
-      if (lower.includes('napa valley')) return 'concorde_napa_valley';
-      if (lower.includes('purva panorama')) return 'purva_panorama';
-      if (lower.includes('south city')) return 'south_city_layout';
-      if (lower.includes('meenakshi layout')) return 'meenakshi_layout';
-      if (lower.includes('hsr sector 1') || lower.includes('hsr 1')) return 'hsr_sector_1';
-      if (lower.includes('hsr sector 2') || lower.includes('hsr 2')) return 'hsr_sector_2';
-      if (lower.includes('hsr sector 3') || lower.includes('hsr 3')) return 'hsr_sector_3';
-      if (lower.includes('hsr layout') || lower.includes('hsr')) return 'hsr_sector_1';
-      if (lower.includes('green glen')) return 'green_glen';
-      if (lower.includes('cuppertino')) return 'concorde_cuppertino';
-      if (lower.includes('neotown') || lower.includes('neo town')) return 'neo_town';
-      if (lower.includes('koramangala 4th') || lower.includes('koramangala 4')) return 'koramangala_4th';
-      if (lower.includes('koramangala 3rd') || lower.includes('koramangala 3')) return 'koramangala_3rd';
-      if (lower.includes('koramangala')) return 'koramangala_4th';
-      if (lower.includes('defence colony') || (lower.includes('indiranagar') && lower.includes('defence'))) return 'indiranagar_defence';
-      if (lower.includes('hal 2nd') || lower.includes('hal 2') || lower.includes('doopanahalli')) return 'indiranagar_hal2';
-      if (lower.includes('indiranagar')) return 'indiranagar_defence';
-      if (lower.includes('sadashivanagar')) return 'sadashivanagar';
-      if (lower.includes('malleswaram')) return 'malleswaram_18th';
-      if (lower.includes('banashankari')) return 'banashankari_3rd';
-      if (lower.includes('vijayanagar')) return 'vijayanagar_bda';
-      if (lower.includes('rajajinagar')) return 'rajajinagar_1st';
-      if (lower.includes('peenya')) return 'peenya_industrial';
-      if (lower.includes('himagiri') || lower.includes('gottigere')) return 'himagiri';
-
-      // Road / Area corridor matches
-      if (lower.includes('kanakapura')) return 'prestige_falcon_city';
-      if (lower.includes('bannerghatta')) return 'prestige_elysian';
-      if (lower.includes('sarjapur')) return 'kristal_beryl';
-      if (lower.includes('whitefield')) return 'prestige_lakeside';
-      if (lower.includes('hosur road') || lower.includes('electronic city') || lower.includes('ecity')) return 'sattva_greenage';
-      if (lower.includes('bellandur')) return 'green_glen';
-      if (lower.includes('thanisandra')) return 'sobha_city';
-      if (lower.includes('hebbal')) return 'prestige_misty_waters';
-      if (lower.includes('yelahanka')) return 'rmz_galleria';
-      if (lower.includes('jp nagar')) return 'brigade_millennium';
-      if (lower.includes('jayanagar')) return 'jayanagar_4th';
-      if (lower.includes('btm')) return 'btm_2nd_stage';
-
-      // Dynamic check across all layouts in window.LAYOUTS
-      for (const [lid, lay] of Object.entries(layouts)) {
-        const lName = lay.name.toLowerCase();
-        const cleanName = lName.replace(/layout|phase|stage|block|residency|campus|homes|apartments|villas|city/g, '').trim();
-        if (lower.includes(lName) || (cleanName.length >= 4 && lower.includes(cleanName))) {
-          return lid;
-        }
-      }
-      return null;
-    },
-
-    extractUnitQuery(text) {
-      if (!text) return null;
-      const t = text.trim();
-      const prefixMatch = t.match(/(?:flat|apt|apartment|plot|villa|house|room|site|h\.?no|wing|unit|#)\s*([A-Za-z0-9\-_]+)/i);
-      if (prefixMatch && prefixMatch[1]) return prefixMatch[1];
-      const blockMatch = t.match(/(?:block|tower)\s+([A-Za-z0-9]+(?:\s*[-#]?\s*\d+)?)/i);
-      if (blockMatch && blockMatch[1]) return blockMatch[1];
-      const hyphenMatch = t.match(/\b([A-Za-z]-\d{1,4}[A-Za-z]?)\b/i);
-      if (hyphenMatch && hyphenMatch[1]) return hyphenMatch[1];
-      const numMatch = t.match(/\b([A-Za-z]?\d{1,4}[A-Za-z]?)\b/);
-      if (numMatch && !['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th'].includes(numMatch[1].toLowerCase())) {
-        return numMatch[1];
-      }
-      return null;
-    },
-
-    processQuery(query) {
-      const lower = query.toLowerCase().trim();
-
-      // 1. Pending unit number resolution
-      if (this.pendingUnitNumber) {
-        const targetCommunityId = this.detectCommunity(query);
-        if (targetCommunityId && layouts[targetCommunityId]) {
-          const targetLayout = layouts[targetCommunityId];
-          this.chosenLayoutId = targetCommunityId;
-          const unitToFind = this.pendingUnitNumber;
-          this.pendingUnitNumber = null;
-
-          const matchedPlot = findPlotInLayout(targetLayout, unitToFind);
-          loadLayout(targetLayout.id, matchedPlot ? matchedPlot.id : null);
-          showMapView(targetLayout.id, matchedPlot ? matchedPlot.id : null);
-
-          if (matchedPlot) {
-            this.state = 'IDLE';
-            this.addAiMessage({
-              text: `Routing to <strong>${matchedPlot.number}</strong> in <strong>${targetLayout.name}</strong> (${matchedPlot.road}).`,
-              chips: [
-                { text: "Tour", query: "Start Tutorial" },
-                { text: "GPS", query: "Track live location" }
-              ]
-            });
-            return;
-          } else {
-            this.state = 'ASKING_HOUSE_NUMBER';
-            const plotKeys = Object.keys(targetLayout.plots);
-            const samplePlots = plotKeys.slice(0, 4).map(k => targetLayout.plots[k]);
-            this.addAiMessage({
-              text: `<strong>${targetLayout.name}</strong> loaded. Unit #${unitToFind} not found. Sample units:`,
-              chips: samplePlots.map(p => ({ text: p.number, query: p.number }))
-            });
-            return;
-          }
-        }
-      }
-
-      // 2. State: ASKING_SPECIFIC_PLACE
-      if (this.state === 'ASKING_SPECIFIC_PLACE') {
-        const targetLayout = layouts[this.chosenLayoutId] || currentLayout;
-        if (/^(yes|yeah|yep|y|sure|true|definitely|specific|correct|of course|i do|i am)/i.test(lower) || lower.includes('yes') || lower.includes('specific')) {
-          this.state = 'ASKING_HOUSE_NUMBER';
-          const plotKeys = Object.keys(targetLayout.plots);
-          const samplePlots = plotKeys.slice(0, 6).map(k => targetLayout.plots[k]);
-          this.addAiMessage({
-            text: `Which ${targetLayout.unitType || 'unit'} number in <strong>${targetLayout.name}</strong>?`,
-            chips: samplePlots.map(p => ({ text: p.number, query: p.number }))
-          });
-          return;
-        } else if (/^(no|nope|nah|not really|just looking|exploring|browse|all)/i.test(lower) || lower.includes('no') || lower.includes('explor')) {
-          this.state = 'EXPLORING';
-          this.addAiMessage({
-            text: `Exploring <strong>${targetLayout.name}</strong>.`,
-            chips: [
-              { text: "Tour", query: "Start Tutorial" },
-              { text: "GPS", query: "Track live location" }
-            ]
-          });
-          setTimeout(() => {
-            this.close();
-            loadLayout(targetLayout.id);
-            startLayoutTutorial(targetLayout);
-          }, 300);
-          return;
-        }
-      }
-
-      // 3. State: ASKING_HOUSE_NUMBER
-      if (this.state === 'ASKING_HOUSE_NUMBER') {
-        const targetLayout = layouts[this.chosenLayoutId] || currentLayout;
-        const extracted = this.extractUnitQuery(query) || query;
-        const matchedPlot = findPlotInLayout(targetLayout, extracted);
-        if (matchedPlot) {
-          this.state = 'IDLE';
-          loadLayout(targetLayout.id, matchedPlot.id);
-          showMapView(targetLayout.id, matchedPlot.id);
-          this.addAiMessage({
-            text: `Routing to <strong>${matchedPlot.number}</strong> in <strong>${targetLayout.name}</strong> (${matchedPlot.road}).`,
-            chips: [
-              { text: "Tour", query: "Start Tutorial" },
-              { text: "GPS", query: "Track live location" }
-            ]
-          });
-          return;
-        } else {
-          const plotKeys = Object.keys(targetLayout.plots);
-          const samplePlots = plotKeys.slice(0, 4).map(k => targetLayout.plots[k]);
-          this.addAiMessage({
-            text: `Unit '${escapeHtml(query)}' not found in <strong>${targetLayout.name}</strong>. Sample units:`,
-            chips: samplePlots.map(p => ({ text: p.number, query: p.number }))
-          });
-          return;
-        }
-      }
-
-      // 4. Tour / Tutorial request
-      if (lower.includes('tutorial') || lower.includes('tour') || lower.includes('guide me') || lower.includes('walkthrough')) {
-        this.close();
-        startLayoutTutorial(currentLayout, state.selectedPlotId ? plots[state.selectedPlotId]?.number : null);
-        return;
-      }
-
-      // 5. GPS / Live Location
-      if (lower.includes('gps') || lower.includes('live location') || lower.includes('track')) {
-        this.close();
-        showMapView(currentLayout.id);
-        startLocationTracking(true);
-        showToast("Live GPS active 📡", 3000);
-        return;
-      }
-
-      // 6. Detect Community and Unit
-      const detectedCommunityId = this.detectCommunity(query);
-      const extractedUnit = this.extractUnitQuery(query);
-
-      // CASE A: Both Community AND Unit present in query
-      if (detectedCommunityId && extractedUnit && layouts[detectedCommunityId]) {
-        const targetLayout = layouts[detectedCommunityId];
-        this.chosenLayoutId = targetLayout.id;
-        const matchedPlot = findPlotInLayout(targetLayout, extractedUnit);
-        loadLayout(targetLayout.id, matchedPlot ? matchedPlot.id : null);
-        showMapView(targetLayout.id, matchedPlot ? matchedPlot.id : null);
-
-        if (matchedPlot) {
-          this.state = 'IDLE';
-          this.addAiMessage({
-            text: `Routing to <strong>${matchedPlot.number}</strong> in <strong>${targetLayout.name}</strong> (${matchedPlot.road}).`,
-            chips: [
-              { text: "Tour", query: "Start Tutorial" },
-              { text: "GPS", query: "Track live location" }
-            ]
-          });
-        } else {
-          this.state = 'ASKING_HOUSE_NUMBER';
-          const plotKeys = Object.keys(targetLayout.plots);
-          const samplePlots = plotKeys.slice(0, 4).map(k => targetLayout.plots[k]);
-          this.addAiMessage({
-            text: `<strong>${targetLayout.name}</strong> loaded. Unit '${extractedUnit}' not found. Sample units:`,
-            chips: samplePlots.map(p => ({ text: p.number, query: p.number }))
-          });
-        }
-        return;
-      }
-
-      // CASE B: Community / Area is specified
-      if (detectedCommunityId && layouts[detectedCommunityId]) {
-        const targetLayout = layouts[detectedCommunityId];
-        this.chosenLayoutId = targetLayout.id;
-        this.state = 'ASKING_SPECIFIC_PLACE';
-
-        loadLayout(targetLayout.id);
-        showMapView(targetLayout.id);
-
-        const uLabel = targetLayout.unitType ? targetLayout.unitType.toLowerCase() : 'house';
-        const isApt = isApartmentOrBlockLayout(targetLayout);
-
-        let sampleChips = [];
-        if (isApt) {
-          const blocks = [...new Set(Object.values(targetLayout.plots).map(p => cleanBlockTitle(p.block)).filter(Boolean))];
-          sampleChips = blocks.slice(0, 3).map(b => ({ text: b, query: b }));
-        } else {
-          const plotKeys = Object.keys(targetLayout.plots);
-          sampleChips = plotKeys.slice(0, 3).map(k => ({ text: targetLayout.plots[k].number, query: targetLayout.plots[k].number }));
-        }
-
-        let chips = [
-          { text: "Yes", query: "Yes" },
-          { text: "Explore Map", query: "No" },
-          ...sampleChips
-        ];
-
-        this.addAiMessage({
-          text: `<strong>${targetLayout.name}</strong> loaded. Looking for a specific ${uLabel}?`,
-          chips: chips
-        });
-        return;
-      }
-
-      // CASE C: Area Discovery Query
-      const isSouth = lower.includes('south') || lower.includes('bannerghatta') || lower.includes('kanakapura') || lower.includes('jp nagar') || lower.includes('jayanagar') || lower.includes('btm') || lower.includes('meenakshi');
-      const isEast = lower.includes('whitefield') || lower.includes('sarjapur') || lower.includes('east') || lower.includes('varthur') || lower.includes('marathahalli') || lower.includes('carmelaram') || lower.includes('kasavanahalli');
-      const isEcity = lower.includes('electronic city') || lower.includes('ecity') || lower.includes('e-city') || lower.includes('hsr') || lower.includes('bellandur') || lower.includes('orr') || lower.includes('outer ring road') || lower.includes('green glen');
-      const isNorth = lower.includes('north') || lower.includes('hebbal') || lower.includes('manyata') || lower.includes('yelahanka') || lower.includes('airport') || lower.includes('jakkur') || lower.includes('sahakara') || lower.includes('thanisandra');
-      const isWest = lower.includes('central') || lower.includes('west') || lower.includes('koramangala') || lower.includes('indiranagar') || lower.includes('malleswaram') || lower.includes('rajajinagar') || lower.includes('sadashivanagar') || lower.includes('banashankari') || lower.includes('vijayanagar') || lower.includes('peenya');
-
-      const isAreaDiscovery = lower.includes('where do i go') ||
-        lower.includes('where to go') ||
-        lower.includes('how do i navigate') ||
-        lower.includes('where should i go') ||
-        lower.includes('help me find where to go') ||
-        lower.includes('show layout') ||
-        lower.includes('show me layout') ||
-        lower.includes('tell me the location') ||
-        lower.includes('layouts in') ||
-        lower.includes('layout in') ||
-        lower === 'navigate' ||
-        lower === 'layout' ||
-        lower === 'layouts' ||
-        isSouth || isEast || isEcity || isNorth || isWest;
-
-      if (isAreaDiscovery) {
-        if (isSouth) {
-          const flagship = layouts['prestige_falcon_city'] || layouts[Object.keys(layouts)[0]];
-          this.chosenLayoutId = flagship.id;
-          loadLayout(flagship.id);
-          showMapView(flagship.id);
-          this.state = 'SELECTING_LAYOUT';
-          this.addAiMessage({
-            text: `<strong>Bangalore South</strong> layouts:`,
-            chips: [
-              { text: "Prestige Falcon City", query: "Prestige Falcon City" },
-              { text: "Prestige Elysian", query: "Prestige Elysian" },
-              { text: "Prestige Song of the South", query: "Prestige Song of the South" },
-              { text: "Brigade Millennium", query: "Brigade Millennium" },
-              { text: "Himagiri Meadows", query: "Himagiri Meadows" }
-            ]
-          });
-          return;
-        } else if (isEast) {
-          const flagship = layouts['kristal_beryl'] || layouts['sobha_dream_acres'] || layouts[Object.keys(layouts)[0]];
-          this.chosenLayoutId = flagship.id;
-          loadLayout(flagship.id);
-          showMapView(flagship.id);
-          this.state = 'SELECTING_LAYOUT';
-          this.addAiMessage({
-            text: `<strong>East Bangalore / Whitefield</strong> layouts:`,
-            chips: [
-              { text: "Kristal Beryl", query: "Kristal Beryl" },
-              { text: "Sobha Dream Acres", query: "Sobha Dream Acres" },
-              { text: "Prestige Lakeside", query: "Prestige Lakeside Habitat" },
-              { text: "Palm Meadows", query: "Palm Meadows" },
-              { text: "Prestige Shantiniketan", query: "Prestige Shantiniketan" }
-            ]
-          });
-          return;
-        } else if (isEcity) {
-          const flagship = layouts['sattva_greenage'] || layouts[Object.keys(layouts)[0]];
-          this.chosenLayoutId = flagship.id;
-          loadLayout(flagship.id);
-          showMapView(flagship.id);
-          this.state = 'SELECTING_LAYOUT';
-          this.addAiMessage({
-            text: `<strong>Electronic City / ORR</strong> layouts:`,
-            chips: [
-              { text: "Salarpuria Greenage", query: "Salarpuria Sattva Greenage" },
-              { text: "Adarsh Palm Retreat", query: "Adarsh Palm Retreat" },
-              { text: "HSR Layout Sector 1", query: "HSR Layout Sector 1" },
-              { text: "Green Glen Layout", query: "Green Glen Layout" }
-            ]
-          });
-          return;
-        } else if (isNorth) {
-          const flagship = layouts['sobha_city'] || layouts[Object.keys(layouts)[0]];
-          this.chosenLayoutId = flagship.id;
-          loadLayout(flagship.id);
-          showMapView(flagship.id);
-          this.state = 'SELECTING_LAYOUT';
-          this.addAiMessage({
-            text: `<strong>North Bangalore</strong> layouts:`,
-            chips: [
-              { text: "Sobha City", query: "Sobha City" },
-              { text: "Bhartiya City", query: "Bhartiya City Nikoo Homes" },
-              { text: "Manyata Residency", query: "Manyata Tech Park Residency" },
-              { text: "Prestige Golfshire", query: "Prestige Golfshire" }
-            ]
-          });
-          return;
-        } else if (isWest) {
-          const flagship = layouts['brigade_gateway'] || layouts[Object.keys(layouts)[0]];
-          this.chosenLayoutId = flagship.id;
-          loadLayout(flagship.id);
-          showMapView(flagship.id);
-          this.state = 'SELECTING_LAYOUT';
-          this.addAiMessage({
-            text: `<strong>Central & West Bangalore</strong> layouts:`,
-            chips: [
-              { text: "Brigade Gateway", query: "Brigade Gateway" },
-              { text: "Koramangala 4th Block", query: "Koramangala 4th Block" },
-              { text: "Indiranagar Defence Colony", query: "Indiranagar Defence Colony" },
-              { text: "Sadashivanagar", query: "Sadashivanagar Royal Layout" }
-            ]
-          });
-          return;
-        } else {
-          this.state = 'SELECTING_LAYOUT';
-          this.addAiMessage({
-            text: `Select a layout:`,
-            chips: [
-              { text: "Prestige Falcon City", query: "Prestige Falcon City" },
-              { text: "Prestige Elysian", query: "Prestige Elysian" },
-              { text: "Kristal Beryl", query: "Kristal Beryl" },
-              { text: "Salarpuria Greenage", query: "Salarpuria Sattva Greenage" },
-              { text: "Sobha Dream Acres", query: "Sobha Dream Acres" },
-              { text: "Himagiri Meadows", query: "Himagiri Meadows" }
-            ]
-          });
-          return;
-        }
-      }
-
-      // CASE D: Unit Lookup
-      if (this.chosenLayoutId && layouts[this.chosenLayoutId]) {
-        const activeLayout = layouts[this.chosenLayoutId];
-        const matchedPlot = findPlotInLayout(activeLayout, extractedUnit || query);
-        if (matchedPlot) {
-          this.state = 'IDLE';
-          loadLayout(activeLayout.id, matchedPlot.id);
-          showMapView(activeLayout.id, matchedPlot.id);
-          this.addAiMessage({
-            text: `Routing to <strong>${matchedPlot.number}</strong> in <strong>${activeLayout.name}</strong> (${matchedPlot.road}).`,
-            chips: [
-              { text: "Tour", query: "Start Tutorial" },
-              { text: "GPS", query: "Track live location" }
-            ]
-          });
-          return;
-        }
-      }
-
-      // If user typed a number / unit when NO layout has been chosen yet:
-      if (extractedUnit) {
-        this.pendingUnitNumber = extractedUnit;
-        this.addAiMessage({
-          text: `Which layout is <strong>#${escapeHtml(extractedUnit)}</strong> in?`,
-          chips: [
-            { text: "Prestige Falcon City", query: "Prestige Falcon City" },
-            { text: "Prestige Elysian", query: "Prestige Elysian" },
-            { text: "Kristal Beryl", query: "Kristal Beryl" },
-            { text: "Salarpuria Greenage", query: "Salarpuria Sattva Greenage" },
-            { text: "Sobha Dream Acres", query: "Sobha Dream Acres" },
-            { text: "Himagiri Meadows", query: "Himagiri Meadows" }
-          ]
-        });
-        return;
-      }
-
-      // CASE E: Amenity lookup across active layout
-      const activeSearchLayout = (this.chosenLayoutId && layouts[this.chosenLayoutId]) ? layouts[this.chosenLayoutId] : currentLayout;
-      const searchAmenities = activeSearchLayout.amenities || [];
-      const matchedAmenity = searchAmenities.find(a => {
-        const nameLower = a.name.toLowerCase();
-        const idLower = a.id.toLowerCase();
-        return lower.includes(nameLower) ||
-          (lower.includes('temple') && (nameLower.includes('temple') || idLower.includes('temple'))) ||
-          (lower.includes('play') && idLower.includes('play')) ||
-          (lower.includes('park') && (idLower.includes('play') || idLower.includes('garden') || idLower.includes('park') || idLower.includes('promenade'))) ||
-          (lower.includes('clubhouse') && idLower.includes('clubhouse')) ||
-          (lower.includes('pool') && idLower.includes('pool')) ||
-          (lower.includes('lake') && idLower.includes('lake')) ||
-          (lower.includes('food') && (idLower.includes('food') || idLower.includes('cafeteria'))) ||
-          (lower.includes('parking') && idLower.includes('parking')) ||
-          (lower.includes('ev') && idLower.includes('ev')) ||
-          (lower.includes('auditorium') && idLower.includes('auditorium')) ||
-          (lower.includes('gate 1') && idLower.includes('gate_1')) ||
-          (lower.includes('gate 2') && idLower.includes('gate_2')) ||
-          (lower.includes('wtp') && idLower.includes('wtp')) ||
-          (lower.includes('waste') && idLower.includes('waste'));
-      });
-
-      if (matchedAmenity) {
-        this.state = 'IDLE';
-        this.addAiMessage({
-          text: `Routing to <strong>${matchedAmenity.name}</strong> in <strong>${activeSearchLayout.name}</strong>.`,
-          chips: [
-            { text: "Tour", query: "Start Tutorial" },
-            { text: "GPS", query: "Track live location" }
-          ]
-        });
-
-        setTimeout(() => {
-          this.close();
-          loadLayout(activeSearchLayout.id);
-          selectAmenity(matchedAmenity.id, true);
-        }, 300);
-        return;
-      }
-
-      // CASE F: Fallback
-      this.addAiMessage({
-        text: `Enter a layout, area, or unit number:`,
-        chips: [
-          { text: "Prestige Falcon City", query: "Prestige Falcon City" },
-          { text: "Prestige Elysian", query: "Prestige Elysian" },
-          { text: "Kristal Beryl", query: "Kristal Beryl" },
-          { text: "Sobha Dream Acres", query: "Sobha Dream Acres" }
-        ]
-      });
-    }
+    processQuery() {}
   };
 
   // Check URL parameters for direct delivery link sharing
   function checkUrlParams() {
     const params = new URLSearchParams(window.location.search);
-    const houseNum = params.get('house') || params.get('plot') || params.get('villa') || params.get('unit');
+    const houseNum = params.get('plot') || params.get('house') || params.get('villa') || params.get('unit');
     const gateNum = params.get('gate');
     const mapParam = params.get('map') || params.get('layout');
 
-    if (gateNum === '2') {
-      state.startNodeId = 'gate_2';
-      startSelect.value = 'gate_2';
+    if (gateNum) {
+      const gateKey = gateNum === '2' ? 'gate_2' : (gateNum === '1' ? 'gate_1' : gateNum);
+      state.startNodeId = gateKey;
+      if (startSelect) startSelect.value = gateKey;
     }
 
-    if (mapParam && layouts[mapParam]) {
+    if (mapParam) {
       loadLayout(mapParam, houseNum);
     } else if (houseNum) {
       loadLayout('himagiri', houseNum);

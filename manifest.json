@@ -1,7 +1,7 @@
 {
-  "name": "Himagiri Meadows Navigator",
-  "short_name": "Himagiri Map",
-  "description": "Interactive layout map and wayfinding assistant with house search and turn-by-turn directions",
+  "name": "HM Maps — Layout & Plot Navigator",
+  "short_name": "HM Maps",
+  "description": "Interactive layout navigator for residential communities, townships, and plot areas across Bangalore",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
