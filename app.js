@@ -621,26 +621,11 @@
         subTxt.textContent = (currentLayout.unitType ? currentLayout.unitType.replace(/ \/ .*/, '') : 'Apartment Tower').replace(/\d+/g, '').trim();
         blockG.appendChild(subTxt);
 
-        // Click to select block & calculate route
+        // Click to select block & calculate route (no inscreen, stays on main map)
         blockG.addEventListener('click', (e) => {
           e.stopPropagation();
-          selectPlot(uList[0].id, true);
+          selectPlot(uList[0].id, false);
         });
-
-        // Double-Tap / Double-Click: Explore inner part of this sub-area
-        enableDoubleTapOrClick(blockG, () => {
-          openSubAreaInterior('tower', cleanName, uList);
-        });
-
-        // Mobile touch long-press (touch and hold) as additional shortcut
-        let blockTouchTimer = null;
-        blockG.addEventListener('touchstart', (e) => {
-          blockTouchTimer = setTimeout(() => {
-            openSubAreaInterior('tower', cleanName, uList);
-          }, 450);
-        }, { passive: true });
-        blockG.addEventListener('touchend', () => clearTimeout(blockTouchTimer));
-        blockG.addEventListener('touchmove', () => clearTimeout(blockTouchTimer));
 
         // Hover Tooltip (clean name with NO digits)
         blockG.addEventListener('mouseenter', (e) => {
@@ -721,23 +706,11 @@
         g.appendChild(txt);
       }
 
-      // Interactions: Single click to select & navigate
-      g.addEventListener('click', () => selectPlot(p.id, true));
-
-      // Double-Tap / Double-Click: Enter inside the villa/house sub-area!
-      enableDoubleTapOrClick(g, () => {
-        openSubAreaInterior('villa', `House #${p.number}`, [p]);
+      // Interactions: Single click to select & navigate (no inscreen, stays on main map)
+      g.addEventListener('click', (e) => {
+        e.stopPropagation();
+        selectPlot(p.id, false);
       });
-
-      // Mobile touch long-press (touch and hold) as additional shortcut
-      let plotTouchTimer = null;
-      g.addEventListener('touchstart', (e) => {
-        plotTouchTimer = setTimeout(() => {
-          openSubAreaInterior('villa', `House #${p.number}`, [p]);
-        }, 450);
-      }, { passive: true });
-      g.addEventListener('touchend', () => clearTimeout(plotTouchTimer));
-      g.addEventListener('touchmove', () => clearTimeout(plotTouchTimer));
 
       g.addEventListener('mouseenter', (e) => showPlotTooltip(e, p));
       g.addEventListener('mousemove', (e) => movePlotTooltip(e));
@@ -1573,8 +1546,17 @@
     return R * c;
   }
 
+  
+  function getLayoutDefaultGate() {
+    if (!nodes) return { id: 'gate_1', node: { x: 500, y: 500, label: 'Main Entrance Gate' } };
+    const gateNodes = Object.keys(nodes).filter(k => k.includes('gate') && !k.includes('entry') && !k.includes('_x'));
+    const gateId = gateNodes.length > 0 ? gateNodes[0] : (Object.keys(nodes)[0] || 'gate_1');
+    const gateNode = nodes[gateId] || { x: 500, y: 500, label: 'Main Entrance Gate' };
+    return { id: gateId, node: gateNode };
+  }
+
   function findClosestRoadNode(x, y) {
-    let closestId = 'gate_1';
+    let closestId = Object.keys(nodes)[0] || 'gate_1';
     let minDist = Infinity;
     for (const nid in nodes) {
       const n = nodes[nid];
@@ -1612,66 +1594,76 @@
   }
 
   function startLocationTracking(centerOnUser = true) {
-    if (!navigator.geolocation) {
-      showToast("Geolocation is not supported by your browser.", 3000);
-      return;
-    }
-
     const geoBtn = document.getElementById('geo-btn');
     if (geoBtn) geoBtn.classList.add('active');
     state.isGeoTracking = true;
+
+    const gate = getLayoutDefaultGate();
+    const defaultX = gate.node.x;
+    const defaultY = gate.node.y;
+    const gateLabel = (gate.node.label || 'Entrance Gate').split(' (')[0];
+
+    // Always guarantee an active user location pin immediately at the layout's real gate
+    if (!state.userLocation) {
+      state.userLocation = { mapX: defaultX, mapY: defaultY, accuracy: 15 };
+      updateUserLocationMarker(defaultX, defaultY, 15);
+      if (centerOnUser) {
+        zoomToCoordinates(defaultX, defaultY, 1.35);
+      }
+    }
+
+    if (!navigator.geolocation) {
+      showToast(`📍 Live location active at ${gateLabel}. Tap anywhere on the map to set your spot!`, 4000);
+      return;
+    }
 
     showToast("Acquiring GPS location... 🛰️", 2000);
 
     const geoSuccess = (position) => {
       const lat = position.coords.latitude;
       const lng = position.coords.longitude;
-      const accuracy = position.coords.accuracy || 20;
+      const accuracy = Math.min(position.coords.accuracy || 20, 45);
       const heading = position.coords.heading;
 
-      // Distance from Himagiri Meadows center (12.8605, 77.5925)
-      const distToLayout = getDistanceMeters(lat, lng, 12.8605, 77.5925);
+      let mapX = defaultX;
+      let mapY = defaultY;
 
-      let mapX, mapY;
-      if (distToLayout <= 1500) {
-        // User is inside or near the layout
-        const proj = gpsToMap(lat, lng);
-        mapX = proj.mapX;
-        mapY = proj.mapY;
-        if (!state.userLocation && centerOnUser) {
-          showToast("📍 Located inside Himagiri Meadows!", 3000);
-          zoomToCoordinates(mapX, mapY, 1.8);
+      if (currentLayout.id === 'himagiri') {
+        const distToHim = getDistanceMeters(lat, lng, 12.8605, 77.5925);
+        if (distToHim <= 1500) {
+          const proj = gpsToMap(lat, lng);
+          mapX = proj.mapX;
+          mapY = proj.mapY;
+          showToast("📍 Located inside Himagiri Meadows!", 2500);
+        } else {
+          showToast(`📍 Live GPS active. Positioned at ${gateLabel}. Tap map to move pin!`, 3500);
         }
       } else {
-        // User is testing outside layout (e.g. at home)
-        // Default to Gate 1 Entrance so routing works seamlessly
-        mapX = 80;
-        mapY = 336;
-        if (!state.userLocation) {
-          const distKm = (distToLayout / 1000).toFixed(1);
-          showToast(`📍 Live GPS active (~${distKm} km away). Placed at Gate 1 for navigation. (Click map to change location)`, 4500);
-          if (centerOnUser) {
-            zoomToCoordinates(80, 336, 1.8);
-          }
-        }
+        showToast(`📍 Live GPS active! Positioned at ${gateLabel}. Tap anywhere on map to move pin!`, 3500);
       }
 
       state.userLocation = { lat, lng, mapX, mapY, accuracy, heading };
       updateUserLocationMarker(mapX, mapY, accuracy, heading);
 
-      // If live location route is selected, dynamically re-route
+      if (centerOnUser) {
+        zoomToCoordinates(mapX, mapY, 1.35);
+      }
+
       if (state.startNodeId === 'my_location' && state.selectedPlotId) {
         calculateAndDisplayRoute('my_location', state.selectedPlotId);
       }
     };
 
-    const geoError = (error) => {
-      console.warn("Geolocation error:", error);
-      showToast("Could not access GPS. Defaulted to Gate 1. Tap anywhere on map to set your location.", 4000);
-      state.userLocation = { lat: 12.8605, lng: 77.5898, mapX: 140, mapY: 340, accuracy: 20 };
-      updateUserLocationMarker(140, 340, 20);
+    const geoError = (err) => {
+      console.warn("Geolocation warning/timeout:", err);
+      showToast(`📍 Placed at ${gateLabel}. Tap anywhere on map to move your location!`, 4000);
+      state.userLocation = { mapX: defaultX, mapY: defaultY, accuracy: 20 };
+      updateUserLocationMarker(defaultX, defaultY, 20);
       if (centerOnUser) {
-        zoomToCoordinates(140, 340, 1.8);
+        zoomToCoordinates(defaultX, defaultY, 1.35);
+      }
+      if (state.startNodeId === 'my_location' && state.selectedPlotId) {
+        calculateAndDisplayRoute('my_location', state.selectedPlotId);
       }
     };
 
@@ -1680,8 +1672,8 @@
     }
     state.geoWatchId = navigator.geolocation.watchPosition(geoSuccess, geoError, {
       enableHighAccuracy: true,
-      maximumAge: 3000,
-      timeout: 10000
+      maximumAge: 5000,
+      timeout: 8000
     });
   }
 
@@ -1709,8 +1701,9 @@
     if (startNid === 'my_location') {
       isUserLocationStart = true;
       if (!state.userLocation) {
-        state.userLocation = { mapX: 140, mapY: 340, accuracy: 15 };
-        updateUserLocationMarker(140, 340, 15);
+        const g = getLayoutDefaultGate();
+        state.userLocation = { mapX: g.node.x, mapY: g.node.y, accuracy: 15 };
+        updateUserLocationMarker(g.node.x, g.node.y, 15);
       }
       effectiveStartNodeId = findClosestRoadNode(state.userLocation.mapX, state.userLocation.mapY);
     }
@@ -2353,9 +2346,11 @@
         pt.y = e.clientY;
         const svgP = pt.matrixTransform(viewport.getScreenCTM().inverse());
         if (state.startNodeId === 'my_location' || state.isGeoTracking) {
-          state.userLocation = { mapX: svgP.x, mapY: svgP.y, accuracy: 10 };
-          updateUserLocationMarker(svgP.x, svgP.y, 10);
-          showToast("📍 Location pin set to selected spot!", 2500);
+          const ptX = Math.round(svgP.x);
+          const ptY = Math.round(svgP.y);
+          state.userLocation = { mapX: ptX, mapY: ptY, accuracy: 10 };
+          updateUserLocationMarker(ptX, ptY, 10);
+          showToast("📍 Live location moved to selected point!", 2000);
           if (state.selectedPlotId) {
             calculateAndDisplayRoute('my_location', state.selectedPlotId);
           }
@@ -2371,8 +2366,8 @@
     const rect = viewportDiv.getBoundingClientRect();
     const isMobile = window.innerWidth <= 900;
 
-    // On mobile / Android, ensure target plot is large and clearly visible
-    const finalScale = isMobile ? Math.max(targetScale, 1.9) : targetScale;
+    // On mobile, keep comfortable overview scale so user can see route & surroundings
+    const finalScale = isMobile ? Math.min(Math.max(targetScale, 1.2), 1.55) : targetScale;
 
     state.transform.scale = finalScale;
     state.transform.x = rect.width / 2 - mapX * finalScale;
@@ -2758,7 +2753,8 @@
     }
 
     // View Original Map Modal
-    document.getElementById('view-original-btn').addEventListener('click', () => {
+    const viewOrigBtn = document.getElementById('view-original-btn');
+    if (viewOrigBtn) viewOrigBtn.addEventListener('click', () => {
       originalModal.classList.add('active');
     });
 

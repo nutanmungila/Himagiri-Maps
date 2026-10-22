@@ -1,5 +1,5 @@
 // HM Maps Service Worker - Network-First for Instant Updates
-const CACHE_NAME = 'himagiri-map-v23';
+const CACHE_NAME = 'himagiri-map-v24';
 const ASSETS = [
   './',
   './index.html',
