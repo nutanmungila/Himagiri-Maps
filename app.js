@@ -3214,28 +3214,89 @@
       });
     }
 
-    // Portal Hero Layout Search & Quick Jump
+    // Portal Hero Layout Search & Quick Jump Suggestions
     const heroLayoutSearch = document.getElementById('portal-layout-search-input');
     const heroSearchClear = document.getElementById('portal-search-clear-btn');
+    const searchDropdown = document.getElementById('portal-search-results');
+
+    function renderHeroSearchResults(query) {
+      if (!searchDropdown) return;
+      const q = (query || '').toLowerCase().trim();
+      if (!q) {
+        searchDropdown.style.display = 'none';
+        searchDropdown.innerHTML = '';
+        return;
+      }
+
+      const matches = Object.values(layouts).filter(lay => {
+        return (lay.name && lay.name.toLowerCase().includes(q)) ||
+               (lay.location && lay.location.toLowerCase().includes(q)) ||
+               (lay.zone && lay.zone.toLowerCase().includes(q)) ||
+               (lay.type && lay.type.toLowerCase().includes(q));
+      }).slice(0, 8);
+
+      if (matches.length === 0) {
+        searchDropdown.style.display = 'block';
+        searchDropdown.innerHTML = `
+          <div style="padding: 16px; text-align: center; color: #94a3b8; font-size: 13px;">
+            No blueprints matching "<strong>${escapeHtml(query)}</strong>" found.
+          </div>
+        `;
+        return;
+      }
+
+      let html = '';
+      matches.forEach(m => {
+        const icon = m.id === 'himagiri' ? '🏡' : (m.id.includes('park') || m.id.includes('meadow') ? '🌳' : '🏢');
+        const unitLabel = `${m.unitCount || (m.plots ? Object.keys(m.plots).length : 0)} ${m.unitType || 'Units'}`;
+        html += `
+          <div class="portal-search-item" data-layout-id="${m.id}">
+            <div class="portal-search-item-info">
+              <span class="portal-search-item-title">${icon} ${escapeHtml(m.name)}</span>
+              <span class="portal-search-item-sub">📍 ${escapeHtml(m.location || '')} &bull; ${unitLabel}</span>
+            </div>
+            <span class="portal-search-item-action">Open Map ➔</span>
+          </div>
+        `;
+      });
+      searchDropdown.innerHTML = html;
+      searchDropdown.style.display = 'flex';
+
+      searchDropdown.querySelectorAll('.portal-search-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const lid = item.getAttribute('data-layout-id');
+          if (lid) {
+            searchDropdown.style.display = 'none';
+            if (heroLayoutSearch) heroLayoutSearch.value = '';
+            if (heroSearchClear) heroSearchClear.style.display = 'none';
+            loadLayout(lid);
+          }
+        });
+      });
+    }
+
     if (heroLayoutSearch) {
-      const handleHeroSearch = (e) => {
+      heroLayoutSearch.addEventListener('input', (e) => {
         const val = e.target.value;
         if (heroSearchClear) heroSearchClear.style.display = val ? 'block' : 'none';
-        if (dirSearchInput) {
-          dirSearchInput.value = val;
-          if (dirClearBtn) dirClearBtn.style.display = val ? 'flex' : 'none';
-        }
-        renderPortalDirectory('all', val);
-      };
-      heroLayoutSearch.addEventListener('input', handleHeroSearch);
+        renderHeroSearchResults(val);
+      });
       heroLayoutSearch.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
           const val = heroLayoutSearch.value.trim().toLowerCase();
           const match = Object.values(layouts).find(l => l.name.toLowerCase().includes(val) || l.id.toLowerCase().includes(val));
-          if (match) loadLayout(match.id);
+          if (match) {
+            if (searchDropdown) searchDropdown.style.display = 'none';
+            heroLayoutSearch.value = '';
+            if (heroSearchClear) heroSearchClear.style.display = 'none';
+            loadLayout(match.id);
+          }
+        } else if (e.key === 'Escape') {
+          if (searchDropdown) searchDropdown.style.display = 'none';
         }
       });
     }
+
     if (heroSearchClear) {
       heroSearchClear.addEventListener('click', () => {
         if (heroLayoutSearch) {
@@ -3243,10 +3304,15 @@
           heroLayoutSearch.focus();
         }
         heroSearchClear.style.display = 'none';
-        if (dirSearchInput) dirSearchInput.value = '';
-        renderPortalDirectory(currentDirectoryZone, '');
+        renderHeroSearchResults('');
       });
     }
+
+    document.addEventListener('click', (e) => {
+      if (searchDropdown && !e.target.closest('.portal-ai-card')) {
+        searchDropdown.style.display = 'none';
+      }
+    });
 
     // Portal Quick Jump Chips
     document.querySelectorAll('.portal-chip[data-layout]').forEach(chip => {
