@@ -42,7 +42,7 @@ window.LAYOUTS = {
         "w": 140,
         "h": 160,
         "rx": 8,
-        "label": "\ud83d\udecd\ufe0f Forum Falcon City Mall & Metro",
+        "label": "🛍️ Forum Falcon City Mall & Metro",
         "fill": "#1e1b4b",
         "stroke": "#818cf8"
       }
@@ -934,7 +934,7 @@ window.LAYOUTS = {
         "x": 1050,
         "y": 380,
         "roadNode": "pfc_gate_metro",
-        "icon": "\ud83d\udecd\ufe0f",
+        "icon": "🛍️",
         "type": "mall"
       },
       {
@@ -944,7 +944,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "pfc_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       },
       {
@@ -954,7 +954,7 @@ window.LAYOUTS = {
         "x": 760,
         "y": 480,
         "roadNode": "pfc_junc_e",
-        "icon": "\ud83c\udfbe",
+        "icon": "🎾",
         "type": "sports"
       },
       {
@@ -964,7 +964,7 @@ window.LAYOUTS = {
         "x": 480,
         "y": 480,
         "roadNode": "pfc_junc_w",
-        "icon": "\ud83c\udf3f",
+        "icon": "🌿",
         "type": "park"
       },
       {
@@ -974,7 +974,7 @@ window.LAYOUTS = {
         "x": 90,
         "y": 480,
         "roadNode": "pfc_gate_main",
-        "icon": "\ud83d\udeaa",
+        "icon": "🚪",
         "type": "gate"
       },
       {
@@ -984,7 +984,7 @@ window.LAYOUTS = {
         "x": 1110,
         "y": 480,
         "roadNode": "pfc_gate_metro",
-        "icon": "\ud83d\udeaa",
+        "icon": "🚪",
         "type": "gate"
       }
     ],
@@ -1029,7 +1029,8 @@ window.LAYOUTS = {
       "Block E",
       "Block F",
       "Block G"
-    ]
+    ],
+    "verified": true
   },
   "prestige_elysian": {
     "id": "prestige_elysian",
@@ -1941,7 +1942,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "pe_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       },
       {
@@ -1951,7 +1952,7 @@ window.LAYOUTS = {
         "x": 740,
         "y": 480,
         "roadNode": "pe_junc_e",
-        "icon": "\ud83c\udff8",
+        "icon": "🏸",
         "type": "sports"
       },
       {
@@ -1961,7 +1962,7 @@ window.LAYOUTS = {
         "x": 500,
         "y": 480,
         "roadNode": "pe_junc_w",
-        "icon": "\ud83c\udf3f",
+        "icon": "🌿",
         "type": "park"
       },
       {
@@ -1971,7 +1972,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 550,
         "roadNode": "pe_mid_ctr_s",
-        "icon": "\ud83d\udedd",
+        "icon": "🛝",
         "type": "recreation"
       },
       {
@@ -1981,7 +1982,7 @@ window.LAYOUTS = {
         "x": 90,
         "y": 480,
         "roadNode": "pe_gate_main",
-        "icon": "\ud83d\udeaa",
+        "icon": "🚪",
         "type": "gate"
       },
       {
@@ -1991,7 +1992,7 @@ window.LAYOUTS = {
         "x": 1100,
         "y": 480,
         "roadNode": "pe_gate_north",
-        "icon": "\ud83d\udeaa",
+        "icon": "🚪",
         "type": "gate"
       }
     ],
@@ -2033,7 +2034,8 @@ window.LAYOUTS = {
       "Argent Tower",
       "Cuprum Tower",
       "Platin Tower"
-    ]
+    ],
+    "verified": true
   },
   "kristal_beryl": {
     "id": "kristal_beryl",
@@ -2841,7 +2843,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "kb_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       },
       {
@@ -2851,7 +2853,7 @@ window.LAYOUTS = {
         "x": 480,
         "y": 480,
         "roadNode": "kb_junc_w",
-        "icon": "\ud83c\udff8",
+        "icon": "🏸",
         "type": "sports"
       },
       {
@@ -2861,7 +2863,7 @@ window.LAYOUTS = {
         "x": 760,
         "y": 480,
         "roadNode": "kb_junc_e",
-        "icon": "\ud83d\udedd",
+        "icon": "🛝",
         "type": "recreation"
       },
       {
@@ -2871,7 +2873,7 @@ window.LAYOUTS = {
         "x": 90,
         "y": 480,
         "roadNode": "kb_gate_main",
-        "icon": "\ud83d\udeaa",
+        "icon": "🚪",
         "type": "gate"
       },
       {
@@ -2881,7 +2883,7 @@ window.LAYOUTS = {
         "x": 1100,
         "y": 480,
         "roadNode": "kb_gate_east",
-        "icon": "\ud83d\udeaa",
+        "icon": "🚪",
         "type": "gate"
       }
     ],
@@ -2924,7 +2926,8 @@ window.LAYOUTS = {
       "Block C",
       "Block D",
       "Block E"
-    ]
+    ],
+    "verified": true
   },
   "himagiri": {
     "id": "himagiri",
@@ -3737,45 +3740,6 @@ window.LAYOUTS = {
       ]
     },
     "plots": {
-      "1C": {
-        "id": "1C",
-        "number": "1C",
-        "road": "Aster Road",
-        "block": "Aster North",
-        "facing": "East",
-        "x": 130,
-        "y": 248,
-        "w": 42,
-        "h": 22,
-        "roadNode": "ast_n",
-        "color": "yellow"
-      },
-      "1B": {
-        "id": "1B",
-        "number": "1B",
-        "road": "Aster Road",
-        "block": "Aster North",
-        "facing": "East",
-        "x": 130,
-        "y": 272,
-        "w": 42,
-        "h": 22,
-        "roadNode": "ast_n",
-        "color": "yellow"
-      },
-      "1A": {
-        "id": "1A",
-        "number": "1A",
-        "road": "Aster Road",
-        "block": "Aster North",
-        "facing": "East",
-        "x": 130,
-        "y": 296,
-        "w": 42,
-        "h": 22,
-        "roadNode": "ast_n",
-        "color": "yellow"
-      },
       "1": {
         "id": "1",
         "number": "1",
@@ -3919,19 +3883,6 @@ window.LAYOUTS = {
         "roadNode": "ast_mid",
         "color": "yellow"
       },
-      "12B": {
-        "id": "12B",
-        "number": "12B",
-        "road": "Aster Road",
-        "block": "Aster South",
-        "facing": "East",
-        "x": 130,
-        "y": 576,
-        "w": 42,
-        "h": 18,
-        "roadNode": "ast_mid",
-        "color": "yellow"
-      },
       "14": {
         "id": "14",
         "number": "14",
@@ -3971,56 +3922,199 @@ window.LAYOUTS = {
         "roadNode": "ast_mid",
         "color": "yellow"
       },
-      "97": {
-        "id": "97",
-        "number": "97",
-        "road": "Temple Road",
-        "block": "West Sector",
-        "facing": "South",
-        "x": 58,
-        "y": 655,
-        "w": 32,
-        "h": 22,
-        "roadNode": "ast_temple",
-        "color": "lightyellow"
+      "17": {
+        "id": "17",
+        "number": "17",
+        "road": "Aster Road",
+        "block": "Aster South",
+        "facing": "West",
+        "x": 204,
+        "y": 587,
+        "w": 42,
+        "h": 19,
+        "roadNode": "ast_mid",
+        "color": "lightgreen"
       },
-      "96": {
-        "id": "96",
-        "number": "96",
-        "road": "Temple Road",
-        "block": "West Sector",
-        "facing": "South",
-        "x": 93,
-        "y": 655,
-        "w": 32,
-        "h": 22,
-        "roadNode": "ast_temple",
-        "color": "yellow"
+      "18": {
+        "id": "18",
+        "number": "18",
+        "road": "Aster Road",
+        "block": "Aster South",
+        "facing": "West",
+        "x": 204,
+        "y": 566,
+        "w": 42,
+        "h": 19,
+        "roadNode": "ast_mid",
+        "color": "lightgreen"
       },
-      "33": {
-        "id": "33",
-        "number": "33",
+      "19": {
+        "id": "19",
+        "number": "19",
+        "road": "Aster Road",
+        "block": "Aster South",
+        "facing": "West",
+        "x": 204,
+        "y": 545,
+        "w": 42,
+        "h": 19,
+        "roadNode": "ast_mid",
+        "color": "lightgreen"
+      },
+      "20": {
+        "id": "20",
+        "number": "20",
+        "road": "Aster Road",
+        "block": "Aster South",
+        "facing": "West",
+        "x": 204,
+        "y": 524,
+        "w": 42,
+        "h": 19,
+        "roadNode": "ast_mid",
+        "color": "lightgreen"
+      },
+      "21": {
+        "id": "21",
+        "number": "21",
+        "road": "Aster Road",
+        "block": "Aster South",
+        "facing": "West",
+        "x": 204,
+        "y": 503,
+        "w": 42,
+        "h": 19,
+        "roadNode": "ast_mid",
+        "color": "lightgreen"
+      },
+      "22": {
+        "id": "22",
+        "number": "22",
+        "road": "Aster Road",
+        "block": "Aster South",
+        "facing": "West",
+        "x": 204,
+        "y": 482,
+        "w": 42,
+        "h": 19,
+        "roadNode": "ast_mid",
+        "color": "lightgreen"
+      },
+      "23": {
+        "id": "23",
+        "number": "23",
+        "road": "Aster Road",
+        "block": "Aster South",
+        "facing": "West",
+        "x": 204,
+        "y": 461,
+        "w": 42,
+        "h": 19,
+        "roadNode": "ast_mid",
+        "color": "lightgreen"
+      },
+      "24": {
+        "id": "24",
+        "number": "24",
+        "road": "Aster Road",
+        "block": "Aster South",
+        "facing": "West",
+        "x": 204,
+        "y": 440,
+        "w": 42,
+        "h": 19,
+        "roadNode": "ast_mid",
+        "color": "lightgreen"
+      },
+      "25": {
+        "id": "25",
+        "number": "25",
+        "road": "Aster Road",
+        "block": "Aster South",
+        "facing": "West",
+        "x": 204,
+        "y": 419,
+        "w": 42,
+        "h": 19,
+        "roadNode": "ast_mid",
+        "color": "lightgreen"
+      },
+      "26": {
+        "id": "26",
+        "number": "26",
+        "road": "Aster Road",
+        "block": "Aster South",
+        "facing": "West",
+        "x": 204,
+        "y": 398,
+        "w": 42,
+        "h": 19,
+        "roadNode": "ast_mid",
+        "color": "lightgreen"
+      },
+      "27": {
+        "id": "27",
+        "number": "27",
+        "road": "Aster Road",
+        "block": "Aster South",
+        "facing": "West",
+        "x": 204,
+        "y": 377,
+        "w": 42,
+        "h": 19,
+        "roadNode": "ast_mid",
+        "color": "lightgreen"
+      },
+      "28": {
+        "id": "28",
+        "number": "28",
+        "road": "Aster Road",
+        "block": "Aster South",
+        "facing": "West",
+        "x": 204,
+        "y": 356,
+        "w": 42,
+        "h": 19,
+        "roadNode": "ast_mid",
+        "color": "lightgreen"
+      },
+      "29": {
+        "id": "29",
+        "number": "29",
         "road": "Aster Road",
         "block": "Aster North",
         "facing": "West",
         "x": 204,
-        "y": 200,
+        "y": 296,
         "w": 42,
         "h": 22,
         "roadNode": "ast_n",
         "color": "lightgreen"
       },
-      "35/36": {
-        "id": "35/36",
-        "number": "35/36",
-        "road": "Bluebell Road",
-        "block": "Bluebell North",
-        "facing": "East",
-        "x": 248,
-        "y": 200,
+      "30": {
+        "id": "30",
+        "number": "30",
+        "road": "Aster Road",
+        "block": "Aster North",
+        "facing": "West",
+        "x": 204,
+        "y": 272,
         "w": 42,
         "h": 22,
-        "roadNode": "blu_n",
+        "roadNode": "ast_n",
+        "color": "lightgreen"
+      },
+      "31": {
+        "id": "31",
+        "number": "31",
+        "road": "Aster Road",
+        "block": "Aster North",
+        "facing": "West",
+        "x": 204,
+        "y": 248,
+        "w": 42,
+        "h": 22,
+        "roadNode": "ast_n",
         "color": "lightgreen"
       },
       "32": {
@@ -4031,6 +4125,19 @@ window.LAYOUTS = {
         "facing": "West",
         "x": 204,
         "y": 224,
+        "w": 42,
+        "h": 22,
+        "roadNode": "ast_n",
+        "color": "lightgreen"
+      },
+      "33": {
+        "id": "33",
+        "number": "33",
+        "road": "Aster Road",
+        "block": "Aster North",
+        "facing": "West",
+        "x": 204,
+        "y": 200,
         "w": 42,
         "h": 22,
         "roadNode": "ast_n",
@@ -4049,19 +4156,6 @@ window.LAYOUTS = {
         "roadNode": "blu_n",
         "color": "lightgreen"
       },
-      "31": {
-        "id": "31",
-        "number": "31",
-        "road": "Aster Road",
-        "block": "Aster North",
-        "facing": "West",
-        "x": 204,
-        "y": 248,
-        "w": 42,
-        "h": 22,
-        "roadNode": "ast_n",
-        "color": "lightgreen"
-      },
       "38": {
         "id": "38",
         "number": "38",
@@ -4073,19 +4167,6 @@ window.LAYOUTS = {
         "w": 42,
         "h": 22,
         "roadNode": "blu_n",
-        "color": "lightgreen"
-      },
-      "30": {
-        "id": "30",
-        "number": "30",
-        "road": "Aster Road",
-        "block": "Aster North",
-        "facing": "West",
-        "x": 204,
-        "y": 272,
-        "w": 42,
-        "h": 22,
-        "roadNode": "ast_n",
         "color": "lightgreen"
       },
       "39": {
@@ -4101,19 +4182,6 @@ window.LAYOUTS = {
         "roadNode": "blu_n",
         "color": "lightgreen"
       },
-      "29": {
-        "id": "29",
-        "number": "29",
-        "road": "Aster Road",
-        "block": "Aster North",
-        "facing": "West",
-        "x": 204,
-        "y": 296,
-        "w": 42,
-        "h": 22,
-        "roadNode": "ast_n",
-        "color": "lightgreen"
-      },
       "40": {
         "id": "40",
         "number": "40",
@@ -4125,19 +4193,6 @@ window.LAYOUTS = {
         "w": 42,
         "h": 22,
         "roadNode": "blu_n",
-        "color": "lightgreen"
-      },
-      "28": {
-        "id": "28",
-        "number": "28",
-        "road": "Aster Road",
-        "block": "Aster South",
-        "facing": "West",
-        "x": 204,
-        "y": 356,
-        "w": 42,
-        "h": 19,
-        "roadNode": "ast_mid",
         "color": "lightgreen"
       },
       "41": {
@@ -4153,19 +4208,6 @@ window.LAYOUTS = {
         "roadNode": "blu_mid",
         "color": "lightgreen"
       },
-      "27": {
-        "id": "27",
-        "number": "27",
-        "road": "Aster Road",
-        "block": "Aster South",
-        "facing": "West",
-        "x": 204,
-        "y": 377,
-        "w": 42,
-        "h": 19,
-        "roadNode": "ast_mid",
-        "color": "lightgreen"
-      },
       "42": {
         "id": "42",
         "number": "42",
@@ -4177,19 +4219,6 @@ window.LAYOUTS = {
         "w": 42,
         "h": 19,
         "roadNode": "blu_mid",
-        "color": "lightgreen"
-      },
-      "26": {
-        "id": "26",
-        "number": "26",
-        "road": "Aster Road",
-        "block": "Aster South",
-        "facing": "West",
-        "x": 204,
-        "y": 398,
-        "w": 42,
-        "h": 19,
-        "roadNode": "ast_mid",
         "color": "lightgreen"
       },
       "43": {
@@ -4205,19 +4234,6 @@ window.LAYOUTS = {
         "roadNode": "blu_mid",
         "color": "lightgreen"
       },
-      "25": {
-        "id": "25",
-        "number": "25",
-        "road": "Aster Road",
-        "block": "Aster South",
-        "facing": "West",
-        "x": 204,
-        "y": 419,
-        "w": 42,
-        "h": 19,
-        "roadNode": "ast_mid",
-        "color": "lightgreen"
-      },
       "44": {
         "id": "44",
         "number": "44",
@@ -4229,19 +4245,6 @@ window.LAYOUTS = {
         "w": 42,
         "h": 19,
         "roadNode": "blu_mid",
-        "color": "lightgreen"
-      },
-      "24": {
-        "id": "24",
-        "number": "24",
-        "road": "Aster Road",
-        "block": "Aster South",
-        "facing": "West",
-        "x": 204,
-        "y": 440,
-        "w": 42,
-        "h": 19,
-        "roadNode": "ast_mid",
         "color": "lightgreen"
       },
       "45": {
@@ -4257,19 +4260,6 @@ window.LAYOUTS = {
         "roadNode": "blu_mid",
         "color": "lightgreen"
       },
-      "23": {
-        "id": "23",
-        "number": "23",
-        "road": "Aster Road",
-        "block": "Aster South",
-        "facing": "West",
-        "x": 204,
-        "y": 461,
-        "w": 42,
-        "h": 19,
-        "roadNode": "ast_mid",
-        "color": "lightgreen"
-      },
       "46": {
         "id": "46",
         "number": "46",
@@ -4281,19 +4271,6 @@ window.LAYOUTS = {
         "w": 42,
         "h": 19,
         "roadNode": "blu_mid",
-        "color": "lightgreen"
-      },
-      "22": {
-        "id": "22",
-        "number": "22",
-        "road": "Aster Road",
-        "block": "Aster South",
-        "facing": "West",
-        "x": 204,
-        "y": 482,
-        "w": 42,
-        "h": 19,
-        "roadNode": "ast_mid",
         "color": "lightgreen"
       },
       "47": {
@@ -4309,19 +4286,6 @@ window.LAYOUTS = {
         "roadNode": "blu_mid",
         "color": "lightgreen"
       },
-      "21": {
-        "id": "21",
-        "number": "21",
-        "road": "Aster Road",
-        "block": "Aster South",
-        "facing": "West",
-        "x": 204,
-        "y": 503,
-        "w": 42,
-        "h": 19,
-        "roadNode": "ast_mid",
-        "color": "lightgreen"
-      },
       "48": {
         "id": "48",
         "number": "48",
@@ -4333,19 +4297,6 @@ window.LAYOUTS = {
         "w": 42,
         "h": 19,
         "roadNode": "blu_mid",
-        "color": "lightgreen"
-      },
-      "20": {
-        "id": "20",
-        "number": "20",
-        "road": "Aster Road",
-        "block": "Aster South",
-        "facing": "West",
-        "x": 204,
-        "y": 524,
-        "w": 42,
-        "h": 19,
-        "roadNode": "ast_mid",
         "color": "lightgreen"
       },
       "49": {
@@ -4361,19 +4312,6 @@ window.LAYOUTS = {
         "roadNode": "blu_mid",
         "color": "lightgreen"
       },
-      "19": {
-        "id": "19",
-        "number": "19",
-        "road": "Aster Road",
-        "block": "Aster South",
-        "facing": "West",
-        "x": 204,
-        "y": 545,
-        "w": 42,
-        "h": 19,
-        "roadNode": "ast_mid",
-        "color": "lightgreen"
-      },
       "50": {
         "id": "50",
         "number": "50",
@@ -4385,19 +4323,6 @@ window.LAYOUTS = {
         "w": 42,
         "h": 19,
         "roadNode": "blu_mid",
-        "color": "lightgreen"
-      },
-      "18": {
-        "id": "18",
-        "number": "18",
-        "road": "Aster Road",
-        "block": "Aster South",
-        "facing": "West",
-        "x": 204,
-        "y": 566,
-        "w": 42,
-        "h": 19,
-        "roadNode": "ast_mid",
         "color": "lightgreen"
       },
       "51": {
@@ -4413,19 +4338,6 @@ window.LAYOUTS = {
         "roadNode": "blu_mid",
         "color": "lightgreen"
       },
-      "17": {
-        "id": "17",
-        "number": "17",
-        "road": "Aster Road",
-        "block": "Aster South",
-        "facing": "West",
-        "x": 204,
-        "y": 587,
-        "w": 42,
-        "h": 19,
-        "roadNode": "ast_mid",
-        "color": "lightgreen"
-      },
       "52": {
         "id": "52",
         "number": "52",
@@ -4438,3295 +4350,6 @@ window.LAYOUTS = {
         "h": 19,
         "roadNode": "blu_mid",
         "color": "lightgreen"
-      },
-      "78": {
-        "id": "78",
-        "number": "78",
-        "road": "Bluebell Road",
-        "block": "Bluebell North",
-        "facing": "West",
-        "x": 322,
-        "y": 200,
-        "w": 42,
-        "h": 22,
-        "roadNode": "blu_n",
-        "color": "yellow"
-      },
-      "79": {
-        "id": "79",
-        "number": "79",
-        "road": "Carnation Road",
-        "block": "Carnation North",
-        "facing": "East",
-        "x": 366,
-        "y": 200,
-        "w": 42,
-        "h": 22,
-        "roadNode": "car_n",
-        "color": "yellow"
-      },
-      "77": {
-        "id": "77",
-        "number": "77",
-        "road": "Bluebell Road",
-        "block": "Bluebell North",
-        "facing": "West",
-        "x": 322,
-        "y": 224,
-        "w": 42,
-        "h": 22,
-        "roadNode": "blu_n",
-        "color": "yellow"
-      },
-      "80": {
-        "id": "80",
-        "number": "80",
-        "road": "Carnation Road",
-        "block": "Carnation North",
-        "facing": "East",
-        "x": 366,
-        "y": 224,
-        "w": 42,
-        "h": 22,
-        "roadNode": "car_n",
-        "color": "yellow"
-      },
-      "76": {
-        "id": "76",
-        "number": "76",
-        "road": "Bluebell Road",
-        "block": "Bluebell North",
-        "facing": "West",
-        "x": 322,
-        "y": 248,
-        "w": 42,
-        "h": 22,
-        "roadNode": "blu_n",
-        "color": "yellow"
-      },
-      "81": {
-        "id": "81",
-        "number": "81",
-        "road": "Carnation Road",
-        "block": "Carnation North",
-        "facing": "East",
-        "x": 366,
-        "y": 248,
-        "w": 42,
-        "h": 22,
-        "roadNode": "car_n",
-        "color": "yellow"
-      },
-      "75": {
-        "id": "75",
-        "number": "75",
-        "road": "Bluebell Road",
-        "block": "Bluebell North",
-        "facing": "West",
-        "x": 322,
-        "y": 272,
-        "w": 42,
-        "h": 22,
-        "roadNode": "blu_n",
-        "color": "yellow"
-      },
-      "82": {
-        "id": "82",
-        "number": "82",
-        "road": "Carnation Road",
-        "block": "Carnation North",
-        "facing": "East",
-        "x": 366,
-        "y": 272,
-        "w": 42,
-        "h": 22,
-        "roadNode": "car_n",
-        "color": "yellow"
-      },
-      "74": {
-        "id": "74",
-        "number": "74",
-        "road": "Bluebell Road",
-        "block": "Bluebell North",
-        "facing": "West",
-        "x": 322,
-        "y": 296,
-        "w": 42,
-        "h": 22,
-        "roadNode": "blu_n",
-        "color": "yellow"
-      },
-      "83": {
-        "id": "83",
-        "number": "83",
-        "road": "Carnation Road",
-        "block": "Carnation North",
-        "facing": "East",
-        "x": 366,
-        "y": 296,
-        "w": 42,
-        "h": 22,
-        "roadNode": "car_n",
-        "color": "yellow"
-      },
-      "73": {
-        "id": "73",
-        "number": "73",
-        "road": "Bluebell Road",
-        "block": "Bluebell Mid",
-        "facing": "West",
-        "x": 322,
-        "y": 356,
-        "w": 42,
-        "h": 19,
-        "roadNode": "blu_mid",
-        "color": "yellow"
-      },
-      "84": {
-        "id": "84",
-        "number": "84",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "East",
-        "x": 366,
-        "y": 356,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "yellow"
-      },
-      "72": {
-        "id": "72",
-        "number": "72",
-        "road": "Bluebell Road",
-        "block": "Bluebell Mid",
-        "facing": "West",
-        "x": 322,
-        "y": 377,
-        "w": 42,
-        "h": 19,
-        "roadNode": "blu_mid",
-        "color": "yellow"
-      },
-      "85": {
-        "id": "85",
-        "number": "85",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "East",
-        "x": 366,
-        "y": 377,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "yellow"
-      },
-      "71": {
-        "id": "71",
-        "number": "71",
-        "road": "Bluebell Road",
-        "block": "Bluebell Mid",
-        "facing": "West",
-        "x": 322,
-        "y": 398,
-        "w": 42,
-        "h": 19,
-        "roadNode": "blu_mid",
-        "color": "yellow"
-      },
-      "86": {
-        "id": "86",
-        "number": "86",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "East",
-        "x": 366,
-        "y": 398,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "yellow"
-      },
-      "70": {
-        "id": "70",
-        "number": "70",
-        "road": "Bluebell Road",
-        "block": "Bluebell Mid",
-        "facing": "West",
-        "x": 322,
-        "y": 419,
-        "w": 42,
-        "h": 19,
-        "roadNode": "blu_mid",
-        "color": "yellow"
-      },
-      "87": {
-        "id": "87",
-        "number": "87",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "East",
-        "x": 366,
-        "y": 419,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "yellow"
-      },
-      "69": {
-        "id": "69",
-        "number": "69",
-        "road": "Bluebell Road",
-        "block": "Bluebell Mid",
-        "facing": "West",
-        "x": 322,
-        "y": 440,
-        "w": 42,
-        "h": 19,
-        "roadNode": "blu_mid",
-        "color": "yellow"
-      },
-      "88": {
-        "id": "88",
-        "number": "88",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "East",
-        "x": 366,
-        "y": 440,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "yellow"
-      },
-      "68": {
-        "id": "68",
-        "number": "68",
-        "road": "Bluebell Road",
-        "block": "Bluebell Mid",
-        "facing": "West",
-        "x": 322,
-        "y": 461,
-        "w": 42,
-        "h": 19,
-        "roadNode": "blu_mid",
-        "color": "yellow"
-      },
-      "89": {
-        "id": "89",
-        "number": "89",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "East",
-        "x": 366,
-        "y": 461,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "yellow"
-      },
-      "67": {
-        "id": "67",
-        "number": "67",
-        "road": "Bluebell Road",
-        "block": "Bluebell Mid",
-        "facing": "West",
-        "x": 322,
-        "y": 482,
-        "w": 42,
-        "h": 19,
-        "roadNode": "blu_mid",
-        "color": "yellow"
-      },
-      "90": {
-        "id": "90",
-        "number": "90",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "East",
-        "x": 366,
-        "y": 482,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "yellow"
-      },
-      "66": {
-        "id": "66",
-        "number": "66",
-        "road": "Bluebell Road",
-        "block": "Bluebell Mid",
-        "facing": "West",
-        "x": 322,
-        "y": 503,
-        "w": 42,
-        "h": 19,
-        "roadNode": "blu_mid",
-        "color": "yellow"
-      },
-      "91": {
-        "id": "91",
-        "number": "91",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "East",
-        "x": 366,
-        "y": 503,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "yellow"
-      },
-      "65": {
-        "id": "65",
-        "number": "65",
-        "road": "Bluebell Road",
-        "block": "Bluebell Mid",
-        "facing": "West",
-        "x": 322,
-        "y": 524,
-        "w": 42,
-        "h": 19,
-        "roadNode": "blu_mid",
-        "color": "yellow"
-      },
-      "92": {
-        "id": "92",
-        "number": "92",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "East",
-        "x": 366,
-        "y": 524,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "yellow"
-      },
-      "64": {
-        "id": "64",
-        "number": "64",
-        "road": "Bluebell Road",
-        "block": "Bluebell Mid",
-        "facing": "West",
-        "x": 322,
-        "y": 545,
-        "w": 42,
-        "h": 19,
-        "roadNode": "blu_mid",
-        "color": "yellow"
-      },
-      "93": {
-        "id": "93",
-        "number": "93",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "East",
-        "x": 366,
-        "y": 545,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "yellow"
-      },
-      "63": {
-        "id": "63",
-        "number": "63",
-        "road": "Bluebell Road",
-        "block": "Bluebell Mid",
-        "facing": "West",
-        "x": 322,
-        "y": 566,
-        "w": 42,
-        "h": 19,
-        "roadNode": "blu_mid",
-        "color": "yellow"
-      },
-      "94": {
-        "id": "94",
-        "number": "94",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "East",
-        "x": 366,
-        "y": 566,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "yellow"
-      },
-      "62": {
-        "id": "62",
-        "number": "62",
-        "road": "Bluebell Road",
-        "block": "Bluebell Mid",
-        "facing": "West",
-        "x": 322,
-        "y": 587,
-        "w": 42,
-        "h": 19,
-        "roadNode": "blu_mid",
-        "color": "yellow"
-      },
-      "95": {
-        "id": "95",
-        "number": "95",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "East",
-        "x": 366,
-        "y": 587,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "yellow"
-      },
-      "112": {
-        "id": "112",
-        "number": "112",
-        "road": "Carnation Road",
-        "block": "Carnation North",
-        "facing": "West",
-        "x": 440,
-        "y": 200,
-        "w": 42,
-        "h": 22,
-        "roadNode": "car_n",
-        "color": "lightgreen"
-      },
-      "113": {
-        "id": "113",
-        "number": "113",
-        "road": "Dhalia Road",
-        "block": "Dhalia North",
-        "facing": "East",
-        "x": 484,
-        "y": 200,
-        "w": 42,
-        "h": 22,
-        "roadNode": "dha_n",
-        "color": "lightgreen"
-      },
-      "111": {
-        "id": "111",
-        "number": "111",
-        "road": "Carnation Road",
-        "block": "Carnation North",
-        "facing": "West",
-        "x": 440,
-        "y": 224,
-        "w": 42,
-        "h": 22,
-        "roadNode": "car_n",
-        "color": "lightgreen"
-      },
-      "114": {
-        "id": "114",
-        "number": "114",
-        "road": "Dhalia Road",
-        "block": "Dhalia North",
-        "facing": "East",
-        "x": 484,
-        "y": 224,
-        "w": 42,
-        "h": 22,
-        "roadNode": "dha_n",
-        "color": "lightgreen"
-      },
-      "110": {
-        "id": "110",
-        "number": "110",
-        "road": "Carnation Road",
-        "block": "Carnation North",
-        "facing": "West",
-        "x": 440,
-        "y": 248,
-        "w": 42,
-        "h": 22,
-        "roadNode": "car_n",
-        "color": "lightgreen"
-      },
-      "115": {
-        "id": "115",
-        "number": "115",
-        "road": "Dhalia Road",
-        "block": "Dhalia North",
-        "facing": "East",
-        "x": 484,
-        "y": 248,
-        "w": 42,
-        "h": 22,
-        "roadNode": "dha_n",
-        "color": "lightgreen"
-      },
-      "109": {
-        "id": "109",
-        "number": "109",
-        "road": "Carnation Road",
-        "block": "Carnation North",
-        "facing": "West",
-        "x": 440,
-        "y": 272,
-        "w": 42,
-        "h": 22,
-        "roadNode": "car_n",
-        "color": "lightgreen"
-      },
-      "116": {
-        "id": "116",
-        "number": "116",
-        "road": "Dhalia Road",
-        "block": "Dhalia North",
-        "facing": "East",
-        "x": 484,
-        "y": 272,
-        "w": 42,
-        "h": 22,
-        "roadNode": "dha_n",
-        "color": "lightgreen"
-      },
-      "108": {
-        "id": "108",
-        "number": "108",
-        "road": "Carnation Road",
-        "block": "Carnation North",
-        "facing": "West",
-        "x": 440,
-        "y": 296,
-        "w": 42,
-        "h": 22,
-        "roadNode": "car_n",
-        "color": "lightgreen"
-      },
-      "117": {
-        "id": "117",
-        "number": "117",
-        "road": "Dhalia Road",
-        "block": "Dhalia North",
-        "facing": "East",
-        "x": 484,
-        "y": 296,
-        "w": 42,
-        "h": 22,
-        "roadNode": "dha_n",
-        "color": "lightgreen"
-      },
-      "107": {
-        "id": "107",
-        "number": "107",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "West",
-        "x": 440,
-        "y": 356,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "lightgreen"
-      },
-      "118": {
-        "id": "118",
-        "number": "118",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "East",
-        "x": 484,
-        "y": 356,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "lightgreen"
-      },
-      "106": {
-        "id": "106",
-        "number": "106",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "West",
-        "x": 440,
-        "y": 377,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "lightgreen"
-      },
-      "119": {
-        "id": "119",
-        "number": "119",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "East",
-        "x": 484,
-        "y": 377,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "lightgreen"
-      },
-      "105": {
-        "id": "105",
-        "number": "105",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "West",
-        "x": 440,
-        "y": 398,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "lightgreen"
-      },
-      "120": {
-        "id": "120",
-        "number": "120",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "East",
-        "x": 484,
-        "y": 398,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "lightgreen"
-      },
-      "104": {
-        "id": "104",
-        "number": "104",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "West",
-        "x": 440,
-        "y": 419,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "lightgreen"
-      },
-      "121": {
-        "id": "121",
-        "number": "121",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "East",
-        "x": 484,
-        "y": 419,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "lightgreen"
-      },
-      "103": {
-        "id": "103",
-        "number": "103",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "West",
-        "x": 440,
-        "y": 440,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "lightgreen"
-      },
-      "122": {
-        "id": "122",
-        "number": "122",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "East",
-        "x": 484,
-        "y": 440,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "lightgreen"
-      },
-      "102": {
-        "id": "102",
-        "number": "102",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "West",
-        "x": 440,
-        "y": 461,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "lightgreen"
-      },
-      "123": {
-        "id": "123",
-        "number": "123",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "East",
-        "x": 484,
-        "y": 461,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "lightgreen"
-      },
-      "101": {
-        "id": "101",
-        "number": "101",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "West",
-        "x": 440,
-        "y": 482,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "lightgreen"
-      },
-      "124": {
-        "id": "124",
-        "number": "124",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "East",
-        "x": 484,
-        "y": 482,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "lightgreen"
-      },
-      "100": {
-        "id": "100",
-        "number": "100",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "West",
-        "x": 440,
-        "y": 503,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "lightgreen"
-      },
-      "234": {
-        "id": "234",
-        "number": "234",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "East",
-        "x": 484,
-        "y": 503,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "lightgreen"
-      },
-      "99": {
-        "id": "99",
-        "number": "99",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "West",
-        "x": 440,
-        "y": 524,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "lightgreen"
-      },
-      "235": {
-        "id": "235",
-        "number": "235",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "East",
-        "x": 484,
-        "y": 524,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "lightgreen"
-      },
-      "98": {
-        "id": "98",
-        "number": "98",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "West",
-        "x": 440,
-        "y": 545,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "lightgreen"
-      },
-      "236": {
-        "id": "236",
-        "number": "236",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "East",
-        "x": 484,
-        "y": 545,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "lightgreen"
-      },
-      "240": {
-        "id": "240",
-        "number": "240",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "West",
-        "x": 440,
-        "y": 566,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "lightgreen"
-      },
-      "237": {
-        "id": "237",
-        "number": "237",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "East",
-        "x": 484,
-        "y": 566,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "lightgreen"
-      },
-      "239": {
-        "id": "239",
-        "number": "239",
-        "road": "Carnation Road",
-        "block": "Carnation Mid",
-        "facing": "West",
-        "x": 440,
-        "y": 587,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_mid",
-        "color": "lightgreen"
-      },
-      "238": {
-        "id": "238",
-        "number": "238",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "East",
-        "x": 484,
-        "y": 587,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "lightgreen"
-      },
-      "286": {
-        "id": "286",
-        "number": "286",
-        "road": "Carnation Road",
-        "block": "Carnation South",
-        "facing": "West",
-        "x": 440,
-        "y": 720,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_s_mid",
-        "color": "lightgreen"
-      },
-      "285": {
-        "id": "285",
-        "number": "285",
-        "road": "Dhalia Road",
-        "block": "Carnation South",
-        "facing": "East",
-        "x": 484,
-        "y": 720,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_s_mid",
-        "color": "lightgreen"
-      },
-      "287": {
-        "id": "287",
-        "number": "287",
-        "road": "Carnation Road",
-        "block": "Carnation South",
-        "facing": "West",
-        "x": 440,
-        "y": 741,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_s_mid",
-        "color": "lightgreen"
-      },
-      "284": {
-        "id": "284",
-        "number": "284",
-        "road": "Dhalia Road",
-        "block": "Carnation South",
-        "facing": "East",
-        "x": 484,
-        "y": 741,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_s_mid",
-        "color": "lightgreen"
-      },
-      "288": {
-        "id": "288",
-        "number": "288",
-        "road": "Carnation Road",
-        "block": "Carnation South",
-        "facing": "West",
-        "x": 440,
-        "y": 762,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_s_mid",
-        "color": "lightgreen"
-      },
-      "283": {
-        "id": "283",
-        "number": "283",
-        "road": "Dhalia Road",
-        "block": "Carnation South",
-        "facing": "East",
-        "x": 484,
-        "y": 762,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_s_mid",
-        "color": "lightgreen"
-      },
-      "289": {
-        "id": "289",
-        "number": "289",
-        "road": "Carnation Road",
-        "block": "Carnation South",
-        "facing": "West",
-        "x": 440,
-        "y": 783,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_s_mid",
-        "color": "lightgreen"
-      },
-      "282": {
-        "id": "282",
-        "number": "282",
-        "road": "Dhalia Road",
-        "block": "Carnation South",
-        "facing": "East",
-        "x": 484,
-        "y": 783,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_s_mid",
-        "color": "lightgreen"
-      },
-      "290": {
-        "id": "290",
-        "number": "290",
-        "road": "Carnation Road",
-        "block": "Carnation South",
-        "facing": "West",
-        "x": 440,
-        "y": 804,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_s_mid",
-        "color": "lightgreen"
-      },
-      "281": {
-        "id": "281",
-        "number": "281",
-        "road": "Dhalia Road",
-        "block": "Carnation South",
-        "facing": "East",
-        "x": 484,
-        "y": 804,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_s_mid",
-        "color": "lightgreen"
-      },
-      "291": {
-        "id": "291",
-        "number": "291",
-        "road": "Carnation Road",
-        "block": "Carnation South",
-        "facing": "West",
-        "x": 440,
-        "y": 825,
-        "w": 42,
-        "h": 19,
-        "roadNode": "car_s_mid",
-        "color": "lightgreen"
-      },
-      "280": {
-        "id": "280",
-        "number": "280",
-        "road": "Dhalia Road",
-        "block": "Carnation South",
-        "facing": "East",
-        "x": 484,
-        "y": 825,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_s_mid",
-        "color": "lightgreen"
-      },
-      "279": {
-        "id": "279",
-        "number": "279",
-        "road": "Carnation Road South",
-        "block": "Carnation South",
-        "facing": "East",
-        "x": 484,
-        "y": 846,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_s_mid",
-        "color": "lightgreen"
-      },
-      "135": {
-        "id": "135",
-        "number": "135",
-        "road": "Dhalia Road",
-        "block": "Dhalia North",
-        "facing": "West",
-        "x": 558,
-        "y": 224,
-        "w": 42,
-        "h": 22,
-        "roadNode": "dha_n",
-        "color": "yellow"
-      },
-      "136": {
-        "id": "136",
-        "number": "136",
-        "road": "Exotica Road",
-        "block": "Exotica North",
-        "facing": "East",
-        "x": 602,
-        "y": 224,
-        "w": 42,
-        "h": 22,
-        "roadNode": "exo_n",
-        "color": "yellow"
-      },
-      "134": {
-        "id": "134",
-        "number": "134",
-        "road": "Dhalia Road",
-        "block": "Dhalia North",
-        "facing": "West",
-        "x": 558,
-        "y": 248,
-        "w": 42,
-        "h": 22,
-        "roadNode": "dha_n",
-        "color": "yellow"
-      },
-      "137": {
-        "id": "137",
-        "number": "137",
-        "road": "Exotica Road",
-        "block": "Exotica North",
-        "facing": "East",
-        "x": 602,
-        "y": 248,
-        "w": 42,
-        "h": 22,
-        "roadNode": "exo_n",
-        "color": "yellow"
-      },
-      "133": {
-        "id": "133",
-        "number": "133",
-        "road": "Dhalia Road",
-        "block": "Dhalia North",
-        "facing": "West",
-        "x": 558,
-        "y": 272,
-        "w": 42,
-        "h": 22,
-        "roadNode": "dha_n",
-        "color": "yellow"
-      },
-      "138": {
-        "id": "138",
-        "number": "138",
-        "road": "Exotica Road",
-        "block": "Exotica North",
-        "facing": "East",
-        "x": 602,
-        "y": 272,
-        "w": 42,
-        "h": 22,
-        "roadNode": "exo_n",
-        "color": "yellow"
-      },
-      "132": {
-        "id": "132",
-        "number": "132",
-        "road": "Dhalia Road",
-        "block": "Dhalia North",
-        "facing": "West",
-        "x": 558,
-        "y": 296,
-        "w": 42,
-        "h": 22,
-        "roadNode": "dha_n",
-        "color": "yellow"
-      },
-      "139": {
-        "id": "139",
-        "number": "139",
-        "road": "Exotica Road",
-        "block": "Exotica North",
-        "facing": "East",
-        "x": 602,
-        "y": 296,
-        "w": 42,
-        "h": 22,
-        "roadNode": "exo_n",
-        "color": "yellow"
-      },
-      "131": {
-        "id": "131",
-        "number": "131",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "West",
-        "x": 558,
-        "y": 356,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "yellow"
-      },
-      "140": {
-        "id": "140",
-        "number": "140",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "East",
-        "x": 602,
-        "y": 356,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "yellow"
-      },
-      "130": {
-        "id": "130",
-        "number": "130",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "West",
-        "x": 558,
-        "y": 377,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "yellow"
-      },
-      "141": {
-        "id": "141",
-        "number": "141",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "East",
-        "x": 602,
-        "y": 377,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "yellow"
-      },
-      "129": {
-        "id": "129",
-        "number": "129",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "West",
-        "x": 558,
-        "y": 398,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "yellow"
-      },
-      "142": {
-        "id": "142",
-        "number": "142",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "East",
-        "x": 602,
-        "y": 398,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "yellow"
-      },
-      "128": {
-        "id": "128",
-        "number": "128",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "West",
-        "x": 558,
-        "y": 419,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "yellow"
-      },
-      "143": {
-        "id": "143",
-        "number": "143",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "East",
-        "x": 602,
-        "y": 419,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "yellow"
-      },
-      "127": {
-        "id": "127",
-        "number": "127",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "West",
-        "x": 558,
-        "y": 440,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "yellow"
-      },
-      "144": {
-        "id": "144",
-        "number": "144",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "East",
-        "x": 602,
-        "y": 440,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "yellow"
-      },
-      "126": {
-        "id": "126",
-        "number": "126",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "West",
-        "x": 558,
-        "y": 461,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "yellow"
-      },
-      "145": {
-        "id": "145",
-        "number": "145",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "East",
-        "x": 602,
-        "y": 461,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "yellow"
-      },
-      "233": {
-        "id": "233",
-        "number": "233",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "West",
-        "x": 558,
-        "y": 482,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "yellow"
-      },
-      "222": {
-        "id": "222",
-        "number": "222",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "East",
-        "x": 602,
-        "y": 482,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "yellow"
-      },
-      "232": {
-        "id": "232",
-        "number": "232",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "West",
-        "x": 558,
-        "y": 503,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "yellow"
-      },
-      "223": {
-        "id": "223",
-        "number": "223",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "East",
-        "x": 602,
-        "y": 503,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "yellow"
-      },
-      "231": {
-        "id": "231",
-        "number": "231",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "West",
-        "x": 558,
-        "y": 524,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "yellow"
-      },
-      "224": {
-        "id": "224",
-        "number": "224",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "East",
-        "x": 602,
-        "y": 524,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "yellow"
-      },
-      "230": {
-        "id": "230",
-        "number": "230",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "West",
-        "x": 558,
-        "y": 545,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "yellow"
-      },
-      "225": {
-        "id": "225",
-        "number": "225",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "East",
-        "x": 602,
-        "y": 545,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "yellow"
-      },
-      "229": {
-        "id": "229",
-        "number": "229",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "West",
-        "x": 558,
-        "y": 566,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "yellow"
-      },
-      "226": {
-        "id": "226",
-        "number": "226",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "East",
-        "x": 602,
-        "y": 566,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "yellow"
-      },
-      "228": {
-        "id": "228",
-        "number": "228",
-        "road": "Dhalia Road",
-        "block": "Dhalia Mid",
-        "facing": "West",
-        "x": 558,
-        "y": 587,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_mid",
-        "color": "yellow"
-      },
-      "227": {
-        "id": "227",
-        "number": "227",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "East",
-        "x": 602,
-        "y": 587,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "yellow"
-      },
-      "272": {
-        "id": "272",
-        "number": "272",
-        "road": "Dhalia Road",
-        "block": "Dhalia South",
-        "facing": "West",
-        "x": 558,
-        "y": 720,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_s_mid",
-        "color": "yellow"
-      },
-      "271": {
-        "id": "271",
-        "number": "271",
-        "road": "Exotica Road",
-        "block": "Dhalia South",
-        "facing": "East",
-        "x": 602,
-        "y": 720,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "yellow"
-      },
-      "273": {
-        "id": "273",
-        "number": "273",
-        "road": "Dhalia Road",
-        "block": "Dhalia South",
-        "facing": "West",
-        "x": 558,
-        "y": 741,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_s_mid",
-        "color": "yellow"
-      },
-      "270": {
-        "id": "270",
-        "number": "270",
-        "road": "Exotica Road",
-        "block": "Dhalia South",
-        "facing": "East",
-        "x": 602,
-        "y": 741,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "yellow"
-      },
-      "274": {
-        "id": "274",
-        "number": "274",
-        "road": "Dhalia Road",
-        "block": "Dhalia South",
-        "facing": "West",
-        "x": 558,
-        "y": 762,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_s_mid",
-        "color": "yellow"
-      },
-      "269": {
-        "id": "269",
-        "number": "269",
-        "road": "Exotica Road",
-        "block": "Dhalia South",
-        "facing": "East",
-        "x": 602,
-        "y": 762,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "yellow"
-      },
-      "275": {
-        "id": "275",
-        "number": "275",
-        "road": "Dhalia Road",
-        "block": "Dhalia South",
-        "facing": "West",
-        "x": 558,
-        "y": 783,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_s_mid",
-        "color": "yellow"
-      },
-      "268": {
-        "id": "268",
-        "number": "268",
-        "road": "Exotica Road",
-        "block": "Dhalia South",
-        "facing": "East",
-        "x": 602,
-        "y": 783,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "yellow"
-      },
-      "276": {
-        "id": "276",
-        "number": "276",
-        "road": "Dhalia Road",
-        "block": "Dhalia South",
-        "facing": "West",
-        "x": 558,
-        "y": 804,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_s_mid",
-        "color": "yellow"
-      },
-      "267": {
-        "id": "267",
-        "number": "267",
-        "road": "Exotica Road",
-        "block": "Dhalia South",
-        "facing": "East",
-        "x": 602,
-        "y": 804,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "yellow"
-      },
-      "277": {
-        "id": "277",
-        "number": "277",
-        "road": "Dhalia Road",
-        "block": "Dhalia South",
-        "facing": "West",
-        "x": 558,
-        "y": 825,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_s_mid",
-        "color": "yellow"
-      },
-      "266": {
-        "id": "266",
-        "number": "266",
-        "road": "Exotica Road",
-        "block": "Dhalia South",
-        "facing": "East",
-        "x": 602,
-        "y": 825,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "yellow"
-      },
-      "278": {
-        "id": "278",
-        "number": "278",
-        "road": "Dhalia Road",
-        "block": "Dhalia South",
-        "facing": "West",
-        "x": 558,
-        "y": 846,
-        "w": 42,
-        "h": 19,
-        "roadNode": "dha_s_mid",
-        "color": "yellow"
-      },
-      "265": {
-        "id": "265",
-        "number": "265",
-        "road": "Exotica Road",
-        "block": "Dhalia South",
-        "facing": "East",
-        "x": 602,
-        "y": 846,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "yellow"
-      },
-      "265/B": {
-        "id": "265/B",
-        "number": "265/B",
-        "road": "Dhalia Road South",
-        "block": "Dhalia South",
-        "facing": "East",
-        "x": 602,
-        "y": 867,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "yellow"
-      },
-      "156": {
-        "id": "156",
-        "number": "156",
-        "road": "Exotica Road",
-        "block": "Exotica North",
-        "facing": "West",
-        "x": 676,
-        "y": 224,
-        "w": 42,
-        "h": 22,
-        "roadNode": "exo_n",
-        "color": "lightgreen"
-      },
-      "157": {
-        "id": "157",
-        "number": "157",
-        "road": "Florentine Road",
-        "block": "Florentine North",
-        "facing": "East",
-        "x": 720,
-        "y": 224,
-        "w": 42,
-        "h": 22,
-        "roadNode": "flo_n",
-        "color": "lightgreen"
-      },
-      "155": {
-        "id": "155",
-        "number": "155",
-        "road": "Exotica Road",
-        "block": "Exotica North",
-        "facing": "West",
-        "x": 676,
-        "y": 248,
-        "w": 42,
-        "h": 22,
-        "roadNode": "exo_n",
-        "color": "lightgreen"
-      },
-      "158": {
-        "id": "158",
-        "number": "158",
-        "road": "Florentine Road",
-        "block": "Florentine North",
-        "facing": "East",
-        "x": 720,
-        "y": 248,
-        "w": 42,
-        "h": 22,
-        "roadNode": "flo_n",
-        "color": "lightgreen"
-      },
-      "154": {
-        "id": "154",
-        "number": "154",
-        "road": "Exotica Road",
-        "block": "Exotica North",
-        "facing": "West",
-        "x": 676,
-        "y": 272,
-        "w": 42,
-        "h": 22,
-        "roadNode": "exo_n",
-        "color": "lightgreen"
-      },
-      "159": {
-        "id": "159",
-        "number": "159",
-        "road": "Florentine Road",
-        "block": "Florentine North",
-        "facing": "East",
-        "x": 720,
-        "y": 272,
-        "w": 42,
-        "h": 22,
-        "roadNode": "flo_n",
-        "color": "lightgreen"
-      },
-      "153": {
-        "id": "153",
-        "number": "153",
-        "road": "Exotica Road",
-        "block": "Exotica North",
-        "facing": "West",
-        "x": 676,
-        "y": 296,
-        "w": 42,
-        "h": 22,
-        "roadNode": "exo_n",
-        "color": "lightgreen"
-      },
-      "160": {
-        "id": "160",
-        "number": "160",
-        "road": "Florentine Road",
-        "block": "Florentine North",
-        "facing": "East",
-        "x": 720,
-        "y": 296,
-        "w": 42,
-        "h": 22,
-        "roadNode": "flo_n",
-        "color": "lightgreen"
-      },
-      "152": {
-        "id": "152",
-        "number": "152",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "West",
-        "x": 676,
-        "y": 356,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "lightgreen"
-      },
-      "161": {
-        "id": "161",
-        "number": "161",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "East",
-        "x": 720,
-        "y": 356,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "lightgreen"
-      },
-      "151": {
-        "id": "151",
-        "number": "151",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "West",
-        "x": 676,
-        "y": 377,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "lightgreen"
-      },
-      "162": {
-        "id": "162",
-        "number": "162",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "East",
-        "x": 720,
-        "y": 377,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "lightgreen"
-      },
-      "150": {
-        "id": "150",
-        "number": "150",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "West",
-        "x": 676,
-        "y": 398,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "lightgreen"
-      },
-      "163": {
-        "id": "163",
-        "number": "163",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "East",
-        "x": 720,
-        "y": 398,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "lightgreen"
-      },
-      "149": {
-        "id": "149",
-        "number": "149",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "West",
-        "x": 676,
-        "y": 419,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "lightgreen"
-      },
-      "164": {
-        "id": "164",
-        "number": "164",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "East",
-        "x": 720,
-        "y": 419,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "lightgreen"
-      },
-      "148": {
-        "id": "148",
-        "number": "148",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "West",
-        "x": 676,
-        "y": 440,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "lightgreen"
-      },
-      "165": {
-        "id": "165",
-        "number": "165",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "East",
-        "x": 720,
-        "y": 440,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "lightgreen"
-      },
-      "147": {
-        "id": "147",
-        "number": "147",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "West",
-        "x": 676,
-        "y": 461,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "lightgreen"
-      },
-      "166": {
-        "id": "166",
-        "number": "166",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "East",
-        "x": 720,
-        "y": 461,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "lightgreen"
-      },
-      "221": {
-        "id": "221",
-        "number": "221",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "West",
-        "x": 676,
-        "y": 482,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "lightgreen"
-      },
-      "210": {
-        "id": "210",
-        "number": "210",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "East",
-        "x": 720,
-        "y": 482,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "lightgreen"
-      },
-      "220": {
-        "id": "220",
-        "number": "220",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "West",
-        "x": 676,
-        "y": 503,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "lightgreen"
-      },
-      "211": {
-        "id": "211",
-        "number": "211",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "East",
-        "x": 720,
-        "y": 503,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "lightgreen"
-      },
-      "219": {
-        "id": "219",
-        "number": "219",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "West",
-        "x": 676,
-        "y": 524,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "lightgreen"
-      },
-      "212": {
-        "id": "212",
-        "number": "212",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "East",
-        "x": 720,
-        "y": 524,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "lightgreen"
-      },
-      "218": {
-        "id": "218",
-        "number": "218",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "West",
-        "x": 676,
-        "y": 545,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "lightgreen"
-      },
-      "213": {
-        "id": "213",
-        "number": "213",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "East",
-        "x": 720,
-        "y": 545,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "lightgreen"
-      },
-      "217": {
-        "id": "217",
-        "number": "217",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "West",
-        "x": 676,
-        "y": 566,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "lightgreen"
-      },
-      "214": {
-        "id": "214",
-        "number": "214",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "East",
-        "x": 720,
-        "y": 566,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "lightgreen"
-      },
-      "216": {
-        "id": "216",
-        "number": "216",
-        "road": "Exotica Road",
-        "block": "Exotica Mid",
-        "facing": "West",
-        "x": 676,
-        "y": 587,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_mid",
-        "color": "lightgreen"
-      },
-      "215": {
-        "id": "215",
-        "number": "215",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "East",
-        "x": 720,
-        "y": 587,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "lightgreen"
-      },
-      "257": {
-        "id": "257",
-        "number": "257",
-        "road": "Exotica Road",
-        "block": "Exotica South",
-        "facing": "West",
-        "x": 676,
-        "y": 720,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "lightgreen"
-      },
-      "256": {
-        "id": "256",
-        "number": "256",
-        "road": "Florentine Road",
-        "block": "Exotica South",
-        "facing": "East",
-        "x": 720,
-        "y": 720,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_s_mid",
-        "color": "lightgreen"
-      },
-      "258": {
-        "id": "258",
-        "number": "258",
-        "road": "Exotica Road",
-        "block": "Exotica South",
-        "facing": "West",
-        "x": 676,
-        "y": 741,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "lightgreen"
-      },
-      "255": {
-        "id": "255",
-        "number": "255",
-        "road": "Florentine Road",
-        "block": "Exotica South",
-        "facing": "East",
-        "x": 720,
-        "y": 741,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_s_mid",
-        "color": "lightgreen"
-      },
-      "259": {
-        "id": "259",
-        "number": "259",
-        "road": "Exotica Road",
-        "block": "Exotica South",
-        "facing": "West",
-        "x": 676,
-        "y": 762,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "lightgreen"
-      },
-      "254": {
-        "id": "254",
-        "number": "254",
-        "road": "Florentine Road",
-        "block": "Exotica South",
-        "facing": "East",
-        "x": 720,
-        "y": 762,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_s_mid",
-        "color": "lightgreen"
-      },
-      "260": {
-        "id": "260",
-        "number": "260",
-        "road": "Exotica Road",
-        "block": "Exotica South",
-        "facing": "West",
-        "x": 676,
-        "y": 783,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "lightgreen"
-      },
-      "253": {
-        "id": "253",
-        "number": "253",
-        "road": "Florentine Road",
-        "block": "Exotica South",
-        "facing": "East",
-        "x": 720,
-        "y": 783,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_s_mid",
-        "color": "lightgreen"
-      },
-      "261": {
-        "id": "261",
-        "number": "261",
-        "road": "Exotica Road",
-        "block": "Exotica South",
-        "facing": "West",
-        "x": 676,
-        "y": 804,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "lightgreen"
-      },
-      "252": {
-        "id": "252",
-        "number": "252",
-        "road": "Florentine Road",
-        "block": "Exotica South",
-        "facing": "East",
-        "x": 720,
-        "y": 804,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_s_mid",
-        "color": "lightgreen"
-      },
-      "262": {
-        "id": "262",
-        "number": "262",
-        "road": "Exotica Road",
-        "block": "Exotica South",
-        "facing": "West",
-        "x": 676,
-        "y": 825,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "lightgreen"
-      },
-      "251": {
-        "id": "251",
-        "number": "251",
-        "road": "Florentine Road",
-        "block": "Exotica South",
-        "facing": "East",
-        "x": 720,
-        "y": 825,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_s_mid",
-        "color": "lightgreen"
-      },
-      "263": {
-        "id": "263",
-        "number": "263",
-        "road": "Exotica Road",
-        "block": "Exotica South",
-        "facing": "West",
-        "x": 676,
-        "y": 846,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "lightgreen"
-      },
-      "250": {
-        "id": "250",
-        "number": "250",
-        "road": "Florentine Road",
-        "block": "Exotica South",
-        "facing": "East",
-        "x": 720,
-        "y": 846,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_s_mid",
-        "color": "lightgreen"
-      },
-      "264": {
-        "id": "264",
-        "number": "264",
-        "road": "Exotica Road",
-        "block": "Exotica South",
-        "facing": "West",
-        "x": 676,
-        "y": 867,
-        "w": 42,
-        "h": 19,
-        "roadNode": "exo_s_mid",
-        "color": "lightgreen"
-      },
-      "249": {
-        "id": "249",
-        "number": "249",
-        "road": "Florentine Road",
-        "block": "Exotica South",
-        "facing": "East",
-        "x": 720,
-        "y": 867,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_s_mid",
-        "color": "lightgreen"
-      },
-      "248": {
-        "id": "248",
-        "number": "248",
-        "road": "Florentine Road South",
-        "block": "Exotica South",
-        "facing": "East",
-        "x": 720,
-        "y": 888,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_s_mid",
-        "color": "lightgreen"
-      },
-      "175": {
-        "id": "175",
-        "number": "175",
-        "road": "Florentine Road",
-        "block": "Florentine North",
-        "facing": "West",
-        "x": 794,
-        "y": 224,
-        "w": 42,
-        "h": 22,
-        "roadNode": "flo_n",
-        "color": "yellow"
-      },
-      "176": {
-        "id": "176",
-        "number": "176",
-        "road": "Gardenia Road",
-        "block": "Gardenia North",
-        "facing": "East",
-        "x": 838,
-        "y": 224,
-        "w": 42,
-        "h": 22,
-        "roadNode": "gar_n",
-        "color": "yellow"
-      },
-      "174": {
-        "id": "174",
-        "number": "174",
-        "road": "Florentine Road",
-        "block": "Florentine North",
-        "facing": "West",
-        "x": 794,
-        "y": 248,
-        "w": 42,
-        "h": 22,
-        "roadNode": "flo_n",
-        "color": "yellow"
-      },
-      "177": {
-        "id": "177",
-        "number": "177",
-        "road": "Gardenia Road",
-        "block": "Gardenia North",
-        "facing": "East",
-        "x": 838,
-        "y": 248,
-        "w": 42,
-        "h": 22,
-        "roadNode": "gar_n",
-        "color": "yellow"
-      },
-      "173": {
-        "id": "173",
-        "number": "173",
-        "road": "Florentine Road",
-        "block": "Florentine North",
-        "facing": "West",
-        "x": 794,
-        "y": 272,
-        "w": 42,
-        "h": 22,
-        "roadNode": "flo_n",
-        "color": "yellow"
-      },
-      "178": {
-        "id": "178",
-        "number": "178",
-        "road": "Gardenia Road",
-        "block": "Gardenia North",
-        "facing": "East",
-        "x": 838,
-        "y": 272,
-        "w": 42,
-        "h": 22,
-        "roadNode": "gar_n",
-        "color": "yellow"
-      },
-      "172": {
-        "id": "172",
-        "number": "172",
-        "road": "Florentine Road",
-        "block": "Florentine North",
-        "facing": "West",
-        "x": 794,
-        "y": 296,
-        "w": 42,
-        "h": 22,
-        "roadNode": "flo_n",
-        "color": "yellow"
-      },
-      "179": {
-        "id": "179",
-        "number": "179",
-        "road": "Gardenia Road",
-        "block": "Gardenia North",
-        "facing": "East",
-        "x": 838,
-        "y": 296,
-        "w": 42,
-        "h": 22,
-        "roadNode": "gar_n",
-        "color": "yellow"
-      },
-      "171": {
-        "id": "171",
-        "number": "171",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "West",
-        "x": 794,
-        "y": 356,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "yellow"
-      },
-      "180": {
-        "id": "180",
-        "number": "180",
-        "road": "Gardenia Road",
-        "block": "Gardenia Mid",
-        "facing": "East",
-        "x": 838,
-        "y": 356,
-        "w": 42,
-        "h": 19,
-        "roadNode": "gar_mid",
-        "color": "yellow"
-      },
-      "170": {
-        "id": "170",
-        "number": "170",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "West",
-        "x": 794,
-        "y": 377,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "yellow"
-      },
-      "181": {
-        "id": "181",
-        "number": "181",
-        "road": "Gardenia Road",
-        "block": "Gardenia Mid",
-        "facing": "East",
-        "x": 838,
-        "y": 377,
-        "w": 42,
-        "h": 19,
-        "roadNode": "gar_mid",
-        "color": "yellow"
-      },
-      "169": {
-        "id": "169",
-        "number": "169",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "West",
-        "x": 794,
-        "y": 398,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "yellow"
-      },
-      "182": {
-        "id": "182",
-        "number": "182",
-        "road": "Gardenia Road",
-        "block": "Gardenia Mid",
-        "facing": "East",
-        "x": 838,
-        "y": 398,
-        "w": 42,
-        "h": 19,
-        "roadNode": "gar_mid",
-        "color": "yellow"
-      },
-      "168": {
-        "id": "168",
-        "number": "168",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "West",
-        "x": 794,
-        "y": 419,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "yellow"
-      },
-      "183": {
-        "id": "183",
-        "number": "183",
-        "road": "Gardenia Road",
-        "block": "Gardenia Mid",
-        "facing": "East",
-        "x": 838,
-        "y": 419,
-        "w": 42,
-        "h": 19,
-        "roadNode": "gar_mid",
-        "color": "yellow"
-      },
-      "167": {
-        "id": "167",
-        "number": "167",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "West",
-        "x": 794,
-        "y": 440,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "yellow"
-      },
-      "184": {
-        "id": "184",
-        "number": "184",
-        "road": "Gardenia Road",
-        "block": "Gardenia Mid",
-        "facing": "East",
-        "x": 838,
-        "y": 440,
-        "w": 42,
-        "h": 19,
-        "roadNode": "gar_mid",
-        "color": "yellow"
-      },
-      "209": {
-        "id": "209",
-        "number": "209",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "West",
-        "x": 794,
-        "y": 461,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "yellow"
-      },
-      "196": {
-        "id": "196",
-        "number": "196",
-        "road": "Gardenia Road",
-        "block": "Gardenia Mid",
-        "facing": "East",
-        "x": 838,
-        "y": 461,
-        "w": 42,
-        "h": 19,
-        "roadNode": "gar_mid",
-        "color": "yellow"
-      },
-      "208": {
-        "id": "208",
-        "number": "208",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "West",
-        "x": 794,
-        "y": 482,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "yellow"
-      },
-      "197": {
-        "id": "197",
-        "number": "197",
-        "road": "Gardenia Road",
-        "block": "Gardenia Mid",
-        "facing": "East",
-        "x": 838,
-        "y": 482,
-        "w": 42,
-        "h": 19,
-        "roadNode": "gar_mid",
-        "color": "yellow"
-      },
-      "207": {
-        "id": "207",
-        "number": "207",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "West",
-        "x": 794,
-        "y": 503,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "yellow"
-      },
-      "198": {
-        "id": "198",
-        "number": "198",
-        "road": "Gardenia Road",
-        "block": "Gardenia Mid",
-        "facing": "East",
-        "x": 838,
-        "y": 503,
-        "w": 42,
-        "h": 19,
-        "roadNode": "gar_mid",
-        "color": "yellow"
-      },
-      "206": {
-        "id": "206",
-        "number": "206",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "West",
-        "x": 794,
-        "y": 524,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "yellow"
-      },
-      "199": {
-        "id": "199",
-        "number": "199",
-        "road": "Gardenia Road",
-        "block": "Gardenia Mid",
-        "facing": "East",
-        "x": 838,
-        "y": 524,
-        "w": 42,
-        "h": 19,
-        "roadNode": "gar_mid",
-        "color": "yellow"
-      },
-      "205": {
-        "id": "205",
-        "number": "205",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "West",
-        "x": 794,
-        "y": 545,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "yellow"
-      },
-      "200": {
-        "id": "200",
-        "number": "200",
-        "road": "Gardenia Road",
-        "block": "Gardenia Mid",
-        "facing": "East",
-        "x": 838,
-        "y": 545,
-        "w": 42,
-        "h": 19,
-        "roadNode": "gar_mid",
-        "color": "yellow"
-      },
-      "204": {
-        "id": "204",
-        "number": "204",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "West",
-        "x": 794,
-        "y": 566,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "yellow"
-      },
-      "201": {
-        "id": "201",
-        "number": "201",
-        "road": "Gardenia Road",
-        "block": "Gardenia Mid",
-        "facing": "East",
-        "x": 838,
-        "y": 566,
-        "w": 42,
-        "h": 19,
-        "roadNode": "gar_mid",
-        "color": "yellow"
-      },
-      "203": {
-        "id": "203",
-        "number": "203",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "West",
-        "x": 794,
-        "y": 587,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "yellow"
-      },
-      "202": {
-        "id": "202",
-        "number": "202",
-        "road": "Gardenia Road",
-        "block": "Gardenia Mid",
-        "facing": "East",
-        "x": 838,
-        "y": 587,
-        "w": 42,
-        "h": 19,
-        "roadNode": "gar_mid",
-        "color": "yellow"
-      },
-      "340": {
-        "id": "340",
-        "number": "340",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "West",
-        "x": 794,
-        "y": 608,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "yellow"
-      },
-      "344": {
-        "id": "344",
-        "number": "344",
-        "road": "Gardenia Road",
-        "block": "Gardenia Mid",
-        "facing": "East",
-        "x": 838,
-        "y": 608,
-        "w": 42,
-        "h": 19,
-        "roadNode": "gar_mid",
-        "color": "yellow"
-      },
-      "341": {
-        "id": "341",
-        "number": "341",
-        "road": "Florentine Road",
-        "block": "Florentine Mid",
-        "facing": "West",
-        "x": 794,
-        "y": 629,
-        "w": 42,
-        "h": 19,
-        "roadNode": "flo_mid",
-        "color": "yellow"
-      },
-      "342": {
-        "id": "342",
-        "number": "342",
-        "road": "Gardenia Road",
-        "block": "Gardenia Mid",
-        "facing": "East",
-        "x": 838,
-        "y": 629,
-        "w": 42,
-        "h": 19,
-        "roadNode": "gar_mid",
-        "color": "yellow"
-      },
-      "343": {
-        "id": "343",
-        "number": "343",
-        "road": "Gardenia Road",
-        "block": "Gardenia Mid",
-        "facing": "East",
-        "x": 838,
-        "y": 650,
-        "w": 42,
-        "h": 19,
-        "roadNode": "gar_mid",
-        "color": "yellow"
-      },
-      "345": {
-        "id": "345",
-        "number": "345",
-        "road": "Florentine Road South",
-        "block": "Florentine South",
-        "facing": "North",
-        "x": 796,
-        "y": 720,
-        "w": 23,
-        "h": 20,
-        "roadNode": "flo_s_garden",
-        "color": "yellow"
-      },
-      "346": {
-        "id": "346",
-        "number": "346",
-        "road": "Florentine Road South",
-        "block": "Florentine South",
-        "facing": "North",
-        "x": 821,
-        "y": 720,
-        "w": 23,
-        "h": 20,
-        "roadNode": "flo_s_garden",
-        "color": "yellow"
-      },
-      "347": {
-        "id": "347",
-        "number": "347",
-        "road": "Florentine Road South",
-        "block": "Florentine South",
-        "facing": "North",
-        "x": 846,
-        "y": 720,
-        "w": 23,
-        "h": 20,
-        "roadNode": "flo_s_garden",
-        "color": "yellow"
-      },
-      "348": {
-        "id": "348",
-        "number": "348",
-        "road": "Florentine Road South",
-        "block": "Florentine South",
-        "facing": "North",
-        "x": 871,
-        "y": 720,
-        "w": 23,
-        "h": 20,
-        "roadNode": "flo_s_garden",
-        "color": "yellow"
-      },
-      "247": {
-        "id": "247",
-        "number": "247",
-        "road": "Florentine Road South",
-        "block": "Florentine South East Block",
-        "facing": "North",
-        "x": 796,
-        "y": 744,
-        "w": 31,
-        "h": 20,
-        "roadNode": "flo_s_mid",
-        "color": "yellow"
-      },
-      "246": {
-        "id": "246",
-        "number": "246",
-        "road": "Florentine Road South",
-        "block": "Florentine South East Block",
-        "facing": "North",
-        "x": 829,
-        "y": 744,
-        "w": 31,
-        "h": 20,
-        "roadNode": "flo_s_mid",
-        "color": "yellow"
-      },
-      "245": {
-        "id": "245",
-        "number": "245",
-        "road": "Florentine Road South",
-        "block": "Florentine South East Block",
-        "facing": "North",
-        "x": 862,
-        "y": 744,
-        "w": 31,
-        "h": 20,
-        "roadNode": "flo_s_mid",
-        "color": "yellow"
-      },
-      "243": {
-        "id": "243",
-        "number": "243",
-        "road": "Florentine Road South",
-        "block": "Florentine South East Corner",
-        "facing": "North",
-        "x": 796,
-        "y": 768,
-        "w": 48,
-        "h": 20,
-        "roadNode": "flo_s_mid",
-        "color": "yellow"
-      },
-      "244": {
-        "id": "244",
-        "number": "244",
-        "road": "Florentine Road South",
-        "block": "Florentine South East Corner",
-        "facing": "North",
-        "x": 846,
-        "y": 768,
-        "w": 48,
-        "h": 20,
-        "roadNode": "flo_s_mid",
-        "color": "yellow"
-      },
-      "242": {
-        "id": "242",
-        "number": "242",
-        "road": "Florentine Road South",
-        "block": "Florentine South East Corner",
-        "facing": "North",
-        "x": 796,
-        "y": 792,
-        "w": 50,
-        "h": 20,
-        "roadNode": "flo_s_mid",
-        "color": "yellow"
-      },
-      "241": {
-        "id": "241",
-        "number": "241",
-        "road": "Florentine Road South",
-        "block": "Florentine South East Corner",
-        "facing": "North",
-        "x": 796,
-        "y": 816,
-        "w": 50,
-        "h": 20,
-        "roadNode": "flo_s_end",
-        "color": "yellow"
-      },
-      "192": {
-        "id": "192",
-        "number": "192",
-        "road": "Gardenia Road",
-        "block": "Gardenia North",
-        "facing": "West",
-        "x": 918,
-        "y": 248,
-        "w": 38,
-        "h": 22,
-        "roadNode": "gar_n",
-        "color": "lightgreen"
-      },
-      "332": {
-        "id": "332",
-        "number": "332",
-        "road": "North East Road",
-        "block": "East Park North",
-        "facing": "East",
-        "x": 960,
-        "y": 248,
-        "w": 38,
-        "h": 22,
-        "roadNode": "east_park_n",
-        "color": "lightgreen"
-      },
-      "191": {
-        "id": "191",
-        "number": "191",
-        "road": "Gardenia Road",
-        "block": "Gardenia North",
-        "facing": "West",
-        "x": 918,
-        "y": 272,
-        "w": 38,
-        "h": 22,
-        "roadNode": "gar_n",
-        "color": "lightgreen"
-      },
-      "331": {
-        "id": "331",
-        "number": "331",
-        "road": "North East Road",
-        "block": "East Park North",
-        "facing": "East",
-        "x": 960,
-        "y": 272,
-        "w": 38,
-        "h": 22,
-        "roadNode": "east_park_n",
-        "color": "lightgreen"
-      },
-      "190": {
-        "id": "190",
-        "number": "190",
-        "road": "Gardenia Road",
-        "block": "Gardenia North",
-        "facing": "West",
-        "x": 918,
-        "y": 296,
-        "w": 38,
-        "h": 22,
-        "roadNode": "gar_n",
-        "color": "lightgreen"
-      },
-      "330": {
-        "id": "330",
-        "number": "330",
-        "road": "North East Road",
-        "block": "East Park North",
-        "facing": "East",
-        "x": 960,
-        "y": 296,
-        "w": 38,
-        "h": 22,
-        "roadNode": "east_park_n",
-        "color": "lightgreen"
-      },
-      "333": {
-        "id": "333",
-        "number": "333",
-        "road": "North East Avenue",
-        "block": "North East Sector",
-        "facing": "West",
-        "x": 1040,
-        "y": 200,
-        "w": 36,
-        "h": 22,
-        "roadNode": "east_park_n",
-        "color": "yellow"
-      },
-      "338": {
-        "id": "338",
-        "number": "338",
-        "road": "North East Avenue",
-        "block": "North East Sector",
-        "facing": "East",
-        "x": 1080,
-        "y": 200,
-        "w": 36,
-        "h": 22,
-        "roadNode": "east_park_n",
-        "color": "yellow"
-      },
-      "334": {
-        "id": "334",
-        "number": "334",
-        "road": "North East Avenue",
-        "block": "North East Sector",
-        "facing": "West",
-        "x": 1040,
-        "y": 224,
-        "w": 36,
-        "h": 22,
-        "roadNode": "east_park_n",
-        "color": "yellow"
-      },
-      "337": {
-        "id": "337",
-        "number": "337",
-        "road": "North East Avenue",
-        "block": "North East Sector",
-        "facing": "East",
-        "x": 1080,
-        "y": 224,
-        "w": 36,
-        "h": 22,
-        "roadNode": "east_park_n",
-        "color": "yellow"
-      },
-      "335": {
-        "id": "335",
-        "number": "335",
-        "road": "North East Avenue",
-        "block": "North East Sector",
-        "facing": "West",
-        "x": 1040,
-        "y": 248,
-        "w": 36,
-        "h": 22,
-        "roadNode": "east_park_n",
-        "color": "yellow"
-      },
-      "336": {
-        "id": "336",
-        "number": "336",
-        "road": "North East Avenue",
-        "block": "North East Sector",
-        "facing": "East",
-        "x": 1080,
-        "y": 248,
-        "w": 36,
-        "h": 22,
-        "roadNode": "east_park_n",
-        "color": "yellow"
-      },
-      "322": {
-        "id": "322",
-        "number": "322",
-        "road": "Gate 2 Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 918,
-        "y": 356,
-        "w": 38,
-        "h": 19,
-        "roadNode": "gate_2_entry",
-        "color": "lightgreen"
-      },
-      "329": {
-        "id": "329",
-        "number": "329",
-        "road": "Gate 2 Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 918,
-        "y": 404,
-        "w": 38,
-        "h": 19,
-        "roadNode": "gate_2_entry",
-        "color": "lightgreen"
-      },
-      "323": {
-        "id": "323",
-        "number": "323",
-        "road": "Gate 2 Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 918,
-        "y": 380,
-        "w": 38,
-        "h": 19,
-        "roadNode": "gate_2_entry",
-        "color": "lightgreen"
-      },
-      "351": {
-        "id": "351",
-        "number": "351",
-        "road": "East Sector Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1010,
-        "y": 356,
-        "w": 32,
-        "h": 21,
-        "roadNode": "east_mid",
-        "color": "yellow"
-      },
-      "350": {
-        "id": "350",
-        "number": "350",
-        "road": "East Sector Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1044,
-        "y": 356,
-        "w": 32,
-        "h": 21,
-        "roadNode": "east_mid",
-        "color": "yellow"
-      },
-      "349": {
-        "id": "349",
-        "number": "349",
-        "road": "East Sector Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1078,
-        "y": 356,
-        "w": 32,
-        "h": 21,
-        "roadNode": "east_mid",
-        "color": "yellow"
-      },
-      "348B": {
-        "id": "348B",
-        "number": "348B",
-        "road": "East Sector Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1112,
-        "y": 356,
-        "w": 32,
-        "h": 21,
-        "roadNode": "east_mid",
-        "color": "yellow"
-      },
-      "352": {
-        "id": "352",
-        "number": "352",
-        "road": "East Sector Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1010,
-        "y": 382,
-        "w": 44,
-        "h": 21,
-        "roadNode": "east_mid",
-        "color": "yellow"
-      },
-      "353": {
-        "id": "353",
-        "number": "353",
-        "road": "East Sector Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1056,
-        "y": 382,
-        "w": 44,
-        "h": 21,
-        "roadNode": "east_mid",
-        "color": "yellow"
-      },
-      "360": {
-        "id": "360",
-        "number": "360",
-        "road": "East Sector Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1102,
-        "y": 382,
-        "w": 44,
-        "h": 21,
-        "roadNode": "east_mid",
-        "color": "yellow"
-      },
-      "355": {
-        "id": "355",
-        "number": "355",
-        "road": "East Sector Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1010,
-        "y": 416,
-        "w": 44,
-        "h": 21,
-        "roadNode": "east_mid",
-        "color": "yellow"
-      },
-      "354": {
-        "id": "354",
-        "number": "354",
-        "road": "East Sector Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1056,
-        "y": 416,
-        "w": 44,
-        "h": 21,
-        "roadNode": "east_mid",
-        "color": "yellow"
-      },
-      "358": {
-        "id": "358",
-        "number": "358",
-        "road": "East Sector Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1102,
-        "y": 416,
-        "w": 44,
-        "h": 21,
-        "roadNode": "east_mid",
-        "color": "yellow"
-      },
-      "356": {
-        "id": "356",
-        "number": "356",
-        "road": "East Sector Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1010,
-        "y": 442,
-        "w": 44,
-        "h": 21,
-        "roadNode": "east_s",
-        "color": "yellow"
-      },
-      "359": {
-        "id": "359",
-        "number": "359",
-        "road": "East Sector Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1056,
-        "y": 442,
-        "w": 44,
-        "h": 21,
-        "roadNode": "east_s",
-        "color": "yellow"
-      },
-      "357": {
-        "id": "357",
-        "number": "357",
-        "road": "East Sector Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1056,
-        "y": 468,
-        "w": 44,
-        "h": 21,
-        "roadNode": "east_s",
-        "color": "yellow"
       },
       "53": {
         "id": "53",
@@ -7832,122 +4455,2943 @@ window.LAYOUTS = {
         "roadNode": "hib_top_m",
         "color": "lightgreen"
       },
-      "318": {
-        "id": "318",
-        "number": "318",
-        "road": "Hibiscus Road West",
-        "block": "Hibiscus Mid",
-        "facing": "North",
+      "62": {
+        "id": "62",
+        "number": "62",
+        "road": "Bluebell Road",
+        "block": "Bluebell Mid",
+        "facing": "West",
+        "x": 322,
+        "y": 587,
+        "w": 42,
+        "h": 19,
+        "roadNode": "blu_mid",
+        "color": "yellow"
+      },
+      "63": {
+        "id": "63",
+        "number": "63",
+        "road": "Bluebell Road",
+        "block": "Bluebell Mid",
+        "facing": "West",
+        "x": 322,
+        "y": 566,
+        "w": 42,
+        "h": 19,
+        "roadNode": "blu_mid",
+        "color": "yellow"
+      },
+      "64": {
+        "id": "64",
+        "number": "64",
+        "road": "Bluebell Road",
+        "block": "Bluebell Mid",
+        "facing": "West",
+        "x": 322,
+        "y": 545,
+        "w": 42,
+        "h": 19,
+        "roadNode": "blu_mid",
+        "color": "yellow"
+      },
+      "65": {
+        "id": "65",
+        "number": "65",
+        "road": "Bluebell Road",
+        "block": "Bluebell Mid",
+        "facing": "West",
+        "x": 322,
+        "y": 524,
+        "w": 42,
+        "h": 19,
+        "roadNode": "blu_mid",
+        "color": "yellow"
+      },
+      "66": {
+        "id": "66",
+        "number": "66",
+        "road": "Bluebell Road",
+        "block": "Bluebell Mid",
+        "facing": "West",
+        "x": 322,
+        "y": 503,
+        "w": 42,
+        "h": 19,
+        "roadNode": "blu_mid",
+        "color": "yellow"
+      },
+      "67": {
+        "id": "67",
+        "number": "67",
+        "road": "Bluebell Road",
+        "block": "Bluebell Mid",
+        "facing": "West",
+        "x": 322,
+        "y": 482,
+        "w": 42,
+        "h": 19,
+        "roadNode": "blu_mid",
+        "color": "yellow"
+      },
+      "68": {
+        "id": "68",
+        "number": "68",
+        "road": "Bluebell Road",
+        "block": "Bluebell Mid",
+        "facing": "West",
+        "x": 322,
+        "y": 461,
+        "w": 42,
+        "h": 19,
+        "roadNode": "blu_mid",
+        "color": "yellow"
+      },
+      "69": {
+        "id": "69",
+        "number": "69",
+        "road": "Bluebell Road",
+        "block": "Bluebell Mid",
+        "facing": "West",
+        "x": 322,
+        "y": 440,
+        "w": 42,
+        "h": 19,
+        "roadNode": "blu_mid",
+        "color": "yellow"
+      },
+      "70": {
+        "id": "70",
+        "number": "70",
+        "road": "Bluebell Road",
+        "block": "Bluebell Mid",
+        "facing": "West",
+        "x": 322,
+        "y": 419,
+        "w": 42,
+        "h": 19,
+        "roadNode": "blu_mid",
+        "color": "yellow"
+      },
+      "71": {
+        "id": "71",
+        "number": "71",
+        "road": "Bluebell Road",
+        "block": "Bluebell Mid",
+        "facing": "West",
+        "x": 322,
+        "y": 398,
+        "w": 42,
+        "h": 19,
+        "roadNode": "blu_mid",
+        "color": "yellow"
+      },
+      "72": {
+        "id": "72",
+        "number": "72",
+        "road": "Bluebell Road",
+        "block": "Bluebell Mid",
+        "facing": "West",
+        "x": 322,
+        "y": 377,
+        "w": 42,
+        "h": 19,
+        "roadNode": "blu_mid",
+        "color": "yellow"
+      },
+      "73": {
+        "id": "73",
+        "number": "73",
+        "road": "Bluebell Road",
+        "block": "Bluebell Mid",
+        "facing": "West",
+        "x": 322,
+        "y": 356,
+        "w": 42,
+        "h": 19,
+        "roadNode": "blu_mid",
+        "color": "yellow"
+      },
+      "74": {
+        "id": "74",
+        "number": "74",
+        "road": "Bluebell Road",
+        "block": "Bluebell North",
+        "facing": "West",
+        "x": 322,
+        "y": 296,
+        "w": 42,
+        "h": 22,
+        "roadNode": "blu_n",
+        "color": "yellow"
+      },
+      "75": {
+        "id": "75",
+        "number": "75",
+        "road": "Bluebell Road",
+        "block": "Bluebell North",
+        "facing": "West",
+        "x": 322,
+        "y": 272,
+        "w": 42,
+        "h": 22,
+        "roadNode": "blu_n",
+        "color": "yellow"
+      },
+      "76": {
+        "id": "76",
+        "number": "76",
+        "road": "Bluebell Road",
+        "block": "Bluebell North",
+        "facing": "West",
+        "x": 322,
+        "y": 248,
+        "w": 42,
+        "h": 22,
+        "roadNode": "blu_n",
+        "color": "yellow"
+      },
+      "77": {
+        "id": "77",
+        "number": "77",
+        "road": "Bluebell Road",
+        "block": "Bluebell North",
+        "facing": "West",
+        "x": 322,
+        "y": 224,
+        "w": 42,
+        "h": 22,
+        "roadNode": "blu_n",
+        "color": "yellow"
+      },
+      "78": {
+        "id": "78",
+        "number": "78",
+        "road": "Bluebell Road",
+        "block": "Bluebell North",
+        "facing": "West",
+        "x": 322,
+        "y": 200,
+        "w": 42,
+        "h": 22,
+        "roadNode": "blu_n",
+        "color": "yellow"
+      },
+      "79": {
+        "id": "79",
+        "number": "79",
+        "road": "Carnation Road",
+        "block": "Carnation North",
+        "facing": "East",
+        "x": 366,
+        "y": 200,
+        "w": 42,
+        "h": 22,
+        "roadNode": "car_n",
+        "color": "yellow"
+      },
+      "80": {
+        "id": "80",
+        "number": "80",
+        "road": "Carnation Road",
+        "block": "Carnation North",
+        "facing": "East",
+        "x": 366,
+        "y": 224,
+        "w": 42,
+        "h": 22,
+        "roadNode": "car_n",
+        "color": "yellow"
+      },
+      "81": {
+        "id": "81",
+        "number": "81",
+        "road": "Carnation Road",
+        "block": "Carnation North",
+        "facing": "East",
+        "x": 366,
+        "y": 248,
+        "w": 42,
+        "h": 22,
+        "roadNode": "car_n",
+        "color": "yellow"
+      },
+      "82": {
+        "id": "82",
+        "number": "82",
+        "road": "Carnation Road",
+        "block": "Carnation North",
+        "facing": "East",
+        "x": 366,
+        "y": 272,
+        "w": 42,
+        "h": 22,
+        "roadNode": "car_n",
+        "color": "yellow"
+      },
+      "83": {
+        "id": "83",
+        "number": "83",
+        "road": "Carnation Road",
+        "block": "Carnation North",
+        "facing": "East",
+        "x": 366,
+        "y": 296,
+        "w": 42,
+        "h": 22,
+        "roadNode": "car_n",
+        "color": "yellow"
+      },
+      "84": {
+        "id": "84",
+        "number": "84",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "East",
+        "x": 366,
+        "y": 356,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "yellow"
+      },
+      "85": {
+        "id": "85",
+        "number": "85",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "East",
+        "x": 366,
+        "y": 377,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "yellow"
+      },
+      "86": {
+        "id": "86",
+        "number": "86",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "East",
+        "x": 366,
+        "y": 398,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "yellow"
+      },
+      "87": {
+        "id": "87",
+        "number": "87",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "East",
+        "x": 366,
+        "y": 419,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "yellow"
+      },
+      "88": {
+        "id": "88",
+        "number": "88",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "East",
+        "x": 366,
+        "y": 440,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "yellow"
+      },
+      "89": {
+        "id": "89",
+        "number": "89",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "East",
+        "x": 366,
+        "y": 461,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "yellow"
+      },
+      "90": {
+        "id": "90",
+        "number": "90",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "East",
+        "x": 366,
+        "y": 482,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "yellow"
+      },
+      "91": {
+        "id": "91",
+        "number": "91",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "East",
+        "x": 366,
+        "y": 503,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "yellow"
+      },
+      "92": {
+        "id": "92",
+        "number": "92",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "East",
+        "x": 366,
+        "y": 524,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "yellow"
+      },
+      "93": {
+        "id": "93",
+        "number": "93",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "East",
+        "x": 366,
+        "y": 545,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "yellow"
+      },
+      "94": {
+        "id": "94",
+        "number": "94",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "East",
+        "x": 366,
+        "y": 566,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "yellow"
+      },
+      "95": {
+        "id": "95",
+        "number": "95",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "East",
+        "x": 366,
+        "y": 587,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "yellow"
+      },
+      "96": {
+        "id": "96",
+        "number": "96",
+        "road": "Temple Road",
+        "block": "West Sector",
+        "facing": "South",
+        "x": 93,
+        "y": 655,
+        "w": 32,
+        "h": 22,
+        "roadNode": "ast_temple",
+        "color": "yellow"
+      },
+      "97": {
+        "id": "97",
+        "number": "97",
+        "road": "Temple Road",
+        "block": "West Sector",
+        "facing": "South",
         "x": 58,
-        "y": 750,
-        "w": 37,
-        "h": 24,
-        "roadNode": "hib_inner_lane",
-        "color": "yellow"
-      },
-      "319": {
-        "id": "319",
-        "number": "319",
-        "road": "Hibiscus Road West",
-        "block": "Hibiscus Mid",
-        "facing": "North",
-        "x": 98,
-        "y": 750,
-        "w": 37,
-        "h": 24,
-        "roadNode": "hib_inner_lane",
-        "color": "yellow"
-      },
-      "320": {
-        "id": "320",
-        "number": "320",
-        "road": "Hibiscus Road West",
-        "block": "Hibiscus Mid",
-        "facing": "North",
-        "x": 138,
-        "y": 750,
-        "w": 37,
-        "h": 24,
-        "roadNode": "hib_inner_lane",
-        "color": "yellow"
-      },
-      "321": {
-        "id": "321",
-        "number": "321",
-        "road": "Hibiscus Road West",
-        "block": "Hibiscus Mid",
-        "facing": "North",
-        "x": 178,
-        "y": 750,
-        "w": 37,
-        "h": 24,
-        "roadNode": "hib_inner_lane",
-        "color": "yellow"
-      },
-      "306": {
-        "id": "306",
-        "number": "306",
-        "road": "Hibiscus Lane",
-        "block": "Hibiscus Lane",
-        "facing": "East",
-        "x": 232,
-        "y": 750,
-        "w": 38,
+        "y": 655,
+        "w": 32,
         "h": 22,
-        "roadNode": "hib_inner_lane",
-        "color": "lightgreen"
+        "roadNode": "ast_temple",
+        "color": "lightyellow"
       },
-      "303": {
-        "id": "303",
-        "number": "303",
-        "road": "Hibiscus Lane",
-        "block": "Hibiscus Lane",
+      "98": {
+        "id": "98",
+        "number": "98",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
         "facing": "West",
-        "x": 274,
-        "y": 750,
-        "w": 38,
-        "h": 22,
-        "roadNode": "hib_inner_lane",
+        "x": 440,
+        "y": 545,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
         "color": "lightgreen"
       },
-      "307": {
-        "id": "307",
-        "number": "307",
-        "road": "Hibiscus Lane",
-        "block": "Hibiscus Lane",
-        "facing": "East",
-        "x": 232,
-        "y": 775,
-        "w": 38,
-        "h": 22,
-        "roadNode": "hib_inner_lane",
-        "color": "lightgreen"
-      },
-      "304": {
-        "id": "304",
-        "number": "304",
-        "road": "Hibiscus Lane",
-        "block": "Hibiscus Lane",
+      "99": {
+        "id": "99",
+        "number": "99",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
         "facing": "West",
-        "x": 274,
-        "y": 775,
-        "w": 38,
-        "h": 22,
-        "roadNode": "hib_inner_lane",
+        "x": 440,
+        "y": 524,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
         "color": "lightgreen"
       },
-      "305": {
-        "id": "305",
-        "number": "305",
-        "road": "Hibiscus Lane",
-        "block": "Hibiscus Lane",
-        "facing": "East",
-        "x": 232,
-        "y": 800,
-        "w": 80,
-        "h": 22,
-        "roadNode": "hib_inner_lane",
+      "100": {
+        "id": "100",
+        "number": "100",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "West",
+        "x": 440,
+        "y": 503,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
         "color": "lightgreen"
+      },
+      "101": {
+        "id": "101",
+        "number": "101",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "West",
+        "x": 440,
+        "y": 482,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "lightgreen"
+      },
+      "102": {
+        "id": "102",
+        "number": "102",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "West",
+        "x": 440,
+        "y": 461,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "lightgreen"
+      },
+      "103": {
+        "id": "103",
+        "number": "103",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "West",
+        "x": 440,
+        "y": 440,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "lightgreen"
+      },
+      "104": {
+        "id": "104",
+        "number": "104",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "West",
+        "x": 440,
+        "y": 419,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "lightgreen"
+      },
+      "105": {
+        "id": "105",
+        "number": "105",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "West",
+        "x": 440,
+        "y": 398,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "lightgreen"
+      },
+      "106": {
+        "id": "106",
+        "number": "106",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "West",
+        "x": 440,
+        "y": 377,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "lightgreen"
+      },
+      "107": {
+        "id": "107",
+        "number": "107",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "West",
+        "x": 440,
+        "y": 356,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "lightgreen"
+      },
+      "108": {
+        "id": "108",
+        "number": "108",
+        "road": "Carnation Road",
+        "block": "Carnation North",
+        "facing": "West",
+        "x": 440,
+        "y": 296,
+        "w": 42,
+        "h": 22,
+        "roadNode": "car_n",
+        "color": "lightgreen"
+      },
+      "109": {
+        "id": "109",
+        "number": "109",
+        "road": "Carnation Road",
+        "block": "Carnation North",
+        "facing": "West",
+        "x": 440,
+        "y": 272,
+        "w": 42,
+        "h": 22,
+        "roadNode": "car_n",
+        "color": "lightgreen"
+      },
+      "110": {
+        "id": "110",
+        "number": "110",
+        "road": "Carnation Road",
+        "block": "Carnation North",
+        "facing": "West",
+        "x": 440,
+        "y": 248,
+        "w": 42,
+        "h": 22,
+        "roadNode": "car_n",
+        "color": "lightgreen"
+      },
+      "111": {
+        "id": "111",
+        "number": "111",
+        "road": "Carnation Road",
+        "block": "Carnation North",
+        "facing": "West",
+        "x": 440,
+        "y": 224,
+        "w": 42,
+        "h": 22,
+        "roadNode": "car_n",
+        "color": "lightgreen"
+      },
+      "112": {
+        "id": "112",
+        "number": "112",
+        "road": "Carnation Road",
+        "block": "Carnation North",
+        "facing": "West",
+        "x": 440,
+        "y": 200,
+        "w": 42,
+        "h": 22,
+        "roadNode": "car_n",
+        "color": "lightgreen"
+      },
+      "113": {
+        "id": "113",
+        "number": "113",
+        "road": "Dhalia Road",
+        "block": "Dhalia North",
+        "facing": "East",
+        "x": 484,
+        "y": 200,
+        "w": 42,
+        "h": 22,
+        "roadNode": "dha_n",
+        "color": "lightgreen"
+      },
+      "114": {
+        "id": "114",
+        "number": "114",
+        "road": "Dhalia Road",
+        "block": "Dhalia North",
+        "facing": "East",
+        "x": 484,
+        "y": 224,
+        "w": 42,
+        "h": 22,
+        "roadNode": "dha_n",
+        "color": "lightgreen"
+      },
+      "115": {
+        "id": "115",
+        "number": "115",
+        "road": "Dhalia Road",
+        "block": "Dhalia North",
+        "facing": "East",
+        "x": 484,
+        "y": 248,
+        "w": 42,
+        "h": 22,
+        "roadNode": "dha_n",
+        "color": "lightgreen"
+      },
+      "116": {
+        "id": "116",
+        "number": "116",
+        "road": "Dhalia Road",
+        "block": "Dhalia North",
+        "facing": "East",
+        "x": 484,
+        "y": 272,
+        "w": 42,
+        "h": 22,
+        "roadNode": "dha_n",
+        "color": "lightgreen"
+      },
+      "117": {
+        "id": "117",
+        "number": "117",
+        "road": "Dhalia Road",
+        "block": "Dhalia North",
+        "facing": "East",
+        "x": 484,
+        "y": 296,
+        "w": 42,
+        "h": 22,
+        "roadNode": "dha_n",
+        "color": "lightgreen"
+      },
+      "118": {
+        "id": "118",
+        "number": "118",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "East",
+        "x": 484,
+        "y": 356,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "lightgreen"
+      },
+      "119": {
+        "id": "119",
+        "number": "119",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "East",
+        "x": 484,
+        "y": 377,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "lightgreen"
+      },
+      "120": {
+        "id": "120",
+        "number": "120",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "East",
+        "x": 484,
+        "y": 398,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "lightgreen"
+      },
+      "121": {
+        "id": "121",
+        "number": "121",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "East",
+        "x": 484,
+        "y": 419,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "lightgreen"
+      },
+      "122": {
+        "id": "122",
+        "number": "122",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "East",
+        "x": 484,
+        "y": 440,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "lightgreen"
+      },
+      "123": {
+        "id": "123",
+        "number": "123",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "East",
+        "x": 484,
+        "y": 461,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "lightgreen"
+      },
+      "124": {
+        "id": "124",
+        "number": "124",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "East",
+        "x": 484,
+        "y": 482,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "lightgreen"
+      },
+      "126": {
+        "id": "126",
+        "number": "126",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "West",
+        "x": 558,
+        "y": 461,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "yellow"
+      },
+      "127": {
+        "id": "127",
+        "number": "127",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "West",
+        "x": 558,
+        "y": 440,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "yellow"
+      },
+      "128": {
+        "id": "128",
+        "number": "128",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "West",
+        "x": 558,
+        "y": 419,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "yellow"
+      },
+      "129": {
+        "id": "129",
+        "number": "129",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "West",
+        "x": 558,
+        "y": 398,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "yellow"
+      },
+      "130": {
+        "id": "130",
+        "number": "130",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "West",
+        "x": 558,
+        "y": 377,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "yellow"
+      },
+      "131": {
+        "id": "131",
+        "number": "131",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "West",
+        "x": 558,
+        "y": 356,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "yellow"
+      },
+      "132": {
+        "id": "132",
+        "number": "132",
+        "road": "Dhalia Road",
+        "block": "Dhalia North",
+        "facing": "West",
+        "x": 558,
+        "y": 296,
+        "w": 42,
+        "h": 22,
+        "roadNode": "dha_n",
+        "color": "yellow"
+      },
+      "133": {
+        "id": "133",
+        "number": "133",
+        "road": "Dhalia Road",
+        "block": "Dhalia North",
+        "facing": "West",
+        "x": 558,
+        "y": 272,
+        "w": 42,
+        "h": 22,
+        "roadNode": "dha_n",
+        "color": "yellow"
+      },
+      "134": {
+        "id": "134",
+        "number": "134",
+        "road": "Dhalia Road",
+        "block": "Dhalia North",
+        "facing": "West",
+        "x": 558,
+        "y": 248,
+        "w": 42,
+        "h": 22,
+        "roadNode": "dha_n",
+        "color": "yellow"
+      },
+      "135": {
+        "id": "135",
+        "number": "135",
+        "road": "Dhalia Road",
+        "block": "Dhalia North",
+        "facing": "West",
+        "x": 558,
+        "y": 224,
+        "w": 42,
+        "h": 22,
+        "roadNode": "dha_n",
+        "color": "yellow"
+      },
+      "136": {
+        "id": "136",
+        "number": "136",
+        "road": "Exotica Road",
+        "block": "Exotica North",
+        "facing": "East",
+        "x": 602,
+        "y": 224,
+        "w": 42,
+        "h": 22,
+        "roadNode": "exo_n",
+        "color": "yellow"
+      },
+      "137": {
+        "id": "137",
+        "number": "137",
+        "road": "Exotica Road",
+        "block": "Exotica North",
+        "facing": "East",
+        "x": 602,
+        "y": 248,
+        "w": 42,
+        "h": 22,
+        "roadNode": "exo_n",
+        "color": "yellow"
+      },
+      "138": {
+        "id": "138",
+        "number": "138",
+        "road": "Exotica Road",
+        "block": "Exotica North",
+        "facing": "East",
+        "x": 602,
+        "y": 272,
+        "w": 42,
+        "h": 22,
+        "roadNode": "exo_n",
+        "color": "yellow"
+      },
+      "139": {
+        "id": "139",
+        "number": "139",
+        "road": "Exotica Road",
+        "block": "Exotica North",
+        "facing": "East",
+        "x": 602,
+        "y": 296,
+        "w": 42,
+        "h": 22,
+        "roadNode": "exo_n",
+        "color": "yellow"
+      },
+      "140": {
+        "id": "140",
+        "number": "140",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "East",
+        "x": 602,
+        "y": 356,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "yellow"
+      },
+      "141": {
+        "id": "141",
+        "number": "141",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "East",
+        "x": 602,
+        "y": 377,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "yellow"
+      },
+      "142": {
+        "id": "142",
+        "number": "142",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "East",
+        "x": 602,
+        "y": 398,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "yellow"
+      },
+      "143": {
+        "id": "143",
+        "number": "143",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "East",
+        "x": 602,
+        "y": 419,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "yellow"
+      },
+      "144": {
+        "id": "144",
+        "number": "144",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "East",
+        "x": 602,
+        "y": 440,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "yellow"
+      },
+      "145": {
+        "id": "145",
+        "number": "145",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "East",
+        "x": 602,
+        "y": 461,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "yellow"
+      },
+      "147": {
+        "id": "147",
+        "number": "147",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "West",
+        "x": 676,
+        "y": 461,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "lightgreen"
+      },
+      "148": {
+        "id": "148",
+        "number": "148",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "West",
+        "x": 676,
+        "y": 440,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "lightgreen"
+      },
+      "149": {
+        "id": "149",
+        "number": "149",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "West",
+        "x": 676,
+        "y": 419,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "lightgreen"
+      },
+      "150": {
+        "id": "150",
+        "number": "150",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "West",
+        "x": 676,
+        "y": 398,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "lightgreen"
+      },
+      "151": {
+        "id": "151",
+        "number": "151",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "West",
+        "x": 676,
+        "y": 377,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "lightgreen"
+      },
+      "152": {
+        "id": "152",
+        "number": "152",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "West",
+        "x": 676,
+        "y": 356,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "lightgreen"
+      },
+      "153": {
+        "id": "153",
+        "number": "153",
+        "road": "Exotica Road",
+        "block": "Exotica North",
+        "facing": "West",
+        "x": 676,
+        "y": 296,
+        "w": 42,
+        "h": 22,
+        "roadNode": "exo_n",
+        "color": "lightgreen"
+      },
+      "154": {
+        "id": "154",
+        "number": "154",
+        "road": "Exotica Road",
+        "block": "Exotica North",
+        "facing": "West",
+        "x": 676,
+        "y": 272,
+        "w": 42,
+        "h": 22,
+        "roadNode": "exo_n",
+        "color": "lightgreen"
+      },
+      "155": {
+        "id": "155",
+        "number": "155",
+        "road": "Exotica Road",
+        "block": "Exotica North",
+        "facing": "West",
+        "x": 676,
+        "y": 248,
+        "w": 42,
+        "h": 22,
+        "roadNode": "exo_n",
+        "color": "lightgreen"
+      },
+      "156": {
+        "id": "156",
+        "number": "156",
+        "road": "Exotica Road",
+        "block": "Exotica North",
+        "facing": "West",
+        "x": 676,
+        "y": 224,
+        "w": 42,
+        "h": 22,
+        "roadNode": "exo_n",
+        "color": "lightgreen"
+      },
+      "157": {
+        "id": "157",
+        "number": "157",
+        "road": "Florentine Road",
+        "block": "Florentine North",
+        "facing": "East",
+        "x": 720,
+        "y": 224,
+        "w": 42,
+        "h": 22,
+        "roadNode": "flo_n",
+        "color": "lightgreen"
+      },
+      "158": {
+        "id": "158",
+        "number": "158",
+        "road": "Florentine Road",
+        "block": "Florentine North",
+        "facing": "East",
+        "x": 720,
+        "y": 248,
+        "w": 42,
+        "h": 22,
+        "roadNode": "flo_n",
+        "color": "lightgreen"
+      },
+      "159": {
+        "id": "159",
+        "number": "159",
+        "road": "Florentine Road",
+        "block": "Florentine North",
+        "facing": "East",
+        "x": 720,
+        "y": 272,
+        "w": 42,
+        "h": 22,
+        "roadNode": "flo_n",
+        "color": "lightgreen"
+      },
+      "160": {
+        "id": "160",
+        "number": "160",
+        "road": "Florentine Road",
+        "block": "Florentine North",
+        "facing": "East",
+        "x": 720,
+        "y": 296,
+        "w": 42,
+        "h": 22,
+        "roadNode": "flo_n",
+        "color": "lightgreen"
+      },
+      "161": {
+        "id": "161",
+        "number": "161",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "East",
+        "x": 720,
+        "y": 356,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "lightgreen"
+      },
+      "162": {
+        "id": "162",
+        "number": "162",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "East",
+        "x": 720,
+        "y": 377,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "lightgreen"
+      },
+      "163": {
+        "id": "163",
+        "number": "163",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "East",
+        "x": 720,
+        "y": 398,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "lightgreen"
+      },
+      "164": {
+        "id": "164",
+        "number": "164",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "East",
+        "x": 720,
+        "y": 419,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "lightgreen"
+      },
+      "165": {
+        "id": "165",
+        "number": "165",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "East",
+        "x": 720,
+        "y": 440,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "lightgreen"
+      },
+      "166": {
+        "id": "166",
+        "number": "166",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "East",
+        "x": 720,
+        "y": 461,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "lightgreen"
+      },
+      "167": {
+        "id": "167",
+        "number": "167",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "West",
+        "x": 794,
+        "y": 440,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "yellow"
+      },
+      "168": {
+        "id": "168",
+        "number": "168",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "West",
+        "x": 794,
+        "y": 419,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "yellow"
+      },
+      "169": {
+        "id": "169",
+        "number": "169",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "West",
+        "x": 794,
+        "y": 398,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "yellow"
+      },
+      "170": {
+        "id": "170",
+        "number": "170",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "West",
+        "x": 794,
+        "y": 377,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "yellow"
+      },
+      "171": {
+        "id": "171",
+        "number": "171",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "West",
+        "x": 794,
+        "y": 356,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "yellow"
+      },
+      "172": {
+        "id": "172",
+        "number": "172",
+        "road": "Florentine Road",
+        "block": "Florentine North",
+        "facing": "West",
+        "x": 794,
+        "y": 296,
+        "w": 42,
+        "h": 22,
+        "roadNode": "flo_n",
+        "color": "yellow"
+      },
+      "173": {
+        "id": "173",
+        "number": "173",
+        "road": "Florentine Road",
+        "block": "Florentine North",
+        "facing": "West",
+        "x": 794,
+        "y": 272,
+        "w": 42,
+        "h": 22,
+        "roadNode": "flo_n",
+        "color": "yellow"
+      },
+      "174": {
+        "id": "174",
+        "number": "174",
+        "road": "Florentine Road",
+        "block": "Florentine North",
+        "facing": "West",
+        "x": 794,
+        "y": 248,
+        "w": 42,
+        "h": 22,
+        "roadNode": "flo_n",
+        "color": "yellow"
+      },
+      "175": {
+        "id": "175",
+        "number": "175",
+        "road": "Florentine Road",
+        "block": "Florentine North",
+        "facing": "West",
+        "x": 794,
+        "y": 224,
+        "w": 42,
+        "h": 22,
+        "roadNode": "flo_n",
+        "color": "yellow"
+      },
+      "176": {
+        "id": "176",
+        "number": "176",
+        "road": "Gardenia Road",
+        "block": "Gardenia North",
+        "facing": "East",
+        "x": 838,
+        "y": 224,
+        "w": 42,
+        "h": 22,
+        "roadNode": "gar_n",
+        "color": "yellow"
+      },
+      "177": {
+        "id": "177",
+        "number": "177",
+        "road": "Gardenia Road",
+        "block": "Gardenia North",
+        "facing": "East",
+        "x": 838,
+        "y": 248,
+        "w": 42,
+        "h": 22,
+        "roadNode": "gar_n",
+        "color": "yellow"
+      },
+      "178": {
+        "id": "178",
+        "number": "178",
+        "road": "Gardenia Road",
+        "block": "Gardenia North",
+        "facing": "East",
+        "x": 838,
+        "y": 272,
+        "w": 42,
+        "h": 22,
+        "roadNode": "gar_n",
+        "color": "yellow"
+      },
+      "179": {
+        "id": "179",
+        "number": "179",
+        "road": "Gardenia Road",
+        "block": "Gardenia North",
+        "facing": "East",
+        "x": 838,
+        "y": 296,
+        "w": 42,
+        "h": 22,
+        "roadNode": "gar_n",
+        "color": "yellow"
+      },
+      "180": {
+        "id": "180",
+        "number": "180",
+        "road": "Gardenia Road",
+        "block": "Gardenia Mid",
+        "facing": "East",
+        "x": 838,
+        "y": 356,
+        "w": 42,
+        "h": 19,
+        "roadNode": "gar_mid",
+        "color": "yellow"
+      },
+      "181": {
+        "id": "181",
+        "number": "181",
+        "road": "Gardenia Road",
+        "block": "Gardenia Mid",
+        "facing": "East",
+        "x": 838,
+        "y": 377,
+        "w": 42,
+        "h": 19,
+        "roadNode": "gar_mid",
+        "color": "yellow"
+      },
+      "182": {
+        "id": "182",
+        "number": "182",
+        "road": "Gardenia Road",
+        "block": "Gardenia Mid",
+        "facing": "East",
+        "x": 838,
+        "y": 398,
+        "w": 42,
+        "h": 19,
+        "roadNode": "gar_mid",
+        "color": "yellow"
+      },
+      "183": {
+        "id": "183",
+        "number": "183",
+        "road": "Gardenia Road",
+        "block": "Gardenia Mid",
+        "facing": "East",
+        "x": 838,
+        "y": 419,
+        "w": 42,
+        "h": 19,
+        "roadNode": "gar_mid",
+        "color": "yellow"
+      },
+      "184": {
+        "id": "184",
+        "number": "184",
+        "road": "Gardenia Road",
+        "block": "Gardenia Mid",
+        "facing": "East",
+        "x": 838,
+        "y": 440,
+        "w": 42,
+        "h": 19,
+        "roadNode": "gar_mid",
+        "color": "yellow"
+      },
+      "190": {
+        "id": "190",
+        "number": "190",
+        "road": "Gardenia Road",
+        "block": "Gardenia North",
+        "facing": "West",
+        "x": 918,
+        "y": 296,
+        "w": 38,
+        "h": 22,
+        "roadNode": "gar_n",
+        "color": "lightgreen"
+      },
+      "191": {
+        "id": "191",
+        "number": "191",
+        "road": "Gardenia Road",
+        "block": "Gardenia North",
+        "facing": "West",
+        "x": 918,
+        "y": 272,
+        "w": 38,
+        "h": 22,
+        "roadNode": "gar_n",
+        "color": "lightgreen"
+      },
+      "192": {
+        "id": "192",
+        "number": "192",
+        "road": "Gardenia Road",
+        "block": "Gardenia North",
+        "facing": "West",
+        "x": 918,
+        "y": 248,
+        "w": 38,
+        "h": 22,
+        "roadNode": "gar_n",
+        "color": "lightgreen"
+      },
+      "196": {
+        "id": "196",
+        "number": "196",
+        "road": "Gardenia Road",
+        "block": "Gardenia Mid",
+        "facing": "East",
+        "x": 838,
+        "y": 461,
+        "w": 42,
+        "h": 19,
+        "roadNode": "gar_mid",
+        "color": "yellow"
+      },
+      "197": {
+        "id": "197",
+        "number": "197",
+        "road": "Gardenia Road",
+        "block": "Gardenia Mid",
+        "facing": "East",
+        "x": 838,
+        "y": 482,
+        "w": 42,
+        "h": 19,
+        "roadNode": "gar_mid",
+        "color": "yellow"
+      },
+      "198": {
+        "id": "198",
+        "number": "198",
+        "road": "Gardenia Road",
+        "block": "Gardenia Mid",
+        "facing": "East",
+        "x": 838,
+        "y": 503,
+        "w": 42,
+        "h": 19,
+        "roadNode": "gar_mid",
+        "color": "yellow"
+      },
+      "199": {
+        "id": "199",
+        "number": "199",
+        "road": "Gardenia Road",
+        "block": "Gardenia Mid",
+        "facing": "East",
+        "x": 838,
+        "y": 524,
+        "w": 42,
+        "h": 19,
+        "roadNode": "gar_mid",
+        "color": "yellow"
+      },
+      "200": {
+        "id": "200",
+        "number": "200",
+        "road": "Gardenia Road",
+        "block": "Gardenia Mid",
+        "facing": "East",
+        "x": 838,
+        "y": 545,
+        "w": 42,
+        "h": 19,
+        "roadNode": "gar_mid",
+        "color": "yellow"
+      },
+      "201": {
+        "id": "201",
+        "number": "201",
+        "road": "Gardenia Road",
+        "block": "Gardenia Mid",
+        "facing": "East",
+        "x": 838,
+        "y": 566,
+        "w": 42,
+        "h": 19,
+        "roadNode": "gar_mid",
+        "color": "yellow"
+      },
+      "202": {
+        "id": "202",
+        "number": "202",
+        "road": "Gardenia Road",
+        "block": "Gardenia Mid",
+        "facing": "East",
+        "x": 838,
+        "y": 587,
+        "w": 42,
+        "h": 19,
+        "roadNode": "gar_mid",
+        "color": "yellow"
+      },
+      "203": {
+        "id": "203",
+        "number": "203",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "West",
+        "x": 794,
+        "y": 587,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "yellow"
+      },
+      "204": {
+        "id": "204",
+        "number": "204",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "West",
+        "x": 794,
+        "y": 566,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "yellow"
+      },
+      "205": {
+        "id": "205",
+        "number": "205",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "West",
+        "x": 794,
+        "y": 545,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "yellow"
+      },
+      "206": {
+        "id": "206",
+        "number": "206",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "West",
+        "x": 794,
+        "y": 524,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "yellow"
+      },
+      "207": {
+        "id": "207",
+        "number": "207",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "West",
+        "x": 794,
+        "y": 503,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "yellow"
+      },
+      "208": {
+        "id": "208",
+        "number": "208",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "West",
+        "x": 794,
+        "y": 482,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "yellow"
+      },
+      "209": {
+        "id": "209",
+        "number": "209",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "West",
+        "x": 794,
+        "y": 461,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "yellow"
+      },
+      "210": {
+        "id": "210",
+        "number": "210",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "East",
+        "x": 720,
+        "y": 482,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "lightgreen"
+      },
+      "211": {
+        "id": "211",
+        "number": "211",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "East",
+        "x": 720,
+        "y": 503,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "lightgreen"
+      },
+      "212": {
+        "id": "212",
+        "number": "212",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "East",
+        "x": 720,
+        "y": 524,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "lightgreen"
+      },
+      "213": {
+        "id": "213",
+        "number": "213",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "East",
+        "x": 720,
+        "y": 545,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "lightgreen"
+      },
+      "214": {
+        "id": "214",
+        "number": "214",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "East",
+        "x": 720,
+        "y": 566,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "lightgreen"
+      },
+      "215": {
+        "id": "215",
+        "number": "215",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "East",
+        "x": 720,
+        "y": 587,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "lightgreen"
+      },
+      "216": {
+        "id": "216",
+        "number": "216",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "West",
+        "x": 676,
+        "y": 587,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "lightgreen"
+      },
+      "217": {
+        "id": "217",
+        "number": "217",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "West",
+        "x": 676,
+        "y": 566,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "lightgreen"
+      },
+      "218": {
+        "id": "218",
+        "number": "218",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "West",
+        "x": 676,
+        "y": 545,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "lightgreen"
+      },
+      "219": {
+        "id": "219",
+        "number": "219",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "West",
+        "x": 676,
+        "y": 524,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "lightgreen"
+      },
+      "220": {
+        "id": "220",
+        "number": "220",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "West",
+        "x": 676,
+        "y": 503,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "lightgreen"
+      },
+      "221": {
+        "id": "221",
+        "number": "221",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "West",
+        "x": 676,
+        "y": 482,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "lightgreen"
+      },
+      "222": {
+        "id": "222",
+        "number": "222",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "East",
+        "x": 602,
+        "y": 482,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "yellow"
+      },
+      "223": {
+        "id": "223",
+        "number": "223",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "East",
+        "x": 602,
+        "y": 503,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "yellow"
+      },
+      "224": {
+        "id": "224",
+        "number": "224",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "East",
+        "x": 602,
+        "y": 524,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "yellow"
+      },
+      "225": {
+        "id": "225",
+        "number": "225",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "East",
+        "x": 602,
+        "y": 545,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "yellow"
+      },
+      "226": {
+        "id": "226",
+        "number": "226",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "East",
+        "x": 602,
+        "y": 566,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "yellow"
+      },
+      "227": {
+        "id": "227",
+        "number": "227",
+        "road": "Exotica Road",
+        "block": "Exotica Mid",
+        "facing": "East",
+        "x": 602,
+        "y": 587,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_mid",
+        "color": "yellow"
+      },
+      "228": {
+        "id": "228",
+        "number": "228",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "West",
+        "x": 558,
+        "y": 587,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "yellow"
+      },
+      "229": {
+        "id": "229",
+        "number": "229",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "West",
+        "x": 558,
+        "y": 566,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "yellow"
+      },
+      "230": {
+        "id": "230",
+        "number": "230",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "West",
+        "x": 558,
+        "y": 545,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "yellow"
+      },
+      "231": {
+        "id": "231",
+        "number": "231",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "West",
+        "x": 558,
+        "y": 524,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "yellow"
+      },
+      "232": {
+        "id": "232",
+        "number": "232",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "West",
+        "x": 558,
+        "y": 503,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "yellow"
+      },
+      "233": {
+        "id": "233",
+        "number": "233",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "West",
+        "x": 558,
+        "y": 482,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "yellow"
+      },
+      "234": {
+        "id": "234",
+        "number": "234",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "East",
+        "x": 484,
+        "y": 503,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "lightgreen"
+      },
+      "235": {
+        "id": "235",
+        "number": "235",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "East",
+        "x": 484,
+        "y": 524,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "lightgreen"
+      },
+      "236": {
+        "id": "236",
+        "number": "236",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "East",
+        "x": 484,
+        "y": 545,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "lightgreen"
+      },
+      "237": {
+        "id": "237",
+        "number": "237",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "East",
+        "x": 484,
+        "y": 566,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "lightgreen"
+      },
+      "238": {
+        "id": "238",
+        "number": "238",
+        "road": "Dhalia Road",
+        "block": "Dhalia Mid",
+        "facing": "East",
+        "x": 484,
+        "y": 587,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_mid",
+        "color": "lightgreen"
+      },
+      "239": {
+        "id": "239",
+        "number": "239",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "West",
+        "x": 440,
+        "y": 587,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "lightgreen"
+      },
+      "240": {
+        "id": "240",
+        "number": "240",
+        "road": "Carnation Road",
+        "block": "Carnation Mid",
+        "facing": "West",
+        "x": 440,
+        "y": 566,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_mid",
+        "color": "lightgreen"
+      },
+      "241": {
+        "id": "241",
+        "number": "241",
+        "road": "Florentine Road South",
+        "block": "Florentine South East Corner",
+        "facing": "North",
+        "x": 796,
+        "y": 816,
+        "w": 50,
+        "h": 20,
+        "roadNode": "flo_s_end",
+        "color": "yellow"
+      },
+      "242": {
+        "id": "242",
+        "number": "242",
+        "road": "Florentine Road South",
+        "block": "Florentine South East Corner",
+        "facing": "North",
+        "x": 796,
+        "y": 792,
+        "w": 50,
+        "h": 20,
+        "roadNode": "flo_s_mid",
+        "color": "yellow"
+      },
+      "243": {
+        "id": "243",
+        "number": "243",
+        "road": "Florentine Road South",
+        "block": "Florentine South East Corner",
+        "facing": "North",
+        "x": 796,
+        "y": 768,
+        "w": 48,
+        "h": 20,
+        "roadNode": "flo_s_mid",
+        "color": "yellow"
+      },
+      "244": {
+        "id": "244",
+        "number": "244",
+        "road": "Florentine Road South",
+        "block": "Florentine South East Corner",
+        "facing": "North",
+        "x": 846,
+        "y": 768,
+        "w": 48,
+        "h": 20,
+        "roadNode": "flo_s_mid",
+        "color": "yellow"
+      },
+      "245": {
+        "id": "245",
+        "number": "245",
+        "road": "Florentine Road South",
+        "block": "Florentine South East Block",
+        "facing": "North",
+        "x": 862,
+        "y": 744,
+        "w": 31,
+        "h": 20,
+        "roadNode": "flo_s_mid",
+        "color": "yellow"
+      },
+      "246": {
+        "id": "246",
+        "number": "246",
+        "road": "Florentine Road South",
+        "block": "Florentine South East Block",
+        "facing": "North",
+        "x": 829,
+        "y": 744,
+        "w": 31,
+        "h": 20,
+        "roadNode": "flo_s_mid",
+        "color": "yellow"
+      },
+      "247": {
+        "id": "247",
+        "number": "247",
+        "road": "Florentine Road South",
+        "block": "Florentine South East Block",
+        "facing": "North",
+        "x": 796,
+        "y": 744,
+        "w": 31,
+        "h": 20,
+        "roadNode": "flo_s_mid",
+        "color": "yellow"
+      },
+      "248": {
+        "id": "248",
+        "number": "248",
+        "road": "Florentine Road South",
+        "block": "Exotica South",
+        "facing": "East",
+        "x": 720,
+        "y": 888,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_s_mid",
+        "color": "lightgreen"
+      },
+      "249": {
+        "id": "249",
+        "number": "249",
+        "road": "Florentine Road",
+        "block": "Exotica South",
+        "facing": "East",
+        "x": 720,
+        "y": 867,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_s_mid",
+        "color": "lightgreen"
+      },
+      "250": {
+        "id": "250",
+        "number": "250",
+        "road": "Florentine Road",
+        "block": "Exotica South",
+        "facing": "East",
+        "x": 720,
+        "y": 846,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_s_mid",
+        "color": "lightgreen"
+      },
+      "251": {
+        "id": "251",
+        "number": "251",
+        "road": "Florentine Road",
+        "block": "Exotica South",
+        "facing": "East",
+        "x": 720,
+        "y": 825,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_s_mid",
+        "color": "lightgreen"
+      },
+      "252": {
+        "id": "252",
+        "number": "252",
+        "road": "Florentine Road",
+        "block": "Exotica South",
+        "facing": "East",
+        "x": 720,
+        "y": 804,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_s_mid",
+        "color": "lightgreen"
+      },
+      "253": {
+        "id": "253",
+        "number": "253",
+        "road": "Florentine Road",
+        "block": "Exotica South",
+        "facing": "East",
+        "x": 720,
+        "y": 783,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_s_mid",
+        "color": "lightgreen"
+      },
+      "254": {
+        "id": "254",
+        "number": "254",
+        "road": "Florentine Road",
+        "block": "Exotica South",
+        "facing": "East",
+        "x": 720,
+        "y": 762,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_s_mid",
+        "color": "lightgreen"
+      },
+      "255": {
+        "id": "255",
+        "number": "255",
+        "road": "Florentine Road",
+        "block": "Exotica South",
+        "facing": "East",
+        "x": 720,
+        "y": 741,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_s_mid",
+        "color": "lightgreen"
+      },
+      "256": {
+        "id": "256",
+        "number": "256",
+        "road": "Florentine Road",
+        "block": "Exotica South",
+        "facing": "East",
+        "x": 720,
+        "y": 720,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_s_mid",
+        "color": "lightgreen"
+      },
+      "257": {
+        "id": "257",
+        "number": "257",
+        "road": "Exotica Road",
+        "block": "Exotica South",
+        "facing": "West",
+        "x": 676,
+        "y": 720,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "lightgreen"
+      },
+      "258": {
+        "id": "258",
+        "number": "258",
+        "road": "Exotica Road",
+        "block": "Exotica South",
+        "facing": "West",
+        "x": 676,
+        "y": 741,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "lightgreen"
+      },
+      "259": {
+        "id": "259",
+        "number": "259",
+        "road": "Exotica Road",
+        "block": "Exotica South",
+        "facing": "West",
+        "x": 676,
+        "y": 762,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "lightgreen"
+      },
+      "260": {
+        "id": "260",
+        "number": "260",
+        "road": "Exotica Road",
+        "block": "Exotica South",
+        "facing": "West",
+        "x": 676,
+        "y": 783,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "lightgreen"
+      },
+      "261": {
+        "id": "261",
+        "number": "261",
+        "road": "Exotica Road",
+        "block": "Exotica South",
+        "facing": "West",
+        "x": 676,
+        "y": 804,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "lightgreen"
+      },
+      "262": {
+        "id": "262",
+        "number": "262",
+        "road": "Exotica Road",
+        "block": "Exotica South",
+        "facing": "West",
+        "x": 676,
+        "y": 825,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "lightgreen"
+      },
+      "263": {
+        "id": "263",
+        "number": "263",
+        "road": "Exotica Road",
+        "block": "Exotica South",
+        "facing": "West",
+        "x": 676,
+        "y": 846,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "lightgreen"
+      },
+      "264": {
+        "id": "264",
+        "number": "264",
+        "road": "Exotica Road",
+        "block": "Exotica South",
+        "facing": "West",
+        "x": 676,
+        "y": 867,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "lightgreen"
+      },
+      "265": {
+        "id": "265",
+        "number": "265",
+        "road": "Exotica Road",
+        "block": "Dhalia South",
+        "facing": "East",
+        "x": 602,
+        "y": 846,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "yellow"
+      },
+      "266": {
+        "id": "266",
+        "number": "266",
+        "road": "Exotica Road",
+        "block": "Dhalia South",
+        "facing": "East",
+        "x": 602,
+        "y": 825,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "yellow"
+      },
+      "267": {
+        "id": "267",
+        "number": "267",
+        "road": "Exotica Road",
+        "block": "Dhalia South",
+        "facing": "East",
+        "x": 602,
+        "y": 804,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "yellow"
+      },
+      "268": {
+        "id": "268",
+        "number": "268",
+        "road": "Exotica Road",
+        "block": "Dhalia South",
+        "facing": "East",
+        "x": 602,
+        "y": 783,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "yellow"
+      },
+      "269": {
+        "id": "269",
+        "number": "269",
+        "road": "Exotica Road",
+        "block": "Dhalia South",
+        "facing": "East",
+        "x": 602,
+        "y": 762,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "yellow"
+      },
+      "270": {
+        "id": "270",
+        "number": "270",
+        "road": "Exotica Road",
+        "block": "Dhalia South",
+        "facing": "East",
+        "x": 602,
+        "y": 741,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "yellow"
+      },
+      "271": {
+        "id": "271",
+        "number": "271",
+        "road": "Exotica Road",
+        "block": "Dhalia South",
+        "facing": "East",
+        "x": 602,
+        "y": 720,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "yellow"
+      },
+      "272": {
+        "id": "272",
+        "number": "272",
+        "road": "Dhalia Road",
+        "block": "Dhalia South",
+        "facing": "West",
+        "x": 558,
+        "y": 720,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_s_mid",
+        "color": "yellow"
+      },
+      "273": {
+        "id": "273",
+        "number": "273",
+        "road": "Dhalia Road",
+        "block": "Dhalia South",
+        "facing": "West",
+        "x": 558,
+        "y": 741,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_s_mid",
+        "color": "yellow"
+      },
+      "274": {
+        "id": "274",
+        "number": "274",
+        "road": "Dhalia Road",
+        "block": "Dhalia South",
+        "facing": "West",
+        "x": 558,
+        "y": 762,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_s_mid",
+        "color": "yellow"
+      },
+      "275": {
+        "id": "275",
+        "number": "275",
+        "road": "Dhalia Road",
+        "block": "Dhalia South",
+        "facing": "West",
+        "x": 558,
+        "y": 783,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_s_mid",
+        "color": "yellow"
+      },
+      "276": {
+        "id": "276",
+        "number": "276",
+        "road": "Dhalia Road",
+        "block": "Dhalia South",
+        "facing": "West",
+        "x": 558,
+        "y": 804,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_s_mid",
+        "color": "yellow"
+      },
+      "277": {
+        "id": "277",
+        "number": "277",
+        "road": "Dhalia Road",
+        "block": "Dhalia South",
+        "facing": "West",
+        "x": 558,
+        "y": 825,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_s_mid",
+        "color": "yellow"
+      },
+      "278": {
+        "id": "278",
+        "number": "278",
+        "road": "Dhalia Road",
+        "block": "Dhalia South",
+        "facing": "West",
+        "x": 558,
+        "y": 846,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_s_mid",
+        "color": "yellow"
+      },
+      "279": {
+        "id": "279",
+        "number": "279",
+        "road": "Carnation Road South",
+        "block": "Carnation South",
+        "facing": "East",
+        "x": 484,
+        "y": 846,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_s_mid",
+        "color": "lightgreen"
+      },
+      "280": {
+        "id": "280",
+        "number": "280",
+        "road": "Dhalia Road",
+        "block": "Carnation South",
+        "facing": "East",
+        "x": 484,
+        "y": 825,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_s_mid",
+        "color": "lightgreen"
+      },
+      "281": {
+        "id": "281",
+        "number": "281",
+        "road": "Dhalia Road",
+        "block": "Carnation South",
+        "facing": "East",
+        "x": 484,
+        "y": 804,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_s_mid",
+        "color": "lightgreen"
+      },
+      "282": {
+        "id": "282",
+        "number": "282",
+        "road": "Dhalia Road",
+        "block": "Carnation South",
+        "facing": "East",
+        "x": 484,
+        "y": 783,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_s_mid",
+        "color": "lightgreen"
+      },
+      "283": {
+        "id": "283",
+        "number": "283",
+        "road": "Dhalia Road",
+        "block": "Carnation South",
+        "facing": "East",
+        "x": 484,
+        "y": 762,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_s_mid",
+        "color": "lightgreen"
+      },
+      "284": {
+        "id": "284",
+        "number": "284",
+        "road": "Dhalia Road",
+        "block": "Carnation South",
+        "facing": "East",
+        "x": 484,
+        "y": 741,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_s_mid",
+        "color": "lightgreen"
+      },
+      "285": {
+        "id": "285",
+        "number": "285",
+        "road": "Dhalia Road",
+        "block": "Carnation South",
+        "facing": "East",
+        "x": 484,
+        "y": 720,
+        "w": 42,
+        "h": 19,
+        "roadNode": "dha_s_mid",
+        "color": "lightgreen"
+      },
+      "286": {
+        "id": "286",
+        "number": "286",
+        "road": "Carnation Road",
+        "block": "Carnation South",
+        "facing": "West",
+        "x": 440,
+        "y": 720,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_s_mid",
+        "color": "lightgreen"
+      },
+      "287": {
+        "id": "287",
+        "number": "287",
+        "road": "Carnation Road",
+        "block": "Carnation South",
+        "facing": "West",
+        "x": 440,
+        "y": 741,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_s_mid",
+        "color": "lightgreen"
+      },
+      "288": {
+        "id": "288",
+        "number": "288",
+        "road": "Carnation Road",
+        "block": "Carnation South",
+        "facing": "West",
+        "x": 440,
+        "y": 762,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_s_mid",
+        "color": "lightgreen"
+      },
+      "289": {
+        "id": "289",
+        "number": "289",
+        "road": "Carnation Road",
+        "block": "Carnation South",
+        "facing": "West",
+        "x": 440,
+        "y": 783,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_s_mid",
+        "color": "lightgreen"
+      },
+      "290": {
+        "id": "290",
+        "number": "290",
+        "road": "Carnation Road",
+        "block": "Carnation South",
+        "facing": "West",
+        "x": 440,
+        "y": 804,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_s_mid",
+        "color": "lightgreen"
+      },
+      "291": {
+        "id": "291",
+        "number": "291",
+        "road": "Carnation Road",
+        "block": "Carnation South",
+        "facing": "West",
+        "x": 440,
+        "y": 825,
+        "w": 42,
+        "h": 19,
+        "roadNode": "car_s_mid",
+        "color": "lightgreen"
+      },
+      "292": {
+        "id": "292",
+        "number": "292",
+        "road": "Carnation Road South",
+        "block": "Hibiscus East",
+        "facing": "East",
+        "x": 383,
+        "y": 830,
+        "w": 26,
+        "h": 20,
+        "roadNode": "car_s_mid",
+        "color": "yellow"
+      },
+      "293": {
+        "id": "293",
+        "number": "293",
+        "road": "Carnation Road South",
+        "block": "Hibiscus East",
+        "facing": "East",
+        "x": 383,
+        "y": 808,
+        "w": 26,
+        "h": 20,
+        "roadNode": "car_s_mid",
+        "color": "yellow"
+      },
+      "294": {
+        "id": "294",
+        "number": "294",
+        "road": "Carnation Road South",
+        "block": "Hibiscus East",
+        "facing": "East",
+        "x": 383,
+        "y": 786,
+        "w": 26,
+        "h": 20,
+        "roadNode": "car_s_mid",
+        "color": "yellow"
+      },
+      "295": {
+        "id": "295",
+        "number": "295",
+        "road": "Carnation Road South",
+        "block": "Hibiscus East",
+        "facing": "East",
+        "x": 383,
+        "y": 764,
+        "w": 26,
+        "h": 20,
+        "roadNode": "car_s_mid",
+        "color": "yellow"
+      },
+      "296": {
+        "id": "296",
+        "number": "296",
+        "road": "Carnation Road South",
+        "block": "Hibiscus East",
+        "facing": "East",
+        "x": 383,
+        "y": 742,
+        "w": 26,
+        "h": 20,
+        "roadNode": "car_s_mid",
+        "color": "yellow"
+      },
+      "297": {
+        "id": "297",
+        "number": "297",
+        "road": "Carnation Road South",
+        "block": "Hibiscus East",
+        "facing": "East",
+        "x": 383,
+        "y": 720,
+        "w": 26,
+        "h": 20,
+        "roadNode": "car_s_mid",
+        "color": "yellow"
       },
       "298": {
         "id": "298",
@@ -8014,83 +7458,70 @@ window.LAYOUTS = {
         "roadNode": "hib_main_s1",
         "color": "yellow"
       },
-      "297": {
-        "id": "297",
-        "number": "297",
-        "road": "Carnation Road South",
-        "block": "Hibiscus East",
-        "facing": "East",
-        "x": 383,
-        "y": 720,
-        "w": 26,
-        "h": 20,
-        "roadNode": "car_s_mid",
-        "color": "yellow"
+      "303": {
+        "id": "303",
+        "number": "303",
+        "road": "Hibiscus Lane",
+        "block": "Hibiscus Lane",
+        "facing": "West",
+        "x": 274,
+        "y": 750,
+        "w": 38,
+        "h": 22,
+        "roadNode": "hib_inner_lane",
+        "color": "lightgreen"
       },
-      "296": {
-        "id": "296",
-        "number": "296",
-        "road": "Carnation Road South",
-        "block": "Hibiscus East",
-        "facing": "East",
-        "x": 383,
-        "y": 742,
-        "w": 26,
-        "h": 20,
-        "roadNode": "car_s_mid",
-        "color": "yellow"
+      "304": {
+        "id": "304",
+        "number": "304",
+        "road": "Hibiscus Lane",
+        "block": "Hibiscus Lane",
+        "facing": "West",
+        "x": 274,
+        "y": 775,
+        "w": 38,
+        "h": 22,
+        "roadNode": "hib_inner_lane",
+        "color": "lightgreen"
       },
-      "295": {
-        "id": "295",
-        "number": "295",
-        "road": "Carnation Road South",
-        "block": "Hibiscus East",
+      "305": {
+        "id": "305",
+        "number": "305",
+        "road": "Hibiscus Lane",
+        "block": "Hibiscus Lane",
         "facing": "East",
-        "x": 383,
-        "y": 764,
-        "w": 26,
-        "h": 20,
-        "roadNode": "car_s_mid",
-        "color": "yellow"
+        "x": 232,
+        "y": 800,
+        "w": 80,
+        "h": 22,
+        "roadNode": "hib_inner_lane",
+        "color": "lightgreen"
       },
-      "294": {
-        "id": "294",
-        "number": "294",
-        "road": "Carnation Road South",
-        "block": "Hibiscus East",
+      "306": {
+        "id": "306",
+        "number": "306",
+        "road": "Hibiscus Lane",
+        "block": "Hibiscus Lane",
         "facing": "East",
-        "x": 383,
-        "y": 786,
-        "w": 26,
-        "h": 20,
-        "roadNode": "car_s_mid",
-        "color": "yellow"
+        "x": 232,
+        "y": 750,
+        "w": 38,
+        "h": 22,
+        "roadNode": "hib_inner_lane",
+        "color": "lightgreen"
       },
-      "293": {
-        "id": "293",
-        "number": "293",
-        "road": "Carnation Road South",
-        "block": "Hibiscus East",
+      "307": {
+        "id": "307",
+        "number": "307",
+        "road": "Hibiscus Lane",
+        "block": "Hibiscus Lane",
         "facing": "East",
-        "x": 383,
-        "y": 808,
-        "w": 26,
-        "h": 20,
-        "roadNode": "car_s_mid",
-        "color": "yellow"
-      },
-      "292": {
-        "id": "292",
-        "number": "292",
-        "road": "Carnation Road South",
-        "block": "Hibiscus East",
-        "facing": "East",
-        "x": 383,
-        "y": 830,
-        "w": 26,
-        "h": 20,
-        "roadNode": "car_s_mid",
-        "color": "yellow"
+        "x": 232,
+        "y": 775,
+        "w": 38,
+        "h": 22,
+        "roadNode": "hib_inner_lane",
+        "color": "lightgreen"
       },
       "309": {
         "id": "309",
@@ -8105,65 +7536,26 @@ window.LAYOUTS = {
         "roadNode": "car_s_mid",
         "color": "yellow"
       },
-      "317": {
-        "id": "317",
-        "number": "317",
+      "310": {
+        "id": "310",
+        "number": "310",
         "road": "Hibiscus South Road",
         "block": "Hibiscus South",
         "facing": "South",
-        "x": 58,
+        "x": 282,
         "y": 848,
         "w": 30,
         "h": 22,
         "roadNode": "hib_s_perimeter",
-        "color": "yellow"
+        "color": "lightgreen"
       },
-      "316": {
-        "id": "316",
-        "number": "316",
+      "311": {
+        "id": "311",
+        "number": "311",
         "road": "Hibiscus South Road",
         "block": "Hibiscus South",
         "facing": "South",
-        "x": 90,
-        "y": 848,
-        "w": 30,
-        "h": 22,
-        "roadNode": "hib_s_perimeter",
-        "color": "yellow"
-      },
-      "315": {
-        "id": "315",
-        "number": "315",
-        "road": "Hibiscus South Road",
-        "block": "Hibiscus South",
-        "facing": "South",
-        "x": 122,
-        "y": 848,
-        "w": 30,
-        "h": 22,
-        "roadNode": "hib_s_perimeter",
-        "color": "yellow"
-      },
-      "314": {
-        "id": "314",
-        "number": "314",
-        "road": "Hibiscus South Road",
-        "block": "Hibiscus South",
-        "facing": "South",
-        "x": 154,
-        "y": 848,
-        "w": 30,
-        "h": 22,
-        "roadNode": "hib_s_perimeter",
-        "color": "yellow"
-      },
-      "313": {
-        "id": "313",
-        "number": "313",
-        "road": "Hibiscus South Road",
-        "block": "Hibiscus South",
-        "facing": "South",
-        "x": 186,
+        "x": 250,
         "y": 848,
         "w": 30,
         "h": 22,
@@ -8183,31 +7575,642 @@ window.LAYOUTS = {
         "roadNode": "hib_s_perimeter",
         "color": "yellow"
       },
-      "311": {
-        "id": "311",
-        "number": "311",
+      "313": {
+        "id": "313",
+        "number": "313",
         "road": "Hibiscus South Road",
         "block": "Hibiscus South",
         "facing": "South",
-        "x": 250,
+        "x": 186,
         "y": 848,
         "w": 30,
         "h": 22,
         "roadNode": "hib_s_perimeter",
         "color": "yellow"
       },
-      "310": {
-        "id": "310",
-        "number": "310",
+      "314": {
+        "id": "314",
+        "number": "314",
         "road": "Hibiscus South Road",
         "block": "Hibiscus South",
         "facing": "South",
-        "x": 282,
+        "x": 154,
         "y": 848,
         "w": 30,
         "h": 22,
         "roadNode": "hib_s_perimeter",
+        "color": "yellow"
+      },
+      "315": {
+        "id": "315",
+        "number": "315",
+        "road": "Hibiscus South Road",
+        "block": "Hibiscus South",
+        "facing": "South",
+        "x": 122,
+        "y": 848,
+        "w": 30,
+        "h": 22,
+        "roadNode": "hib_s_perimeter",
+        "color": "yellow"
+      },
+      "316": {
+        "id": "316",
+        "number": "316",
+        "road": "Hibiscus South Road",
+        "block": "Hibiscus South",
+        "facing": "South",
+        "x": 90,
+        "y": 848,
+        "w": 30,
+        "h": 22,
+        "roadNode": "hib_s_perimeter",
+        "color": "yellow"
+      },
+      "317": {
+        "id": "317",
+        "number": "317",
+        "road": "Hibiscus South Road",
+        "block": "Hibiscus South",
+        "facing": "South",
+        "x": 58,
+        "y": 848,
+        "w": 30,
+        "h": 22,
+        "roadNode": "hib_s_perimeter",
+        "color": "yellow"
+      },
+      "318": {
+        "id": "318",
+        "number": "318",
+        "road": "Hibiscus Road West",
+        "block": "Hibiscus Mid",
+        "facing": "North",
+        "x": 58,
+        "y": 750,
+        "w": 37,
+        "h": 24,
+        "roadNode": "hib_inner_lane",
+        "color": "yellow"
+      },
+      "319": {
+        "id": "319",
+        "number": "319",
+        "road": "Hibiscus Road West",
+        "block": "Hibiscus Mid",
+        "facing": "North",
+        "x": 98,
+        "y": 750,
+        "w": 37,
+        "h": 24,
+        "roadNode": "hib_inner_lane",
+        "color": "yellow"
+      },
+      "320": {
+        "id": "320",
+        "number": "320",
+        "road": "Hibiscus Road West",
+        "block": "Hibiscus Mid",
+        "facing": "North",
+        "x": 138,
+        "y": 750,
+        "w": 37,
+        "h": 24,
+        "roadNode": "hib_inner_lane",
+        "color": "yellow"
+      },
+      "321": {
+        "id": "321",
+        "number": "321",
+        "road": "Hibiscus Road West",
+        "block": "Hibiscus Mid",
+        "facing": "North",
+        "x": 178,
+        "y": 750,
+        "w": 37,
+        "h": 24,
+        "roadNode": "hib_inner_lane",
+        "color": "yellow"
+      },
+      "322": {
+        "id": "322",
+        "number": "322",
+        "road": "Gate 2 Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 918,
+        "y": 356,
+        "w": 38,
+        "h": 19,
+        "roadNode": "gate_2_entry",
         "color": "lightgreen"
+      },
+      "323": {
+        "id": "323",
+        "number": "323",
+        "road": "Gate 2 Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 918,
+        "y": 380,
+        "w": 38,
+        "h": 19,
+        "roadNode": "gate_2_entry",
+        "color": "lightgreen"
+      },
+      "329": {
+        "id": "329",
+        "number": "329",
+        "road": "Gate 2 Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 918,
+        "y": 404,
+        "w": 38,
+        "h": 19,
+        "roadNode": "gate_2_entry",
+        "color": "lightgreen"
+      },
+      "330": {
+        "id": "330",
+        "number": "330",
+        "road": "North East Road",
+        "block": "East Park North",
+        "facing": "East",
+        "x": 960,
+        "y": 296,
+        "w": 38,
+        "h": 22,
+        "roadNode": "east_park_n",
+        "color": "lightgreen"
+      },
+      "331": {
+        "id": "331",
+        "number": "331",
+        "road": "North East Road",
+        "block": "East Park North",
+        "facing": "East",
+        "x": 960,
+        "y": 272,
+        "w": 38,
+        "h": 22,
+        "roadNode": "east_park_n",
+        "color": "lightgreen"
+      },
+      "332": {
+        "id": "332",
+        "number": "332",
+        "road": "North East Road",
+        "block": "East Park North",
+        "facing": "East",
+        "x": 960,
+        "y": 248,
+        "w": 38,
+        "h": 22,
+        "roadNode": "east_park_n",
+        "color": "lightgreen"
+      },
+      "333": {
+        "id": "333",
+        "number": "333",
+        "road": "North East Avenue",
+        "block": "North East Sector",
+        "facing": "West",
+        "x": 1040,
+        "y": 200,
+        "w": 36,
+        "h": 22,
+        "roadNode": "east_park_n",
+        "color": "yellow"
+      },
+      "334": {
+        "id": "334",
+        "number": "334",
+        "road": "North East Avenue",
+        "block": "North East Sector",
+        "facing": "West",
+        "x": 1040,
+        "y": 224,
+        "w": 36,
+        "h": 22,
+        "roadNode": "east_park_n",
+        "color": "yellow"
+      },
+      "335": {
+        "id": "335",
+        "number": "335",
+        "road": "North East Avenue",
+        "block": "North East Sector",
+        "facing": "West",
+        "x": 1040,
+        "y": 248,
+        "w": 36,
+        "h": 22,
+        "roadNode": "east_park_n",
+        "color": "yellow"
+      },
+      "336": {
+        "id": "336",
+        "number": "336",
+        "road": "North East Avenue",
+        "block": "North East Sector",
+        "facing": "East",
+        "x": 1080,
+        "y": 248,
+        "w": 36,
+        "h": 22,
+        "roadNode": "east_park_n",
+        "color": "yellow"
+      },
+      "337": {
+        "id": "337",
+        "number": "337",
+        "road": "North East Avenue",
+        "block": "North East Sector",
+        "facing": "East",
+        "x": 1080,
+        "y": 224,
+        "w": 36,
+        "h": 22,
+        "roadNode": "east_park_n",
+        "color": "yellow"
+      },
+      "338": {
+        "id": "338",
+        "number": "338",
+        "road": "North East Avenue",
+        "block": "North East Sector",
+        "facing": "East",
+        "x": 1080,
+        "y": 200,
+        "w": 36,
+        "h": 22,
+        "roadNode": "east_park_n",
+        "color": "yellow"
+      },
+      "340": {
+        "id": "340",
+        "number": "340",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "West",
+        "x": 794,
+        "y": 608,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "yellow"
+      },
+      "341": {
+        "id": "341",
+        "number": "341",
+        "road": "Florentine Road",
+        "block": "Florentine Mid",
+        "facing": "West",
+        "x": 794,
+        "y": 629,
+        "w": 42,
+        "h": 19,
+        "roadNode": "flo_mid",
+        "color": "yellow"
+      },
+      "342": {
+        "id": "342",
+        "number": "342",
+        "road": "Gardenia Road",
+        "block": "Gardenia Mid",
+        "facing": "East",
+        "x": 838,
+        "y": 629,
+        "w": 42,
+        "h": 19,
+        "roadNode": "gar_mid",
+        "color": "yellow"
+      },
+      "343": {
+        "id": "343",
+        "number": "343",
+        "road": "Gardenia Road",
+        "block": "Gardenia Mid",
+        "facing": "East",
+        "x": 838,
+        "y": 650,
+        "w": 42,
+        "h": 19,
+        "roadNode": "gar_mid",
+        "color": "yellow"
+      },
+      "344": {
+        "id": "344",
+        "number": "344",
+        "road": "Gardenia Road",
+        "block": "Gardenia Mid",
+        "facing": "East",
+        "x": 838,
+        "y": 608,
+        "w": 42,
+        "h": 19,
+        "roadNode": "gar_mid",
+        "color": "yellow"
+      },
+      "345": {
+        "id": "345",
+        "number": "345",
+        "road": "Florentine Road South",
+        "block": "Florentine South",
+        "facing": "North",
+        "x": 796,
+        "y": 720,
+        "w": 23,
+        "h": 20,
+        "roadNode": "flo_s_garden",
+        "color": "yellow"
+      },
+      "346": {
+        "id": "346",
+        "number": "346",
+        "road": "Florentine Road South",
+        "block": "Florentine South",
+        "facing": "North",
+        "x": 821,
+        "y": 720,
+        "w": 23,
+        "h": 20,
+        "roadNode": "flo_s_garden",
+        "color": "yellow"
+      },
+      "347": {
+        "id": "347",
+        "number": "347",
+        "road": "Florentine Road South",
+        "block": "Florentine South",
+        "facing": "North",
+        "x": 846,
+        "y": 720,
+        "w": 23,
+        "h": 20,
+        "roadNode": "flo_s_garden",
+        "color": "yellow"
+      },
+      "348": {
+        "id": "348",
+        "number": "348",
+        "road": "Florentine Road South",
+        "block": "Florentine South",
+        "facing": "North",
+        "x": 871,
+        "y": 720,
+        "w": 23,
+        "h": 20,
+        "roadNode": "flo_s_garden",
+        "color": "yellow"
+      },
+      "349": {
+        "id": "349",
+        "number": "349",
+        "road": "East Sector Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 1078,
+        "y": 356,
+        "w": 32,
+        "h": 21,
+        "roadNode": "east_mid",
+        "color": "yellow"
+      },
+      "350": {
+        "id": "350",
+        "number": "350",
+        "road": "East Sector Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 1044,
+        "y": 356,
+        "w": 32,
+        "h": 21,
+        "roadNode": "east_mid",
+        "color": "yellow"
+      },
+      "351": {
+        "id": "351",
+        "number": "351",
+        "road": "East Sector Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 1010,
+        "y": 356,
+        "w": 32,
+        "h": 21,
+        "roadNode": "east_mid",
+        "color": "yellow"
+      },
+      "352": {
+        "id": "352",
+        "number": "352",
+        "road": "East Sector Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 1010,
+        "y": 382,
+        "w": 44,
+        "h": 21,
+        "roadNode": "east_mid",
+        "color": "yellow"
+      },
+      "353": {
+        "id": "353",
+        "number": "353",
+        "road": "East Sector Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 1056,
+        "y": 382,
+        "w": 44,
+        "h": 21,
+        "roadNode": "east_mid",
+        "color": "yellow"
+      },
+      "354": {
+        "id": "354",
+        "number": "354",
+        "road": "East Sector Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 1056,
+        "y": 416,
+        "w": 44,
+        "h": 21,
+        "roadNode": "east_mid",
+        "color": "yellow"
+      },
+      "355": {
+        "id": "355",
+        "number": "355",
+        "road": "East Sector Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 1010,
+        "y": 416,
+        "w": 44,
+        "h": 21,
+        "roadNode": "east_mid",
+        "color": "yellow"
+      },
+      "356": {
+        "id": "356",
+        "number": "356",
+        "road": "East Sector Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 1010,
+        "y": 442,
+        "w": 44,
+        "h": 21,
+        "roadNode": "east_s",
+        "color": "yellow"
+      },
+      "357": {
+        "id": "357",
+        "number": "357",
+        "road": "East Sector Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 1056,
+        "y": 468,
+        "w": 44,
+        "h": 21,
+        "roadNode": "east_s",
+        "color": "yellow"
+      },
+      "358": {
+        "id": "358",
+        "number": "358",
+        "road": "East Sector Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 1102,
+        "y": 416,
+        "w": 44,
+        "h": 21,
+        "roadNode": "east_mid",
+        "color": "yellow"
+      },
+      "359": {
+        "id": "359",
+        "number": "359",
+        "road": "East Sector Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 1056,
+        "y": 442,
+        "w": 44,
+        "h": 21,
+        "roadNode": "east_s",
+        "color": "yellow"
+      },
+      "360": {
+        "id": "360",
+        "number": "360",
+        "road": "East Sector Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 1102,
+        "y": 382,
+        "w": 44,
+        "h": 21,
+        "roadNode": "east_mid",
+        "color": "yellow"
+      },
+      "1C": {
+        "id": "1C",
+        "number": "1C",
+        "road": "Aster Road",
+        "block": "Aster North",
+        "facing": "East",
+        "x": 130,
+        "y": 248,
+        "w": 42,
+        "h": 22,
+        "roadNode": "ast_n",
+        "color": "yellow"
+      },
+      "1B": {
+        "id": "1B",
+        "number": "1B",
+        "road": "Aster Road",
+        "block": "Aster North",
+        "facing": "East",
+        "x": 130,
+        "y": 272,
+        "w": 42,
+        "h": 22,
+        "roadNode": "ast_n",
+        "color": "yellow"
+      },
+      "1A": {
+        "id": "1A",
+        "number": "1A",
+        "road": "Aster Road",
+        "block": "Aster North",
+        "facing": "East",
+        "x": 130,
+        "y": 296,
+        "w": 42,
+        "h": 22,
+        "roadNode": "ast_n",
+        "color": "yellow"
+      },
+      "12B": {
+        "id": "12B",
+        "number": "12B",
+        "road": "Aster Road",
+        "block": "Aster South",
+        "facing": "East",
+        "x": 130,
+        "y": 576,
+        "w": 42,
+        "h": 18,
+        "roadNode": "ast_mid",
+        "color": "yellow"
+      },
+      "35/36": {
+        "id": "35/36",
+        "number": "35/36",
+        "road": "Bluebell Road",
+        "block": "Bluebell North",
+        "facing": "East",
+        "x": 248,
+        "y": 200,
+        "w": 42,
+        "h": 22,
+        "roadNode": "blu_n",
+        "color": "lightgreen"
+      },
+      "265/B": {
+        "id": "265/B",
+        "number": "265/B",
+        "road": "Dhalia Road South",
+        "block": "Dhalia South",
+        "facing": "East",
+        "x": 602,
+        "y": 867,
+        "w": 42,
+        "h": 19,
+        "roadNode": "exo_s_mid",
+        "color": "yellow"
+      },
+      "348B": {
+        "id": "348B",
+        "number": "348B",
+        "road": "East Sector Road",
+        "block": "East Sector",
+        "facing": "West",
+        "x": 1112,
+        "y": 356,
+        "w": 32,
+        "h": 21,
+        "roadNode": "east_mid",
+        "color": "yellow"
       }
     },
     "amenities": [
@@ -8420,7 +8423,8 @@ window.LAYOUTS = {
       "Florentine",
       "Gardenia",
       "Hibiscus"
-    ]
+    ],
+    "verified": true
   },
   "sattva_greenage": {
     "id": "sattva_greenage",
@@ -9457,7 +9461,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "sg_ctr_hub",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       },
       {
@@ -9467,7 +9471,7 @@ window.LAYOUTS = {
         "x": 880,
         "y": 680,
         "roadNode": "sg_ring_se",
-        "icon": "\ud83c\udfbe",
+        "icon": "🎾",
         "type": "sports"
       }
     ],
@@ -9513,7 +9517,8 @@ window.LAYOUTS = {
       "Elm Tower",
       "Oak Tower",
       "Magnolia Tower"
-    ]
+    ],
+    "verified": true
   },
   "prestige_song_south": {
     "id": "prestige_song_south",
@@ -10098,7 +10103,7 @@ window.LAYOUTS = {
         "x": 580,
         "y": 440,
         "roadNode": "pss_junc_ctr",
-        "icon": "\ud83c\udfad",
+        "icon": "🎭",
         "type": "clubhouse"
       },
       {
@@ -10108,7 +10113,7 @@ window.LAYOUTS = {
         "x": 840,
         "y": 220,
         "roadNode": "pss_junc_lake",
-        "icon": "\ud83c\udf0a",
+        "icon": "🌊",
         "type": "nature"
       }
     ],
@@ -10144,7 +10149,8 @@ window.LAYOUTS = {
       "Melody Tower",
       "Harmony Tower",
       "Rhythm Tower"
-    ]
+    ],
+    "verified": true
   },
   "brigade_millennium": {
     "id": "brigade_millennium",
@@ -10189,7 +10195,7 @@ window.LAYOUTS = {
         "w": 180,
         "h": 110,
         "rx": 8,
-        "label": "\ud83c\udfdb\ufe0f MLR Convention Centre",
+        "label": "🏛️ MLR Convention Centre",
         "fill": "#1e293b",
         "stroke": "#a855f7"
       }
@@ -10868,7 +10874,7 @@ window.LAYOUTS = {
         "x": 540,
         "y": 440,
         "roadNode": "bm_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       },
       {
@@ -10878,7 +10884,7 @@ window.LAYOUTS = {
         "x": 760,
         "y": 440,
         "roadNode": "bm_laburnum_e",
-        "icon": "\ud83c\udfdb\ufe0f",
+        "icon": "🏛️",
         "type": "auditorium"
       }
     ],
@@ -10921,7 +10927,8 @@ window.LAYOUTS = {
       "Laburnum Block",
       "Magnolia Block",
       "Mayflower Block"
-    ]
+    ],
+    "verified": true
   },
   "purva_westend": {
     "id": "purva_westend",
@@ -10959,7 +10966,7 @@ window.LAYOUTS = {
         "w": 360,
         "h": 70,
         "rx": 8,
-        "label": "\ud83c\udfac London West End Open Air Cinema",
+        "label": "🎬 London West End Open Air Cinema",
         "fill": "#1e1b4b",
         "stroke": "#f43f5e"
       }
@@ -11522,7 +11529,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 310,
         "roadNode": "pw_junc_ctr",
-        "icon": "\ud83c\udfac",
+        "icon": "🎬",
         "type": "entertainment"
       },
       {
@@ -11532,7 +11539,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "pw_junc_ctr",
-        "icon": "\ud83c\udf0a",
+        "icon": "🌊",
         "type": "recreation"
       }
     ],
@@ -11568,7 +11575,8 @@ window.LAYOUTS = {
       "Opera Tower",
       "West End Tower A",
       "West End Tower B"
-    ]
+    ],
+    "verified": true
   },
   "brigade_meadows": {
     "id": "brigade_meadows",
@@ -11606,7 +11614,7 @@ window.LAYOUTS = {
         "w": 180,
         "h": 90,
         "rx": 8,
-        "label": "\ud83c\udfea Meadows Commercial Arcade & Clinic",
+        "label": "🏪 Meadows Commercial Arcade & Clinic",
         "fill": "#1e1b4b",
         "stroke": "#38bdf8"
       }
@@ -12047,7 +12055,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "bme_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       },
       {
@@ -12057,7 +12065,7 @@ window.LAYOUTS = {
         "x": 740,
         "y": 440,
         "roadNode": "bme_junc_ctr",
-        "icon": "\ud83c\udfea",
+        "icon": "🏪",
         "type": "civic"
       }
     ],
@@ -12086,7 +12094,8 @@ window.LAYOUTS = {
       "Plumeria Tower",
       "Wisteria Tower",
       "Saaket Block"
-    ]
+    ],
+    "verified": true
   },
   "mantri_tranquil": {
     "id": "mantri_tranquil",
@@ -12683,7 +12692,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "mt_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       },
       {
@@ -12693,7 +12702,7 @@ window.LAYOUTS = {
         "x": 960,
         "y": 480,
         "roadNode": "mt_gate_forest",
-        "icon": "\ud83c\udf32",
+        "icon": "🌲",
         "type": "nature"
       }
     ],
@@ -12723,7 +12732,8 @@ window.LAYOUTS = {
       "Tower D-F",
       "Tower G-H",
       "Tower J"
-    ]
+    ],
+    "verified": true
   },
   "concorde_napa_valley": {
     "id": "concorde_napa_valley",
@@ -13320,7 +13330,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "cnv_junc_ctr",
-        "icon": "\ud83c\udf77",
+        "icon": "🍷",
         "type": "clubhouse"
       }
     ],
@@ -13350,4570 +13360,8 @@ window.LAYOUTS = {
       "Vineyard Villas",
       "Sonoma Way Villas",
       "Valley View Villas"
-    ]
-  },
-  "jp_nagar_phase7": {
-    "id": "jp_nagar_phase7",
-    "name": "JP Nagar 7th Phase",
-    "location": "Brigade Millennium / Puttenahalli, Bangalore South",
-    "zone": "south",
-    "type": "BDA Prime Residential Sector",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "jp_nagar_phase7_gate_1": {
-          "id": "jp_nagar_phase7_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "JP Nagar 7th Phase Gate 1 (Main Entrance)"
-        },
-        "jp_nagar_phase7_entry": {
-          "id": "jp_nagar_phase7_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "jp_nagar_phase7_junc_w": {
-          "id": "jp_nagar_phase7_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Woodrose Link West Junction"
-        },
-        "jp_nagar_phase7_junc_ctr": {
-          "id": "jp_nagar_phase7_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "jp_nagar_phase7_junc_e": {
-          "id": "jp_nagar_phase7_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Brigade Millennium Way East Junction"
-        },
-        "jp_nagar_phase7_gate_2": {
-          "id": "jp_nagar_phase7_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "JP Nagar 7th Phase Gate 2 (Rear Entrance)"
-        },
-        "jp_nagar_phase7_n_w": {
-          "id": "jp_nagar_phase7_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "RBI Water Tank Road West"
-        },
-        "jp_nagar_phase7_n_mid": {
-          "id": "jp_nagar_phase7_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "RBI Water Tank Road North Plaza"
-        },
-        "jp_nagar_phase7_n_e": {
-          "id": "jp_nagar_phase7_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "RBI Water Tank Road East"
-        },
-        "jp_nagar_phase7_s_w": {
-          "id": "jp_nagar_phase7_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Puttenahalli Parkway West"
-        },
-        "jp_nagar_phase7_s_mid": {
-          "id": "jp_nagar_phase7_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Puttenahalli Parkway South Plaza"
-        },
-        "jp_nagar_phase7_s_e": {
-          "id": "jp_nagar_phase7_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Puttenahalli Parkway East"
-        },
-        "jp_nagar_phase7_w_n_mid": {
-          "id": "jp_nagar_phase7_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Woodrose Link North Link"
-        },
-        "jp_nagar_phase7_w_s_mid": {
-          "id": "jp_nagar_phase7_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Woodrose Link South Link"
-        },
-        "jp_nagar_phase7_ctr_n_mid": {
-          "id": "jp_nagar_phase7_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "jp_nagar_phase7_ctr_s_mid": {
-          "id": "jp_nagar_phase7_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "jp_nagar_phase7_e_n_mid": {
-          "id": "jp_nagar_phase7_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Brigade Millennium Way North Link"
-        },
-        "jp_nagar_phase7_e_s_mid": {
-          "id": "jp_nagar_phase7_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Brigade Millennium Way South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "jp_nagar_phase7_gate_1",
-          "v": "jp_nagar_phase7_entry",
-          "road": "24th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase7_entry",
-          "v": "jp_nagar_phase7_junc_w",
-          "road": "24th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase7_junc_w",
-          "v": "jp_nagar_phase7_junc_ctr",
-          "road": "24th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase7_junc_ctr",
-          "v": "jp_nagar_phase7_junc_e",
-          "road": "24th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase7_junc_e",
-          "v": "jp_nagar_phase7_gate_2",
-          "road": "24th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase7_n_w",
-          "v": "jp_nagar_phase7_n_mid",
-          "road": "RBI Water Tank Road",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase7_n_mid",
-          "v": "jp_nagar_phase7_n_e",
-          "road": "RBI Water Tank Road",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase7_s_w",
-          "v": "jp_nagar_phase7_s_mid",
-          "road": "Puttenahalli Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase7_s_mid",
-          "v": "jp_nagar_phase7_s_e",
-          "road": "Puttenahalli Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase7_n_w",
-          "v": "jp_nagar_phase7_w_n_mid",
-          "road": "Woodrose Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase7_w_n_mid",
-          "v": "jp_nagar_phase7_junc_w",
-          "road": "Woodrose Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase7_junc_w",
-          "v": "jp_nagar_phase7_w_s_mid",
-          "road": "Woodrose Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase7_w_s_mid",
-          "v": "jp_nagar_phase7_s_w",
-          "road": "Woodrose Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase7_n_mid",
-          "v": "jp_nagar_phase7_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase7_ctr_n_mid",
-          "v": "jp_nagar_phase7_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase7_junc_ctr",
-          "v": "jp_nagar_phase7_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase7_ctr_s_mid",
-          "v": "jp_nagar_phase7_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase7_n_e",
-          "v": "jp_nagar_phase7_e_n_mid",
-          "road": "Brigade Millennium Way",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase7_e_n_mid",
-          "v": "jp_nagar_phase7_junc_e",
-          "road": "Brigade Millennium Way",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase7_junc_e",
-          "v": "jp_nagar_phase7_e_s_mid",
-          "road": "Brigade Millennium Way",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase7_e_s_mid",
-          "v": "jp_nagar_phase7_s_e",
-          "road": "Brigade Millennium Way",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "RBI Water Tank Road",
-        "block": "RBI Layout Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "RBI Water Tank Road",
-        "block": "RBI Layout Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "RBI Water Tank Road",
-        "block": "RBI Layout Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "RBI Water Tank Road",
-        "block": "RBI Layout Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "RBI Water Tank Road",
-        "block": "RBI Layout Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "RBI Water Tank Road",
-        "block": "RBI Layout Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "RBI Water Tank Road",
-        "block": "RBI Layout Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "RBI Water Tank Road",
-        "block": "RBI Layout Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "RBI Water Tank Road",
-        "block": "Chunchgatta Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "RBI Water Tank Road",
-        "block": "Chunchgatta Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "RBI Water Tank Road",
-        "block": "Chunchgatta Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "RBI Water Tank Road",
-        "block": "Chunchgatta Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "RBI Water Tank Road",
-        "block": "Chunchgatta Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "RBI Water Tank Road",
-        "block": "Chunchgatta Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "RBI Water Tank Road",
-        "block": "Chunchgatta Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "RBI Water Tank Road",
-        "block": "Chunchgatta Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "Puttenahalli Parkway",
-        "block": "Chunchgatta Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "Puttenahalli Parkway",
-        "block": "Chunchgatta Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "Puttenahalli Parkway",
-        "block": "Chunchgatta Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "Puttenahalli Parkway",
-        "block": "Chunchgatta Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "Puttenahalli Parkway",
-        "block": "Chunchgatta Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "Puttenahalli Parkway",
-        "block": "Chunchgatta Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "Puttenahalli Parkway",
-        "block": "Chunchgatta Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "Puttenahalli Parkway",
-        "block": "Chunchgatta Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "Puttenahalli Parkway",
-        "block": "Brigade Vicinity",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "Puttenahalli Parkway",
-        "block": "Brigade Vicinity",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "Puttenahalli Parkway",
-        "block": "Brigade Vicinity",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "Puttenahalli Parkway",
-        "block": "Brigade Vicinity",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "Puttenahalli Parkway",
-        "block": "Brigade Vicinity",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "Puttenahalli Parkway",
-        "block": "Brigade Vicinity",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "Puttenahalli Parkway",
-        "block": "Brigade Vicinity",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "Puttenahalli Parkway",
-        "block": "Brigade Vicinity",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Woodrose Link",
-        "block": "RBI Layout Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Woodrose Link",
-        "block": "RBI Layout Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Woodrose Link",
-        "block": "RBI Layout Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Woodrose Link",
-        "block": "RBI Layout Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Woodrose Link",
-        "block": "RBI Layout Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Woodrose Link",
-        "block": "RBI Layout Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Brigade Millennium Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Brigade Millennium Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Brigade Millennium Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Brigade Millennium Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Brigade Millennium Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Brigade Millennium Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase7_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "jp_nagar_phase7_gate_1",
-        "name": "JP Nagar 7th Phase Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "jp_nagar_phase7_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "jp_nagar_phase7_gate_2",
-        "name": "JP Nagar 7th Phase Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "jp_nagar_phase7_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "jp_nagar_phase7_lake",
-        "name": "Puttenahalli Lake Bird Sanctuary",
-        "description": "Restored urban eco-lake with walking tracks & gazebo",
-        "x": 620,
-        "y": 690,
-        "roadNode": "jp_nagar_phase7_s_mid",
-        "icon": "\ud83e\udd86",
-        "type": "nature"
-      }
     ],
-    "roadLabels": [
-      {
-        "name": "24TH MAIN BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "RBI WATER TANK ROAD",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "PUTTENAHALLI PARKWAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "WOODROSE LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "BRIGADE MILLENNIUM WAY",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "jp_nagar_phase7_gate_1",
-    "sectors": [
-      "RBI Layout Sector",
-      "Chunchgatta Sector",
-      "Brigade Vicinity"
-    ]
-  },
-  "jp_nagar_phase2": {
-    "id": "jp_nagar_phase2",
-    "name": "JP Nagar 2nd Phase",
-    "location": "Near South End Circle / 100ft Road, Bangalore South",
-    "zone": "south",
-    "type": "Classic BDA Residential Layout",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "jp_nagar_phase2_gate_1": {
-          "id": "jp_nagar_phase2_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "JP Nagar 2nd Phase Gate 1 (Main Entrance)"
-        },
-        "jp_nagar_phase2_entry": {
-          "id": "jp_nagar_phase2_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "jp_nagar_phase2_junc_w": {
-          "id": "jp_nagar_phase2_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Ranga Shankara Way West Junction"
-        },
-        "jp_nagar_phase2_junc_ctr": {
-          "id": "jp_nagar_phase2_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "jp_nagar_phase2_junc_e": {
-          "id": "jp_nagar_phase2_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Lakeside Link East Junction"
-        },
-        "jp_nagar_phase2_gate_2": {
-          "id": "jp_nagar_phase2_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "JP Nagar 2nd Phase Gate 2 (Rear Entrance)"
-        },
-        "jp_nagar_phase2_n_w": {
-          "id": "jp_nagar_phase2_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "14th Main Avenue West"
-        },
-        "jp_nagar_phase2_n_mid": {
-          "id": "jp_nagar_phase2_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "14th Main Avenue North Plaza"
-        },
-        "jp_nagar_phase2_n_e": {
-          "id": "jp_nagar_phase2_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "14th Main Avenue East"
-        },
-        "jp_nagar_phase2_s_w": {
-          "id": "jp_nagar_phase2_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "2nd Phase Parkway West"
-        },
-        "jp_nagar_phase2_s_mid": {
-          "id": "jp_nagar_phase2_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "2nd Phase Parkway South Plaza"
-        },
-        "jp_nagar_phase2_s_e": {
-          "id": "jp_nagar_phase2_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "2nd Phase Parkway East"
-        },
-        "jp_nagar_phase2_w_n_mid": {
-          "id": "jp_nagar_phase2_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Ranga Shankara Way North Link"
-        },
-        "jp_nagar_phase2_w_s_mid": {
-          "id": "jp_nagar_phase2_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Ranga Shankara Way South Link"
-        },
-        "jp_nagar_phase2_ctr_n_mid": {
-          "id": "jp_nagar_phase2_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "jp_nagar_phase2_ctr_s_mid": {
-          "id": "jp_nagar_phase2_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "jp_nagar_phase2_e_n_mid": {
-          "id": "jp_nagar_phase2_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Lakeside Link North Link"
-        },
-        "jp_nagar_phase2_e_s_mid": {
-          "id": "jp_nagar_phase2_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Lakeside Link South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "jp_nagar_phase2_gate_1",
-          "v": "jp_nagar_phase2_entry",
-          "road": "100ft Ring Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase2_entry",
-          "v": "jp_nagar_phase2_junc_w",
-          "road": "100ft Ring Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase2_junc_w",
-          "v": "jp_nagar_phase2_junc_ctr",
-          "road": "100ft Ring Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase2_junc_ctr",
-          "v": "jp_nagar_phase2_junc_e",
-          "road": "100ft Ring Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase2_junc_e",
-          "v": "jp_nagar_phase2_gate_2",
-          "road": "100ft Ring Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase2_n_w",
-          "v": "jp_nagar_phase2_n_mid",
-          "road": "14th Main Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase2_n_mid",
-          "v": "jp_nagar_phase2_n_e",
-          "road": "14th Main Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase2_s_w",
-          "v": "jp_nagar_phase2_s_mid",
-          "road": "2nd Phase Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase2_s_mid",
-          "v": "jp_nagar_phase2_s_e",
-          "road": "2nd Phase Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase2_n_w",
-          "v": "jp_nagar_phase2_w_n_mid",
-          "road": "Ranga Shankara Way",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase2_w_n_mid",
-          "v": "jp_nagar_phase2_junc_w",
-          "road": "Ranga Shankara Way",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase2_junc_w",
-          "v": "jp_nagar_phase2_w_s_mid",
-          "road": "Ranga Shankara Way",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase2_w_s_mid",
-          "v": "jp_nagar_phase2_s_w",
-          "road": "Ranga Shankara Way",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase2_n_mid",
-          "v": "jp_nagar_phase2_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase2_ctr_n_mid",
-          "v": "jp_nagar_phase2_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase2_junc_ctr",
-          "v": "jp_nagar_phase2_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase2_ctr_s_mid",
-          "v": "jp_nagar_phase2_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jp_nagar_phase2_n_e",
-          "v": "jp_nagar_phase2_e_n_mid",
-          "road": "Lakeside Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase2_e_n_mid",
-          "v": "jp_nagar_phase2_junc_e",
-          "road": "Lakeside Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase2_junc_e",
-          "v": "jp_nagar_phase2_e_s_mid",
-          "road": "Lakeside Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jp_nagar_phase2_e_s_mid",
-          "v": "jp_nagar_phase2_s_e",
-          "road": "Lakeside Link",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "14th Main Avenue",
-        "block": "100ft Road Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "14th Main Avenue",
-        "block": "100ft Road Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "14th Main Avenue",
-        "block": "100ft Road Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "14th Main Avenue",
-        "block": "100ft Road Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "14th Main Avenue",
-        "block": "100ft Road Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "14th Main Avenue",
-        "block": "100ft Road Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "14th Main Avenue",
-        "block": "100ft Road Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "14th Main Avenue",
-        "block": "100ft Road Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "14th Main Avenue",
-        "block": "Ranga Shankara Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "14th Main Avenue",
-        "block": "Ranga Shankara Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "14th Main Avenue",
-        "block": "Ranga Shankara Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "14th Main Avenue",
-        "block": "Ranga Shankara Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "14th Main Avenue",
-        "block": "Ranga Shankara Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "14th Main Avenue",
-        "block": "Ranga Shankara Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "14th Main Avenue",
-        "block": "Ranga Shankara Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "14th Main Avenue",
-        "block": "Ranga Shankara Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "2nd Phase Parkway",
-        "block": "Ranga Shankara Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "2nd Phase Parkway",
-        "block": "Ranga Shankara Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "2nd Phase Parkway",
-        "block": "Ranga Shankara Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "2nd Phase Parkway",
-        "block": "Ranga Shankara Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "2nd Phase Parkway",
-        "block": "Ranga Shankara Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "2nd Phase Parkway",
-        "block": "Ranga Shankara Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "2nd Phase Parkway",
-        "block": "Ranga Shankara Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "2nd Phase Parkway",
-        "block": "Ranga Shankara Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "2nd Phase Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "2nd Phase Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "2nd Phase Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "2nd Phase Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "2nd Phase Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "2nd Phase Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "2nd Phase Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "2nd Phase Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Ranga Shankara Way",
-        "block": "100ft Road Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Ranga Shankara Way",
-        "block": "100ft Road Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Ranga Shankara Way",
-        "block": "100ft Road Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Ranga Shankara Way",
-        "block": "100ft Road Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Ranga Shankara Way",
-        "block": "100ft Road Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Ranga Shankara Way",
-        "block": "100ft Road Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Lakeside Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Lakeside Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Lakeside Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Lakeside Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Lakeside Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Lakeside Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jp_nagar_phase2_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "jp_nagar_phase2_gate_1",
-        "name": "JP Nagar 2nd Phase Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "jp_nagar_phase2_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "jp_nagar_phase2_gate_2",
-        "name": "JP Nagar 2nd Phase Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "jp_nagar_phase2_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "jp_nagar_phase2_theatre",
-        "name": "Ranga Shankara Theatre",
-        "description": "World-class landmark theatre space founded by Arundhati Nag",
-        "x": 620,
-        "y": 270,
-        "roadNode": "jp_nagar_phase2_n_mid",
-        "icon": "\ud83c\udfad",
-        "type": "arts"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "100FT RING ROAD BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "14TH MAIN AVENUE",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "2ND PHASE PARKWAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "RANGA SHANKARA WAY",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "LAKESIDE LINK",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "jp_nagar_phase2_gate_1",
-    "sectors": [
-      "100ft Road Sector",
-      "Ranga Shankara Sector"
-    ]
-  },
-  "btm_2nd_stage": {
-    "id": "btm_2nd_stage",
-    "name": "BTM Layout 2nd Stage",
-    "location": "Ring Road / Udupi Garden, Bangalore South",
-    "zone": "south",
-    "type": "Prime Cosmopolitan Layout",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "btm_2nd_stage_gate_1": {
-          "id": "btm_2nd_stage_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "BTM Layout 2nd Stage Gate 1 (Main Entrance)"
-        },
-        "btm_2nd_stage_entry": {
-          "id": "btm_2nd_stage_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "btm_2nd_stage_junc_w": {
-          "id": "btm_2nd_stage_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Udupi Garden Link West Junction"
-        },
-        "btm_2nd_stage_junc_ctr": {
-          "id": "btm_2nd_stage_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "btm_2nd_stage_junc_e": {
-          "id": "btm_2nd_stage_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Kuvempu Nagar Avenue East Junction"
-        },
-        "btm_2nd_stage_gate_2": {
-          "id": "btm_2nd_stage_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "BTM Layout 2nd Stage Gate 2 (Rear Entrance)"
-        },
-        "btm_2nd_stage_n_w": {
-          "id": "btm_2nd_stage_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "7th Main Parkway West"
-        },
-        "btm_2nd_stage_n_mid": {
-          "id": "btm_2nd_stage_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "7th Main Parkway North Plaza"
-        },
-        "btm_2nd_stage_n_e": {
-          "id": "btm_2nd_stage_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "7th Main Parkway East"
-        },
-        "btm_2nd_stage_s_w": {
-          "id": "btm_2nd_stage_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Lake Road Way West"
-        },
-        "btm_2nd_stage_s_mid": {
-          "id": "btm_2nd_stage_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Lake Road Way South Plaza"
-        },
-        "btm_2nd_stage_s_e": {
-          "id": "btm_2nd_stage_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Lake Road Way East"
-        },
-        "btm_2nd_stage_w_n_mid": {
-          "id": "btm_2nd_stage_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Udupi Garden Link North Link"
-        },
-        "btm_2nd_stage_w_s_mid": {
-          "id": "btm_2nd_stage_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Udupi Garden Link South Link"
-        },
-        "btm_2nd_stage_ctr_n_mid": {
-          "id": "btm_2nd_stage_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "btm_2nd_stage_ctr_s_mid": {
-          "id": "btm_2nd_stage_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "btm_2nd_stage_e_n_mid": {
-          "id": "btm_2nd_stage_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Kuvempu Nagar Avenue North Link"
-        },
-        "btm_2nd_stage_e_s_mid": {
-          "id": "btm_2nd_stage_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Kuvempu Nagar Avenue South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "btm_2nd_stage_gate_1",
-          "v": "btm_2nd_stage_entry",
-          "road": "Outer Ring Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "btm_2nd_stage_entry",
-          "v": "btm_2nd_stage_junc_w",
-          "road": "Outer Ring Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "btm_2nd_stage_junc_w",
-          "v": "btm_2nd_stage_junc_ctr",
-          "road": "Outer Ring Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "btm_2nd_stage_junc_ctr",
-          "v": "btm_2nd_stage_junc_e",
-          "road": "Outer Ring Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "btm_2nd_stage_junc_e",
-          "v": "btm_2nd_stage_gate_2",
-          "road": "Outer Ring Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "btm_2nd_stage_n_w",
-          "v": "btm_2nd_stage_n_mid",
-          "road": "7th Main Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "btm_2nd_stage_n_mid",
-          "v": "btm_2nd_stage_n_e",
-          "road": "7th Main Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "btm_2nd_stage_s_w",
-          "v": "btm_2nd_stage_s_mid",
-          "road": "Lake Road Way",
-          "type": "secondary"
-        },
-        {
-          "u": "btm_2nd_stage_s_mid",
-          "v": "btm_2nd_stage_s_e",
-          "road": "Lake Road Way",
-          "type": "secondary"
-        },
-        {
-          "u": "btm_2nd_stage_n_w",
-          "v": "btm_2nd_stage_w_n_mid",
-          "road": "Udupi Garden Link",
-          "type": "secondary"
-        },
-        {
-          "u": "btm_2nd_stage_w_n_mid",
-          "v": "btm_2nd_stage_junc_w",
-          "road": "Udupi Garden Link",
-          "type": "secondary"
-        },
-        {
-          "u": "btm_2nd_stage_junc_w",
-          "v": "btm_2nd_stage_w_s_mid",
-          "road": "Udupi Garden Link",
-          "type": "secondary"
-        },
-        {
-          "u": "btm_2nd_stage_w_s_mid",
-          "v": "btm_2nd_stage_s_w",
-          "road": "Udupi Garden Link",
-          "type": "secondary"
-        },
-        {
-          "u": "btm_2nd_stage_n_mid",
-          "v": "btm_2nd_stage_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "btm_2nd_stage_ctr_n_mid",
-          "v": "btm_2nd_stage_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "btm_2nd_stage_junc_ctr",
-          "v": "btm_2nd_stage_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "btm_2nd_stage_ctr_s_mid",
-          "v": "btm_2nd_stage_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "btm_2nd_stage_n_e",
-          "v": "btm_2nd_stage_e_n_mid",
-          "road": "Kuvempu Nagar Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "btm_2nd_stage_e_n_mid",
-          "v": "btm_2nd_stage_junc_e",
-          "road": "Kuvempu Nagar Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "btm_2nd_stage_junc_e",
-          "v": "btm_2nd_stage_e_s_mid",
-          "road": "Kuvempu Nagar Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "btm_2nd_stage_e_s_mid",
-          "v": "btm_2nd_stage_s_e",
-          "road": "Kuvempu Nagar Avenue",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "7th Main Parkway",
-        "block": "Outer Ring Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "7th Main Parkway",
-        "block": "Outer Ring Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "7th Main Parkway",
-        "block": "Outer Ring Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "7th Main Parkway",
-        "block": "Outer Ring Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "7th Main Parkway",
-        "block": "Outer Ring Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "7th Main Parkway",
-        "block": "Outer Ring Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "7th Main Parkway",
-        "block": "Outer Ring Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "7th Main Parkway",
-        "block": "Outer Ring Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "7th Main Parkway",
-        "block": "Udupi Garden Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "7th Main Parkway",
-        "block": "Udupi Garden Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "7th Main Parkway",
-        "block": "Udupi Garden Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "7th Main Parkway",
-        "block": "Udupi Garden Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "7th Main Parkway",
-        "block": "Udupi Garden Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "7th Main Parkway",
-        "block": "Udupi Garden Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "7th Main Parkway",
-        "block": "Udupi Garden Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "7th Main Parkway",
-        "block": "Udupi Garden Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "Lake Road Way",
-        "block": "Udupi Garden Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "Lake Road Way",
-        "block": "Udupi Garden Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "Lake Road Way",
-        "block": "Udupi Garden Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "Lake Road Way",
-        "block": "Udupi Garden Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "Lake Road Way",
-        "block": "Udupi Garden Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "Lake Road Way",
-        "block": "Udupi Garden Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "Lake Road Way",
-        "block": "Udupi Garden Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "Lake Road Way",
-        "block": "Udupi Garden Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "Lake Road Way",
-        "block": "Lakeview Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "Lake Road Way",
-        "block": "Lakeview Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "Lake Road Way",
-        "block": "Lakeview Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "Lake Road Way",
-        "block": "Lakeview Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "Lake Road Way",
-        "block": "Lakeview Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "Lake Road Way",
-        "block": "Lakeview Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "Lake Road Way",
-        "block": "Lakeview Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "Lake Road Way",
-        "block": "Lakeview Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Udupi Garden Link",
-        "block": "Outer Ring Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Udupi Garden Link",
-        "block": "Outer Ring Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Udupi Garden Link",
-        "block": "Outer Ring Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Udupi Garden Link",
-        "block": "Outer Ring Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Udupi Garden Link",
-        "block": "Outer Ring Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Udupi Garden Link",
-        "block": "Outer Ring Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Kuvempu Nagar Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Kuvempu Nagar Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Kuvempu Nagar Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Kuvempu Nagar Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Kuvempu Nagar Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Kuvempu Nagar Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "btm_2nd_stage_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "btm_2nd_stage_gate_1",
-        "name": "BTM Layout 2nd Stage Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "btm_2nd_stage_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "btm_2nd_stage_gate_2",
-        "name": "BTM Layout 2nd Stage Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "btm_2nd_stage_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "btm_2nd_stage_lake",
-        "name": "Madiwala Lake Boating Park",
-        "description": "Huge lake promenade, bird sanctuary and boating center",
-        "x": 620,
-        "y": 690,
-        "roadNode": "btm_2nd_stage_s_mid",
-        "icon": "\u26f5",
-        "type": "nature"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "OUTER RING ROAD BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "7TH MAIN PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "LAKE ROAD WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "UDUPI GARDEN LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "KUVEMPU NAGAR AVENUE",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "btm_2nd_stage_gate_1",
-    "sectors": [
-      "Outer Ring Sector",
-      "Udupi Garden Sector",
-      "Lakeview Sector"
-    ]
-  },
-  "jayanagar_4th": {
-    "id": "jayanagar_4th",
-    "name": "Jayanagar 4th Block",
-    "location": "Nanda Road / Complex, Bangalore South",
-    "zone": "south",
-    "type": "Heritage Planned Garden Sector",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "jayanagar_4th_gate_1": {
-          "id": "jayanagar_4th_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Jayanagar 4th Block Gate 1 (Main Entrance)"
-        },
-        "jayanagar_4th_entry": {
-          "id": "jayanagar_4th_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "jayanagar_4th_junc_w": {
-          "id": "jayanagar_4th_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Complex Ring Link West Junction"
-        },
-        "jayanagar_4th_junc_ctr": {
-          "id": "jayanagar_4th_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "jayanagar_4th_junc_e": {
-          "id": "jayanagar_4th_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Pattabhirama Temple Road East Junction"
-        },
-        "jayanagar_4th_gate_2": {
-          "id": "jayanagar_4th_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Jayanagar 4th Block Gate 2 (Rear Entrance)"
-        },
-        "jayanagar_4th_n_w": {
-          "id": "jayanagar_4th_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "30th Cross Parkway West"
-        },
-        "jayanagar_4th_n_mid": {
-          "id": "jayanagar_4th_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "30th Cross Parkway North Plaza"
-        },
-        "jayanagar_4th_n_e": {
-          "id": "jayanagar_4th_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "30th Cross Parkway East"
-        },
-        "jayanagar_4th_s_w": {
-          "id": "jayanagar_4th_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Nanda Road Way West"
-        },
-        "jayanagar_4th_s_mid": {
-          "id": "jayanagar_4th_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Nanda Road Way South Plaza"
-        },
-        "jayanagar_4th_s_e": {
-          "id": "jayanagar_4th_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Nanda Road Way East"
-        },
-        "jayanagar_4th_w_n_mid": {
-          "id": "jayanagar_4th_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Complex Ring Link North Link"
-        },
-        "jayanagar_4th_w_s_mid": {
-          "id": "jayanagar_4th_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Complex Ring Link South Link"
-        },
-        "jayanagar_4th_ctr_n_mid": {
-          "id": "jayanagar_4th_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "jayanagar_4th_ctr_s_mid": {
-          "id": "jayanagar_4th_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "jayanagar_4th_e_n_mid": {
-          "id": "jayanagar_4th_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Pattabhirama Temple Road North Link"
-        },
-        "jayanagar_4th_e_s_mid": {
-          "id": "jayanagar_4th_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Pattabhirama Temple Road South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "jayanagar_4th_gate_1",
-          "v": "jayanagar_4th_entry",
-          "road": "11th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_4th_entry",
-          "v": "jayanagar_4th_junc_w",
-          "road": "11th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_4th_junc_w",
-          "v": "jayanagar_4th_junc_ctr",
-          "road": "11th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_4th_junc_ctr",
-          "v": "jayanagar_4th_junc_e",
-          "road": "11th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_4th_junc_e",
-          "v": "jayanagar_4th_gate_2",
-          "road": "11th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_4th_n_w",
-          "v": "jayanagar_4th_n_mid",
-          "road": "30th Cross Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_4th_n_mid",
-          "v": "jayanagar_4th_n_e",
-          "road": "30th Cross Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_4th_s_w",
-          "v": "jayanagar_4th_s_mid",
-          "road": "Nanda Road Way",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_4th_s_mid",
-          "v": "jayanagar_4th_s_e",
-          "road": "Nanda Road Way",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_4th_n_w",
-          "v": "jayanagar_4th_w_n_mid",
-          "road": "Complex Ring Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_4th_w_n_mid",
-          "v": "jayanagar_4th_junc_w",
-          "road": "Complex Ring Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_4th_junc_w",
-          "v": "jayanagar_4th_w_s_mid",
-          "road": "Complex Ring Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_4th_w_s_mid",
-          "v": "jayanagar_4th_s_w",
-          "road": "Complex Ring Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_4th_n_mid",
-          "v": "jayanagar_4th_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_4th_ctr_n_mid",
-          "v": "jayanagar_4th_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_4th_junc_ctr",
-          "v": "jayanagar_4th_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_4th_ctr_s_mid",
-          "v": "jayanagar_4th_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_4th_n_e",
-          "v": "jayanagar_4th_e_n_mid",
-          "road": "Pattabhirama Temple Road",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_4th_e_n_mid",
-          "v": "jayanagar_4th_junc_e",
-          "road": "Pattabhirama Temple Road",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_4th_junc_e",
-          "v": "jayanagar_4th_e_s_mid",
-          "road": "Pattabhirama Temple Road",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_4th_e_s_mid",
-          "v": "jayanagar_4th_s_e",
-          "road": "Pattabhirama Temple Road",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "30th Cross Parkway",
-        "block": "Shopping Complex Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "30th Cross Parkway",
-        "block": "Shopping Complex Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "30th Cross Parkway",
-        "block": "Shopping Complex Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "30th Cross Parkway",
-        "block": "Shopping Complex Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "30th Cross Parkway",
-        "block": "Shopping Complex Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "30th Cross Parkway",
-        "block": "Shopping Complex Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "30th Cross Parkway",
-        "block": "Shopping Complex Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "30th Cross Parkway",
-        "block": "Shopping Complex Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "30th Cross Parkway",
-        "block": "Nanda Road Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "30th Cross Parkway",
-        "block": "Nanda Road Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "30th Cross Parkway",
-        "block": "Nanda Road Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "30th Cross Parkway",
-        "block": "Nanda Road Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "30th Cross Parkway",
-        "block": "Nanda Road Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "30th Cross Parkway",
-        "block": "Nanda Road Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "30th Cross Parkway",
-        "block": "Nanda Road Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "30th Cross Parkway",
-        "block": "Nanda Road Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "Nanda Road Way",
-        "block": "Nanda Road Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "Nanda Road Way",
-        "block": "Nanda Road Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "Nanda Road Way",
-        "block": "Nanda Road Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "Nanda Road Way",
-        "block": "Nanda Road Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "Nanda Road Way",
-        "block": "Nanda Road Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "Nanda Road Way",
-        "block": "Nanda Road Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "Nanda Road Way",
-        "block": "Nanda Road Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "Nanda Road Way",
-        "block": "Nanda Road Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "Nanda Road Way",
-        "block": "South End Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "Nanda Road Way",
-        "block": "South End Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "Nanda Road Way",
-        "block": "South End Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "Nanda Road Way",
-        "block": "South End Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "Nanda Road Way",
-        "block": "South End Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "Nanda Road Way",
-        "block": "South End Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "Nanda Road Way",
-        "block": "South End Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "Nanda Road Way",
-        "block": "South End Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_4th_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Complex Ring Link",
-        "block": "Shopping Complex Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_4th_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Complex Ring Link",
-        "block": "Shopping Complex Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_4th_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Complex Ring Link",
-        "block": "Shopping Complex Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_4th_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Complex Ring Link",
-        "block": "Shopping Complex Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_4th_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Complex Ring Link",
-        "block": "Shopping Complex Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_4th_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Complex Ring Link",
-        "block": "Shopping Complex Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_4th_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Pattabhirama Temple Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_4th_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Pattabhirama Temple Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_4th_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Pattabhirama Temple Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_4th_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Pattabhirama Temple Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_4th_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Pattabhirama Temple Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_4th_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Pattabhirama Temple Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_4th_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "jayanagar_4th_gate_1",
-        "name": "Jayanagar 4th Block Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "jayanagar_4th_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "jayanagar_4th_gate_2",
-        "name": "Jayanagar 4th Block Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "jayanagar_4th_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "jayanagar_4th_complex",
-        "name": "4th Block Shopping Complex",
-        "description": "Iconic Bangalore shopping and cultural hub",
-        "x": 620,
-        "y": 480,
-        "roadNode": "jayanagar_4th_junc_ctr",
-        "icon": "\ud83d\udecd\ufe0f",
-        "type": "market"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "11TH MAIN BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "30TH CROSS PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "NANDA ROAD WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "COMPLEX RING LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "PATTABHIRAMA TEMPLE ROAD",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "jayanagar_4th_gate_1",
-    "sectors": [
-      "Shopping Complex Sector",
-      "Nanda Road Sector",
-      "South End Sector"
-    ]
-  },
-  "jayanagar_9th": {
-    "id": "jayanagar_9th",
-    "name": "Jayanagar 9th Block",
-    "location": "Ragigudda / East End, Bangalore South",
-    "zone": "south",
-    "type": "Classic Residential Block",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "jayanagar_9th_gate_1": {
-          "id": "jayanagar_9th_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Jayanagar 9th Block Gate 1 (Main Entrance)"
-        },
-        "jayanagar_9th_entry": {
-          "id": "jayanagar_9th_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "jayanagar_9th_junc_w": {
-          "id": "jayanagar_9th_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "9th Block Avenue West Junction"
-        },
-        "jayanagar_9th_junc_ctr": {
-          "id": "jayanagar_9th_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "jayanagar_9th_junc_e": {
-          "id": "jayanagar_9th_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Jayadeva Metro Way East Junction"
-        },
-        "jayanagar_9th_gate_2": {
-          "id": "jayanagar_9th_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Jayanagar 9th Block Gate 2 (Rear Entrance)"
-        },
-        "jayanagar_9th_n_w": {
-          "id": "jayanagar_9th_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "39th Cross Parkway West"
-        },
-        "jayanagar_9th_n_mid": {
-          "id": "jayanagar_9th_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "39th Cross Parkway North Plaza"
-        },
-        "jayanagar_9th_n_e": {
-          "id": "jayanagar_9th_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "39th Cross Parkway East"
-        },
-        "jayanagar_9th_s_w": {
-          "id": "jayanagar_9th_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Ragigudda Link West"
-        },
-        "jayanagar_9th_s_mid": {
-          "id": "jayanagar_9th_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Ragigudda Link South Plaza"
-        },
-        "jayanagar_9th_s_e": {
-          "id": "jayanagar_9th_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Ragigudda Link East"
-        },
-        "jayanagar_9th_w_n_mid": {
-          "id": "jayanagar_9th_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "9th Block Avenue North Link"
-        },
-        "jayanagar_9th_w_s_mid": {
-          "id": "jayanagar_9th_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "9th Block Avenue South Link"
-        },
-        "jayanagar_9th_ctr_n_mid": {
-          "id": "jayanagar_9th_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "jayanagar_9th_ctr_s_mid": {
-          "id": "jayanagar_9th_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "jayanagar_9th_e_n_mid": {
-          "id": "jayanagar_9th_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Jayadeva Metro Way North Link"
-        },
-        "jayanagar_9th_e_s_mid": {
-          "id": "jayanagar_9th_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Jayadeva Metro Way South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "jayanagar_9th_gate_1",
-          "v": "jayanagar_9th_entry",
-          "road": "East End Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_9th_entry",
-          "v": "jayanagar_9th_junc_w",
-          "road": "East End Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_9th_junc_w",
-          "v": "jayanagar_9th_junc_ctr",
-          "road": "East End Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_9th_junc_ctr",
-          "v": "jayanagar_9th_junc_e",
-          "road": "East End Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_9th_junc_e",
-          "v": "jayanagar_9th_gate_2",
-          "road": "East End Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_9th_n_w",
-          "v": "jayanagar_9th_n_mid",
-          "road": "39th Cross Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_9th_n_mid",
-          "v": "jayanagar_9th_n_e",
-          "road": "39th Cross Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_9th_s_w",
-          "v": "jayanagar_9th_s_mid",
-          "road": "Ragigudda Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_9th_s_mid",
-          "v": "jayanagar_9th_s_e",
-          "road": "Ragigudda Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_9th_n_w",
-          "v": "jayanagar_9th_w_n_mid",
-          "road": "9th Block Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_9th_w_n_mid",
-          "v": "jayanagar_9th_junc_w",
-          "road": "9th Block Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_9th_junc_w",
-          "v": "jayanagar_9th_w_s_mid",
-          "road": "9th Block Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_9th_w_s_mid",
-          "v": "jayanagar_9th_s_w",
-          "road": "9th Block Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_9th_n_mid",
-          "v": "jayanagar_9th_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_9th_ctr_n_mid",
-          "v": "jayanagar_9th_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_9th_junc_ctr",
-          "v": "jayanagar_9th_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_9th_ctr_s_mid",
-          "v": "jayanagar_9th_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jayanagar_9th_n_e",
-          "v": "jayanagar_9th_e_n_mid",
-          "road": "Jayadeva Metro Way",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_9th_e_n_mid",
-          "v": "jayanagar_9th_junc_e",
-          "road": "Jayadeva Metro Way",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_9th_junc_e",
-          "v": "jayanagar_9th_e_s_mid",
-          "road": "Jayadeva Metro Way",
-          "type": "secondary"
-        },
-        {
-          "u": "jayanagar_9th_e_s_mid",
-          "v": "jayanagar_9th_s_e",
-          "road": "Jayadeva Metro Way",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "39th Cross Parkway",
-        "block": "Ragigudda Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "39th Cross Parkway",
-        "block": "Ragigudda Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "39th Cross Parkway",
-        "block": "Ragigudda Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "39th Cross Parkway",
-        "block": "Ragigudda Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "39th Cross Parkway",
-        "block": "Ragigudda Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "39th Cross Parkway",
-        "block": "Ragigudda Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "39th Cross Parkway",
-        "block": "Ragigudda Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "39th Cross Parkway",
-        "block": "Ragigudda Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "39th Cross Parkway",
-        "block": "East End Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "39th Cross Parkway",
-        "block": "East End Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "39th Cross Parkway",
-        "block": "East End Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "39th Cross Parkway",
-        "block": "East End Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "39th Cross Parkway",
-        "block": "East End Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "39th Cross Parkway",
-        "block": "East End Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "39th Cross Parkway",
-        "block": "East End Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "39th Cross Parkway",
-        "block": "East End Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "Ragigudda Link",
-        "block": "East End Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "Ragigudda Link",
-        "block": "East End Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "Ragigudda Link",
-        "block": "East End Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "Ragigudda Link",
-        "block": "East End Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "Ragigudda Link",
-        "block": "East End Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "Ragigudda Link",
-        "block": "East End Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "Ragigudda Link",
-        "block": "East End Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "Ragigudda Link",
-        "block": "East End Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "Ragigudda Link",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "Ragigudda Link",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "Ragigudda Link",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "Ragigudda Link",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "Ragigudda Link",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "Ragigudda Link",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "Ragigudda Link",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "Ragigudda Link",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jayanagar_9th_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "9th Block Avenue",
-        "block": "Ragigudda Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_9th_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "9th Block Avenue",
-        "block": "Ragigudda Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_9th_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "9th Block Avenue",
-        "block": "Ragigudda Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_9th_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "9th Block Avenue",
-        "block": "Ragigudda Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_9th_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "9th Block Avenue",
-        "block": "Ragigudda Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_9th_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "9th Block Avenue",
-        "block": "Ragigudda Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_9th_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Jayadeva Metro Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_9th_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Jayadeva Metro Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_9th_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Jayadeva Metro Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_9th_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Jayadeva Metro Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_9th_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Jayadeva Metro Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_9th_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Jayadeva Metro Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jayanagar_9th_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "jayanagar_9th_gate_1",
-        "name": "Jayanagar 9th Block Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "jayanagar_9th_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "jayanagar_9th_gate_2",
-        "name": "Jayanagar 9th Block Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "jayanagar_9th_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "jayanagar_9th_temple",
-        "name": "Ragigudda Sri Prasanna Anjaneya Temple",
-        "description": "Historic hilltop temple and cultural auditorium complex",
-        "x": 620,
-        "y": 270,
-        "roadNode": "jayanagar_9th_n_mid",
-        "icon": "\ud83d\uded5",
-        "type": "worship"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "EAST END MAIN BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "39TH CROSS PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "RAGIGUDDA LINK",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "9TH BLOCK AVENUE",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "JAYADEVA METRO WAY",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "jayanagar_9th_gate_1",
-    "sectors": [
-      "Ragigudda Sector",
-      "East End Sector"
-    ]
+    "verified": true
   },
   "purva_panorama": {
     "id": "purva_panorama",
@@ -18259,7 +13707,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 430,
         "roadNode": "pp_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       }
     ],
@@ -18287,919 +13735,8 @@ window.LAYOUTS = {
     "sectors": [
       "Tower A",
       "Tower B"
-    ]
-  },
-  "meenakshi_layout": {
-    "id": "meenakshi_layout",
-    "name": "Meenakshi Layout",
-    "location": "Bannerghatta Road / Hulimavu, Bangalore South",
-    "zone": "south",
-    "type": "Residential Society",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "meenakshi_layout_gate_1": {
-          "id": "meenakshi_layout_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Meenakshi Layout Gate 1 (Main Entrance)"
-        },
-        "meenakshi_layout_entry": {
-          "id": "meenakshi_layout_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "meenakshi_layout_junc_w": {
-          "id": "meenakshi_layout_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Mall Access Link West Junction"
-        },
-        "meenakshi_layout_junc_ctr": {
-          "id": "meenakshi_layout_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "meenakshi_layout_junc_e": {
-          "id": "meenakshi_layout_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Lake Road East Junction"
-        },
-        "meenakshi_layout_gate_2": {
-          "id": "meenakshi_layout_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Meenakshi Layout Gate 2 (Rear Entrance)"
-        },
-        "meenakshi_layout_n_w": {
-          "id": "meenakshi_layout_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Hulimavu Main Avenue West"
-        },
-        "meenakshi_layout_n_mid": {
-          "id": "meenakshi_layout_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Hulimavu Main Avenue North Plaza"
-        },
-        "meenakshi_layout_n_e": {
-          "id": "meenakshi_layout_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Hulimavu Main Avenue East"
-        },
-        "meenakshi_layout_s_w": {
-          "id": "meenakshi_layout_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Cave Temple Road West"
-        },
-        "meenakshi_layout_s_mid": {
-          "id": "meenakshi_layout_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Cave Temple Road South Plaza"
-        },
-        "meenakshi_layout_s_e": {
-          "id": "meenakshi_layout_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Cave Temple Road East"
-        },
-        "meenakshi_layout_w_n_mid": {
-          "id": "meenakshi_layout_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Mall Access Link North Link"
-        },
-        "meenakshi_layout_w_s_mid": {
-          "id": "meenakshi_layout_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Mall Access Link South Link"
-        },
-        "meenakshi_layout_ctr_n_mid": {
-          "id": "meenakshi_layout_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "meenakshi_layout_ctr_s_mid": {
-          "id": "meenakshi_layout_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "meenakshi_layout_e_n_mid": {
-          "id": "meenakshi_layout_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Lake Road North Link"
-        },
-        "meenakshi_layout_e_s_mid": {
-          "id": "meenakshi_layout_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Lake Road South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "meenakshi_layout_gate_1",
-          "v": "meenakshi_layout_entry",
-          "road": "Meenakshi Temple Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "meenakshi_layout_entry",
-          "v": "meenakshi_layout_junc_w",
-          "road": "Meenakshi Temple Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "meenakshi_layout_junc_w",
-          "v": "meenakshi_layout_junc_ctr",
-          "road": "Meenakshi Temple Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "meenakshi_layout_junc_ctr",
-          "v": "meenakshi_layout_junc_e",
-          "road": "Meenakshi Temple Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "meenakshi_layout_junc_e",
-          "v": "meenakshi_layout_gate_2",
-          "road": "Meenakshi Temple Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "meenakshi_layout_n_w",
-          "v": "meenakshi_layout_n_mid",
-          "road": "Hulimavu Main Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "meenakshi_layout_n_mid",
-          "v": "meenakshi_layout_n_e",
-          "road": "Hulimavu Main Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "meenakshi_layout_s_w",
-          "v": "meenakshi_layout_s_mid",
-          "road": "Cave Temple Road",
-          "type": "secondary"
-        },
-        {
-          "u": "meenakshi_layout_s_mid",
-          "v": "meenakshi_layout_s_e",
-          "road": "Cave Temple Road",
-          "type": "secondary"
-        },
-        {
-          "u": "meenakshi_layout_n_w",
-          "v": "meenakshi_layout_w_n_mid",
-          "road": "Mall Access Link",
-          "type": "secondary"
-        },
-        {
-          "u": "meenakshi_layout_w_n_mid",
-          "v": "meenakshi_layout_junc_w",
-          "road": "Mall Access Link",
-          "type": "secondary"
-        },
-        {
-          "u": "meenakshi_layout_junc_w",
-          "v": "meenakshi_layout_w_s_mid",
-          "road": "Mall Access Link",
-          "type": "secondary"
-        },
-        {
-          "u": "meenakshi_layout_w_s_mid",
-          "v": "meenakshi_layout_s_w",
-          "road": "Mall Access Link",
-          "type": "secondary"
-        },
-        {
-          "u": "meenakshi_layout_n_mid",
-          "v": "meenakshi_layout_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "meenakshi_layout_ctr_n_mid",
-          "v": "meenakshi_layout_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "meenakshi_layout_junc_ctr",
-          "v": "meenakshi_layout_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "meenakshi_layout_ctr_s_mid",
-          "v": "meenakshi_layout_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "meenakshi_layout_n_e",
-          "v": "meenakshi_layout_e_n_mid",
-          "road": "Lake Road",
-          "type": "secondary"
-        },
-        {
-          "u": "meenakshi_layout_e_n_mid",
-          "v": "meenakshi_layout_junc_e",
-          "road": "Lake Road",
-          "type": "secondary"
-        },
-        {
-          "u": "meenakshi_layout_junc_e",
-          "v": "meenakshi_layout_e_s_mid",
-          "road": "Lake Road",
-          "type": "secondary"
-        },
-        {
-          "u": "meenakshi_layout_e_s_mid",
-          "v": "meenakshi_layout_s_e",
-          "road": "Lake Road",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "Hulimavu Main Avenue",
-        "block": "Hulimavu Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "Hulimavu Main Avenue",
-        "block": "Hulimavu Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "Hulimavu Main Avenue",
-        "block": "Hulimavu Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "Hulimavu Main Avenue",
-        "block": "Hulimavu Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "Hulimavu Main Avenue",
-        "block": "Hulimavu Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "Hulimavu Main Avenue",
-        "block": "Hulimavu Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "Hulimavu Main Avenue",
-        "block": "Hulimavu Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "Hulimavu Main Avenue",
-        "block": "Hulimavu Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "Hulimavu Main Avenue",
-        "block": "Mall View Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "Hulimavu Main Avenue",
-        "block": "Mall View Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "Hulimavu Main Avenue",
-        "block": "Mall View Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "Hulimavu Main Avenue",
-        "block": "Mall View Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "Hulimavu Main Avenue",
-        "block": "Mall View Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "Hulimavu Main Avenue",
-        "block": "Mall View Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "Hulimavu Main Avenue",
-        "block": "Mall View Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "Hulimavu Main Avenue",
-        "block": "Mall View Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "Cave Temple Road",
-        "block": "Mall View Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "Cave Temple Road",
-        "block": "Mall View Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "Cave Temple Road",
-        "block": "Mall View Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "Cave Temple Road",
-        "block": "Mall View Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "Cave Temple Road",
-        "block": "Mall View Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "Cave Temple Road",
-        "block": "Mall View Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "Cave Temple Road",
-        "block": "Mall View Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "Cave Temple Road",
-        "block": "Mall View Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "Cave Temple Road",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "Cave Temple Road",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "Cave Temple Road",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "Cave Temple Road",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "Cave Temple Road",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "Cave Temple Road",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "Cave Temple Road",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "Cave Temple Road",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "meenakshi_layout_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Mall Access Link",
-        "block": "Hulimavu Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "meenakshi_layout_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Mall Access Link",
-        "block": "Hulimavu Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "meenakshi_layout_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Mall Access Link",
-        "block": "Hulimavu Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "meenakshi_layout_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Mall Access Link",
-        "block": "Hulimavu Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "meenakshi_layout_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Mall Access Link",
-        "block": "Hulimavu Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "meenakshi_layout_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Mall Access Link",
-        "block": "Hulimavu Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "meenakshi_layout_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Lake Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "meenakshi_layout_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Lake Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "meenakshi_layout_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Lake Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "meenakshi_layout_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Lake Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "meenakshi_layout_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Lake Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "meenakshi_layout_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Lake Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "meenakshi_layout_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "meenakshi_layout_gate_1",
-        "name": "Meenakshi Layout Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "meenakshi_layout_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "meenakshi_layout_gate_2",
-        "name": "Meenakshi Layout Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "meenakshi_layout_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "meenakshi_layout_temple",
-        "name": "Sri Meenakshi Sundareshwara Temple",
-        "description": "Grand Dravidian temple and Hulimavu cave complex",
-        "x": 620,
-        "y": 270,
-        "roadNode": "meenakshi_layout_n_mid",
-        "icon": "\ud83d\uded5",
-        "type": "worship"
-      }
     ],
-    "roadLabels": [
-      {
-        "name": "MEENAKSHI TEMPLE BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "HULIMAVU MAIN AVENUE",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "CAVE TEMPLE ROAD",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "MALL ACCESS LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "LAKE ROAD",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "meenakshi_layout_gate_1",
-    "sectors": [
-      "Hulimavu Sector",
-      "Mall View Sector"
-    ]
+    "verified": true
   },
   "south_city_layout": {
     "id": "south_city_layout",
@@ -19674,7 +14211,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "scl_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       },
       {
@@ -19684,7 +14221,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 730,
         "roadNode": "scl_south_lake",
-        "icon": "\ud83e\udd86",
+        "icon": "🦆",
         "type": "nature"
       }
     ],
@@ -19713,7 +14250,8 @@ window.LAYOUTS = {
       "North Quad Tower",
       "Central Parkside Tower",
       "South Lakeview Tower"
-    ]
+    ],
+    "verified": true
   },
   "sobha_dream_acres": {
     "id": "sobha_dream_acres",
@@ -20553,7 +15091,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "sda_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       },
       {
@@ -20563,7 +15101,7 @@ window.LAYOUTS = {
         "x": 960,
         "y": 260,
         "roadNode": "sda_wing_ne",
-        "icon": "\ud83c\udfcf",
+        "icon": "🏏",
         "type": "sports"
       }
     ],
@@ -20607,7 +15145,8 @@ window.LAYOUTS = {
       "Palm Wing",
       "Cedar Wing",
       "Spring Wing"
-    ]
+    ],
+    "verified": true
   },
   "prestige_lakeside": {
     "id": "prestige_lakeside",
@@ -21204,7 +15743,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "plh_junc_ctr",
-        "icon": "\ud83c\udff0",
+        "icon": "🏰",
         "type": "clubhouse"
       },
       {
@@ -21214,7 +15753,7 @@ window.LAYOUTS = {
         "x": 600,
         "y": 150,
         "roadNode": "plh_lake_b",
-        "icon": "\ud83c\udf0a",
+        "icon": "🌊",
         "type": "nature"
       }
     ],
@@ -21244,7 +15783,8 @@ window.LAYOUTS = {
       "Lakeview Tower B",
       "Lakeview Tower C",
       "Disney Villa Enclave"
-    ]
+    ],
+    "verified": true
   },
   "palm_meadows": {
     "id": "palm_meadows",
@@ -21841,7 +16381,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "pm_junc_ctr",
-        "icon": "\ud83c\udf34",
+        "icon": "🌴",
         "type": "clubhouse"
       }
     ],
@@ -21871,7 +16411,8 @@ window.LAYOUTS = {
       "Meadows Court Villas",
       "Orchid Enclave Villas",
       "Hibiscus View Villas"
-    ]
+    ],
+    "verified": true
   },
   "prestige_shantiniketan": {
     "id": "prestige_shantiniketan",
@@ -21909,7 +16450,7 @@ window.LAYOUTS = {
         "w": 420,
         "h": 90,
         "rx": 8,
-        "label": "\ud83d\udecd\ufe0f Forum Shantiniketan Mall & Multiplex",
+        "label": "🛍️ Forum Shantiniketan Mall & Multiplex",
         "fill": "#1e1b4b",
         "stroke": "#ec4899"
       },
@@ -21919,7 +16460,7 @@ window.LAYOUTS = {
         "w": 180,
         "h": 120,
         "rx": 8,
-        "label": "\ud83d\udcbc Crescent Business Campus",
+        "label": "💼 Crescent Business Campus",
         "fill": "#0f172a",
         "stroke": "#38bdf8"
       }
@@ -22476,7 +17017,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 730,
         "roadNode": "psn_forum_s",
-        "icon": "\ud83d\udecd\ufe0f",
+        "icon": "🛍️",
         "type": "mall"
       },
       {
@@ -22486,7 +17027,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 410,
         "roadNode": "psn_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       }
     ],
@@ -22522,920 +17063,8 @@ window.LAYOUTS = {
       "Windsor Park Tower",
       "Manor Crest Tower",
       "Springs Residential Tower"
-    ]
-  },
-  "rainbow_drive": {
-    "id": "rainbow_drive",
-    "name": "Rainbow Drive",
-    "location": "Sarjapur Road, Carmelaram, Bangalore East",
-    "zone": "whitefield",
-    "type": "Eco-Friendly Gated Villa Layout",
-    "unitType": "Villa",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "rainbow_drive_gate_1": {
-          "id": "rainbow_drive_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Rainbow Drive Gate 1 (Main Entrance)"
-        },
-        "rainbow_drive_entry": {
-          "id": "rainbow_drive_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "rainbow_drive_junc_w": {
-          "id": "rainbow_drive_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Eco Walk Parkway West Junction"
-        },
-        "rainbow_drive_junc_ctr": {
-          "id": "rainbow_drive_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "rainbow_drive_junc_e": {
-          "id": "rainbow_drive_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Sarjapur Link East Junction"
-        },
-        "rainbow_drive_gate_2": {
-          "id": "rainbow_drive_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Rainbow Drive Gate 2 (Rear Entrance)"
-        },
-        "rainbow_drive_n_w": {
-          "id": "rainbow_drive_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Gulmohar Avenue West"
-        },
-        "rainbow_drive_n_mid": {
-          "id": "rainbow_drive_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Gulmohar Avenue North Plaza"
-        },
-        "rainbow_drive_n_e": {
-          "id": "rainbow_drive_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Gulmohar Avenue East"
-        },
-        "rainbow_drive_s_w": {
-          "id": "rainbow_drive_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Jacaranda Way West"
-        },
-        "rainbow_drive_s_mid": {
-          "id": "rainbow_drive_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Jacaranda Way South Plaza"
-        },
-        "rainbow_drive_s_e": {
-          "id": "rainbow_drive_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Jacaranda Way East"
-        },
-        "rainbow_drive_w_n_mid": {
-          "id": "rainbow_drive_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Eco Walk Parkway North Link"
-        },
-        "rainbow_drive_w_s_mid": {
-          "id": "rainbow_drive_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Eco Walk Parkway South Link"
-        },
-        "rainbow_drive_ctr_n_mid": {
-          "id": "rainbow_drive_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "rainbow_drive_ctr_s_mid": {
-          "id": "rainbow_drive_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "rainbow_drive_e_n_mid": {
-          "id": "rainbow_drive_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Sarjapur Link North Link"
-        },
-        "rainbow_drive_e_s_mid": {
-          "id": "rainbow_drive_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Sarjapur Link South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "rainbow_drive_gate_1",
-          "v": "rainbow_drive_entry",
-          "road": "Rainbow Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "rainbow_drive_entry",
-          "v": "rainbow_drive_junc_w",
-          "road": "Rainbow Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "rainbow_drive_junc_w",
-          "v": "rainbow_drive_junc_ctr",
-          "road": "Rainbow Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "rainbow_drive_junc_ctr",
-          "v": "rainbow_drive_junc_e",
-          "road": "Rainbow Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "rainbow_drive_junc_e",
-          "v": "rainbow_drive_gate_2",
-          "road": "Rainbow Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "rainbow_drive_n_w",
-          "v": "rainbow_drive_n_mid",
-          "road": "Gulmohar Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "rainbow_drive_n_mid",
-          "v": "rainbow_drive_n_e",
-          "road": "Gulmohar Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "rainbow_drive_s_w",
-          "v": "rainbow_drive_s_mid",
-          "road": "Jacaranda Way",
-          "type": "secondary"
-        },
-        {
-          "u": "rainbow_drive_s_mid",
-          "v": "rainbow_drive_s_e",
-          "road": "Jacaranda Way",
-          "type": "secondary"
-        },
-        {
-          "u": "rainbow_drive_n_w",
-          "v": "rainbow_drive_w_n_mid",
-          "road": "Eco Walk Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "rainbow_drive_w_n_mid",
-          "v": "rainbow_drive_junc_w",
-          "road": "Eco Walk Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "rainbow_drive_junc_w",
-          "v": "rainbow_drive_w_s_mid",
-          "road": "Eco Walk Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "rainbow_drive_w_s_mid",
-          "v": "rainbow_drive_s_w",
-          "road": "Eco Walk Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "rainbow_drive_n_mid",
-          "v": "rainbow_drive_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "rainbow_drive_ctr_n_mid",
-          "v": "rainbow_drive_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "rainbow_drive_junc_ctr",
-          "v": "rainbow_drive_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "rainbow_drive_ctr_s_mid",
-          "v": "rainbow_drive_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "rainbow_drive_n_e",
-          "v": "rainbow_drive_e_n_mid",
-          "road": "Sarjapur Link",
-          "type": "secondary"
-        },
-        {
-          "u": "rainbow_drive_e_n_mid",
-          "v": "rainbow_drive_junc_e",
-          "road": "Sarjapur Link",
-          "type": "secondary"
-        },
-        {
-          "u": "rainbow_drive_junc_e",
-          "v": "rainbow_drive_e_s_mid",
-          "road": "Sarjapur Link",
-          "type": "secondary"
-        },
-        {
-          "u": "rainbow_drive_e_s_mid",
-          "v": "rainbow_drive_s_e",
-          "road": "Sarjapur Link",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Villa 1",
-        "road": "Gulmohar Avenue",
-        "block": "Gulmohar Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Villa 2",
-        "road": "Gulmohar Avenue",
-        "block": "Gulmohar Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Villa 3",
-        "road": "Gulmohar Avenue",
-        "block": "Gulmohar Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Villa 4",
-        "road": "Gulmohar Avenue",
-        "block": "Gulmohar Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Villa 5",
-        "road": "Gulmohar Avenue",
-        "block": "Gulmohar Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Villa 6",
-        "road": "Gulmohar Avenue",
-        "block": "Gulmohar Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Villa 7",
-        "road": "Gulmohar Avenue",
-        "block": "Gulmohar Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Villa 8",
-        "road": "Gulmohar Avenue",
-        "block": "Gulmohar Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Villa 9",
-        "road": "Gulmohar Avenue",
-        "block": "Jacaranda Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Villa 10",
-        "road": "Gulmohar Avenue",
-        "block": "Jacaranda Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Villa 11",
-        "road": "Gulmohar Avenue",
-        "block": "Jacaranda Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Villa 12",
-        "road": "Gulmohar Avenue",
-        "block": "Jacaranda Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Villa 13",
-        "road": "Gulmohar Avenue",
-        "block": "Jacaranda Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Villa 14",
-        "road": "Gulmohar Avenue",
-        "block": "Jacaranda Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Villa 15",
-        "road": "Gulmohar Avenue",
-        "block": "Jacaranda Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Villa 16",
-        "road": "Gulmohar Avenue",
-        "block": "Jacaranda Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Villa 17",
-        "road": "Jacaranda Way",
-        "block": "Jacaranda Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Villa 18",
-        "road": "Jacaranda Way",
-        "block": "Jacaranda Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Villa 19",
-        "road": "Jacaranda Way",
-        "block": "Jacaranda Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Villa 20",
-        "road": "Jacaranda Way",
-        "block": "Jacaranda Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Villa 21",
-        "road": "Jacaranda Way",
-        "block": "Jacaranda Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Villa 22",
-        "road": "Jacaranda Way",
-        "block": "Jacaranda Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Villa 23",
-        "road": "Jacaranda Way",
-        "block": "Jacaranda Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Villa 24",
-        "road": "Jacaranda Way",
-        "block": "Jacaranda Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Villa 25",
-        "road": "Jacaranda Way",
-        "block": "Bamboo Grove",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Villa 26",
-        "road": "Jacaranda Way",
-        "block": "Bamboo Grove",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Villa 27",
-        "road": "Jacaranda Way",
-        "block": "Bamboo Grove",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Villa 28",
-        "road": "Jacaranda Way",
-        "block": "Bamboo Grove",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Villa 29",
-        "road": "Jacaranda Way",
-        "block": "Bamboo Grove",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Villa 30",
-        "road": "Jacaranda Way",
-        "block": "Bamboo Grove",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Villa 31",
-        "road": "Jacaranda Way",
-        "block": "Bamboo Grove",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Villa 32",
-        "road": "Jacaranda Way",
-        "block": "Bamboo Grove",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rainbow_drive_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Villa 33",
-        "road": "Eco Walk Parkway",
-        "block": "Gulmohar Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rainbow_drive_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Villa 34",
-        "road": "Eco Walk Parkway",
-        "block": "Gulmohar Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rainbow_drive_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Villa 35",
-        "road": "Eco Walk Parkway",
-        "block": "Gulmohar Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rainbow_drive_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Villa 36",
-        "road": "Eco Walk Parkway",
-        "block": "Gulmohar Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rainbow_drive_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Villa 37",
-        "road": "Eco Walk Parkway",
-        "block": "Gulmohar Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rainbow_drive_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Villa 38",
-        "road": "Eco Walk Parkway",
-        "block": "Gulmohar Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rainbow_drive_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Villa 39",
-        "road": "Sarjapur Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rainbow_drive_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Villa 40",
-        "road": "Sarjapur Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rainbow_drive_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Villa 41",
-        "road": "Sarjapur Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rainbow_drive_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Villa 42",
-        "road": "Sarjapur Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rainbow_drive_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Villa 43",
-        "road": "Sarjapur Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rainbow_drive_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Villa 44",
-        "road": "Sarjapur Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rainbow_drive_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "rainbow_drive_gate_1",
-        "name": "Rainbow Drive Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "rainbow_drive_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "rainbow_drive_gate_2",
-        "name": "Rainbow Drive Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "rainbow_drive_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "rainbow_drive_club",
-        "name": "Rainbow Recreation & Pool",
-        "description": "Rainwater harvesting lake, solar clubhouse and swimming pool",
-        "x": 620,
-        "y": 270,
-        "roadNode": "rainbow_drive_n_mid",
-        "icon": "\ud83c\udf08",
-        "type": "clubhouse"
-      }
     ],
-    "roadLabels": [
-      {
-        "name": "RAINBOW BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "GULMOHAR AVENUE",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "JACARANDA WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "ECO WALK PARKWAY",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "SARJAPUR LINK",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "rainbow_drive_gate_1",
-    "sectors": [
-      "Gulmohar Sector",
-      "Jacaranda Sector",
-      "Bamboo Grove"
-    ]
+    "verified": true
   },
   "divyasree_republic": {
     "id": "divyasree_republic",
@@ -24044,7 +17673,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "dr_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       }
     ],
@@ -24074,1831 +17703,8 @@ window.LAYOUTS = {
       "Tower Beta",
       "Tower Gamma",
       "Tower Delta"
-    ]
-  },
-  "confident_anthea": {
-    "id": "confident_anthea",
-    "name": "Confident Anthea",
-    "location": "Sarjapur Road, Bangalore East",
-    "zone": "whitefield",
-    "type": "Gated Community Villas",
-    "unitType": "Villa",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "confident_anthea_gate_1": {
-          "id": "confident_anthea_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Confident Anthea Gate 1 (Main Entrance)"
-        },
-        "confident_anthea_entry": {
-          "id": "confident_anthea_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "confident_anthea_junc_w": {
-          "id": "confident_anthea_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Sarjapur Link West Junction"
-        },
-        "confident_anthea_junc_ctr": {
-          "id": "confident_anthea_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "confident_anthea_junc_e": {
-          "id": "confident_anthea_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Orchard Drive East Junction"
-        },
-        "confident_anthea_gate_2": {
-          "id": "confident_anthea_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Confident Anthea Gate 2 (Rear Entrance)"
-        },
-        "confident_anthea_n_w": {
-          "id": "confident_anthea_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Rose Avenue West"
-        },
-        "confident_anthea_n_mid": {
-          "id": "confident_anthea_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Rose Avenue North Plaza"
-        },
-        "confident_anthea_n_e": {
-          "id": "confident_anthea_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Rose Avenue East"
-        },
-        "confident_anthea_s_w": {
-          "id": "confident_anthea_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Lily Parkway West"
-        },
-        "confident_anthea_s_mid": {
-          "id": "confident_anthea_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Lily Parkway South Plaza"
-        },
-        "confident_anthea_s_e": {
-          "id": "confident_anthea_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Lily Parkway East"
-        },
-        "confident_anthea_w_n_mid": {
-          "id": "confident_anthea_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Sarjapur Link North Link"
-        },
-        "confident_anthea_w_s_mid": {
-          "id": "confident_anthea_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Sarjapur Link South Link"
-        },
-        "confident_anthea_ctr_n_mid": {
-          "id": "confident_anthea_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "confident_anthea_ctr_s_mid": {
-          "id": "confident_anthea_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "confident_anthea_e_n_mid": {
-          "id": "confident_anthea_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Orchard Drive North Link"
-        },
-        "confident_anthea_e_s_mid": {
-          "id": "confident_anthea_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Orchard Drive South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "confident_anthea_gate_1",
-          "v": "confident_anthea_entry",
-          "road": "Anthea Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "confident_anthea_entry",
-          "v": "confident_anthea_junc_w",
-          "road": "Anthea Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "confident_anthea_junc_w",
-          "v": "confident_anthea_junc_ctr",
-          "road": "Anthea Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "confident_anthea_junc_ctr",
-          "v": "confident_anthea_junc_e",
-          "road": "Anthea Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "confident_anthea_junc_e",
-          "v": "confident_anthea_gate_2",
-          "road": "Anthea Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "confident_anthea_n_w",
-          "v": "confident_anthea_n_mid",
-          "road": "Rose Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "confident_anthea_n_mid",
-          "v": "confident_anthea_n_e",
-          "road": "Rose Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "confident_anthea_s_w",
-          "v": "confident_anthea_s_mid",
-          "road": "Lily Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "confident_anthea_s_mid",
-          "v": "confident_anthea_s_e",
-          "road": "Lily Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "confident_anthea_n_w",
-          "v": "confident_anthea_w_n_mid",
-          "road": "Sarjapur Link",
-          "type": "secondary"
-        },
-        {
-          "u": "confident_anthea_w_n_mid",
-          "v": "confident_anthea_junc_w",
-          "road": "Sarjapur Link",
-          "type": "secondary"
-        },
-        {
-          "u": "confident_anthea_junc_w",
-          "v": "confident_anthea_w_s_mid",
-          "road": "Sarjapur Link",
-          "type": "secondary"
-        },
-        {
-          "u": "confident_anthea_w_s_mid",
-          "v": "confident_anthea_s_w",
-          "road": "Sarjapur Link",
-          "type": "secondary"
-        },
-        {
-          "u": "confident_anthea_n_mid",
-          "v": "confident_anthea_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "confident_anthea_ctr_n_mid",
-          "v": "confident_anthea_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "confident_anthea_junc_ctr",
-          "v": "confident_anthea_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "confident_anthea_ctr_s_mid",
-          "v": "confident_anthea_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "confident_anthea_n_e",
-          "v": "confident_anthea_e_n_mid",
-          "road": "Orchard Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "confident_anthea_e_n_mid",
-          "v": "confident_anthea_junc_e",
-          "road": "Orchard Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "confident_anthea_junc_e",
-          "v": "confident_anthea_e_s_mid",
-          "road": "Orchard Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "confident_anthea_e_s_mid",
-          "v": "confident_anthea_s_e",
-          "road": "Orchard Drive",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Villa 1",
-        "road": "Rose Avenue",
-        "block": "Rose Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Villa 2",
-        "road": "Rose Avenue",
-        "block": "Rose Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Villa 3",
-        "road": "Rose Avenue",
-        "block": "Rose Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Villa 4",
-        "road": "Rose Avenue",
-        "block": "Rose Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Villa 5",
-        "road": "Rose Avenue",
-        "block": "Rose Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Villa 6",
-        "road": "Rose Avenue",
-        "block": "Rose Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Villa 7",
-        "road": "Rose Avenue",
-        "block": "Rose Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Villa 8",
-        "road": "Rose Avenue",
-        "block": "Rose Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Villa 9",
-        "road": "Rose Avenue",
-        "block": "Lily Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Villa 10",
-        "road": "Rose Avenue",
-        "block": "Lily Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Villa 11",
-        "road": "Rose Avenue",
-        "block": "Lily Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Villa 12",
-        "road": "Rose Avenue",
-        "block": "Lily Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Villa 13",
-        "road": "Rose Avenue",
-        "block": "Lily Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Villa 14",
-        "road": "Rose Avenue",
-        "block": "Lily Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Villa 15",
-        "road": "Rose Avenue",
-        "block": "Lily Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Villa 16",
-        "road": "Rose Avenue",
-        "block": "Lily Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Villa 17",
-        "road": "Lily Parkway",
-        "block": "Lily Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Villa 18",
-        "road": "Lily Parkway",
-        "block": "Lily Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Villa 19",
-        "road": "Lily Parkway",
-        "block": "Lily Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Villa 20",
-        "road": "Lily Parkway",
-        "block": "Lily Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Villa 21",
-        "road": "Lily Parkway",
-        "block": "Lily Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Villa 22",
-        "road": "Lily Parkway",
-        "block": "Lily Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Villa 23",
-        "road": "Lily Parkway",
-        "block": "Lily Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Villa 24",
-        "road": "Lily Parkway",
-        "block": "Lily Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Villa 25",
-        "road": "Lily Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Villa 26",
-        "road": "Lily Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Villa 27",
-        "road": "Lily Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Villa 28",
-        "road": "Lily Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Villa 29",
-        "road": "Lily Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Villa 30",
-        "road": "Lily Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Villa 31",
-        "road": "Lily Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Villa 32",
-        "road": "Lily Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "confident_anthea_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Villa 33",
-        "road": "Sarjapur Link",
-        "block": "Rose Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "confident_anthea_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Villa 34",
-        "road": "Sarjapur Link",
-        "block": "Rose Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "confident_anthea_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Villa 35",
-        "road": "Sarjapur Link",
-        "block": "Rose Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "confident_anthea_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Villa 36",
-        "road": "Sarjapur Link",
-        "block": "Rose Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "confident_anthea_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Villa 37",
-        "road": "Sarjapur Link",
-        "block": "Rose Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "confident_anthea_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Villa 38",
-        "road": "Sarjapur Link",
-        "block": "Rose Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "confident_anthea_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Villa 39",
-        "road": "Orchard Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "confident_anthea_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Villa 40",
-        "road": "Orchard Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "confident_anthea_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Villa 41",
-        "road": "Orchard Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "confident_anthea_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Villa 42",
-        "road": "Orchard Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "confident_anthea_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Villa 43",
-        "road": "Orchard Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "confident_anthea_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Villa 44",
-        "road": "Orchard Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "confident_anthea_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "confident_anthea_gate_1",
-        "name": "Confident Anthea Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "confident_anthea_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "confident_anthea_gate_2",
-        "name": "Confident Anthea Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "confident_anthea_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "confident_anthea_club",
-        "name": "Anthea Club House",
-        "description": "Swimming pool, gymnasium and sports zone",
-        "x": 620,
-        "y": 270,
-        "roadNode": "confident_anthea_n_mid",
-        "icon": "\ud83c\udfe1",
-        "type": "clubhouse"
-      }
     ],
-    "roadLabels": [
-      {
-        "name": "ANTHEA BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "ROSE AVENUE",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "LILY PARKWAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "SARJAPUR LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "ORCHARD DRIVE",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "confident_anthea_gate_1",
-    "sectors": [
-      "Rose Sector",
-      "Lily Sector"
-    ]
-  },
-  "chaithanya_smaran": {
-    "id": "chaithanya_smaran",
-    "name": "Chaithanya Smaran",
-    "location": "Hoskote Road, Whitefield, Bangalore East",
-    "zone": "whitefield",
-    "type": "Ultra-Luxury Gated Villa Enclave",
-    "unitType": "Villa",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "chaithanya_smaran_gate_1": {
-          "id": "chaithanya_smaran_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Chaithanya Smaran Gate 1 (Main Entrance)"
-        },
-        "chaithanya_smaran_entry": {
-          "id": "chaithanya_smaran_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "chaithanya_smaran_junc_w": {
-          "id": "chaithanya_smaran_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Hoskote Link West Junction"
-        },
-        "chaithanya_smaran_junc_ctr": {
-          "id": "chaithanya_smaran_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "chaithanya_smaran_junc_e": {
-          "id": "chaithanya_smaran_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Banyan Drive East Junction"
-        },
-        "chaithanya_smaran_gate_2": {
-          "id": "chaithanya_smaran_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Chaithanya Smaran Gate 2 (Rear Entrance)"
-        },
-        "chaithanya_smaran_n_w": {
-          "id": "chaithanya_smaran_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Lotus Parkway West"
-        },
-        "chaithanya_smaran_n_mid": {
-          "id": "chaithanya_smaran_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Lotus Parkway North Plaza"
-        },
-        "chaithanya_smaran_n_e": {
-          "id": "chaithanya_smaran_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Lotus Parkway East"
-        },
-        "chaithanya_smaran_s_w": {
-          "id": "chaithanya_smaran_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Tranquil Way West"
-        },
-        "chaithanya_smaran_s_mid": {
-          "id": "chaithanya_smaran_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Tranquil Way South Plaza"
-        },
-        "chaithanya_smaran_s_e": {
-          "id": "chaithanya_smaran_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Tranquil Way East"
-        },
-        "chaithanya_smaran_w_n_mid": {
-          "id": "chaithanya_smaran_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Hoskote Link North Link"
-        },
-        "chaithanya_smaran_w_s_mid": {
-          "id": "chaithanya_smaran_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Hoskote Link South Link"
-        },
-        "chaithanya_smaran_ctr_n_mid": {
-          "id": "chaithanya_smaran_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "chaithanya_smaran_ctr_s_mid": {
-          "id": "chaithanya_smaran_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "chaithanya_smaran_e_n_mid": {
-          "id": "chaithanya_smaran_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Banyan Drive North Link"
-        },
-        "chaithanya_smaran_e_s_mid": {
-          "id": "chaithanya_smaran_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Banyan Drive South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "chaithanya_smaran_gate_1",
-          "v": "chaithanya_smaran_entry",
-          "road": "Smaran Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "chaithanya_smaran_entry",
-          "v": "chaithanya_smaran_junc_w",
-          "road": "Smaran Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "chaithanya_smaran_junc_w",
-          "v": "chaithanya_smaran_junc_ctr",
-          "road": "Smaran Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "chaithanya_smaran_junc_ctr",
-          "v": "chaithanya_smaran_junc_e",
-          "road": "Smaran Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "chaithanya_smaran_junc_e",
-          "v": "chaithanya_smaran_gate_2",
-          "road": "Smaran Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "chaithanya_smaran_n_w",
-          "v": "chaithanya_smaran_n_mid",
-          "road": "Lotus Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "chaithanya_smaran_n_mid",
-          "v": "chaithanya_smaran_n_e",
-          "road": "Lotus Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "chaithanya_smaran_s_w",
-          "v": "chaithanya_smaran_s_mid",
-          "road": "Tranquil Way",
-          "type": "secondary"
-        },
-        {
-          "u": "chaithanya_smaran_s_mid",
-          "v": "chaithanya_smaran_s_e",
-          "road": "Tranquil Way",
-          "type": "secondary"
-        },
-        {
-          "u": "chaithanya_smaran_n_w",
-          "v": "chaithanya_smaran_w_n_mid",
-          "road": "Hoskote Link",
-          "type": "secondary"
-        },
-        {
-          "u": "chaithanya_smaran_w_n_mid",
-          "v": "chaithanya_smaran_junc_w",
-          "road": "Hoskote Link",
-          "type": "secondary"
-        },
-        {
-          "u": "chaithanya_smaran_junc_w",
-          "v": "chaithanya_smaran_w_s_mid",
-          "road": "Hoskote Link",
-          "type": "secondary"
-        },
-        {
-          "u": "chaithanya_smaran_w_s_mid",
-          "v": "chaithanya_smaran_s_w",
-          "road": "Hoskote Link",
-          "type": "secondary"
-        },
-        {
-          "u": "chaithanya_smaran_n_mid",
-          "v": "chaithanya_smaran_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "chaithanya_smaran_ctr_n_mid",
-          "v": "chaithanya_smaran_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "chaithanya_smaran_junc_ctr",
-          "v": "chaithanya_smaran_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "chaithanya_smaran_ctr_s_mid",
-          "v": "chaithanya_smaran_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "chaithanya_smaran_n_e",
-          "v": "chaithanya_smaran_e_n_mid",
-          "road": "Banyan Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "chaithanya_smaran_e_n_mid",
-          "v": "chaithanya_smaran_junc_e",
-          "road": "Banyan Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "chaithanya_smaran_junc_e",
-          "v": "chaithanya_smaran_e_s_mid",
-          "road": "Banyan Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "chaithanya_smaran_e_s_mid",
-          "v": "chaithanya_smaran_s_e",
-          "road": "Banyan Drive",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Villa 1",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa North",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Villa 2",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa North",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Villa 3",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa North",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Villa 4",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa North",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Villa 5",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa North",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Villa 6",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa North",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Villa 7",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa North",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Villa 8",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa North",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Villa 9",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa South",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Villa 10",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa South",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Villa 11",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa South",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Villa 12",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa South",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Villa 13",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa South",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Villa 14",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa South",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Villa 15",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa South",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Villa 16",
-        "road": "Lotus Parkway",
-        "block": "Bespoke Villa South",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Villa 17",
-        "road": "Tranquil Way",
-        "block": "Bespoke Villa South",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Villa 18",
-        "road": "Tranquil Way",
-        "block": "Bespoke Villa South",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Villa 19",
-        "road": "Tranquil Way",
-        "block": "Bespoke Villa South",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Villa 20",
-        "road": "Tranquil Way",
-        "block": "Bespoke Villa South",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Villa 21",
-        "road": "Tranquil Way",
-        "block": "Bespoke Villa South",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Villa 22",
-        "road": "Tranquil Way",
-        "block": "Bespoke Villa South",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Villa 23",
-        "road": "Tranquil Way",
-        "block": "Bespoke Villa South",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Villa 24",
-        "road": "Tranquil Way",
-        "block": "Bespoke Villa South",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Villa 25",
-        "road": "Tranquil Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Villa 26",
-        "road": "Tranquil Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Villa 27",
-        "road": "Tranquil Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Villa 28",
-        "road": "Tranquil Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Villa 29",
-        "road": "Tranquil Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Villa 30",
-        "road": "Tranquil Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Villa 31",
-        "road": "Tranquil Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Villa 32",
-        "road": "Tranquil Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Villa 33",
-        "road": "Hoskote Link",
-        "block": "Bespoke Villa North",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Villa 34",
-        "road": "Hoskote Link",
-        "block": "Bespoke Villa North",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Villa 35",
-        "road": "Hoskote Link",
-        "block": "Bespoke Villa North",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Villa 36",
-        "road": "Hoskote Link",
-        "block": "Bespoke Villa North",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Villa 37",
-        "road": "Hoskote Link",
-        "block": "Bespoke Villa North",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Villa 38",
-        "road": "Hoskote Link",
-        "block": "Bespoke Villa North",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Villa 39",
-        "road": "Banyan Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Villa 40",
-        "road": "Banyan Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Villa 41",
-        "road": "Banyan Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Villa 42",
-        "road": "Banyan Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Villa 43",
-        "road": "Banyan Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Villa 44",
-        "road": "Banyan Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "chaithanya_smaran_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "chaithanya_smaran_gate_1",
-        "name": "Chaithanya Smaran Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "chaithanya_smaran_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "chaithanya_smaran_gate_2",
-        "name": "Chaithanya Smaran Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "chaithanya_smaran_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "chaithanya_smaran_club",
-        "name": "The Smaran Pavilion",
-        "description": "Lakeside pavilion, infinity pool and tennis court",
-        "x": 620,
-        "y": 270,
-        "roadNode": "chaithanya_smaran_n_mid",
-        "icon": "\ud83d\udc8e",
-        "type": "clubhouse"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "SMARAN BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "LOTUS PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "TRANQUIL WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "HOSKOTE LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "BANYAN DRIVE",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "chaithanya_smaran_gate_1",
-    "sectors": [
-      "Bespoke Villa North",
-      "Bespoke Villa South"
-    ]
+    "verified": true
   },
   "whitefield_inner_circle": {
     "id": "whitefield_inner_circle",
@@ -26316,7 +18122,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 480,
         "roadNode": "wic_park_ctr",
-        "icon": "\ud83c\udf33",
+        "icon": "🌳",
         "type": "park"
       }
     ],
@@ -26350,7 +18156,8 @@ window.LAYOUTS = {
     "sectors": [
       "Circle Park Sector",
       "Waverly Sector"
-    ]
+    ],
+    "verified": true
   },
   "sowparnika_columns": {
     "id": "sowparnika_columns",
@@ -26952,7 +18759,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 430,
         "roadNode": "scol_junc_ctr",
-        "icon": "\ud83c\udfdb\ufe0f",
+        "icon": "🏛️",
         "type": "clubhouse"
       }
     ],
@@ -26976,1831 +18783,8 @@ window.LAYOUTS = {
       "Doric Tower",
       "Ionic Tower",
       "Tuscan Tower"
-    ]
-  },
-  "doddakannelli_greens": {
-    "id": "doddakannelli_greens",
-    "name": "Doddakannelli Greens",
-    "location": "Carmelaram / Sarjapur Road, Bangalore East",
-    "zone": "whitefield",
-    "type": "Gated Community Layout",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "doddakannelli_greens_gate_1": {
-          "id": "doddakannelli_greens_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Doddakannelli Greens Gate 1 (Main Entrance)"
-        },
-        "doddakannelli_greens_entry": {
-          "id": "doddakannelli_greens_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "doddakannelli_greens_junc_w": {
-          "id": "doddakannelli_greens_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Wipro Link West Junction"
-        },
-        "doddakannelli_greens_junc_ctr": {
-          "id": "doddakannelli_greens_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "doddakannelli_greens_junc_e": {
-          "id": "doddakannelli_greens_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Railway Station Road East Junction"
-        },
-        "doddakannelli_greens_gate_2": {
-          "id": "doddakannelli_greens_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Doddakannelli Greens Gate 2 (Rear Entrance)"
-        },
-        "doddakannelli_greens_n_w": {
-          "id": "doddakannelli_greens_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Carmelaram Parkway West"
-        },
-        "doddakannelli_greens_n_mid": {
-          "id": "doddakannelli_greens_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Carmelaram Parkway North Plaza"
-        },
-        "doddakannelli_greens_n_e": {
-          "id": "doddakannelli_greens_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Carmelaram Parkway East"
-        },
-        "doddakannelli_greens_s_w": {
-          "id": "doddakannelli_greens_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Greenwood Way West"
-        },
-        "doddakannelli_greens_s_mid": {
-          "id": "doddakannelli_greens_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Greenwood Way South Plaza"
-        },
-        "doddakannelli_greens_s_e": {
-          "id": "doddakannelli_greens_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Greenwood Way East"
-        },
-        "doddakannelli_greens_w_n_mid": {
-          "id": "doddakannelli_greens_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Wipro Link North Link"
-        },
-        "doddakannelli_greens_w_s_mid": {
-          "id": "doddakannelli_greens_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Wipro Link South Link"
-        },
-        "doddakannelli_greens_ctr_n_mid": {
-          "id": "doddakannelli_greens_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "doddakannelli_greens_ctr_s_mid": {
-          "id": "doddakannelli_greens_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "doddakannelli_greens_e_n_mid": {
-          "id": "doddakannelli_greens_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Railway Station Road North Link"
-        },
-        "doddakannelli_greens_e_s_mid": {
-          "id": "doddakannelli_greens_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Railway Station Road South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "doddakannelli_greens_gate_1",
-          "v": "doddakannelli_greens_entry",
-          "road": "Doddakannelli Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "doddakannelli_greens_entry",
-          "v": "doddakannelli_greens_junc_w",
-          "road": "Doddakannelli Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "doddakannelli_greens_junc_w",
-          "v": "doddakannelli_greens_junc_ctr",
-          "road": "Doddakannelli Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "doddakannelli_greens_junc_ctr",
-          "v": "doddakannelli_greens_junc_e",
-          "road": "Doddakannelli Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "doddakannelli_greens_junc_e",
-          "v": "doddakannelli_greens_gate_2",
-          "road": "Doddakannelli Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "doddakannelli_greens_n_w",
-          "v": "doddakannelli_greens_n_mid",
-          "road": "Carmelaram Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "doddakannelli_greens_n_mid",
-          "v": "doddakannelli_greens_n_e",
-          "road": "Carmelaram Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "doddakannelli_greens_s_w",
-          "v": "doddakannelli_greens_s_mid",
-          "road": "Greenwood Way",
-          "type": "secondary"
-        },
-        {
-          "u": "doddakannelli_greens_s_mid",
-          "v": "doddakannelli_greens_s_e",
-          "road": "Greenwood Way",
-          "type": "secondary"
-        },
-        {
-          "u": "doddakannelli_greens_n_w",
-          "v": "doddakannelli_greens_w_n_mid",
-          "road": "Wipro Link",
-          "type": "secondary"
-        },
-        {
-          "u": "doddakannelli_greens_w_n_mid",
-          "v": "doddakannelli_greens_junc_w",
-          "road": "Wipro Link",
-          "type": "secondary"
-        },
-        {
-          "u": "doddakannelli_greens_junc_w",
-          "v": "doddakannelli_greens_w_s_mid",
-          "road": "Wipro Link",
-          "type": "secondary"
-        },
-        {
-          "u": "doddakannelli_greens_w_s_mid",
-          "v": "doddakannelli_greens_s_w",
-          "road": "Wipro Link",
-          "type": "secondary"
-        },
-        {
-          "u": "doddakannelli_greens_n_mid",
-          "v": "doddakannelli_greens_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "doddakannelli_greens_ctr_n_mid",
-          "v": "doddakannelli_greens_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "doddakannelli_greens_junc_ctr",
-          "v": "doddakannelli_greens_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "doddakannelli_greens_ctr_s_mid",
-          "v": "doddakannelli_greens_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "doddakannelli_greens_n_e",
-          "v": "doddakannelli_greens_e_n_mid",
-          "road": "Railway Station Road",
-          "type": "secondary"
-        },
-        {
-          "u": "doddakannelli_greens_e_n_mid",
-          "v": "doddakannelli_greens_junc_e",
-          "road": "Railway Station Road",
-          "type": "secondary"
-        },
-        {
-          "u": "doddakannelli_greens_junc_e",
-          "v": "doddakannelli_greens_e_s_mid",
-          "road": "Railway Station Road",
-          "type": "secondary"
-        },
-        {
-          "u": "doddakannelli_greens_e_s_mid",
-          "v": "doddakannelli_greens_s_e",
-          "road": "Railway Station Road",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "Carmelaram Parkway",
-        "block": "Greenwood Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "Carmelaram Parkway",
-        "block": "Greenwood Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "Carmelaram Parkway",
-        "block": "Greenwood Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "Carmelaram Parkway",
-        "block": "Greenwood Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "Carmelaram Parkway",
-        "block": "Greenwood Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "Carmelaram Parkway",
-        "block": "Greenwood Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "Carmelaram Parkway",
-        "block": "Greenwood Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "Carmelaram Parkway",
-        "block": "Greenwood Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "Carmelaram Parkway",
-        "block": "Lake View Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "Carmelaram Parkway",
-        "block": "Lake View Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "Carmelaram Parkway",
-        "block": "Lake View Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "Carmelaram Parkway",
-        "block": "Lake View Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "Carmelaram Parkway",
-        "block": "Lake View Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "Carmelaram Parkway",
-        "block": "Lake View Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "Carmelaram Parkway",
-        "block": "Lake View Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "Carmelaram Parkway",
-        "block": "Lake View Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "Greenwood Way",
-        "block": "Lake View Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "Greenwood Way",
-        "block": "Lake View Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "Greenwood Way",
-        "block": "Lake View Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "Greenwood Way",
-        "block": "Lake View Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "Greenwood Way",
-        "block": "Lake View Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "Greenwood Way",
-        "block": "Lake View Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "Greenwood Way",
-        "block": "Lake View Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "Greenwood Way",
-        "block": "Lake View Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "Greenwood Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "Greenwood Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "Greenwood Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "Greenwood Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "Greenwood Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "Greenwood Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "Greenwood Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "Greenwood Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Wipro Link",
-        "block": "Greenwood Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Wipro Link",
-        "block": "Greenwood Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Wipro Link",
-        "block": "Greenwood Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Wipro Link",
-        "block": "Greenwood Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Wipro Link",
-        "block": "Greenwood Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Wipro Link",
-        "block": "Greenwood Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Railway Station Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Railway Station Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Railway Station Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Railway Station Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Railway Station Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Railway Station Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "doddakannelli_greens_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "doddakannelli_greens_gate_1",
-        "name": "Doddakannelli Greens Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "doddakannelli_greens_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "doddakannelli_greens_gate_2",
-        "name": "Doddakannelli Greens Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "doddakannelli_greens_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "doddakannelli_greens_lake",
-        "name": "Carmelaram Lakefront Green",
-        "description": "Natural wetland park & jogging trail",
-        "x": 620,
-        "y": 690,
-        "roadNode": "doddakannelli_greens_s_mid",
-        "icon": "\ud83c\udf3f",
-        "type": "nature"
-      }
     ],
-    "roadLabels": [
-      {
-        "name": "DODDAKANNELLI MAIN BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "CARMELARAM PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "GREENWOOD WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "WIPRO LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "RAILWAY STATION ROAD",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "doddakannelli_greens_gate_1",
-    "sectors": [
-      "Greenwood Sector",
-      "Lake View Sector"
-    ]
-  },
-  "marathahalli_sgr": {
-    "id": "marathahalli_sgr",
-    "name": "Marathahalli SGR Layout",
-    "location": "Munnekollal / Marathahalli ORR, Bangalore East",
-    "zone": "whitefield",
-    "type": "Tech Residential Layout",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "marathahalli_sgr_gate_1": {
-          "id": "marathahalli_sgr_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Marathahalli SGR Layout Gate 1 (Main Entrance)"
-        },
-        "marathahalli_sgr_entry": {
-          "id": "marathahalli_sgr_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "marathahalli_sgr_junc_w": {
-          "id": "marathahalli_sgr_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Dental College Link West Junction"
-        },
-        "marathahalli_sgr_junc_ctr": {
-          "id": "marathahalli_sgr_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "marathahalli_sgr_junc_e": {
-          "id": "marathahalli_sgr_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Spice Garden Way East Junction"
-        },
-        "marathahalli_sgr_gate_2": {
-          "id": "marathahalli_sgr_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Marathahalli SGR Layout Gate 2 (Rear Entrance)"
-        },
-        "marathahalli_sgr_n_w": {
-          "id": "marathahalli_sgr_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Munnekollal Main Avenue West"
-        },
-        "marathahalli_sgr_n_mid": {
-          "id": "marathahalli_sgr_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Munnekollal Main Avenue North Plaza"
-        },
-        "marathahalli_sgr_n_e": {
-          "id": "marathahalli_sgr_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Munnekollal Main Avenue East"
-        },
-        "marathahalli_sgr_s_w": {
-          "id": "marathahalli_sgr_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "ORR Bypass Parkway West"
-        },
-        "marathahalli_sgr_s_mid": {
-          "id": "marathahalli_sgr_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "ORR Bypass Parkway South Plaza"
-        },
-        "marathahalli_sgr_s_e": {
-          "id": "marathahalli_sgr_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "ORR Bypass Parkway East"
-        },
-        "marathahalli_sgr_w_n_mid": {
-          "id": "marathahalli_sgr_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Dental College Link North Link"
-        },
-        "marathahalli_sgr_w_s_mid": {
-          "id": "marathahalli_sgr_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Dental College Link South Link"
-        },
-        "marathahalli_sgr_ctr_n_mid": {
-          "id": "marathahalli_sgr_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "marathahalli_sgr_ctr_s_mid": {
-          "id": "marathahalli_sgr_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "marathahalli_sgr_e_n_mid": {
-          "id": "marathahalli_sgr_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Spice Garden Way North Link"
-        },
-        "marathahalli_sgr_e_s_mid": {
-          "id": "marathahalli_sgr_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Spice Garden Way South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "marathahalli_sgr_gate_1",
-          "v": "marathahalli_sgr_entry",
-          "road": "SGR College Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "marathahalli_sgr_entry",
-          "v": "marathahalli_sgr_junc_w",
-          "road": "SGR College Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "marathahalli_sgr_junc_w",
-          "v": "marathahalli_sgr_junc_ctr",
-          "road": "SGR College Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "marathahalli_sgr_junc_ctr",
-          "v": "marathahalli_sgr_junc_e",
-          "road": "SGR College Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "marathahalli_sgr_junc_e",
-          "v": "marathahalli_sgr_gate_2",
-          "road": "SGR College Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "marathahalli_sgr_n_w",
-          "v": "marathahalli_sgr_n_mid",
-          "road": "Munnekollal Main Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "marathahalli_sgr_n_mid",
-          "v": "marathahalli_sgr_n_e",
-          "road": "Munnekollal Main Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "marathahalli_sgr_s_w",
-          "v": "marathahalli_sgr_s_mid",
-          "road": "ORR Bypass Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "marathahalli_sgr_s_mid",
-          "v": "marathahalli_sgr_s_e",
-          "road": "ORR Bypass Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "marathahalli_sgr_n_w",
-          "v": "marathahalli_sgr_w_n_mid",
-          "road": "Dental College Link",
-          "type": "secondary"
-        },
-        {
-          "u": "marathahalli_sgr_w_n_mid",
-          "v": "marathahalli_sgr_junc_w",
-          "road": "Dental College Link",
-          "type": "secondary"
-        },
-        {
-          "u": "marathahalli_sgr_junc_w",
-          "v": "marathahalli_sgr_w_s_mid",
-          "road": "Dental College Link",
-          "type": "secondary"
-        },
-        {
-          "u": "marathahalli_sgr_w_s_mid",
-          "v": "marathahalli_sgr_s_w",
-          "road": "Dental College Link",
-          "type": "secondary"
-        },
-        {
-          "u": "marathahalli_sgr_n_mid",
-          "v": "marathahalli_sgr_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "marathahalli_sgr_ctr_n_mid",
-          "v": "marathahalli_sgr_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "marathahalli_sgr_junc_ctr",
-          "v": "marathahalli_sgr_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "marathahalli_sgr_ctr_s_mid",
-          "v": "marathahalli_sgr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "marathahalli_sgr_n_e",
-          "v": "marathahalli_sgr_e_n_mid",
-          "road": "Spice Garden Way",
-          "type": "secondary"
-        },
-        {
-          "u": "marathahalli_sgr_e_n_mid",
-          "v": "marathahalli_sgr_junc_e",
-          "road": "Spice Garden Way",
-          "type": "secondary"
-        },
-        {
-          "u": "marathahalli_sgr_junc_e",
-          "v": "marathahalli_sgr_e_s_mid",
-          "road": "Spice Garden Way",
-          "type": "secondary"
-        },
-        {
-          "u": "marathahalli_sgr_e_s_mid",
-          "v": "marathahalli_sgr_s_e",
-          "road": "Spice Garden Way",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "Munnekollal Main Avenue",
-        "block": "College Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "Munnekollal Main Avenue",
-        "block": "College Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "Munnekollal Main Avenue",
-        "block": "College Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "Munnekollal Main Avenue",
-        "block": "College Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "Munnekollal Main Avenue",
-        "block": "College Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "Munnekollal Main Avenue",
-        "block": "College Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "Munnekollal Main Avenue",
-        "block": "College Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "Munnekollal Main Avenue",
-        "block": "College Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "Munnekollal Main Avenue",
-        "block": "ORR Link Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "Munnekollal Main Avenue",
-        "block": "ORR Link Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "Munnekollal Main Avenue",
-        "block": "ORR Link Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "Munnekollal Main Avenue",
-        "block": "ORR Link Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "Munnekollal Main Avenue",
-        "block": "ORR Link Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "Munnekollal Main Avenue",
-        "block": "ORR Link Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "Munnekollal Main Avenue",
-        "block": "ORR Link Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "Munnekollal Main Avenue",
-        "block": "ORR Link Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "ORR Bypass Parkway",
-        "block": "ORR Link Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "ORR Bypass Parkway",
-        "block": "ORR Link Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "ORR Bypass Parkway",
-        "block": "ORR Link Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "ORR Bypass Parkway",
-        "block": "ORR Link Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "ORR Bypass Parkway",
-        "block": "ORR Link Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "ORR Bypass Parkway",
-        "block": "ORR Link Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "ORR Bypass Parkway",
-        "block": "ORR Link Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "ORR Bypass Parkway",
-        "block": "ORR Link Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "ORR Bypass Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "ORR Bypass Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "ORR Bypass Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "ORR Bypass Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "ORR Bypass Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "ORR Bypass Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "ORR Bypass Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "ORR Bypass Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Dental College Link",
-        "block": "College Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Dental College Link",
-        "block": "College Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Dental College Link",
-        "block": "College Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Dental College Link",
-        "block": "College Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Dental College Link",
-        "block": "College Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Dental College Link",
-        "block": "College Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Spice Garden Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Spice Garden Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Spice Garden Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Spice Garden Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Spice Garden Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Spice Garden Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "marathahalli_sgr_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "marathahalli_sgr_gate_1",
-        "name": "Marathahalli SGR Layout Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "marathahalli_sgr_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "marathahalli_sgr_gate_2",
-        "name": "Marathahalli SGR Layout Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "marathahalli_sgr_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "marathahalli_sgr_hub",
-        "name": "Spice Garden Tech Commercial Hub",
-        "description": "Supermarkets, cafes, clinics and transit connections",
-        "x": 620,
-        "y": 480,
-        "roadNode": "marathahalli_sgr_junc_ctr",
-        "icon": "\u2615",
-        "type": "market"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "SGR COLLEGE BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "MUNNEKOLLAL MAIN AVENUE",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "ORR BYPASS PARKWAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "DENTAL COLLEGE LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "SPICE GARDEN WAY",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "marathahalli_sgr_gate_1",
-    "sectors": [
-      "College Sector",
-      "ORR Link Sector"
-    ]
+    "verified": true
   },
   "adarsh_palm_retreat": {
     "id": "adarsh_palm_retreat",
@@ -29397,7 +19381,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "apr_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       }
     ],
@@ -29427,2744 +19411,8 @@ window.LAYOUTS = {
       "Retreat Towers",
       "Palm Grove Villas",
       "Lakeside Enclave"
-    ]
-  },
-  "hsr_sector_1": {
-    "id": "hsr_sector_1",
-    "name": "HSR Layout Sector 1",
-    "location": "Agara Lake / Outer Ring Road, Bangalore South-East",
-    "zone": "ecity",
-    "type": "BDA Premier Planned Sector",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "hsr_sector_1_gate_1": {
-          "id": "hsr_sector_1_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "HSR Layout Sector 1 Gate 1 (Main Entrance)"
-        },
-        "hsr_sector_1_entry": {
-          "id": "hsr_sector_1_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "hsr_sector_1_junc_w": {
-          "id": "hsr_sector_1_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "ORR Link West Junction"
-        },
-        "hsr_sector_1_junc_ctr": {
-          "id": "hsr_sector_1_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "hsr_sector_1_junc_e": {
-          "id": "hsr_sector_1_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "19th Main Way East Junction"
-        },
-        "hsr_sector_1_gate_2": {
-          "id": "hsr_sector_1_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "HSR Layout Sector 1 Gate 2 (Rear Entrance)"
-        },
-        "hsr_sector_1_n_w": {
-          "id": "hsr_sector_1_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "14th Main Parkway West"
-        },
-        "hsr_sector_1_n_mid": {
-          "id": "hsr_sector_1_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "14th Main Parkway North Plaza"
-        },
-        "hsr_sector_1_n_e": {
-          "id": "hsr_sector_1_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "14th Main Parkway East"
-        },
-        "hsr_sector_1_s_w": {
-          "id": "hsr_sector_1_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Agara Lake Road West"
-        },
-        "hsr_sector_1_s_mid": {
-          "id": "hsr_sector_1_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Agara Lake Road South Plaza"
-        },
-        "hsr_sector_1_s_e": {
-          "id": "hsr_sector_1_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Agara Lake Road East"
-        },
-        "hsr_sector_1_w_n_mid": {
-          "id": "hsr_sector_1_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "ORR Link North Link"
-        },
-        "hsr_sector_1_w_s_mid": {
-          "id": "hsr_sector_1_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "ORR Link South Link"
-        },
-        "hsr_sector_1_ctr_n_mid": {
-          "id": "hsr_sector_1_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "hsr_sector_1_ctr_s_mid": {
-          "id": "hsr_sector_1_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "hsr_sector_1_e_n_mid": {
-          "id": "hsr_sector_1_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "19th Main Way North Link"
-        },
-        "hsr_sector_1_e_s_mid": {
-          "id": "hsr_sector_1_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "19th Main Way South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "hsr_sector_1_gate_1",
-          "v": "hsr_sector_1_entry",
-          "road": "27th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_1_entry",
-          "v": "hsr_sector_1_junc_w",
-          "road": "27th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_1_junc_w",
-          "v": "hsr_sector_1_junc_ctr",
-          "road": "27th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_1_junc_ctr",
-          "v": "hsr_sector_1_junc_e",
-          "road": "27th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_1_junc_e",
-          "v": "hsr_sector_1_gate_2",
-          "road": "27th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_1_n_w",
-          "v": "hsr_sector_1_n_mid",
-          "road": "14th Main Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_1_n_mid",
-          "v": "hsr_sector_1_n_e",
-          "road": "14th Main Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_1_s_w",
-          "v": "hsr_sector_1_s_mid",
-          "road": "Agara Lake Road",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_1_s_mid",
-          "v": "hsr_sector_1_s_e",
-          "road": "Agara Lake Road",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_1_n_w",
-          "v": "hsr_sector_1_w_n_mid",
-          "road": "ORR Link",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_1_w_n_mid",
-          "v": "hsr_sector_1_junc_w",
-          "road": "ORR Link",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_1_junc_w",
-          "v": "hsr_sector_1_w_s_mid",
-          "road": "ORR Link",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_1_w_s_mid",
-          "v": "hsr_sector_1_s_w",
-          "road": "ORR Link",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_1_n_mid",
-          "v": "hsr_sector_1_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_1_ctr_n_mid",
-          "v": "hsr_sector_1_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_1_junc_ctr",
-          "v": "hsr_sector_1_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_1_ctr_s_mid",
-          "v": "hsr_sector_1_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_1_n_e",
-          "v": "hsr_sector_1_e_n_mid",
-          "road": "19th Main Way",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_1_e_n_mid",
-          "v": "hsr_sector_1_junc_e",
-          "road": "19th Main Way",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_1_junc_e",
-          "v": "hsr_sector_1_e_s_mid",
-          "road": "19th Main Way",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_1_e_s_mid",
-          "v": "hsr_sector_1_s_e",
-          "road": "19th Main Way",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "14th Main Parkway",
-        "block": "Agara Lake Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "14th Main Parkway",
-        "block": "Agara Lake Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "14th Main Parkway",
-        "block": "Agara Lake Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "14th Main Parkway",
-        "block": "Agara Lake Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "14th Main Parkway",
-        "block": "Agara Lake Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "14th Main Parkway",
-        "block": "Agara Lake Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "14th Main Parkway",
-        "block": "Agara Lake Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "14th Main Parkway",
-        "block": "Agara Lake Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "14th Main Parkway",
-        "block": "27th Main Commercial",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "14th Main Parkway",
-        "block": "27th Main Commercial",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "14th Main Parkway",
-        "block": "27th Main Commercial",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "14th Main Parkway",
-        "block": "27th Main Commercial",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "14th Main Parkway",
-        "block": "27th Main Commercial",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "14th Main Parkway",
-        "block": "27th Main Commercial",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "14th Main Parkway",
-        "block": "27th Main Commercial",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "14th Main Parkway",
-        "block": "27th Main Commercial",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "Agara Lake Road",
-        "block": "27th Main Commercial",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "Agara Lake Road",
-        "block": "27th Main Commercial",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "Agara Lake Road",
-        "block": "27th Main Commercial",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "Agara Lake Road",
-        "block": "27th Main Commercial",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "Agara Lake Road",
-        "block": "27th Main Commercial",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "Agara Lake Road",
-        "block": "27th Main Commercial",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "Agara Lake Road",
-        "block": "27th Main Commercial",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "Agara Lake Road",
-        "block": "27th Main Commercial",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "Agara Lake Road",
-        "block": "14th Main Residential",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "Agara Lake Road",
-        "block": "14th Main Residential",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "Agara Lake Road",
-        "block": "14th Main Residential",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "Agara Lake Road",
-        "block": "14th Main Residential",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "Agara Lake Road",
-        "block": "14th Main Residential",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "Agara Lake Road",
-        "block": "14th Main Residential",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "Agara Lake Road",
-        "block": "14th Main Residential",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "Agara Lake Road",
-        "block": "14th Main Residential",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_1_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "ORR Link",
-        "block": "Agara Lake Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_1_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "ORR Link",
-        "block": "Agara Lake Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_1_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "ORR Link",
-        "block": "Agara Lake Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_1_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "ORR Link",
-        "block": "Agara Lake Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_1_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "ORR Link",
-        "block": "Agara Lake Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_1_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "ORR Link",
-        "block": "Agara Lake Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_1_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "19th Main Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_1_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "19th Main Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_1_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "19th Main Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_1_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "19th Main Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_1_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "19th Main Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_1_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "19th Main Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_1_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "hsr_sector_1_gate_1",
-        "name": "HSR Layout Sector 1 Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "hsr_sector_1_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "hsr_sector_1_gate_2",
-        "name": "HSR Layout Sector 1 Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "hsr_sector_1_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "hsr_sector_1_lake",
-        "name": "Agara Lake Botanical Promenade",
-        "description": "Restored lake with outdoor gym, jogging tracks and butterfly park",
-        "x": 620,
-        "y": 690,
-        "roadNode": "hsr_sector_1_s_mid",
-        "icon": "\ud83c\udf0a",
-        "type": "nature"
-      }
     ],
-    "roadLabels": [
-      {
-        "name": "27TH MAIN BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "14TH MAIN PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "AGARA LAKE ROAD",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "ORR LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "19TH MAIN WAY",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "hsr_sector_1_gate_1",
-    "sectors": [
-      "Agara Lake Sector",
-      "27th Main Commercial",
-      "14th Main Residential"
-    ]
-  },
-  "hsr_sector_2": {
-    "id": "hsr_sector_2",
-    "name": "HSR Layout Sector 2",
-    "location": "24th Main / Somasundarapalya, Bangalore South-East",
-    "zone": "ecity",
-    "type": "BDA Premier Planned Sector",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "hsr_sector_2_gate_1": {
-          "id": "hsr_sector_2_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "HSR Layout Sector 2 Gate 1 (Main Entrance)"
-        },
-        "hsr_sector_2_entry": {
-          "id": "hsr_sector_2_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "hsr_sector_2_junc_w": {
-          "id": "hsr_sector_2_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Parangipalya Link West Junction"
-        },
-        "hsr_sector_2_junc_ctr": {
-          "id": "hsr_sector_2_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "hsr_sector_2_junc_e": {
-          "id": "hsr_sector_2_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Club Avenue East Junction"
-        },
-        "hsr_sector_2_gate_2": {
-          "id": "hsr_sector_2_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "HSR Layout Sector 2 Gate 2 (Rear Entrance)"
-        },
-        "hsr_sector_2_n_w": {
-          "id": "hsr_sector_2_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Sector 2 Parkway West"
-        },
-        "hsr_sector_2_n_mid": {
-          "id": "hsr_sector_2_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Sector 2 Parkway North Plaza"
-        },
-        "hsr_sector_2_n_e": {
-          "id": "hsr_sector_2_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Sector 2 Parkway East"
-        },
-        "hsr_sector_2_s_w": {
-          "id": "hsr_sector_2_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Lake Road Way West"
-        },
-        "hsr_sector_2_s_mid": {
-          "id": "hsr_sector_2_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Lake Road Way South Plaza"
-        },
-        "hsr_sector_2_s_e": {
-          "id": "hsr_sector_2_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Lake Road Way East"
-        },
-        "hsr_sector_2_w_n_mid": {
-          "id": "hsr_sector_2_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Parangipalya Link North Link"
-        },
-        "hsr_sector_2_w_s_mid": {
-          "id": "hsr_sector_2_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Parangipalya Link South Link"
-        },
-        "hsr_sector_2_ctr_n_mid": {
-          "id": "hsr_sector_2_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "hsr_sector_2_ctr_s_mid": {
-          "id": "hsr_sector_2_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "hsr_sector_2_e_n_mid": {
-          "id": "hsr_sector_2_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Club Avenue North Link"
-        },
-        "hsr_sector_2_e_s_mid": {
-          "id": "hsr_sector_2_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Club Avenue South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "hsr_sector_2_gate_1",
-          "v": "hsr_sector_2_entry",
-          "road": "24th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_2_entry",
-          "v": "hsr_sector_2_junc_w",
-          "road": "24th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_2_junc_w",
-          "v": "hsr_sector_2_junc_ctr",
-          "road": "24th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_2_junc_ctr",
-          "v": "hsr_sector_2_junc_e",
-          "road": "24th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_2_junc_e",
-          "v": "hsr_sector_2_gate_2",
-          "road": "24th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_2_n_w",
-          "v": "hsr_sector_2_n_mid",
-          "road": "Sector 2 Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_2_n_mid",
-          "v": "hsr_sector_2_n_e",
-          "road": "Sector 2 Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_2_s_w",
-          "v": "hsr_sector_2_s_mid",
-          "road": "Lake Road Way",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_2_s_mid",
-          "v": "hsr_sector_2_s_e",
-          "road": "Lake Road Way",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_2_n_w",
-          "v": "hsr_sector_2_w_n_mid",
-          "road": "Parangipalya Link",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_2_w_n_mid",
-          "v": "hsr_sector_2_junc_w",
-          "road": "Parangipalya Link",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_2_junc_w",
-          "v": "hsr_sector_2_w_s_mid",
-          "road": "Parangipalya Link",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_2_w_s_mid",
-          "v": "hsr_sector_2_s_w",
-          "road": "Parangipalya Link",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_2_n_mid",
-          "v": "hsr_sector_2_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_2_ctr_n_mid",
-          "v": "hsr_sector_2_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_2_junc_ctr",
-          "v": "hsr_sector_2_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_2_ctr_s_mid",
-          "v": "hsr_sector_2_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_2_n_e",
-          "v": "hsr_sector_2_e_n_mid",
-          "road": "Club Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_2_e_n_mid",
-          "v": "hsr_sector_2_junc_e",
-          "road": "Club Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_2_junc_e",
-          "v": "hsr_sector_2_e_s_mid",
-          "road": "Club Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_2_e_s_mid",
-          "v": "hsr_sector_2_s_e",
-          "road": "Club Avenue",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "Sector 2 Parkway",
-        "block": "24th Main Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "Sector 2 Parkway",
-        "block": "24th Main Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "Sector 2 Parkway",
-        "block": "24th Main Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "Sector 2 Parkway",
-        "block": "24th Main Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "Sector 2 Parkway",
-        "block": "24th Main Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "Sector 2 Parkway",
-        "block": "24th Main Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "Sector 2 Parkway",
-        "block": "24th Main Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "Sector 2 Parkway",
-        "block": "24th Main Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "Sector 2 Parkway",
-        "block": "Somasundara Lake Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "Sector 2 Parkway",
-        "block": "Somasundara Lake Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "Sector 2 Parkway",
-        "block": "Somasundara Lake Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "Sector 2 Parkway",
-        "block": "Somasundara Lake Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "Sector 2 Parkway",
-        "block": "Somasundara Lake Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "Sector 2 Parkway",
-        "block": "Somasundara Lake Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "Sector 2 Parkway",
-        "block": "Somasundara Lake Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "Sector 2 Parkway",
-        "block": "Somasundara Lake Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "Lake Road Way",
-        "block": "Somasundara Lake Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "Lake Road Way",
-        "block": "Somasundara Lake Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "Lake Road Way",
-        "block": "Somasundara Lake Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "Lake Road Way",
-        "block": "Somasundara Lake Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "Lake Road Way",
-        "block": "Somasundara Lake Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "Lake Road Way",
-        "block": "Somasundara Lake Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "Lake Road Way",
-        "block": "Somasundara Lake Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "Lake Road Way",
-        "block": "Somasundara Lake Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "Lake Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "Lake Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "Lake Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "Lake Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "Lake Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "Lake Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "Lake Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "Lake Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_2_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Parangipalya Link",
-        "block": "24th Main Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_2_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Parangipalya Link",
-        "block": "24th Main Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_2_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Parangipalya Link",
-        "block": "24th Main Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_2_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Parangipalya Link",
-        "block": "24th Main Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_2_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Parangipalya Link",
-        "block": "24th Main Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_2_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Parangipalya Link",
-        "block": "24th Main Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_2_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Club Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_2_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Club Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_2_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Club Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_2_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Club Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_2_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Club Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_2_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Club Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_2_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "hsr_sector_2_gate_1",
-        "name": "HSR Layout Sector 2 Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "hsr_sector_2_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "hsr_sector_2_gate_2",
-        "name": "HSR Layout Sector 2 Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "hsr_sector_2_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "hsr_sector_2_club",
-        "name": "HSR Club",
-        "description": "Premier residential club with tennis, swimming, billiards and library",
-        "x": 620,
-        "y": 270,
-        "roadNode": "hsr_sector_2_n_mid",
-        "icon": "\ud83c\udfbe",
-        "type": "clubhouse"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "24TH MAIN BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "SECTOR 2 PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "LAKE ROAD WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "PARANGIPALYA LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "CLUB AVENUE",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "hsr_sector_2_gate_1",
-    "sectors": [
-      "24th Main Sector",
-      "Somasundara Lake Sector"
-    ]
-  },
-  "hsr_sector_3": {
-    "id": "hsr_sector_3",
-    "name": "HSR Layout Sector 3",
-    "location": "19th Main / BDA Complex, Bangalore South-East",
-    "zone": "ecity",
-    "type": "BDA Premier Planned Sector",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "hsr_sector_3_gate_1": {
-          "id": "hsr_sector_3_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "HSR Layout Sector 3 Gate 1 (Main Entrance)"
-        },
-        "hsr_sector_3_entry": {
-          "id": "hsr_sector_3_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "hsr_sector_3_junc_w": {
-          "id": "hsr_sector_3_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Silk Board Link West Junction"
-        },
-        "hsr_sector_3_junc_ctr": {
-          "id": "hsr_sector_3_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "hsr_sector_3_junc_e": {
-          "id": "hsr_sector_3_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Central Park Drive East Junction"
-        },
-        "hsr_sector_3_gate_2": {
-          "id": "hsr_sector_3_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "HSR Layout Sector 3 Gate 2 (Rear Entrance)"
-        },
-        "hsr_sector_3_n_w": {
-          "id": "hsr_sector_3_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "BDA Complex Parkway West"
-        },
-        "hsr_sector_3_n_mid": {
-          "id": "hsr_sector_3_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "BDA Complex Parkway North Plaza"
-        },
-        "hsr_sector_3_n_e": {
-          "id": "hsr_sector_3_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "BDA Complex Parkway East"
-        },
-        "hsr_sector_3_s_w": {
-          "id": "hsr_sector_3_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "9th Cross Way West"
-        },
-        "hsr_sector_3_s_mid": {
-          "id": "hsr_sector_3_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "9th Cross Way South Plaza"
-        },
-        "hsr_sector_3_s_e": {
-          "id": "hsr_sector_3_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "9th Cross Way East"
-        },
-        "hsr_sector_3_w_n_mid": {
-          "id": "hsr_sector_3_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Silk Board Link North Link"
-        },
-        "hsr_sector_3_w_s_mid": {
-          "id": "hsr_sector_3_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Silk Board Link South Link"
-        },
-        "hsr_sector_3_ctr_n_mid": {
-          "id": "hsr_sector_3_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "hsr_sector_3_ctr_s_mid": {
-          "id": "hsr_sector_3_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "hsr_sector_3_e_n_mid": {
-          "id": "hsr_sector_3_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Central Park Drive North Link"
-        },
-        "hsr_sector_3_e_s_mid": {
-          "id": "hsr_sector_3_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Central Park Drive South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "hsr_sector_3_gate_1",
-          "v": "hsr_sector_3_entry",
-          "road": "19th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_3_entry",
-          "v": "hsr_sector_3_junc_w",
-          "road": "19th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_3_junc_w",
-          "v": "hsr_sector_3_junc_ctr",
-          "road": "19th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_3_junc_ctr",
-          "v": "hsr_sector_3_junc_e",
-          "road": "19th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_3_junc_e",
-          "v": "hsr_sector_3_gate_2",
-          "road": "19th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_3_n_w",
-          "v": "hsr_sector_3_n_mid",
-          "road": "BDA Complex Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_3_n_mid",
-          "v": "hsr_sector_3_n_e",
-          "road": "BDA Complex Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_3_s_w",
-          "v": "hsr_sector_3_s_mid",
-          "road": "9th Cross Way",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_3_s_mid",
-          "v": "hsr_sector_3_s_e",
-          "road": "9th Cross Way",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_3_n_w",
-          "v": "hsr_sector_3_w_n_mid",
-          "road": "Silk Board Link",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_3_w_n_mid",
-          "v": "hsr_sector_3_junc_w",
-          "road": "Silk Board Link",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_3_junc_w",
-          "v": "hsr_sector_3_w_s_mid",
-          "road": "Silk Board Link",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_3_w_s_mid",
-          "v": "hsr_sector_3_s_w",
-          "road": "Silk Board Link",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_3_n_mid",
-          "v": "hsr_sector_3_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_3_ctr_n_mid",
-          "v": "hsr_sector_3_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_3_junc_ctr",
-          "v": "hsr_sector_3_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_3_ctr_s_mid",
-          "v": "hsr_sector_3_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "hsr_sector_3_n_e",
-          "v": "hsr_sector_3_e_n_mid",
-          "road": "Central Park Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_3_e_n_mid",
-          "v": "hsr_sector_3_junc_e",
-          "road": "Central Park Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_3_junc_e",
-          "v": "hsr_sector_3_e_s_mid",
-          "road": "Central Park Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "hsr_sector_3_e_s_mid",
-          "v": "hsr_sector_3_s_e",
-          "road": "Central Park Drive",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "BDA Complex Parkway",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "BDA Complex Parkway",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "BDA Complex Parkway",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "BDA Complex Parkway",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "BDA Complex Parkway",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "BDA Complex Parkway",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "BDA Complex Parkway",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "BDA Complex Parkway",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "BDA Complex Parkway",
-        "block": "Sector 3 Residential",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "BDA Complex Parkway",
-        "block": "Sector 3 Residential",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "BDA Complex Parkway",
-        "block": "Sector 3 Residential",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "BDA Complex Parkway",
-        "block": "Sector 3 Residential",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "BDA Complex Parkway",
-        "block": "Sector 3 Residential",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "BDA Complex Parkway",
-        "block": "Sector 3 Residential",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "BDA Complex Parkway",
-        "block": "Sector 3 Residential",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "BDA Complex Parkway",
-        "block": "Sector 3 Residential",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "9th Cross Way",
-        "block": "Sector 3 Residential",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "9th Cross Way",
-        "block": "Sector 3 Residential",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "9th Cross Way",
-        "block": "Sector 3 Residential",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "9th Cross Way",
-        "block": "Sector 3 Residential",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "9th Cross Way",
-        "block": "Sector 3 Residential",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "9th Cross Way",
-        "block": "Sector 3 Residential",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "9th Cross Way",
-        "block": "Sector 3 Residential",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "9th Cross Way",
-        "block": "Sector 3 Residential",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "9th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "9th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "9th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "9th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "9th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "9th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "9th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "9th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "hsr_sector_3_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Silk Board Link",
-        "block": "BDA Complex Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_3_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Silk Board Link",
-        "block": "BDA Complex Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_3_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Silk Board Link",
-        "block": "BDA Complex Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_3_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Silk Board Link",
-        "block": "BDA Complex Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_3_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Silk Board Link",
-        "block": "BDA Complex Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_3_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Silk Board Link",
-        "block": "BDA Complex Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_3_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Central Park Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_3_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Central Park Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_3_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Central Park Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_3_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Central Park Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_3_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Central Park Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_3_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Central Park Drive",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "hsr_sector_3_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "hsr_sector_3_gate_1",
-        "name": "HSR Layout Sector 3 Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "hsr_sector_3_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "hsr_sector_3_gate_2",
-        "name": "HSR Layout Sector 3 Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "hsr_sector_3_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "hsr_sector_3_complex",
-        "name": "HSR BDA Complex & Cultural Ground",
-        "description": "Major civic shopping hub, public library and open grounds",
-        "x": 620,
-        "y": 480,
-        "roadNode": "hsr_sector_3_junc_ctr",
-        "icon": "\ud83c\udfdb\ufe0f",
-        "type": "civic"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "19TH MAIN BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "BDA COMPLEX PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "9TH CROSS WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "SILK BOARD LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "CENTRAL PARK DRIVE",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "hsr_sector_3_gate_1",
-    "sectors": [
-      "BDA Complex Sector",
-      "Sector 3 Residential"
-    ]
+    "verified": true
   },
   "green_glen": {
     "id": "green_glen",
@@ -32632,7 +19880,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "gg_junc_ctr",
-        "icon": "\ud83c\udf33",
+        "icon": "🌳",
         "type": "park"
       }
     ],
@@ -32661,919 +19909,8 @@ window.LAYOUTS = {
       "Glen North Block",
       "Glen South Block",
       "Lakeview Residency"
-    ]
-  },
-  "concorde_cuppertino": {
-    "id": "concorde_cuppertino",
-    "name": "Concorde Cuppertino",
-    "location": "Neeladri Road, Electronic City Phase 1, Bangalore",
-    "zone": "ecity",
-    "type": "Gated Community Villas",
-    "unitType": "Villa",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "concorde_cuppertino_gate_1": {
-          "id": "concorde_cuppertino_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Concorde Cuppertino Gate 1 (Main Entrance)"
-        },
-        "concorde_cuppertino_entry": {
-          "id": "concorde_cuppertino_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "concorde_cuppertino_junc_w": {
-          "id": "concorde_cuppertino_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Wipro Access Link West Junction"
-        },
-        "concorde_cuppertino_junc_ctr": {
-          "id": "concorde_cuppertino_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "concorde_cuppertino_junc_e": {
-          "id": "concorde_cuppertino_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Central Promenade East Junction"
-        },
-        "concorde_cuppertino_gate_2": {
-          "id": "concorde_cuppertino_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Concorde Cuppertino Gate 2 (Rear Entrance)"
-        },
-        "concorde_cuppertino_n_w": {
-          "id": "concorde_cuppertino_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Neeladri Parkway West"
-        },
-        "concorde_cuppertino_n_mid": {
-          "id": "concorde_cuppertino_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Neeladri Parkway North Plaza"
-        },
-        "concorde_cuppertino_n_e": {
-          "id": "concorde_cuppertino_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Neeladri Parkway East"
-        },
-        "concorde_cuppertino_s_w": {
-          "id": "concorde_cuppertino_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Silicon Way West"
-        },
-        "concorde_cuppertino_s_mid": {
-          "id": "concorde_cuppertino_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Silicon Way South Plaza"
-        },
-        "concorde_cuppertino_s_e": {
-          "id": "concorde_cuppertino_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Silicon Way East"
-        },
-        "concorde_cuppertino_w_n_mid": {
-          "id": "concorde_cuppertino_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Wipro Access Link North Link"
-        },
-        "concorde_cuppertino_w_s_mid": {
-          "id": "concorde_cuppertino_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Wipro Access Link South Link"
-        },
-        "concorde_cuppertino_ctr_n_mid": {
-          "id": "concorde_cuppertino_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "concorde_cuppertino_ctr_s_mid": {
-          "id": "concorde_cuppertino_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "concorde_cuppertino_e_n_mid": {
-          "id": "concorde_cuppertino_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Central Promenade North Link"
-        },
-        "concorde_cuppertino_e_s_mid": {
-          "id": "concorde_cuppertino_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Central Promenade South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "concorde_cuppertino_gate_1",
-          "v": "concorde_cuppertino_entry",
-          "road": "Cuppertino Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "concorde_cuppertino_entry",
-          "v": "concorde_cuppertino_junc_w",
-          "road": "Cuppertino Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "concorde_cuppertino_junc_w",
-          "v": "concorde_cuppertino_junc_ctr",
-          "road": "Cuppertino Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "concorde_cuppertino_junc_ctr",
-          "v": "concorde_cuppertino_junc_e",
-          "road": "Cuppertino Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "concorde_cuppertino_junc_e",
-          "v": "concorde_cuppertino_gate_2",
-          "road": "Cuppertino Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "concorde_cuppertino_n_w",
-          "v": "concorde_cuppertino_n_mid",
-          "road": "Neeladri Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_cuppertino_n_mid",
-          "v": "concorde_cuppertino_n_e",
-          "road": "Neeladri Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_cuppertino_s_w",
-          "v": "concorde_cuppertino_s_mid",
-          "road": "Silicon Way",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_cuppertino_s_mid",
-          "v": "concorde_cuppertino_s_e",
-          "road": "Silicon Way",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_cuppertino_n_w",
-          "v": "concorde_cuppertino_w_n_mid",
-          "road": "Wipro Access Link",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_cuppertino_w_n_mid",
-          "v": "concorde_cuppertino_junc_w",
-          "road": "Wipro Access Link",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_cuppertino_junc_w",
-          "v": "concorde_cuppertino_w_s_mid",
-          "road": "Wipro Access Link",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_cuppertino_w_s_mid",
-          "v": "concorde_cuppertino_s_w",
-          "road": "Wipro Access Link",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_cuppertino_n_mid",
-          "v": "concorde_cuppertino_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "concorde_cuppertino_ctr_n_mid",
-          "v": "concorde_cuppertino_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "concorde_cuppertino_junc_ctr",
-          "v": "concorde_cuppertino_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "concorde_cuppertino_ctr_s_mid",
-          "v": "concorde_cuppertino_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "concorde_cuppertino_n_e",
-          "v": "concorde_cuppertino_e_n_mid",
-          "road": "Central Promenade",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_cuppertino_e_n_mid",
-          "v": "concorde_cuppertino_junc_e",
-          "road": "Central Promenade",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_cuppertino_junc_e",
-          "v": "concorde_cuppertino_e_s_mid",
-          "road": "Central Promenade",
-          "type": "secondary"
-        },
-        {
-          "u": "concorde_cuppertino_e_s_mid",
-          "v": "concorde_cuppertino_s_e",
-          "road": "Central Promenade",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Villa 1",
-        "road": "Neeladri Parkway",
-        "block": "Villa West",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Villa 2",
-        "road": "Neeladri Parkway",
-        "block": "Villa West",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Villa 3",
-        "road": "Neeladri Parkway",
-        "block": "Villa West",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Villa 4",
-        "road": "Neeladri Parkway",
-        "block": "Villa West",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Villa 5",
-        "road": "Neeladri Parkway",
-        "block": "Villa West",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Villa 6",
-        "road": "Neeladri Parkway",
-        "block": "Villa West",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Villa 7",
-        "road": "Neeladri Parkway",
-        "block": "Villa West",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Villa 8",
-        "road": "Neeladri Parkway",
-        "block": "Villa West",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Villa 9",
-        "road": "Neeladri Parkway",
-        "block": "Villa East",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Villa 10",
-        "road": "Neeladri Parkway",
-        "block": "Villa East",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Villa 11",
-        "road": "Neeladri Parkway",
-        "block": "Villa East",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Villa 12",
-        "road": "Neeladri Parkway",
-        "block": "Villa East",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Villa 13",
-        "road": "Neeladri Parkway",
-        "block": "Villa East",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Villa 14",
-        "road": "Neeladri Parkway",
-        "block": "Villa East",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Villa 15",
-        "road": "Neeladri Parkway",
-        "block": "Villa East",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Villa 16",
-        "road": "Neeladri Parkway",
-        "block": "Villa East",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Villa 17",
-        "road": "Silicon Way",
-        "block": "Villa East",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Villa 18",
-        "road": "Silicon Way",
-        "block": "Villa East",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Villa 19",
-        "road": "Silicon Way",
-        "block": "Villa East",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Villa 20",
-        "road": "Silicon Way",
-        "block": "Villa East",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Villa 21",
-        "road": "Silicon Way",
-        "block": "Villa East",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Villa 22",
-        "road": "Silicon Way",
-        "block": "Villa East",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Villa 23",
-        "road": "Silicon Way",
-        "block": "Villa East",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Villa 24",
-        "road": "Silicon Way",
-        "block": "Villa East",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Villa 25",
-        "road": "Silicon Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Villa 26",
-        "road": "Silicon Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Villa 27",
-        "road": "Silicon Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Villa 28",
-        "road": "Silicon Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Villa 29",
-        "road": "Silicon Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Villa 30",
-        "road": "Silicon Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Villa 31",
-        "road": "Silicon Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Villa 32",
-        "road": "Silicon Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Villa 33",
-        "road": "Wipro Access Link",
-        "block": "Villa West",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Villa 34",
-        "road": "Wipro Access Link",
-        "block": "Villa West",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Villa 35",
-        "road": "Wipro Access Link",
-        "block": "Villa West",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Villa 36",
-        "road": "Wipro Access Link",
-        "block": "Villa West",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Villa 37",
-        "road": "Wipro Access Link",
-        "block": "Villa West",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Villa 38",
-        "road": "Wipro Access Link",
-        "block": "Villa West",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Villa 39",
-        "road": "Central Promenade",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Villa 40",
-        "road": "Central Promenade",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Villa 41",
-        "road": "Central Promenade",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Villa 42",
-        "road": "Central Promenade",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Villa 43",
-        "road": "Central Promenade",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Villa 44",
-        "road": "Central Promenade",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "concorde_cuppertino_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "concorde_cuppertino_gate_1",
-        "name": "Concorde Cuppertino Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "concorde_cuppertino_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "concorde_cuppertino_gate_2",
-        "name": "Concorde Cuppertino Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "concorde_cuppertino_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "concorde_cuppertino_club",
-        "name": "Club Cuppertino",
-        "description": "Swimming pool, tennis court, bowling alley & gym",
-        "x": 620,
-        "y": 270,
-        "roadNode": "concorde_cuppertino_n_mid",
-        "icon": "\ud83c\udfca",
-        "type": "clubhouse"
-      }
     ],
-    "roadLabels": [
-      {
-        "name": "CUPPERTINO BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "NEELADRI PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "SILICON WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "WIPRO ACCESS LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "CENTRAL PROMENADE",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "concorde_cuppertino_gate_1",
-    "sectors": [
-      "Villa West",
-      "Villa East"
-    ]
+    "verified": true
   },
   "neo_town": {
     "id": "neo_town",
@@ -34041,7 +20378,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "nt_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       }
     ],
@@ -34070,7 +20407,8 @@ window.LAYOUTS = {
       "Smondoville Tower",
       "Neo Silicon Block",
       "Infy View Tower"
-    ]
+    ],
+    "verified": true
   },
   "sobha_city": {
     "id": "sobha_city",
@@ -34679,7 +21017,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "sc_junc_ctr",
-        "icon": "\ud83c\udfd6\ufe0f",
+        "icon": "🏖️",
         "type": "water"
       },
       {
@@ -34689,7 +21027,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 250,
         "roadNode": "sc_junc_ctr",
-        "icon": "\ud83c\udfdb\ufe0f",
+        "icon": "🏛️",
         "type": "clubhouse"
       }
     ],
@@ -34725,7 +21063,8 @@ window.LAYOUTS = {
       "Casa Serena Tower",
       "Mykonos Block",
       "Amalfi Wing"
-    ]
+    ],
+    "verified": true
   },
   "bhartiya_city": {
     "id": "bhartiya_city",
@@ -34770,7 +21109,7 @@ window.LAYOUTS = {
         "w": 420,
         "h": 55,
         "rx": 6,
-        "label": "\ud83d\udecd\ufe0f Bhartiya Rambler High Street Retail",
+        "label": "🛍️ Bhartiya Rambler High Street Retail",
         "fill": "#1e1b4b",
         "stroke": "#3b82f6"
       }
@@ -35333,7 +21672,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 380,
         "roadNode": "bc_junc_ctr",
-        "icon": "\ud83e\udda2",
+        "icon": "🦢",
         "type": "clubhouse"
       },
       {
@@ -35343,7 +21682,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "bc_junc_ctr",
-        "icon": "\ud83c\udf33",
+        "icon": "🌳",
         "type": "park"
       }
     ],
@@ -35379,7 +21718,8 @@ window.LAYOUTS = {
       "Nikoo Homes B",
       "Central Park Enclave",
       "Sky Villa Tower"
-    ]
+    ],
+    "verified": true
   },
   "manyata_residency": {
     "id": "manyata_residency",
@@ -35410,7 +21750,7 @@ window.LAYOUTS = {
         "w": 220,
         "h": 180,
         "rx": 8,
-        "label": "\ud83d\udcbc Embassy Manyata Tech Park",
+        "label": "💼 Embassy Manyata Tech Park",
         "fill": "#0f172a",
         "stroke": "#38bdf8"
       }
@@ -35851,7 +22191,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "mr_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       }
     ],
@@ -35880,7 +22220,8 @@ window.LAYOUTS = {
       "Residency North",
       "Residency South",
       "Tech Enclave Block"
-    ]
+    ],
+    "verified": true
   },
   "prestige_golfshire": {
     "id": "prestige_golfshire",
@@ -35925,7 +22266,7 @@ window.LAYOUTS = {
         "w": 200,
         "h": 100,
         "rx": 8,
-        "label": "\ud83c\udfe8 JW Marriott Golf Resort & Spa",
+        "label": "🏨 JW Marriott Golf Resort & Spa",
         "fill": "#1e1b4b",
         "stroke": "#f59e0b"
       }
@@ -36488,7 +22829,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "pg_junc_ctr",
-        "icon": "\u26f3",
+        "icon": "⛳",
         "type": "sports"
       },
       {
@@ -36498,7 +22839,7 @@ window.LAYOUTS = {
         "x": 760,
         "y": 430,
         "roadNode": "pg_junc_e",
-        "icon": "\ud83c\udfe8",
+        "icon": "🏨",
         "type": "hotel"
       }
     ],
@@ -36528,7 +22869,8 @@ window.LAYOUTS = {
       "Nandi View Mansions",
       "Lakeview Golf Villas",
       "Putting Green Villas"
-    ]
+    ],
+    "verified": true
   },
   "ozone_urbana": {
     "id": "ozone_urbana",
@@ -37003,7 +23345,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "ou_junc_ctr",
-        "icon": "\ud83c\udfcf",
+        "icon": "🏏",
         "type": "sports"
       }
     ],
@@ -37032,7 +23374,8 @@ window.LAYOUTS = {
       "Urbana Prime",
       "Urbana Aqua",
       "Urbana Meadows"
-    ]
+    ],
+    "verified": true
   },
   "rmz_galleria": {
     "id": "rmz_galleria",
@@ -37070,7 +23413,7 @@ window.LAYOUTS = {
         "w": 520,
         "h": 110,
         "rx": 8,
-        "label": "\ud83d\udecd\ufe0f RMZ Galleria Mall & INOX Multiplex",
+        "label": "🛍️ RMZ Galleria Mall & INOX Multiplex",
         "fill": "#1e1b4b",
         "stroke": "#6366f1"
       }
@@ -37407,7 +23750,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 680,
         "roadNode": "rmz_mall_s",
-        "icon": "\ud83d\udecd\ufe0f",
+        "icon": "🛍️",
         "type": "mall"
       },
       {
@@ -37417,7 +23760,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 420,
         "roadNode": "rmz_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       }
     ],
@@ -37445,7 +23788,8 @@ window.LAYOUTS = {
     "sectors": [
       "Tower A",
       "Tower B"
-    ]
+    ],
+    "verified": true
   },
   "prestige_misty_waters": {
     "id": "prestige_misty_waters",
@@ -37791,7 +24135,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "pmw_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       }
     ],
@@ -37813,7 +24157,8 @@ window.LAYOUTS = {
     "sectors": [
       "Tower A",
       "Tower B"
-    ]
+    ],
+    "verified": true
   },
   "godrej_woodsman": {
     "id": "godrej_woodsman",
@@ -38159,7 +24504,7 @@ window.LAYOUTS = {
         "x": 620,
         "y": 440,
         "roadNode": "gw_junc_ctr",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       }
     ],
@@ -38181,5479 +24526,8 @@ window.LAYOUTS = {
     "sectors": [
       "Woodsman Tower A",
       "Woodsman Tower B"
-    ]
-  },
-  "jakkur_aerodrome": {
-    "id": "jakkur_aerodrome",
-    "name": "Jakkur Aerodrome Lakeview",
-    "location": "Jakkur Main Road / Lake, Bangalore North",
-    "zone": "north",
-    "type": "Scenic Waterfront Layout",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "jakkur_aerodrome_gate_1": {
-          "id": "jakkur_aerodrome_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Jakkur Aerodrome Lakeview Gate 1 (Main Entrance)"
-        },
-        "jakkur_aerodrome_entry": {
-          "id": "jakkur_aerodrome_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "jakkur_aerodrome_junc_w": {
-          "id": "jakkur_aerodrome_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Flying Club Link West Junction"
-        },
-        "jakkur_aerodrome_junc_ctr": {
-          "id": "jakkur_aerodrome_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "jakkur_aerodrome_junc_e": {
-          "id": "jakkur_aerodrome_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Bellary Highway Road East Junction"
-        },
-        "jakkur_aerodrome_gate_2": {
-          "id": "jakkur_aerodrome_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Jakkur Aerodrome Lakeview Gate 2 (Rear Entrance)"
-        },
-        "jakkur_aerodrome_n_w": {
-          "id": "jakkur_aerodrome_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Aerodrome Parkway West"
-        },
-        "jakkur_aerodrome_n_mid": {
-          "id": "jakkur_aerodrome_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Aerodrome Parkway North Plaza"
-        },
-        "jakkur_aerodrome_n_e": {
-          "id": "jakkur_aerodrome_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Aerodrome Parkway East"
-        },
-        "jakkur_aerodrome_s_w": {
-          "id": "jakkur_aerodrome_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Flyer Avenue West"
-        },
-        "jakkur_aerodrome_s_mid": {
-          "id": "jakkur_aerodrome_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Flyer Avenue South Plaza"
-        },
-        "jakkur_aerodrome_s_e": {
-          "id": "jakkur_aerodrome_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Flyer Avenue East"
-        },
-        "jakkur_aerodrome_w_n_mid": {
-          "id": "jakkur_aerodrome_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Flying Club Link North Link"
-        },
-        "jakkur_aerodrome_w_s_mid": {
-          "id": "jakkur_aerodrome_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Flying Club Link South Link"
-        },
-        "jakkur_aerodrome_ctr_n_mid": {
-          "id": "jakkur_aerodrome_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "jakkur_aerodrome_ctr_s_mid": {
-          "id": "jakkur_aerodrome_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "jakkur_aerodrome_e_n_mid": {
-          "id": "jakkur_aerodrome_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Bellary Highway Road North Link"
-        },
-        "jakkur_aerodrome_e_s_mid": {
-          "id": "jakkur_aerodrome_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Bellary Highway Road South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "jakkur_aerodrome_gate_1",
-          "v": "jakkur_aerodrome_entry",
-          "road": "Jakkur Lake Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jakkur_aerodrome_entry",
-          "v": "jakkur_aerodrome_junc_w",
-          "road": "Jakkur Lake Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jakkur_aerodrome_junc_w",
-          "v": "jakkur_aerodrome_junc_ctr",
-          "road": "Jakkur Lake Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jakkur_aerodrome_junc_ctr",
-          "v": "jakkur_aerodrome_junc_e",
-          "road": "Jakkur Lake Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jakkur_aerodrome_junc_e",
-          "v": "jakkur_aerodrome_gate_2",
-          "road": "Jakkur Lake Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "jakkur_aerodrome_n_w",
-          "v": "jakkur_aerodrome_n_mid",
-          "road": "Aerodrome Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "jakkur_aerodrome_n_mid",
-          "v": "jakkur_aerodrome_n_e",
-          "road": "Aerodrome Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "jakkur_aerodrome_s_w",
-          "v": "jakkur_aerodrome_s_mid",
-          "road": "Flyer Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "jakkur_aerodrome_s_mid",
-          "v": "jakkur_aerodrome_s_e",
-          "road": "Flyer Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "jakkur_aerodrome_n_w",
-          "v": "jakkur_aerodrome_w_n_mid",
-          "road": "Flying Club Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jakkur_aerodrome_w_n_mid",
-          "v": "jakkur_aerodrome_junc_w",
-          "road": "Flying Club Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jakkur_aerodrome_junc_w",
-          "v": "jakkur_aerodrome_w_s_mid",
-          "road": "Flying Club Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jakkur_aerodrome_w_s_mid",
-          "v": "jakkur_aerodrome_s_w",
-          "road": "Flying Club Link",
-          "type": "secondary"
-        },
-        {
-          "u": "jakkur_aerodrome_n_mid",
-          "v": "jakkur_aerodrome_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jakkur_aerodrome_ctr_n_mid",
-          "v": "jakkur_aerodrome_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jakkur_aerodrome_junc_ctr",
-          "v": "jakkur_aerodrome_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jakkur_aerodrome_ctr_s_mid",
-          "v": "jakkur_aerodrome_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "jakkur_aerodrome_n_e",
-          "v": "jakkur_aerodrome_e_n_mid",
-          "road": "Bellary Highway Road",
-          "type": "secondary"
-        },
-        {
-          "u": "jakkur_aerodrome_e_n_mid",
-          "v": "jakkur_aerodrome_junc_e",
-          "road": "Bellary Highway Road",
-          "type": "secondary"
-        },
-        {
-          "u": "jakkur_aerodrome_junc_e",
-          "v": "jakkur_aerodrome_e_s_mid",
-          "road": "Bellary Highway Road",
-          "type": "secondary"
-        },
-        {
-          "u": "jakkur_aerodrome_e_s_mid",
-          "v": "jakkur_aerodrome_s_e",
-          "road": "Bellary Highway Road",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "Aerodrome Parkway",
-        "block": "Aerodrome Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "Aerodrome Parkway",
-        "block": "Aerodrome Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "Aerodrome Parkway",
-        "block": "Aerodrome Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "Aerodrome Parkway",
-        "block": "Aerodrome Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "Aerodrome Parkway",
-        "block": "Aerodrome Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "Aerodrome Parkway",
-        "block": "Aerodrome Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "Aerodrome Parkway",
-        "block": "Aerodrome Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "Aerodrome Parkway",
-        "block": "Aerodrome Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "Aerodrome Parkway",
-        "block": "Lakefront Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "Aerodrome Parkway",
-        "block": "Lakefront Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "Aerodrome Parkway",
-        "block": "Lakefront Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "Aerodrome Parkway",
-        "block": "Lakefront Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "Aerodrome Parkway",
-        "block": "Lakefront Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "Aerodrome Parkway",
-        "block": "Lakefront Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "Aerodrome Parkway",
-        "block": "Lakefront Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "Aerodrome Parkway",
-        "block": "Lakefront Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "Flyer Avenue",
-        "block": "Lakefront Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "Flyer Avenue",
-        "block": "Lakefront Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "Flyer Avenue",
-        "block": "Lakefront Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "Flyer Avenue",
-        "block": "Lakefront Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "Flyer Avenue",
-        "block": "Lakefront Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "Flyer Avenue",
-        "block": "Lakefront Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "Flyer Avenue",
-        "block": "Lakefront Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "Flyer Avenue",
-        "block": "Lakefront Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "Flyer Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "Flyer Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "Flyer Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "Flyer Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "Flyer Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "Flyer Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "Flyer Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "Flyer Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Flying Club Link",
-        "block": "Aerodrome Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Flying Club Link",
-        "block": "Aerodrome Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Flying Club Link",
-        "block": "Aerodrome Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Flying Club Link",
-        "block": "Aerodrome Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Flying Club Link",
-        "block": "Aerodrome Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Flying Club Link",
-        "block": "Aerodrome Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Bellary Highway Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Bellary Highway Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Bellary Highway Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Bellary Highway Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Bellary Highway Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Bellary Highway Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "jakkur_aerodrome_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "jakkur_aerodrome_gate_1",
-        "name": "Jakkur Aerodrome Lakeview Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "jakkur_aerodrome_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "jakkur_aerodrome_gate_2",
-        "name": "Jakkur Aerodrome Lakeview Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "jakkur_aerodrome_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "jakkur_aerodrome_lake",
-        "name": "Jakkur Lake Wetland & Bird Hide",
-        "description": "Pristine lake, walking boardwalks and migratory pelican sanctuary",
-        "x": 620,
-        "y": 690,
-        "roadNode": "jakkur_aerodrome_s_mid",
-        "icon": "\ud83e\udd85",
-        "type": "nature"
-      }
     ],
-    "roadLabels": [
-      {
-        "name": "JAKKUR LAKE BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "AERODROME PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "FLYER AVENUE",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "FLYING CLUB LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "BELLARY HIGHWAY ROAD",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "jakkur_aerodrome_gate_1",
-    "sectors": [
-      "Aerodrome Sector",
-      "Lakefront Sector"
-    ]
-  },
-  "kempapura_lakeview": {
-    "id": "kempapura_lakeview",
-    "name": "Kempapura Lakeview",
-    "location": "Hebbal Kempapura / Coffee Board Layout, Bangalore North",
-    "zone": "north",
-    "type": "Established Residential Enclave",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "kempapura_lakeview_gate_1": {
-          "id": "kempapura_lakeview_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Kempapura Lakeview Gate 1 (Main Entrance)"
-        },
-        "kempapura_lakeview_entry": {
-          "id": "kempapura_lakeview_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "kempapura_lakeview_junc_w": {
-          "id": "kempapura_lakeview_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Esteem Mall Link West Junction"
-        },
-        "kempapura_lakeview_junc_ctr": {
-          "id": "kempapura_lakeview_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "kempapura_lakeview_junc_e": {
-          "id": "kempapura_lakeview_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Ring Road Bypass East Junction"
-        },
-        "kempapura_lakeview_gate_2": {
-          "id": "kempapura_lakeview_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Kempapura Lakeview Gate 2 (Rear Entrance)"
-        },
-        "kempapura_lakeview_n_w": {
-          "id": "kempapura_lakeview_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Coffee Board Parkway West"
-        },
-        "kempapura_lakeview_n_mid": {
-          "id": "kempapura_lakeview_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Coffee Board Parkway North Plaza"
-        },
-        "kempapura_lakeview_n_e": {
-          "id": "kempapura_lakeview_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Coffee Board Parkway East"
-        },
-        "kempapura_lakeview_s_w": {
-          "id": "kempapura_lakeview_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Hebbal Lake Drive West"
-        },
-        "kempapura_lakeview_s_mid": {
-          "id": "kempapura_lakeview_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Hebbal Lake Drive South Plaza"
-        },
-        "kempapura_lakeview_s_e": {
-          "id": "kempapura_lakeview_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Hebbal Lake Drive East"
-        },
-        "kempapura_lakeview_w_n_mid": {
-          "id": "kempapura_lakeview_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Esteem Mall Link North Link"
-        },
-        "kempapura_lakeview_w_s_mid": {
-          "id": "kempapura_lakeview_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Esteem Mall Link South Link"
-        },
-        "kempapura_lakeview_ctr_n_mid": {
-          "id": "kempapura_lakeview_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "kempapura_lakeview_ctr_s_mid": {
-          "id": "kempapura_lakeview_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "kempapura_lakeview_e_n_mid": {
-          "id": "kempapura_lakeview_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Ring Road Bypass North Link"
-        },
-        "kempapura_lakeview_e_s_mid": {
-          "id": "kempapura_lakeview_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Ring Road Bypass South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "kempapura_lakeview_gate_1",
-          "v": "kempapura_lakeview_entry",
-          "road": "Kempapura Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "kempapura_lakeview_entry",
-          "v": "kempapura_lakeview_junc_w",
-          "road": "Kempapura Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "kempapura_lakeview_junc_w",
-          "v": "kempapura_lakeview_junc_ctr",
-          "road": "Kempapura Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "kempapura_lakeview_junc_ctr",
-          "v": "kempapura_lakeview_junc_e",
-          "road": "Kempapura Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "kempapura_lakeview_junc_e",
-          "v": "kempapura_lakeview_gate_2",
-          "road": "Kempapura Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "kempapura_lakeview_n_w",
-          "v": "kempapura_lakeview_n_mid",
-          "road": "Coffee Board Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "kempapura_lakeview_n_mid",
-          "v": "kempapura_lakeview_n_e",
-          "road": "Coffee Board Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "kempapura_lakeview_s_w",
-          "v": "kempapura_lakeview_s_mid",
-          "road": "Hebbal Lake Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "kempapura_lakeview_s_mid",
-          "v": "kempapura_lakeview_s_e",
-          "road": "Hebbal Lake Drive",
-          "type": "secondary"
-        },
-        {
-          "u": "kempapura_lakeview_n_w",
-          "v": "kempapura_lakeview_w_n_mid",
-          "road": "Esteem Mall Link",
-          "type": "secondary"
-        },
-        {
-          "u": "kempapura_lakeview_w_n_mid",
-          "v": "kempapura_lakeview_junc_w",
-          "road": "Esteem Mall Link",
-          "type": "secondary"
-        },
-        {
-          "u": "kempapura_lakeview_junc_w",
-          "v": "kempapura_lakeview_w_s_mid",
-          "road": "Esteem Mall Link",
-          "type": "secondary"
-        },
-        {
-          "u": "kempapura_lakeview_w_s_mid",
-          "v": "kempapura_lakeview_s_w",
-          "road": "Esteem Mall Link",
-          "type": "secondary"
-        },
-        {
-          "u": "kempapura_lakeview_n_mid",
-          "v": "kempapura_lakeview_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "kempapura_lakeview_ctr_n_mid",
-          "v": "kempapura_lakeview_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "kempapura_lakeview_junc_ctr",
-          "v": "kempapura_lakeview_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "kempapura_lakeview_ctr_s_mid",
-          "v": "kempapura_lakeview_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "kempapura_lakeview_n_e",
-          "v": "kempapura_lakeview_e_n_mid",
-          "road": "Ring Road Bypass",
-          "type": "secondary"
-        },
-        {
-          "u": "kempapura_lakeview_e_n_mid",
-          "v": "kempapura_lakeview_junc_e",
-          "road": "Ring Road Bypass",
-          "type": "secondary"
-        },
-        {
-          "u": "kempapura_lakeview_junc_e",
-          "v": "kempapura_lakeview_e_s_mid",
-          "road": "Ring Road Bypass",
-          "type": "secondary"
-        },
-        {
-          "u": "kempapura_lakeview_e_s_mid",
-          "v": "kempapura_lakeview_s_e",
-          "road": "Ring Road Bypass",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "Coffee Board Parkway",
-        "block": "Coffee Board Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "Coffee Board Parkway",
-        "block": "Coffee Board Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "Coffee Board Parkway",
-        "block": "Coffee Board Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "Coffee Board Parkway",
-        "block": "Coffee Board Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "Coffee Board Parkway",
-        "block": "Coffee Board Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "Coffee Board Parkway",
-        "block": "Coffee Board Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "Coffee Board Parkway",
-        "block": "Coffee Board Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "Coffee Board Parkway",
-        "block": "Coffee Board Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "Coffee Board Parkway",
-        "block": "Kempapura Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "Coffee Board Parkway",
-        "block": "Kempapura Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "Coffee Board Parkway",
-        "block": "Kempapura Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "Coffee Board Parkway",
-        "block": "Kempapura Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "Coffee Board Parkway",
-        "block": "Kempapura Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "Coffee Board Parkway",
-        "block": "Kempapura Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "Coffee Board Parkway",
-        "block": "Kempapura Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "Coffee Board Parkway",
-        "block": "Kempapura Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "Hebbal Lake Drive",
-        "block": "Kempapura Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "Hebbal Lake Drive",
-        "block": "Kempapura Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "Hebbal Lake Drive",
-        "block": "Kempapura Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "Hebbal Lake Drive",
-        "block": "Kempapura Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "Hebbal Lake Drive",
-        "block": "Kempapura Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "Hebbal Lake Drive",
-        "block": "Kempapura Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "Hebbal Lake Drive",
-        "block": "Kempapura Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "Hebbal Lake Drive",
-        "block": "Kempapura Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "Hebbal Lake Drive",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "Hebbal Lake Drive",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "Hebbal Lake Drive",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "Hebbal Lake Drive",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "Hebbal Lake Drive",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "Hebbal Lake Drive",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "Hebbal Lake Drive",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "Hebbal Lake Drive",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Esteem Mall Link",
-        "block": "Coffee Board Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Esteem Mall Link",
-        "block": "Coffee Board Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Esteem Mall Link",
-        "block": "Coffee Board Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Esteem Mall Link",
-        "block": "Coffee Board Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Esteem Mall Link",
-        "block": "Coffee Board Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Esteem Mall Link",
-        "block": "Coffee Board Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Ring Road Bypass",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Ring Road Bypass",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Ring Road Bypass",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Ring Road Bypass",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Ring Road Bypass",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Ring Road Bypass",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "kempapura_lakeview_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "kempapura_lakeview_gate_1",
-        "name": "Kempapura Lakeview Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "kempapura_lakeview_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "kempapura_lakeview_gate_2",
-        "name": "Kempapura Lakeview Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "kempapura_lakeview_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "kempapura_lakeview_lake",
-        "name": "Hebbal Lake Recreational Park",
-        "description": "Heritage lake, boating, landscaped jogging paths",
-        "x": 620,
-        "y": 690,
-        "roadNode": "kempapura_lakeview_s_mid",
-        "icon": "\ud83c\udf0a",
-        "type": "nature"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "KEMPAPURA MAIN BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "COFFEE BOARD PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "HEBBAL LAKE DRIVE",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "ESTEEM MALL LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "RING ROAD BYPASS",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "kempapura_lakeview_gate_1",
-    "sectors": [
-      "Coffee Board Sector",
-      "Kempapura Sector"
-    ]
-  },
-  "koramangala_4th": {
-    "id": "koramangala_4th",
-    "name": "Koramangala 4th Block",
-    "location": "Maharaja Agrasen Road / ST Bed, Bangalore Central",
-    "zone": "west",
-    "type": "Premier Elite Residential Layout",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "koramangala_4th_gate_1": {
-          "id": "koramangala_4th_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Koramangala 4th Block Gate 1 (Main Entrance)"
-        },
-        "koramangala_4th_entry": {
-          "id": "koramangala_4th_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "koramangala_4th_junc_w": {
-          "id": "koramangala_4th_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Sony World Link West Junction"
-        },
-        "koramangala_4th_junc_ctr": {
-          "id": "koramangala_4th_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "koramangala_4th_junc_e": {
-          "id": "koramangala_4th_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Inner Ring Connector East Junction"
-        },
-        "koramangala_4th_gate_2": {
-          "id": "koramangala_4th_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Koramangala 4th Block Gate 2 (Rear Entrance)"
-        },
-        "koramangala_4th_n_w": {
-          "id": "koramangala_4th_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "80ft Road Parkway West"
-        },
-        "koramangala_4th_n_mid": {
-          "id": "koramangala_4th_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "80ft Road Parkway North Plaza"
-        },
-        "koramangala_4th_n_e": {
-          "id": "koramangala_4th_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "80ft Road Parkway East"
-        },
-        "koramangala_4th_s_w": {
-          "id": "koramangala_4th_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "ST Bed Main Way West"
-        },
-        "koramangala_4th_s_mid": {
-          "id": "koramangala_4th_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "ST Bed Main Way South Plaza"
-        },
-        "koramangala_4th_s_e": {
-          "id": "koramangala_4th_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "ST Bed Main Way East"
-        },
-        "koramangala_4th_w_n_mid": {
-          "id": "koramangala_4th_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Sony World Link North Link"
-        },
-        "koramangala_4th_w_s_mid": {
-          "id": "koramangala_4th_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Sony World Link South Link"
-        },
-        "koramangala_4th_ctr_n_mid": {
-          "id": "koramangala_4th_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "koramangala_4th_ctr_s_mid": {
-          "id": "koramangala_4th_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "koramangala_4th_e_n_mid": {
-          "id": "koramangala_4th_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Inner Ring Connector North Link"
-        },
-        "koramangala_4th_e_s_mid": {
-          "id": "koramangala_4th_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Inner Ring Connector South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "koramangala_4th_gate_1",
-          "v": "koramangala_4th_entry",
-          "road": "Maharaja Avenue Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_4th_entry",
-          "v": "koramangala_4th_junc_w",
-          "road": "Maharaja Avenue Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_4th_junc_w",
-          "v": "koramangala_4th_junc_ctr",
-          "road": "Maharaja Avenue Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_4th_junc_ctr",
-          "v": "koramangala_4th_junc_e",
-          "road": "Maharaja Avenue Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_4th_junc_e",
-          "v": "koramangala_4th_gate_2",
-          "road": "Maharaja Avenue Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_4th_n_w",
-          "v": "koramangala_4th_n_mid",
-          "road": "80ft Road Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_4th_n_mid",
-          "v": "koramangala_4th_n_e",
-          "road": "80ft Road Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_4th_s_w",
-          "v": "koramangala_4th_s_mid",
-          "road": "ST Bed Main Way",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_4th_s_mid",
-          "v": "koramangala_4th_s_e",
-          "road": "ST Bed Main Way",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_4th_n_w",
-          "v": "koramangala_4th_w_n_mid",
-          "road": "Sony World Link",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_4th_w_n_mid",
-          "v": "koramangala_4th_junc_w",
-          "road": "Sony World Link",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_4th_junc_w",
-          "v": "koramangala_4th_w_s_mid",
-          "road": "Sony World Link",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_4th_w_s_mid",
-          "v": "koramangala_4th_s_w",
-          "road": "Sony World Link",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_4th_n_mid",
-          "v": "koramangala_4th_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_4th_ctr_n_mid",
-          "v": "koramangala_4th_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_4th_junc_ctr",
-          "v": "koramangala_4th_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_4th_ctr_s_mid",
-          "v": "koramangala_4th_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_4th_n_e",
-          "v": "koramangala_4th_e_n_mid",
-          "road": "Inner Ring Connector",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_4th_e_n_mid",
-          "v": "koramangala_4th_junc_e",
-          "road": "Inner Ring Connector",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_4th_junc_e",
-          "v": "koramangala_4th_e_s_mid",
-          "road": "Inner Ring Connector",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_4th_e_s_mid",
-          "v": "koramangala_4th_s_e",
-          "road": "Inner Ring Connector",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "80ft Road Parkway",
-        "block": "ST Bed Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "80ft Road Parkway",
-        "block": "ST Bed Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "80ft Road Parkway",
-        "block": "ST Bed Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "80ft Road Parkway",
-        "block": "ST Bed Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "80ft Road Parkway",
-        "block": "ST Bed Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "80ft Road Parkway",
-        "block": "ST Bed Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "80ft Road Parkway",
-        "block": "ST Bed Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "80ft Road Parkway",
-        "block": "ST Bed Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "80ft Road Parkway",
-        "block": "Maharaja Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "80ft Road Parkway",
-        "block": "Maharaja Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "80ft Road Parkway",
-        "block": "Maharaja Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "80ft Road Parkway",
-        "block": "Maharaja Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "80ft Road Parkway",
-        "block": "Maharaja Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "80ft Road Parkway",
-        "block": "Maharaja Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "80ft Road Parkway",
-        "block": "Maharaja Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "80ft Road Parkway",
-        "block": "Maharaja Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "ST Bed Main Way",
-        "block": "Maharaja Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "ST Bed Main Way",
-        "block": "Maharaja Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "ST Bed Main Way",
-        "block": "Maharaja Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "ST Bed Main Way",
-        "block": "Maharaja Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "ST Bed Main Way",
-        "block": "Maharaja Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "ST Bed Main Way",
-        "block": "Maharaja Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "ST Bed Main Way",
-        "block": "Maharaja Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "ST Bed Main Way",
-        "block": "Maharaja Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "ST Bed Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "ST Bed Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "ST Bed Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "ST Bed Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "ST Bed Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "ST Bed Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "ST Bed Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "ST Bed Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_4th_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Sony World Link",
-        "block": "ST Bed Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_4th_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Sony World Link",
-        "block": "ST Bed Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_4th_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Sony World Link",
-        "block": "ST Bed Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_4th_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Sony World Link",
-        "block": "ST Bed Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_4th_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Sony World Link",
-        "block": "ST Bed Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_4th_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Sony World Link",
-        "block": "ST Bed Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_4th_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Inner Ring Connector",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_4th_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Inner Ring Connector",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_4th_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Inner Ring Connector",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_4th_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Inner Ring Connector",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_4th_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Inner Ring Connector",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_4th_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Inner Ring Connector",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_4th_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "koramangala_4th_gate_1",
-        "name": "Koramangala 4th Block Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "koramangala_4th_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "koramangala_4th_gate_2",
-        "name": "Koramangala 4th Block Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "koramangala_4th_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "koramangala_4th_park",
-        "name": "Koramangala 4th Block Park & Library",
-        "description": "Tranquil canopy park, senior walk and public library",
-        "x": 620,
-        "y": 270,
-        "roadNode": "koramangala_4th_n_mid",
-        "icon": "\u2615",
-        "type": "park"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "MAHARAJA AVENUE BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "80FT ROAD PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "ST BED MAIN WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "SONY WORLD LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "INNER RING CONNECTOR",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "koramangala_4th_gate_1",
-    "sectors": [
-      "ST Bed Sector",
-      "Maharaja Sector"
-    ]
-  },
-  "koramangala_3rd": {
-    "id": "koramangala_3rd",
-    "name": "Koramangala 3rd Block",
-    "location": "Billionaire Row / 12th Main, Bangalore Central",
-    "zone": "west",
-    "type": "Billionaires Row Residential Enclave",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "koramangala_3rd_gate_1": {
-          "id": "koramangala_3rd_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Koramangala 3rd Block Gate 1 (Main Entrance)"
-        },
-        "koramangala_3rd_entry": {
-          "id": "koramangala_3rd_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "koramangala_3rd_junc_w": {
-          "id": "koramangala_3rd_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Sarjapur Junction Link West Junction"
-        },
-        "koramangala_3rd_junc_ctr": {
-          "id": "koramangala_3rd_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "koramangala_3rd_junc_e": {
-          "id": "koramangala_3rd_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Koramangala Club Road East Junction"
-        },
-        "koramangala_3rd_gate_2": {
-          "id": "koramangala_3rd_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Koramangala 3rd Block Gate 2 (Rear Entrance)"
-        },
-        "koramangala_3rd_n_w": {
-          "id": "koramangala_3rd_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Billionaire Row Parkway West"
-        },
-        "koramangala_3rd_n_mid": {
-          "id": "koramangala_3rd_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Billionaire Row Parkway North Plaza"
-        },
-        "koramangala_3rd_n_e": {
-          "id": "koramangala_3rd_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Billionaire Row Parkway East"
-        },
-        "koramangala_3rd_s_w": {
-          "id": "koramangala_3rd_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "10th Cross Way West"
-        },
-        "koramangala_3rd_s_mid": {
-          "id": "koramangala_3rd_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "10th Cross Way South Plaza"
-        },
-        "koramangala_3rd_s_e": {
-          "id": "koramangala_3rd_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "10th Cross Way East"
-        },
-        "koramangala_3rd_w_n_mid": {
-          "id": "koramangala_3rd_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Sarjapur Junction Link North Link"
-        },
-        "koramangala_3rd_w_s_mid": {
-          "id": "koramangala_3rd_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Sarjapur Junction Link South Link"
-        },
-        "koramangala_3rd_ctr_n_mid": {
-          "id": "koramangala_3rd_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "koramangala_3rd_ctr_s_mid": {
-          "id": "koramangala_3rd_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "koramangala_3rd_e_n_mid": {
-          "id": "koramangala_3rd_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Koramangala Club Road North Link"
-        },
-        "koramangala_3rd_e_s_mid": {
-          "id": "koramangala_3rd_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Koramangala Club Road South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "koramangala_3rd_gate_1",
-          "v": "koramangala_3rd_entry",
-          "road": "12th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_3rd_entry",
-          "v": "koramangala_3rd_junc_w",
-          "road": "12th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_3rd_junc_w",
-          "v": "koramangala_3rd_junc_ctr",
-          "road": "12th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_3rd_junc_ctr",
-          "v": "koramangala_3rd_junc_e",
-          "road": "12th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_3rd_junc_e",
-          "v": "koramangala_3rd_gate_2",
-          "road": "12th Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_3rd_n_w",
-          "v": "koramangala_3rd_n_mid",
-          "road": "Billionaire Row Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_3rd_n_mid",
-          "v": "koramangala_3rd_n_e",
-          "road": "Billionaire Row Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_3rd_s_w",
-          "v": "koramangala_3rd_s_mid",
-          "road": "10th Cross Way",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_3rd_s_mid",
-          "v": "koramangala_3rd_s_e",
-          "road": "10th Cross Way",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_3rd_n_w",
-          "v": "koramangala_3rd_w_n_mid",
-          "road": "Sarjapur Junction Link",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_3rd_w_n_mid",
-          "v": "koramangala_3rd_junc_w",
-          "road": "Sarjapur Junction Link",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_3rd_junc_w",
-          "v": "koramangala_3rd_w_s_mid",
-          "road": "Sarjapur Junction Link",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_3rd_w_s_mid",
-          "v": "koramangala_3rd_s_w",
-          "road": "Sarjapur Junction Link",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_3rd_n_mid",
-          "v": "koramangala_3rd_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_3rd_ctr_n_mid",
-          "v": "koramangala_3rd_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_3rd_junc_ctr",
-          "v": "koramangala_3rd_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_3rd_ctr_s_mid",
-          "v": "koramangala_3rd_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "koramangala_3rd_n_e",
-          "v": "koramangala_3rd_e_n_mid",
-          "road": "Koramangala Club Road",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_3rd_e_n_mid",
-          "v": "koramangala_3rd_junc_e",
-          "road": "Koramangala Club Road",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_3rd_junc_e",
-          "v": "koramangala_3rd_e_s_mid",
-          "road": "Koramangala Club Road",
-          "type": "secondary"
-        },
-        {
-          "u": "koramangala_3rd_e_s_mid",
-          "v": "koramangala_3rd_s_e",
-          "road": "Koramangala Club Road",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "Billionaire Row Parkway",
-        "block": "Billionaires Row",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "Billionaire Row Parkway",
-        "block": "Billionaires Row",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "Billionaire Row Parkway",
-        "block": "Billionaires Row",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "Billionaire Row Parkway",
-        "block": "Billionaires Row",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "Billionaire Row Parkway",
-        "block": "Billionaires Row",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "Billionaire Row Parkway",
-        "block": "Billionaires Row",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "Billionaire Row Parkway",
-        "block": "Billionaires Row",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "Billionaire Row Parkway",
-        "block": "Billionaires Row",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "Billionaire Row Parkway",
-        "block": "12th Main Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "Billionaire Row Parkway",
-        "block": "12th Main Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "Billionaire Row Parkway",
-        "block": "12th Main Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "Billionaire Row Parkway",
-        "block": "12th Main Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "Billionaire Row Parkway",
-        "block": "12th Main Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "Billionaire Row Parkway",
-        "block": "12th Main Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "Billionaire Row Parkway",
-        "block": "12th Main Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "Billionaire Row Parkway",
-        "block": "12th Main Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "10th Cross Way",
-        "block": "12th Main Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "10th Cross Way",
-        "block": "12th Main Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "10th Cross Way",
-        "block": "12th Main Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "10th Cross Way",
-        "block": "12th Main Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "10th Cross Way",
-        "block": "12th Main Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "10th Cross Way",
-        "block": "12th Main Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "10th Cross Way",
-        "block": "12th Main Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "10th Cross Way",
-        "block": "12th Main Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "10th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "10th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "10th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "10th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "10th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "10th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "10th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "10th Cross Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "koramangala_3rd_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Sarjapur Junction Link",
-        "block": "Billionaires Row",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_3rd_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Sarjapur Junction Link",
-        "block": "Billionaires Row",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_3rd_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Sarjapur Junction Link",
-        "block": "Billionaires Row",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_3rd_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Sarjapur Junction Link",
-        "block": "Billionaires Row",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_3rd_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Sarjapur Junction Link",
-        "block": "Billionaires Row",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_3rd_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Sarjapur Junction Link",
-        "block": "Billionaires Row",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_3rd_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Koramangala Club Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_3rd_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Koramangala Club Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_3rd_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Koramangala Club Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_3rd_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Koramangala Club Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_3rd_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Koramangala Club Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_3rd_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Koramangala Club Road",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "koramangala_3rd_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "koramangala_3rd_gate_1",
-        "name": "Koramangala 3rd Block Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "koramangala_3rd_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "koramangala_3rd_gate_2",
-        "name": "Koramangala 3rd Block Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "koramangala_3rd_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "koramangala_3rd_club",
-        "name": "The Koramangala Club",
-        "description": "Prestigious members club with tennis, swimming, squash and dining",
-        "x": 620,
-        "y": 270,
-        "roadNode": "koramangala_3rd_n_mid",
-        "icon": "\ud83c\udfbe",
-        "type": "clubhouse"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "12TH MAIN BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "BILLIONAIRE ROW PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "10TH CROSS WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "SARJAPUR JUNCTION LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "KORAMANGALA CLUB ROAD",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "koramangala_3rd_gate_1",
-    "sectors": [
-      "Billionaires Row",
-      "12th Main Sector"
-    ]
-  },
-  "indiranagar_defence": {
-    "id": "indiranagar_defence",
-    "name": "Defence Colony Indiranagar",
-    "location": "100ft Road / CMH Road, Bangalore Central",
-    "zone": "west",
-    "type": "Colonial Heritage Defense Layout",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "indiranagar_defence_gate_1": {
-          "id": "indiranagar_defence_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Defence Colony Indiranagar Gate 1 (Main Entrance)"
-        },
-        "indiranagar_defence_entry": {
-          "id": "indiranagar_defence_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "indiranagar_defence_junc_w": {
-          "id": "indiranagar_defence_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Officers Club Link West Junction"
-        },
-        "indiranagar_defence_junc_ctr": {
-          "id": "indiranagar_defence_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "indiranagar_defence_junc_e": {
-          "id": "indiranagar_defence_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Metro Station Avenue East Junction"
-        },
-        "indiranagar_defence_gate_2": {
-          "id": "indiranagar_defence_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Defence Colony Indiranagar Gate 2 (Rear Entrance)"
-        },
-        "indiranagar_defence_n_w": {
-          "id": "indiranagar_defence_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "100ft Road Parkway West"
-        },
-        "indiranagar_defence_n_mid": {
-          "id": "indiranagar_defence_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "100ft Road Parkway North Plaza"
-        },
-        "indiranagar_defence_n_e": {
-          "id": "indiranagar_defence_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "100ft Road Parkway East"
-        },
-        "indiranagar_defence_s_w": {
-          "id": "indiranagar_defence_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "CMH Road Way West"
-        },
-        "indiranagar_defence_s_mid": {
-          "id": "indiranagar_defence_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "CMH Road Way South Plaza"
-        },
-        "indiranagar_defence_s_e": {
-          "id": "indiranagar_defence_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "CMH Road Way East"
-        },
-        "indiranagar_defence_w_n_mid": {
-          "id": "indiranagar_defence_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Officers Club Link North Link"
-        },
-        "indiranagar_defence_w_s_mid": {
-          "id": "indiranagar_defence_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Officers Club Link South Link"
-        },
-        "indiranagar_defence_ctr_n_mid": {
-          "id": "indiranagar_defence_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "indiranagar_defence_ctr_s_mid": {
-          "id": "indiranagar_defence_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "indiranagar_defence_e_n_mid": {
-          "id": "indiranagar_defence_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Metro Station Avenue North Link"
-        },
-        "indiranagar_defence_e_s_mid": {
-          "id": "indiranagar_defence_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Metro Station Avenue South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "indiranagar_defence_gate_1",
-          "v": "indiranagar_defence_entry",
-          "road": "Defence Colony Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_defence_entry",
-          "v": "indiranagar_defence_junc_w",
-          "road": "Defence Colony Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_defence_junc_w",
-          "v": "indiranagar_defence_junc_ctr",
-          "road": "Defence Colony Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_defence_junc_ctr",
-          "v": "indiranagar_defence_junc_e",
-          "road": "Defence Colony Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_defence_junc_e",
-          "v": "indiranagar_defence_gate_2",
-          "road": "Defence Colony Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_defence_n_w",
-          "v": "indiranagar_defence_n_mid",
-          "road": "100ft Road Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_defence_n_mid",
-          "v": "indiranagar_defence_n_e",
-          "road": "100ft Road Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_defence_s_w",
-          "v": "indiranagar_defence_s_mid",
-          "road": "CMH Road Way",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_defence_s_mid",
-          "v": "indiranagar_defence_s_e",
-          "road": "CMH Road Way",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_defence_n_w",
-          "v": "indiranagar_defence_w_n_mid",
-          "road": "Officers Club Link",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_defence_w_n_mid",
-          "v": "indiranagar_defence_junc_w",
-          "road": "Officers Club Link",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_defence_junc_w",
-          "v": "indiranagar_defence_w_s_mid",
-          "road": "Officers Club Link",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_defence_w_s_mid",
-          "v": "indiranagar_defence_s_w",
-          "road": "Officers Club Link",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_defence_n_mid",
-          "v": "indiranagar_defence_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_defence_ctr_n_mid",
-          "v": "indiranagar_defence_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_defence_junc_ctr",
-          "v": "indiranagar_defence_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_defence_ctr_s_mid",
-          "v": "indiranagar_defence_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_defence_n_e",
-          "v": "indiranagar_defence_e_n_mid",
-          "road": "Metro Station Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_defence_e_n_mid",
-          "v": "indiranagar_defence_junc_e",
-          "road": "Metro Station Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_defence_junc_e",
-          "v": "indiranagar_defence_e_s_mid",
-          "road": "Metro Station Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_defence_e_s_mid",
-          "v": "indiranagar_defence_s_e",
-          "road": "Metro Station Avenue",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "100ft Road Parkway",
-        "block": "Defence Officers Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "100ft Road Parkway",
-        "block": "Defence Officers Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "100ft Road Parkway",
-        "block": "Defence Officers Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "100ft Road Parkway",
-        "block": "Defence Officers Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "100ft Road Parkway",
-        "block": "Defence Officers Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "100ft Road Parkway",
-        "block": "Defence Officers Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "100ft Road Parkway",
-        "block": "Defence Officers Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "100ft Road Parkway",
-        "block": "Defence Officers Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "100ft Road Parkway",
-        "block": "CMH Road Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "100ft Road Parkway",
-        "block": "CMH Road Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "100ft Road Parkway",
-        "block": "CMH Road Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "100ft Road Parkway",
-        "block": "CMH Road Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "100ft Road Parkway",
-        "block": "CMH Road Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "100ft Road Parkway",
-        "block": "CMH Road Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "100ft Road Parkway",
-        "block": "CMH Road Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "100ft Road Parkway",
-        "block": "CMH Road Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "CMH Road Way",
-        "block": "CMH Road Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "CMH Road Way",
-        "block": "CMH Road Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "CMH Road Way",
-        "block": "CMH Road Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "CMH Road Way",
-        "block": "CMH Road Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "CMH Road Way",
-        "block": "CMH Road Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "CMH Road Way",
-        "block": "CMH Road Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "CMH Road Way",
-        "block": "CMH Road Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "CMH Road Way",
-        "block": "CMH Road Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "CMH Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "CMH Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "CMH Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "CMH Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "CMH Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "CMH Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "CMH Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "CMH Road Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_defence_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Officers Club Link",
-        "block": "Defence Officers Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_defence_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Officers Club Link",
-        "block": "Defence Officers Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_defence_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Officers Club Link",
-        "block": "Defence Officers Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_defence_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Officers Club Link",
-        "block": "Defence Officers Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_defence_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Officers Club Link",
-        "block": "Defence Officers Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_defence_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Officers Club Link",
-        "block": "Defence Officers Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_defence_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Metro Station Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_defence_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Metro Station Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_defence_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Metro Station Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_defence_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Metro Station Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_defence_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Metro Station Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_defence_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Metro Station Avenue",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_defence_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "indiranagar_defence_gate_1",
-        "name": "Defence Colony Indiranagar Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "indiranagar_defence_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "indiranagar_defence_gate_2",
-        "name": "Defence Colony Indiranagar Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "indiranagar_defence_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "indiranagar_defence_club",
-        "name": "Defence Colony Club",
-        "description": "Elite community officers club, tennis court and library",
-        "x": 620,
-        "y": 270,
-        "roadNode": "indiranagar_defence_n_mid",
-        "icon": "\ud83c\udf96\ufe0f",
-        "type": "clubhouse"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "DEFENCE COLONY MAIN BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "100FT ROAD PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "CMH ROAD WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "OFFICERS CLUB LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "METRO STATION AVENUE",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "indiranagar_defence_gate_1",
-    "sectors": [
-      "Defence Officers Sector",
-      "CMH Road Sector"
-    ]
-  },
-  "indiranagar_hal2": {
-    "id": "indiranagar_hal2",
-    "name": "HAL 2nd Stage Indiranagar",
-    "location": "12th Main / Doopanahalli, Bangalore Central",
-    "zone": "west",
-    "type": "Premier Cosmopolitan Layout",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "indiranagar_hal2_gate_1": {
-          "id": "indiranagar_hal2_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "HAL 2nd Stage Indiranagar Gate 1 (Main Entrance)"
-        },
-        "indiranagar_hal2_entry": {
-          "id": "indiranagar_hal2_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "indiranagar_hal2_junc_w": {
-          "id": "indiranagar_hal2_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Doopanahalli Way West Junction"
-        },
-        "indiranagar_hal2_junc_ctr": {
-          "id": "indiranagar_hal2_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "indiranagar_hal2_junc_e": {
-          "id": "indiranagar_hal2_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Domlur Connector East Junction"
-        },
-        "indiranagar_hal2_gate_2": {
-          "id": "indiranagar_hal2_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "HAL 2nd Stage Indiranagar Gate 2 (Rear Entrance)"
-        },
-        "indiranagar_hal2_n_w": {
-          "id": "indiranagar_hal2_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "100ft Road Link West"
-        },
-        "indiranagar_hal2_n_mid": {
-          "id": "indiranagar_hal2_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "100ft Road Link North Plaza"
-        },
-        "indiranagar_hal2_n_e": {
-          "id": "indiranagar_hal2_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "100ft Road Link East"
-        },
-        "indiranagar_hal2_s_w": {
-          "id": "indiranagar_hal2_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "HAL 2nd Stage Parkway West"
-        },
-        "indiranagar_hal2_s_mid": {
-          "id": "indiranagar_hal2_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "HAL 2nd Stage Parkway South Plaza"
-        },
-        "indiranagar_hal2_s_e": {
-          "id": "indiranagar_hal2_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "HAL 2nd Stage Parkway East"
-        },
-        "indiranagar_hal2_w_n_mid": {
-          "id": "indiranagar_hal2_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Doopanahalli Way North Link"
-        },
-        "indiranagar_hal2_w_s_mid": {
-          "id": "indiranagar_hal2_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Doopanahalli Way South Link"
-        },
-        "indiranagar_hal2_ctr_n_mid": {
-          "id": "indiranagar_hal2_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "indiranagar_hal2_ctr_s_mid": {
-          "id": "indiranagar_hal2_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "indiranagar_hal2_e_n_mid": {
-          "id": "indiranagar_hal2_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Domlur Connector North Link"
-        },
-        "indiranagar_hal2_e_s_mid": {
-          "id": "indiranagar_hal2_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Domlur Connector South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "indiranagar_hal2_gate_1",
-          "v": "indiranagar_hal2_entry",
-          "road": "12th Main Food Street Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_hal2_entry",
-          "v": "indiranagar_hal2_junc_w",
-          "road": "12th Main Food Street Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_hal2_junc_w",
-          "v": "indiranagar_hal2_junc_ctr",
-          "road": "12th Main Food Street Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_hal2_junc_ctr",
-          "v": "indiranagar_hal2_junc_e",
-          "road": "12th Main Food Street Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_hal2_junc_e",
-          "v": "indiranagar_hal2_gate_2",
-          "road": "12th Main Food Street Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_hal2_n_w",
-          "v": "indiranagar_hal2_n_mid",
-          "road": "100ft Road Link",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_hal2_n_mid",
-          "v": "indiranagar_hal2_n_e",
-          "road": "100ft Road Link",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_hal2_s_w",
-          "v": "indiranagar_hal2_s_mid",
-          "road": "HAL 2nd Stage Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_hal2_s_mid",
-          "v": "indiranagar_hal2_s_e",
-          "road": "HAL 2nd Stage Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_hal2_n_w",
-          "v": "indiranagar_hal2_w_n_mid",
-          "road": "Doopanahalli Way",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_hal2_w_n_mid",
-          "v": "indiranagar_hal2_junc_w",
-          "road": "Doopanahalli Way",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_hal2_junc_w",
-          "v": "indiranagar_hal2_w_s_mid",
-          "road": "Doopanahalli Way",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_hal2_w_s_mid",
-          "v": "indiranagar_hal2_s_w",
-          "road": "Doopanahalli Way",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_hal2_n_mid",
-          "v": "indiranagar_hal2_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_hal2_ctr_n_mid",
-          "v": "indiranagar_hal2_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_hal2_junc_ctr",
-          "v": "indiranagar_hal2_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_hal2_ctr_s_mid",
-          "v": "indiranagar_hal2_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "indiranagar_hal2_n_e",
-          "v": "indiranagar_hal2_e_n_mid",
-          "road": "Domlur Connector",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_hal2_e_n_mid",
-          "v": "indiranagar_hal2_junc_e",
-          "road": "Domlur Connector",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_hal2_junc_e",
-          "v": "indiranagar_hal2_e_s_mid",
-          "road": "Domlur Connector",
-          "type": "secondary"
-        },
-        {
-          "u": "indiranagar_hal2_e_s_mid",
-          "v": "indiranagar_hal2_s_e",
-          "road": "Domlur Connector",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "100ft Road Link",
-        "block": "12th Main Food Street",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "100ft Road Link",
-        "block": "12th Main Food Street",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "100ft Road Link",
-        "block": "12th Main Food Street",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "100ft Road Link",
-        "block": "12th Main Food Street",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "100ft Road Link",
-        "block": "12th Main Food Street",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "100ft Road Link",
-        "block": "12th Main Food Street",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "100ft Road Link",
-        "block": "12th Main Food Street",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "100ft Road Link",
-        "block": "12th Main Food Street",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "100ft Road Link",
-        "block": "Doopanahalli Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "100ft Road Link",
-        "block": "Doopanahalli Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "100ft Road Link",
-        "block": "Doopanahalli Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "100ft Road Link",
-        "block": "Doopanahalli Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "100ft Road Link",
-        "block": "Doopanahalli Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "100ft Road Link",
-        "block": "Doopanahalli Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "100ft Road Link",
-        "block": "Doopanahalli Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "100ft Road Link",
-        "block": "Doopanahalli Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "Doopanahalli Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "Doopanahalli Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "Doopanahalli Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "Doopanahalli Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "Doopanahalli Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "Doopanahalli Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "Doopanahalli Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "Doopanahalli Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "HAL 2nd Stage Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Doopanahalli Way",
-        "block": "12th Main Food Street",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Doopanahalli Way",
-        "block": "12th Main Food Street",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Doopanahalli Way",
-        "block": "12th Main Food Street",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Doopanahalli Way",
-        "block": "12th Main Food Street",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Doopanahalli Way",
-        "block": "12th Main Food Street",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Doopanahalli Way",
-        "block": "12th Main Food Street",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Domlur Connector",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Domlur Connector",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Domlur Connector",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Domlur Connector",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Domlur Connector",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Domlur Connector",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "indiranagar_hal2_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "indiranagar_hal2_gate_1",
-        "name": "HAL 2nd Stage Indiranagar Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "indiranagar_hal2_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "indiranagar_hal2_gate_2",
-        "name": "HAL 2nd Stage Indiranagar Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "indiranagar_hal2_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "indiranagar_hal2_hub",
-        "name": "12th Main Boutique Food & Art Street",
-        "description": "World-famous restaurants, designer boutiques & coffee roasters",
-        "x": 620,
-        "y": 480,
-        "roadNode": "indiranagar_hal2_junc_ctr",
-        "icon": "\u2615",
-        "type": "market"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "12TH MAIN FOOD STREET BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "100FT ROAD LINK",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "HAL 2ND STAGE PARKWAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "DOOPANAHALLI WAY",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "DOMLUR CONNECTOR",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "indiranagar_hal2_gate_1",
-    "sectors": [
-      "12th Main Food Street",
-      "Doopanahalli Sector"
-    ]
+    "verified": true
   },
   "brigade_gateway": {
     "id": "brigade_gateway",
@@ -43698,7 +24572,7 @@ window.LAYOUTS = {
         "w": 220,
         "h": 230,
         "rx": 8,
-        "label": "\ud83d\udecd\ufe0f Orion Mall & Waterfront Multiplex",
+        "label": "🛍️ Orion Mall & Waterfront Multiplex",
         "fill": "#1e1b4b",
         "stroke": "#818cf8"
       },
@@ -43708,7 +24582,7 @@ window.LAYOUTS = {
         "w": 220,
         "h": 190,
         "rx": 8,
-        "label": "\ud83c\udfe2 World Trade Center (32-Floor Tower)",
+        "label": "🏢 World Trade Center (32-Floor Tower)",
         "fill": "#0f172a",
         "stroke": "#38bdf8"
       }
@@ -44607,7 +25481,7 @@ window.LAYOUTS = {
         "x": 400,
         "y": 240,
         "roadNode": "bg_junc_nw",
-        "icon": "\ud83c\udfca",
+        "icon": "🏊",
         "type": "clubhouse"
       },
       {
@@ -44617,7 +25491,7 @@ window.LAYOUTS = {
         "x": 840,
         "y": 170,
         "roadNode": "bg_junc_ne",
-        "icon": "\ud83c\udfe2",
+        "icon": "🏢",
         "type": "civic"
       },
       {
@@ -44627,7 +25501,7 @@ window.LAYOUTS = {
         "x": 840,
         "y": 440,
         "roadNode": "bg_gate_orion",
-        "icon": "\ud83d\udecd\ufe0f",
+        "icon": "🛍️",
         "type": "mall"
       }
     ],
@@ -44672,5114 +25546,7 @@ window.LAYOUTS = {
       "Ebony Tower",
       "Fern Tower",
       "Gulmohar Tower"
-    ]
-  },
-  "sadashivanagar": {
-    "id": "sadashivanagar",
-    "name": "Sadashivanagar Royal Layout",
-    "location": "Palace Orchards & Sankey Tank, Bangalore Central",
-    "zone": "west",
-    "type": "Royal Heritage Neighborhood",
-    "unitType": "House",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "sadashivanagar_gate_1": {
-          "id": "sadashivanagar_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Sadashivanagar Royal Layout Gate 1 (Main Entrance)"
-        },
-        "sadashivanagar_entry": {
-          "id": "sadashivanagar_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "sadashivanagar_junc_w": {
-          "id": "sadashivanagar_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Upper Palace Orchard West Junction"
-        },
-        "sadashivanagar_junc_ctr": {
-          "id": "sadashivanagar_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "sadashivanagar_junc_e": {
-          "id": "sadashivanagar_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Mekhri Link East Junction"
-        },
-        "sadashivanagar_gate_2": {
-          "id": "sadashivanagar_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Sadashivanagar Royal Layout Gate 2 (Rear Entrance)"
-        },
-        "sadashivanagar_n_w": {
-          "id": "sadashivanagar_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Palace Cross Road West"
-        },
-        "sadashivanagar_n_mid": {
-          "id": "sadashivanagar_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Palace Cross Road North Plaza"
-        },
-        "sadashivanagar_n_e": {
-          "id": "sadashivanagar_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Palace Cross Road East"
-        },
-        "sadashivanagar_s_w": {
-          "id": "sadashivanagar_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "8th Main Avenue West"
-        },
-        "sadashivanagar_s_mid": {
-          "id": "sadashivanagar_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "8th Main Avenue South Plaza"
-        },
-        "sadashivanagar_s_e": {
-          "id": "sadashivanagar_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "8th Main Avenue East"
-        },
-        "sadashivanagar_w_n_mid": {
-          "id": "sadashivanagar_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Upper Palace Orchard North Link"
-        },
-        "sadashivanagar_w_s_mid": {
-          "id": "sadashivanagar_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Upper Palace Orchard South Link"
-        },
-        "sadashivanagar_ctr_n_mid": {
-          "id": "sadashivanagar_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "sadashivanagar_ctr_s_mid": {
-          "id": "sadashivanagar_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "sadashivanagar_e_n_mid": {
-          "id": "sadashivanagar_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Mekhri Link North Link"
-        },
-        "sadashivanagar_e_s_mid": {
-          "id": "sadashivanagar_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Mekhri Link South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "sadashivanagar_gate_1",
-          "v": "sadashivanagar_entry",
-          "road": "Sankey Tank Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "sadashivanagar_entry",
-          "v": "sadashivanagar_junc_w",
-          "road": "Sankey Tank Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "sadashivanagar_junc_w",
-          "v": "sadashivanagar_junc_ctr",
-          "road": "Sankey Tank Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "sadashivanagar_junc_ctr",
-          "v": "sadashivanagar_junc_e",
-          "road": "Sankey Tank Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "sadashivanagar_junc_e",
-          "v": "sadashivanagar_gate_2",
-          "road": "Sankey Tank Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "sadashivanagar_n_w",
-          "v": "sadashivanagar_n_mid",
-          "road": "Palace Cross Road",
-          "type": "secondary"
-        },
-        {
-          "u": "sadashivanagar_n_mid",
-          "v": "sadashivanagar_n_e",
-          "road": "Palace Cross Road",
-          "type": "secondary"
-        },
-        {
-          "u": "sadashivanagar_s_w",
-          "v": "sadashivanagar_s_mid",
-          "road": "8th Main Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "sadashivanagar_s_mid",
-          "v": "sadashivanagar_s_e",
-          "road": "8th Main Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "sadashivanagar_n_w",
-          "v": "sadashivanagar_w_n_mid",
-          "road": "Upper Palace Orchard",
-          "type": "secondary"
-        },
-        {
-          "u": "sadashivanagar_w_n_mid",
-          "v": "sadashivanagar_junc_w",
-          "road": "Upper Palace Orchard",
-          "type": "secondary"
-        },
-        {
-          "u": "sadashivanagar_junc_w",
-          "v": "sadashivanagar_w_s_mid",
-          "road": "Upper Palace Orchard",
-          "type": "secondary"
-        },
-        {
-          "u": "sadashivanagar_w_s_mid",
-          "v": "sadashivanagar_s_w",
-          "road": "Upper Palace Orchard",
-          "type": "secondary"
-        },
-        {
-          "u": "sadashivanagar_n_mid",
-          "v": "sadashivanagar_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sadashivanagar_ctr_n_mid",
-          "v": "sadashivanagar_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sadashivanagar_junc_ctr",
-          "v": "sadashivanagar_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sadashivanagar_ctr_s_mid",
-          "v": "sadashivanagar_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "sadashivanagar_n_e",
-          "v": "sadashivanagar_e_n_mid",
-          "road": "Mekhri Link",
-          "type": "secondary"
-        },
-        {
-          "u": "sadashivanagar_e_n_mid",
-          "v": "sadashivanagar_junc_e",
-          "road": "Mekhri Link",
-          "type": "secondary"
-        },
-        {
-          "u": "sadashivanagar_junc_e",
-          "v": "sadashivanagar_e_s_mid",
-          "road": "Mekhri Link",
-          "type": "secondary"
-        },
-        {
-          "u": "sadashivanagar_e_s_mid",
-          "v": "sadashivanagar_s_e",
-          "road": "Mekhri Link",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "1",
-        "road": "Palace Cross Road",
-        "block": "Sankey Tank Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "2",
-        "road": "Palace Cross Road",
-        "block": "Sankey Tank Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "3",
-        "road": "Palace Cross Road",
-        "block": "Sankey Tank Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "4",
-        "road": "Palace Cross Road",
-        "block": "Sankey Tank Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "5",
-        "road": "Palace Cross Road",
-        "block": "Sankey Tank Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "6",
-        "road": "Palace Cross Road",
-        "block": "Sankey Tank Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "7",
-        "road": "Palace Cross Road",
-        "block": "Sankey Tank Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "8",
-        "road": "Palace Cross Road",
-        "block": "Sankey Tank Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "9",
-        "road": "Palace Cross Road",
-        "block": "Upper Palace Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "10",
-        "road": "Palace Cross Road",
-        "block": "Upper Palace Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "11",
-        "road": "Palace Cross Road",
-        "block": "Upper Palace Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "12",
-        "road": "Palace Cross Road",
-        "block": "Upper Palace Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "13",
-        "road": "Palace Cross Road",
-        "block": "Upper Palace Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "14",
-        "road": "Palace Cross Road",
-        "block": "Upper Palace Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "15",
-        "road": "Palace Cross Road",
-        "block": "Upper Palace Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "16",
-        "road": "Palace Cross Road",
-        "block": "Upper Palace Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "17",
-        "road": "8th Main Avenue",
-        "block": "Upper Palace Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "18",
-        "road": "8th Main Avenue",
-        "block": "Upper Palace Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "19",
-        "road": "8th Main Avenue",
-        "block": "Upper Palace Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "20",
-        "road": "8th Main Avenue",
-        "block": "Upper Palace Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "21",
-        "road": "8th Main Avenue",
-        "block": "Upper Palace Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "22",
-        "road": "8th Main Avenue",
-        "block": "Upper Palace Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "23",
-        "road": "8th Main Avenue",
-        "block": "Upper Palace Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "24",
-        "road": "8th Main Avenue",
-        "block": "Upper Palace Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "25",
-        "road": "8th Main Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "26",
-        "road": "8th Main Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "27",
-        "road": "8th Main Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "28",
-        "road": "8th Main Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "29",
-        "road": "8th Main Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "30",
-        "road": "8th Main Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "31",
-        "road": "8th Main Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "32",
-        "road": "8th Main Avenue",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "sadashivanagar_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "33",
-        "road": "Upper Palace Orchard",
-        "block": "Sankey Tank Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "sadashivanagar_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "34",
-        "road": "Upper Palace Orchard",
-        "block": "Sankey Tank Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "sadashivanagar_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "35",
-        "road": "Upper Palace Orchard",
-        "block": "Sankey Tank Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "sadashivanagar_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "36",
-        "road": "Upper Palace Orchard",
-        "block": "Sankey Tank Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "sadashivanagar_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "37",
-        "road": "Upper Palace Orchard",
-        "block": "Sankey Tank Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "sadashivanagar_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "38",
-        "road": "Upper Palace Orchard",
-        "block": "Sankey Tank Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "sadashivanagar_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "39",
-        "road": "Mekhri Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "sadashivanagar_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "40",
-        "road": "Mekhri Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "sadashivanagar_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "41",
-        "road": "Mekhri Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "sadashivanagar_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "42",
-        "road": "Mekhri Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "sadashivanagar_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "43",
-        "road": "Mekhri Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "sadashivanagar_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "44",
-        "road": "Mekhri Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "sadashivanagar_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "sadashivanagar_gate_1",
-        "name": "Sadashivanagar Royal Layout Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "sadashivanagar_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "sadashivanagar_gate_2",
-        "name": "Sadashivanagar Royal Layout Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "sadashivanagar_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "sadashivanagar_lake",
-        "name": "Sankey Tank Forest Promenade",
-        "description": "Historic heritage lake, boating and landscaped gardens",
-        "x": 620,
-        "y": 690,
-        "roadNode": "sadashivanagar_s_mid",
-        "icon": "\u26f5",
-        "type": "nature"
-      }
     ],
-    "roadLabels": [
-      {
-        "name": "SANKEY TANK BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "PALACE CROSS ROAD",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "8TH MAIN AVENUE",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "UPPER PALACE ORCHARD",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "MEKHRI LINK",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "sadashivanagar_gate_1",
-    "sectors": [
-      "Sankey Tank Sector",
-      "Upper Palace Sector"
-    ]
-  },
-  "malleswaram_18th": {
-    "id": "malleswaram_18th",
-    "name": "Malleswaram 18th Cross",
-    "location": "Margosa & Sampige Road, Bangalore West",
-    "zone": "west",
-    "type": "Historic Cultural Colony",
-    "unitType": "House",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "malleswaram_18th_gate_1": {
-          "id": "malleswaram_18th_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Malleswaram 18th Cross Gate 1 (Main Entrance)"
-        },
-        "malleswaram_18th_entry": {
-          "id": "malleswaram_18th_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "malleswaram_18th_junc_w": {
-          "id": "malleswaram_18th_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Vyalikaval Link West Junction"
-        },
-        "malleswaram_18th_junc_ctr": {
-          "id": "malleswaram_18th_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "malleswaram_18th_junc_e": {
-          "id": "malleswaram_18th_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Temple Way East Junction"
-        },
-        "malleswaram_18th_gate_2": {
-          "id": "malleswaram_18th_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Malleswaram 18th Cross Gate 2 (Rear Entrance)"
-        },
-        "malleswaram_18th_n_w": {
-          "id": "malleswaram_18th_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Sampige Avenue West"
-        },
-        "malleswaram_18th_n_mid": {
-          "id": "malleswaram_18th_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Sampige Avenue North Plaza"
-        },
-        "malleswaram_18th_n_e": {
-          "id": "malleswaram_18th_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Sampige Avenue East"
-        },
-        "malleswaram_18th_s_w": {
-          "id": "malleswaram_18th_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "18th Cross Parkway West"
-        },
-        "malleswaram_18th_s_mid": {
-          "id": "malleswaram_18th_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "18th Cross Parkway South Plaza"
-        },
-        "malleswaram_18th_s_e": {
-          "id": "malleswaram_18th_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "18th Cross Parkway East"
-        },
-        "malleswaram_18th_w_n_mid": {
-          "id": "malleswaram_18th_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Vyalikaval Link North Link"
-        },
-        "malleswaram_18th_w_s_mid": {
-          "id": "malleswaram_18th_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Vyalikaval Link South Link"
-        },
-        "malleswaram_18th_ctr_n_mid": {
-          "id": "malleswaram_18th_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "malleswaram_18th_ctr_s_mid": {
-          "id": "malleswaram_18th_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "malleswaram_18th_e_n_mid": {
-          "id": "malleswaram_18th_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Temple Way North Link"
-        },
-        "malleswaram_18th_e_s_mid": {
-          "id": "malleswaram_18th_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Temple Way South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "malleswaram_18th_gate_1",
-          "v": "malleswaram_18th_entry",
-          "road": "Margosa Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "malleswaram_18th_entry",
-          "v": "malleswaram_18th_junc_w",
-          "road": "Margosa Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "malleswaram_18th_junc_w",
-          "v": "malleswaram_18th_junc_ctr",
-          "road": "Margosa Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "malleswaram_18th_junc_ctr",
-          "v": "malleswaram_18th_junc_e",
-          "road": "Margosa Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "malleswaram_18th_junc_e",
-          "v": "malleswaram_18th_gate_2",
-          "road": "Margosa Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "malleswaram_18th_n_w",
-          "v": "malleswaram_18th_n_mid",
-          "road": "Sampige Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "malleswaram_18th_n_mid",
-          "v": "malleswaram_18th_n_e",
-          "road": "Sampige Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "malleswaram_18th_s_w",
-          "v": "malleswaram_18th_s_mid",
-          "road": "18th Cross Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "malleswaram_18th_s_mid",
-          "v": "malleswaram_18th_s_e",
-          "road": "18th Cross Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "malleswaram_18th_n_w",
-          "v": "malleswaram_18th_w_n_mid",
-          "road": "Vyalikaval Link",
-          "type": "secondary"
-        },
-        {
-          "u": "malleswaram_18th_w_n_mid",
-          "v": "malleswaram_18th_junc_w",
-          "road": "Vyalikaval Link",
-          "type": "secondary"
-        },
-        {
-          "u": "malleswaram_18th_junc_w",
-          "v": "malleswaram_18th_w_s_mid",
-          "road": "Vyalikaval Link",
-          "type": "secondary"
-        },
-        {
-          "u": "malleswaram_18th_w_s_mid",
-          "v": "malleswaram_18th_s_w",
-          "road": "Vyalikaval Link",
-          "type": "secondary"
-        },
-        {
-          "u": "malleswaram_18th_n_mid",
-          "v": "malleswaram_18th_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "malleswaram_18th_ctr_n_mid",
-          "v": "malleswaram_18th_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "malleswaram_18th_junc_ctr",
-          "v": "malleswaram_18th_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "malleswaram_18th_ctr_s_mid",
-          "v": "malleswaram_18th_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "malleswaram_18th_n_e",
-          "v": "malleswaram_18th_e_n_mid",
-          "road": "Temple Way",
-          "type": "secondary"
-        },
-        {
-          "u": "malleswaram_18th_e_n_mid",
-          "v": "malleswaram_18th_junc_e",
-          "road": "Temple Way",
-          "type": "secondary"
-        },
-        {
-          "u": "malleswaram_18th_junc_e",
-          "v": "malleswaram_18th_e_s_mid",
-          "road": "Temple Way",
-          "type": "secondary"
-        },
-        {
-          "u": "malleswaram_18th_e_s_mid",
-          "v": "malleswaram_18th_s_e",
-          "road": "Temple Way",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "1",
-        "road": "Sampige Avenue",
-        "block": "Margosa Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "2",
-        "road": "Sampige Avenue",
-        "block": "Margosa Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "3",
-        "road": "Sampige Avenue",
-        "block": "Margosa Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "4",
-        "road": "Sampige Avenue",
-        "block": "Margosa Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "5",
-        "road": "Sampige Avenue",
-        "block": "Margosa Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "6",
-        "road": "Sampige Avenue",
-        "block": "Margosa Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "7",
-        "road": "Sampige Avenue",
-        "block": "Margosa Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "8",
-        "road": "Sampige Avenue",
-        "block": "Margosa Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "9",
-        "road": "Sampige Avenue",
-        "block": "Sampige Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "10",
-        "road": "Sampige Avenue",
-        "block": "Sampige Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "11",
-        "road": "Sampige Avenue",
-        "block": "Sampige Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "12",
-        "road": "Sampige Avenue",
-        "block": "Sampige Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "13",
-        "road": "Sampige Avenue",
-        "block": "Sampige Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "14",
-        "road": "Sampige Avenue",
-        "block": "Sampige Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "15",
-        "road": "Sampige Avenue",
-        "block": "Sampige Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "16",
-        "road": "Sampige Avenue",
-        "block": "Sampige Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "17",
-        "road": "18th Cross Parkway",
-        "block": "Sampige Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "18",
-        "road": "18th Cross Parkway",
-        "block": "Sampige Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "19",
-        "road": "18th Cross Parkway",
-        "block": "Sampige Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "20",
-        "road": "18th Cross Parkway",
-        "block": "Sampige Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "21",
-        "road": "18th Cross Parkway",
-        "block": "Sampige Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "22",
-        "road": "18th Cross Parkway",
-        "block": "Sampige Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "23",
-        "road": "18th Cross Parkway",
-        "block": "Sampige Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "24",
-        "road": "18th Cross Parkway",
-        "block": "Sampige Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "25",
-        "road": "18th Cross Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "26",
-        "road": "18th Cross Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "27",
-        "road": "18th Cross Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "28",
-        "road": "18th Cross Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "29",
-        "road": "18th Cross Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "30",
-        "road": "18th Cross Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "31",
-        "road": "18th Cross Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "32",
-        "road": "18th Cross Parkway",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "malleswaram_18th_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "33",
-        "road": "Vyalikaval Link",
-        "block": "Margosa Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "malleswaram_18th_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "34",
-        "road": "Vyalikaval Link",
-        "block": "Margosa Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "malleswaram_18th_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "35",
-        "road": "Vyalikaval Link",
-        "block": "Margosa Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "malleswaram_18th_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "36",
-        "road": "Vyalikaval Link",
-        "block": "Margosa Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "malleswaram_18th_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "37",
-        "road": "Vyalikaval Link",
-        "block": "Margosa Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "malleswaram_18th_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "38",
-        "road": "Vyalikaval Link",
-        "block": "Margosa Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "malleswaram_18th_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "39",
-        "road": "Temple Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "malleswaram_18th_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "40",
-        "road": "Temple Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "malleswaram_18th_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "41",
-        "road": "Temple Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "malleswaram_18th_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "42",
-        "road": "Temple Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "malleswaram_18th_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "43",
-        "road": "Temple Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "malleswaram_18th_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "44",
-        "road": "Temple Way",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "malleswaram_18th_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "malleswaram_18th_gate_1",
-        "name": "Malleswaram 18th Cross Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "malleswaram_18th_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "malleswaram_18th_gate_2",
-        "name": "Malleswaram 18th Cross Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "malleswaram_18th_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "malleswaram_18th_temple",
-        "name": "Kadu Malleshwara Temple",
-        "description": "7th century Shiva temple giving Malleswaram its name",
-        "x": 620,
-        "y": 270,
-        "roadNode": "malleswaram_18th_n_mid",
-        "icon": "\ud83d\uded5",
-        "type": "worship"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "MARGOSA ROAD BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "SAMPIGE AVENUE",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "18TH CROSS PARKWAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "VYALIKAVAL LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "TEMPLE WAY",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "malleswaram_18th_gate_1",
-    "sectors": [
-      "Margosa Sector",
-      "Sampige Sector"
-    ]
-  },
-  "banashankari_3rd": {
-    "id": "banashankari_3rd",
-    "name": "Banashankari 3rd Stage",
-    "location": "Katriguppe / BDA Layout, Bangalore South-West",
-    "zone": "west",
-    "type": "Planned BDA Colony",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "banashankari_3rd_gate_1": {
-          "id": "banashankari_3rd_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Banashankari 3rd Stage Gate 1 (Main Entrance)"
-        },
-        "banashankari_3rd_entry": {
-          "id": "banashankari_3rd_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "banashankari_3rd_junc_w": {
-          "id": "banashankari_3rd_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "BDA Complex Road West Junction"
-        },
-        "banashankari_3rd_junc_ctr": {
-          "id": "banashankari_3rd_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "banashankari_3rd_junc_e": {
-          "id": "banashankari_3rd_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Banashankari Link East Junction"
-        },
-        "banashankari_3rd_gate_2": {
-          "id": "banashankari_3rd_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Banashankari 3rd Stage Gate 2 (Rear Entrance)"
-        },
-        "banashankari_3rd_n_w": {
-          "id": "banashankari_3rd_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Katriguppe Main Avenue West"
-        },
-        "banashankari_3rd_n_mid": {
-          "id": "banashankari_3rd_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Katriguppe Main Avenue North Plaza"
-        },
-        "banashankari_3rd_n_e": {
-          "id": "banashankari_3rd_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Katriguppe Main Avenue East"
-        },
-        "banashankari_3rd_s_w": {
-          "id": "banashankari_3rd_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "3rd Stage Way West"
-        },
-        "banashankari_3rd_s_mid": {
-          "id": "banashankari_3rd_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "3rd Stage Way South Plaza"
-        },
-        "banashankari_3rd_s_e": {
-          "id": "banashankari_3rd_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "3rd Stage Way East"
-        },
-        "banashankari_3rd_w_n_mid": {
-          "id": "banashankari_3rd_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "BDA Complex Road North Link"
-        },
-        "banashankari_3rd_w_s_mid": {
-          "id": "banashankari_3rd_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "BDA Complex Road South Link"
-        },
-        "banashankari_3rd_ctr_n_mid": {
-          "id": "banashankari_3rd_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "banashankari_3rd_ctr_s_mid": {
-          "id": "banashankari_3rd_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "banashankari_3rd_e_n_mid": {
-          "id": "banashankari_3rd_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Banashankari Link North Link"
-        },
-        "banashankari_3rd_e_s_mid": {
-          "id": "banashankari_3rd_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Banashankari Link South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "banashankari_3rd_gate_1",
-          "v": "banashankari_3rd_entry",
-          "road": "100ft Ring Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "banashankari_3rd_entry",
-          "v": "banashankari_3rd_junc_w",
-          "road": "100ft Ring Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "banashankari_3rd_junc_w",
-          "v": "banashankari_3rd_junc_ctr",
-          "road": "100ft Ring Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "banashankari_3rd_junc_ctr",
-          "v": "banashankari_3rd_junc_e",
-          "road": "100ft Ring Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "banashankari_3rd_junc_e",
-          "v": "banashankari_3rd_gate_2",
-          "road": "100ft Ring Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "banashankari_3rd_n_w",
-          "v": "banashankari_3rd_n_mid",
-          "road": "Katriguppe Main Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "banashankari_3rd_n_mid",
-          "v": "banashankari_3rd_n_e",
-          "road": "Katriguppe Main Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "banashankari_3rd_s_w",
-          "v": "banashankari_3rd_s_mid",
-          "road": "3rd Stage Way",
-          "type": "secondary"
-        },
-        {
-          "u": "banashankari_3rd_s_mid",
-          "v": "banashankari_3rd_s_e",
-          "road": "3rd Stage Way",
-          "type": "secondary"
-        },
-        {
-          "u": "banashankari_3rd_n_w",
-          "v": "banashankari_3rd_w_n_mid",
-          "road": "BDA Complex Road",
-          "type": "secondary"
-        },
-        {
-          "u": "banashankari_3rd_w_n_mid",
-          "v": "banashankari_3rd_junc_w",
-          "road": "BDA Complex Road",
-          "type": "secondary"
-        },
-        {
-          "u": "banashankari_3rd_junc_w",
-          "v": "banashankari_3rd_w_s_mid",
-          "road": "BDA Complex Road",
-          "type": "secondary"
-        },
-        {
-          "u": "banashankari_3rd_w_s_mid",
-          "v": "banashankari_3rd_s_w",
-          "road": "BDA Complex Road",
-          "type": "secondary"
-        },
-        {
-          "u": "banashankari_3rd_n_mid",
-          "v": "banashankari_3rd_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "banashankari_3rd_ctr_n_mid",
-          "v": "banashankari_3rd_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "banashankari_3rd_junc_ctr",
-          "v": "banashankari_3rd_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "banashankari_3rd_ctr_s_mid",
-          "v": "banashankari_3rd_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "banashankari_3rd_n_e",
-          "v": "banashankari_3rd_e_n_mid",
-          "road": "Banashankari Link",
-          "type": "secondary"
-        },
-        {
-          "u": "banashankari_3rd_e_n_mid",
-          "v": "banashankari_3rd_junc_e",
-          "road": "Banashankari Link",
-          "type": "secondary"
-        },
-        {
-          "u": "banashankari_3rd_junc_e",
-          "v": "banashankari_3rd_e_s_mid",
-          "road": "Banashankari Link",
-          "type": "secondary"
-        },
-        {
-          "u": "banashankari_3rd_e_s_mid",
-          "v": "banashankari_3rd_s_e",
-          "road": "Banashankari Link",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "Katriguppe Main Avenue",
-        "block": "Katriguppe Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "Katriguppe Main Avenue",
-        "block": "Katriguppe Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "Katriguppe Main Avenue",
-        "block": "Katriguppe Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "Katriguppe Main Avenue",
-        "block": "Katriguppe Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "Katriguppe Main Avenue",
-        "block": "Katriguppe Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "Katriguppe Main Avenue",
-        "block": "Katriguppe Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "Katriguppe Main Avenue",
-        "block": "Katriguppe Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "Katriguppe Main Avenue",
-        "block": "Katriguppe Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "Katriguppe Main Avenue",
-        "block": "BDA Complex Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "Katriguppe Main Avenue",
-        "block": "BDA Complex Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "Katriguppe Main Avenue",
-        "block": "BDA Complex Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "Katriguppe Main Avenue",
-        "block": "BDA Complex Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "Katriguppe Main Avenue",
-        "block": "BDA Complex Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "Katriguppe Main Avenue",
-        "block": "BDA Complex Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "Katriguppe Main Avenue",
-        "block": "BDA Complex Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "Katriguppe Main Avenue",
-        "block": "BDA Complex Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "3rd Stage Way",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "3rd Stage Way",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "3rd Stage Way",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "3rd Stage Way",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "3rd Stage Way",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "3rd Stage Way",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "3rd Stage Way",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "3rd Stage Way",
-        "block": "BDA Complex Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "3rd Stage Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "3rd Stage Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "3rd Stage Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "3rd Stage Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "3rd Stage Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "3rd Stage Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "3rd Stage Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "3rd Stage Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "banashankari_3rd_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "BDA Complex Road",
-        "block": "Katriguppe Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "banashankari_3rd_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "BDA Complex Road",
-        "block": "Katriguppe Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "banashankari_3rd_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "BDA Complex Road",
-        "block": "Katriguppe Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "banashankari_3rd_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "BDA Complex Road",
-        "block": "Katriguppe Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "banashankari_3rd_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "BDA Complex Road",
-        "block": "Katriguppe Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "banashankari_3rd_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "BDA Complex Road",
-        "block": "Katriguppe Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "banashankari_3rd_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Banashankari Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "banashankari_3rd_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Banashankari Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "banashankari_3rd_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Banashankari Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "banashankari_3rd_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Banashankari Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "banashankari_3rd_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Banashankari Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "banashankari_3rd_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Banashankari Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "banashankari_3rd_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "banashankari_3rd_gate_1",
-        "name": "Banashankari 3rd Stage Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "banashankari_3rd_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "banashankari_3rd_gate_2",
-        "name": "Banashankari 3rd Stage Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "banashankari_3rd_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "banashankari_3rd_complex",
-        "name": "Banashankari BDA Complex",
-        "description": "Major commercial and government civic services hub",
-        "x": 620,
-        "y": 480,
-        "roadNode": "banashankari_3rd_junc_ctr",
-        "icon": "\ud83c\udfdb\ufe0f",
-        "type": "civic"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "100FT RING ROAD BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "KATRIGUPPE MAIN AVENUE",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "3RD STAGE WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "BDA COMPLEX ROAD",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "BANASHANKARI LINK",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "banashankari_3rd_gate_1",
-    "sectors": [
-      "Katriguppe Sector",
-      "BDA Complex Sector"
-    ]
-  },
-  "vijayanagar_bda": {
-    "id": "vijayanagar_bda",
-    "name": "Vijayanagar BDA Layout",
-    "location": "Chord Road / Pipeline, Bangalore West",
-    "zone": "west",
-    "type": "Vibrant Commercial & Residential Layout",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "vijayanagar_bda_gate_1": {
-          "id": "vijayanagar_bda_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Vijayanagar BDA Layout Gate 1 (Main Entrance)"
-        },
-        "vijayanagar_bda_entry": {
-          "id": "vijayanagar_bda_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "vijayanagar_bda_junc_w": {
-          "id": "vijayanagar_bda_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Vijayanagar Club Road West Junction"
-        },
-        "vijayanagar_bda_junc_ctr": {
-          "id": "vijayanagar_bda_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "vijayanagar_bda_junc_e": {
-          "id": "vijayanagar_bda_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Metro Link East Junction"
-        },
-        "vijayanagar_bda_gate_2": {
-          "id": "vijayanagar_bda_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Vijayanagar BDA Layout Gate 2 (Rear Entrance)"
-        },
-        "vijayanagar_bda_n_w": {
-          "id": "vijayanagar_bda_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "Pipeline Avenue West"
-        },
-        "vijayanagar_bda_n_mid": {
-          "id": "vijayanagar_bda_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "Pipeline Avenue North Plaza"
-        },
-        "vijayanagar_bda_n_e": {
-          "id": "vijayanagar_bda_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "Pipeline Avenue East"
-        },
-        "vijayanagar_bda_s_w": {
-          "id": "vijayanagar_bda_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "5th Main Way West"
-        },
-        "vijayanagar_bda_s_mid": {
-          "id": "vijayanagar_bda_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "5th Main Way South Plaza"
-        },
-        "vijayanagar_bda_s_e": {
-          "id": "vijayanagar_bda_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "5th Main Way East"
-        },
-        "vijayanagar_bda_w_n_mid": {
-          "id": "vijayanagar_bda_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Vijayanagar Club Road North Link"
-        },
-        "vijayanagar_bda_w_s_mid": {
-          "id": "vijayanagar_bda_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Vijayanagar Club Road South Link"
-        },
-        "vijayanagar_bda_ctr_n_mid": {
-          "id": "vijayanagar_bda_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "vijayanagar_bda_ctr_s_mid": {
-          "id": "vijayanagar_bda_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "vijayanagar_bda_e_n_mid": {
-          "id": "vijayanagar_bda_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Metro Link North Link"
-        },
-        "vijayanagar_bda_e_s_mid": {
-          "id": "vijayanagar_bda_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Metro Link South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "vijayanagar_bda_gate_1",
-          "v": "vijayanagar_bda_entry",
-          "road": "Chord Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "vijayanagar_bda_entry",
-          "v": "vijayanagar_bda_junc_w",
-          "road": "Chord Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "vijayanagar_bda_junc_w",
-          "v": "vijayanagar_bda_junc_ctr",
-          "road": "Chord Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "vijayanagar_bda_junc_ctr",
-          "v": "vijayanagar_bda_junc_e",
-          "road": "Chord Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "vijayanagar_bda_junc_e",
-          "v": "vijayanagar_bda_gate_2",
-          "road": "Chord Road Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "vijayanagar_bda_n_w",
-          "v": "vijayanagar_bda_n_mid",
-          "road": "Pipeline Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "vijayanagar_bda_n_mid",
-          "v": "vijayanagar_bda_n_e",
-          "road": "Pipeline Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "vijayanagar_bda_s_w",
-          "v": "vijayanagar_bda_s_mid",
-          "road": "5th Main Way",
-          "type": "secondary"
-        },
-        {
-          "u": "vijayanagar_bda_s_mid",
-          "v": "vijayanagar_bda_s_e",
-          "road": "5th Main Way",
-          "type": "secondary"
-        },
-        {
-          "u": "vijayanagar_bda_n_w",
-          "v": "vijayanagar_bda_w_n_mid",
-          "road": "Vijayanagar Club Road",
-          "type": "secondary"
-        },
-        {
-          "u": "vijayanagar_bda_w_n_mid",
-          "v": "vijayanagar_bda_junc_w",
-          "road": "Vijayanagar Club Road",
-          "type": "secondary"
-        },
-        {
-          "u": "vijayanagar_bda_junc_w",
-          "v": "vijayanagar_bda_w_s_mid",
-          "road": "Vijayanagar Club Road",
-          "type": "secondary"
-        },
-        {
-          "u": "vijayanagar_bda_w_s_mid",
-          "v": "vijayanagar_bda_s_w",
-          "road": "Vijayanagar Club Road",
-          "type": "secondary"
-        },
-        {
-          "u": "vijayanagar_bda_n_mid",
-          "v": "vijayanagar_bda_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "vijayanagar_bda_ctr_n_mid",
-          "v": "vijayanagar_bda_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "vijayanagar_bda_junc_ctr",
-          "v": "vijayanagar_bda_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "vijayanagar_bda_ctr_s_mid",
-          "v": "vijayanagar_bda_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "vijayanagar_bda_n_e",
-          "v": "vijayanagar_bda_e_n_mid",
-          "road": "Metro Link",
-          "type": "secondary"
-        },
-        {
-          "u": "vijayanagar_bda_e_n_mid",
-          "v": "vijayanagar_bda_junc_e",
-          "road": "Metro Link",
-          "type": "secondary"
-        },
-        {
-          "u": "vijayanagar_bda_junc_e",
-          "v": "vijayanagar_bda_e_s_mid",
-          "road": "Metro Link",
-          "type": "secondary"
-        },
-        {
-          "u": "vijayanagar_bda_e_s_mid",
-          "v": "vijayanagar_bda_s_e",
-          "road": "Metro Link",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "Pipeline Avenue",
-        "block": "Chord Road Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "Pipeline Avenue",
-        "block": "Chord Road Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "Pipeline Avenue",
-        "block": "Chord Road Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "Pipeline Avenue",
-        "block": "Chord Road Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "Pipeline Avenue",
-        "block": "Chord Road Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "Pipeline Avenue",
-        "block": "Chord Road Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "Pipeline Avenue",
-        "block": "Chord Road Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "Pipeline Avenue",
-        "block": "Chord Road Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "Pipeline Avenue",
-        "block": "Club Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "Pipeline Avenue",
-        "block": "Club Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "Pipeline Avenue",
-        "block": "Club Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "Pipeline Avenue",
-        "block": "Club Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "Pipeline Avenue",
-        "block": "Club Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "Pipeline Avenue",
-        "block": "Club Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "Pipeline Avenue",
-        "block": "Club Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "Pipeline Avenue",
-        "block": "Club Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "5th Main Way",
-        "block": "Club Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "5th Main Way",
-        "block": "Club Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "5th Main Way",
-        "block": "Club Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "5th Main Way",
-        "block": "Club Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "5th Main Way",
-        "block": "Club Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "5th Main Way",
-        "block": "Club Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "5th Main Way",
-        "block": "Club Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "5th Main Way",
-        "block": "Club Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "5th Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "5th Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "5th Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "5th Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "5th Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "5th Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "5th Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "5th Main Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Vijayanagar Club Road",
-        "block": "Chord Road Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Vijayanagar Club Road",
-        "block": "Chord Road Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Vijayanagar Club Road",
-        "block": "Chord Road Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Vijayanagar Club Road",
-        "block": "Chord Road Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Vijayanagar Club Road",
-        "block": "Chord Road Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Vijayanagar Club Road",
-        "block": "Chord Road Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "Metro Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "Metro Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "Metro Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "Metro Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "Metro Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "Metro Link",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "vijayanagar_bda_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "vijayanagar_bda_gate_1",
-        "name": "Vijayanagar BDA Layout Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "vijayanagar_bda_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "vijayanagar_bda_gate_2",
-        "name": "Vijayanagar BDA Layout Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "vijayanagar_bda_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "vijayanagar_bda_club",
-        "name": "The Vijayanagar Club",
-        "description": "Badminton, swimming pool, gym & recreation",
-        "x": 620,
-        "y": 270,
-        "roadNode": "vijayanagar_bda_n_mid",
-        "icon": "\ud83c\udfca",
-        "type": "sports"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "CHORD ROAD BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "PIPELINE AVENUE",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "5TH MAIN WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "VIJAYANAGAR CLUB ROAD",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "METRO LINK",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "vijayanagar_bda_gate_1",
-    "sectors": [
-      "Chord Road Sector",
-      "Club Sector"
-    ]
-  },
-  "rajajinagar_1st": {
-    "id": "rajajinagar_1st",
-    "name": "Rajajinagar 1st Block",
-    "location": "Dr. Rajkumar Road / Subramanya Nagar, Bangalore West",
-    "zone": "west",
-    "type": "Planned Urban Sector",
-    "unitType": "Plot",
-    "unitCount": 44,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "rajajinagar_1st_gate_1": {
-          "id": "rajajinagar_1st_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Rajajinagar 1st Block Gate 1 (Main Entrance)"
-        },
-        "rajajinagar_1st_entry": {
-          "id": "rajajinagar_1st_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "rajajinagar_1st_junc_w": {
-          "id": "rajajinagar_1st_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Mahalakshmi Link West Junction"
-        },
-        "rajajinagar_1st_junc_ctr": {
-          "id": "rajajinagar_1st_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "rajajinagar_1st_junc_e": {
-          "id": "rajajinagar_1st_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "ISKCON Parkway East Junction"
-        },
-        "rajajinagar_1st_gate_2": {
-          "id": "rajajinagar_1st_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Rajajinagar 1st Block Gate 2 (Rear Entrance)"
-        },
-        "rajajinagar_1st_n_w": {
-          "id": "rajajinagar_1st_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "10th Cross Avenue West"
-        },
-        "rajajinagar_1st_n_mid": {
-          "id": "rajajinagar_1st_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "10th Cross Avenue North Plaza"
-        },
-        "rajajinagar_1st_n_e": {
-          "id": "rajajinagar_1st_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "10th Cross Avenue East"
-        },
-        "rajajinagar_1st_s_w": {
-          "id": "rajajinagar_1st_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "Subramanya Nagar Way West"
-        },
-        "rajajinagar_1st_s_mid": {
-          "id": "rajajinagar_1st_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "Subramanya Nagar Way South Plaza"
-        },
-        "rajajinagar_1st_s_e": {
-          "id": "rajajinagar_1st_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "Subramanya Nagar Way East"
-        },
-        "rajajinagar_1st_w_n_mid": {
-          "id": "rajajinagar_1st_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Mahalakshmi Link North Link"
-        },
-        "rajajinagar_1st_w_s_mid": {
-          "id": "rajajinagar_1st_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Mahalakshmi Link South Link"
-        },
-        "rajajinagar_1st_ctr_n_mid": {
-          "id": "rajajinagar_1st_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "rajajinagar_1st_ctr_s_mid": {
-          "id": "rajajinagar_1st_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "rajajinagar_1st_e_n_mid": {
-          "id": "rajajinagar_1st_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "ISKCON Parkway North Link"
-        },
-        "rajajinagar_1st_e_s_mid": {
-          "id": "rajajinagar_1st_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "ISKCON Parkway South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "rajajinagar_1st_gate_1",
-          "v": "rajajinagar_1st_entry",
-          "road": "1st Block Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "rajajinagar_1st_entry",
-          "v": "rajajinagar_1st_junc_w",
-          "road": "1st Block Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "rajajinagar_1st_junc_w",
-          "v": "rajajinagar_1st_junc_ctr",
-          "road": "1st Block Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "rajajinagar_1st_junc_ctr",
-          "v": "rajajinagar_1st_junc_e",
-          "road": "1st Block Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "rajajinagar_1st_junc_e",
-          "v": "rajajinagar_1st_gate_2",
-          "road": "1st Block Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "rajajinagar_1st_n_w",
-          "v": "rajajinagar_1st_n_mid",
-          "road": "10th Cross Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "rajajinagar_1st_n_mid",
-          "v": "rajajinagar_1st_n_e",
-          "road": "10th Cross Avenue",
-          "type": "secondary"
-        },
-        {
-          "u": "rajajinagar_1st_s_w",
-          "v": "rajajinagar_1st_s_mid",
-          "road": "Subramanya Nagar Way",
-          "type": "secondary"
-        },
-        {
-          "u": "rajajinagar_1st_s_mid",
-          "v": "rajajinagar_1st_s_e",
-          "road": "Subramanya Nagar Way",
-          "type": "secondary"
-        },
-        {
-          "u": "rajajinagar_1st_n_w",
-          "v": "rajajinagar_1st_w_n_mid",
-          "road": "Mahalakshmi Link",
-          "type": "secondary"
-        },
-        {
-          "u": "rajajinagar_1st_w_n_mid",
-          "v": "rajajinagar_1st_junc_w",
-          "road": "Mahalakshmi Link",
-          "type": "secondary"
-        },
-        {
-          "u": "rajajinagar_1st_junc_w",
-          "v": "rajajinagar_1st_w_s_mid",
-          "road": "Mahalakshmi Link",
-          "type": "secondary"
-        },
-        {
-          "u": "rajajinagar_1st_w_s_mid",
-          "v": "rajajinagar_1st_s_w",
-          "road": "Mahalakshmi Link",
-          "type": "secondary"
-        },
-        {
-          "u": "rajajinagar_1st_n_mid",
-          "v": "rajajinagar_1st_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "rajajinagar_1st_ctr_n_mid",
-          "v": "rajajinagar_1st_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "rajajinagar_1st_junc_ctr",
-          "v": "rajajinagar_1st_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "rajajinagar_1st_ctr_s_mid",
-          "v": "rajajinagar_1st_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "rajajinagar_1st_n_e",
-          "v": "rajajinagar_1st_e_n_mid",
-          "road": "ISKCON Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "rajajinagar_1st_e_n_mid",
-          "v": "rajajinagar_1st_junc_e",
-          "road": "ISKCON Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "rajajinagar_1st_junc_e",
-          "v": "rajajinagar_1st_e_s_mid",
-          "road": "ISKCON Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "rajajinagar_1st_e_s_mid",
-          "v": "rajajinagar_1st_s_e",
-          "road": "ISKCON Parkway",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Plot 1",
-        "road": "10th Cross Avenue",
-        "block": "ISKCON Temple Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Plot 2",
-        "road": "10th Cross Avenue",
-        "block": "ISKCON Temple Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Plot 3",
-        "road": "10th Cross Avenue",
-        "block": "ISKCON Temple Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Plot 4",
-        "road": "10th Cross Avenue",
-        "block": "ISKCON Temple Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_mid",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Plot 5",
-        "road": "10th Cross Avenue",
-        "block": "ISKCON Temple Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_mid",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Plot 6",
-        "road": "10th Cross Avenue",
-        "block": "ISKCON Temple Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_e",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Plot 7",
-        "road": "10th Cross Avenue",
-        "block": "ISKCON Temple Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_e",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Plot 8",
-        "road": "10th Cross Avenue",
-        "block": "ISKCON Temple Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 210,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_e",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Plot 9",
-        "road": "10th Cross Avenue",
-        "block": "Subramanya Nagar Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_w",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Plot 10",
-        "road": "10th Cross Avenue",
-        "block": "Subramanya Nagar Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_w",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Plot 11",
-        "road": "10th Cross Avenue",
-        "block": "Subramanya Nagar Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_w",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Plot 12",
-        "road": "10th Cross Avenue",
-        "block": "Subramanya Nagar Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Plot 13",
-        "road": "10th Cross Avenue",
-        "block": "Subramanya Nagar Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Plot 14",
-        "road": "10th Cross Avenue",
-        "block": "Subramanya Nagar Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_e",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Plot 15",
-        "road": "10th Cross Avenue",
-        "block": "Subramanya Nagar Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_e",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Plot 16",
-        "road": "10th Cross Avenue",
-        "block": "Subramanya Nagar Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 330,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_n_e",
-        "color": "cyan"
-      },
-      "17": {
-        "id": "17",
-        "number": "Plot 17",
-        "road": "Subramanya Nagar Way",
-        "block": "Subramanya Nagar Sector",
-        "facing": "South",
-        "x": 360,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_w",
-        "color": "cyan"
-      },
-      "18": {
-        "id": "18",
-        "number": "Plot 18",
-        "road": "Subramanya Nagar Way",
-        "block": "Subramanya Nagar Sector",
-        "facing": "South",
-        "x": 425,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_w",
-        "color": "cyan"
-      },
-      "19": {
-        "id": "19",
-        "number": "Plot 19",
-        "road": "Subramanya Nagar Way",
-        "block": "Subramanya Nagar Sector",
-        "facing": "South",
-        "x": 490,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_w",
-        "color": "cyan"
-      },
-      "20": {
-        "id": "20",
-        "number": "Plot 20",
-        "road": "Subramanya Nagar Way",
-        "block": "Subramanya Nagar Sector",
-        "facing": "South",
-        "x": 555,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_mid",
-        "color": "cyan"
-      },
-      "21": {
-        "id": "21",
-        "number": "Plot 21",
-        "road": "Subramanya Nagar Way",
-        "block": "Subramanya Nagar Sector",
-        "facing": "South",
-        "x": 620,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_mid",
-        "color": "cyan"
-      },
-      "22": {
-        "id": "22",
-        "number": "Plot 22",
-        "road": "Subramanya Nagar Way",
-        "block": "Subramanya Nagar Sector",
-        "facing": "South",
-        "x": 685,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_e",
-        "color": "cyan"
-      },
-      "23": {
-        "id": "23",
-        "number": "Plot 23",
-        "road": "Subramanya Nagar Way",
-        "block": "Subramanya Nagar Sector",
-        "facing": "South",
-        "x": 750,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_e",
-        "color": "cyan"
-      },
-      "24": {
-        "id": "24",
-        "number": "Plot 24",
-        "road": "Subramanya Nagar Way",
-        "block": "Subramanya Nagar Sector",
-        "facing": "South",
-        "x": 815,
-        "y": 630,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_e",
-        "color": "cyan"
-      },
-      "25": {
-        "id": "25",
-        "number": "Plot 25",
-        "road": "Subramanya Nagar Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 360,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_w",
-        "color": "cyan"
-      },
-      "26": {
-        "id": "26",
-        "number": "Plot 26",
-        "road": "Subramanya Nagar Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 425,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_w",
-        "color": "cyan"
-      },
-      "27": {
-        "id": "27",
-        "number": "Plot 27",
-        "road": "Subramanya Nagar Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 490,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_w",
-        "color": "cyan"
-      },
-      "28": {
-        "id": "28",
-        "number": "Plot 28",
-        "road": "Subramanya Nagar Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 555,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_mid",
-        "color": "cyan"
-      },
-      "29": {
-        "id": "29",
-        "number": "Plot 29",
-        "road": "Subramanya Nagar Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 620,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_mid",
-        "color": "cyan"
-      },
-      "30": {
-        "id": "30",
-        "number": "Plot 30",
-        "road": "Subramanya Nagar Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 685,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_e",
-        "color": "cyan"
-      },
-      "31": {
-        "id": "31",
-        "number": "Plot 31",
-        "road": "Subramanya Nagar Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 750,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_e",
-        "color": "cyan"
-      },
-      "32": {
-        "id": "32",
-        "number": "Plot 32",
-        "road": "Subramanya Nagar Way",
-        "block": "South Sector",
-        "facing": "North",
-        "x": 815,
-        "y": 750,
-        "w": 50,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_s_e",
-        "color": "cyan"
-      },
-      "33": {
-        "id": "33",
-        "number": "Plot 33",
-        "road": "Mahalakshmi Link",
-        "block": "ISKCON Temple Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_w_n_mid",
-        "color": "cyan"
-      },
-      "34": {
-        "id": "34",
-        "number": "Plot 34",
-        "road": "Mahalakshmi Link",
-        "block": "ISKCON Temple Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_w_n_mid",
-        "color": "cyan"
-      },
-      "35": {
-        "id": "35",
-        "number": "Plot 35",
-        "road": "Mahalakshmi Link",
-        "block": "ISKCON Temple Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_w_n_mid",
-        "color": "cyan"
-      },
-      "36": {
-        "id": "36",
-        "number": "Plot 36",
-        "road": "Mahalakshmi Link",
-        "block": "ISKCON Temple Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_w_s_mid",
-        "color": "cyan"
-      },
-      "37": {
-        "id": "37",
-        "number": "Plot 37",
-        "road": "Mahalakshmi Link",
-        "block": "ISKCON Temple Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_w_s_mid",
-        "color": "cyan"
-      },
-      "38": {
-        "id": "38",
-        "number": "Plot 38",
-        "road": "Mahalakshmi Link",
-        "block": "ISKCON Temple Sector",
-        "facing": "East",
-        "x": 240,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_w_s_mid",
-        "color": "cyan"
-      },
-      "39": {
-        "id": "39",
-        "number": "Plot 39",
-        "road": "ISKCON Parkway",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 280,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_e_n_mid",
-        "color": "cyan"
-      },
-      "40": {
-        "id": "40",
-        "number": "Plot 40",
-        "road": "ISKCON Parkway",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 350,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_e_n_mid",
-        "color": "cyan"
-      },
-      "41": {
-        "id": "41",
-        "number": "Plot 41",
-        "road": "ISKCON Parkway",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 420,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_e_n_mid",
-        "color": "cyan"
-      },
-      "42": {
-        "id": "42",
-        "number": "Plot 42",
-        "road": "ISKCON Parkway",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 490,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_e_s_mid",
-        "color": "cyan"
-      },
-      "43": {
-        "id": "43",
-        "number": "Plot 43",
-        "road": "ISKCON Parkway",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 560,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_e_s_mid",
-        "color": "cyan"
-      },
-      "44": {
-        "id": "44",
-        "number": "Plot 44",
-        "road": "ISKCON Parkway",
-        "block": "East Sector",
-        "facing": "West",
-        "x": 1000,
-        "y": 630,
-        "w": 48,
-        "h": 36,
-        "roadNode": "rajajinagar_1st_e_s_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "rajajinagar_1st_gate_1",
-        "name": "Rajajinagar 1st Block Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "rajajinagar_1st_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "rajajinagar_1st_gate_2",
-        "name": "Rajajinagar 1st Block Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "rajajinagar_1st_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "rajajinagar_1st_temple",
-        "name": "ISKCON Sri Krishna Balaram Temple",
-        "description": "Grand hilltop cultural and architectural temple complex",
-        "x": 620,
-        "y": 270,
-        "roadNode": "rajajinagar_1st_n_mid",
-        "icon": "\ud83d\uded5",
-        "type": "worship"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "1ST BLOCK MAIN BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "10TH CROSS AVENUE",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "SUBRAMANYA NAGAR WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "MAHALAKSHMI LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "ISKCON PARKWAY",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "rajajinagar_1st_gate_1",
-    "sectors": [
-      "ISKCON Temple Sector",
-      "Subramanya Nagar Sector"
-    ]
-  },
-  "peenya_industrial": {
-    "id": "peenya_industrial",
-    "name": "Peenya Industrial Township",
-    "location": "Tumkur Road, Bangalore West",
-    "zone": "west",
-    "type": "Manufacturing & Enterprise Township",
-    "unitType": "Block",
-    "unitCount": 16,
-    "bounds": {
-      "minX": 60,
-      "maxX": 1180,
-      "minY": 160,
-      "maxY": 840
-    },
-    "center": {
-      "x": 600,
-      "y": 480
-    },
-    "groundPolygon": "90,480 200,160 620,140 1040,160 1110,480 1040,800 620,840 200,800 Z",
-    "borderTreesPath": "M 90,480 L 200,160 L 620,140 L 1040,160 L 1110,480 L 1040,800 L 620,840 L 200,800 Z",
-    "gardenPark": {
-      "x": 460,
-      "y": 455,
-      "w": 320,
-      "h": 50,
-      "rx": 8,
-      "label": "Central Landscaped Park & Courtyard"
-    },
-    "roads": {
-      "nodes": {
-        "peenya_industrial_gate_1": {
-          "id": "peenya_industrial_gate_1",
-          "x": 90,
-          "y": 480,
-          "label": "Peenya Industrial Township Gate 1 (Main Entrance)"
-        },
-        "peenya_industrial_entry": {
-          "id": "peenya_industrial_entry",
-          "x": 180,
-          "y": 480,
-          "label": "Entrance Boulevard"
-        },
-        "peenya_industrial_junc_w": {
-          "id": "peenya_industrial_junc_w",
-          "x": 320,
-          "y": 480,
-          "label": "Outer Ring Link West Junction"
-        },
-        "peenya_industrial_junc_ctr": {
-          "id": "peenya_industrial_junc_ctr",
-          "x": 620,
-          "y": 480,
-          "label": "Central Plaza Roundabout"
-        },
-        "peenya_industrial_junc_e": {
-          "id": "peenya_industrial_junc_e",
-          "x": 920,
-          "y": 480,
-          "label": "Tumkur Highway East Junction"
-        },
-        "peenya_industrial_gate_2": {
-          "id": "peenya_industrial_gate_2",
-          "x": 1110,
-          "y": 480,
-          "label": "Peenya Industrial Township Gate 2 (Rear Entrance)"
-        },
-        "peenya_industrial_n_w": {
-          "id": "peenya_industrial_n_w",
-          "x": 320,
-          "y": 270,
-          "label": "1st Stage Parkway West"
-        },
-        "peenya_industrial_n_mid": {
-          "id": "peenya_industrial_n_mid",
-          "x": 620,
-          "y": 270,
-          "label": "1st Stage Parkway North Plaza"
-        },
-        "peenya_industrial_n_e": {
-          "id": "peenya_industrial_n_e",
-          "x": 920,
-          "y": 270,
-          "label": "1st Stage Parkway East"
-        },
-        "peenya_industrial_s_w": {
-          "id": "peenya_industrial_s_w",
-          "x": 320,
-          "y": 690,
-          "label": "4th Cross Way West"
-        },
-        "peenya_industrial_s_mid": {
-          "id": "peenya_industrial_s_mid",
-          "x": 620,
-          "y": 690,
-          "label": "4th Cross Way South Plaza"
-        },
-        "peenya_industrial_s_e": {
-          "id": "peenya_industrial_s_e",
-          "x": 920,
-          "y": 690,
-          "label": "4th Cross Way East"
-        },
-        "peenya_industrial_w_n_mid": {
-          "id": "peenya_industrial_w_n_mid",
-          "x": 320,
-          "y": 375,
-          "label": "Outer Ring Link North Link"
-        },
-        "peenya_industrial_w_s_mid": {
-          "id": "peenya_industrial_w_s_mid",
-          "x": 320,
-          "y": 585,
-          "label": "Outer Ring Link South Link"
-        },
-        "peenya_industrial_ctr_n_mid": {
-          "id": "peenya_industrial_ctr_n_mid",
-          "x": 620,
-          "y": 375,
-          "label": "Central Gardens North"
-        },
-        "peenya_industrial_ctr_s_mid": {
-          "id": "peenya_industrial_ctr_s_mid",
-          "x": 620,
-          "y": 585,
-          "label": "Central Gardens South"
-        },
-        "peenya_industrial_e_n_mid": {
-          "id": "peenya_industrial_e_n_mid",
-          "x": 920,
-          "y": 375,
-          "label": "Tumkur Highway North Link"
-        },
-        "peenya_industrial_e_s_mid": {
-          "id": "peenya_industrial_e_s_mid",
-          "x": 920,
-          "y": 585,
-          "label": "Tumkur Highway South Link"
-        }
-      },
-      "edges": [
-        {
-          "u": "peenya_industrial_gate_1",
-          "v": "peenya_industrial_entry",
-          "road": "Peenya Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "peenya_industrial_entry",
-          "v": "peenya_industrial_junc_w",
-          "road": "Peenya Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "peenya_industrial_junc_w",
-          "v": "peenya_industrial_junc_ctr",
-          "road": "Peenya Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "peenya_industrial_junc_ctr",
-          "v": "peenya_industrial_junc_e",
-          "road": "Peenya Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "peenya_industrial_junc_e",
-          "v": "peenya_industrial_gate_2",
-          "road": "Peenya Main Boulevard",
-          "type": "primary"
-        },
-        {
-          "u": "peenya_industrial_n_w",
-          "v": "peenya_industrial_n_mid",
-          "road": "1st Stage Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "peenya_industrial_n_mid",
-          "v": "peenya_industrial_n_e",
-          "road": "1st Stage Parkway",
-          "type": "secondary"
-        },
-        {
-          "u": "peenya_industrial_s_w",
-          "v": "peenya_industrial_s_mid",
-          "road": "4th Cross Way",
-          "type": "secondary"
-        },
-        {
-          "u": "peenya_industrial_s_mid",
-          "v": "peenya_industrial_s_e",
-          "road": "4th Cross Way",
-          "type": "secondary"
-        },
-        {
-          "u": "peenya_industrial_n_w",
-          "v": "peenya_industrial_w_n_mid",
-          "road": "Outer Ring Link",
-          "type": "secondary"
-        },
-        {
-          "u": "peenya_industrial_w_n_mid",
-          "v": "peenya_industrial_junc_w",
-          "road": "Outer Ring Link",
-          "type": "secondary"
-        },
-        {
-          "u": "peenya_industrial_junc_w",
-          "v": "peenya_industrial_w_s_mid",
-          "road": "Outer Ring Link",
-          "type": "secondary"
-        },
-        {
-          "u": "peenya_industrial_w_s_mid",
-          "v": "peenya_industrial_s_w",
-          "road": "Outer Ring Link",
-          "type": "secondary"
-        },
-        {
-          "u": "peenya_industrial_n_mid",
-          "v": "peenya_industrial_ctr_n_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "peenya_industrial_ctr_n_mid",
-          "v": "peenya_industrial_junc_ctr",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "peenya_industrial_junc_ctr",
-          "v": "peenya_industrial_ctr_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "peenya_industrial_ctr_s_mid",
-          "v": "peenya_industrial_s_mid",
-          "road": "Central Link",
-          "type": "primary"
-        },
-        {
-          "u": "peenya_industrial_n_e",
-          "v": "peenya_industrial_e_n_mid",
-          "road": "Tumkur Highway",
-          "type": "secondary"
-        },
-        {
-          "u": "peenya_industrial_e_n_mid",
-          "v": "peenya_industrial_junc_e",
-          "road": "Tumkur Highway",
-          "type": "secondary"
-        },
-        {
-          "u": "peenya_industrial_junc_e",
-          "v": "peenya_industrial_e_s_mid",
-          "road": "Tumkur Highway",
-          "type": "secondary"
-        },
-        {
-          "u": "peenya_industrial_e_s_mid",
-          "v": "peenya_industrial_s_e",
-          "road": "Tumkur Highway",
-          "type": "secondary"
-        }
-      ]
-    },
-    "plots": {
-      "1": {
-        "id": "1",
-        "number": "Stage A Sector - 101",
-        "road": "1st Stage Parkway",
-        "block": "Stage A Sector",
-        "facing": "South",
-        "x": 247,
-        "y": 189,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_w",
-        "color": "cyan"
-      },
-      "2": {
-        "id": "2",
-        "number": "Stage A Sector - 102",
-        "road": "1st Stage Parkway",
-        "block": "Stage A Sector",
-        "facing": "South",
-        "x": 269,
-        "y": 189,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_w",
-        "color": "cyan"
-      },
-      "3": {
-        "id": "3",
-        "number": "Stage A Sector - 201",
-        "road": "1st Stage Parkway",
-        "block": "Stage A Sector",
-        "facing": "South",
-        "x": 291,
-        "y": 189,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_w",
-        "color": "cyan"
-      },
-      "4": {
-        "id": "4",
-        "number": "Stage A Sector - 202",
-        "road": "1st Stage Parkway",
-        "block": "Stage A Sector",
-        "facing": "South",
-        "x": 313,
-        "y": 189,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_w",
-        "color": "cyan"
-      },
-      "5": {
-        "id": "5",
-        "number": "Stage A Sector - 301",
-        "road": "1st Stage Parkway",
-        "block": "Stage A Sector",
-        "facing": "South",
-        "x": 247,
-        "y": 211,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_w",
-        "color": "cyan"
-      },
-      "6": {
-        "id": "6",
-        "number": "Stage A Sector - 302",
-        "road": "1st Stage Parkway",
-        "block": "Stage A Sector",
-        "facing": "South",
-        "x": 269,
-        "y": 211,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_w",
-        "color": "cyan"
-      },
-      "7": {
-        "id": "7",
-        "number": "Stage A Sector - 401",
-        "road": "1st Stage Parkway",
-        "block": "Stage A Sector",
-        "facing": "South",
-        "x": 291,
-        "y": 211,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_w",
-        "color": "cyan"
-      },
-      "8": {
-        "id": "8",
-        "number": "Stage A Sector - 402",
-        "road": "1st Stage Parkway",
-        "block": "Stage A Sector",
-        "facing": "South",
-        "x": 313,
-        "y": 211,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_w",
-        "color": "cyan"
-      },
-      "9": {
-        "id": "9",
-        "number": "Cross B Sector - 101",
-        "road": "1st Stage Parkway",
-        "block": "Cross B Sector",
-        "facing": "South",
-        "x": 527,
-        "y": 189,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_mid",
-        "color": "cyan"
-      },
-      "10": {
-        "id": "10",
-        "number": "Cross B Sector - 102",
-        "road": "1st Stage Parkway",
-        "block": "Cross B Sector",
-        "facing": "South",
-        "x": 549,
-        "y": 189,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_mid",
-        "color": "cyan"
-      },
-      "11": {
-        "id": "11",
-        "number": "Cross B Sector - 201",
-        "road": "1st Stage Parkway",
-        "block": "Cross B Sector",
-        "facing": "South",
-        "x": 571,
-        "y": 189,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_mid",
-        "color": "cyan"
-      },
-      "12": {
-        "id": "12",
-        "number": "Cross B Sector - 202",
-        "road": "1st Stage Parkway",
-        "block": "Cross B Sector",
-        "facing": "South",
-        "x": 593,
-        "y": 189,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_mid",
-        "color": "cyan"
-      },
-      "13": {
-        "id": "13",
-        "number": "Cross B Sector - 301",
-        "road": "1st Stage Parkway",
-        "block": "Cross B Sector",
-        "facing": "South",
-        "x": 527,
-        "y": 211,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_mid",
-        "color": "cyan"
-      },
-      "14": {
-        "id": "14",
-        "number": "Cross B Sector - 302",
-        "road": "1st Stage Parkway",
-        "block": "Cross B Sector",
-        "facing": "South",
-        "x": 549,
-        "y": 211,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_mid",
-        "color": "cyan"
-      },
-      "15": {
-        "id": "15",
-        "number": "Cross B Sector - 401",
-        "road": "1st Stage Parkway",
-        "block": "Cross B Sector",
-        "facing": "South",
-        "x": 571,
-        "y": 211,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_mid",
-        "color": "cyan"
-      },
-      "16": {
-        "id": "16",
-        "number": "Cross B Sector - 402",
-        "road": "1st Stage Parkway",
-        "block": "Cross B Sector",
-        "facing": "South",
-        "x": 593,
-        "y": 211,
-        "w": 48,
-        "h": 34,
-        "roadNode": "peenya_industrial_n_mid",
-        "color": "cyan"
-      }
-    },
-    "amenities": [
-      {
-        "id": "peenya_industrial_gate_1",
-        "name": "Peenya Industrial Township Main Gate 1",
-        "description": "Security checkpoint, visitor RFID entry & security cabin",
-        "x": 90,
-        "y": 480,
-        "roadNode": "peenya_industrial_gate_1",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "peenya_industrial_gate_2",
-        "name": "Peenya Industrial Township Gate 2",
-        "description": "Secondary gate, service exit & emergency access",
-        "x": 1110,
-        "y": 480,
-        "roadNode": "peenya_industrial_gate_2",
-        "icon": "\ud83d\udeaa",
-        "type": "gate"
-      },
-      {
-        "id": "peenya_industrial_hub",
-        "name": "Peenya Industries Association Hub",
-        "description": "Business auditorium, conference center and banking hub",
-        "x": 620,
-        "y": 480,
-        "roadNode": "peenya_industrial_junc_ctr",
-        "icon": "\ud83c\udfe2",
-        "type": "civic"
-      }
-    ],
-    "roadLabels": [
-      {
-        "name": "PEENYA MAIN BOULEVARD",
-        "x": 620,
-        "y": 490,
-        "vertical": false
-      },
-      {
-        "name": "1ST STAGE PARKWAY",
-        "x": 620,
-        "y": 255,
-        "vertical": false
-      },
-      {
-        "name": "4TH CROSS WAY",
-        "x": 620,
-        "y": 705,
-        "vertical": false
-      },
-      {
-        "name": "OUTER RING LINK",
-        "x": 305,
-        "y": 375,
-        "vertical": true
-      },
-      {
-        "name": "TUMKUR HIGHWAY",
-        "x": 935,
-        "y": 375,
-        "vertical": true
-      }
-    ],
-    "defaultStartGate": "peenya_industrial_gate_1",
-    "sectors": [
-      "Stage A Sector",
-      "Cross B Sector"
-    ]
+    "verified": true
   }
 };

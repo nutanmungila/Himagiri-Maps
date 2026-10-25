@@ -3260,7 +3260,7 @@
     document.querySelectorAll('.btn-preview-sample, .btn-demo-card').forEach(btn => {
       btn.addEventListener('click', () => {
         const name = btn.getAttribute('data-name') || 'This layout';
-        showToast(`${name} is a sample preview. Try Himagiri Meadows for full live navigation! 🗺️`, 3500);
+        showToast(`${name} is a sample preview. Explore any verified layout for full live navigation! 🗺️`, 3500);
       });
     });
 
@@ -4618,7 +4618,7 @@
           <div style="font-size: 38px; margin-bottom: 12px;">🔍</div>
           <h3 style="color: #f1f5f9; font-size: 18px; margin-bottom: 8px;">No matching layouts found</h3>
           <p style="font-size: 13.5px;">Try searching for another locality like "Whitefield", "Sarjapur", "Hebbal", "HSR", or "South".</p>
-          <button id="reset-directory-search-btn" class="btn btn-secondary" style="margin-top: 16px;">View All 50+ Layouts</button>
+          <button id="reset-directory-search-btn" class="btn btn-secondary" style="margin-top: 16px;">View All 32 Verified Blueprints</button>
         </div>
       `;
       const resetBtn = document.getElementById('reset-directory-search-btn');
@@ -4683,7 +4683,7 @@
 
       cardsHtml += `
         <div class="community-card active-card" data-layout-id="${lay.id}">
-          <div class="card-badge live-badge">${badge}</div>
+          <div class="card-badge live-badge">✓ Verified Blueprint</div>
           <div class="card-header">
             <div class="community-avatar">${icon}</div>
             <div>
