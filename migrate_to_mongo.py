@@ -155,12 +155,14 @@ def sync_to_mongodb(layouts, uri, db_name, collection_name):
     ]
 
     result = coll.bulk_write(operations)
+    delete_result = coll.delete_many({"_id": {"$nin": list(layouts.keys())}})
     print("=" * 60)
     print("  MONGODB SYNC COMPLETED SUCCESSFULLY!")
     print("=" * 60)
     print(f"  Matched:  {result.matched_count}")
     print(f"  Modified: {result.modified_count}")
     print(f"  Upserted: {len(result.upserted_ids)}")
+    print(f"  Purged old/unverified: {delete_result.deleted_count}")
     print(f"  Total in collection: {coll.count_documents({})}")
     print("=" * 60)
     return True
