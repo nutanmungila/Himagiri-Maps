@@ -177,39 +177,97 @@
     checkUrlParams();
   }
 
-  // Double-tap (mobile touch) & double-click (desktop) listener helper for sub-area exploration
-  function enableDoubleTapOrClick(el, onTrigger) {
+  // Press & Hold (mobile touch long-press & desktop hold) helper for sub-area exploration
+  function enableHoldTrigger(el, onTrigger) {
     if (!el) return;
     el.style.cursor = 'pointer';
 
-    // 1. Desktop: Double-click
-    el.addEventListener('dblclick', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      onTrigger();
-    });
+    let holdTimer = null;
+    let holdFired = false;
+    let startX = 0;
+    let startY = 0;
 
-    // 2. Mobile: Fast touch double-tap (< 380ms)
-    let lastTapTime = 0;
+    const startHold = (clientX, clientY) => {
+      holdFired = false;
+      startX = clientX;
+      startY = clientY;
+      clearTimeout(holdTimer);
+      holdTimer = setTimeout(() => {
+        holdFired = true;
+        if ('vibrate' in navigator) {
+          try { navigator.vibrate(40); } catch (e) {}
+        }
+        onTrigger();
+      }, 420);
+    };
+
+    const cancelHold = () => {
+      clearTimeout(holdTimer);
+      holdTimer = null;
+    };
+
+    // Mobile touch long-press
+    el.addEventListener('touchstart', (e) => {
+      if (e.touches && e.touches.length === 1) {
+        startHold(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
+
+    el.addEventListener('touchmove', (e) => {
+      if (holdTimer && e.touches && e.touches.length === 1) {
+        const dist = Math.hypot(e.touches[0].clientX - startX, e.touches[0].clientY - startY);
+        if (dist > 10) cancelHold();
+      }
+    }, { passive: true });
+
     el.addEventListener('touchend', (e) => {
-      const now = Date.now();
-      const diff = now - lastTapTime;
-      if (diff > 40 && diff < 380) {
+      cancelHold();
+      if (holdFired) {
         e.preventDefault();
         e.stopPropagation();
-        lastTapTime = 0;
-        onTrigger();
-      } else {
-        lastTapTime = now;
       }
     });
 
-    // 3. Fallback: Right-click (contextmenu) also opens it
+    el.addEventListener('touchcancel', cancelHold);
+
+    // Desktop mouse hold
+    el.addEventListener('mousedown', (e) => {
+      if (e.button !== 0) return;
+      startHold(e.clientX, e.clientY);
+    });
+
+    el.addEventListener('mousemove', (e) => {
+      if (holdTimer) {
+        const dist = Math.hypot(e.clientX - startX, e.clientY - startY);
+        if (dist > 6) cancelHold();
+      }
+    });
+
+    el.addEventListener('mouseup', (e) => {
+      cancelHold();
+      if (holdFired) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    });
+
+    el.addEventListener('mouseleave', cancelHold);
+
+    // Desktop right-click (contextmenu) shortcut
     el.addEventListener('contextmenu', (e) => {
       e.preventDefault();
       e.stopPropagation();
+      cancelHold();
       onTrigger();
     });
+
+    el._justFiredHold = () => {
+      const fired = holdFired;
+      if (fired) {
+        setTimeout(() => { holdFired = false; }, 250);
+      }
+      return fired;
+    };
   }
 
   // Landscaping & Perimeter
@@ -361,15 +419,16 @@
           lmG.appendChild(lmtxt);
         }
 
-        enableDoubleTapOrClick(lmG, () => {
+        enableHoldTrigger(lmG, () => {
           const lbl = lm.label || 'Commercial Complex';
           const type = lbl.toLowerCase().includes('mall') ? 'mall' : 'tower';
           openSubAreaInterior(type, lbl, null, lm);
         });
         lmG.addEventListener('click', (e) => {
           e.stopPropagation();
+          if (lmG._justFiredHold && lmG._justFiredHold()) return;
           const lbl = lm.label || 'Commercial Complex';
-          showToast(`🏢 ${lbl} • Double-tap to explore inside`, 2500);
+          showToast(`🏢 ${lbl} • Hold to explore inside`, 2500);
         });
 
         bgGroup.appendChild(lmG);
@@ -621,9 +680,15 @@
         subTxt.textContent = (currentLayout.unitType ? currentLayout.unitType.replace(/ \/ .*/, '') : 'Apartment Tower').replace(/\d+/g, '').trim();
         blockG.appendChild(subTxt);
 
+        // Hold to enter interior floor plan of this tower/block
+        enableHoldTrigger(blockG, () => {
+          openSubAreaInterior('tower', cleanName, uList);
+        });
+
         // Click to select block & calculate route (no inscreen, stays on main map)
         blockG.addEventListener('click', (e) => {
           e.stopPropagation();
+          if (blockG._justFiredHold && blockG._justFiredHold()) return;
           selectPlot(uList[0].id, false);
         });
 
@@ -706,9 +771,15 @@
         g.appendChild(txt);
       }
 
+      // Hold plot to enter house/villa 3D interior floor plan
+      enableHoldTrigger(g, () => {
+        openSubAreaInterior('villa', `House #${p.number}`, [p]);
+      });
+
       // Interactions: Single click to select & navigate (no inscreen, stays on main map)
       g.addEventListener('click', (e) => {
         e.stopPropagation();
+        if (g._justFiredHold && g._justFiredHold()) return;
         selectPlot(p.id, false);
       });
 
@@ -788,11 +859,12 @@
       g.appendChild(title);
 
       g.addEventListener('click', () => {
+        if (g._justFiredHold && g._justFiredHold()) return;
         selectAmenity(am.id, true);
       });
 
-      // Double-Tap / Double-Click: Enter inside clubhouse, mall, or sports amenity
-      enableDoubleTapOrClick(g, () => {
+      // Press and Hold: Enter inside clubhouse, mall, or sports amenity
+      enableHoldTrigger(g, () => {
         const aType = (am.type === 'clubhouse' || am.id.includes('club') || am.id.includes('sports')) ? 'clubhouse' :
                       (am.type === 'mall' || am.id.includes('mall')) ? 'mall' :
                       (am.type === 'auditorium' || am.id.includes('convention')) ? 'clubhouse' : 'facility';
@@ -802,21 +874,6 @@
           selectAmenity(am.id, true);
         }
       });
-
-      // Mobile touch long-press (touch and hold) as additional shortcut
-      let amTouchTimer = null;
-      g.addEventListener('touchstart', () => {
-        amTouchTimer = setTimeout(() => {
-          const aType = (am.type === 'clubhouse' || am.id.includes('club') || am.id.includes('sports')) ? 'clubhouse' :
-                        (am.type === 'mall' || am.id.includes('mall')) ? 'mall' :
-                        (am.type === 'auditorium' || am.id.includes('convention')) ? 'clubhouse' : 'facility';
-          if (aType === 'clubhouse' || aType === 'mall') {
-            openSubAreaInterior(aType, am.name, null, am);
-          }
-        }, 450);
-      }, { passive: true });
-      g.addEventListener('touchend', () => clearTimeout(amTouchTimer));
-      g.addEventListener('touchmove', () => clearTimeout(amTouchTimer));
       g.addEventListener('mouseenter', (e) => {
         tooltip.innerHTML = `<strong>${am.name}</strong><br><span style="color:#94a3b8;font-size:11px;">${am.description || am.desc || 'Amenity'}</span>`;
         tooltip.style.display = 'block';
@@ -2156,7 +2213,7 @@
       <div style="font-size:11px;color:#cbd5e1;">Road: <strong>${p.road}</strong></div>
       <div style="font-size:11px;color:#cbd5e1;">Sector: ${blockLabel} (${p.facing}-facing)</div>
       <div style="font-size:10px;color:#10b981;margin-top:4px;">📍 ${distG1}m from ${gateLabel}</div>
-      <div style="font-size:10px;color:#f59e0b;margin-top:4px;font-weight:700;">👉 Double-tap to explore inside</div>
+      <div style="font-size:10px;color:#f59e0b;margin-top:4px;font-weight:700;">👉 Hold button or plot to explore inside</div>
     `;
     tooltip.style.display = 'block';
     movePlotTooltip(e);
@@ -2785,8 +2842,129 @@
       });
     }
 
+    // Setup Hold Button with visual animated progress bar and dual hold/tap activation
+    function setupHoldButton(btn, onTrigger) {
+      if (!btn) return;
+      const holdBar = document.getElementById('card-interior-hold-bar');
+      const labelSpan = document.getElementById('card-interior-btn-label');
+      const defaultLabel = 'Hold Button to Explore Interior';
+
+      let holdTimer = null;
+      let animFrame = null;
+      let startTime = 0;
+      const HOLD_DURATION = 420; // 420ms smooth hold
+      let isHolding = false;
+      let holdTriggered = false;
+
+      function resetHoldUI() {
+        isHolding = false;
+        clearTimeout(holdTimer);
+        cancelAnimationFrame(animFrame);
+        btn.classList.remove('is-holding');
+        if (holdBar) {
+          holdBar.style.transition = 'width 0.2s ease-out';
+          holdBar.style.width = '0%';
+        }
+        if (labelSpan && !holdTriggered) {
+          labelSpan.textContent = defaultLabel;
+        }
+      }
+
+      function startHoldAction() {
+        if (isHolding) return;
+        isHolding = true;
+        holdTriggered = false;
+        startTime = Date.now();
+        btn.classList.add('is-holding');
+        if (labelSpan) labelSpan.textContent = 'Holding... Keep holding ⏳';
+
+        if (holdBar) {
+          holdBar.style.transition = 'none';
+          holdBar.style.width = '0%';
+        }
+
+        function updateProgress() {
+          if (!isHolding) return;
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(100, (elapsed / HOLD_DURATION) * 100);
+          if (holdBar) holdBar.style.width = `${progress}%`;
+          if (elapsed < HOLD_DURATION) {
+            animFrame = requestAnimationFrame(updateProgress);
+          }
+        }
+        animFrame = requestAnimationFrame(updateProgress);
+
+        holdTimer = setTimeout(() => {
+          if (!isHolding) return;
+          holdTriggered = true;
+          if (holdBar) holdBar.style.width = '100%';
+          if (labelSpan) labelSpan.textContent = '✨ Opening Interior...';
+          if ('vibrate' in navigator) {
+            try { navigator.vibrate(50); } catch (err) {}
+          }
+          btn.classList.add('hold-success');
+          setTimeout(() => {
+            btn.classList.remove('hold-success');
+            resetHoldUI();
+          }, 300);
+          onTrigger();
+        }, HOLD_DURATION);
+      }
+
+      // Touch events (Mobile)
+      btn.addEventListener('touchstart', (e) => {
+        startHoldAction();
+      }, { passive: true });
+
+      btn.addEventListener('touchend', (e) => {
+        if (!holdTriggered && isHolding) {
+          const elapsed = Date.now() - startTime;
+          resetHoldUI();
+          if (elapsed < HOLD_DURATION) {
+            // A quick tap on the button also enters interior smoothly!
+            onTrigger();
+          }
+        } else {
+          resetHoldUI();
+        }
+      });
+
+      btn.addEventListener('touchcancel', resetHoldUI);
+
+      // Mouse events (Desktop)
+      btn.addEventListener('mousedown', (e) => {
+        if (e.button !== 0) return;
+        startHoldAction();
+      });
+
+      btn.addEventListener('mouseup', (e) => {
+        if (!holdTriggered && isHolding) {
+          const elapsed = Date.now() - startTime;
+          resetHoldUI();
+          if (elapsed < HOLD_DURATION) {
+            // A quick click on the button also enters interior smoothly!
+            onTrigger();
+          }
+        } else {
+          resetHoldUI();
+        }
+      });
+
+      btn.addEventListener('mouseleave', resetHoldUI);
+
+      // Click handler to prevent duplicate triggers
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (holdTriggered) {
+          holdTriggered = false;
+          return;
+        }
+      });
+    }
+
     if (cardInteriorBtn) {
-      cardInteriorBtn.addEventListener('click', () => {
+      const triggerCardInterior = () => {
         if (state.selectedPlotId && plots[state.selectedPlotId]) {
           const p = plots[state.selectedPlotId];
           const isApt = isApartmentOrBlockLayout(currentLayout);
@@ -2809,7 +2987,9 @@
             openSubAreaInterior('tower', currentLayout.name);
           }
         }
-      });
+      };
+
+      setupHoldButton(cardInteriorBtn, triggerCardInterior);
     }
 
     if (interiorNavBtn) {
@@ -2858,10 +3038,10 @@
       });
     }
 
-    // Register Service Worker for Android PWA with instant update reload
-    if ('serviceWorker' in navigator) {
+    // Register Service Worker for Complete Offline PWA (Zero Wi-Fi Required)
+    if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js?v=8').then((reg) => {
+        navigator.serviceWorker.register('sw.js?v=25').then((reg) => {
           reg.update(); // Force immediate update check
         }).catch(err => {
           console.log('SW registration error:', err);
@@ -2874,7 +3054,32 @@
           window.location.reload();
         }
       });
+      navigator.serviceWorker.addEventListener('message', (event) => {
+        if (event.data && event.data.type === 'OFFLINE_READY') {
+          showToast('⚡ HM Maps is offline-ready! No Wi-Fi required.', 3500);
+        }
+      });
     }
+
+    // Dynamic Online / Offline status badge tracking
+    function updateOnlineStatus() {
+      const badge = document.getElementById('offline-badge');
+      const badgeText = document.getElementById('offline-badge-text');
+      if (!badge || !badgeText) return;
+      if (navigator.onLine) {
+        badge.classList.remove('offline-active');
+        badgeText.textContent = '⚡ Offline Ready';
+        badge.title = 'All 59+ layouts cached. Works without Wi-Fi!';
+      } else {
+        badge.classList.add('offline-active');
+        badgeText.textContent = '⚡ Offline (No Wi-Fi)';
+        badge.title = 'Running in offline mode without Wi-Fi';
+        showToast('⚡ Running in Offline Mode. All 59+ maps available without Wi-Fi!', 3000);
+      }
+    }
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+    updateOnlineStatus();
 
     // Auto-fit on screen orientation change or resize
     window.addEventListener('resize', () => {
@@ -3083,7 +3288,7 @@
   };
 
   function openSubAreaInterior(type, name, uList, extraData) {
-    // 1. If double-tapped subarea matches another layout in window.LAYOUTS, switch to that layout!
+    // 1. If explored subarea matches another layout in window.LAYOUTS, switch to that layout!
     const cleanQuery = (name || '').toLowerCase().trim();
     const layoutMatch = Object.keys(layouts).find(k => {
       const l = layouts[k];

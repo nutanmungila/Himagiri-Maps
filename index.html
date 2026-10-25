@@ -32,13 +32,13 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="style.css?v=24">
+  <link rel="stylesheet" href="style.css?v=25">
   <script>
     // Aggressively purge older PWA caches so updates show instantly
     if ('caches' in window) {
       caches.keys().then(function(names) {
         for (let name of names) {
-          if (name !== 'himagiri-map-v24') {
+          if (name !== 'himagiri-maps-offline-v25') {
             caches.delete(name);
           }
         }
@@ -47,7 +47,8 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
 </head>
 <body class="big-labels">
 
@@ -74,6 +75,11 @@
     </div>
 
     <div class="header-actions">
+      <!-- Offline Status Badge (Zero Wi-Fi Required) -->
+      <div id="offline-badge" class="offline-badge" title="This website works 100% offline without Wi-Fi">
+        <span class="offline-dot"></span>
+        <span id="offline-badge-text">⚡ Offline Ready</span>
+      </div>
       <!-- Map-specific controls (shown in map view) -->
       <div id="header-map-controls" style="display: none; align-items: center; gap: 4px;">
         <button id="header-map-toggle-btn" class="btn btn-secondary" title="Toggle Fullscreen Map / Split View">
@@ -291,8 +297,12 @@
             </div>
           </div>
           <div id="card-block-units" class="card-block-units" style="display: none;"></div>
-          <button id="card-explore-interior-btn" class="btn btn-secondary" style="width: 100%; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; background: #0f172a; border-color: #38bdf8; color: #38bdf8;">
-            <span>🔍</span> Enter Sub-Area Interior (Double-Tap)
+          <button id="card-explore-interior-btn" class="btn btn-secondary card-hold-btn" title="Press and hold to enter sub-area floor plan (or tap)">
+            <span class="btn-hold-bar" id="card-interior-hold-bar"></span>
+            <span class="btn-hold-content">
+              <span class="btn-icon">🔍</span>
+              <span id="card-interior-btn-label">Hold Button to Explore Interior</span>
+            </span>
           </button>
         </div>
       </section>
@@ -464,7 +474,7 @@
     </div>
   </div>
 
-  <!-- Modal: Sub-Area Interior Floor Plan Explorer (Triggered by Double-Tap / Click) -->
+  <!-- Modal: Sub-Area Interior Floor Plan Explorer (Triggered by Holding Button / Long-Press) -->
   <div id="interior-view-modal" class="modal-overlay interior-modal-overlay">
     <div class="modal-content interior-modal-content">
       <div class="modal-header interior-modal-header">
@@ -644,10 +654,10 @@
   </div>
 
   <!-- Load Scripts with Version Cache-Buster -->
-  <script src="analytics.js?v=24"></script>
-  <script src="qrcode.min.js?v=24"></script>
-  <script src="map_data.js?v=24"></script>
-  <script src="layouts_data.js?v=24"></script>
-  <script src="app.js?v=24"></script>
+  <script src="analytics.js?v=25"></script>
+  <script src="qrcode.min.js?v=25"></script>
+  <script src="map_data.js?v=25"></script>
+  <script src="layouts_data.js?v=25"></script>
+  <script src="app.js?v=25"></script>
 </body>
 </html>

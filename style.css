@@ -185,6 +185,48 @@ body {
   gap: 10px;
 }
 
+/* Offline Status Badge (Zero Wi-Fi Required) */
+.offline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #10b981;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.offline-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.offline-badge.offline-active {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.45);
+  color: #fbbf24;
+}
+
+.offline-badge.offline-active .offline-dot {
+  background-color: #fbbf24;
+  box-shadow: 0 0 8px #fbbf24;
+}
+
 .btn-text-mobile {
   display: none;
 }
@@ -1228,8 +1270,73 @@ body.big-labels .road-label {
 }
 
 /* ======================================================== */
-/* SUB-AREA INTERIOR FLOOR PLAN VIEW (DOUBLE-TAP FEATURE)   */
+/* SUB-AREA INTERIOR FLOOR PLAN VIEW (HOLD BUTTON FEATURE)  */
 /* ======================================================== */
+/* Hold Button for Sub-Area Exploration */
+.card-hold-btn {
+  position: relative !important;
+  width: 100% !important;
+  margin-top: 10px !important;
+  min-height: 42px !important;
+  background: #090d16 !important;
+  border: 1.5px solid #0284c7 !important;
+  color: #38bdf8 !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  touch-action: manipulation !important;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.1s !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.card-hold-btn:hover {
+  background: #0f172a !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.3) !important;
+}
+
+.card-hold-btn.is-holding {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 18px rgba(245, 158, 11, 0.45) !important;
+  transform: scale(0.985);
+}
+
+.card-hold-btn.hold-success {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.7) !important;
+  color: #a7f3d0 !important;
+}
+
+.btn-hold-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(2, 132, 199, 0.4), rgba(245, 158, 11, 0.75));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-hold-btn.hold-success .btn-hold-bar {
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.5), rgba(5, 150, 105, 0.9));
+}
+
+.btn-hold-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  pointer-events: none;
+}
 .interior-modal-overlay {
   z-index: 99999;
   background: rgba(4, 7, 13, 0.92);
@@ -1703,6 +1810,14 @@ body.big-labels .road-label {
 
   .header-actions #android-connect-btn {
     display: none !important;
+  }
+
+  .offline-badge {
+    padding: 3px 6px !important;
+    font-size: 10px !important;
+    gap: 4px !important;
+    border-radius: 6px !important;
+    min-height: 26px !important;
   }
 
   .header-actions .btn {
