@@ -6,6 +6,16 @@
 (function () {
   'use strict';
 
+  // Permanently silence any web speech
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    try {
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak = () => false;
+      window.speechSynthesis.pause = () => {};
+      window.speechSynthesis.resume = () => {};
+    } catch (_) {}
+  }
+
   // Check data availability (Support both window.LAYOUTS and legacy window.HIMAGIRI_DATA)
   const layouts = window.LAYOUTS || {};
   let currentLayoutId = ('prestige_falcon_city' in layouts) ? 'prestige_falcon_city' : (Object.keys(layouts)[0] || 'himagiri');
@@ -125,7 +135,7 @@
     dragStart: { x: 0, y: 0 },
     animationFrameId: null,
     carProgress: 0,
-    voiceMuted: false,
+    voiceMuted: true,
     showNumbers: true,
     showAmenities: true,
     showRoadNames: true,

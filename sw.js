@@ -1,20 +1,20 @@
 // HM Maps Service Worker - 100% Complete Offline Mode (Zero Wi-Fi Required)
-const CACHE_NAME = 'himagiri-maps-offline-v29';
+const CACHE_NAME = 'himagiri-maps-offline-v30';
 const ASSETS_TO_PRECACHE = [
   './',
   './index.html',
   './style.css',
-  './style.css?v=25',
+  './style.css?v=30',
   './app.js',
-  './app.js?v=25',
+  './app.js?v=30',
   './layouts_data.js',
-  './layouts_data.js?v=25',
+  './layouts_data.js?v=30',
   './map_data.js',
-  './map_data.js?v=25',
+  './map_data.js?v=30',
   './analytics.js',
-  './analytics.js?v=25',
+  './analytics.js?v=30',
   './qrcode.min.js',
-  './qrcode.min.js?v=25',
+  './qrcode.min.js?v=30',
   './manifest.json',
   './original_map.png',
   './icon-192.png',
@@ -25,8 +25,7 @@ const ASSETS_TO_PRECACHE = [
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[SW] Pre-caching all app assets for 100% offline use...');
-      // Use individual caching with catch so any missing optional file does not abort installation
+      console.log('[SW] Pre-caching all app assets for offline use...');
       return Promise.all(
         ASSETS_TO_PRECACHE.map((url) => {
           return cache.add(url).catch((err) => {
@@ -55,7 +54,6 @@ self.addEventListener('activate', (event) => {
     }).then(() => {
       return self.clients.claim();
     }).then(() => {
-      // Notify all connected clients that offline capability is ready
       return self.clients.matchAll().then((clients) => {
         clients.forEach((client) => {
           client.postMessage({ type: 'OFFLINE_READY', cacheName: CACHE_NAME });
@@ -65,19 +63,18 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch: Stale-While-Revalidate / Cache-First strategy
-// 1. If in cache, return immediately (0ms delay, works with ZERO Wi-Fi or cellular signal)
-// 2. In background, if online, update the cache with fresh version
-// 3. If navigation request (HTML), fallback to cached index.html
+// Fetch: Network-First for same-origin application scripts & pages
+// 1. If online: fetch fresh code immediately from network & update cache
+// 2. If offline / no Wi-Fi: fall back seamlessly to cache
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
   const url = new URL(event.request.url);
 
-  // Ignore non-http schemes (extensions, file:, etc.)
+  // Ignore non-http schemes
   if (!url.protocol.startsWith('http')) return;
 
-  // For Google Fonts or external CDN assets, attempt cache first, fallback to network
+  // External assets (fonts, icons)
   if (url.origin !== self.location.origin) {
     event.respondWith(
       caches.match(event.request).then((cached) => {
@@ -89,7 +86,6 @@ self.addEventListener('fetch', (event) => {
           }
           return res;
         }).catch(() => {
-          // If external font fails offline, fail gracefully without breaking UI
           return new Response('', { status: 408, headers: { 'Content-Type': 'text/plain' } });
         });
       })
@@ -97,40 +93,30 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Local assets (same origin)
+  // Local assets (HTML, JS, CSS, JSON) - Network-First with offline fallback
   event.respondWith(
-    caches.match(event.request, { ignoreSearch: true }).then((cachedResponse) => {
-      // Background revalidation (if connected to Wi-Fi/network)
-      const fetchPromise = fetch(event.request)
-        .then((networkResponse) => {
-          if (networkResponse && networkResponse.status === 200) {
-            const responseToCache = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(event.request, responseToCache);
-            });
-          }
-          return networkResponse;
-        })
-        .catch(() => {
-          // Offline / no Wi-Fi - If navigation, return index.html
-          if (event.request.mode === 'navigate') {
-            return caches.match('./index.html', { ignoreSearch: true });
-          }
-        });
-
-      // Serve from cache immediately if present (instant load, no Wi-Fi needed!)
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-
-      // If not yet in cache, wait for network fetch
-      return fetchPromise.then((res) => {
-        if (res) return res;
-        if (event.request.mode === 'navigate') {
-          return caches.match('./index.html', { ignoreSearch: true });
+    fetch(event.request)
+      .then((networkResponse) => {
+        if (networkResponse && networkResponse.status === 200) {
+          const responseToCache = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseToCache);
+          });
         }
-        return new Response('Offline: Resource unavailable', { status: 503 });
-      });
-    })
+        return networkResponse;
+      })
+      .catch(() => {
+        // Offline / No signal: Serve from cache
+        return caches.match(event.request).then((cached) => {
+          if (cached) return cached;
+          if (event.request.mode === 'navigate') {
+            return caches.match('./index.html');
+          }
+          return caches.match(event.request, { ignoreSearch: true }).then((fuzzyCached) => {
+            if (fuzzyCached) return fuzzyCached;
+            return new Response('Offline: Resource unavailable', { status: 503 });
+          });
+        });
+      })
   );
 });

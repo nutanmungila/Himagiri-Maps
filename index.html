@@ -32,17 +32,34 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="style.css?v=29">
+  <link rel="stylesheet" href="style.css?v=30">
   <script>
-    // Aggressively purge older PWA caches so updates show instantly
-    if ('caches' in window) {
-      caches.keys().then(function(names) {
-        for (let name of names) {
-          if (name !== 'himagiri-maps-offline-v29') {
-            caches.delete(name);
-          }
+    // PERMANENTLY MUTE & DISABLE ALL SPEECH / VOICE SYNTHESIS GLOBALLY
+    if (typeof window !== 'undefined') {
+      try {
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+          window.speechSynthesis.speak = function() { return false; };
+          window.speechSynthesis.pause = function() {};
+          window.speechSynthesis.resume = function() {};
         }
-      });
+        if ('SpeechSynthesisUtterance' in window) {
+          window.SpeechSynthesisUtterance = function() {};
+        }
+        window.webkitSpeechRecognition = undefined;
+        window.SpeechRecognition = undefined;
+      } catch (_) {}
+
+      // Aggressively purge older PWA caches so fresh script without voice loads immediately
+      if ('caches' in window) {
+        caches.keys().then(function(names) {
+          for (let name of names) {
+            if (name !== 'himagiri-maps-offline-v30') {
+              caches.delete(name);
+            }
+          }
+        });
+      }
     }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -531,10 +548,10 @@
   </div>
 
   <!-- Load Scripts with Version Cache-Buster -->
-  <script src="analytics.js?v=29"></script>
-  <script src="qrcode.min.js?v=29"></script>
-  <script src="map_data.js?v=29"></script>
-  <script src="layouts_data.js?v=29"></script>
-  <script src="app.js?v=29"></script>
+  <script src="analytics.js?v=30"></script>
+  <script src="qrcode.min.js?v=30"></script>
+  <script src="map_data.js?v=30"></script>
+  <script src="layouts_data.js?v=30"></script>
+  <script src="app.js?v=30"></script>
 </body>
 </html>
