@@ -774,36 +774,8 @@
     }
   }
 
-  // Dynamic Avenue Filter Pills from currentLayout
-  function renderAvenueFilterPills() {
-    const container = document.querySelector('.sector-pills');
-    if (!container) return;
-    const sectors = currentLayout && currentLayout.sectors ? currentLayout.sectors : [];
-    const unitLabel = currentLayout.unitType === 'Tower / Block' ? 'Zones' : 'Avenues';
-    container.innerHTML = `<button class="sector-pill active" data-sector="ALL">All ${unitLabel}</button>`;
-
-    sectors.forEach(s => {
-      const btn = document.createElement('button');
-      btn.className = 'sector-pill';
-      btn.setAttribute('data-sector', s);
-      btn.textContent = s.replace(/ (Road|Avenue|Boulevard|Court|Drive|Way|Link)/i, '');
-      btn.addEventListener('click', () => {
-        container.querySelectorAll('.sector-pill').forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        applySectorFilter(s);
-      });
-      container.appendChild(btn);
-    });
-
-    const allBtn = container.querySelector('[data-sector="ALL"]');
-    if (allBtn) {
-      allBtn.addEventListener('click', () => {
-        container.querySelectorAll('.sector-pill').forEach(p => p.classList.remove('active'));
-        allBtn.classList.add('active');
-        applySectorFilter('ALL');
-      });
-    }
-  }
+  // Avenue Filter Pills (Disabled per user request)
+  function renderAvenueFilterPills() {}
 
   // Populate Start & Destination Dropdowns dynamically
   function populateSelectDropdowns() {
@@ -1068,9 +1040,9 @@
       {
         counter: "Feature 4 of 5",
         icon: "🔍",
-        title: "Instant Search & Sector Filters",
-        desc: `Use the search box to find any ${unitLabel.toLowerCase()} or amenity, or tap the ${sectorsName} filter pills (${sectorsSample}) to isolate specific areas of the layout.`,
-        highlightSelector: ".sector-pills"
+        title: "Instant House Search",
+        desc: `Use the search box to find any ${unitLabel.toLowerCase()} or amenity, and instantly plot turn-by-turn directions right to the doorstep.`,
+        highlightSelector: "#search-input"
       },
       {
         counter: "Feature 5 of 5",
@@ -1870,7 +1842,6 @@
       const gateLabel = nodes[detectedStart]?.label ? nodes[detectedStart].label.split(' (')[0] : 'Entrance Gate';
       const resp = `${matchedAmenity.name} is located at ${matchedAmenity.description || matchedAmenity.desc || 'society grounds'}. Route plotted from ${gateLabel}.`;
       displayAssistantResponse(resp);
-      speakText(resp);
       return;
     }
 
@@ -1887,12 +1858,10 @@
         ? `${matchedPlot.number} in ${bTitle} is on ${matchedPlot.road}. Directions and tracking plotted right to the doorstep!`
         : `${uType} #${matchedPlot.number} is on ${matchedPlot.road} in ${matchedPlot.block}. Directions plotted right to the doorstep!`;
       displayAssistantResponse(resp);
-      speakText(resp);
     } else {
       const uType = currentLayout.unitType || 'House';
       const notFound = `I couldn't find a ${uType.toLowerCase()} matching "${queryText}" in ${currentLayout.name}. Try asking "Where is ${uType} 12?" or choose from the destination dropdown.`;
       displayAssistantResponse(notFound);
-      speakText(notFound);
     }
   }
 
@@ -1901,60 +1870,11 @@
     assistantResponse.classList.add('active');
   }
 
-  // Text to Speech
-  function speakText(text) {
-    if (state.voiceMuted || !window.speechSynthesis) return;
-    window.speechSynthesis.cancel();
-    // Clean markdown tags for speech
-    const cleanText = text.replace(/<[^>]*>?/gm, '');
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-    utterance.rate = 1.0;
-    utterance.pitch = 1.0;
-    window.speechSynthesis.speak(utterance);
-  }
+  // Text to Speech (Disabled per user request)
+  function speakText(text) {}
 
-  // Web Speech API Voice Recognition
-  function initVoiceRecognition() {
-    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-      voiceBtn.title = "Voice recognition not supported on this browser";
-      return;
-    }
-
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
-    recognition.continuous = false;
-    recognition.interimResults = false;
-    recognition.lang = 'en-US';
-
-    recognition.onstart = () => {
-      voiceBtn.classList.add('listening');
-      searchInput.placeholder = "Listening... say 'Where is house 142?'";
-    };
-
-    recognition.onresult = (event) => {
-      const transcript = event.results[0][0].transcript;
-      searchInput.value = transcript;
-      parseAndAnswerQuery(transcript, true);
-    };
-
-    recognition.onerror = () => {
-      voiceBtn.classList.remove('listening');
-      searchInput.placeholder = "Ask 'Where is House 142?' or enter plot #";
-    };
-
-    recognition.onend = () => {
-      voiceBtn.classList.remove('listening');
-      searchInput.placeholder = "Ask 'Where is House 142?' or enter plot #";
-    };
-
-    voiceBtn.addEventListener('click', () => {
-      if (voiceBtn.classList.contains('listening')) {
-        recognition.stop();
-      } else {
-        recognition.start();
-      }
-    });
-  }
+  // Web Speech API Voice Recognition (Disabled per user request)
+  function initVoiceRecognition() {}
 
   // --- 6. PLOT SELECTION & DETAILS ---
   function selectPlot(plotId, zoomIn = false) {
@@ -2498,24 +2418,18 @@
     });
 
     // Speak button
-    speakBtn.addEventListener('click', () => {
-      speakText(assistantText.textContent);
-    });
+    if (speakBtn) {
+      speakBtn.addEventListener('click', () => {
+        speakText(assistantText.textContent);
+      });
+    }
 
     // Close house card
     document.getElementById('close-house-card').addEventListener('click', () => {
       houseCard.classList.remove('active');
     });
 
-    // Sector Filter Pills
-    document.querySelectorAll('.sector-pill').forEach(pill => {
-      pill.addEventListener('click', () => {
-        document.querySelectorAll('.sector-pill').forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
-        const filter = pill.getAttribute('data-sector');
-        applySectorFilter(filter);
-      });
-    });
+    // Sector Filter Pills (Removed)
 
     // Layer toggles
     document.getElementById('toggle-numbers').addEventListener('change', (e) => {

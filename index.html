@@ -32,13 +32,13 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="style.css?v=28">
+  <link rel="stylesheet" href="style.css?v=29">
   <script>
     // Aggressively purge older PWA caches so updates show instantly
     if ('caches' in window) {
       caches.keys().then(function(names) {
         for (let name of names) {
-          if (name !== 'himagiri-maps-offline-v28') {
+          if (name !== 'himagiri-maps-offline-v29') {
             caches.delete(name);
           }
         }
@@ -192,7 +192,7 @@
               <span class="ai-pulse-dot"></span>
               <span>Ask Navigator</span>
             </div>
-            <span style="font-size: 11px; color: #64748b; font-weight: 600;">Voice & Text Enabled</span>
+            <span style="font-size: 11px; color: #64748b; font-weight: 600;">House & Plot Locator</span>
           </div>
 
           <div class="search-input-wrapper">
@@ -208,7 +208,6 @@
               />
               <div class="search-input-icons">
                 <button id="search-clear-btn" class="clear-btn" title="Clear input" style="display: none;">✕</button>
-                <button id="voice-btn" class="voice-btn" title="Voice Recognition">🎤</button>
               </div>
             </div>
             <button id="search-enter-btn" class="btn-search-enter" title="Find House Number">
@@ -231,9 +230,6 @@
           <div id="assistant-response" class="assistant-response">
             <div class="assistant-header">
               <span class="assistant-tag">💬 Navigator Answer</span>
-              <button id="speak-btn" class="speak-btn">
-                <span>🔊</span> Listen
-              </button>
             </div>
             <p id="assistant-text" class="assistant-text"></p>
           </div>
@@ -330,24 +326,6 @@
               </li>
             </ul>
           </div>
-        </div>
-      </section>
-
-      <!-- 3. Sector & Avenue Explorer -->
-      <section class="sidebar-section">
-        <div style="font-size: 13px; font-weight: 700; color: #0f172a; margin-bottom: 8px;">
-          Filter by Avenue
-        </div>
-        <div class="sector-pills">
-          <button class="sector-pill active" data-sector="ALL">All Avenues</button>
-          <button class="sector-pill" data-sector="Aster">Aster</button>
-          <button class="sector-pill" data-sector="Bluebell">Bluebell</button>
-          <button class="sector-pill" data-sector="Carnation">Carnation</button>
-          <button class="sector-pill" data-sector="Dhalia">Dhalia</button>
-          <button class="sector-pill" data-sector="Exotica">Exotica</button>
-          <button class="sector-pill" data-sector="Florentine">Florentine</button>
-          <button class="sector-pill" data-sector="Gardenia">Gardenia</button>
-          <button class="sector-pill" data-sector="Hibiscus">Hibiscus</button>
         </div>
       </section>
 
@@ -553,10 +531,10 @@
   </div>
 
   <!-- Load Scripts with Version Cache-Buster -->
-  <script src="analytics.js?v=28"></script>
-  <script src="qrcode.min.js?v=28"></script>
-  <script src="map_data.js?v=28"></script>
-  <script src="layouts_data.js?v=28"></script>
-  <script src="app.js?v=28"></script>
+  <script src="analytics.js?v=29"></script>
+  <script src="qrcode.min.js?v=29"></script>
+  <script src="map_data.js?v=29"></script>
+  <script src="layouts_data.js?v=29"></script>
+  <script src="app.js?v=29"></script>
 </body>
 </html>
