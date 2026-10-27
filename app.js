@@ -177,97 +177,10 @@
     checkUrlParams();
   }
 
-  // Press & Hold (mobile touch long-press & desktop hold) helper for sub-area exploration
+  // Simplified click helper (interior feature removed)
   function enableHoldTrigger(el, onTrigger) {
     if (!el) return;
-    el.style.cursor = 'pointer';
-
-    let holdTimer = null;
-    let holdFired = false;
-    let startX = 0;
-    let startY = 0;
-
-    const startHold = (clientX, clientY) => {
-      holdFired = false;
-      startX = clientX;
-      startY = clientY;
-      clearTimeout(holdTimer);
-      holdTimer = setTimeout(() => {
-        holdFired = true;
-        if ('vibrate' in navigator) {
-          try { navigator.vibrate(40); } catch (e) {}
-        }
-        onTrigger();
-      }, 420);
-    };
-
-    const cancelHold = () => {
-      clearTimeout(holdTimer);
-      holdTimer = null;
-    };
-
-    // Mobile touch long-press
-    el.addEventListener('touchstart', (e) => {
-      if (e.touches && e.touches.length === 1) {
-        startHold(e.touches[0].clientX, e.touches[0].clientY);
-      }
-    }, { passive: true });
-
-    el.addEventListener('touchmove', (e) => {
-      if (holdTimer && e.touches && e.touches.length === 1) {
-        const dist = Math.hypot(e.touches[0].clientX - startX, e.touches[0].clientY - startY);
-        if (dist > 10) cancelHold();
-      }
-    }, { passive: true });
-
-    el.addEventListener('touchend', (e) => {
-      cancelHold();
-      if (holdFired) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    });
-
-    el.addEventListener('touchcancel', cancelHold);
-
-    // Desktop mouse hold
-    el.addEventListener('mousedown', (e) => {
-      if (e.button !== 0) return;
-      startHold(e.clientX, e.clientY);
-    });
-
-    el.addEventListener('mousemove', (e) => {
-      if (holdTimer) {
-        const dist = Math.hypot(e.clientX - startX, e.clientY - startY);
-        if (dist > 6) cancelHold();
-      }
-    });
-
-    el.addEventListener('mouseup', (e) => {
-      cancelHold();
-      if (holdFired) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-    });
-
-    el.addEventListener('mouseleave', cancelHold);
-
-    // Desktop right-click (contextmenu) shortcut
-    el.addEventListener('contextmenu', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      cancelHold();
-      onTrigger();
-    });
-
-    el._justFiredHold = () => {
-      const fired = holdFired;
-      if (fired) {
-        setTimeout(() => { holdFired = false; }, 250);
-      }
-      return fired;
-    };
+    el._justFiredHold = () => false;
   }
 
   // Landscaping & Perimeter
@@ -419,16 +332,10 @@
           lmG.appendChild(lmtxt);
         }
 
-        enableHoldTrigger(lmG, () => {
-          const lbl = lm.label || 'Commercial Complex';
-          const type = lbl.toLowerCase().includes('mall') ? 'mall' : 'tower';
-          openSubAreaInterior(type, lbl, null, lm);
-        });
         lmG.addEventListener('click', (e) => {
           e.stopPropagation();
-          if (lmG._justFiredHold && lmG._justFiredHold()) return;
           const lbl = lm.label || 'Commercial Complex';
-          showToast(`🏢 ${lbl} • Hold to explore inside`, 2500);
+          showToast(`🏢 ${lbl}`, 2000);
         });
 
         bgGroup.appendChild(lmG);
@@ -683,15 +590,9 @@
         subTxt.textContent = (currentLayout.unitType === 'Flat' ? 'Residential Flat' : (currentLayout.unitType ? currentLayout.unitType.replace(/ \/ .*/, '') : 'Apartment Tower')).replace(/\d+/g, '').trim();
         blockG.appendChild(subTxt);
 
-        // Hold to enter interior floor plan of this tower/block
-        enableHoldTrigger(blockG, () => {
-          openSubAreaInterior('tower', cleanName, uList);
-        });
-
-        // Click to select block & calculate route (no inscreen, stays on main map)
+        // Click to select block & track to its flats/doorstep
         blockG.addEventListener('click', (e) => {
           e.stopPropagation();
-          if (blockG._justFiredHold && blockG._justFiredHold()) return;
           selectPlot(uList[0].id, false);
         });
 
@@ -774,15 +675,9 @@
         g.appendChild(txt);
       }
 
-      // Hold plot to enter house/villa 3D interior floor plan
-      enableHoldTrigger(g, () => {
-        openSubAreaInterior('villa', `House #${p.number}`, [p]);
-      });
-
-      // Interactions: Single click to select & navigate (no inscreen, stays on main map)
+      // Click to select plot & track to house doorstep
       g.addEventListener('click', (e) => {
         e.stopPropagation();
-        if (g._justFiredHold && g._justFiredHold()) return;
         selectPlot(p.id, false);
       });
 
@@ -866,17 +761,7 @@
         selectAmenity(am.id, true);
       });
 
-      // Press and Hold: Enter inside clubhouse, mall, or sports amenity
-      enableHoldTrigger(g, () => {
-        const aType = (am.type === 'clubhouse' || am.id.includes('club') || am.id.includes('sports')) ? 'clubhouse' :
-                      (am.type === 'mall' || am.id.includes('mall')) ? 'mall' :
-                      (am.type === 'auditorium' || am.id.includes('convention')) ? 'clubhouse' : 'facility';
-        if (aType === 'clubhouse' || aType === 'mall') {
-          openSubAreaInterior(aType, am.name, null, am);
-        } else {
-          selectAmenity(am.id, true);
-        }
-      });
+
       g.addEventListener('mouseenter', (e) => {
         tooltip.innerHTML = `<strong>${am.name}</strong><br><span style="color:#94a3b8;font-size:11px;">${am.description || am.desc || 'Amenity'}</span>`;
         tooltip.style.display = 'block';
@@ -962,21 +847,24 @@
 
     // Plots or Blocks in Destination dropdown
     if (isApartmentOrBlockLayout(currentLayout)) {
-      const blockGroupOpt = document.createElement('optgroup');
-      blockGroupOpt.label = "Towers & Residential Blocks";
-      const seenBlocks = new Set();
+      const blockGroups = {};
       for (const pid in plots) {
         const p = plots[pid];
-        const b = cleanBlockTitle(p.block || p.number);
-        if (!seenBlocks.has(b)) {
-          seenBlocks.add(b);
+        const b = cleanBlockTitle(p.block || 'Main Block');
+        if (!blockGroups[b]) blockGroups[b] = [];
+        blockGroups[b].push(p);
+      }
+      for (const bName in blockGroups) {
+        const groupOpt = document.createElement('optgroup');
+        groupOpt.label = `🏢 ${bName}`;
+        for (const p of blockGroups[bName]) {
           const opt = document.createElement('option');
           opt.value = `plot:${p.id}`;
-          opt.textContent = `🏢 ${b} (${p.road})`;
-          blockGroupOpt.appendChild(opt);
+          opt.textContent = `${p.number} (${p.road})`;
+          groupOpt.appendChild(opt);
         }
+        destSelect.appendChild(groupOpt);
       }
-      destSelect.appendChild(blockGroupOpt);
     } else {
       // Plots grouped by road
       const roads = {};
@@ -1822,10 +1710,15 @@
       <path id="active-nav-path" d="${pathData}" class="nav-route-path" />
       <!-- Start Pin -->
       <circle cx="${startX}" cy="${startY}" r="8" fill="${startColor}" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 2px 5px rgba(0,0,0,0.4))" />
-      <!-- End Pin / House Indicator -->
+      <!-- End Pin / House Doorstep Indicator -->
       <g transform="translate(${plotCenterX}, ${plotCenterY - 14})">
         <path d="M 0,0 C -6,-10 -6,-16 0,-20 C 6,-16 6,-10 0,0 Z" fill="#ef4444" stroke="#ffffff" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.4))" />
         <circle cx="0" cy="-14" r="3" fill="#ffffff" />
+      </g>
+      <!-- House / Flat Doorstep Badge -->
+      <g transform="translate(${plotCenterX}, ${plotCenterY - 36})">
+        <rect x="-42" y="-11" width="84" height="20" rx="10" fill="#ef4444" stroke="#ffffff" stroke-width="1.2" filter="drop-shadow(0 2px 5px rgba(0,0,0,0.4))" />
+        <text x="0" y="3" text-anchor="middle" font-size="9" font-weight="700" fill="#ffffff">${escapeHtml(plot.number)}</text>
       </g>
       <!-- Traveling dot / walker -->
       <circle id="route-traveler" r="6" fill="#f59e0b" stroke="#ffffff" stroke-width="2" filter="drop-shadow(0 0 6px #f59e0b)" />
@@ -1991,8 +1884,8 @@
       const isApt = isApartmentOrBlockLayout(currentLayout);
       const bTitle = cleanBlockTitle(matchedPlot.block);
       const resp = isApt
-        ? `${bTitle} is on ${matchedPlot.road}. Directions plotted from ${startName}!`
-        : `${uType} #${matchedPlot.number} is on ${matchedPlot.road} in ${matchedPlot.block}. Directions plotted from ${startName}!`;
+        ? `${matchedPlot.number} in ${bTitle} is on ${matchedPlot.road}. Directions and tracking plotted right to the doorstep!`
+        : `${uType} #${matchedPlot.number} is on ${matchedPlot.road} in ${matchedPlot.block}. Directions plotted right to the doorstep!`;
       displayAssistantResponse(resp);
       speakText(resp);
     } else {
@@ -2071,22 +1964,63 @@
     state.selectedPlotId = plot.id;
     destSelect.value = `plot:${plot.id}`;
 
-    // Hide block unit chips in card
+    const isApt = isApartmentOrBlockLayout(currentLayout);
+
+    // Populate unit chips in house card for apartment/flat layouts
     const blockUnitsEl = document.getElementById('card-block-units');
-    if (blockUnitsEl) blockUnitsEl.style.display = 'none';
+    if (blockUnitsEl) {
+      if (isApt && plot.block) {
+        const siblingPlots = Object.values(plots).filter(p => p.block === plot.block);
+        if (siblingPlots.length > 0) {
+          blockUnitsEl.innerHTML = `
+            <div class="card-block-units-title">🏠 Select House / Flat in ${escapeHtml(cleanBlockTitle(plot.block))}:</div>
+            <div class="card-unit-chips">
+              ${siblingPlots.map(sp => `
+                <button class="unit-chip-btn ${sp.id === plot.id ? 'active' : ''}" data-plot-id="${sp.id}" title="Track to ${escapeHtml(sp.number)}">
+                  ${escapeHtml(sp.number)}
+                </button>
+              `).join('')}
+            </div>
+          `;
+          blockUnitsEl.style.display = 'flex';
+          blockUnitsEl.querySelectorAll('.unit-chip-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              const spId = btn.getAttribute('data-plot-id');
+              if (spId && plots[spId]) {
+                selectPlot(spId, true);
+                showToast(`📍 Tracking to ${plots[spId].number} doorstep!`, 2000);
+              }
+            });
+          });
+        } else {
+          blockUnitsEl.style.display = 'none';
+        }
+      } else {
+        blockUnitsEl.style.display = 'none';
+      }
+    }
 
     // Highlight plot in SVG
     highlightPlot(plot.id);
 
-    // Calculate Route
+    // Calculate Route directly to house doorstep
     calculateAndDisplayRoute(state.startNodeId, plot.id);
 
-    // Update House Info Card
-    const isApt = isApartmentOrBlockLayout(currentLayout);
-    const displayNum = isApt ? cleanBlockTitle(plot.block || currentLayout.name) : `#${plot.number}`;
+    // Update House Info Card with exact flat/house number
+    let displayNum = `#${plot.number}`;
+    if (isApt) {
+      if (plot.number) {
+        displayNum = (plot.number.toLowerCase().includes('flat') || plot.number.toLowerCase().includes('villa') || plot.number.toLowerCase().includes('unit') || plot.number.startsWith('#'))
+          ? plot.number
+          : `Flat #${plot.number}`;
+      } else {
+        displayNum = cleanBlockTitle(plot.block);
+      }
+    }
     document.getElementById('card-house-num').textContent = displayNum;
     document.getElementById('card-road').textContent = plot.road;
-    document.getElementById('card-block').textContent = isApt ? cleanBlockTitle(plot.block) : plot.block;
+    document.getElementById('card-block').textContent = cleanBlockTitle(plot.block || currentLayout.name);
     document.getElementById('card-facing').textContent = `${plot.facing} Facing`;
 
     // Distances from primary & secondary gates
@@ -2826,199 +2760,22 @@
       if (e.target === originalModal) originalModal.classList.remove('active');
     });
 
-    // Sub-Area Interior Explorer Modal Listeners
-    const interiorModal = document.getElementById('interior-view-modal');
-    const interiorBackBtn = document.getElementById('interior-back-btn');
-    const interiorCloseBtn = document.getElementById('close-interior-modal');
-    const interiorNavBtn = document.getElementById('interior-navigate-btn');
-    const cardInteriorBtn = document.getElementById('card-explore-interior-btn');
-
-    if (interiorBackBtn) {
-      interiorBackBtn.addEventListener('click', closeInteriorModal);
-    }
-    if (interiorCloseBtn) {
-      interiorCloseBtn.addEventListener('click', closeInteriorModal);
-    }
-    if (interiorModal) {
-      interiorModal.addEventListener('click', (e) => {
-        if (e.target === interiorModal) closeInteriorModal();
-      });
-    }
-
-    // Setup Hold Button with visual animated progress bar and dual hold/tap activation
-    function setupHoldButton(btn, onTrigger) {
-      if (!btn) return;
-      const holdBar = document.getElementById('card-interior-hold-bar');
-      const labelSpan = document.getElementById('card-interior-btn-label');
-      const defaultLabel = 'Hold Button to Explore Interior';
-
-      let holdTimer = null;
-      let animFrame = null;
-      let startTime = 0;
-      const HOLD_DURATION = 420; // 420ms smooth hold
-      let isHolding = false;
-      let holdTriggered = false;
-
-      function resetHoldUI() {
-        isHolding = false;
-        clearTimeout(holdTimer);
-        cancelAnimationFrame(animFrame);
-        btn.classList.remove('is-holding');
-        if (holdBar) {
-          holdBar.style.transition = 'width 0.2s ease-out';
-          holdBar.style.width = '0%';
-        }
-        if (labelSpan && !holdTriggered) {
-          labelSpan.textContent = defaultLabel;
-        }
-      }
-
-      function startHoldAction() {
-        if (isHolding) return;
-        isHolding = true;
-        holdTriggered = false;
-        startTime = Date.now();
-        btn.classList.add('is-holding');
-        if (labelSpan) labelSpan.textContent = 'Holding... Keep holding ⏳';
-
-        if (holdBar) {
-          holdBar.style.transition = 'none';
-          holdBar.style.width = '0%';
-        }
-
-        function updateProgress() {
-          if (!isHolding) return;
-          const elapsed = Date.now() - startTime;
-          const progress = Math.min(100, (elapsed / HOLD_DURATION) * 100);
-          if (holdBar) holdBar.style.width = `${progress}%`;
-          if (elapsed < HOLD_DURATION) {
-            animFrame = requestAnimationFrame(updateProgress);
-          }
-        }
-        animFrame = requestAnimationFrame(updateProgress);
-
-        holdTimer = setTimeout(() => {
-          if (!isHolding) return;
-          holdTriggered = true;
-          if (holdBar) holdBar.style.width = '100%';
-          if (labelSpan) labelSpan.textContent = '✨ Opening Interior...';
-          if ('vibrate' in navigator) {
-            try { navigator.vibrate(50); } catch (err) {}
-          }
-          btn.classList.add('hold-success');
-          setTimeout(() => {
-            btn.classList.remove('hold-success');
-            resetHoldUI();
-          }, 300);
-          onTrigger();
-        }, HOLD_DURATION);
-      }
-
-      // Touch events (Mobile)
-      btn.addEventListener('touchstart', (e) => {
-        startHoldAction();
-      }, { passive: true });
-
-      btn.addEventListener('touchend', (e) => {
-        if (!holdTriggered && isHolding) {
-          const elapsed = Date.now() - startTime;
-          resetHoldUI();
-          if (elapsed < HOLD_DURATION) {
-            // A quick tap on the button also enters interior smoothly!
-            onTrigger();
-          }
-        } else {
-          resetHoldUI();
-        }
-      });
-
-      btn.addEventListener('touchcancel', resetHoldUI);
-
-      // Mouse events (Desktop)
-      btn.addEventListener('mousedown', (e) => {
-        if (e.button !== 0) return;
-        startHoldAction();
-      });
-
-      btn.addEventListener('mouseup', (e) => {
-        if (!holdTriggered && isHolding) {
-          const elapsed = Date.now() - startTime;
-          resetHoldUI();
-          if (elapsed < HOLD_DURATION) {
-            // A quick click on the button also enters interior smoothly!
-            onTrigger();
-          }
-        } else {
-          resetHoldUI();
-        }
-      });
-
-      btn.addEventListener('mouseleave', resetHoldUI);
-
-      // Click handler to prevent duplicate triggers
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        if (holdTriggered) {
-          holdTriggered = false;
+    // Direct Track to House Doorstep Button
+    const trackHouseBtn = document.getElementById('card-track-house-btn');
+    if (trackHouseBtn) {
+      trackHouseBtn.addEventListener('click', () => {
+        if (!state.selectedPlotId || !plots[state.selectedPlotId]) {
+          showToast("Please choose a house, flat, or building on the map first.", 2500);
           return;
         }
+        const p = plots[state.selectedPlotId];
+        const isApt = isApartmentOrBlockLayout(currentLayout);
+        const name = (isApt && p.number) ? p.number : `Plot #${p.number}`;
+        startLocationTracking(true);
+        calculateAndDisplayRoute('my_location', state.selectedPlotId);
+        showToast(`📍 Live tracking to ${name} doorstep active!`, 3000);
       });
     }
-
-    if (cardInteriorBtn) {
-      const triggerCardInterior = () => {
-        if (state.selectedPlotId && plots[state.selectedPlotId]) {
-          const p = plots[state.selectedPlotId];
-          const isApt = isApartmentOrBlockLayout(currentLayout);
-          if (isApt) {
-            openSubAreaInterior('tower', cleanBlockTitle(p.block || p.number), [p]);
-          } else {
-            openSubAreaInterior('villa', `House #${p.number}`, [p]);
-          }
-        } else {
-          const allPlots = Object.values(plots);
-          if (allPlots.length > 0) {
-            const p = allPlots[0];
-            const isApt = isApartmentOrBlockLayout(currentLayout);
-            if (isApt) {
-              openSubAreaInterior('tower', cleanBlockTitle(p.block || p.number), [p]);
-            } else {
-              openSubAreaInterior('villa', `House #${p.number}`, [p]);
-            }
-          } else {
-            openSubAreaInterior('tower', currentLayout.name);
-          }
-        }
-      };
-
-      setupHoldButton(cardInteriorBtn, triggerCardInterior);
-    }
-
-    if (interiorNavBtn) {
-      interiorNavBtn.addEventListener('click', () => {
-        const u = interiorState.selectedUnit;
-        closeInteriorModal();
-        if (interiorState.uList && interiorState.uList[0]) {
-          const p = interiorState.uList[0];
-          selectPlot(p.id, true);
-          const unitTag = u ? ` • ${u.name}` : '';
-          showToast(`📍 Navigating to ${interiorState.name}${unitTag}`, 3500);
-        } else if (interiorState.extraData && interiorState.extraData.id) {
-          selectAmenity(interiorState.extraData.id, true);
-          const unitTag = u ? ` • ${u.name}` : '';
-          showToast(`📍 Navigating to ${interiorState.name}${unitTag}`, 3500);
-        } else {
-          showToast(`📍 Destination set: ${interiorState.name}`, 3000);
-        }
-      });
-    }
-
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && interiorState.active) {
-        closeInteriorModal();
-      }
-    });
 
     // Mobile drawer toggle & backdrop
     const mobileBtn = document.getElementById('mobile-drawer-toggle');
@@ -3353,1236 +3110,6 @@
         showToast("Layout onboarding: Email your layout photo or blueprint to support@hmmaps.in 🚀", 4000);
       });
     }
-  }
-
-  // ========================================================
-  // SUB-AREA INTERIOR EXPLORER & ARCHITECTURAL FLOOR PLANS
-  // ========================================================
-  const interiorState = {
-    active: false,
-    type: 'tower',
-    name: 'Tower A',
-    uList: null,
-    extraData: null,
-    currentFloor: 1,
-    selectedUnit: null,
-    floors: [],
-    currentUnits: {}
-  };
-
-  function openSubAreaInterior(type, name, uList, extraData) {
-    // 1. If explored subarea matches another layout in window.LAYOUTS, switch to that layout!
-    const cleanQuery = (name || '').toLowerCase().trim();
-    const layoutMatch = Object.keys(layouts).find(k => {
-      const l = layouts[k];
-      if (!l || !l.name) return false;
-      const lName = l.name.toLowerCase().trim();
-      return lName === cleanQuery || cleanQuery.includes(lName) || lName.includes(cleanQuery);
-    });
-
-    if (layoutMatch && layoutMatch !== currentLayoutId) {
-      loadLayout(layoutMatch);
-      showToast(`Switched to ${layouts[layoutMatch].name} layout`, 3000);
-      return;
-    }
-
-    interiorState.active = true;
-    interiorState.type = type || 'tower';
-    interiorState.name = name || 'Residential Tower';
-    interiorState.uList = uList;
-    interiorState.extraData = extraData;
-
-    // Define floor levels based on type
-    if (interiorState.type === 'tower') {
-      interiorState.floors = [
-        { num: 1, label: 'Floor 1' },
-        { num: 2, label: 'Floor 2' },
-        { num: 3, label: 'Floor 3' },
-        { num: 4, label: 'Floor 4' },
-        { num: 5, label: 'Penthouse' }
-      ];
-      interiorState.currentFloor = 2; // Default to Floor 2
-    } else if (interiorState.type === 'clubhouse') {
-      interiorState.floors = [
-        { num: 0, label: 'Ground (Pool & Arena)' },
-        { num: 1, label: 'Level 1 (Gym & Spa)' },
-        { num: 2, label: 'Level 2 (Billiards & Cafe)' }
-      ];
-      interiorState.currentFloor = 0;
-    } else if (interiorState.type === 'mall') {
-      interiorState.floors = [
-        { num: 0, label: 'Lower Ground (Hypermarket)' },
-        { num: 1, label: 'Ground Floor (Flagships)' },
-        { num: 2, label: 'Level 2 (Multiplex & Food)' }
-      ];
-      interiorState.currentFloor = 1;
-    } else { // villa
-      interiorState.floors = [
-        { num: 1, label: 'Ground (Living & Portico)' },
-        { num: 2, label: 'Level 1 (Master Suite & TV)' },
-        { num: 3, label: 'Terrace (Sky Garden)' }
-      ];
-      interiorState.currentFloor = 1;
-    }
-
-    // Update Header Text
-    const titleEl = document.getElementById('interior-subarea-title');
-    const subEl = document.getElementById('interior-subarea-subtitle');
-    const modal = document.getElementById('interior-view-modal');
-    const unitPanel = document.getElementById('interior-unit-panel');
-
-    if (unitPanel) unitPanel.style.display = 'none';
-
-    const icon = interiorState.type === 'tower' ? '🏢' :
-                 interiorState.type === 'clubhouse' ? '🏊' :
-                 interiorState.type === 'mall' ? '🛍️' : '🏡';
-
-    if (titleEl) {
-      titleEl.innerHTML = `${icon} ${interiorState.name}`;
-    }
-    if (subEl) {
-      subEl.textContent = `${currentLayout.name} • Interactive Interior Architectural Plan`;
-    }
-
-    // Render floor selector pills
-    renderInteriorFloorPills();
-
-    // Render SVG blueprint canvas
-    renderInteriorSVG();
-
-    // Open Modal
-    if (modal) {
-      modal.classList.add('active');
-    }
-  }
-
-  function closeInteriorModal() {
-    interiorState.active = false;
-    const modal = document.getElementById('interior-view-modal');
-    if (modal) modal.classList.remove('active');
-  }
-
-  function renderInteriorFloorPills() {
-    const pillsCont = document.getElementById('floor-pills');
-    if (!pillsCont) return;
-    pillsCont.innerHTML = '';
-
-    interiorState.floors.forEach(fl => {
-      const btn = document.createElement('button');
-      btn.className = `floor-pill ${fl.num === interiorState.currentFloor ? 'active' : ''}`;
-      btn.textContent = fl.label;
-      btn.addEventListener('click', () => {
-        interiorState.currentFloor = fl.num;
-        pillsCont.querySelectorAll('.floor-pill').forEach(p => p.classList.remove('active'));
-        btn.classList.add('active');
-        const unitPanel = document.getElementById('interior-unit-panel');
-        if (unitPanel) unitPanel.style.display = 'none';
-        renderInteriorSVG();
-      });
-      pillsCont.appendChild(btn);
-    });
-  }
-
-  function selectInteriorUnit(data, unitEl) {
-    interiorState.selectedUnit = data;
-
-    const svg = document.getElementById('interior-floor-svg');
-    if (svg) {
-      svg.querySelectorAll('.svg-flat-unit').forEach(el => el.classList.remove('active-flat'));
-    }
-    if (unitEl) {
-      unitEl.classList.add('active-flat');
-    }
-
-    const panel = document.getElementById('interior-unit-panel');
-    if (!panel) return;
-
-    document.getElementById('interior-unit-name').textContent = data.name;
-    document.getElementById('interior-unit-type').textContent = data.type || 'Standard';
-    document.getElementById('interior-detail-tower').textContent = data.parent || interiorState.name;
-    document.getElementById('interior-detail-floor').textContent = data.floorLabel;
-    document.getElementById('interior-detail-facing').textContent = data.facing || 'East Facing (Vaastu)';
-    document.getElementById('interior-detail-area').textContent = data.area || '1,680 sq ft';
-    document.getElementById('interior-detail-rooms').textContent = data.rooms || data.desc;
-
-    panel.style.display = 'flex';
-  }
-
-  function renderInteriorSVG() {
-    const svg = document.getElementById('interior-floor-svg');
-    if (!svg) return;
-
-    const flNum = interiorState.currentFloor;
-    const flObj = interiorState.floors.find(f => f.num === flNum) || { label: `Floor ${flNum}` };
-    const flLabel = flObj.label;
-
-    let content = '';
-    if (interiorState.type === 'tower') {
-      content = renderTowerFloorPlanSVG(interiorState.name, flNum, flLabel);
-    } else if (interiorState.type === 'clubhouse') {
-      content = renderClubhouseFloorPlanSVG(interiorState.name, flNum, flLabel);
-    } else if (interiorState.type === 'mall') {
-      content = renderMallFloorPlanSVG(interiorState.name, flNum, flLabel);
-    } else {
-      content = renderVillaFloorPlanSVG(interiorState.name, flNum, flLabel);
-    }
-
-    svg.innerHTML = content;
-
-    svg.querySelectorAll('.svg-flat-unit').forEach(el => {
-      el.addEventListener('click', () => {
-        const key = el.getAttribute('data-unit-key');
-        if (key && interiorState.currentUnits[key]) {
-          selectInteriorUnit(interiorState.currentUnits[key], el);
-        }
-      });
-    });
-  }
-
-  function getBlueprintDefs() {
-    return `
-      <defs>
-        <pattern id="bp-grid" width="25" height="25" patternUnits="userSpaceOnUse">
-          <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#1e293b" stroke-width="0.7" opacity="0.65"/>
-        </pattern>
-        <linearGradient id="pool-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#0284c7" stop-opacity="0.85"/>
-          <stop offset="100%" stop-color="#0369a1" stop-opacity="0.95"/>
-        </linearGradient>
-        <linearGradient id="plunge-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.9"/>
-          <stop offset="100%" stop-color="#0284c7" stop-opacity="0.9"/>
-        </linearGradient>
-        <linearGradient id="wood-court" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#854d0e"/>
-          <stop offset="100%" stop-color="#713f12"/>
-        </linearGradient>
-      </defs>
-      <rect width="1000" height="700" fill="#090d16"/>
-      <rect width="1000" height="700" fill="url(#bp-grid)"/>
-    `;
-  }
-
-  function getNorthArrowSVG() {
-    return `
-      <g transform="translate(930, 24)">
-        <circle cx="15" cy="15" r="14" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-        <polygon points="15,4 19,17 15,14" fill="#ef4444"/>
-        <polygon points="15,4 11,17 15,14" fill="#dc2626"/>
-        <polygon points="15,26 19,13 15,16" fill="#64748b"/>
-        <polygon points="15,26 11,13 15,16" fill="#475569"/>
-        <text x="15" y="0" font-size="9" font-weight="900" fill="#ef4444" text-anchor="middle">N</text>
-      </g>
-    `;
-  }
-
-  function renderTowerFloorPlanSVG(name, flNum, flLabel) {
-    interiorState.currentUnits = {};
-    let svg = getBlueprintDefs();
-    svg += getNorthArrowSVG();
-
-    svg += `
-      <text x="500" y="34" font-size="14" font-weight="800" fill="#f8fafc" letter-spacing="1" text-anchor="middle">${name.toUpperCase()} • ${flLabel.toUpperCase()} BLUEPRINT</text>
-      <text x="500" y="50" font-size="10" font-weight="600" fill="#64748b" text-anchor="middle">CENTRAL ELEVATOR CORE • DUAL HIGH-SPEED LIFTS • FIRE EXIT STAIRWELL</text>
-      <line x1="60" y1="58" x2="940" y2="58" stroke="#334155" stroke-width="1.2" stroke-dasharray="3 3"/>
-      <text x="500" y="55" font-size="9" font-weight="700" fill="#38bdf8" text-anchor="middle">38.4 M (126 FT) ENVELOPE</text>
-      
-      <g id="tower-core">
-        <rect x="410" y="190" width="180" height="320" fill="#0b1120" stroke="#334155" stroke-width="2" rx="4"/>
-        
-        <rect x="422" y="205" width="72" height="65" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" rx="3"/>
-        <line x1="458" y1="205" x2="458" y2="270" stroke="#38bdf8" stroke-width="1.5"/>
-        <text x="458" y="235" font-size="16" text-anchor="middle">🛗</text>
-        <text x="458" y="254" font-size="9.5" font-weight="700" fill="#e2e8f0" text-anchor="middle">LIFT 1 (8P)</text>
-        <circle cx="490" cy="225" r="2.5" fill="#10b981"/>
-
-        <rect x="506" y="205" width="72" height="65" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" rx="3"/>
-        <line x1="542" y1="205" x2="542" y2="270" stroke="#38bdf8" stroke-width="1.5"/>
-        <text x="542" y="235" font-size="16" text-anchor="middle">🛗</text>
-        <text x="542" y="254" font-size="9.5" font-weight="700" fill="#e2e8f0" text-anchor="middle">LIFT 2 (SRV)</text>
-        <circle cx="512" cy="225" r="2.5" fill="#38bdf8"/>
-
-        <rect x="410" y="280" width="180" height="110" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
-        <text x="500" y="325" font-size="11" font-weight="800" fill="#cbd5e1" text-anchor="middle" letter-spacing="1">ELEVATOR FOYER</text>
-        <text x="500" y="342" font-size="8.5" font-weight="600" fill="#64748b" text-anchor="middle">VITRIFIED TILE FLOORING</text>
-        
-        <rect x="420" y="365" width="45" height="18" fill="#1e293b" stroke="#f59e0b" stroke-width="1" rx="2"/>
-        <text x="442" y="377" font-size="7.5" font-weight="700" fill="#f59e0b" text-anchor="middle">⚡ DUCT</text>
-
-        <rect x="475" y="365" width="45" height="18" fill="#1e293b" stroke="#ef4444" stroke-width="1" rx="2"/>
-        <text x="497" y="377" font-size="7.5" font-weight="700" fill="#ef4444" text-anchor="middle">🧯 FHC</text>
-
-        <rect x="530" y="365" width="48" height="18" fill="#1e293b" stroke="#10b981" stroke-width="1" rx="2"/>
-        <text x="554" y="377" font-size="7.5" font-weight="700" fill="#10b981" text-anchor="middle">♻ CHUTE</text>
-
-        <rect x="422" y="400" width="156" height="98" fill="#1e293b" stroke="#ef4444" stroke-width="1.5" rx="3"/>
-        <line x1="432" y1="416" x2="566" y2="416" stroke="#475569" stroke-width="1.5"/>
-        <line x1="432" y1="430" x2="566" y2="430" stroke="#475569" stroke-width="1.5"/>
-        <line x1="432" y1="444" x2="566" y2="444" stroke="#475569" stroke-width="1.5"/>
-        <line x1="432" y1="458" x2="566" y2="458" stroke="#475569" stroke-width="1.5"/>
-        <line x1="432" y1="472" x2="566" y2="472" stroke="#475569" stroke-width="1.5"/>
-        <text x="500" y="440" font-size="10" font-weight="800" fill="#fca5a5" text-anchor="middle">🪜 FIRE EXIT STAIRWELL</text>
-        <rect x="532" y="475" width="36" height="16" fill="#10b981" rx="2"/>
-        <text x="550" y="486" font-size="8" font-weight="900" fill="#ffffff" text-anchor="middle">EXIT ➜</text>
-
-        <rect x="455" y="70" width="90" height="120" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
-        <text x="500" y="135" font-size="9" font-weight="700" fill="#64748b" text-anchor="middle" transform="rotate(-90 500 135)">NORTH CORRIDOR</text>
-
-        <rect x="455" y="510" width="90" height="130" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
-        <text x="500" y="575" font-size="9" font-weight="700" fill="#64748b" text-anchor="middle" transform="rotate(90 500 575)">SOUTH CORRIDOR</text>
-      </g>
-    `;
-
-    if (flNum === 5) {
-      const ph1Key = 'ph_501';
-      interiorState.currentUnits[ph1Key] = {
-        name: 'Penthouse PH-501',
-        type: '4 BHK Duplex Penthouse',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'East-North Facing (Vaastu)',
-        area: '3,450 sq ft (Carpet: 2,750 sq ft)',
-        rooms: 'Grand Double-Height Salon, Presidential Master Suite, 3 En-Suite Bedrooms, Private Infinity Plunge Pool, Panoramic Sky Terrace, Chef Kitchen & Bar'
-      };
-
-      const ph2Key = 'ph_502';
-      interiorState.currentUnits[ph2Key] = {
-        name: 'Penthouse PH-502',
-        type: '4 BHK Duplex Penthouse',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'West-South Facing (Vaastu)',
-        area: '3,450 sq ft (Carpet: 2,750 sq ft)',
-        rooms: 'Grand Double-Height Salon, Presidential Master Suite, 3 En-Suite Bedrooms, Private Infinity Plunge Pool, Panoramic Sky Terrace, Chef Kitchen & Wine Cellar'
-      };
-
-      svg += `
-        <g class="svg-flat-unit" data-unit-key="${ph1Key}">
-          <rect class="flat-shell" x="65" y="70" width="340" height="570" fill="#0f172a" stroke="#38bdf8" stroke-width="2" rx="8"/>
-          <rect x="80" y="85" width="130" height="95" fill="url(#plunge-grad)" rx="6"/>
-          <text x="145" y="135" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">🏊 Private Pool</text>
-          <text x="145" y="152" font-size="8.5" fill="#e0f2fe" text-anchor="middle">Depth: 1.2m Heated</text>
-          <rect x="80" y="190" width="130" height="120" fill="#132338" stroke="#38bdf8" stroke-dasharray="4 4" rx="4"/>
-          <text x="145" y="245" font-size="12" font-weight="800" fill="#38bdf8" text-anchor="middle">🌿 Sky Deck</text>
-          <rect x="220" y="85" width="170" height="225" fill="#1e293b" stroke="#334155" stroke-width="1.5" rx="4"/>
-          <text x="305" y="180" font-size="12" font-weight="800" fill="#f8fafc" text-anchor="middle">GRAND SALON</text>
-          <rect x="80" y="325" width="310" height="175" fill="#172554" stroke="#2563eb" stroke-width="1.5" rx="4"/>
-          <text x="235" y="405" font-size="13" font-weight="800" fill="#bfdbfe" text-anchor="middle">👑 PRESIDENTIAL MASTER SUITE</text>
-          <rect x="80" y="515" width="310" height="110" fill="#1e293b" stroke="#334155" stroke-width="1.5" rx="4"/>
-          <text x="235" y="565" font-size="12" font-weight="800" fill="#f8fafc" text-anchor="middle">CHEF KITCHEN & BAR</text>
-          <rect x="75" y="605" width="180" height="26" fill="#0284c7" rx="4"/>
-          <text x="165" y="622" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">PH-501 • 4 BHK (3,450 sq ft)</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${ph2Key}">
-          <rect class="flat-shell" x="595" y="70" width="340" height="570" fill="#0f172a" stroke="#38bdf8" stroke-width="2" rx="8"/>
-          <rect x="790" y="85" width="130" height="95" fill="url(#plunge-grad)" rx="6"/>
-          <text x="855" y="135" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">🏊 Private Pool</text>
-          <text x="855" y="152" font-size="8.5" fill="#e0f2fe" text-anchor="middle">Depth: 1.2m Heated</text>
-          <rect x="790" y="190" width="130" height="120" fill="#132338" stroke="#38bdf8" stroke-dasharray="4 4" rx="4"/>
-          <text x="855" y="245" font-size="12" font-weight="800" fill="#38bdf8" text-anchor="middle">🌿 Sky Deck</text>
-          <rect x="610" y="85" width="170" height="225" fill="#1e293b" stroke="#334155" stroke-width="1.5" rx="4"/>
-          <text x="695" y="180" font-size="12" font-weight="800" fill="#f8fafc" text-anchor="middle">GRAND SALON</text>
-          <rect x="610" y="325" width="310" height="175" fill="#172554" stroke="#2563eb" stroke-width="1.5" rx="4"/>
-          <text x="765" y="405" font-size="13" font-weight="800" fill="#bfdbfe" text-anchor="middle">👑 PRESIDENTIAL MASTER SUITE</text>
-          <rect x="610" y="515" width="310" height="110" fill="#1e293b" stroke="#334155" stroke-width="1.5" rx="4"/>
-          <text x="765" y="565" font-size="12" font-weight="800" fill="#f8fafc" text-anchor="middle">CHEF KITCHEN & BAR</text>
-          <rect x="745" y="605" width="180" height="26" fill="#0284c7" rx="4"/>
-          <text x="835" y="622" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">PH-502 • 4 BHK (3,450 sq ft)</text>
-        </g>
-      `;
-    } else {
-      const u1Key = `unit_${flNum}01`;
-      interiorState.currentUnits[u1Key] = {
-        name: `Flat ${flNum}01`,
-        type: '3 BHK Grand',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'East Facing (Vaastu)',
-        area: '1,680 sq ft (Carpet: 1,320 sq ft)',
-        rooms: 'Living & Dining, Master Bedroom Suite with Walk-in Wardrobe, Bedroom 2, 3 Bathrooms, East Deck Balcony, Modular Kitchen & Utility'
-      };
-
-      const u2Key = `unit_${flNum}02`;
-      interiorState.currentUnits[u2Key] = {
-        name: `Flat ${flNum}02`,
-        type: '3 BHK Luxury',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'North Facing (Vaastu)',
-        area: '1,720 sq ft (Carpet: 1,350 sq ft)',
-        rooms: 'Living & Dining, Master Suite, Bedroom 2, 3 Bathrooms, North Deck Balcony, Modular Kitchen & Utility'
-      };
-
-      const u3Key = `unit_${flNum}03`;
-      interiorState.currentUnits[u3Key] = {
-        name: `Flat ${flNum}03`,
-        type: '2.5 BHK + Study',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'South Facing (Vaastu)',
-        area: '1,450 sq ft (Carpet: 1,140 sq ft)',
-        rooms: 'Living & Dining, Master Bedroom Suite, Dedicated Study / Kids Room, 2 Bathrooms, South Deck Balcony, Modular Kitchen'
-      };
-
-      const u4Key = `unit_${flNum}04`;
-      interiorState.currentUnits[u4Key] = {
-        name: `Flat ${flNum}04`,
-        type: '2 BHK Compact',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'West Facing (Vaastu)',
-        area: '1,280 sq ft (Carpet: 1,010 sq ft)',
-        rooms: 'Living & Dining, Master Bedroom Suite, Bedroom 2, 2 Bathrooms, West Deck Balcony, Modular Kitchen'
-      };
-
-      svg += `
-        <g class="svg-flat-unit" data-unit-key="${u1Key}">
-          <rect class="flat-shell" x="65" y="70" width="340" height="260" fill="#0f172a" stroke="#334155" stroke-width="2" rx="6"/>
-          <rect x="180" y="130" width="215" height="190" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="3"/>
-          <text x="287" y="215" font-size="11" font-weight="700" fill="#f8fafc" text-anchor="middle">LIVING & DINING</text>
-          <rect x="75" y="80" width="150" height="130" fill="#172554" stroke="#1d4ed8" stroke-width="1.2" rx="3"/>
-          <text x="150" y="140" font-size="10.5" font-weight="700" fill="#93c5fd" text-anchor="middle">MASTER BED</text>
-          <rect x="235" y="80" width="160" height="115" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="3"/>
-          <text x="315" y="125" font-size="10.5" font-weight="700" fill="#e2e8f0" text-anchor="middle">BEDROOM 2</text>
-          <rect x="75" y="220" width="95" height="100" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="3"/>
-          <text x="122" y="265" font-size="9.5" font-weight="700" fill="#f8fafc" text-anchor="middle">KITCHEN</text>
-          <rect x="325" y="305" width="70" height="25" fill="#0b1120" stroke="#38bdf8" stroke-dasharray="3 3"/>
-          <text x="360" y="321" font-size="8" font-weight="700" fill="#38bdf8" text-anchor="middle">DECK</text>
-          <rect x="75" y="80" width="80" height="20" fill="#0284c7" rx="3"/>
-          <text x="115" y="94" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">FLAT ${flNum}01</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${u2Key}">
-          <rect class="flat-shell" x="595" y="70" width="340" height="260" fill="#0f172a" stroke="#334155" stroke-width="2" rx="6"/>
-          <rect x="605" y="130" width="215" height="190" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="3"/>
-          <text x="712" y="215" font-size="11" font-weight="700" fill="#f8fafc" text-anchor="middle">LIVING & DINING</text>
-          <rect x="775" y="80" width="150" height="130" fill="#172554" stroke="#1d4ed8" stroke-width="1.2" rx="3"/>
-          <text x="850" y="140" font-size="10.5" font-weight="700" fill="#93c5fd" text-anchor="middle">MASTER BED</text>
-          <rect x="605" y="80" width="160" height="115" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="3"/>
-          <text x="685" y="125" font-size="10.5" font-weight="700" fill="#e2e8f0" text-anchor="middle">BEDROOM 2</text>
-          <rect x="830" y="220" width="95" height="100" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="3"/>
-          <text x="877" y="265" font-size="9.5" font-weight="700" fill="#f8fafc" text-anchor="middle">KITCHEN</text>
-          <rect x="605" y="305" width="70" height="25" fill="#0b1120" stroke="#38bdf8" stroke-dasharray="3 3"/>
-          <text x="640" y="321" font-size="8" font-weight="700" fill="#38bdf8" text-anchor="middle">DECK</text>
-          <rect x="845" y="80" width="80" height="20" fill="#0284c7" rx="3"/>
-          <text x="885" y="94" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">FLAT ${flNum}02</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${u3Key}">
-          <rect class="flat-shell" x="65" y="380" width="340" height="260" fill="#0f172a" stroke="#334155" stroke-width="2" rx="6"/>
-          <rect x="180" y="390" width="215" height="180" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="3"/>
-          <text x="287" y="475" font-size="11" font-weight="700" fill="#f8fafc" text-anchor="middle">LIVING & DINING</text>
-          <rect x="75" y="490" width="150" height="140" fill="#172554" stroke="#1d4ed8" stroke-width="1.2" rx="3"/>
-          <text x="150" y="555" font-size="10.5" font-weight="700" fill="#93c5fd" text-anchor="middle">MASTER BED</text>
-          <rect x="235" y="550" width="160" height="80" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="3"/>
-          <text x="315" y="585" font-size="10" font-weight="700" fill="#f8fafc" text-anchor="middle">STUDY / KIDS</text>
-          <rect x="75" y="390" width="95" height="90" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="3"/>
-          <text x="122" y="435" font-size="9.5" font-weight="700" fill="#f8fafc" text-anchor="middle">KITCHEN</text>
-          <rect x="325" y="380" width="70" height="25" fill="#0b1120" stroke="#38bdf8" stroke-dasharray="3 3"/>
-          <text x="360" y="396" font-size="8" font-weight="700" fill="#38bdf8" text-anchor="middle">DECK</text>
-          <rect x="75" y="610" width="80" height="20" fill="#0284c7" rx="3"/>
-          <text x="115" y="624" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">FLAT ${flNum}03</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${u4Key}">
-          <rect class="flat-shell" x="595" y="380" width="340" height="260" fill="#0f172a" stroke="#334155" stroke-width="2" rx="6"/>
-          <rect x="605" y="390" width="215" height="180" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="3"/>
-          <text x="712" y="475" font-size="11" font-weight="700" fill="#f8fafc" text-anchor="middle">LIVING & DINING</text>
-          <rect x="775" y="490" width="150" height="140" fill="#172554" stroke="#1d4ed8" stroke-width="1.2" rx="3"/>
-          <text x="850" y="555" font-size="10.5" font-weight="700" fill="#93c5fd" text-anchor="middle">MASTER BED</text>
-          <rect x="605" y="550" width="160" height="80" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="3"/>
-          <text x="685" y="585" font-size="10" font-weight="700" fill="#f8fafc" text-anchor="middle">BEDROOM 2</text>
-          <rect x="830" y="390" width="95" height="90" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="3"/>
-          <text x="877" y="435" font-size="9.5" font-weight="700" fill="#f8fafc" text-anchor="middle">KITCHEN</text>
-          <rect x="605" y="380" width="70" height="25" fill="#0b1120" stroke="#38bdf8" stroke-dasharray="3 3"/>
-          <text x="640" y="396" font-size="8" font-weight="700" fill="#38bdf8" text-anchor="middle">DECK</text>
-          <rect x="845" y="610" width="80" height="20" fill="#0284c7" rx="3"/>
-          <text x="885" y="624" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">FLAT ${flNum}04</text>
-        </g>
-      `;
-    }
-
-    return svg;
-  }
-
-  function renderClubhouseFloorPlanSVG(name, flNum, flLabel) {
-    interiorState.currentUnits = {};
-    let svg = getBlueprintDefs();
-    svg += getNorthArrowSVG();
-
-    svg += `
-      <text x="500" y="34" font-size="14" font-weight="800" fill="#f8fafc" letter-spacing="1" text-anchor="middle">${name.toUpperCase()} • ${flLabel.toUpperCase()}</text>
-      <text x="500" y="50" font-size="10" font-weight="600" fill="#64748b" text-anchor="middle">SPORTS, AQUATICS, HEALTH CLUB & BANQUET PAVILION</text>
-    `;
-
-    if (flNum === 0) {
-      const uPool = 'ch_pool';
-      interiorState.currentUnits[uPool] = {
-        name: 'Olympic Lap Heated Pool & Sun Deck',
-        type: 'Aquatics Facility',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'North-East (Morning Sun)',
-        area: '25m x 12m (6 Competition Lanes)',
-        rooms: 'Temperature Controlled Heated Lap Pool, Shallow Toddlers Splash Pool, Timber Lounger Sun Deck, Changing Rooms & Showers'
-      };
-
-      const uBadminton = 'ch_badminton';
-      interiorState.currentUnits[uBadminton] = {
-        name: 'Dual Hardwood Badminton Courts',
-        type: 'Racquet Sports Arena',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Indoor Climate Controlled',
-        area: '2 Full-Scale Courts (BWF Standard)',
-        rooms: 'Anti-Glare LED Stadium Lighting, Canadian Teak Hardwood Spring Floor, Spectator Gallery'
-      };
-
-      const uSquash = 'ch_squash';
-      interiorState.currentUnits[uSquash] = {
-        name: 'Squash Court & Table Tennis Pavilion',
-        type: 'Indoor Sports Arena',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Indoor Climate Controlled',
-        area: 'WSF Regulation Court + 2 TT Tables',
-        rooms: 'Glass-Backed Squash Arena with Viewing Balcony, 2 Competition Table Tennis Stations'
-      };
-
-      const uLobby = 'ch_foyer';
-      interiorState.currentUnits[uLobby] = {
-        name: 'Grand Welcome Foyer & Juice Bar',
-        type: 'Reception & Hospitality',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Main Entrance Facing',
-        area: '2,200 sq ft',
-        rooms: 'Concierge Desk, Member Locker Suites, Steam Showers, Organic Detox Juice Bar & Lounge'
-      };
-
-      svg += `
-        <g class="svg-flat-unit" data-unit-key="${uPool}">
-          <rect class="flat-shell" x="65" y="70" width="440" height="260" fill="#0c1a2e" stroke="#0284c7" stroke-width="2" rx="8"/>
-          <rect x="80" y="85" width="410" height="170" fill="url(#pool-grad)" rx="6"/>
-          <line x1="80" y1="115" x2="490" y2="115" stroke="#38bdf8" stroke-width="1" stroke-dasharray="6 4"/>
-          <line x1="80" y1="145" x2="490" y2="145" stroke="#38bdf8" stroke-width="1" stroke-dasharray="6 4"/>
-          <line x1="80" y1="175" x2="490" y2="175" stroke="#38bdf8" stroke-width="1" stroke-dasharray="6 4"/>
-          <line x1="80" y1="205" x2="490" y2="205" stroke="#38bdf8" stroke-width="1" stroke-dasharray="6 4"/>
-          <text x="285" y="150" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">🏊 25M HEATED OLYMPIC LAP POOL</text>
-          <text x="285" y="168" font-size="10" fill="#e0f2fe" text-anchor="middle">6 Lanes • 1.2m to 2.2m Graduated Depth • 28°C Constant Heat</text>
-          <rect x="80" y="265" width="410" height="55" fill="#1e293b" stroke="#334155" stroke-dasharray="4 4" rx="4"/>
-          <text x="285" y="298" font-size="11" font-weight="700" fill="#94a3b8" text-anchor="middle">☀️ Teak Sun Loungers & Poolside Cabanas</text>
-          <rect x="75" y="75" width="130" height="22" fill="#0284c7" rx="3"/>
-          <text x="140" y="89" font-size="9.5" font-weight="800" fill="#ffffff" text-anchor="middle">AQUATIC CENTER</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uBadminton}">
-          <rect class="flat-shell" x="535" y="70" width="400" height="280" fill="#1a130b" stroke="#a16207" stroke-width="2" rx="8"/>
-          <rect x="550" y="85" width="175" height="245" fill="url(#wood-court)" rx="4"/>
-          <rect x="560" y="95" width="155" height="225" fill="none" stroke="#ffffff" stroke-width="1.5"/>
-          <line x1="560" y1="207" x2="715" y2="207" stroke="#ffffff" stroke-width="2.5"/>
-          <text x="637" y="211" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">NET</text>
-          
-          <rect x="745" y="85" width="175" height="245" fill="url(#wood-court)" rx="4"/>
-          <rect x="755" y="95" width="155" height="225" fill="none" stroke="#ffffff" stroke-width="1.5"/>
-          <line x1="755" y1="207" x2="910" y2="207" stroke="#ffffff" stroke-width="2.5"/>
-          <text x="832" y="211" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">NET</text>
-
-          <rect x="640" y="325" width="190" height="20" fill="#a16207" rx="3"/>
-          <text x="735" y="338" font-size="9.5" font-weight="800" fill="#ffffff" text-anchor="middle">🏸 2 BWF BADMINTON COURTS</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uLobby}">
-          <rect class="flat-shell" x="65" y="360" width="440" height="280" fill="#0f172a" stroke="#334155" stroke-width="2" rx="8"/>
-          <rect x="80" y="375" width="240" height="250" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="6"/>
-          <text x="200" y="480" font-size="13" font-weight="800" fill="#f8fafc" text-anchor="middle">WELCOME FOYER & RECEPTION</text>
-          <text x="200" y="500" font-size="10" fill="#94a3b8" text-anchor="middle">Concierge & Guest Check-In Desk</text>
-          <rect x="335" y="375" width="155" height="250" fill="#14532d" stroke="#16a34a" stroke-width="1.2" rx="6"/>
-          <text x="412" y="490" font-size="12" font-weight="800" fill="#bbf7d0" text-anchor="middle">🥗 JUICE & DETOX BAR</text>
-          <text x="412" y="510" font-size="9" fill="#86efac" text-anchor="middle">Fresh Smoothies & Protein Cafe</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uSquash}">
-          <rect class="flat-shell" x="535" y="375" width="400" height="265" fill="#0f172a" stroke="#334155" stroke-width="2" rx="8"/>
-          <rect x="550" y="390" width="180" height="235" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" rx="4"/>
-          <text x="640" y="500" font-size="12" font-weight="800" fill="#38bdf8" text-anchor="middle">SQUASH ARENA</text>
-          <text x="640" y="518" font-size="9" fill="#94a3b8" text-anchor="middle">Glass Back-Wall Court</text>
-          
-          <rect x="745" y="390" width="175" height="235" fill="#1e293b" stroke="#10b981" stroke-width="1.5" rx="4"/>
-          <text x="832" y="500" font-size="12" font-weight="800" fill="#10b981" text-anchor="middle">TABLE TENNIS</text>
-          <text x="832" y="518" font-size="9" fill="#94a3b8" text-anchor="middle">2 Competition Tables</text>
-        </g>
-      `;
-    } else if (flNum === 1) {
-      const uGym = 'ch_gym';
-      interiorState.currentUnits[uGym] = {
-        name: 'Technogym Strength & Cardio Gymnasium',
-        type: 'Fitness Center',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'East Facing Sunrise Panorama',
-        area: '3,800 sq ft',
-        rooms: 'LifeFitness Treadmills Row, Ellipticals, Free Weights Dumbbells (2-40kg), Olympic Squat Racks, Cable Multi-Stations, Personal Training Zone'
-      };
-
-      const uYoga = 'ch_yoga';
-      interiorState.currentUnits[uYoga] = {
-        name: 'Zen Yoga, Pilates & Aerobics Studio',
-        type: 'Mind & Movement',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Quiet Garden View',
-        area: '1,800 sq ft',
-        rooms: 'Full-Height Mirror Wall, Sprung Maple Shock-Absorbing Wood Flooring, Singing Bowls & Sound Bath, Aerial Yoga Silks'
-      };
-
-      const uSpa = 'ch_spa';
-      interiorState.currentUnits[uSpa] = {
-        name: 'Ayurvedic Hydrotherapy Spa, Steam & Sauna',
-        type: 'Wellness & Recovery',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Indoor Spa Suite',
-        area: '2,000 sq ft',
-        rooms: 'Swedish Pine Wood Dry Sauna (80°C), Eucalyptus Steam Inhalation Chamber, 8-Jet Warm Hydrotherapy Jacuzzi, Massage Suites'
-      };
-
-      const uPhysio = 'ch_physio';
-      interiorState.currentUnits[uPhysio] = {
-        name: 'Sports Physiotherapy & Recovery Clinic',
-        type: 'Sports Medicine',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Wellness Suite',
-        area: '1,400 sq ft',
-        rooms: 'InBody 770 Body Composition Analysis, Cryo-Ice Compression Lounge, Sports Rehab Bed'
-      };
-
-      svg += `
-        <g class="svg-flat-unit" data-unit-key="${uGym}">
-          <rect class="flat-shell" x="65" y="70" width="460" height="310" fill="#0f172a" stroke="#38bdf8" stroke-width="2" rx="8"/>
-          <rect x="80" y="85" width="430" height="280" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="6"/>
-          <text x="295" y="190" font-size="14" font-weight="800" fill="#38bdf8" text-anchor="middle">🏋️ TECHNOGYM OLYMPIC GYMNASIUM</text>
-          <text x="295" y="210" font-size="10" fill="#cbd5e1" text-anchor="middle">Treadmills • Cross-Trainers • Squat Racks • Free Weights 2-40kg</text>
-          <rect x="80" y="330" width="430" height="35" fill="#0c4a6e" rx="4"/>
-          <text x="295" y="352" font-size="10.5" font-weight="700" fill="#e0f2fe" text-anchor="middle">CARDIO & AEROBIC ZONE • 12 HIGH-PERFORMANCE WORKSTATIONS</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uYoga}">
-          <rect class="flat-shell" x="550" y="70" width="385" height="260" fill="#1c1917" stroke="#ea580c" stroke-width="2" rx="8"/>
-          <rect x="565" y="85" width="355" height="230" fill="url(#wood-court)" rx="6"/>
-          <text x="742" y="195" font-size="13" font-weight="800" fill="#ffedd5" text-anchor="middle">🧘 YOGA, PILATES & AEROBICS</text>
-          <text x="742" y="215" font-size="10" fill="#fed7aa" text-anchor="middle">Full Mirror Wall • Natural Timber Floor • Meditation Bells</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uSpa}">
-          <rect class="flat-shell" x="65" y="405" width="460" height="235" fill="#1e1b4b" stroke="#6366f1" stroke-width="2" rx="8"/>
-          <rect x="80" y="420" width="135" height="205" fill="#78350f" stroke="#b45309" stroke-width="1.5" rx="4"/>
-          <text x="147" y="520" font-size="11" font-weight="800" fill="#fef3c7" text-anchor="middle">🧖 DRY SAUNA</text>
-          <rect x="225" y="420" width="135" height="205" fill="#0284c7" stroke="#38bdf8" stroke-width="1.5" rx="4"/>
-          <text x="292" y="520" font-size="11" font-weight="800" fill="#e0f2fe" text-anchor="middle">💨 STEAM ROOM</text>
-          <rect x="370" y="420" width="140" height="205" fill="#0369a1" stroke="#38bdf8" stroke-width="1.5" rx="4"/>
-          <text x="440" y="520" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">🛁 JACUZZI SPA</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uPhysio}">
-          <rect class="flat-shell" x="550" y="355" width="385" height="285" fill="#0f172a" stroke="#10b981" stroke-width="2" rx="8"/>
-          <rect x="565" y="370" width="355" height="255" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="6"/>
-          <text x="742" y="485" font-size="13" font-weight="800" fill="#a7f3d0" text-anchor="middle">🩺 PHYSIOTHERAPY & SPORTS CLINIC</text>
-          <text x="742" y="505" font-size="10" fill="#6ee7b7" text-anchor="middle">InBody 770 Composition Scan & Cryo-Recovery</text>
-        </g>
-      `;
-    } else {
-      const uSnooker = 'ch_billiards';
-      interiorState.currentUnits[uSnooker] = {
-        name: 'Championship Snooker & Billiards Hall',
-        type: 'Indoor Club Games',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Quiet Wing',
-        area: '2,200 sq ft',
-        rooms: '2 Full-Size 12-ft English Slate Tournament Snooker Tables, Overhead Canopy Lights, Leather Armchairs & Scoreboards'
-      };
-
-      const uCafe = 'ch_cafe';
-      interiorState.currentUnits[uCafe] = {
-        name: 'Sky Pergola Cafe & Sunset Terrace',
-        type: 'Dining & Alfresco',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'West Facing Sunset Deck',
-        area: '2,400 sq ft',
-        rooms: 'Espresso Bar, Cold-Brew Station, Teak Outdoor Pergola Dining Tables, Vertical Green Foliage Living Wall'
-      };
-
-      const uBanquet = 'ch_banquet';
-      interiorState.currentUnits[uBanquet] = {
-        name: 'Grand Celebration Banquet Hall',
-        type: 'Banquet & Events',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Air Conditioned Grand Hall',
-        area: '4,500 sq ft (250 Guests)',
-        rooms: 'Acoustic Soundproofing Wall Panels, Motorized Stage with 4K LED Screen, Round Banquet Tables, Direct Kitchen Access'
-      };
-
-      const uKitchen = 'ch_kitchen';
-      interiorState.currentUnits[uKitchen] = {
-        name: 'Commercial Event Catering Prep Kitchen',
-        type: 'Catering Kitchen',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Service Quadrant',
-        area: '1,500 sq ft',
-        rooms: 'Industrial Stainless Steel Prep Tables, Walk-in Deep Freezers, Dedicated Food Service Elevator'
-      };
-
-      svg += `
-        <g class="svg-flat-unit" data-unit-key="${uSnooker}">
-          <rect class="flat-shell" x="65" y="70" width="430" height="260" fill="#064e3b" stroke="#10b981" stroke-width="2" rx="8"/>
-          <rect x="90" y="95" width="170" height="210" fill="#047857" stroke="#78350f" stroke-width="4" rx="4"/>
-          <rect x="285" y="95" width="170" height="210" fill="#047857" stroke="#78350f" stroke-width="4" rx="4"/>
-          <text x="275" y="215" font-size="13" font-weight="800" fill="#ecfdf5" text-anchor="middle">🎱 TOURNAMENT SNOOKER TABLES</text>
-          <text x="275" y="235" font-size="9.5" fill="#a7f3d0" text-anchor="middle">Two 12-ft English Slate Championship Tables</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uCafe}">
-          <rect class="flat-shell" x="520" y="70" width="415" height="260" fill="#1c1917" stroke="#f59e0b" stroke-width="2" rx="8"/>
-          <rect x="535" y="85" width="385" height="230" fill="#292524" stroke="#44403c" stroke-width="1.5" rx="6"/>
-          <text x="727" y="190" font-size="14" font-weight="800" fill="#fef3c7" text-anchor="middle">☕ SKY PERGOLA CAFE & TERRACE</text>
-          <text x="727" y="210" font-size="10" fill="#fde68a" text-anchor="middle">Artisan Espresso Bar & Alfresco Sunset Seating</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uBanquet}">
-          <rect class="flat-shell" x="65" y="355" width="620" height="285" fill="#172554" stroke="#3b82f6" stroke-width="2" rx="8"/>
-          <rect x="80" y="370" width="590" height="255" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="6"/>
-          <text x="375" y="490" font-size="16" font-weight="800" fill="#bfdbfe" text-anchor="middle">🎭 GRAND CELEBRATION BANQUET HALL</text>
-          <text x="375" y="515" font-size="11" fill="#93c5fd" text-anchor="middle">Capacity: 250 Guests • 4K Video Wall & JBL Pro Sound</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uKitchen}">
-          <rect class="flat-shell" x="710" y="355" width="225" height="285" fill="#0f172a" stroke="#64748b" stroke-width="2" rx="8"/>
-          <rect x="725" y="370" width="195" height="255" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="6"/>
-          <text x="822" y="490" font-size="12" font-weight="800" fill="#e2e8f0" text-anchor="middle">🍽️ CATERING</text>
-          <text x="822" y="510" font-size="10" fill="#94a3b8" text-anchor="middle">Prep Kitchen</text>
-        </g>
-      `;
-    }
-
-    return svg;
-  }
-
-  function renderMallFloorPlanSVG(name, flNum, flLabel) {
-    interiorState.currentUnits = {};
-    let svg = getBlueprintDefs();
-    svg += getNorthArrowSVG();
-
-    svg += `
-      <text x="500" y="34" font-size="14" font-weight="800" fill="#f8fafc" letter-spacing="1" text-anchor="middle">${name.toUpperCase()} • ${flLabel.toUpperCase()}</text>
-      <text x="500" y="50" font-size="10" font-weight="600" fill="#64748b" text-anchor="middle">COMMERCIAL RETAIL GALLERIA • MULTIPLEX • WORLD DINING</text>
-    `;
-
-    if (flNum === 0) {
-      const uHyper = 'mall_hyper';
-      interiorState.currentUnits[uHyper] = {
-        name: 'Spar Hypermarket & Gourmet Grocery Anchor',
-        type: 'Hypermarket Anchor',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Lower Ground Anchor Wing',
-        area: '18,500 sq ft',
-        rooms: 'Fresh Farm Produce, Daily Essentials, Imported Deli & Bakery, Dairy Chiller Aisle, 8 Billing POS Counters'
-      };
-
-      const uEv = 'mall_ev';
-      interiorState.currentUnits[uEv] = {
-        name: 'EV Ultra-Fast DC Charging Station & Valet Desk',
-        type: 'Mobility & Services',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Lower Ground Parking Bay',
-        area: '4,000 sq ft',
-        rooms: '8x 60kW DC Fast Chargers, Premium Valet Reception Desk, Two-Wheeler EV Swapping Hub'
-      };
-
-      const uPharm = 'mall_pharm';
-      interiorState.currentUnits[uPharm] = {
-        name: 'Smart Parcel Locker Hub & Apollo 24/7 Pharmacy',
-        type: 'Convenience Retail',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'LG Corridor Access',
-        area: '2,500 sq ft',
-        rooms: 'Amazon & Blinkit Contactless Automated Pick-Up Lockers, 24/7 Emergency Pharmacy & Health Drop'
-      };
-
-      svg += `
-        <g class="svg-flat-unit" data-unit-key="${uHyper}">
-          <rect class="flat-shell" x="65" y="70" width="550" height="570" fill="#064e3b" stroke="#10b981" stroke-width="2" rx="8"/>
-          <rect x="80" y="85" width="520" height="540" fill="#022c22" stroke="#059669" stroke-width="1.2" rx="6"/>
-          <text x="340" y="320" font-size="18" font-weight="800" fill="#a7f3d0" text-anchor="middle">🛒 SPAR HYPERMARKET ANCHOR</text>
-          <text x="340" y="345" font-size="12" fill="#6ee7b7" text-anchor="middle">Fresh Farm Produce • Gourmet Foods • 8 Express Checkouts</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uEv}">
-          <rect class="flat-shell" x="645" y="70" width="290" height="270" fill="#082f49" stroke="#0284c7" stroke-width="2" rx="8"/>
-          <rect x="660" y="85" width="260" height="240" fill="#0c4a6e" stroke="#0369a1" stroke-width="1.2" rx="6"/>
-          <text x="790" y="195" font-size="13" font-weight="800" fill="#bae6fd" text-anchor="middle">⚡ EV FAST CHARGING</text>
-          <text x="790" y="215" font-size="9.5" fill="#7dd3fc" text-anchor="middle">8x 60kW DC Chargers & Valet</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uPharm}">
-          <rect class="flat-shell" x="645" y="370" width="290" height="270" fill="#1e1b4b" stroke="#6366f1" stroke-width="2" rx="8"/>
-          <rect x="660" y="385" width="260" height="240" fill="#312e81" stroke="#4f46e5" stroke-width="1.2" rx="6"/>
-          <text x="790" y="495" font-size="13" font-weight="800" fill="#c7d2fe" text-anchor="middle">📦 PARCEL HUB & PHARMACY</text>
-          <text x="790" y="515" font-size="9.5" fill="#a5b4fc" text-anchor="middle">24/7 Apollo Pharmacy & Lockers</text>
-        </g>
-      `;
-    } else if (flNum === 1) {
-      const uAtrium = 'mall_atrium';
-      interiorState.currentUnits[uAtrium] = {
-        name: 'Grand Central Skylight Atrium & Fountain',
-        type: 'Central Plaza',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Center Core',
-        area: '8,000 sq ft',
-        rooms: 'Triple-Height Glass Skylight Dome, Dual Criss-Cross Escalators, Panoramic Glass Observation Lifts, Dancing Musical Water Fountain'
-      };
-
-      const uApple = 'mall_apple';
-      interiorState.currentUnits[uApple] = {
-        name: 'Apple Flagship Experience Store',
-        type: 'Premium Technology',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'North Promenade',
-        area: '4,500 sq ft',
-        rooms: 'Mac, iPhone, iPad Hands-On Demo Benches, Apple Genius Bar Technical Support, Today at Apple Arena'
-      };
-
-      const uZara = 'mall_zara';
-      interiorState.currentUnits[uZara] = {
-        name: 'Zara International Fashion Flagship',
-        type: 'International Fashion',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'South Promenade',
-        area: '6,200 sq ft',
-        rooms: 'Men, Women & Kids European Apparel Collections, 12 Luxury Fitting Lounges, Self-Checkout Kiosks'
-      };
-
-      const uStarbucks = 'mall_starbucks';
-      interiorState.currentUnits[uStarbucks] = {
-        name: 'Starbucks Reserve Artisan Coffee Lounge',
-        type: 'Cafe & Roastery',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Atrium Plaza Frontage',
-        area: '2,800 sq ft',
-        rooms: 'Handcrafted Pour-Over Bar, Cold-Brew Tap System, Fresh Artisanal Pastries, Alfresco Atrium Seating'
-      };
-
-      const uSephora = 'mall_sephora';
-      interiorState.currentUnits[uSephora] = {
-        name: 'Sephora Luxury Beauty & Fragrances',
-        type: 'Cosmetics & Beauty',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'East Promenade',
-        area: '3,200 sq ft',
-        rooms: 'Global Skincare Brands, Fragrance Studio, Professional Beauty & Makeover Consultation Counters'
-      };
-
-      svg += `
-        <g class="svg-flat-unit" data-unit-key="${uAtrium}">
-          <rect class="flat-shell" x="370" y="200" width="260" height="280" fill="#0f172a" stroke="#38bdf8" stroke-width="2" rx="12"/>
-          <circle cx="500" cy="340" r="70" fill="#0284c7" opacity="0.3"/>
-          <text x="500" y="335" font-size="14" font-weight="800" fill="#38bdf8" text-anchor="middle">🏛️ GRAND ATRIUM</text>
-          <text x="500" y="355" font-size="10" fill="#cbd5e1" text-anchor="middle">Skylight • Escalators • Fountain</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uApple}">
-          <rect class="flat-shell" x="65" y="70" width="270" height="250" fill="#18181b" stroke="#71717a" stroke-width="2" rx="8"/>
-          <rect x="80" y="85" width="240" height="220" fill="#27272a" stroke="#3f3f46" stroke-width="1.2" rx="6"/>
-          <text x="200" y="185" font-size="14" font-weight="800" fill="#f4f4f5" text-anchor="middle">🍎 APPLE STORE</text>
-          <text x="200" y="205" font-size="10" fill="#a1a1aa" text-anchor="middle">Genius Bar & Demo Tables</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uZara}">
-          <rect class="flat-shell" x="665" y="70" width="270" height="250" fill="#18181b" stroke="#71717a" stroke-width="2" rx="8"/>
-          <rect x="680" y="85" width="240" height="220" fill="#27272a" stroke="#3f3f46" stroke-width="1.2" rx="6"/>
-          <text x="800" y="185" font-size="14" font-weight="800" fill="#f4f4f5" text-anchor="middle">👗 ZARA FASHION</text>
-          <text x="800" y="205" font-size="10" fill="#a1a1aa" text-anchor="middle">Men • Women • Kids</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uStarbucks}">
-          <rect class="flat-shell" x="65" y="360" width="270" height="270" fill="#14532d" stroke="#16a34a" stroke-width="2" rx="8"/>
-          <rect x="80" y="375" width="240" height="240" fill="#166534" stroke="#15803d" stroke-width="1.2" rx="6"/>
-          <text x="200" y="485" font-size="13" font-weight="800" fill="#dcfce7" text-anchor="middle">☕ STARBUCKS RESERVE</text>
-          <text x="200" y="505" font-size="10" fill="#bbf7d0" text-anchor="middle">Artisan Roastery & Lounge</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uSephora}">
-          <rect class="flat-shell" x="665" y="360" width="270" height="270" fill="#4c0519" stroke="#e11d48" stroke-width="2" rx="8"/>
-          <rect x="680" y="375" width="240" height="240" fill="#881337" stroke="#be123c" stroke-width="1.2" rx="6"/>
-          <text x="800" y="485" font-size="13" font-weight="800" fill="#ffe4e6" text-anchor="middle">💄 SEPHORA BEAUTY</text>
-          <text x="800" y="505" font-size="10" fill="#fecdd3" text-anchor="middle">Luxury Skincare & Fragrances</text>
-        </g>
-      `;
-    } else {
-      const uImax = 'mall_imax';
-      interiorState.currentUnits[uImax] = {
-        name: 'PVR IMAX with Laser Multiplex (Audi 1 to 5)',
-        type: 'Cinema & Entertainment',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'North Entertainment Wing',
-        area: '14,000 sq ft',
-        rooms: 'Giant 70mm Laser IMAX Screen with Tiered Stadium Seating, Dolby Atmos 64-Channel Sound, Recliner Lounges, Gourmet Candy Bar'
-      };
-
-      const uFood = 'mall_food';
-      interiorState.currentUnits[uFood] = {
-        name: 'World Food Court & Dining Promenade',
-        type: 'Culinary Court',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'South Terrace Wing',
-        area: '10,500 sq ft (300 Diners)',
-        rooms: '8 Famous National Kiosks (Burger King, Subway, Wow Momo, Behrouz Biryani, Pizza Hut, Chaayos, Gelato Works), Centralized Dining'
-      };
-
-      const uArcade = 'mall_arcade';
-      interiorState.currentUnits[uArcade] = {
-        name: 'Timezone Family Arcade & Neon Bowling',
-        type: 'Recreation & Gaming',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'West Wing',
-        area: '6,000 sq ft',
-        rooms: '4 Full-Length Neon Bowling Lanes, Virtual Reality Motion Pods, Daytona USA Racing Simulators, Prize Redemption Counter'
-      };
-
-      svg += `
-        <g class="svg-flat-unit" data-unit-key="${uImax}">
-          <rect class="flat-shell" x="65" y="70" width="490" height="310" fill="#18181b" stroke="#e11d48" stroke-width="2" rx="8"/>
-          <rect x="80" y="85" width="460" height="280" fill="#27272a" stroke="#3f3f46" stroke-width="1.2" rx="6"/>
-          <path d="M 120 120 Q 310 95 500 120" fill="none" stroke="#e11d48" stroke-width="6"/>
-          <text x="310" y="145" font-size="11" font-weight="900" fill="#e11d48" text-anchor="middle">CURVED IMAX LASER SCREEN</text>
-          <text x="310" y="240" font-size="16" font-weight="800" fill="#f43f5e" text-anchor="middle">🍿 PVR IMAX MULTIPLEX</text>
-          <text x="310" y="260" font-size="11" fill="#cbd5e1" text-anchor="middle">Audi 1 & 2 • Dolby Atmos 64-Channel • Recliner Stadium Seating</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uFood}">
-          <rect class="flat-shell" x="590" y="70" width="345" height="565" fill="#451a03" stroke="#f59e0b" stroke-width="2" rx="8"/>
-          <rect x="605" y="85" width="315" height="535" fill="#292524" stroke="#44403c" stroke-width="1.2" rx="6"/>
-          <text x="762" y="320" font-size="16" font-weight="800" fill="#fef3c7" text-anchor="middle">🍔 WORLD FOOD COURT</text>
-          <text x="762" y="345" font-size="11" fill="#fde68a" text-anchor="middle">8 Famous Food Kiosks • 300 Seats</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uArcade}">
-          <rect class="flat-shell" x="65" y="410" width="490" height="225" fill="#1e1b4b" stroke="#8b5cf6" stroke-width="2" rx="8"/>
-          <rect x="80" y="425" width="460" height="195" fill="#312e81" stroke="#4338ca" stroke-width="1.2" rx="6"/>
-          <text x="310" y="515" font-size="15" font-weight="800" fill="#ddd6fe" text-anchor="middle">🕹️ TIMEZONE ARCADE & BOWLING</text>
-          <text x="310" y="535" font-size="11" fill="#c4b5fd" text-anchor="middle">4 Neon Bowling Lanes & VR Simulators</text>
-        </g>
-      `;
-    }
-
-    return svg;
-  }
-
-  function renderVillaFloorPlanSVG(name, flNum, flLabel) {
-    interiorState.currentUnits = {};
-    let svg = getBlueprintDefs();
-    svg += getNorthArrowSVG();
-
-    svg += `
-      <text x="500" y="34" font-size="14" font-weight="800" fill="#f8fafc" letter-spacing="1" text-anchor="middle">${name.toUpperCase()} • ${flLabel.toUpperCase()}</text>
-      <text x="500" y="50" font-size="10" font-weight="600" fill="#64748b" text-anchor="middle">CUSTOM LUXURY RESIDENCE • ARCHITECTURAL FLOOR BLUEPRINT</text>
-    `;
-
-    if (flNum === 1) {
-      const uPortico = 'villa_portico';
-      interiorState.currentUnits[uPortico] = {
-        name: 'Covered Double Car Portico & EV Wallbox',
-        type: 'Parking & Entry',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Main Gate Facing',
-        area: '350 sq ft (2 Full SUVs)',
-        rooms: '2-Car Covered Portico, 11kW Fast EV Wallbox Charger, Automatic Motion Sensor Lighting'
-      };
-
-      const uLiving = 'villa_living';
-      interiorState.currentUnits[uLiving] = {
-        name: 'Double-Height Formal Living Salon',
-        type: 'Living & Entertaining',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'North-East (Vaastu Compliant)',
-        area: '20\' x 16\' (320 sq ft)',
-        rooms: 'Italian Botticino Marble Flooring, 85" 4K Display Console, Floor-to-Ceiling Glass Sliding Doors to Zen Garden'
-      };
-
-      const uDining = 'villa_dining';
-      interiorState.currentUnits[uDining] = {
-        name: 'Formal Dining Pavilion',
-        type: 'Dining',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'East Facing Garden View',
-        area: '14\' x 12\' (170 sq ft)',
-        rooms: '8-Seater Solid Oak Dining Table, Chandelier Ambient Lighting, Glass Beverage Credenza'
-      };
-
-      const uKitchen = 'villa_kitchen';
-      interiorState.currentUnits[uKitchen] = {
-        name: 'Modular Island Kitchen & Wet Pantry',
-        type: 'Kitchen & Utility',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'South-East (Agni Corner)',
-        area: '16\' x 12\' (190 sq ft)',
-        rooms: 'Quartz Breakfast Counter Island, Built-in Induction & Chimney, Bosch Dishwasher, Dry Pantry & Utility Wash Area'
-      };
-
-      const uGuest = 'villa_guest';
-      interiorState.currentUnits[uGuest] = {
-        name: 'Ground Floor Guest Bedroom Suite',
-        type: 'Guest Bedroom',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'South-West Facing',
-        area: '15\' x 13\' (195 sq ft)',
-        rooms: 'Queen Bed Suite, Built-in Wardrobe, En-Suite Bath with Rain Shower, Senior-Friendly Grab Rails'
-      };
-
-      const uZen = 'villa_zen';
-      interiorState.currentUnits[uZen] = {
-        name: 'Private Backyard Zen Garden & Patio',
-        type: 'Outdoor Living',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Backyard Garden',
-        area: '500 sq ft',
-        rooms: 'Natural Teak Decking, Flowing Water Body with Koi Fish, Tropical Greenery, Outdoor Coffee Seating'
-      };
-
-      svg += `
-        <g class="svg-flat-unit" data-unit-key="${uPortico}">
-          <rect class="flat-shell" x="65" y="70" width="280" height="200" fill="#0f172a" stroke="#64748b" stroke-width="2" rx="8"/>
-          <rect x="80" y="85" width="250" height="170" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="6"/>
-          <text x="205" y="165" font-size="12" font-weight="800" fill="#cbd5e1" text-anchor="middle">🚗 CAR PORTICO (2 SUVs)</text>
-          <text x="205" y="185" font-size="9" fill="#94a3b8" text-anchor="middle">⚡ 11kW EV Fast Charger</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uLiving}">
-          <rect class="flat-shell" x="375" y="190" width="360" height="270" fill="#0f172a" stroke="#38bdf8" stroke-width="2" rx="8"/>
-          <rect x="390" y="205" width="330" height="240" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="6"/>
-          <text x="555" y="315" font-size="14" font-weight="800" fill="#38bdf8" text-anchor="middle">🛋️ DOUBLE-HEIGHT LIVING ROOM</text>
-          <text x="555" y="335" font-size="10" fill="#cbd5e1" text-anchor="middle">20' x 16' • Italian Botticino Marble</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uDining}">
-          <rect class="flat-shell" x="765" y="190" width="170" height="270" fill="#0f172a" stroke="#f59e0b" stroke-width="2" rx="8"/>
-          <rect x="780" y="205" width="140" height="240" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="6"/>
-          <text x="850" y="315" font-size="12" font-weight="800" fill="#fef3c7" text-anchor="middle">🍽️ DINING</text>
-          <text x="850" y="335" font-size="9" fill="#fde68a" text-anchor="middle">8-Seater Table</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uKitchen}">
-          <rect class="flat-shell" x="65" y="295" width="280" height="210" fill="#0f172a" stroke="#10b981" stroke-width="2" rx="8"/>
-          <rect x="80" y="310" width="250" height="180" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="6"/>
-          <text x="205" y="395" font-size="13" font-weight="800" fill="#a7f3d0" text-anchor="middle">🍳 MODULAR KITCHEN</text>
-          <text x="205" y="415" font-size="9.5" fill="#6ee7b7" text-anchor="middle">Quartz Island Counter & Pantry</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uGuest}">
-          <rect class="flat-shell" x="65" y="530" width="300" height="130" fill="#0f172a" stroke="#6366f1" stroke-width="2" rx="8"/>
-          <rect x="80" y="545" width="270" height="100" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="6"/>
-          <text x="215" y="595" font-size="12" font-weight="800" fill="#c7d2fe" text-anchor="middle">🛏️ GUEST BEDROOM SUITE</text>
-          <text x="215" y="612" font-size="9" fill="#a5b4fc" text-anchor="middle">Queen Bed • Attached Bath</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uZen}">
-          <rect class="flat-shell" x="395" y="490" width="540" height="170" fill="#064e3b" stroke="#10b981" stroke-width="2" rx="8"/>
-          <rect x="410" y="505" width="510" height="140" fill="#022c22" stroke="#059669" stroke-width="1.2" rx="6"/>
-          <text x="665" y="570" font-size="14" font-weight="800" fill="#a7f3d0" text-anchor="middle">🌺 PRIVATE ZEN GARDEN & PATIO</text>
-          <text x="665" y="590" font-size="10" fill="#6ee7b7" text-anchor="middle">Teakwood Deck • Water Body Fountain • Landscaping</text>
-        </g>
-      `;
-    } else if (flNum === 2) {
-      const uMaster = 'villa_master';
-      interiorState.currentUnits[uMaster] = {
-        name: 'Presidential Master Suite & Jacuzzi Bath',
-        type: 'Master Suite',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'East Facing Sunrise Vista',
-        area: '22\' x 18\' (400 sq ft)',
-        rooms: 'King Size Bed, Walk-in Wardrobe, Master En-Suite with Jacuzzi Whirlpool Tub & Frameless Glass Shower, Private Sunrise Balcony'
-      };
-
-      const uKids = 'villa_kids';
-      interiorState.currentUnits[uKids] = {
-        name: 'Children\'s Bedroom & Creative Study',
-        type: 'Children Suite',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'North Facing',
-        area: '16\' x 14\' (225 sq ft)',
-        rooms: 'Twin Beds, Ergonomic Integrated Study Desks, Bookshelves, Attached En-Suite Bath'
-      };
-
-      const uLounge = 'villa_lounge';
-      interiorState.currentUnits[uLounge] = {
-        name: 'Family TV Lounge & Mezzanine Library',
-        type: 'Family Living',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Central Overlook',
-        area: '18\' x 15\' (270 sq ft)',
-        rooms: 'Motorized Recliner Seating, 7.1 Dolby Surround Audio, Mezzanine Gallery overlooking Living Room'
-      };
-
-      const uPooja = 'villa_pooja';
-      interiorState.currentUnits[uPooja] = {
-        name: 'Vaastu Pooja & Meditation Sanctum',
-        type: 'Spiritual Sanctum',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'North-East (Ishanya)',
-        area: '8\' x 8\' (64 sq ft)',
-        rooms: 'White Makrana Carved Marble Mandir, Brass Aarti Bells, Vaastu Energy Vortex'
-      };
-
-      const uBalcony = 'villa_balcony';
-      interiorState.currentUnits[uBalcony] = {
-        name: 'Sunset Balcony Deck',
-        type: 'Private Balcony',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'West Facing Garden View',
-        area: '12\' x 8\' (96 sq ft)',
-        rooms: 'Wicker Coffee Chairs, Glass Balustrade, Panoramic View of Layout Tree-Lined Avenues'
-      };
-
-      svg += `
-        <g class="svg-flat-unit" data-unit-key="${uMaster}">
-          <rect class="flat-shell" x="65" y="70" width="440" height="320" fill="#172554" stroke="#2563eb" stroke-width="2" rx="8"/>
-          <rect x="80" y="85" width="410" height="290" fill="#1e3a8a" stroke="#1d4ed8" stroke-width="1.2" rx="6"/>
-          <text x="285" y="210" font-size="14" font-weight="800" fill="#bfdbfe" text-anchor="middle">👑 PRESIDENTIAL MASTER SUITE</text>
-          <text x="285" y="230" font-size="10" fill="#93c5fd" text-anchor="middle">22' x 18' • Walk-in Wardrobe • Jacuzzi Bath 🛁</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uKids}">
-          <rect class="flat-shell" x="535" y="70" width="400" height="240" fill="#0f172a" stroke="#38bdf8" stroke-width="2" rx="8"/>
-          <rect x="550" y="85" width="370" height="210" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="6"/>
-          <text x="735" y="180" font-size="13" font-weight="800" fill="#38bdf8" text-anchor="middle">🧸 CHILDREN'S BED & STUDY</text>
-          <text x="735" y="200" font-size="9.5" fill="#cbd5e1" text-anchor="middle">Twin Beds • Study Desks • Attached Bath</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uLounge}">
-          <rect class="flat-shell" x="535" y="340" width="400" height="280" fill="#0f172a" stroke="#f59e0b" stroke-width="2" rx="8"/>
-          <rect x="550" y="355" width="370" height="250" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="6"/>
-          <text x="735" y="475" font-size="14" font-weight="800" fill="#fef3c7" text-anchor="middle">🎬 FAMILY TV LOUNGE</text>
-          <text x="735" y="495" font-size="10" fill="#fde68a" text-anchor="middle">Recliners • 7.1 Surround • Mezzanine Gallery</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uPooja}">
-          <rect class="flat-shell" x="65" y="420" width="200" height="200" fill="#1c1917" stroke="#ea580c" stroke-width="2" rx="8"/>
-          <rect x="80" y="435" width="170" height="170" fill="#292524" stroke="#44403c" stroke-width="1.2" rx="6"/>
-          <text x="165" y="515" font-size="12" font-weight="800" fill="#fed7aa" text-anchor="middle">🪷 POOJA ROOM</text>
-          <text x="165" y="535" font-size="9" fill="#ffedd5" text-anchor="middle">Makrana Marble Sanctum</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uBalcony}">
-          <rect class="flat-shell" x="290" y="420" width="215" height="200" fill="#0c4a6e" stroke="#0284c7" stroke-width="2" rx="8"/>
-          <rect x="305" y="435" width="185" height="170" fill="#075985" stroke="#0369a1" stroke-width="1.2" rx="6"/>
-          <text x="397" y="515" font-size="12" font-weight="800" fill="#e0f2fe" text-anchor="middle">☕ SUNSET BALCONY</text>
-          <text x="397" y="535" font-size="9" fill="#bae6fd" text-anchor="middle">Wicker Coffee Chairs</text>
-        </g>
-      `;
-    } else {
-      const uSky = 'villa_sky';
-      interiorState.currentUnits[uSky] = {
-        name: 'Pergola-Covered Rooftop Garden & BBQ Deck',
-        type: 'Sky Terrace Living',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Open 360-Degree Panorama',
-        area: '850 sq ft',
-        rooms: 'Cedarwood Pergola with Climbing Bougainvillea, Astroturf Lawn, Stainless Steel Barbeque Station & Cocktail Counter'
-      };
-
-      const uSolar = 'villa_solar';
-      interiorState.currentUnits[uSolar] = {
-        name: '5 kW Rooftop Solar PV Generation Plant',
-        type: 'Green Energy',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'South-Facing Optimal Solar Angle',
-        area: '300 sq ft (12 Mono-PERC Panels)',
-        rooms: '5 kW Bi-Facial Solar Array, Grid-Tie Hybrid Inverter, 10kWh Lithium Battery Backup'
-      };
-
-      const uGym = 'villa_opengym';
-      interiorState.currentUnits[uGym] = {
-        name: 'Open-Air Calisthenics & Yoga Deck',
-        type: 'Outdoor Fitness',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Morning Breeze Zone',
-        area: '350 sq ft',
-        rooms: 'Rubber Safety Shock Tiles, Pull-Up Bars, Parallel Dip Station, Sunrise Yoga Deck'
-      };
-
-      const uRain = 'villa_rain';
-      interiorState.currentUnits[uRain] = {
-        name: 'Rainwater Harvesting & Carbon Filtration',
-        type: 'Sustainability',
-        parent: name,
-        floorLabel: flLabel,
-        facing: 'Terrace Runoff Core',
-        area: '200 sq ft',
-        rooms: 'Dual-Stage Sand & Carbon Filter, Rooftop Runoff Desilter, Connection to 10,000L Underground Sump'
-      };
-
-      svg += `
-        <g class="svg-flat-unit" data-unit-key="${uSky}">
-          <rect class="flat-shell" x="65" y="70" width="520" height="380" fill="#064e3b" stroke="#10b981" stroke-width="2" rx="8"/>
-          <rect x="80" y="85" width="490" height="350" fill="#022c22" stroke="#059669" stroke-width="1.2" rx="6"/>
-          <text x="325" y="250" font-size="16" font-weight="800" fill="#a7f3d0" text-anchor="middle">🌿 PERGOLA SKY GARDEN & BBQ</text>
-          <text x="325" y="275" font-size="11" fill="#6ee7b7" text-anchor="middle">Cedar Pergola • Astroturf Lawn • Stainless Steel BBQ</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uSolar}">
-          <rect class="flat-shell" x="620" y="70" width="320" height="230" fill="#082f49" stroke="#0284c7" stroke-width="2" rx="8"/>
-          <rect x="635" y="85" width="290" height="200" fill="#0c4a6e" stroke="#0369a1" stroke-width="1.2" rx="6"/>
-          <text x="780" y="180" font-size="13" font-weight="800" fill="#bae6fd" text-anchor="middle">☀️ 5KW SOLAR PV PLANT</text>
-          <text x="780" y="200" font-size="9.5" fill="#7dd3fc" text-anchor="middle">Bi-Facial Solar Panels & Inverter</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uGym}">
-          <rect class="flat-shell" x="65" y="480" width="470" height="180" fill="#1e1b4b" stroke="#6366f1" stroke-width="2" rx="8"/>
-          <rect x="80" y="495" width="440" height="150" fill="#312e81" stroke="#4338ca" stroke-width="1.2" rx="6"/>
-          <text x="300" y="565" font-size="13" font-weight="800" fill="#ddd6fe" text-anchor="middle">🏃 OPEN-AIR CALISTHENICS DECK</text>
-          <text x="300" y="585" font-size="9.5" fill="#c4b5fd" text-anchor="middle">Pull-Up Bars • Shock Tiles • Yoga Platform</text>
-        </g>
-
-        <g class="svg-flat-unit" data-unit-key="${uRain}">
-          <rect class="flat-shell" x="560" y="480" width="380" height="180" fill="#0f172a" stroke="#38bdf8" stroke-width="2" rx="8"/>
-          <rect x="575" y="495" width="350" height="150" fill="#1e293b" stroke="#334155" stroke-width="1.2" rx="6"/>
-          <text x="750" y="565" font-size="13" font-weight="800" fill="#38bdf8" text-anchor="middle">💧 RAINWATER HARVESTING</text>
-          <text x="750" y="585" font-size="9.5" fill="#cbd5e1" text-anchor="middle">Multi-Stage Carbon Filter & Sump Recharge</text>
-        </g>
-      `;
-    }
-
-    return svg;
   }
 
   function applySectorFilter(sector) {
