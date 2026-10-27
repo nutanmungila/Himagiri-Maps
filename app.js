@@ -516,8 +516,11 @@
     if (layout.id === 'himagiri') return false; // Himagiri Meadows is a landed plot community with 344 individual surveyed plots
     const uType = (layout.unitType || '').toLowerCase();
     const lType = (layout.type || '').toLowerCase();
-    if (uType.includes('apartment') || uType.includes('tower') || uType.includes('block') || uType.includes('wing')) return true;
-    if (lType.includes('apartment') || lType.includes('township') || lType.includes('high-rise') || lType.includes('condominium')) return true;
+    if (lType.includes('gated plotted') || lType.includes('plotted layout') || lType.includes('villa estate') || uType.includes('plot') || uType.includes('site')) {
+      return false; // Landed plotted communities have individual surveyed sites!
+    }
+    if (uType.includes('apartment') || uType.includes('tower') || uType.includes('block') || uType.includes('wing') || uType.includes('flat')) return true;
+    if (lType.includes('apartment') || lType.includes('township') || lType.includes('high-rise') || lType.includes('flat') || lType.includes('condominium')) return true;
     return false;
   }
 
@@ -677,7 +680,7 @@
         subTxt.setAttribute("font-size", "9.5px");
         subTxt.setAttribute("font-weight", "500");
         subTxt.setAttribute("fill", isBlockActive ? "#fde68a" : "#94a3b8");
-        subTxt.textContent = (currentLayout.unitType ? currentLayout.unitType.replace(/ \/ .*/, '') : 'Apartment Tower').replace(/\d+/g, '').trim();
+        subTxt.textContent = (currentLayout.unitType === 'Flat' ? 'Residential Flat' : (currentLayout.unitType ? currentLayout.unitType.replace(/ \/ .*/, '') : 'Apartment Tower')).replace(/\d+/g, '').trim();
         blockG.appendChild(subTxt);
 
         // Hold to enter interior floor plan of this tower/block
@@ -3247,13 +3250,27 @@
 
       let html = '';
       matches.forEach(m => {
-        const icon = m.id === 'himagiri' ? '🏡' : (m.id.includes('park') || m.id.includes('meadow') ? '🌳' : '🏢');
-        const unitLabel = `${m.unitCount || (m.plots ? Object.keys(m.plots).length : 0)} ${m.unitType || 'Units'}`;
+        let icon = '🏢';
+        const lowerType = (m.type || '').toLowerCase();
+        const lowerUnit = (m.unitType || '').toLowerCase();
+
+        if (lowerType.includes('gated plotted') || m.id === 'himagiri' || m.id === 'classic_orchards' || m.id === 'rainbow_drive') {
+          icon = '🏡';
+        } else if (lowerUnit.includes('villa') || lowerType.includes('villa')) {
+          icon = '🌴';
+        } else if (lowerUnit.includes('flat') || lowerType.includes('flat')) {
+          icon = '🏢';
+        } else {
+          icon = '🏙️';
+        }
+
+        const unitCount = m.unitCount || (m.plots ? Object.keys(m.plots).length : 0);
+        const unitLabel = `${unitCount} ${m.unitType || 'Units'}`;
         html += `
           <div class="portal-search-item" data-layout-id="${m.id}">
             <div class="portal-search-item-info">
               <span class="portal-search-item-title">${icon} ${escapeHtml(m.name)}</span>
-              <span class="portal-search-item-sub">📍 ${escapeHtml(m.location || '')} &bull; ${unitLabel}</span>
+              <span class="portal-search-item-sub">📍 ${escapeHtml(m.location || '')} &bull; <strong style="color: #38bdf8;">${escapeHtml(m.type || '')}</strong> &bull; ${unitLabel}</span>
             </div>
             <span class="portal-search-item-action">Open Map ➔</span>
           </div>

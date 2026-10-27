@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
   <title>HM Maps — 32 Verified Bangalore Townships & Layout Blueprints</title>
-  <meta name="description" content="Interactive digital map and wayfinding navigator with 32 verified architectural master blueprints across Bangalore residential layouts, gated communities, and townships.">
+  <meta name="description" content="Interactive digital map and wayfinding navigator with 40 verified blueprints across Bangalore gated communities, residential flats, and townships.">
   <link rel="canonical" href="https://hmmaps.in/">
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
@@ -32,13 +32,13 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="style.css?v=26">
+  <link rel="stylesheet" href="style.css?v=27">
   <script>
     // Aggressively purge older PWA caches so updates show instantly
     if ('caches' in window) {
       caches.keys().then(function(names) {
         for (let name of names) {
-          if (name !== 'himagiri-maps-offline-v26') {
+          if (name !== 'himagiri-maps-offline-v27') {
             caches.delete(name);
           }
         }
@@ -110,7 +110,7 @@
           <span class="text-gradient">Across Bangalore Layouts</span>
         </h1>
         <p class="portal-hero-sub">
-          Search across 32 verified residential communities, gated townships, and villa estates. Every layout is an authentic architectural blueprint with exact streets, gates, and turn-by-turn wayfinding.
+          Search across 40 verified gated communities, residential flats, and townships. Every layout is an authentic architectural blueprint with exact streets, gates, and turn-by-turn wayfinding.
         </p>
 
         <!-- Quick Layout Search & Selector on Hero -->
@@ -121,7 +121,7 @@
               type="text" 
               id="portal-layout-search-input" 
               class="portal-ai-input" 
-              placeholder="Search 32 verified blueprints (e.g. Prestige, Sobha, Brigade, Himagiri, Greenage...)" 
+              placeholder="Search 40 blueprints (e.g. Classic Orchards, Sobha Iris Flats, Rainbow Drive, Himagiri...)" 
               autocomplete="off"
             />
             <button id="portal-search-clear-btn" class="clear-btn" title="Clear input" style="display: none; background: transparent; border: none; color: #94a3b8; font-size: 14px; cursor: pointer; padding: 0 8px;">✕</button>
@@ -132,13 +132,15 @@
 
           <div class="portal-quick-chips">
             <span class="quick-chip-label">Quick Jump:</span>
-            <button class="portal-chip active-chip" data-layout="prestige_falcon_city">🏢 Prestige Falcon City</button>
+            <button class="portal-chip active-chip" data-layout="himagiri">🏡 Himagiri Meadows</button>
+            <button class="portal-chip" data-layout="classic_orchards">🌳 Classic Orchards</button>
+            <button class="portal-chip" data-layout="sobha_iris">🏢 Sobha Iris Flats</button>
+            <button class="portal-chip" data-layout="rainbow_drive">🌈 Rainbow Drive</button>
+            <button class="portal-chip" data-layout="prestige_falcon_city">🏢 Prestige Falcon City</button>
+            <button class="portal-chip" data-layout="brigade_cosmopolis">✨ Brigade Cosmopolis Flats</button>
+            <button class="portal-chip" data-layout="kristal_beryl">💎 Kristal Beryl Flats</button>
+            <button class="portal-chip" data-layout="vakil_whispering_woods">🌲 Vakil Whispering Woods</button>
             <button class="portal-chip" data-layout="brigade_gateway">🏛️ Brigade Gateway</button>
-            <button class="portal-chip" data-layout="kristal_beryl">💎 Kristal Beryl</button>
-            <button class="portal-chip" data-layout="prestige_elysian">✨ Prestige Elysian</button>
-            <button class="portal-chip" data-layout="himagiri">🏡 Himagiri Meadows</button>
-            <button class="portal-chip" data-layout="sobha_dream_acres">🌊 Sobha Dream Acres</button>
-            <button class="portal-chip" data-layout="sattva_greenage">🌳 Salarpuria Greenage</button>
           </div>
         </div>
       </section>
@@ -621,10 +623,10 @@
   </div>
 
   <!-- Load Scripts with Version Cache-Buster -->
-  <script src="analytics.js?v=26"></script>
-  <script src="qrcode.min.js?v=26"></script>
-  <script src="map_data.js?v=26"></script>
-  <script src="layouts_data.js?v=26"></script>
-  <script src="app.js?v=26"></script>
+  <script src="analytics.js?v=27"></script>
+  <script src="qrcode.min.js?v=27"></script>
+  <script src="map_data.js?v=27"></script>
+  <script src="layouts_data.js?v=27"></script>
+  <script src="app.js?v=27"></script>
 </body>
 </html>

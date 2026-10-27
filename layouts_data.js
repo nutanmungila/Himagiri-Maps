@@ -2042,8 +2042,8 @@ window.LAYOUTS = {
     "name": "Kristal Beryl",
     "location": "Kasavanahalli Main Road, off Sarjapur Road, Bangalore East",
     "zone": "whitefield",
-    "type": "Gated Residential Apartment Society",
-    "unitType": "Apartment / Block",
+    "type": "Gated Residential Flats Society",
+    "unitType": "Flat",
     "unitCount": 40,
     "bounds": {
       "minX": 60,
@@ -18164,8 +18164,8 @@ window.LAYOUTS = {
     "name": "Sowparnika The Columns",
     "location": "Whitefield, Bangalore East",
     "zone": "whitefield",
-    "type": "Modern Residential Society",
-    "unitType": "Apartment / Block",
+    "type": "Modern Residential Flats Society",
+    "unitType": "Flat",
     "unitCount": 32,
     "bounds": {
       "minX": 60,
@@ -19419,8 +19419,8 @@ window.LAYOUTS = {
     "name": "Green Glen Layout",
     "location": "Bellandur, Outer Ring Road, Bangalore South-East",
     "zone": "ecity",
-    "type": "Tech Residential Layout",
-    "unitType": "Apartment / Block",
+    "type": "Gated Flats & Residential Layout",
+    "unitType": "Flat",
     "unitCount": 24,
     "bounds": {
       "minX": 60,
@@ -25548,5 +25548,5703 @@ window.LAYOUTS = {
       "Gulmohar Tower"
     ],
     "verified": true
+  },
+  "classic_orchards": {
+    "id": "classic_orchards",
+    "name": "Classic Orchards",
+    "location": "Bannerghatta Main Road, Behind Meenakshi Mall, Bangalore South",
+    "zone": "south",
+    "type": "Gated Plotted Community",
+    "unitType": "Plot",
+    "unitCount": 48,
+    "verified": true,
+    "bounds": {
+      "minX": 40,
+      "maxX": 1220,
+      "minY": 140,
+      "maxY": 820
+    },
+    "center": {
+      "x": 650,
+      "y": 480
+    },
+    "groundPolygon": "60,480 140,160 1140,160 1200,480 1140,800 140,800 Z",
+    "borderTreesPath": "M 60,480 L 140,160 L 1140,160 L 1200,480 L 1140,800 L 140,800 Z",
+    "gardenPark": {
+      "x": 570,
+      "y": 440,
+      "w": 160,
+      "h": 80,
+      "rx": 10,
+      "label": "Central Community Lawn & Club"
+    },
+    "plots": {
+      "co_p1": {
+        "id": "co_p1",
+        "number": "1",
+        "label": "Plot 1",
+        "x": 178,
+        "y": 240,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Palm Avenue",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p2": {
+        "id": "co_p2",
+        "number": "2",
+        "label": "Plot 2",
+        "x": 278,
+        "y": 240,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Palm Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p3": {
+        "id": "co_p3",
+        "number": "3",
+        "label": "Plot 3",
+        "x": 178,
+        "y": 298,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Palm Avenue",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p4": {
+        "id": "co_p4",
+        "number": "4",
+        "label": "Plot 4",
+        "x": 278,
+        "y": 298,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Palm Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p5": {
+        "id": "co_p5",
+        "number": "5",
+        "label": "Plot 5",
+        "x": 178,
+        "y": 356,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Palm Avenue",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p6": {
+        "id": "co_p6",
+        "number": "6",
+        "label": "Plot 6",
+        "x": 278,
+        "y": 356,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Palm Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p7": {
+        "id": "co_p7",
+        "number": "7",
+        "label": "Plot 7",
+        "x": 178,
+        "y": 520,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Palm Avenue",
+        "facing": "East",
+        "color": "green",
+        "dim": "40x60 ft"
+      },
+      "co_p8": {
+        "id": "co_p8",
+        "number": "8",
+        "label": "Plot 8",
+        "x": 278,
+        "y": 520,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Palm Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p9": {
+        "id": "co_p9",
+        "number": "9",
+        "label": "Plot 9",
+        "x": 178,
+        "y": 578,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Palm Avenue",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p10": {
+        "id": "co_p10",
+        "number": "10",
+        "label": "Plot 10",
+        "x": 278,
+        "y": 578,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Palm Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p11": {
+        "id": "co_p11",
+        "number": "11",
+        "label": "Plot 11",
+        "x": 178,
+        "y": 636,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Palm Avenue",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p12": {
+        "id": "co_p12",
+        "number": "12",
+        "label": "Plot 12",
+        "x": 278,
+        "y": 636,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Palm Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p13": {
+        "id": "co_p13",
+        "number": "13",
+        "label": "Plot 13",
+        "x": 398,
+        "y": 240,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Orchid Avenue",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p14": {
+        "id": "co_p14",
+        "number": "14",
+        "label": "Plot 14",
+        "x": 498,
+        "y": 240,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Orchid Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p15": {
+        "id": "co_p15",
+        "number": "15",
+        "label": "Plot 15",
+        "x": 398,
+        "y": 298,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Orchid Avenue",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p16": {
+        "id": "co_p16",
+        "number": "16",
+        "label": "Plot 16",
+        "x": 498,
+        "y": 298,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Orchid Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p17": {
+        "id": "co_p17",
+        "number": "17",
+        "label": "Plot 17",
+        "x": 398,
+        "y": 356,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Orchid Avenue",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p18": {
+        "id": "co_p18",
+        "number": "18",
+        "label": "Plot 18",
+        "x": 498,
+        "y": 356,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Orchid Avenue",
+        "facing": "West",
+        "color": "yellow",
+        "dim": "40x60 ft"
+      },
+      "co_p19": {
+        "id": "co_p19",
+        "number": "19",
+        "label": "Plot 19",
+        "x": 398,
+        "y": 520,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Orchid Avenue",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p20": {
+        "id": "co_p20",
+        "number": "20",
+        "label": "Plot 20",
+        "x": 498,
+        "y": 520,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Orchid Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p21": {
+        "id": "co_p21",
+        "number": "21",
+        "label": "Plot 21",
+        "x": 398,
+        "y": 578,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Orchid Avenue",
+        "facing": "East",
+        "color": "green",
+        "dim": "40x60 ft"
+      },
+      "co_p22": {
+        "id": "co_p22",
+        "number": "22",
+        "label": "Plot 22",
+        "x": 498,
+        "y": 578,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Orchid Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p23": {
+        "id": "co_p23",
+        "number": "23",
+        "label": "Plot 23",
+        "x": 398,
+        "y": 636,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Orchid Avenue",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p24": {
+        "id": "co_p24",
+        "number": "24",
+        "label": "Plot 24",
+        "x": 498,
+        "y": 636,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Orchid Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p25": {
+        "id": "co_p25",
+        "number": "25",
+        "label": "Plot 25",
+        "x": 738,
+        "y": 240,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Gulmohar Avenue",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p26": {
+        "id": "co_p26",
+        "number": "26",
+        "label": "Plot 26",
+        "x": 838,
+        "y": 240,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Gulmohar Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p27": {
+        "id": "co_p27",
+        "number": "27",
+        "label": "Plot 27",
+        "x": 738,
+        "y": 298,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Gulmohar Avenue",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p28": {
+        "id": "co_p28",
+        "number": "28",
+        "label": "Plot 28",
+        "x": 838,
+        "y": 298,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Gulmohar Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p29": {
+        "id": "co_p29",
+        "number": "29",
+        "label": "Plot 29",
+        "x": 738,
+        "y": 356,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Gulmohar Avenue",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p30": {
+        "id": "co_p30",
+        "number": "30",
+        "label": "Plot 30",
+        "x": 838,
+        "y": 356,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Gulmohar Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p31": {
+        "id": "co_p31",
+        "number": "31",
+        "label": "Plot 31",
+        "x": 738,
+        "y": 520,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Gulmohar Avenue",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p32": {
+        "id": "co_p32",
+        "number": "32",
+        "label": "Plot 32",
+        "x": 838,
+        "y": 520,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Gulmohar Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p33": {
+        "id": "co_p33",
+        "number": "33",
+        "label": "Plot 33",
+        "x": 738,
+        "y": 578,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Gulmohar Avenue",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p34": {
+        "id": "co_p34",
+        "number": "34",
+        "label": "Plot 34",
+        "x": 838,
+        "y": 578,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Gulmohar Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p35": {
+        "id": "co_p35",
+        "number": "35",
+        "label": "Plot 35",
+        "x": 738,
+        "y": 636,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Gulmohar Avenue",
+        "facing": "East",
+        "color": "green",
+        "dim": "40x60 ft"
+      },
+      "co_p36": {
+        "id": "co_p36",
+        "number": "36",
+        "label": "Plot 36",
+        "x": 838,
+        "y": 636,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Gulmohar Avenue",
+        "facing": "West",
+        "color": "yellow",
+        "dim": "40x60 ft"
+      },
+      "co_p37": {
+        "id": "co_p37",
+        "number": "37",
+        "label": "Plot 37",
+        "x": 958,
+        "y": 240,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Magnolia Drive",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p38": {
+        "id": "co_p38",
+        "number": "38",
+        "label": "Plot 38",
+        "x": 1058,
+        "y": 240,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Magnolia Drive",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p39": {
+        "id": "co_p39",
+        "number": "39",
+        "label": "Plot 39",
+        "x": 958,
+        "y": 298,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Magnolia Drive",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p40": {
+        "id": "co_p40",
+        "number": "40",
+        "label": "Plot 40",
+        "x": 1058,
+        "y": 298,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Magnolia Drive",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p41": {
+        "id": "co_p41",
+        "number": "41",
+        "label": "Plot 41",
+        "x": 958,
+        "y": 356,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Magnolia Drive",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p42": {
+        "id": "co_p42",
+        "number": "42",
+        "label": "Plot 42",
+        "x": 1058,
+        "y": 356,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Magnolia Drive",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p43": {
+        "id": "co_p43",
+        "number": "43",
+        "label": "Plot 43",
+        "x": 958,
+        "y": 520,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Magnolia Drive",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p44": {
+        "id": "co_p44",
+        "number": "44",
+        "label": "Plot 44",
+        "x": 1058,
+        "y": 520,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Magnolia Drive",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p45": {
+        "id": "co_p45",
+        "number": "45",
+        "label": "Plot 45",
+        "x": 958,
+        "y": 578,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Magnolia Drive",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p46": {
+        "id": "co_p46",
+        "number": "46",
+        "label": "Plot 46",
+        "x": 1058,
+        "y": 578,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Magnolia Drive",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p47": {
+        "id": "co_p47",
+        "number": "47",
+        "label": "Plot 47",
+        "x": 958,
+        "y": 636,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Magnolia Drive",
+        "facing": "East",
+        "color": "blue",
+        "dim": "40x60 ft"
+      },
+      "co_p48": {
+        "id": "co_p48",
+        "number": "48",
+        "label": "Plot 48",
+        "x": 1058,
+        "y": 636,
+        "w": 64,
+        "h": 42,
+        "rx": 3,
+        "road": "Magnolia Drive",
+        "facing": "West",
+        "color": "blue",
+        "dim": "40x60 ft"
+      }
+    },
+    "roads": {
+      "nodes": {
+        "co_gate_main": {
+          "id": "co_gate_main",
+          "x": 80,
+          "y": 480,
+          "label": "Gate 1 (Bannerghatta Main Road)"
+        },
+        "co_junc_w": {
+          "id": "co_junc_w",
+          "x": 260,
+          "y": 480,
+          "label": "Palm Avenue West Cross"
+        },
+        "co_junc_ctr_w": {
+          "id": "co_junc_ctr_w",
+          "x": 480,
+          "y": 480,
+          "label": "Orchid Avenue Cross"
+        },
+        "co_junc_ctr": {
+          "id": "co_junc_ctr",
+          "x": 650,
+          "y": 480,
+          "label": "Central Clubhouse Roundabout"
+        },
+        "co_junc_ctr_e": {
+          "id": "co_junc_ctr_e",
+          "x": 820,
+          "y": 480,
+          "label": "Gulmohar Avenue Cross"
+        },
+        "co_junc_e": {
+          "id": "co_junc_e",
+          "x": 1040,
+          "y": 480,
+          "label": "Magnolia Drive East Cross"
+        },
+        "co_gate_east": {
+          "id": "co_gate_east",
+          "x": 1180,
+          "y": 480,
+          "label": "Gate 2 (Classic Orchards East Road)"
+        },
+        "co_palm_n": {
+          "id": "co_palm_n",
+          "x": 260,
+          "y": 220,
+          "label": "Palm Avenue North"
+        },
+        "co_palm_s": {
+          "id": "co_palm_s",
+          "x": 260,
+          "y": 740,
+          "label": "Palm Avenue South"
+        },
+        "co_orchid_n": {
+          "id": "co_orchid_n",
+          "x": 480,
+          "y": 220,
+          "label": "Orchid Avenue North"
+        },
+        "co_orchid_s": {
+          "id": "co_orchid_s",
+          "x": 480,
+          "y": 740,
+          "label": "Orchid Avenue South"
+        },
+        "co_gul_n": {
+          "id": "co_gul_n",
+          "x": 820,
+          "y": 220,
+          "label": "Gulmohar Avenue North"
+        },
+        "co_gul_s": {
+          "id": "co_gul_s",
+          "x": 820,
+          "y": 740,
+          "label": "Gulmohar Avenue South"
+        },
+        "co_mag_n": {
+          "id": "co_mag_n",
+          "x": 1040,
+          "y": 220,
+          "label": "Magnolia Drive North"
+        },
+        "co_mag_s": {
+          "id": "co_mag_s",
+          "x": 1040,
+          "y": 740,
+          "label": "Magnolia Drive South"
+        },
+        "co_north_link": {
+          "id": "co_north_link",
+          "x": 650,
+          "y": 220,
+          "label": "North Garden Promenade"
+        },
+        "co_south_link": {
+          "id": "co_south_link",
+          "x": 650,
+          "y": 740,
+          "label": "South Sports Link"
+        }
+      },
+      "edges": [
+        {
+          "u": "co_gate_main",
+          "v": "co_junc_w",
+          "road": "Central Boulevard",
+          "dist": 180
+        },
+        {
+          "u": "co_junc_w",
+          "v": "co_junc_ctr_w",
+          "road": "Central Boulevard",
+          "dist": 220
+        },
+        {
+          "u": "co_junc_ctr_w",
+          "v": "co_junc_ctr",
+          "road": "Central Boulevard",
+          "dist": 170
+        },
+        {
+          "u": "co_junc_ctr",
+          "v": "co_junc_ctr_e",
+          "road": "Central Boulevard",
+          "dist": 170
+        },
+        {
+          "u": "co_junc_ctr_e",
+          "v": "co_junc_e",
+          "road": "Central Boulevard",
+          "dist": 220
+        },
+        {
+          "u": "co_junc_e",
+          "v": "co_gate_east",
+          "road": "Central Boulevard",
+          "dist": 140
+        },
+        {
+          "u": "co_palm_n",
+          "v": "co_junc_w",
+          "road": "Palm Avenue",
+          "dist": 260
+        },
+        {
+          "u": "co_junc_w",
+          "v": "co_palm_s",
+          "road": "Palm Avenue",
+          "dist": 260
+        },
+        {
+          "u": "co_orchid_n",
+          "v": "co_junc_ctr_w",
+          "road": "Orchid Avenue",
+          "dist": 260
+        },
+        {
+          "u": "co_junc_ctr_w",
+          "v": "co_orchid_s",
+          "road": "Orchid Avenue",
+          "dist": 260
+        },
+        {
+          "u": "co_gul_n",
+          "v": "co_junc_ctr_e",
+          "road": "Gulmohar Avenue",
+          "dist": 260
+        },
+        {
+          "u": "co_junc_ctr_e",
+          "v": "co_gul_s",
+          "road": "Gulmohar Avenue",
+          "dist": 260
+        },
+        {
+          "u": "co_mag_n",
+          "v": "co_junc_e",
+          "road": "Magnolia Drive",
+          "dist": 260
+        },
+        {
+          "u": "co_junc_e",
+          "v": "co_mag_s",
+          "road": "Magnolia Drive",
+          "dist": 260
+        },
+        {
+          "u": "co_palm_n",
+          "v": "co_orchid_n",
+          "road": "North Perimeter Way",
+          "dist": 220
+        },
+        {
+          "u": "co_orchid_n",
+          "v": "co_north_link",
+          "road": "North Perimeter Way",
+          "dist": 170
+        },
+        {
+          "u": "co_north_link",
+          "v": "co_gul_n",
+          "road": "North Perimeter Way",
+          "dist": 170
+        },
+        {
+          "u": "co_gul_n",
+          "v": "co_mag_n",
+          "road": "North Perimeter Way",
+          "dist": 220
+        },
+        {
+          "u": "co_palm_s",
+          "v": "co_orchid_s",
+          "road": "South Perimeter Way",
+          "dist": 220
+        },
+        {
+          "u": "co_orchid_s",
+          "v": "co_south_link",
+          "road": "South Perimeter Way",
+          "dist": 170
+        },
+        {
+          "u": "co_south_link",
+          "v": "co_gul_s",
+          "road": "South Perimeter Way",
+          "dist": 170
+        },
+        {
+          "u": "co_gul_s",
+          "v": "co_mag_s",
+          "road": "South Perimeter Way",
+          "dist": 220
+        },
+        {
+          "u": "co_junc_ctr",
+          "v": "co_north_link",
+          "road": "Club Promenade Link",
+          "dist": 260
+        },
+        {
+          "u": "co_junc_ctr",
+          "v": "co_south_link",
+          "road": "Club Promenade Link",
+          "dist": 260
+        }
+      ]
+    },
+    "defaultStartGate": "co_gate_main",
+    "sectors": [
+      "Palm Avenue",
+      "Orchid Avenue",
+      "Gulmohar Avenue",
+      "Magnolia Drive",
+      "Central Boulevard"
+    ],
+    "roadLabels": [
+      {
+        "name": "CENTRAL BOULEVARD",
+        "x": 650,
+        "y": 495,
+        "vertical": false
+      },
+      {
+        "name": "PALM AVENUE",
+        "x": 260,
+        "y": 360,
+        "vertical": true
+      },
+      {
+        "name": "ORCHID AVENUE",
+        "x": 480,
+        "y": 360,
+        "vertical": true
+      },
+      {
+        "name": "GULMOHAR AVENUE",
+        "x": 820,
+        "y": 360,
+        "vertical": true
+      },
+      {
+        "name": "MAGNOLIA DRIVE",
+        "x": 1040,
+        "y": 360,
+        "vertical": true
+      }
+    ],
+    "amenities": [
+      {
+        "id": "club",
+        "name": "Classic Orchards Clubhouse",
+        "desc": "Swimming pool, floodlit tennis courts, badminton & health club",
+        "x": 650,
+        "y": 440,
+        "node": "co_junc_ctr",
+        "type": "clubhouse",
+        "icon": "🏊"
+      },
+      {
+        "id": "park",
+        "name": "Central Amphitheatre Park",
+        "desc": "Children play park, jogging trail and senior citizen gazebo",
+        "x": 650,
+        "y": 520,
+        "node": "co_junc_ctr",
+        "type": "park",
+        "icon": "🌳"
+      },
+      {
+        "id": "sports",
+        "name": "Tennis & Basketball Arena",
+        "desc": "Full-size tennis court and multisport enclosure",
+        "x": 650,
+        "y": 710,
+        "node": "co_south_link",
+        "type": "sports",
+        "icon": "🎾"
+      }
+    ]
+  },
+  "rainbow_drive": {
+    "id": "rainbow_drive",
+    "name": "Rainbow Drive Layout",
+    "location": "Sarjapur Main Road, Doddakannelli, Bangalore East",
+    "zone": "whitefield",
+    "type": "Gated Plotted Community",
+    "unitType": "Plot",
+    "unitCount": 48,
+    "verified": true,
+    "bounds": {
+      "minX": 50,
+      "maxX": 1220,
+      "minY": 180,
+      "maxY": 780
+    },
+    "center": {
+      "x": 630,
+      "y": 480
+    },
+    "groundPolygon": "60,480 120,180 1140,180 1200,480 1140,780 120,780 Z",
+    "borderTreesPath": "M 60,480 L 120,180 L 1140,180 L 1200,480 L 1140,780 L 120,780 Z",
+    "waterBody": {
+      "x": 570,
+      "y": 440,
+      "w": 120,
+      "h": 80,
+      "rx": 12,
+      "label": "Rainbow Eco-Recharge Lake"
+    },
+    "gardenPark": {
+      "x": 570,
+      "y": 340,
+      "w": 120,
+      "h": 60,
+      "rx": 8,
+      "label": "Community Park & Playground"
+    },
+    "plots": {
+      "rd_s1": {
+        "id": "rd_s1",
+        "number": "1",
+        "label": "Site 1",
+        "x": 174,
+        "y": 250,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "1st Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s2": {
+        "id": "rd_s2",
+        "number": "2",
+        "label": "Site 2",
+        "x": 266,
+        "y": 250,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "1st Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s3": {
+        "id": "rd_s3",
+        "number": "3",
+        "label": "Site 3",
+        "x": 174,
+        "y": 310,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "1st Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s4": {
+        "id": "rd_s4",
+        "number": "4",
+        "label": "Site 4",
+        "x": 266,
+        "y": 310,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "1st Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s5": {
+        "id": "rd_s5",
+        "number": "5",
+        "label": "Site 5",
+        "x": 174,
+        "y": 370,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "1st Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s6": {
+        "id": "rd_s6",
+        "number": "6",
+        "label": "Site 6",
+        "x": 266,
+        "y": 370,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "1st Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s7": {
+        "id": "rd_s7",
+        "number": "7",
+        "label": "Site 7",
+        "x": 174,
+        "y": 520,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "1st Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s8": {
+        "id": "rd_s8",
+        "number": "8",
+        "label": "Site 8",
+        "x": 266,
+        "y": 520,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "1st Cross Road",
+        "facing": "West",
+        "color": "yellow",
+        "dim": "30x50 ft"
+      },
+      "rd_s9": {
+        "id": "rd_s9",
+        "number": "9",
+        "label": "Site 9",
+        "x": 174,
+        "y": 580,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "1st Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s10": {
+        "id": "rd_s10",
+        "number": "10",
+        "label": "Site 10",
+        "x": 266,
+        "y": 580,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "1st Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s11": {
+        "id": "rd_s11",
+        "number": "11",
+        "label": "Site 11",
+        "x": 174,
+        "y": 640,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "1st Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s12": {
+        "id": "rd_s12",
+        "number": "12",
+        "label": "Site 12",
+        "x": 266,
+        "y": 640,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "1st Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s13": {
+        "id": "rd_s13",
+        "number": "13",
+        "label": "Site 13",
+        "x": 364,
+        "y": 250,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "2nd Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s14": {
+        "id": "rd_s14",
+        "number": "14",
+        "label": "Site 14",
+        "x": 456,
+        "y": 250,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "2nd Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s15": {
+        "id": "rd_s15",
+        "number": "15",
+        "label": "Site 15",
+        "x": 364,
+        "y": 310,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "2nd Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s16": {
+        "id": "rd_s16",
+        "number": "16",
+        "label": "Site 16",
+        "x": 456,
+        "y": 310,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "2nd Cross Road",
+        "facing": "West",
+        "color": "yellow",
+        "dim": "30x50 ft"
+      },
+      "rd_s17": {
+        "id": "rd_s17",
+        "number": "17",
+        "label": "Site 17",
+        "x": 364,
+        "y": 370,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "2nd Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s18": {
+        "id": "rd_s18",
+        "number": "18",
+        "label": "Site 18",
+        "x": 456,
+        "y": 370,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "2nd Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s19": {
+        "id": "rd_s19",
+        "number": "19",
+        "label": "Site 19",
+        "x": 364,
+        "y": 520,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "2nd Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s20": {
+        "id": "rd_s20",
+        "number": "20",
+        "label": "Site 20",
+        "x": 456,
+        "y": 520,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "2nd Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s21": {
+        "id": "rd_s21",
+        "number": "21",
+        "label": "Site 21",
+        "x": 364,
+        "y": 580,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "2nd Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s22": {
+        "id": "rd_s22",
+        "number": "22",
+        "label": "Site 22",
+        "x": 456,
+        "y": 580,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "2nd Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s23": {
+        "id": "rd_s23",
+        "number": "23",
+        "label": "Site 23",
+        "x": 364,
+        "y": 640,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "2nd Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s24": {
+        "id": "rd_s24",
+        "number": "24",
+        "label": "Site 24",
+        "x": 456,
+        "y": 640,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "2nd Cross Road",
+        "facing": "West",
+        "color": "yellow",
+        "dim": "30x50 ft"
+      },
+      "rd_s25": {
+        "id": "rd_s25",
+        "number": "25",
+        "label": "Site 25",
+        "x": 744,
+        "y": 250,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "4th Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s26": {
+        "id": "rd_s26",
+        "number": "26",
+        "label": "Site 26",
+        "x": 836,
+        "y": 250,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "4th Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s27": {
+        "id": "rd_s27",
+        "number": "27",
+        "label": "Site 27",
+        "x": 744,
+        "y": 310,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "4th Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s28": {
+        "id": "rd_s28",
+        "number": "28",
+        "label": "Site 28",
+        "x": 836,
+        "y": 310,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "4th Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s29": {
+        "id": "rd_s29",
+        "number": "29",
+        "label": "Site 29",
+        "x": 744,
+        "y": 370,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "4th Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s30": {
+        "id": "rd_s30",
+        "number": "30",
+        "label": "Site 30",
+        "x": 836,
+        "y": 370,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "4th Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s31": {
+        "id": "rd_s31",
+        "number": "31",
+        "label": "Site 31",
+        "x": 744,
+        "y": 520,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "4th Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s32": {
+        "id": "rd_s32",
+        "number": "32",
+        "label": "Site 32",
+        "x": 836,
+        "y": 520,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "4th Cross Road",
+        "facing": "West",
+        "color": "yellow",
+        "dim": "30x50 ft"
+      },
+      "rd_s33": {
+        "id": "rd_s33",
+        "number": "33",
+        "label": "Site 33",
+        "x": 744,
+        "y": 580,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "4th Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s34": {
+        "id": "rd_s34",
+        "number": "34",
+        "label": "Site 34",
+        "x": 836,
+        "y": 580,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "4th Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s35": {
+        "id": "rd_s35",
+        "number": "35",
+        "label": "Site 35",
+        "x": 744,
+        "y": 640,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "4th Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s36": {
+        "id": "rd_s36",
+        "number": "36",
+        "label": "Site 36",
+        "x": 836,
+        "y": 640,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "4th Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s37": {
+        "id": "rd_s37",
+        "number": "37",
+        "label": "Site 37",
+        "x": 934,
+        "y": 250,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "5th Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s38": {
+        "id": "rd_s38",
+        "number": "38",
+        "label": "Site 38",
+        "x": 1026,
+        "y": 250,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "5th Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s39": {
+        "id": "rd_s39",
+        "number": "39",
+        "label": "Site 39",
+        "x": 934,
+        "y": 310,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "5th Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s40": {
+        "id": "rd_s40",
+        "number": "40",
+        "label": "Site 40",
+        "x": 1026,
+        "y": 310,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "5th Cross Road",
+        "facing": "West",
+        "color": "yellow",
+        "dim": "30x50 ft"
+      },
+      "rd_s41": {
+        "id": "rd_s41",
+        "number": "41",
+        "label": "Site 41",
+        "x": 934,
+        "y": 370,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "5th Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s42": {
+        "id": "rd_s42",
+        "number": "42",
+        "label": "Site 42",
+        "x": 1026,
+        "y": 370,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "5th Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s43": {
+        "id": "rd_s43",
+        "number": "43",
+        "label": "Site 43",
+        "x": 934,
+        "y": 520,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "5th Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s44": {
+        "id": "rd_s44",
+        "number": "44",
+        "label": "Site 44",
+        "x": 1026,
+        "y": 520,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "5th Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s45": {
+        "id": "rd_s45",
+        "number": "45",
+        "label": "Site 45",
+        "x": 934,
+        "y": 580,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "5th Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s46": {
+        "id": "rd_s46",
+        "number": "46",
+        "label": "Site 46",
+        "x": 1026,
+        "y": 580,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "5th Cross Road",
+        "facing": "West",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s47": {
+        "id": "rd_s47",
+        "number": "47",
+        "label": "Site 47",
+        "x": 934,
+        "y": 640,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "5th Cross Road",
+        "facing": "East",
+        "color": "blue",
+        "dim": "30x50 ft"
+      },
+      "rd_s48": {
+        "id": "rd_s48",
+        "number": "48",
+        "label": "Site 48",
+        "x": 1026,
+        "y": 640,
+        "w": 60,
+        "h": 44,
+        "rx": 3,
+        "road": "5th Cross Road",
+        "facing": "West",
+        "color": "yellow",
+        "dim": "30x50 ft"
+      }
+    },
+    "roads": {
+      "nodes": {
+        "rd_gate_main": {
+          "id": "rd_gate_main",
+          "x": 80,
+          "y": 480,
+          "label": "Main Arch Gate (Sarjapur Road)"
+        },
+        "rd_junc_1": {
+          "id": "rd_junc_1",
+          "x": 250,
+          "y": 480,
+          "label": "1st Cross & Boulevard Junction"
+        },
+        "rd_junc_2": {
+          "id": "rd_junc_2",
+          "x": 440,
+          "y": 480,
+          "label": "2nd Cross Junction"
+        },
+        "rd_junc_3": {
+          "id": "rd_junc_3",
+          "x": 630,
+          "y": 480,
+          "label": "Central Lake & Clubhouse Plaza"
+        },
+        "rd_junc_4": {
+          "id": "rd_junc_4",
+          "x": 820,
+          "y": 480,
+          "label": "4th Cross Junction"
+        },
+        "rd_junc_5": {
+          "id": "rd_junc_5",
+          "x": 1010,
+          "y": 480,
+          "label": "5th Cross Junction"
+        },
+        "rd_gate_east": {
+          "id": "rd_gate_east",
+          "x": 1180,
+          "y": 480,
+          "label": "East Gate (Carmelaram Link)"
+        },
+        "rd_c1_n": {
+          "id": "rd_c1_n",
+          "x": 250,
+          "y": 240,
+          "label": "1st Cross North"
+        },
+        "rd_c1_s": {
+          "id": "rd_c1_s",
+          "x": 250,
+          "y": 720,
+          "label": "1st Cross South"
+        },
+        "rd_c2_n": {
+          "id": "rd_c2_n",
+          "x": 440,
+          "y": 240,
+          "label": "2nd Cross North"
+        },
+        "rd_c2_s": {
+          "id": "rd_c2_s",
+          "x": 440,
+          "y": 720,
+          "label": "2nd Cross South"
+        },
+        "rd_c4_n": {
+          "id": "rd_c4_n",
+          "x": 820,
+          "y": 240,
+          "label": "4th Cross North"
+        },
+        "rd_c4_s": {
+          "id": "rd_c4_s",
+          "x": 820,
+          "y": 720,
+          "label": "4th Cross South"
+        },
+        "rd_c5_n": {
+          "id": "rd_c5_n",
+          "x": 1010,
+          "y": 240,
+          "label": "5th Cross North"
+        },
+        "rd_c5_s": {
+          "id": "rd_c5_s",
+          "x": 1010,
+          "y": 720,
+          "label": "5th Cross South"
+        }
+      },
+      "edges": [
+        {
+          "u": "rd_gate_main",
+          "v": "rd_junc_1",
+          "road": "Rainbow Main Boulevard",
+          "dist": 170
+        },
+        {
+          "u": "rd_junc_1",
+          "v": "rd_junc_2",
+          "road": "Rainbow Main Boulevard",
+          "dist": 190
+        },
+        {
+          "u": "rd_junc_2",
+          "v": "rd_junc_3",
+          "road": "Rainbow Main Boulevard",
+          "dist": 190
+        },
+        {
+          "u": "rd_junc_3",
+          "v": "rd_junc_4",
+          "road": "Rainbow Main Boulevard",
+          "dist": 190
+        },
+        {
+          "u": "rd_junc_4",
+          "v": "rd_junc_5",
+          "road": "Rainbow Main Boulevard",
+          "dist": 190
+        },
+        {
+          "u": "rd_junc_5",
+          "v": "rd_gate_east",
+          "road": "Rainbow Main Boulevard",
+          "dist": 170
+        },
+        {
+          "u": "rd_c1_n",
+          "v": "rd_junc_1",
+          "road": "1st Cross Road",
+          "dist": 240
+        },
+        {
+          "u": "rd_junc_1",
+          "v": "rd_c1_s",
+          "road": "1st Cross Road",
+          "dist": 240
+        },
+        {
+          "u": "rd_c2_n",
+          "v": "rd_junc_2",
+          "road": "2nd Cross Road",
+          "dist": 240
+        },
+        {
+          "u": "rd_junc_2",
+          "v": "rd_c2_s",
+          "road": "2nd Cross Road",
+          "dist": 240
+        },
+        {
+          "u": "rd_c4_n",
+          "v": "rd_junc_4",
+          "road": "4th Cross Road",
+          "dist": 240
+        },
+        {
+          "u": "rd_junc_4",
+          "v": "rd_c4_s",
+          "road": "4th Cross Road",
+          "dist": 240
+        },
+        {
+          "u": "rd_c5_n",
+          "v": "rd_junc_5",
+          "road": "5th Cross Road",
+          "dist": 240
+        },
+        {
+          "u": "rd_junc_5",
+          "v": "rd_c5_s",
+          "road": "5th Cross Road",
+          "dist": 240
+        },
+        {
+          "u": "rd_c1_n",
+          "v": "rd_c2_n",
+          "road": "North Ring Link",
+          "dist": 190
+        },
+        {
+          "u": "rd_c4_n",
+          "v": "rd_c5_n",
+          "road": "North Ring Link",
+          "dist": 190
+        },
+        {
+          "u": "rd_c1_s",
+          "v": "rd_c2_s",
+          "road": "South Ring Link",
+          "dist": 190
+        },
+        {
+          "u": "rd_c4_s",
+          "v": "rd_c5_s",
+          "road": "South Ring Link",
+          "dist": 190
+        }
+      ]
+    },
+    "defaultStartGate": "rd_gate_main",
+    "sectors": [
+      "1st Cross Road",
+      "2nd Cross Road",
+      "4th Cross Road",
+      "5th Cross Road",
+      "Rainbow Main Boulevard"
+    ],
+    "roadLabels": [
+      {
+        "name": "RAINBOW MAIN BOULEVARD",
+        "x": 630,
+        "y": 495,
+        "vertical": false
+      },
+      {
+        "name": "1ST CROSS ROAD",
+        "x": 250,
+        "y": 360,
+        "vertical": true
+      },
+      {
+        "name": "2ND CROSS ROAD",
+        "x": 440,
+        "y": 360,
+        "vertical": true
+      },
+      {
+        "name": "4TH CROSS ROAD",
+        "x": 820,
+        "y": 360,
+        "vertical": true
+      },
+      {
+        "name": "5TH CROSS ROAD",
+        "x": 1010,
+        "y": 360,
+        "vertical": true
+      }
+    ],
+    "amenities": [
+      {
+        "id": "club",
+        "name": "Rainbow Community Center",
+        "desc": "Resident clubhouse, badminton court, library and swimming pool",
+        "x": 630,
+        "y": 440,
+        "node": "rd_junc_3",
+        "type": "clubhouse",
+        "icon": "🏊"
+      },
+      {
+        "id": "lake",
+        "name": "Eco-Recharge Lake & Boardwalk",
+        "desc": "Pioneering rainwater harvesting wetland, walking trail and bird sanctuary",
+        "x": 630,
+        "y": 480,
+        "node": "rd_junc_3",
+        "type": "park",
+        "icon": "🌊"
+      }
+    ]
+  },
+  "vakil_whispering_woods": {
+    "id": "vakil_whispering_woods",
+    "name": "Vakil Whispering Woods",
+    "location": "Chandapura-Anekal Road, Off Hosur Road, Electronic City Vicinity",
+    "zone": "ecity",
+    "type": "Gated Villa Community",
+    "unitType": "Villa Plot",
+    "unitCount": 24,
+    "verified": true,
+    "bounds": {
+      "minX": 60,
+      "maxX": 1200,
+      "minY": 180,
+      "maxY": 780
+    },
+    "center": {
+      "x": 640,
+      "y": 480
+    },
+    "groundPolygon": "60,480 140,160 1100,160 1180,480 1100,800 140,800 Z",
+    "borderTreesPath": "M 60,480 L 140,160 L 1100,160 L 1180,480 L 1100,800 L 140,800 Z",
+    "gardenPark": {
+      "x": 560,
+      "y": 440,
+      "w": 160,
+      "h": 80,
+      "rx": 10,
+      "label": "Botanical Whispering Park"
+    },
+    "plots": {
+      "vww_v1": {
+        "id": "vww_v1",
+        "number": "1",
+        "label": "Villa 1",
+        "x": 232,
+        "y": 250,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Pine Avenue",
+        "facing": "East",
+        "color": "green",
+        "dim": "Villa 4 BHK"
+      },
+      "vww_v2": {
+        "id": "vww_v2",
+        "number": "2",
+        "label": "Villa 2",
+        "x": 338,
+        "y": 250,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Pine Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "Villa 3 BHK"
+      },
+      "vww_v3": {
+        "id": "vww_v3",
+        "number": "3",
+        "label": "Villa 3",
+        "x": 232,
+        "y": 314,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Pine Avenue",
+        "facing": "East",
+        "color": "green",
+        "dim": "Villa 4 BHK"
+      },
+      "vww_v4": {
+        "id": "vww_v4",
+        "number": "4",
+        "label": "Villa 4",
+        "x": 338,
+        "y": 314,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Pine Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "Villa 3 BHK"
+      },
+      "vww_v5": {
+        "id": "vww_v5",
+        "number": "5",
+        "label": "Villa 5",
+        "x": 232,
+        "y": 378,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Pine Avenue",
+        "facing": "East",
+        "color": "green",
+        "dim": "Villa 4 BHK"
+      },
+      "vww_v6": {
+        "id": "vww_v6",
+        "number": "6",
+        "label": "Villa 6",
+        "x": 338,
+        "y": 378,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Pine Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "Villa 3 BHK"
+      },
+      "vww_v7": {
+        "id": "vww_v7",
+        "number": "7",
+        "label": "Villa 7",
+        "x": 232,
+        "y": 520,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Pine Avenue",
+        "facing": "East",
+        "color": "green",
+        "dim": "Villa 4 BHK"
+      },
+      "vww_v8": {
+        "id": "vww_v8",
+        "number": "8",
+        "label": "Villa 8",
+        "x": 338,
+        "y": 520,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Pine Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "Villa 3 BHK"
+      },
+      "vww_v9": {
+        "id": "vww_v9",
+        "number": "9",
+        "label": "Villa 9",
+        "x": 232,
+        "y": 584,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Pine Avenue",
+        "facing": "East",
+        "color": "green",
+        "dim": "Villa 4 BHK"
+      },
+      "vww_v10": {
+        "id": "vww_v10",
+        "number": "10",
+        "label": "Villa 10",
+        "x": 338,
+        "y": 584,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Pine Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "Villa 3 BHK"
+      },
+      "vww_v11": {
+        "id": "vww_v11",
+        "number": "11",
+        "label": "Villa 11",
+        "x": 232,
+        "y": 648,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Pine Avenue",
+        "facing": "East",
+        "color": "green",
+        "dim": "Villa 4 BHK"
+      },
+      "vww_v12": {
+        "id": "vww_v12",
+        "number": "12",
+        "label": "Villa 12",
+        "x": 338,
+        "y": 648,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Pine Avenue",
+        "facing": "West",
+        "color": "blue",
+        "dim": "Villa 3 BHK"
+      },
+      "vww_v13": {
+        "id": "vww_v13",
+        "number": "13",
+        "label": "Villa 13",
+        "x": 872,
+        "y": 250,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Cedar Drive",
+        "facing": "East",
+        "color": "green",
+        "dim": "Villa 4 BHK"
+      },
+      "vww_v14": {
+        "id": "vww_v14",
+        "number": "14",
+        "label": "Villa 14",
+        "x": 978,
+        "y": 250,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Cedar Drive",
+        "facing": "West",
+        "color": "blue",
+        "dim": "Villa 3 BHK"
+      },
+      "vww_v15": {
+        "id": "vww_v15",
+        "number": "15",
+        "label": "Villa 15",
+        "x": 872,
+        "y": 314,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Cedar Drive",
+        "facing": "East",
+        "color": "green",
+        "dim": "Villa 4 BHK"
+      },
+      "vww_v16": {
+        "id": "vww_v16",
+        "number": "16",
+        "label": "Villa 16",
+        "x": 978,
+        "y": 314,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Cedar Drive",
+        "facing": "West",
+        "color": "blue",
+        "dim": "Villa 3 BHK"
+      },
+      "vww_v17": {
+        "id": "vww_v17",
+        "number": "17",
+        "label": "Villa 17",
+        "x": 872,
+        "y": 378,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Cedar Drive",
+        "facing": "East",
+        "color": "green",
+        "dim": "Villa 4 BHK"
+      },
+      "vww_v18": {
+        "id": "vww_v18",
+        "number": "18",
+        "label": "Villa 18",
+        "x": 978,
+        "y": 378,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Cedar Drive",
+        "facing": "West",
+        "color": "blue",
+        "dim": "Villa 3 BHK"
+      },
+      "vww_v19": {
+        "id": "vww_v19",
+        "number": "19",
+        "label": "Villa 19",
+        "x": 872,
+        "y": 520,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Cedar Drive",
+        "facing": "East",
+        "color": "green",
+        "dim": "Villa 4 BHK"
+      },
+      "vww_v20": {
+        "id": "vww_v20",
+        "number": "20",
+        "label": "Villa 20",
+        "x": 978,
+        "y": 520,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Cedar Drive",
+        "facing": "West",
+        "color": "blue",
+        "dim": "Villa 3 BHK"
+      },
+      "vww_v21": {
+        "id": "vww_v21",
+        "number": "21",
+        "label": "Villa 21",
+        "x": 872,
+        "y": 584,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Cedar Drive",
+        "facing": "East",
+        "color": "green",
+        "dim": "Villa 4 BHK"
+      },
+      "vww_v22": {
+        "id": "vww_v22",
+        "number": "22",
+        "label": "Villa 22",
+        "x": 978,
+        "y": 584,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Cedar Drive",
+        "facing": "West",
+        "color": "blue",
+        "dim": "Villa 3 BHK"
+      },
+      "vww_v23": {
+        "id": "vww_v23",
+        "number": "23",
+        "label": "Villa 23",
+        "x": 872,
+        "y": 648,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Cedar Drive",
+        "facing": "East",
+        "color": "green",
+        "dim": "Villa 4 BHK"
+      },
+      "vww_v24": {
+        "id": "vww_v24",
+        "number": "24",
+        "label": "Villa 24",
+        "x": 978,
+        "y": 648,
+        "w": 70,
+        "h": 48,
+        "rx": 4,
+        "road": "Cedar Drive",
+        "facing": "West",
+        "color": "blue",
+        "dim": "Villa 3 BHK"
+      }
+    },
+    "roads": {
+      "nodes": {
+        "vww_gate_main": {
+          "id": "vww_gate_main",
+          "x": 80,
+          "y": 480,
+          "label": "Gate 1 (Main Security Arch)"
+        },
+        "vww_junc_w": {
+          "id": "vww_junc_w",
+          "x": 320,
+          "y": 480,
+          "label": "Pine Avenue West Cross"
+        },
+        "vww_junc_ctr": {
+          "id": "vww_junc_ctr",
+          "x": 640,
+          "y": 480,
+          "label": "Whispering Central Circle"
+        },
+        "vww_junc_e": {
+          "id": "vww_junc_e",
+          "x": 960,
+          "y": 480,
+          "label": "Cedar Drive East Cross"
+        },
+        "vww_gate_lake": {
+          "id": "vww_gate_lake",
+          "x": 1160,
+          "y": 480,
+          "label": "Gate 2 (Lake Promenade Gate)"
+        },
+        "vww_pine_n": {
+          "id": "vww_pine_n",
+          "x": 320,
+          "y": 240,
+          "label": "Pine Avenue North"
+        },
+        "vww_pine_s": {
+          "id": "vww_pine_s",
+          "x": 320,
+          "y": 720,
+          "label": "Pine Avenue South"
+        },
+        "vww_cedar_n": {
+          "id": "vww_cedar_n",
+          "x": 960,
+          "y": 240,
+          "label": "Cedar Drive North"
+        },
+        "vww_cedar_s": {
+          "id": "vww_cedar_s",
+          "x": 960,
+          "y": 720,
+          "label": "Cedar Drive South"
+        }
+      },
+      "edges": [
+        {
+          "u": "vww_gate_main",
+          "v": "vww_junc_w",
+          "road": "Whispering Woods Boulevard",
+          "dist": 240
+        },
+        {
+          "u": "vww_junc_w",
+          "v": "vww_junc_ctr",
+          "road": "Whispering Woods Boulevard",
+          "dist": 320
+        },
+        {
+          "u": "vww_junc_ctr",
+          "v": "vww_junc_e",
+          "road": "Whispering Woods Boulevard",
+          "dist": 320
+        },
+        {
+          "u": "vww_junc_e",
+          "v": "vww_gate_lake",
+          "road": "Whispering Woods Boulevard",
+          "dist": 200
+        },
+        {
+          "u": "vww_pine_n",
+          "v": "vww_junc_w",
+          "road": "Pine Avenue",
+          "dist": 240
+        },
+        {
+          "u": "vww_junc_w",
+          "v": "vww_pine_s",
+          "road": "Pine Avenue",
+          "dist": 240
+        },
+        {
+          "u": "vww_cedar_n",
+          "v": "vww_junc_e",
+          "road": "Cedar Drive",
+          "dist": 240
+        },
+        {
+          "u": "vww_junc_e",
+          "v": "vww_cedar_s",
+          "road": "Cedar Drive",
+          "dist": 240
+        },
+        {
+          "u": "vww_pine_n",
+          "v": "vww_junc_ctr",
+          "road": "Botanical Link North",
+          "dist": 400
+        },
+        {
+          "u": "vww_cedar_n",
+          "v": "vww_junc_ctr",
+          "road": "Botanical Link North",
+          "dist": 400
+        },
+        {
+          "u": "vww_pine_s",
+          "v": "vww_junc_ctr",
+          "road": "Botanical Link South",
+          "dist": 400
+        },
+        {
+          "u": "vww_cedar_s",
+          "v": "vww_junc_ctr",
+          "road": "Botanical Link South",
+          "dist": 400
+        }
+      ]
+    },
+    "defaultStartGate": "vww_gate_main",
+    "sectors": [
+      "Pine Avenue",
+      "Cedar Drive",
+      "Whispering Woods Boulevard"
+    ],
+    "roadLabels": [
+      {
+        "name": "WHISPERING WOODS BOULEVARD",
+        "x": 640,
+        "y": 495,
+        "vertical": false
+      },
+      {
+        "name": "PINE AVENUE",
+        "x": 320,
+        "y": 360,
+        "vertical": true
+      },
+      {
+        "name": "CEDAR DRIVE",
+        "x": 960,
+        "y": 360,
+        "vertical": true
+      }
+    ],
+    "amenities": [
+      {
+        "id": "club",
+        "name": "Club Whispering Woods",
+        "desc": "Resort-style pool, tennis courts, gym and multi-purpose hall",
+        "x": 640,
+        "y": 440,
+        "node": "vww_junc_ctr",
+        "type": "clubhouse",
+        "icon": "🏊"
+      }
+    ]
+  },
+  "pride_crosswinds": {
+    "id": "pride_crosswinds",
+    "name": "Pride Crosswinds Villa Estates",
+    "location": "Bannerghatta-Jigani Road, Near National Park, Bangalore South",
+    "zone": "south",
+    "type": "Gated Villa Community",
+    "unitType": "Villa Estate",
+    "unitCount": 16,
+    "verified": true,
+    "bounds": {
+      "minX": 60,
+      "maxX": 1200,
+      "minY": 180,
+      "maxY": 780
+    },
+    "center": {
+      "x": 640,
+      "y": 480
+    },
+    "groundPolygon": "60,480 140,160 1100,160 1180,480 1100,800 140,800 Z",
+    "borderTreesPath": "M 60,480 L 140,160 L 1100,160 L 1180,480 L 1100,800 L 140,800 Z",
+    "gardenPark": {
+      "x": 560,
+      "y": 440,
+      "w": 160,
+      "h": 80,
+      "rx": 10,
+      "label": "Club Crosswinds Infinity Lawn"
+    },
+    "plots": {
+      "pcw_e1": {
+        "id": "pcw_e1",
+        "number": "1",
+        "label": "Estate 1",
+        "x": 246,
+        "y": 250,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Breeze Avenue",
+        "facing": "East",
+        "color": "yellow",
+        "dim": "Luxury 5 BHK Villa"
+      },
+      "pcw_e2": {
+        "id": "pcw_e2",
+        "number": "2",
+        "label": "Estate 2",
+        "x": 358,
+        "y": 250,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Breeze Avenue",
+        "facing": "West",
+        "color": "green",
+        "dim": "Luxury 4 BHK Villa"
+      },
+      "pcw_e3": {
+        "id": "pcw_e3",
+        "number": "3",
+        "label": "Estate 3",
+        "x": 246,
+        "y": 324,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Breeze Avenue",
+        "facing": "East",
+        "color": "yellow",
+        "dim": "Luxury 5 BHK Villa"
+      },
+      "pcw_e4": {
+        "id": "pcw_e4",
+        "number": "4",
+        "label": "Estate 4",
+        "x": 358,
+        "y": 324,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Breeze Avenue",
+        "facing": "West",
+        "color": "green",
+        "dim": "Luxury 4 BHK Villa"
+      },
+      "pcw_e5": {
+        "id": "pcw_e5",
+        "number": "5",
+        "label": "Estate 5",
+        "x": 246,
+        "y": 520,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Breeze Avenue",
+        "facing": "East",
+        "color": "yellow",
+        "dim": "Luxury 5 BHK Villa"
+      },
+      "pcw_e6": {
+        "id": "pcw_e6",
+        "number": "6",
+        "label": "Estate 6",
+        "x": 358,
+        "y": 520,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Breeze Avenue",
+        "facing": "West",
+        "color": "green",
+        "dim": "Luxury 4 BHK Villa"
+      },
+      "pcw_e7": {
+        "id": "pcw_e7",
+        "number": "7",
+        "label": "Estate 7",
+        "x": 246,
+        "y": 594,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Breeze Avenue",
+        "facing": "East",
+        "color": "yellow",
+        "dim": "Luxury 5 BHK Villa"
+      },
+      "pcw_e8": {
+        "id": "pcw_e8",
+        "number": "8",
+        "label": "Estate 8",
+        "x": 358,
+        "y": 594,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Breeze Avenue",
+        "facing": "West",
+        "color": "green",
+        "dim": "Luxury 4 BHK Villa"
+      },
+      "pcw_e9": {
+        "id": "pcw_e9",
+        "number": "9",
+        "label": "Estate 9",
+        "x": 846,
+        "y": 250,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Valley View Link",
+        "facing": "East",
+        "color": "yellow",
+        "dim": "Luxury 5 BHK Villa"
+      },
+      "pcw_e10": {
+        "id": "pcw_e10",
+        "number": "10",
+        "label": "Estate 10",
+        "x": 958,
+        "y": 250,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Valley View Link",
+        "facing": "West",
+        "color": "green",
+        "dim": "Luxury 4 BHK Villa"
+      },
+      "pcw_e11": {
+        "id": "pcw_e11",
+        "number": "11",
+        "label": "Estate 11",
+        "x": 846,
+        "y": 324,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Valley View Link",
+        "facing": "East",
+        "color": "yellow",
+        "dim": "Luxury 5 BHK Villa"
+      },
+      "pcw_e12": {
+        "id": "pcw_e12",
+        "number": "12",
+        "label": "Estate 12",
+        "x": 958,
+        "y": 324,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Valley View Link",
+        "facing": "West",
+        "color": "green",
+        "dim": "Luxury 4 BHK Villa"
+      },
+      "pcw_e13": {
+        "id": "pcw_e13",
+        "number": "13",
+        "label": "Estate 13",
+        "x": 846,
+        "y": 520,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Valley View Link",
+        "facing": "East",
+        "color": "yellow",
+        "dim": "Luxury 5 BHK Villa"
+      },
+      "pcw_e14": {
+        "id": "pcw_e14",
+        "number": "14",
+        "label": "Estate 14",
+        "x": 958,
+        "y": 520,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Valley View Link",
+        "facing": "West",
+        "color": "green",
+        "dim": "Luxury 4 BHK Villa"
+      },
+      "pcw_e15": {
+        "id": "pcw_e15",
+        "number": "15",
+        "label": "Estate 15",
+        "x": 846,
+        "y": 594,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Valley View Link",
+        "facing": "East",
+        "color": "yellow",
+        "dim": "Luxury 5 BHK Villa"
+      },
+      "pcw_e16": {
+        "id": "pcw_e16",
+        "number": "16",
+        "label": "Estate 16",
+        "x": 958,
+        "y": 594,
+        "w": 76,
+        "h": 52,
+        "rx": 4,
+        "road": "Valley View Link",
+        "facing": "West",
+        "color": "green",
+        "dim": "Luxury 4 BHK Villa"
+      }
+    },
+    "roads": {
+      "nodes": {
+        "pcw_gate_main": {
+          "id": "pcw_gate_main",
+          "x": 80,
+          "y": 480,
+          "label": "Gate 1 (Crosswinds Guard Gate)"
+        },
+        "pcw_junc_w": {
+          "id": "pcw_junc_w",
+          "x": 340,
+          "y": 480,
+          "label": "Breeze Avenue West Cross"
+        },
+        "pcw_junc_ctr": {
+          "id": "pcw_junc_ctr",
+          "x": 640,
+          "y": 480,
+          "label": "Hilltop Horizon Circle"
+        },
+        "pcw_junc_e": {
+          "id": "pcw_junc_e",
+          "x": 940,
+          "y": 480,
+          "label": "Valley View East Cross"
+        },
+        "pcw_gate_rear": {
+          "id": "pcw_gate_rear",
+          "x": 1160,
+          "y": 480,
+          "label": "Gate 2 (Forest Reserve Link)"
+        },
+        "pcw_breeze_n": {
+          "id": "pcw_breeze_n",
+          "x": 340,
+          "y": 240,
+          "label": "Breeze Avenue North"
+        },
+        "pcw_breeze_s": {
+          "id": "pcw_breeze_s",
+          "x": 340,
+          "y": 720,
+          "label": "Breeze Avenue South"
+        },
+        "pcw_valley_n": {
+          "id": "pcw_valley_n",
+          "x": 940,
+          "y": 240,
+          "label": "Valley View North"
+        },
+        "pcw_valley_s": {
+          "id": "pcw_valley_s",
+          "x": 940,
+          "y": 720,
+          "label": "Valley View South"
+        }
+      },
+      "edges": [
+        {
+          "u": "pcw_gate_main",
+          "v": "pcw_junc_w",
+          "road": "Crosswinds Boulevard",
+          "dist": 260
+        },
+        {
+          "u": "pcw_junc_w",
+          "v": "pcw_junc_ctr",
+          "road": "Crosswinds Boulevard",
+          "dist": 300
+        },
+        {
+          "u": "pcw_junc_ctr",
+          "v": "pcw_junc_e",
+          "road": "Crosswinds Boulevard",
+          "dist": 300
+        },
+        {
+          "u": "pcw_junc_e",
+          "v": "pcw_gate_rear",
+          "road": "Crosswinds Boulevard",
+          "dist": 220
+        },
+        {
+          "u": "pcw_breeze_n",
+          "v": "pcw_junc_w",
+          "road": "Breeze Avenue",
+          "dist": 240
+        },
+        {
+          "u": "pcw_junc_w",
+          "v": "pcw_breeze_s",
+          "road": "Breeze Avenue",
+          "dist": 240
+        },
+        {
+          "u": "pcw_valley_n",
+          "v": "pcw_junc_e",
+          "road": "Valley View Link",
+          "dist": 240
+        },
+        {
+          "u": "pcw_junc_e",
+          "v": "pcw_valley_s",
+          "road": "Valley View Link",
+          "dist": 240
+        },
+        {
+          "u": "pcw_breeze_n",
+          "v": "pcw_junc_ctr",
+          "road": "Hilltop Crescent North",
+          "dist": 384
+        },
+        {
+          "u": "pcw_valley_n",
+          "v": "pcw_junc_ctr",
+          "road": "Hilltop Crescent North",
+          "dist": 384
+        },
+        {
+          "u": "pcw_breeze_s",
+          "v": "pcw_junc_ctr",
+          "road": "Hilltop Crescent South",
+          "dist": 384
+        },
+        {
+          "u": "pcw_valley_s",
+          "v": "pcw_junc_ctr",
+          "road": "Hilltop Crescent South",
+          "dist": 384
+        }
+      ]
+    },
+    "defaultStartGate": "pcw_gate_main",
+    "sectors": [
+      "Breeze Avenue",
+      "Valley View Link",
+      "Crosswinds Boulevard"
+    ],
+    "roadLabels": [
+      {
+        "name": "CROSSWINDS BOULEVARD",
+        "x": 640,
+        "y": 495,
+        "vertical": false
+      },
+      {
+        "name": "BREEZE AVENUE",
+        "x": 340,
+        "y": 360,
+        "vertical": true
+      },
+      {
+        "name": "VALLEY VIEW LINK",
+        "x": 940,
+        "y": 360,
+        "vertical": true
+      }
+    ],
+    "amenities": [
+      {
+        "id": "club",
+        "name": "Club Crosswinds",
+        "desc": "Panoramic infinity pool overlooking national forest, squash, sauna and fine dining",
+        "x": 640,
+        "y": 440,
+        "node": "pcw_junc_ctr",
+        "type": "clubhouse",
+        "icon": "🏊"
+      }
+    ]
+  },
+  "sobha_iris": {
+    "id": "sobha_iris",
+    "name": "Sobha Iris Flats",
+    "location": "Outer Ring Road, Bellandur, Bangalore East",
+    "zone": "whitefield",
+    "type": "Residential Flat Society",
+    "unitType": "Flat",
+    "unitCount": 32,
+    "verified": true,
+    "bounds": {
+      "minX": 60,
+      "maxX": 1180,
+      "minY": 160,
+      "maxY": 800
+    },
+    "center": {
+      "x": 640,
+      "y": 480
+    },
+    "groundPolygon": "80,480 160,160 1080,160 1160,480 1080,800 160,800 Z",
+    "borderTreesPath": "M 80,480 L 160,160 L 1080,160 L 1160,480 L 1080,800 L 160,800 Z",
+    "waterBody": {
+      "x": 560,
+      "y": 440,
+      "w": 160,
+      "h": 80,
+      "rx": 12,
+      "label": "Iris Central Swimming Pool & Deck"
+    },
+    "gardenPark": {
+      "x": 540,
+      "y": 330,
+      "w": 200,
+      "h": 60,
+      "rx": 8,
+      "label": "Central Courtyard Garden"
+    },
+    "plots": {
+      "si_a_201": {
+        "id": "si_a_201",
+        "number": "Flat A-101",
+        "label": "Flat A-101",
+        "block": "Block A",
+        "x": 340,
+        "y": 210,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block A Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_a_202": {
+        "id": "si_a_202",
+        "number": "Flat A-102",
+        "label": "Flat A-102",
+        "block": "Block A",
+        "x": 398,
+        "y": 210,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block A Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_a_301": {
+        "id": "si_a_301",
+        "number": "Flat A-201",
+        "label": "Flat A-201",
+        "block": "Block A",
+        "x": 340,
+        "y": 246,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block A Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_a_302": {
+        "id": "si_a_302",
+        "number": "Flat A-202",
+        "label": "Flat A-202",
+        "block": "Block A",
+        "x": 398,
+        "y": 246,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block A Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_a_401": {
+        "id": "si_a_401",
+        "number": "Flat A-301",
+        "label": "Flat A-301",
+        "block": "Block A",
+        "x": 340,
+        "y": 282,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block A Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_a_402": {
+        "id": "si_a_402",
+        "number": "Flat A-302",
+        "label": "Flat A-302",
+        "block": "Block A",
+        "x": 398,
+        "y": 282,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block A Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_a_501": {
+        "id": "si_a_501",
+        "number": "Flat A-401",
+        "label": "Flat A-401",
+        "block": "Block A",
+        "x": 340,
+        "y": 318,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block A Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_a_502": {
+        "id": "si_a_502",
+        "number": "Flat A-402",
+        "label": "Flat A-402",
+        "block": "Block A",
+        "x": 398,
+        "y": 318,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block A Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_b_201": {
+        "id": "si_b_201",
+        "number": "Flat B-101",
+        "label": "Flat B-101",
+        "block": "Block B",
+        "x": 860,
+        "y": 210,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block B Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_b_202": {
+        "id": "si_b_202",
+        "number": "Flat B-102",
+        "label": "Flat B-102",
+        "block": "Block B",
+        "x": 918,
+        "y": 210,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block B Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_b_301": {
+        "id": "si_b_301",
+        "number": "Flat B-201",
+        "label": "Flat B-201",
+        "block": "Block B",
+        "x": 860,
+        "y": 246,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block B Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_b_302": {
+        "id": "si_b_302",
+        "number": "Flat B-202",
+        "label": "Flat B-202",
+        "block": "Block B",
+        "x": 918,
+        "y": 246,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block B Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_b_401": {
+        "id": "si_b_401",
+        "number": "Flat B-301",
+        "label": "Flat B-301",
+        "block": "Block B",
+        "x": 860,
+        "y": 282,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block B Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_b_402": {
+        "id": "si_b_402",
+        "number": "Flat B-302",
+        "label": "Flat B-302",
+        "block": "Block B",
+        "x": 918,
+        "y": 282,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block B Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_b_501": {
+        "id": "si_b_501",
+        "number": "Flat B-401",
+        "label": "Flat B-401",
+        "block": "Block B",
+        "x": 860,
+        "y": 318,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block B Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_b_502": {
+        "id": "si_b_502",
+        "number": "Flat B-402",
+        "label": "Flat B-402",
+        "block": "Block B",
+        "x": 918,
+        "y": 318,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block B Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_c_201": {
+        "id": "si_c_201",
+        "number": "Flat C-101",
+        "label": "Flat C-101",
+        "block": "Block C",
+        "x": 340,
+        "y": 670,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block C Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_c_202": {
+        "id": "si_c_202",
+        "number": "Flat C-102",
+        "label": "Flat C-102",
+        "block": "Block C",
+        "x": 398,
+        "y": 670,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block C Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_c_301": {
+        "id": "si_c_301",
+        "number": "Flat C-201",
+        "label": "Flat C-201",
+        "block": "Block C",
+        "x": 340,
+        "y": 706,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block C Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_c_302": {
+        "id": "si_c_302",
+        "number": "Flat C-202",
+        "label": "Flat C-202",
+        "block": "Block C",
+        "x": 398,
+        "y": 706,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block C Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_c_401": {
+        "id": "si_c_401",
+        "number": "Flat C-301",
+        "label": "Flat C-301",
+        "block": "Block C",
+        "x": 340,
+        "y": 742,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block C Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_c_402": {
+        "id": "si_c_402",
+        "number": "Flat C-302",
+        "label": "Flat C-302",
+        "block": "Block C",
+        "x": 398,
+        "y": 742,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block C Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_c_501": {
+        "id": "si_c_501",
+        "number": "Flat C-401",
+        "label": "Flat C-401",
+        "block": "Block C",
+        "x": 340,
+        "y": 778,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block C Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_c_502": {
+        "id": "si_c_502",
+        "number": "Flat C-402",
+        "label": "Flat C-402",
+        "block": "Block C",
+        "x": 398,
+        "y": 778,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block C Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_d_201": {
+        "id": "si_d_201",
+        "number": "Flat D-101",
+        "label": "Flat D-101",
+        "block": "Block D",
+        "x": 860,
+        "y": 670,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block D Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_d_202": {
+        "id": "si_d_202",
+        "number": "Flat D-102",
+        "label": "Flat D-102",
+        "block": "Block D",
+        "x": 918,
+        "y": 670,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block D Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_d_301": {
+        "id": "si_d_301",
+        "number": "Flat D-201",
+        "label": "Flat D-201",
+        "block": "Block D",
+        "x": 860,
+        "y": 706,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block D Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_d_302": {
+        "id": "si_d_302",
+        "number": "Flat D-202",
+        "label": "Flat D-202",
+        "block": "Block D",
+        "x": 918,
+        "y": 706,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block D Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_d_401": {
+        "id": "si_d_401",
+        "number": "Flat D-301",
+        "label": "Flat D-301",
+        "block": "Block D",
+        "x": 860,
+        "y": 742,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block D Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_d_402": {
+        "id": "si_d_402",
+        "number": "Flat D-302",
+        "label": "Flat D-302",
+        "block": "Block D",
+        "x": 918,
+        "y": 742,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block D Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_d_501": {
+        "id": "si_d_501",
+        "number": "Flat D-401",
+        "label": "Flat D-401",
+        "block": "Block D",
+        "x": 860,
+        "y": 778,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block D Access Road",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "si_d_502": {
+        "id": "si_d_502",
+        "number": "Flat D-402",
+        "label": "Flat D-402",
+        "block": "Block D",
+        "x": 918,
+        "y": 778,
+        "w": 54,
+        "h": 32,
+        "rx": 3,
+        "road": "Block D Access Road",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      }
+    },
+    "roads": {
+      "nodes": {
+        "si_gate_main": {
+          "id": "si_gate_main",
+          "x": 90,
+          "y": 480,
+          "label": "Gate 1 (Outer Ring Road Bellandur)"
+        },
+        "si_junc_entry": {
+          "id": "si_junc_entry",
+          "x": 220,
+          "y": 480,
+          "label": "Iris Entry Boulevard"
+        },
+        "si_junc_w": {
+          "id": "si_junc_w",
+          "x": 380,
+          "y": 480,
+          "label": "Block A & C Courtyard Drive"
+        },
+        "si_junc_ctr": {
+          "id": "si_junc_ctr",
+          "x": 640,
+          "y": 480,
+          "label": "Central Swimming Pool Plaza"
+        },
+        "si_junc_e": {
+          "id": "si_junc_e",
+          "x": 900,
+          "y": 480,
+          "label": "Block B & D East Promenade"
+        },
+        "si_gate_rear": {
+          "id": "si_gate_rear",
+          "x": 1140,
+          "y": 480,
+          "label": "Gate 2 (Devarabisanahalli Link)"
+        },
+        "si_n_w": {
+          "id": "si_n_w",
+          "x": 380,
+          "y": 250,
+          "label": "Block A Courtyard North"
+        },
+        "si_n_e": {
+          "id": "si_n_e",
+          "x": 900,
+          "y": 250,
+          "label": "Block B Courtyard North"
+        },
+        "si_s_w": {
+          "id": "si_s_w",
+          "x": 380,
+          "y": 710,
+          "label": "Block C Courtyard South"
+        },
+        "si_s_e": {
+          "id": "si_s_e",
+          "x": 900,
+          "y": 710,
+          "label": "Block D Courtyard South"
+        }
+      },
+      "edges": [
+        {
+          "u": "si_gate_main",
+          "v": "si_junc_entry",
+          "road": "Iris Entry Boulevard",
+          "dist": 130
+        },
+        {
+          "u": "si_junc_entry",
+          "v": "si_junc_w",
+          "road": "Iris Entry Boulevard",
+          "dist": 160
+        },
+        {
+          "u": "si_junc_w",
+          "v": "si_junc_ctr",
+          "road": "Iris Entry Boulevard",
+          "dist": 260
+        },
+        {
+          "u": "si_junc_ctr",
+          "v": "si_junc_e",
+          "road": "Iris Entry Boulevard",
+          "dist": 260
+        },
+        {
+          "u": "si_junc_e",
+          "v": "si_gate_rear",
+          "road": "Iris Entry Boulevard",
+          "dist": 240
+        },
+        {
+          "u": "si_junc_w",
+          "v": "si_n_w",
+          "road": "Block A Access Road",
+          "dist": 230
+        },
+        {
+          "u": "si_n_w",
+          "v": "si_n_e",
+          "road": "North Promenade",
+          "dist": 520
+        },
+        {
+          "u": "si_n_e",
+          "v": "si_junc_e",
+          "road": "Block B Access Road",
+          "dist": 230
+        },
+        {
+          "u": "si_junc_w",
+          "v": "si_s_w",
+          "road": "Block C Access Road",
+          "dist": 230
+        },
+        {
+          "u": "si_s_w",
+          "v": "si_s_e",
+          "road": "South Promenade",
+          "dist": 520
+        },
+        {
+          "u": "si_s_e",
+          "v": "si_junc_e",
+          "road": "Block D Access Road",
+          "dist": 230
+        },
+        {
+          "u": "si_n_w",
+          "v": "si_junc_ctr",
+          "road": "Courtyard Garden Walk",
+          "dist": 347
+        },
+        {
+          "u": "si_s_w",
+          "v": "si_junc_ctr",
+          "road": "Courtyard Garden Walk",
+          "dist": 347
+        }
+      ]
+    },
+    "defaultStartGate": "si_gate_main",
+    "sectors": [
+      "Block A",
+      "Block B",
+      "Block C",
+      "Block D",
+      "Iris Entry Boulevard"
+    ],
+    "roadLabels": [
+      {
+        "name": "IRIS ENTRY BOULEVARD",
+        "x": 640,
+        "y": 495,
+        "vertical": false
+      },
+      {
+        "name": "NORTH PROMENADE",
+        "x": 640,
+        "y": 255,
+        "vertical": false
+      },
+      {
+        "name": "SOUTH PROMENADE",
+        "x": 640,
+        "y": 715,
+        "vertical": false
+      }
+    ],
+    "amenities": [
+      {
+        "id": "pool",
+        "name": "Iris Central Swimming Pool",
+        "desc": "Olympic length lap pool, toddler pool and sun deck",
+        "x": 640,
+        "y": 440,
+        "node": "si_junc_ctr",
+        "type": "clubhouse",
+        "icon": "🏊"
+      },
+      {
+        "id": "club",
+        "name": "Sobha Iris Clubhouse & Gym",
+        "desc": "Air-conditioned fitness center, squash courts, steam and party hall",
+        "x": 640,
+        "y": 520,
+        "node": "si_junc_ctr",
+        "type": "clubhouse",
+        "icon": "🏋️"
+      }
+    ]
+  },
+  "brigade_cosmopolis": {
+    "id": "brigade_cosmopolis",
+    "name": "Brigade Cosmopolis Flats",
+    "location": "ITPL Main Road, Whitefield, Bangalore East",
+    "zone": "whitefield",
+    "type": "Residential Flat Society",
+    "unitType": "Flat",
+    "unitCount": 36,
+    "verified": true,
+    "bounds": {
+      "minX": 60,
+      "maxX": 1180,
+      "minY": 160,
+      "maxY": 800
+    },
+    "center": {
+      "x": 640,
+      "y": 480
+    },
+    "groundPolygon": "80,480 160,160 1080,160 1160,480 1080,800 160,800 Z",
+    "borderTreesPath": "M 80,480 L 160,160 L 1080,160 L 1160,480 L 1080,800 L 160,800 Z",
+    "gardenPark": {
+      "x": 540,
+      "y": 440,
+      "w": 200,
+      "h": 80,
+      "rx": 10,
+      "label": "Sky Lounge Terrace & Urban Park"
+    },
+    "plots": {
+      "bc_f_101": {
+        "id": "bc_f_101",
+        "number": "Flat 101",
+        "label": "Flat 101",
+        "block": "Block 1",
+        "x": 338,
+        "y": 210,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Skyline Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_102": {
+        "id": "bc_f_102",
+        "number": "Flat 102",
+        "label": "Flat 102",
+        "block": "Block 1",
+        "x": 280,
+        "y": 244,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Skyline Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_103": {
+        "id": "bc_f_103",
+        "number": "Flat 103",
+        "label": "Flat 103",
+        "block": "Block 1",
+        "x": 338,
+        "y": 244,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Skyline Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_104": {
+        "id": "bc_f_104",
+        "number": "Flat 104",
+        "label": "Flat 104",
+        "block": "Block 1",
+        "x": 280,
+        "y": 278,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Skyline Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_105": {
+        "id": "bc_f_105",
+        "number": "Flat 105",
+        "label": "Flat 105",
+        "block": "Block 1",
+        "x": 338,
+        "y": 278,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Skyline Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_106": {
+        "id": "bc_f_106",
+        "number": "Flat 106",
+        "label": "Flat 106",
+        "block": "Block 1",
+        "x": 280,
+        "y": 312,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Skyline Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_201": {
+        "id": "bc_f_201",
+        "number": "Flat 201",
+        "label": "Flat 201",
+        "block": "Block 2",
+        "x": 658,
+        "y": 210,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Urban Terrace Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_202": {
+        "id": "bc_f_202",
+        "number": "Flat 202",
+        "label": "Flat 202",
+        "block": "Block 2",
+        "x": 600,
+        "y": 244,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Urban Terrace Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_203": {
+        "id": "bc_f_203",
+        "number": "Flat 203",
+        "label": "Flat 203",
+        "block": "Block 2",
+        "x": 658,
+        "y": 244,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Urban Terrace Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_204": {
+        "id": "bc_f_204",
+        "number": "Flat 204",
+        "label": "Flat 204",
+        "block": "Block 2",
+        "x": 600,
+        "y": 278,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Urban Terrace Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_205": {
+        "id": "bc_f_205",
+        "number": "Flat 205",
+        "label": "Flat 205",
+        "block": "Block 2",
+        "x": 658,
+        "y": 278,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Urban Terrace Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_206": {
+        "id": "bc_f_206",
+        "number": "Flat 206",
+        "label": "Flat 206",
+        "block": "Block 2",
+        "x": 600,
+        "y": 312,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Urban Terrace Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_301": {
+        "id": "bc_f_301",
+        "number": "Flat 301",
+        "label": "Flat 301",
+        "block": "Block 3",
+        "x": 978,
+        "y": 210,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Cosmo Promenade",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_302": {
+        "id": "bc_f_302",
+        "number": "Flat 302",
+        "label": "Flat 302",
+        "block": "Block 3",
+        "x": 920,
+        "y": 244,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Cosmo Promenade",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_303": {
+        "id": "bc_f_303",
+        "number": "Flat 303",
+        "label": "Flat 303",
+        "block": "Block 3",
+        "x": 978,
+        "y": 244,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Cosmo Promenade",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_304": {
+        "id": "bc_f_304",
+        "number": "Flat 304",
+        "label": "Flat 304",
+        "block": "Block 3",
+        "x": 920,
+        "y": 278,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Cosmo Promenade",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_305": {
+        "id": "bc_f_305",
+        "number": "Flat 305",
+        "label": "Flat 305",
+        "block": "Block 3",
+        "x": 978,
+        "y": 278,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Cosmo Promenade",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_306": {
+        "id": "bc_f_306",
+        "number": "Flat 306",
+        "label": "Flat 306",
+        "block": "Block 3",
+        "x": 920,
+        "y": 312,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Cosmo Promenade",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_401": {
+        "id": "bc_f_401",
+        "number": "Flat 401",
+        "label": "Flat 401",
+        "block": "Block 4",
+        "x": 338,
+        "y": 670,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Skyline Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_402": {
+        "id": "bc_f_402",
+        "number": "Flat 402",
+        "label": "Flat 402",
+        "block": "Block 4",
+        "x": 280,
+        "y": 704,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Skyline Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_403": {
+        "id": "bc_f_403",
+        "number": "Flat 403",
+        "label": "Flat 403",
+        "block": "Block 4",
+        "x": 338,
+        "y": 704,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Skyline Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_404": {
+        "id": "bc_f_404",
+        "number": "Flat 404",
+        "label": "Flat 404",
+        "block": "Block 4",
+        "x": 280,
+        "y": 738,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Skyline Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_405": {
+        "id": "bc_f_405",
+        "number": "Flat 405",
+        "label": "Flat 405",
+        "block": "Block 4",
+        "x": 338,
+        "y": 738,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Skyline Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_406": {
+        "id": "bc_f_406",
+        "number": "Flat 406",
+        "label": "Flat 406",
+        "block": "Block 4",
+        "x": 280,
+        "y": 772,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Skyline Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_501": {
+        "id": "bc_f_501",
+        "number": "Flat 501",
+        "label": "Flat 501",
+        "block": "Block 5",
+        "x": 658,
+        "y": 670,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Urban Terrace Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_502": {
+        "id": "bc_f_502",
+        "number": "Flat 502",
+        "label": "Flat 502",
+        "block": "Block 5",
+        "x": 600,
+        "y": 704,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Urban Terrace Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_503": {
+        "id": "bc_f_503",
+        "number": "Flat 503",
+        "label": "Flat 503",
+        "block": "Block 5",
+        "x": 658,
+        "y": 704,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Urban Terrace Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_504": {
+        "id": "bc_f_504",
+        "number": "Flat 504",
+        "label": "Flat 504",
+        "block": "Block 5",
+        "x": 600,
+        "y": 738,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Urban Terrace Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_505": {
+        "id": "bc_f_505",
+        "number": "Flat 505",
+        "label": "Flat 505",
+        "block": "Block 5",
+        "x": 658,
+        "y": 738,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Urban Terrace Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_506": {
+        "id": "bc_f_506",
+        "number": "Flat 506",
+        "label": "Flat 506",
+        "block": "Block 5",
+        "x": 600,
+        "y": 772,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Urban Terrace Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_601": {
+        "id": "bc_f_601",
+        "number": "Flat 601",
+        "label": "Flat 601",
+        "block": "Block 6",
+        "x": 978,
+        "y": 670,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Cosmo Promenade",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_602": {
+        "id": "bc_f_602",
+        "number": "Flat 602",
+        "label": "Flat 602",
+        "block": "Block 6",
+        "x": 920,
+        "y": 704,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Cosmo Promenade",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_603": {
+        "id": "bc_f_603",
+        "number": "Flat 603",
+        "label": "Flat 603",
+        "block": "Block 6",
+        "x": 978,
+        "y": 704,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Cosmo Promenade",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_604": {
+        "id": "bc_f_604",
+        "number": "Flat 604",
+        "label": "Flat 604",
+        "block": "Block 6",
+        "x": 920,
+        "y": 738,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Cosmo Promenade",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_605": {
+        "id": "bc_f_605",
+        "number": "Flat 605",
+        "label": "Flat 605",
+        "block": "Block 6",
+        "x": 978,
+        "y": 738,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Cosmo Promenade",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "bc_f_606": {
+        "id": "bc_f_606",
+        "number": "Flat 606",
+        "label": "Flat 606",
+        "block": "Block 6",
+        "x": 920,
+        "y": 772,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Cosmo Promenade",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      }
+    },
+    "roads": {
+      "nodes": {
+        "bc_gate_main": {
+          "id": "bc_gate_main",
+          "x": 90,
+          "y": 480,
+          "label": "Gate 1 (ITPL Main Road Entry)"
+        },
+        "bc_junc_w": {
+          "id": "bc_junc_w",
+          "x": 320,
+          "y": 480,
+          "label": "Block 1 & 4 Plaza"
+        },
+        "bc_junc_ctr": {
+          "id": "bc_junc_ctr",
+          "x": 640,
+          "y": 480,
+          "label": "Sky Lounge Central Hub"
+        },
+        "bc_junc_e": {
+          "id": "bc_junc_e",
+          "x": 960,
+          "y": 480,
+          "label": "Block 3 & 6 Plaza"
+        },
+        "bc_gate_west": {
+          "id": "bc_gate_west",
+          "x": 1160,
+          "y": 480,
+          "label": "Gate 2 (ECC Road Link)"
+        },
+        "bc_n_1": {
+          "id": "bc_n_1",
+          "x": 320,
+          "y": 250,
+          "label": "Block 1 North Parkway"
+        },
+        "bc_n_2": {
+          "id": "bc_n_2",
+          "x": 640,
+          "y": 250,
+          "label": "Block 2 Sky Terrace Drive"
+        },
+        "bc_n_3": {
+          "id": "bc_n_3",
+          "x": 960,
+          "y": 250,
+          "label": "Block 3 North Promenade"
+        },
+        "bc_s_4": {
+          "id": "bc_s_4",
+          "x": 320,
+          "y": 710,
+          "label": "Block 4 South Walk"
+        },
+        "bc_s_5": {
+          "id": "bc_s_5",
+          "x": 640,
+          "y": 710,
+          "label": "Block 5 South Parkway"
+        },
+        "bc_s_6": {
+          "id": "bc_s_6",
+          "x": 960,
+          "y": 710,
+          "label": "Block 6 Sports Link"
+        }
+      },
+      "edges": [
+        {
+          "u": "bc_gate_main",
+          "v": "bc_junc_w",
+          "road": "Cosmopolis Boulevard",
+          "dist": 230
+        },
+        {
+          "u": "bc_junc_w",
+          "v": "bc_junc_ctr",
+          "road": "Cosmopolis Boulevard",
+          "dist": 320
+        },
+        {
+          "u": "bc_junc_ctr",
+          "v": "bc_junc_e",
+          "road": "Cosmopolis Boulevard",
+          "dist": 320
+        },
+        {
+          "u": "bc_junc_e",
+          "v": "bc_gate_west",
+          "road": "Cosmopolis Boulevard",
+          "dist": 200
+        },
+        {
+          "u": "bc_n_1",
+          "v": "bc_junc_w",
+          "road": "Skyline Drive",
+          "dist": 230
+        },
+        {
+          "u": "bc_junc_w",
+          "v": "bc_s_4",
+          "road": "Skyline Drive",
+          "dist": 230
+        },
+        {
+          "u": "bc_n_2",
+          "v": "bc_junc_ctr",
+          "road": "Urban Terrace Drive",
+          "dist": 230
+        },
+        {
+          "u": "bc_junc_ctr",
+          "v": "bc_s_5",
+          "road": "Urban Terrace Drive",
+          "dist": 230
+        },
+        {
+          "u": "bc_n_3",
+          "v": "bc_junc_e",
+          "road": "Cosmo Promenade",
+          "dist": 230
+        },
+        {
+          "u": "bc_junc_e",
+          "v": "bc_s_6",
+          "road": "Cosmo Promenade",
+          "dist": 230
+        },
+        {
+          "u": "bc_n_1",
+          "v": "bc_n_2",
+          "road": "North Ring Link",
+          "dist": 320
+        },
+        {
+          "u": "bc_n_2",
+          "v": "bc_n_3",
+          "road": "North Ring Link",
+          "dist": 320
+        },
+        {
+          "u": "bc_s_4",
+          "v": "bc_s_5",
+          "road": "South Ring Link",
+          "dist": 320
+        },
+        {
+          "u": "bc_s_5",
+          "v": "bc_s_6",
+          "road": "South Ring Link",
+          "dist": 320
+        }
+      ]
+    },
+    "defaultStartGate": "bc_gate_main",
+    "sectors": [
+      "Block 1",
+      "Block 2",
+      "Block 3",
+      "Block 4",
+      "Block 5",
+      "Block 6"
+    ],
+    "roadLabels": [
+      {
+        "name": "COSMOPOLIS BOULEVARD",
+        "x": 640,
+        "y": 495,
+        "vertical": false
+      },
+      {
+        "name": "SKYLINE DRIVE",
+        "x": 320,
+        "y": 360,
+        "vertical": true
+      },
+      {
+        "name": "COSMO PROMENADE",
+        "x": 960,
+        "y": 360,
+        "vertical": true
+      }
+    ],
+    "amenities": [
+      {
+        "id": "club",
+        "name": "Sky-Lounge Clubhouse & Pool",
+        "desc": "Rooftop infinity pool, squash court, aerobics studio and terrace cafe",
+        "x": 640,
+        "y": 440,
+        "node": "bc_junc_ctr",
+        "type": "clubhouse",
+        "icon": "🏊"
+      },
+      {
+        "id": "park",
+        "name": "Reflexology Park & Gazebo",
+        "desc": "Aromatherapy garden, reflexology trail and Zen water fountain",
+        "x": 640,
+        "y": 520,
+        "node": "bc_junc_ctr",
+        "type": "park",
+        "icon": "🌳"
+      }
+    ]
+  },
+  "prestige_silver_oak": {
+    "id": "prestige_silver_oak",
+    "name": "Prestige Silver Oak Flats & Enclave",
+    "location": "ECC Road, Pattandur Agrahara, Whitefield, Bangalore East",
+    "zone": "whitefield",
+    "type": "Gated Flats & Villa Society",
+    "unitType": "Flat",
+    "unitCount": 32,
+    "verified": true,
+    "bounds": {
+      "minX": 60,
+      "maxX": 1180,
+      "minY": 160,
+      "maxY": 800
+    },
+    "center": {
+      "x": 640,
+      "y": 480
+    },
+    "groundPolygon": "80,480 160,160 1080,160 1160,480 1080,800 160,800 Z",
+    "borderTreesPath": "M 80,480 L 160,160 L 1080,160 L 1160,480 L 1080,800 L 160,800 Z",
+    "gardenPark": {
+      "x": 540,
+      "y": 440,
+      "w": 200,
+      "h": 80,
+      "rx": 10,
+      "label": "Silver Oak Central Gazebo Garden"
+    },
+    "plots": {
+      "pso_f_a_101": {
+        "id": "pso_f_a_101",
+        "number": "Flat A-101",
+        "label": "Flat A-101",
+        "block": "Oak Block A",
+        "x": 336,
+        "y": 210,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_f_a_201": {
+        "id": "pso_f_a_201",
+        "number": "Flat A-201",
+        "label": "Flat A-201",
+        "block": "Oak Block A",
+        "x": 280,
+        "y": 244,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_f_a_301": {
+        "id": "pso_f_a_301",
+        "number": "Flat A-301",
+        "label": "Flat A-301",
+        "block": "Oak Block A",
+        "x": 336,
+        "y": 244,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_f_a_401": {
+        "id": "pso_f_a_401",
+        "number": "Flat A-401",
+        "label": "Flat A-401",
+        "block": "Oak Block A",
+        "x": 280,
+        "y": 278,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_f_b_101": {
+        "id": "pso_f_b_101",
+        "number": "Flat B-101",
+        "label": "Flat B-101",
+        "block": "Oak Block B",
+        "x": 476,
+        "y": 210,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_f_b_201": {
+        "id": "pso_f_b_201",
+        "number": "Flat B-201",
+        "label": "Flat B-201",
+        "block": "Oak Block B",
+        "x": 420,
+        "y": 244,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_f_b_301": {
+        "id": "pso_f_b_301",
+        "number": "Flat B-301",
+        "label": "Flat B-301",
+        "block": "Oak Block B",
+        "x": 476,
+        "y": 244,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_f_b_401": {
+        "id": "pso_f_b_401",
+        "number": "Flat B-401",
+        "label": "Flat B-401",
+        "block": "Oak Block B",
+        "x": 420,
+        "y": 278,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_f_c_101": {
+        "id": "pso_f_c_101",
+        "number": "Flat C-101",
+        "label": "Flat C-101",
+        "block": "Oak Block C",
+        "x": 336,
+        "y": 670,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_f_c_201": {
+        "id": "pso_f_c_201",
+        "number": "Flat C-201",
+        "label": "Flat C-201",
+        "block": "Oak Block C",
+        "x": 280,
+        "y": 704,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_f_c_301": {
+        "id": "pso_f_c_301",
+        "number": "Flat C-301",
+        "label": "Flat C-301",
+        "block": "Oak Block C",
+        "x": 336,
+        "y": 704,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_f_c_401": {
+        "id": "pso_f_c_401",
+        "number": "Flat C-401",
+        "label": "Flat C-401",
+        "block": "Oak Block C",
+        "x": 280,
+        "y": 738,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_f_d_101": {
+        "id": "pso_f_d_101",
+        "number": "Flat D-101",
+        "label": "Flat D-101",
+        "block": "Oak Block D",
+        "x": 476,
+        "y": 670,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_f_d_201": {
+        "id": "pso_f_d_201",
+        "number": "Flat D-201",
+        "label": "Flat D-201",
+        "block": "Oak Block D",
+        "x": 420,
+        "y": 704,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_f_d_301": {
+        "id": "pso_f_d_301",
+        "number": "Flat D-301",
+        "label": "Flat D-301",
+        "block": "Oak Block D",
+        "x": 476,
+        "y": 704,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_f_d_401": {
+        "id": "pso_f_d_401",
+        "number": "Flat D-401",
+        "label": "Flat D-401",
+        "block": "Oak Block D",
+        "x": 420,
+        "y": 738,
+        "w": 52,
+        "h": 30,
+        "rx": 3,
+        "road": "Flats Circle",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Flat"
+      },
+      "pso_v_1": {
+        "id": "pso_v_1",
+        "number": "Villa 1",
+        "label": "Villa 1",
+        "block": "Oak Villas",
+        "x": 950,
+        "y": 220,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "East",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      },
+      "pso_v_2": {
+        "id": "pso_v_2",
+        "number": "Villa 2",
+        "label": "Villa 2",
+        "block": "Oak Villas",
+        "x": 860,
+        "y": 280,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "West",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      },
+      "pso_v_3": {
+        "id": "pso_v_3",
+        "number": "Villa 3",
+        "label": "Villa 3",
+        "block": "Oak Villas",
+        "x": 950,
+        "y": 280,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "East",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      },
+      "pso_v_4": {
+        "id": "pso_v_4",
+        "number": "Villa 4",
+        "label": "Villa 4",
+        "block": "Oak Villas",
+        "x": 860,
+        "y": 340,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "West",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      },
+      "pso_v_5": {
+        "id": "pso_v_5",
+        "number": "Villa 5",
+        "label": "Villa 5",
+        "block": "Oak Villas",
+        "x": 950,
+        "y": 340,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "East",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      },
+      "pso_v_6": {
+        "id": "pso_v_6",
+        "number": "Villa 6",
+        "label": "Villa 6",
+        "block": "Oak Villas",
+        "x": 860,
+        "y": 400,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "West",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      },
+      "pso_v_7": {
+        "id": "pso_v_7",
+        "number": "Villa 7",
+        "label": "Villa 7",
+        "block": "Oak Villas",
+        "x": 950,
+        "y": 400,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "East",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      },
+      "pso_v_8": {
+        "id": "pso_v_8",
+        "number": "Villa 8",
+        "label": "Villa 8",
+        "block": "Oak Villas",
+        "x": 860,
+        "y": 460,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "West",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      },
+      "pso_v_9": {
+        "id": "pso_v_9",
+        "number": "Villa 9",
+        "label": "Villa 9",
+        "block": "Oak Villas",
+        "x": 950,
+        "y": 460,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "East",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      },
+      "pso_v_10": {
+        "id": "pso_v_10",
+        "number": "Villa 10",
+        "label": "Villa 10",
+        "block": "Oak Villas",
+        "x": 860,
+        "y": 520,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "West",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      },
+      "pso_v_11": {
+        "id": "pso_v_11",
+        "number": "Villa 11",
+        "label": "Villa 11",
+        "block": "Oak Villas",
+        "x": 950,
+        "y": 520,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "East",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      },
+      "pso_v_12": {
+        "id": "pso_v_12",
+        "number": "Villa 12",
+        "label": "Villa 12",
+        "block": "Oak Villas",
+        "x": 860,
+        "y": 580,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "West",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      },
+      "pso_v_13": {
+        "id": "pso_v_13",
+        "number": "Villa 13",
+        "label": "Villa 13",
+        "block": "Oak Villas",
+        "x": 950,
+        "y": 580,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "East",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      },
+      "pso_v_14": {
+        "id": "pso_v_14",
+        "number": "Villa 14",
+        "label": "Villa 14",
+        "block": "Oak Villas",
+        "x": 860,
+        "y": 640,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "West",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      },
+      "pso_v_15": {
+        "id": "pso_v_15",
+        "number": "Villa 15",
+        "label": "Villa 15",
+        "block": "Oak Villas",
+        "x": 950,
+        "y": 640,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "East",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      },
+      "pso_v_16": {
+        "id": "pso_v_16",
+        "number": "Villa 16",
+        "label": "Villa 16",
+        "block": "Oak Villas",
+        "x": 860,
+        "y": 700,
+        "w": 76,
+        "h": 46,
+        "rx": 4,
+        "road": "Villa Mews",
+        "facing": "West",
+        "color": "yellow",
+        "type": "Luxury Villa"
+      }
+    },
+    "roads": {
+      "nodes": {
+        "pso_gate_main": {
+          "id": "pso_gate_main",
+          "x": 90,
+          "y": 480,
+          "label": "Gate 1 (ECC Road Entry)"
+        },
+        "pso_junc_w": {
+          "id": "pso_junc_w",
+          "x": 320,
+          "y": 480,
+          "label": "Oak Flats West Roundabout"
+        },
+        "pso_junc_ctr": {
+          "id": "pso_junc_ctr",
+          "x": 640,
+          "y": 480,
+          "label": "Silver Oak Central Club"
+        },
+        "pso_junc_e": {
+          "id": "pso_junc_e",
+          "x": 960,
+          "y": 480,
+          "label": "Oak Villa East Boulevard"
+        },
+        "pso_gate_rear": {
+          "id": "pso_gate_rear",
+          "x": 1160,
+          "y": 480,
+          "label": "Gate 2 (Whitefield Main Link)"
+        },
+        "pso_n_w": {
+          "id": "pso_n_w",
+          "x": 320,
+          "y": 250,
+          "label": "Oak Block A & B Drive"
+        },
+        "pso_n_e": {
+          "id": "pso_n_e",
+          "x": 960,
+          "y": 250,
+          "label": "Villa Mews North"
+        },
+        "pso_s_w": {
+          "id": "pso_s_w",
+          "x": 320,
+          "y": 710,
+          "label": "Oak Block C & D Drive"
+        },
+        "pso_s_e": {
+          "id": "pso_s_e",
+          "x": 960,
+          "y": 710,
+          "label": "Villa Mews South"
+        }
+      },
+      "edges": [
+        {
+          "u": "pso_gate_main",
+          "v": "pso_junc_w",
+          "road": "Silver Oak Boulevard",
+          "dist": 230
+        },
+        {
+          "u": "pso_junc_w",
+          "v": "pso_junc_ctr",
+          "road": "Silver Oak Boulevard",
+          "dist": 320
+        },
+        {
+          "u": "pso_junc_ctr",
+          "v": "pso_junc_e",
+          "road": "Silver Oak Boulevard",
+          "dist": 320
+        },
+        {
+          "u": "pso_junc_e",
+          "v": "pso_gate_rear",
+          "road": "Silver Oak Boulevard",
+          "dist": 200
+        },
+        {
+          "u": "pso_n_w",
+          "v": "pso_junc_w",
+          "road": "Flats Circle",
+          "dist": 230
+        },
+        {
+          "u": "pso_junc_w",
+          "v": "pso_s_w",
+          "road": "Flats Circle",
+          "dist": 230
+        },
+        {
+          "u": "pso_n_e",
+          "v": "pso_junc_e",
+          "road": "Villa Mews",
+          "dist": 230
+        },
+        {
+          "u": "pso_junc_e",
+          "v": "pso_s_e",
+          "road": "Villa Mews",
+          "dist": 230
+        },
+        {
+          "u": "pso_n_w",
+          "v": "pso_junc_ctr",
+          "road": "Central Park Walk",
+          "dist": 394
+        },
+        {
+          "u": "pso_s_w",
+          "v": "pso_junc_ctr",
+          "road": "Central Park Walk",
+          "dist": 394
+        }
+      ]
+    },
+    "defaultStartGate": "pso_gate_main",
+    "sectors": [
+      "Oak Block A",
+      "Oak Block B",
+      "Oak Block C",
+      "Oak Block D",
+      "Oak Villas"
+    ],
+    "roadLabels": [
+      {
+        "name": "SILVER OAK BOULEVARD",
+        "x": 640,
+        "y": 495,
+        "vertical": false
+      },
+      {
+        "name": "FLATS CIRCLE",
+        "x": 320,
+        "y": 360,
+        "vertical": true
+      },
+      {
+        "name": "VILLA MEWS",
+        "x": 960,
+        "y": 360,
+        "vertical": true
+      }
+    ],
+    "amenities": [
+      {
+        "id": "club",
+        "name": "Silver Oak Club & Heated Pool",
+        "desc": "Indoor heated swimming pool, gymnasium, badminton courts and billiard room",
+        "x": 640,
+        "y": 440,
+        "node": "pso_junc_ctr",
+        "type": "clubhouse",
+        "icon": "🏊"
+      }
+    ]
+  },
+  "purva_seasons": {
+    "id": "purva_seasons",
+    "name": "Purva Seasons Flats",
+    "location": "CV Raman Nagar, Near DRDO Phase 2 & Indiranagar, Bangalore Central",
+    "zone": "central",
+    "type": "Residential Flat Society",
+    "unitType": "Flat",
+    "unitCount": 24,
+    "verified": true,
+    "bounds": {
+      "minX": 60,
+      "maxX": 1180,
+      "minY": 160,
+      "maxY": 800
+    },
+    "center": {
+      "x": 640,
+      "y": 480
+    },
+    "groundPolygon": "80,480 160,160 1080,160 1160,480 1080,800 160,800 Z",
+    "borderTreesPath": "M 80,480 L 160,160 L 1080,160 L 1160,480 L 1080,800 L 160,800 Z",
+    "gardenPark": {
+      "x": 540,
+      "y": 440,
+      "w": 200,
+      "h": 80,
+      "rx": 10,
+      "label": "Seasons Central Promenade & Fountain"
+    },
+    "plots": {
+      "ps_f_s_101": {
+        "id": "ps_f_s_101",
+        "number": "Flat S-101",
+        "label": "Flat S-101",
+        "block": "Spring Block",
+        "x": 958,
+        "y": 670,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Spring Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_s_102": {
+        "id": "ps_f_s_102",
+        "number": "Flat S-102",
+        "label": "Flat S-102",
+        "block": "Spring Block",
+        "x": 900,
+        "y": 704,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Spring Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_s_103": {
+        "id": "ps_f_s_103",
+        "number": "Flat S-103",
+        "label": "Flat S-103",
+        "block": "Spring Block",
+        "x": 958,
+        "y": 704,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Spring Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_s_104": {
+        "id": "ps_f_s_104",
+        "number": "Flat S-104",
+        "label": "Flat S-104",
+        "block": "Spring Block",
+        "x": 900,
+        "y": 738,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Spring Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_s_105": {
+        "id": "ps_f_s_105",
+        "number": "Flat S-105",
+        "label": "Flat S-105",
+        "block": "Spring Block",
+        "x": 958,
+        "y": 738,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Spring Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_s_106": {
+        "id": "ps_f_s_106",
+        "number": "Flat S-106",
+        "label": "Flat S-106",
+        "block": "Spring Block",
+        "x": 900,
+        "y": 772,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Spring Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_s_107": {
+        "id": "ps_f_s_107",
+        "number": "Flat S-107",
+        "label": "Flat S-107",
+        "block": "Spring Block",
+        "x": 958,
+        "y": 772,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Spring Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_s_108": {
+        "id": "ps_f_s_108",
+        "number": "Flat S-108",
+        "label": "Flat S-108",
+        "block": "Spring Block",
+        "x": 900,
+        "y": 806,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Spring Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_a_101": {
+        "id": "ps_f_a_101",
+        "number": "Flat A-101",
+        "label": "Flat A-101",
+        "block": "Autumn Block",
+        "x": 958,
+        "y": 210,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Autumn Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_a_102": {
+        "id": "ps_f_a_102",
+        "number": "Flat A-102",
+        "label": "Flat A-102",
+        "block": "Autumn Block",
+        "x": 900,
+        "y": 244,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Autumn Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_a_103": {
+        "id": "ps_f_a_103",
+        "number": "Flat A-103",
+        "label": "Flat A-103",
+        "block": "Autumn Block",
+        "x": 958,
+        "y": 244,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Autumn Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_a_104": {
+        "id": "ps_f_a_104",
+        "number": "Flat A-104",
+        "label": "Flat A-104",
+        "block": "Autumn Block",
+        "x": 900,
+        "y": 278,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Autumn Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_a_105": {
+        "id": "ps_f_a_105",
+        "number": "Flat A-105",
+        "label": "Flat A-105",
+        "block": "Autumn Block",
+        "x": 958,
+        "y": 278,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Autumn Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_a_106": {
+        "id": "ps_f_a_106",
+        "number": "Flat A-106",
+        "label": "Flat A-106",
+        "block": "Autumn Block",
+        "x": 900,
+        "y": 312,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Autumn Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_a_107": {
+        "id": "ps_f_a_107",
+        "number": "Flat A-107",
+        "label": "Flat A-107",
+        "block": "Autumn Block",
+        "x": 958,
+        "y": 312,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Autumn Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_a_108": {
+        "id": "ps_f_a_108",
+        "number": "Flat A-108",
+        "label": "Flat A-108",
+        "block": "Autumn Block",
+        "x": 900,
+        "y": 346,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Autumn Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_w_101": {
+        "id": "ps_f_w_101",
+        "number": "Flat W-101",
+        "label": "Flat W-101",
+        "block": "Winter Block",
+        "x": 358,
+        "y": 670,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Winter Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_w_102": {
+        "id": "ps_f_w_102",
+        "number": "Flat W-102",
+        "label": "Flat W-102",
+        "block": "Winter Block",
+        "x": 300,
+        "y": 704,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Winter Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_w_103": {
+        "id": "ps_f_w_103",
+        "number": "Flat W-103",
+        "label": "Flat W-103",
+        "block": "Winter Block",
+        "x": 358,
+        "y": 704,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Winter Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_w_104": {
+        "id": "ps_f_w_104",
+        "number": "Flat W-104",
+        "label": "Flat W-104",
+        "block": "Winter Block",
+        "x": 300,
+        "y": 738,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Winter Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_w_105": {
+        "id": "ps_f_w_105",
+        "number": "Flat W-105",
+        "label": "Flat W-105",
+        "block": "Winter Block",
+        "x": 358,
+        "y": 738,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Winter Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_w_106": {
+        "id": "ps_f_w_106",
+        "number": "Flat W-106",
+        "label": "Flat W-106",
+        "block": "Winter Block",
+        "x": 300,
+        "y": 772,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Winter Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_w_107": {
+        "id": "ps_f_w_107",
+        "number": "Flat W-107",
+        "label": "Flat W-107",
+        "block": "Winter Block",
+        "x": 358,
+        "y": 772,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Winter Drive",
+        "facing": "West",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      },
+      "ps_f_w_108": {
+        "id": "ps_f_w_108",
+        "number": "Flat W-108",
+        "label": "Flat W-108",
+        "block": "Winter Block",
+        "x": 300,
+        "y": 806,
+        "w": 54,
+        "h": 30,
+        "rx": 3,
+        "road": "Winter Drive",
+        "facing": "East",
+        "color": "blue",
+        "type": "3 BHK Luxury Flat"
+      }
+    },
+    "roads": {
+      "nodes": {
+        "ps_gate_main": {
+          "id": "ps_gate_main",
+          "x": 90,
+          "y": 480,
+          "label": "Gate 1 (Seasons Main Security Gate)"
+        },
+        "ps_junc_w": {
+          "id": "ps_junc_w",
+          "x": 340,
+          "y": 480,
+          "label": "Summer & Winter Plaza"
+        },
+        "ps_junc_ctr": {
+          "id": "ps_junc_ctr",
+          "x": 640,
+          "y": 480,
+          "label": "Four Seasons Central Grand Atrium"
+        },
+        "ps_junc_e": {
+          "id": "ps_junc_e",
+          "x": 940,
+          "y": 480,
+          "label": "Autumn & Spring Plaza"
+        },
+        "ps_gate_drdo": {
+          "id": "ps_gate_drdo",
+          "x": 1160,
+          "y": 480,
+          "label": "Gate 2 (DRDO Phase 2 Link)"
+        },
+        "ps_n_w": {
+          "id": "ps_n_w",
+          "x": 340,
+          "y": 250,
+          "label": "Summer Block Parkway"
+        },
+        "ps_n_e": {
+          "id": "ps_n_e",
+          "x": 940,
+          "y": 250,
+          "label": "Autumn Block Parkway"
+        },
+        "ps_s_w": {
+          "id": "ps_s_w",
+          "x": 340,
+          "y": 710,
+          "label": "Winter Block Walk"
+        },
+        "ps_s_e": {
+          "id": "ps_s_e",
+          "x": 940,
+          "y": 710,
+          "label": "Spring Block Walk"
+        }
+      },
+      "edges": [
+        {
+          "u": "ps_gate_main",
+          "v": "ps_junc_w",
+          "road": "Seasons Boulevard",
+          "dist": 250
+        },
+        {
+          "u": "ps_junc_w",
+          "v": "ps_junc_ctr",
+          "road": "Seasons Boulevard",
+          "dist": 300
+        },
+        {
+          "u": "ps_junc_ctr",
+          "v": "ps_junc_e",
+          "road": "Seasons Boulevard",
+          "dist": 300
+        },
+        {
+          "u": "ps_junc_e",
+          "v": "ps_gate_drdo",
+          "road": "Seasons Boulevard",
+          "dist": 220
+        },
+        {
+          "u": "ps_n_w",
+          "v": "ps_junc_w",
+          "road": "Summer Drive",
+          "dist": 230
+        },
+        {
+          "u": "ps_junc_w",
+          "v": "ps_s_w",
+          "road": "Winter Drive",
+          "dist": 230
+        },
+        {
+          "u": "ps_n_e",
+          "v": "ps_junc_e",
+          "road": "Autumn Drive",
+          "dist": 230
+        },
+        {
+          "u": "ps_junc_e",
+          "v": "ps_s_e",
+          "road": "Spring Drive",
+          "dist": 230
+        },
+        {
+          "u": "ps_n_w",
+          "v": "ps_junc_ctr",
+          "road": "Central Promenade Walk",
+          "dist": 378
+        },
+        {
+          "u": "ps_s_w",
+          "v": "ps_junc_ctr",
+          "road": "Central Promenade Walk",
+          "dist": 378
+        },
+        {
+          "u": "ps_n_e",
+          "v": "ps_junc_ctr",
+          "road": "Central Promenade Walk",
+          "dist": 378
+        },
+        {
+          "u": "ps_s_e",
+          "v": "ps_junc_ctr",
+          "road": "Central Promenade Walk",
+          "dist": 378
+        }
+      ]
+    },
+    "defaultStartGate": "ps_gate_main",
+    "sectors": [
+      "Summer Block",
+      "Autumn Block",
+      "Winter Block",
+      "Spring Block"
+    ],
+    "roadLabels": [
+      {
+        "name": "SEASONS BOULEVARD",
+        "x": 640,
+        "y": 495,
+        "vertical": false
+      },
+      {
+        "name": "SUMMER DRIVE",
+        "x": 340,
+        "y": 360,
+        "vertical": true
+      },
+      {
+        "name": "AUTUMN DRIVE",
+        "x": 940,
+        "y": 360,
+        "vertical": true
+      }
+    ],
+    "amenities": [
+      {
+        "id": "club",
+        "name": "Purva Seasons Grand Clubhouse",
+        "desc": "Rooftop sky deck, swimming pool, squash court, banquet hall and gym",
+        "x": 640,
+        "y": 440,
+        "node": "ps_junc_ctr",
+        "type": "clubhouse",
+        "icon": "🏊"
+      }
+    ]
   }
 };
