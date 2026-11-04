@@ -32,7 +32,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="style.css?v=31">
+  <link rel="stylesheet" href="style.css?v=32">
   <script>
     // PERMANENTLY MUTE & DISABLE ALL SPEECH / VOICE SYNTHESIS GLOBALLY
     if (typeof window !== 'undefined') {
@@ -54,7 +54,7 @@
       if ('caches' in window) {
         caches.keys().then(function(names) {
           for (let name of names) {
-            if (name !== 'himagiri-maps-offline-v31') {
+            if (name !== 'himagiri-maps-offline-v32') {
               caches.delete(name);
             }
           }
@@ -282,7 +282,7 @@
           <button id="card-track-house-btn" class="btn btn-primary" style="width: 100%; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 8px;">
             <span>📍</span> <span>Track to House Doorstep</span>
           </button>
-          <button id="card-view-interior-btn" class="btn btn-secondary" style="width: 100%; margin-top: 8px; display: none; align-items: center; justify-content: center; gap: 8px; background: #1e293b; border: 1px solid #38bdf8; color: #38bdf8; font-weight: 600;" title="Double-click block on map or tap here to view inside floor plan">
+          <button id="card-view-interior-btn" class="btn btn-secondary" style="width: 100%; margin-top: 8px; display: none; align-items: center; justify-content: center; gap: 8px; background: #1e293b; border: 1px solid #38bdf8; color: #38bdf8; font-weight: 600;" title="Click highlighted block on map or tap here to view inside floor plan">
             <span>🏢</span> <span>View Inside Block Layout</span>
           </button>
         </div>
@@ -617,10 +617,10 @@
   </div>
 
   <!-- Load Scripts with Version Cache-Buster -->
-  <script src="analytics.js?v=31"></script>
-  <script src="qrcode.min.js?v=31"></script>
-  <script src="map_data.js?v=31"></script>
-  <script src="layouts_data.js?v=31"></script>
-  <script src="app.js?v=31"></script>
+  <script src="analytics.js?v=32"></script>
+  <script src="qrcode.min.js?v=32"></script>
+  <script src="map_data.js?v=32"></script>
+  <script src="layouts_data.js?v=32"></script>
+  <script src="app.js?v=32"></script>
 </body>
 </html>

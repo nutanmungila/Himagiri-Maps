@@ -596,12 +596,21 @@
         subTxt.textContent = (currentLayout.unitType === 'Flat' ? 'Residential Flat' : (currentLayout.unitType ? currentLayout.unitType.replace(/ \/ .*/, '') : 'Apartment Tower')).replace(/\d+/g, '').trim();
         blockG.appendChild(subTxt);
 
-        blockG.setAttribute("title", `Double-click or double-tap to explore inside layout of ${cleanName}`);
+        blockG.setAttribute("title", `Click to select, or click highlighted block to view inside layout of ${cleanName}`);
 
-        // Click to select block & track to its flats/doorstep
+        // Click to select block, or if already clicked/highlighted, view inside layout!
         blockG.addEventListener('click', (e) => {
           e.stopPropagation();
-          selectPlot(uList[0].id, false);
+          const currentPlot = state.selectedPlotId ? plots[state.selectedPlotId] : null;
+          const isCurrentlyActive = currentPlot && (currentPlot.block === bName || cleanBlockTitle(currentPlot.block) === cleanName);
+
+          if (isCurrentlyActive || blockG.classList.contains('block-has-active')) {
+            // Already clicked and highlighted -> clicking it again shows the inside layout!
+            openSubAreaInterior('tower', cleanName, uList);
+          } else {
+            // First click -> select/highlight the block & track to doorstep
+            selectPlot(uList[0].id, false);
+          }
         });
 
         // Double-click to view exact inside architectural layout
@@ -629,7 +638,7 @@
         blockG.addEventListener('mouseenter', (e) => {
           showPlotTooltip(e, {
             number: cleanName,
-            block: `${cleanName} (Double-click to view inside layout)`,
+            block: `${cleanName} (Click to select, click again to view inside)`,
             road: uList[0].road,
             facing: uList[0].facing
           });
@@ -2112,7 +2121,7 @@
       <div style="font-size:11px;color:#cbd5e1;">Road: <strong>${p.road}</strong></div>
       <div style="font-size:11px;color:#cbd5e1;">Sector: ${blockLabel} (${p.facing}-facing)</div>
       <div style="font-size:10px;color:#10b981;margin-top:4px;">📍 ${distG1}m from ${gateLabel}</div>
-      <div style="font-size:10px;color:#f59e0b;margin-top:4px;font-weight:700;">👉 Hold button or plot to explore inside</div>
+      ${isApt ? '<div style="font-size:10px;color:#f59e0b;margin-top:4px;font-weight:700;">🏢 Click highlighted block to view inside layout</div>' : ''}
     `;
     tooltip.style.display = 'block';
     movePlotTooltip(e);
