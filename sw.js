@@ -1,20 +1,20 @@
 // HM Maps Service Worker - 100% Complete Offline Mode (Zero Wi-Fi Required)
-const CACHE_NAME = 'himagiri-maps-offline-v30';
+const CACHE_NAME = 'himagiri-maps-offline-v31';
 const ASSETS_TO_PRECACHE = [
   './',
   './index.html',
   './style.css',
-  './style.css?v=30',
+  './style.css?v=31',
   './app.js',
-  './app.js?v=30',
+  './app.js?v=31',
   './layouts_data.js',
-  './layouts_data.js?v=30',
+  './layouts_data.js?v=31',
   './map_data.js',
-  './map_data.js?v=30',
+  './map_data.js?v=31',
   './analytics.js',
-  './analytics.js?v=30',
+  './analytics.js?v=31',
   './qrcode.min.js',
-  './qrcode.min.js?v=30',
+  './qrcode.min.js?v=31',
   './manifest.json',
   './original_map.png',
   './icon-192.png',
