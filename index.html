@@ -32,7 +32,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="style.css?v=32">
+  <link rel="stylesheet" href="style.css?v=33">
   <script>
     // PERMANENTLY MUTE & DISABLE ALL SPEECH / VOICE SYNTHESIS GLOBALLY
     if (typeof window !== 'undefined') {
@@ -54,7 +54,7 @@
       if ('caches' in window) {
         caches.keys().then(function(names) {
           for (let name of names) {
-            if (name !== 'himagiri-maps-offline-v32') {
+            if (name !== 'himagiri-maps-offline-v33') {
               caches.delete(name);
             }
           }
@@ -102,8 +102,14 @@
         <button id="header-map-toggle-btn" class="btn btn-secondary" title="Toggle Fullscreen Map / Split View">
           <span>⇥</span> Full Map
         </button>
+        <button id="header-3d-toggle-btn" class="btn btn-secondary" title="Toggle 2.5D Isometric 3D View">
+          <span>📐</span> <span id="header-3d-text">3D Tilt</span>
+        </button>
       </div>
 
+      <button id="security-sos-btn" class="btn btn-secondary" style="border-color: rgba(239, 68, 68, 0.4); color: #f87171; background: rgba(239, 68, 68, 0.08);" title="Security Gate Intercom & Emergency Speed Dial">
+        <span>🚨</span> <span class="btn-text-full">Security & SOS</span><span class="btn-text-mobile">SOS</span>
+      </button>
       <button id="analytics-btn" class="btn btn-secondary" title="View Usage Analytics & Community Stats">
         <span>📊</span> Stats
       </button>
@@ -285,6 +291,10 @@
           <button id="card-view-interior-btn" class="btn btn-secondary" style="width: 100%; margin-top: 8px; display: none; align-items: center; justify-content: center; gap: 8px; background: #1e293b; border: 1px solid #38bdf8; color: #38bdf8; font-weight: 600;" title="Click highlighted block on map or tap here to view inside floor plan">
             <span>🏢</span> <span>View Inside Block Layout</span>
           </button>
+          <button id="card-delivery-pass-btn" class="btn btn-secondary" style="width: 100%; margin-top: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; background: #064e3b; border: 1px solid #10b981; color: #a7f3d0; font-weight: 600;" title="Generate WhatsApp directions pass for Swiggy, Zomato, Amazon, Blinkit, or guests">
+            <span>🛵</span> <span>Share Delivery / Guest Pass</span>
+          </button>
+          <div id="card-amenity-info" class="card-amenity-info" style="display: none; margin-top: 10px;"></div>
         </div>
       </section>
 
@@ -303,6 +313,21 @@
                 <span>📍</span> My Location
               </button>
             </div>
+
+            <!-- Optional Multi-Stop Errand Waypoint Row -->
+            <div id="waypoint-row" class="point-row waypoint-row" style="display: none;">
+              <div class="point-dot waypoint" title="Errand Stop Waypoint"></div>
+              <select id="waypoint-node-select" class="point-select" style="border-color: #a855f7;"></select>
+              <button id="remove-waypoint-btn" class="loc-quick-btn" title="Remove stop" style="color: #ef4444; border-color: rgba(239, 68, 68, 0.4);">✕</button>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin: 2px 0 6px 0;">
+              <button id="add-stop-btn" type="button" class="btn-add-stop">
+                <span>➕</span> <span>Add Errand Stop (Clubhouse, Temple, Park...)</span>
+              </button>
+              <span id="waypoint-badge" class="badge" style="display: none; background: #581c87; color: #e9d5ff; font-size: 10px;">2-Leg Path</span>
+            </div>
+
             <div class="point-row">
               <div class="point-dot end"></div>
               <select id="dest-node-select" class="point-select"></select>
@@ -359,6 +384,7 @@
         <button id="zoom-in-btn" class="map-ctrl-btn" title="Zoom In">+</button>
         <button id="zoom-out-btn" class="map-ctrl-btn" title="Zoom Out">−</button>
         <button id="zoom-fit-btn" class="map-ctrl-btn" title="Reset / Fit Map">⛶</button>
+        <button id="tilt-3d-btn" class="map-ctrl-btn" title="Toggle 2.5D Isometric 3D View" style="font-size: 11px; font-weight: 800; color: #a855f7;">3D</button>
         <button id="geo-btn" class="map-ctrl-btn geo-btn" title="Track My Live Location (GPS)">📍</button>
         <button id="focus-gate1-btn" class="map-ctrl-btn" title="Center on Gate 1" style="font-size: 11px; font-weight: 800; color: #059669;">G1</button>
         <button id="focus-center-btn" class="map-ctrl-btn" title="Center on Children's Play Area & Temple" style="font-size: 11px; font-weight: 800; color: #d97706;">CTR</button>
@@ -388,6 +414,10 @@
           <input type="checkbox" id="toggle-roads" checked>
           <span>Roads</span>
         </label>
+        <label class="layer-toggle">
+          <input type="checkbox" id="toggle-parking">
+          <span>🅿️ Visitor Parking & EV</span>
+        </label>
       </div>
 
       <!-- Compass Rose -->
@@ -412,17 +442,173 @@
           <g id="roads-layer"></g>
           <g id="plots-layer"></g>
           <g id="amenities-layer"></g>
+          <g id="parking-layer" style="display: none;"></g>
           <g id="route-layer"></g>
           <g id="geo-layer"></g>
           <g id="labels-layer"></g>
         </g>
       </svg>
 
+      <!-- Rider HUD Navigation Overlay (Floating) -->
+      <div id="rider-hud-top" class="rider-hud-top" style="display: none;">
+        <div class="rider-hud-step-icon" id="rider-step-icon">⬆️</div>
+        <div class="rider-hud-step-info">
+          <div class="rider-hud-step-main" id="rider-step-main">Enter via Gate 1 Security Checkpoint</div>
+          <div class="rider-hud-step-sub" id="rider-step-sub">Direct turn-by-turn routing active</div>
+        </div>
+        <div class="rider-hud-dest-badge">
+          <div class="rider-hud-dest-house" id="rider-dest-house">#---</div>
+          <div class="rider-hud-dest-meta" id="rider-dest-meta">Campus Doorstep</div>
+        </div>
+      </div>
+
+      <div id="rider-hud-bottom" class="rider-hud-bottom" style="display: none;">
+        <button id="rider-call-btn" class="rider-btn-call">
+          <span>📞</span> <span>Call Intercom</span>
+        </button>
+        <button id="rider-arrived-btn" class="rider-btn-arrived">
+          <span>✅</span> <span>I Have Arrived at Doorstep</span>
+        </button>
+        <button id="rider-exit-btn" class="rider-btn-exit" title="Exit Rider Mode">✕</button>
+      </div>
+
       <!-- Hover Tooltip -->
       <div id="map-tooltip" class="map-tooltip"></div>
     </div>
 
   </main>
+
+  <!-- Modal: Delivery & Guest Pass Generator (WhatsApp Integration) -->
+  <div id="delivery-pass-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 560px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 20px;">🛵</span>
+          <h3 style="margin: 0; font-size: 16px;">Delivery & Guest Directions Pass</h3>
+        </div>
+        <button id="close-delivery-pass-btn" class="close-card-btn">✕</button>
+      </div>
+      <div class="modal-body" style="flex-direction: column; padding: 18px; text-align: left;">
+        <div class="pass-service-tabs">
+          <button class="pass-tab-btn active" data-type="delivery">🛵 Swiggy / Zomato</button>
+          <button class="pass-tab-btn" data-type="courier">📦 Amazon / Courier</button>
+          <button class="pass-tab-btn" data-type="visitor">👥 Guest / Friend</button>
+          <button class="pass-tab-btn" data-type="cab">🚕 Cab / Uber / Ola</button>
+        </div>
+        
+        <div style="font-size: 11px; color: #94a3b8; font-weight: 600; text-transform: uppercase; margin-bottom: 6px;">WhatsApp Message Preview:</div>
+        <div id="pass-preview-text" class="pass-preview-box"></div>
+
+        <div style="display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap;">
+          <button id="send-whatsapp-pass-btn" class="btn btn-primary" style="flex: 1.3; min-width: 160px; background: #059669; border-color: #10b981;">
+            <span>📲</span> Send on WhatsApp
+          </button>
+          <button id="copy-pass-text-btn" class="btn btn-secondary" style="flex: 1; min-width: 130px;">
+            <span>📋</span> Copy Message
+          </button>
+          <button id="open-rider-hud-btn" class="btn btn-secondary" style="border-color: #38bdf8; color: #38bdf8;" title="Preview fullscreen Rider HUD view">
+            <span>🛵</span> Rider HUD
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Community Security & Emergency Speed Dial -->
+  <div id="security-sos-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 580px;">
+      <div class="modal-header" style="border-bottom-color: rgba(239, 68, 68, 0.3);">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 20px;">🚨</span>
+          <h3 style="margin: 0; font-size: 16px; color: #f87171;">Security & Emergency Speed Dial</h3>
+        </div>
+        <button id="close-sos-modal-btn" class="close-card-btn">✕</button>
+      </div>
+      <div class="modal-body" style="flex-direction: column; padding: 18px; text-align: left;">
+        
+        <div class="sos-address-box">
+          <div class="sos-address-title">📍 Official Campus Emergency Address</div>
+          <div id="sos-address-val" class="sos-address-text">Himagiri Meadows, Bannerghatta Road, Bangalore South 560083</div>
+          <button id="sos-copy-address-btn" class="btn btn-secondary" style="font-size: 11px; padding: 4px 10px;">
+            📋 Copy Exact Address for Responders
+          </button>
+        </div>
+
+        <div class="sos-contacts-grid">
+          <div class="sos-contact-card">
+            <div class="sos-card-info">
+              <div class="sos-card-title">👮 Gate 1 Main Security</div>
+              <div class="sos-card-sub">Intercom: <strong>1001</strong> • 24/7 Guard</div>
+            </div>
+            <a href="tel:08028441001" class="sos-call-btn green">📞 Call</a>
+          </div>
+
+          <div class="sos-contact-card">
+            <div class="sos-card-info">
+              <div class="sos-card-title">🛡️ Gate 2 East Security</div>
+              <div class="sos-card-sub">Intercom: <strong>1002</strong> • 24/7 Guard</div>
+            </div>
+            <a href="tel:08028441002" class="sos-call-btn green">📞 Call</a>
+          </div>
+
+          <div class="sos-contact-card">
+            <div class="sos-card-info">
+              <div class="sos-card-title">🏢 Estate RWA Office</div>
+              <div class="sos-card-sub">Maintenance & Facility Helpdesk</div>
+            </div>
+            <a href="tel:08028441000" class="sos-call-btn green">📞 Office</a>
+          </div>
+
+          <div class="sos-contact-card">
+            <div class="sos-card-info">
+              <div class="sos-card-title">🚑 Ambulance Emergency</div>
+              <div class="sos-card-sub">National Medical Response (108)</div>
+            </div>
+            <a href="tel:108" class="sos-call-btn">🚨 108</a>
+          </div>
+
+          <div class="sos-contact-card">
+            <div class="sos-card-info">
+              <div class="sos-card-title">🚓 Police Emergency</div>
+              <div class="sos-card-sub">Police Control Room (112)</div>
+            </div>
+            <a href="tel:112" class="sos-call-btn">🚨 112</a>
+          </div>
+
+          <div class="sos-contact-card">
+            <div class="sos-card-info">
+              <div class="sos-card-title">🚒 Fire & Rescue</div>
+              <div class="sos-card-sub">Bangalore Fire Control (101)</div>
+            </div>
+            <a href="tel:101" class="sos-call-btn">🚨 101</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Gate & Landmark Photo Verification -->
+  <div id="gate-photo-modal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 540px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 20px;">📸</span>
+          <h3 id="gate-photo-title" style="margin: 0; font-size: 16px;">Gate 1 Security Verification</h3>
+        </div>
+        <button id="close-gate-photo-btn" class="close-card-btn">✕</button>
+      </div>
+      <div class="modal-body" style="flex-direction: column; padding: 18px; text-align: left;">
+        <div id="gate-photo-visual" style="border-radius: 10px; overflow: hidden; border: 1px solid #334155; margin-bottom: 12px; background: #090d16;">
+          <!-- Dynamically populated SVG gate rendering -->
+        </div>
+        <div id="gate-photo-details" style="font-size: 12px; color: #cbd5e1; line-height: 1.6;"></div>
+        <button id="gate-route-btn" class="btn btn-primary" style="margin-top: 14px; width: 100%;">
+          📍 Start Navigation From This Gate
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Modal: View Original Layout Map Blueprint -->
   <div id="original-map-modal" class="modal-overlay">
@@ -617,10 +803,10 @@
   </div>
 
   <!-- Load Scripts with Version Cache-Buster -->
-  <script src="analytics.js?v=32"></script>
-  <script src="qrcode.min.js?v=32"></script>
-  <script src="map_data.js?v=32"></script>
-  <script src="layouts_data.js?v=32"></script>
-  <script src="app.js?v=32"></script>
+  <script src="analytics.js?v=33"></script>
+  <script src="qrcode.min.js?v=33"></script>
+  <script src="map_data.js?v=33"></script>
+  <script src="layouts_data.js?v=33"></script>
+  <script src="app.js?v=33"></script>
 </body>
 </html>

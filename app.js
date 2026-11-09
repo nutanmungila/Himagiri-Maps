@@ -142,7 +142,12 @@
     activeFilter: 'ALL',
     userLocation: null,
     isGeoTracking: false,
-    geoWatchId: null
+    geoWatchId: null,
+    is3D: false,
+    waypointNodeId: null,
+    isRiderMode: false,
+    activePassType: 'delivery',
+    parkingVisible: false
   };
 
   // DOM Elements
@@ -900,6 +905,16 @@
         }
         destSelect.appendChild(grp);
       }
+    }
+
+    // Populate Multi-Stop Waypoint selector with society amenities
+    const wpSelect = document.getElementById('waypoint-node-select');
+    if (wpSelect) {
+      let wpHtml = `<option value="">-- Choose Errand Stop (Clubhouse, Park, Temple...) --</option>`;
+      for (const am of amenities) {
+        wpHtml += `<option value="${am.roadNode || am.id}">🛑 ${escapeHtml(am.name)}</option>`;
+      }
+      wpSelect.innerHTML = wpHtml;
     }
   }
 
@@ -1667,14 +1682,37 @@
 
     // Find curb point directly adjacent to the location on the road network
     const curb = findBestCurbPoint(plot, edges, nodes);
-    let route = curb ? findShortestPathToCurb(effectiveStartNodeId, curb) : null;
+    let route = null;
+    let isMultiStop = false;
+    let waypointObj = null;
+
+    // Check if an errand stop waypoint is selected
+    if (state.waypointNodeId && nodes[state.waypointNodeId]) {
+      const leg1 = findShortestPath(effectiveStartNodeId, state.waypointNodeId);
+      const leg2 = curb ? findShortestPathToCurb(state.waypointNodeId, curb) : findShortestPath(state.waypointNodeId, plot.roadNode || Object.keys(nodes)[0]);
+      if (leg1 && leg2) {
+        isMultiStop = true;
+        waypointObj = nodes[state.waypointNodeId];
+        // Combine legs
+        route = {
+          nodes: leg1.nodes.concat(leg2.nodes.slice(1)),
+          totalDist: leg1.totalDist + leg2.totalDist,
+          curbPoint: leg2.curbPoint || null,
+          leg1: leg1,
+          leg2: leg2
+        };
+      }
+    }
 
     if (!route) {
-      const fallbackNodeId = plot.roadNode || Object.keys(nodes)[0];
-      route = findShortestPath(effectiveStartNodeId, fallbackNodeId);
+      route = curb ? findShortestPathToCurb(effectiveStartNodeId, curb) : null;
       if (!route) {
-        console.warn("No route found between", effectiveStartNodeId, fallbackNodeId);
-        return;
+        const fallbackNodeId = plot.roadNode || Object.keys(nodes)[0];
+        route = findShortestPath(effectiveStartNodeId, fallbackNodeId);
+        if (!route) {
+          console.warn("No route found between", effectiveStartNodeId, fallbackNodeId);
+          return;
+        }
       }
     }
 
@@ -1719,6 +1757,14 @@
       <path id="active-nav-path" d="${pathData}" class="nav-route-path" />
       <!-- Start Pin -->
       <circle cx="${startX}" cy="${startY}" r="8" fill="${startColor}" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 2px 5px rgba(0,0,0,0.4))" />
+      <!-- Intermediate Errand Stop Waypoint Marker -->
+      ${isMultiStop && waypointObj ? `
+        <circle cx="${waypointObj.x}" cy="${waypointObj.y}" r="9" fill="#a855f7" stroke="#ffffff" stroke-width="2.5" filter="drop-shadow(0 0 8px #a855f7)" />
+        <g transform="translate(${waypointObj.x}, ${waypointObj.y - 18})">
+          <rect x="-44" y="-10" width="88" height="19" rx="9" fill="#581c87" stroke="#c084fc" stroke-width="1.2" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.5))" />
+          <text x="0" y="3" text-anchor="middle" font-size="8.5" font-weight="800" fill="#ffffff">🛑 STOP 1</text>
+        </g>
+      ` : ''}
       <!-- End Pin / House Doorstep Indicator -->
       <g transform="translate(${plotCenterX}, ${plotCenterY - 14})">
         <path d="M 0,0 C -6,-10 -6,-16 0,-20 C 6,-16 6,-10 0,0 Z" fill="#ef4444" stroke="#ffffff" stroke-width="1.5" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.4))" />
@@ -1751,7 +1797,21 @@
     walkTimeVal.textContent = `${walkMins} min`;
     driveTimeVal.textContent = `${driveMins} min`;
 
-    const steps = generateTurnByTurnDirections(route, plot, effectiveStartNodeId);
+    let steps = [];
+    if (isMultiStop && route.leg1 && route.leg2) {
+      const wpName = (amenities.find(a => (a.roadNode || a.id) === state.waypointNodeId)?.name) || waypointObj.label || 'Errand Stop';
+      const leg1Steps = generateTurnByTurnDirections(route.leg1, null, effectiveStartNodeId);
+      const leg2Steps = generateTurnByTurnDirections(route.leg2, plot, state.waypointNodeId);
+
+      steps.push({ icon: "🏁", text: `<strong>Leg 1:</strong> Start from Entrance and proceed to ${escapeHtml(wpName)} (${Math.round(route.leg1.totalDist * 0.95)}m)`, dist: 0 });
+      steps = steps.concat(leg1Steps);
+      steps.push({ icon: "🛑", text: `<strong>Stop 1 Arrived:</strong> ${escapeHtml(wpName)}`, dist: 0 });
+      steps.push({ icon: "➡️", text: `<strong>Leg 2:</strong> Continue from ${escapeHtml(wpName)} to ${escapeHtml(plot.number)} (${Math.round(route.leg2.totalDist * 0.95)}m)`, dist: 0 });
+      steps = steps.concat(leg2Steps);
+    } else {
+      steps = generateTurnByTurnDirections(route, plot, effectiveStartNodeId);
+    }
+
     if (isUserLocationStart) {
       const closestLabel = nodes[effectiveStartNodeId]?.label || 'the road';
       steps.unshift({
@@ -1761,6 +1821,11 @@
       });
     }
     renderDirectionsList(steps);
+
+    // Update Rider HUD if currently in Rider Mode
+    if (state.isRiderMode) {
+      updateRiderHUDInfo();
+    }
 
     if (window.HimagiriAnalytics) {
       const sName = isUserLocationStart ? 'Live Location' : (nodes[startNid]?.label?.split(' (')[0] || 'Gate 1');
@@ -1921,6 +1986,14 @@
     state.selectedPlotId = plot.id;
     destSelect.value = `plot:${plot.id}`;
 
+    // Hide amenity-specific hours card when selecting a house
+    const amenityInfoEl = document.getElementById('card-amenity-info');
+    if (amenityInfoEl) amenityInfoEl.style.display = 'none';
+
+    if (state.isRiderMode) {
+      updateRiderHUDInfo();
+    }
+
     const isApt = isApartmentOrBlockLayout(currentLayout);
 
     // Populate unit chips in house card for apartment/flat layouts
@@ -2067,6 +2140,60 @@
 
     if (zoomIn) {
       zoomToCoordinates(am.x, am.y, 1.8);
+    }
+
+    // Populate operating hours & community rules in House Card
+    const curHour = new Date().getHours();
+    let openTime = 6;
+    let closeTime = 22;
+    let rules = "Society guidelines apply. Please maintain community decorum.";
+
+    const aName = am.name.toLowerCase();
+    if (aName.includes('pool') || aName.includes('swimming')) {
+      openTime = 6; closeTime = 22;
+      rules = "🏊 Swimwear & cap mandatory. Shower before entering. Children under 12 require adult supervision.";
+    } else if (aName.includes('gym') || aName.includes('badminton') || aName.includes('tennis') || aName.includes('court') || aName.includes('squash')) {
+      openTime = 5; closeTime = 22;
+      rules = "👟 Non-marking sports shoes only. Carry a towel. Wipe down equipment after use.";
+    } else if (aName.includes('temple')) {
+      openTime = 6; closeTime = 21;
+      rules = "🪔 Morning Puja: 6:00 AM - 12:30 PM • Evening Aarti: 5:30 PM - 8:30 PM. Remove footwear outside.";
+    } else if (aName.includes('park') || aName.includes('play')) {
+      openTime = 6; closeTime = 21;
+      rules = "🌳 Walking track open. Pets must remain on leash. Please keep lawns clean.";
+    } else if (aName.includes('hall') || aName.includes('auditorium') || aName.includes('clubhouse')) {
+      openTime = 8; closeTime = 22;
+      rules = "🏛️ Prior booking via RWA Helpdesk required for private functions. Noise curfew at 10:00 PM.";
+    }
+
+    const isOpen = (curHour >= openTime && curHour < closeTime);
+    const closeStr = closeTime > 12 ? `${closeTime - 12}:00 PM` : `${closeTime}:00 AM`;
+    const openStr = `${openTime}:00 AM`;
+
+    const amenityInfoEl = document.getElementById('card-amenity-info');
+    if (amenityInfoEl) {
+      const isGate = aName.includes('gate') || am.type === 'gate';
+      amenityInfoEl.innerHTML = `
+        <div class="amenity-status-pill ${isOpen ? 'open' : 'closed'}">
+          ${isOpen ? `🟢 Open Now • Closes at ${closeStr}` : `🔴 Closed Now • Opens at ${openStr}`}
+        </div>
+        <div class="amenity-rules-box">
+          <strong>Community Guidelines:</strong><br>${rules}
+        </div>
+        ${isGate ? `
+          <button id="card-view-gate-photo-btn" class="btn btn-secondary" style="width: 100%; margin-top: 10px; border-color: #38bdf8; color: #38bdf8; font-weight: 700;">
+            <span>📸</span> <span>View Gate Verification Photo</span>
+          </button>
+        ` : ''}
+      `;
+      amenityInfoEl.style.display = 'block';
+
+      const gatePhotoBtn = document.getElementById('card-view-gate-photo-btn');
+      if (gatePhotoBtn) {
+        gatePhotoBtn.addEventListener('click', () => {
+          openGatePhotoModal(am);
+        });
+      }
     }
   }
 
@@ -2381,6 +2508,372 @@
       'transform',
       `translate(${state.transform.x}, ${state.transform.y}) scale(${state.transform.scale})`
     );
+  }
+
+
+  // ========================================================
+  // 1. 2.5D ISOMETRIC 3D VIEW TOGGLE
+  // ========================================================
+  function toggle3DView(forceState) {
+    if (typeof forceState === 'boolean') {
+      state.is3D = forceState;
+    } else {
+      state.is3D = !state.is3D;
+    }
+
+    const viewportContainer = document.querySelector('.map-viewport');
+    const tiltBtn = document.getElementById('tilt-3d-btn');
+    const header3dText = document.getElementById('header-3d-text');
+    const header3dBtn = document.getElementById('header-3d-toggle-btn');
+
+    if (viewportContainer) {
+      viewportContainer.classList.toggle('isometric-view', state.is3D);
+    }
+    if (tiltBtn) {
+      tiltBtn.classList.toggle('active-3d', state.is3D);
+      tiltBtn.textContent = state.is3D ? '2D' : '3D';
+      tiltBtn.title = state.is3D ? 'Switch to 2D Standard View' : 'Toggle 2.5D Isometric 3D View';
+    }
+    if (header3dText) {
+      header3dText.textContent = state.is3D ? '2D Flat' : '3D Tilt';
+    }
+    if (header3dBtn) {
+      header3dBtn.classList.toggle('active', state.is3D);
+    }
+
+    showToast(state.is3D ? '📐 2.5D Isometric 3D View Active' : '📐 2D Standard View Active', 2000);
+  }
+
+  // ========================================================
+  // 2. DELIVERY & GUEST PASS (WHATSAPP INTEGRATION) & RIDER HUD
+  // ========================================================
+  function generateDeliveryPassText(serviceType, plotId) {
+    const p = plots[plotId || state.selectedPlotId] || Object.values(plots)[0];
+    if (!p) return '';
+
+    const isApt = isApartmentOrBlockLayout(currentLayout);
+    const bTitle = cleanBlockTitle(p.block || 'Main Tower');
+    const uLabel = isApt ? `Flat ${p.number}` : `House #${p.number}`;
+    const campusName = currentLayout.name || 'Himagiri Meadows';
+    const gateName = (nodes[state.startNodeId]?.label || 'Gate 1 (Main Entrance)').split(' (')[0];
+    const gateKey = state.startNodeId || 'gate_1';
+
+    // Route summary steps
+    const curb = findBestCurbPoint(p, edges, nodes);
+    const route = curb ? findShortestPathToCurb(gateKey, curb) : findShortestPath(gateKey, p.roadNode || Object.keys(nodes)[0]);
+    let quickSteps = '';
+    if (route && route.nodes && route.nodes.length > 0) {
+      const stepObjs = generateTurnByTurnDirections(route, p, gateKey);
+      quickSteps = stepObjs.slice(0, 3).map((s, idx) => `${idx + 1}. ${s.text.replace(/<[^>]+>/g, '')}`).join('\n');
+    } else {
+      quickSteps = `1. Enter via ${gateName}\n2. Follow main avenue to ${p.road}\n3. Arrive at ${uLabel}`;
+    }
+
+    const shareUrl = `https://hmmaps.in/?layout=${currentLayoutId}&plot=${p.id}&gate=${gateKey}&mode=rider`;
+
+    if (serviceType === 'delivery') {
+      return `🛵 *FOOD DELIVERY DIRECTIONS — ${campusName.toUpperCase()}*\n` +
+             `-----------------------------------------\n` +
+             `📍 *Destination:* ${uLabel}${isApt ? ` (${bTitle})` : ''}\n` +
+             `🛣️ *Avenue / Road:* ${p.road}\n` +
+             `🚪 *Entrance Gate:* ${gateName}\n` +
+             `🧭 *Quick Directions from Gate:*\n${quickSteps}\n\n` +
+             `🗺️ *Open Live GPS Map & Turn-by-Turn Rider HUD:*\n${shareUrl}\n` +
+             `-----------------------------------------\n` +
+             `⚠️ *Security Note:* Please state *${uLabel}* at ${gateName} intercom for entry clearance.`;
+    } else if (serviceType === 'courier') {
+      return `📦 *PACKAGE COURIER PASS — ${campusName.toUpperCase()}*\n` +
+             `-----------------------------------------\n` +
+             `📍 *Deliver to:* ${uLabel} (${isApt ? bTitle : 'Residential Plot'})\n` +
+             `🛣️ *Road:* ${p.road}, ${campusName}\n` +
+             `🚪 *Best Gate for Courier Vans:* ${gateName}\n` +
+             `🧭 *Step Directions:*\n${quickSteps}\n\n` +
+             `🗺️ *Live Turn-by-Turn GPS Map:*\n${shareUrl}\n` +
+             `-----------------------------------------\n` +
+             `📞 Leave package with security guard if resident unavailable.`;
+    } else if (serviceType === 'visitor') {
+      return `🏡 *GUEST / VISITOR PASS — ${campusName.toUpperCase()}*\n` +
+             `-----------------------------------------\n` +
+             `Welcome! We are excited to have you over.\n` +
+             `📍 *Our Residence:* ${uLabel}${isApt ? `, ${bTitle}` : ''}\n` +
+             `🛣️ *Road:* ${p.road}\n` +
+             `🚪 *Visitor Entrance:* ${gateName}\n\n` +
+             `🧭 *Directions:*\n${quickSteps}\n\n` +
+             `🗺️ *Interactive Map & Navigator:*\n${shareUrl}\n` +
+             `-----------------------------------------\n` +
+             `🅿️ Visitor parking is available near ${gateName} and Clubhouse.`;
+    } else { // cab
+      return `🚕 *CAB / TAXI PICK-UP PASS — ${campusName.toUpperCase()}*\n` +
+             `-----------------------------------------\n` +
+             `📍 *Pick-up Point:* Doorstep of ${uLabel}${isApt ? ` (${bTitle})` : ''}\n` +
+             `🛣️ *Road:* ${p.road}, ${campusName}\n` +
+             `🚪 *Entry Gate:* ${gateName}\n\n` +
+             `🧭 *Gate-to-Doorstep Navigation:*\n${quickSteps}\n\n` +
+             `🗺️ *Driver Live GPS Route:*\n${shareUrl}\n` +
+             `-----------------------------------------\n` +
+             `Driver may enter without pass by verifying Flat #${p.number}.`;
+    }
+  }
+
+  function openDeliveryPassModal(plotId) {
+    const p = plots[plotId || state.selectedPlotId] || Object.values(plots)[0];
+    if (!p) {
+      showToast("Please select a house, flat, or building first.", 2500);
+      return;
+    }
+    state.selectedPlotId = p.id;
+
+    const modal = document.getElementById('delivery-pass-modal');
+    const previewEl = document.getElementById('pass-preview-text');
+    if (!modal || !previewEl) return;
+
+    previewEl.textContent = generateDeliveryPassText(state.activePassType, p.id);
+    modal.classList.add('active');
+  }
+
+  function closeDeliveryPassModal() {
+    const modal = document.getElementById('delivery-pass-modal');
+    if (modal) modal.classList.remove('active');
+  }
+
+  function enterRiderHUDMode() {
+    state.isRiderMode = true;
+    closeDeliveryPassModal();
+
+    showMapView();
+
+    const sidebar = document.querySelector('.sidebar');
+    const appContainer = document.getElementById('app-container');
+    if (sidebar) sidebar.classList.remove('open');
+    if (appContainer) appContainer.classList.add('full-map-active');
+
+    const topHud = document.getElementById('rider-hud-top');
+    const bottomHud = document.getElementById('rider-hud-bottom');
+    if (topHud) topHud.style.display = 'flex';
+    if (bottomHud) bottomHud.style.display = 'flex';
+
+    updateRiderHUDInfo();
+    showToast("🛵 Rider HUD Mode Active", 2500);
+  }
+
+  function exitRiderHUDMode() {
+    state.isRiderMode = false;
+    const topHud = document.getElementById('rider-hud-top');
+    const bottomHud = document.getElementById('rider-hud-bottom');
+    if (topHud) topHud.style.display = 'none';
+    if (bottomHud) bottomHud.style.display = 'none';
+
+    const appContainer = document.getElementById('app-container');
+    if (appContainer) appContainer.classList.remove('full-map-active');
+
+    showToast("Exited Rider HUD Mode", 2000);
+  }
+
+  function updateRiderHUDInfo() {
+    if (!state.isRiderMode) return;
+    const p = plots[state.selectedPlotId] || Object.values(plots)[0];
+    if (!p) return;
+
+    const isApt = isApartmentOrBlockLayout(currentLayout);
+    const bTitle = cleanBlockTitle(p.block || 'Main Tower');
+    const houseEl = document.getElementById('rider-dest-house');
+    const metaEl = document.getElementById('rider-dest-meta');
+    const mainStepEl = document.getElementById('rider-step-main');
+    const subStepEl = document.getElementById('rider-step-sub');
+    const iconEl = document.getElementById('rider-step-icon');
+
+    if (houseEl) houseEl.textContent = isApt ? p.number : `#${p.number}`;
+    if (metaEl) metaEl.textContent = isApt ? bTitle : p.road;
+
+    const route = state.activeRoute;
+    if (route) {
+      const curb = findBestCurbPoint(p, edges, nodes);
+      const totalDist = Math.round((route.totalDist + (curb ? curb.dist : 15)) * 0.95);
+      const walkTime = Math.max(1, Math.round(totalDist / 70));
+      const steps = generateTurnByTurnDirections(route, p, state.startNodeId);
+
+      if (mainStepEl && steps.length > 0) {
+        mainStepEl.innerHTML = steps[0].text;
+      }
+      if (subStepEl) {
+        subStepEl.textContent = `${totalDist}m total distance • ~${walkTime} min arrival`;
+      }
+      if (iconEl && steps.length > 0) {
+        iconEl.textContent = steps[0].icon || '⬆️';
+      }
+    }
+  }
+
+  // ========================================================
+  // 3. SECURITY & EMERGENCY SOS SPEED DIAL
+  // ========================================================
+  function openSecuritySosModal() {
+    const modal = document.getElementById('security-sos-modal');
+    const addrEl = document.getElementById('sos-address-val');
+    if (!modal) return;
+
+    if (addrEl) {
+      addrEl.textContent = `${currentLayout.name}, ${currentLayout.location || 'Bangalore'}, Karnataka, India`;
+    }
+    modal.classList.add('active');
+  }
+
+  function closeSecuritySosModal() {
+    const modal = document.getElementById('security-sos-modal');
+    if (modal) modal.classList.remove('active');
+  }
+
+  // ========================================================
+  // 4. VISITOR PARKING & EV CHARGING OVERLAY
+  // ========================================================
+  function toggleParkingLayer(visible) {
+    state.parkingVisible = typeof visible === 'boolean' ? visible : !state.parkingVisible;
+    const layer = document.getElementById('parking-layer');
+    if (!layer) return;
+
+    if (!state.parkingVisible) {
+      layer.style.display = 'none';
+      layer.innerHTML = '';
+      return;
+    }
+
+    layer.style.display = 'block';
+    layer.innerHTML = '';
+
+    const bounds = currentLayout.bounds || { minX: 50, maxX: 1200, minY: 150, maxY: 900 };
+    const gates = amenities.filter(a => a.type === 'gate');
+    const g1 = gates[0] || { x: bounds.minX + 80, y: (bounds.minY + bounds.maxY) / 2 };
+    const g2 = gates[1] || { x: bounds.maxX - 80, y: (bounds.minY + bounds.maxY) / 2 };
+    const center = currentLayout.center || { x: (bounds.minX + bounds.maxX) / 2, y: (bounds.minY + bounds.maxY) / 2 };
+
+    const parkingSpots = [
+      { id: 'park_gate1', name: 'Visitor Parking Bay A (Gate 1)', x: g1.x + 40, y: g1.y - 45, slots: 16, type: 'car', fee: 'Free 2 hrs' },
+      { id: 'park_gate2', name: 'Visitor Parking Bay B (Gate 2)', x: g2.x - 40, y: g2.y - 45, slots: 12, type: 'car', fee: 'Free 2 hrs' },
+      { id: 'ev_station_main', name: 'Dual 22kW Fast EV Station (Clubhouse)', x: center.x - 30, y: center.y - 50, slots: 4, type: 'ev', fee: '₹14/kWh' },
+      { id: 'bike_bay', name: 'Two-Wheeler & Bicycle Bay', x: g1.x + 35, y: g1.y + 45, slots: 25, type: 'bike', fee: 'Free' }
+    ];
+
+    parkingSpots.forEach(ps => {
+      const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      g.setAttribute("class", "svg-parking-spot parking-layer-icon");
+      g.setAttribute("data-id", ps.id);
+      g.style.cursor = "pointer";
+
+      const isEv = ps.type === 'ev';
+      const bgColor = isEv ? '#0284c7' : '#1e293b';
+      const strokeColor = isEv ? '#38bdf8' : '#f59e0b';
+      const icon = isEv ? '⚡ EV' : '🅿️';
+
+      g.innerHTML = `
+        <rect x="${ps.x - 35}" y="${ps.y - 18}" width="70" height="36" rx="8" fill="${bgColor}" stroke="${strokeColor}" stroke-width="2" filter="drop-shadow(0 3px 6px rgba(0,0,0,0.6))" />
+        <text x="${ps.x}" y="${ps.y + 4}" text-anchor="middle" font-size="11" font-weight="900" fill="#ffffff">${icon}</text>
+        <text x="${ps.x}" y="${ps.y + 26}" text-anchor="middle" font-size="8.5" font-weight="700" fill="${strokeColor}">${ps.slots} Slots</text>
+      `;
+
+      g.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showToast(`Selected ${ps.name} (${ps.slots} slots • ${ps.fee})`, 3000);
+        const nearestNode = findClosestRoadNode(ps.x, ps.y);
+        if (nearestNode) {
+          destSelect.value = nearestNode;
+          calculateAndDisplayRoute(state.startNodeId, nearestNode);
+        }
+      });
+
+      g.addEventListener('mouseenter', (e) => {
+        tooltip.innerHTML = `<strong>${ps.name}</strong><br><span style="color:#38bdf8;font-size:11px;">Capacity: ${ps.slots} bays • ${ps.fee}</span><br><span style="color:#94a3b8;font-size:10px;">Click to calculate driving directions</span>`;
+        tooltip.style.display = 'block';
+        movePlotTooltip(e);
+      });
+      g.addEventListener('mousemove', movePlotTooltip);
+      g.addEventListener('mouseleave', hidePlotTooltip);
+
+      layer.appendChild(g);
+    });
+
+    showToast("🅿️ Visitor parking bays & EV stations displayed", 2200);
+  }
+
+  // ========================================================
+  // 5. GATE & LANDMARK PHOTO VERIFICATION
+  // ========================================================
+  function openGatePhotoModal(gateAmenity) {
+    const modal = document.getElementById('gate-photo-modal');
+    const titleEl = document.getElementById('gate-photo-title');
+    const visualEl = document.getElementById('gate-photo-visual');
+    const detailsEl = document.getElementById('gate-photo-details');
+    const routeBtn = document.getElementById('gate-route-btn');
+    if (!modal) return;
+
+    const gName = gateAmenity.name || 'Gate 1 Security Entrance';
+    const isGate2 = gName.includes('Gate 2') || (gateAmenity.id && gateAmenity.id.includes('2'));
+
+    if (titleEl) titleEl.textContent = `📸 ${gName} Photo Verification`;
+
+    if (visualEl) {
+      visualEl.innerHTML = `
+        <svg viewBox="0 0 500 240" style="width: 100%; height: auto; display: block;">
+          <defs>
+            <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#0f172a" />
+              <stop offset="100%" stop-color="#1e293b" />
+            </linearGradient>
+            <linearGradient id="tarmac" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#334155" />
+              <stop offset="100%" stop-color="#1e293b" />
+            </linearGradient>
+          </defs>
+          <rect width="500" height="240" fill="url(#skyGrad)" />
+          <polygon points="50,240 450,240 350,110 150,110" fill="url(#tarmac)" />
+          <line x1="250" y1="240" x2="250" y2="110" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="8 6" />
+          <rect x="130" y="60" width="28" height="110" fill="#475569" stroke="#94a3b8" rx="2" />
+          <rect x="342" y="60" width="28" height="110" fill="#475569" stroke="#94a3b8" rx="2" />
+          <rect x="110" y="40" width="280" height="26" fill="#0f172a" stroke="#10b981" stroke-width="2" rx="4" />
+          <text x="250" y="58" text-anchor="middle" font-size="11" font-weight="900" fill="#34d399" letter-spacing="1">
+            ${escapeHtml(currentLayout.name.toUpperCase())} • ${isGate2 ? 'EAST GATE' : 'MAIN ENTRANCE'}
+          </text>
+          <rect x="75" y="90" width="55" height="75" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" rx="4" />
+          <rect x="85" y="102" width="35" height="25" fill="#0284c7" opacity="0.6" rx="2" />
+          <text x="102" y="145" text-anchor="middle" font-size="8" font-weight="800" fill="#ffffff">GUARD</text>
+          <line x1="150" y1="135" x2="250" y2="135" stroke="#ef4444" stroke-width="4" stroke-dasharray="12 6" />
+          <circle cx="150" cy="135" r="5" fill="#f59e0b" />
+          <text x="195" y="225" text-anchor="middle" font-size="9" font-weight="800" fill="#10b981">◀ RESIDENT FAST-TAG</text>
+          <text x="305" y="225" text-anchor="middle" font-size="9" font-weight="800" fill="#38bdf8">VISITOR & CAB ▶</text>
+          <circle cx="390" cy="95" r="14" fill="#ffffff" stroke="#ef4444" stroke-width="3" />
+          <text x="390" y="100" text-anchor="middle" font-size="10" font-weight="900" fill="#0f172a">15</text>
+        </svg>
+      `;
+    }
+
+    if (detailsEl) {
+      detailsEl.innerHTML = `
+        <div style="font-weight:700; color:#38bdf8; margin-bottom:4px;">Official Entrance Verification:</div>
+        <div>• <strong>Location:</strong> ${currentLayout.location || 'Bangalore'}</div>
+        <div>• <strong>Lane Protocol:</strong> Left lane designated for resident RFID/Fast-Tag entry. Right lane for visitor, courier, and cab registration.</div>
+        <div>• <strong>Verification Requirement:</strong> Visitors and delivery riders must state destination Flat / Plot # at the guard booth intercom.</div>
+        <div>• <strong>Security Intercom Code:</strong> ${isGate2 ? '1002' : '1001'} (24/7 Gate Guard)</div>
+      `;
+    }
+
+    if (routeBtn) {
+      routeBtn.onclick = () => {
+        closeGatePhotoModal();
+        const gateNode = gateAmenity.roadNode || gateAmenity.id;
+        state.startNodeId = gateNode;
+        if (startSelect) startSelect.value = gateNode;
+        if (state.selectedPlotId) {
+          calculateAndDisplayRoute(gateNode, state.selectedPlotId);
+        }
+        showToast(`📍 Set origin to ${gName}!`, 2500);
+      };
+    }
+
+    modal.classList.add('active');
+  }
+
+  function closeGatePhotoModal() {
+    const modal = document.getElementById('gate-photo-modal');
+    if (modal) modal.classList.remove('active');
   }
 
   // --- 9. EVENT LISTENERS & SEARCH ---
@@ -2768,6 +3261,164 @@
             selectPlot(targetPlotId, true);
             showToast(`📍 Direct route calculated to ${plots[targetPlotId].number} doorstep!`, 3000);
           }
+        }
+      });
+    }
+
+    // 2.5D Isometric 3D View Toggles
+    const tiltBtn = document.getElementById('tilt-3d-btn');
+    const header3dBtn = document.getElementById('header-3d-toggle-btn');
+    if (tiltBtn) tiltBtn.addEventListener('click', () => toggle3DView());
+    if (header3dBtn) header3dBtn.addEventListener('click', () => toggle3DView());
+
+    // Delivery & Guest Pass Generator triggers
+    const deliveryPassBtn = document.getElementById('card-delivery-pass-btn');
+    const closeDeliveryPassBtn = document.getElementById('close-delivery-pass-btn');
+    const deliveryPassModal = document.getElementById('delivery-pass-modal');
+    const sendWhatsappBtn = document.getElementById('send-whatsapp-pass-btn');
+    const copyPassBtn = document.getElementById('copy-pass-text-btn');
+    const openRiderHudBtn = document.getElementById('open-rider-hud-btn');
+
+    if (deliveryPassBtn) deliveryPassBtn.addEventListener('click', () => openDeliveryPassModal());
+    if (closeDeliveryPassBtn) closeDeliveryPassBtn.addEventListener('click', closeDeliveryPassModal);
+    if (deliveryPassModal) {
+      deliveryPassModal.addEventListener('click', (e) => {
+        if (e.target === deliveryPassModal) closeDeliveryPassModal();
+      });
+    }
+
+    // Delivery service selector tabs
+    document.querySelectorAll('.pass-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.pass-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.activePassType = btn.getAttribute('data-type') || 'delivery';
+        const previewEl = document.getElementById('pass-preview-text');
+        if (previewEl) {
+          previewEl.textContent = generateDeliveryPassText(state.activePassType, state.selectedPlotId);
+        }
+      });
+    });
+
+    if (sendWhatsappBtn) {
+      sendWhatsappBtn.addEventListener('click', () => {
+        const text = generateDeliveryPassText(state.activePassType, state.selectedPlotId);
+        window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
+      });
+    }
+
+    if (copyPassBtn) {
+      copyPassBtn.addEventListener('click', () => {
+        const text = generateDeliveryPassText(state.activePassType, state.selectedPlotId);
+        navigator.clipboard.writeText(text).then(() => {
+          showToast('✓ WhatsApp Pass copied to clipboard!', 2500);
+        });
+      });
+    }
+
+    if (openRiderHudBtn) {
+      openRiderHudBtn.addEventListener('click', enterRiderHUDMode);
+    }
+
+    // Rider HUD action buttons
+    const riderArrivedBtn = document.getElementById('rider-arrived-btn');
+    const riderCallBtn = document.getElementById('rider-call-btn');
+    const riderExitBtn = document.getElementById('rider-exit-btn');
+
+    if (riderArrivedBtn) {
+      riderArrivedBtn.addEventListener('click', () => {
+        showToast('🎉 Delivery Arrived at Doorstep! Navigation Complete.', 3500);
+      });
+    }
+    if (riderCallBtn) {
+      riderCallBtn.addEventListener('click', () => {
+        showToast('📞 Calling Resident / Gate Intercom...', 2500);
+      });
+    }
+    if (riderExitBtn) {
+      riderExitBtn.addEventListener('click', exitRiderHUDMode);
+    }
+
+    // Security & SOS Speed Dial
+    const sosBtn = document.getElementById('security-sos-btn');
+    const closeSosBtn = document.getElementById('close-sos-modal-btn');
+    const sosModal = document.getElementById('security-sos-modal');
+    const sosCopyAddrBtn = document.getElementById('sos-copy-address-btn');
+
+    if (sosBtn) sosBtn.addEventListener('click', openSecuritySosModal);
+    if (closeSosBtn) closeSosBtn.addEventListener('click', closeSecuritySosModal);
+    if (sosModal) {
+      sosModal.addEventListener('click', (e) => {
+        if (e.target === sosModal) closeSecuritySosModal();
+      });
+    }
+    if (sosCopyAddrBtn) {
+      sosCopyAddrBtn.addEventListener('click', () => {
+        const addr = `${currentLayout.name}, ${currentLayout.location || 'Bangalore'}, Karnataka, India`;
+        navigator.clipboard.writeText(addr).then(() => {
+          showToast('✓ Campus address copied for emergency services!', 2500);
+        });
+      });
+    }
+
+    // Gate Photo Modal
+    const closeGatePhotoBtn = document.getElementById('close-gate-photo-btn');
+    const gatePhotoModal = document.getElementById('gate-photo-modal');
+    if (closeGatePhotoBtn) closeGatePhotoBtn.addEventListener('click', closeGatePhotoModal);
+    if (gatePhotoModal) {
+      gatePhotoModal.addEventListener('click', (e) => {
+        if (e.target === gatePhotoModal) closeGatePhotoModal();
+      });
+    }
+
+    // Visitor Parking & EV layer toggle
+    const toggleParking = document.getElementById('toggle-parking');
+    if (toggleParking) {
+      toggleParking.addEventListener('change', (e) => {
+        toggleParkingLayer(e.target.checked);
+      });
+    }
+
+    // Multi-Stop Waypoint controls
+    const addStopBtn = document.getElementById('add-stop-btn');
+    const removeWpBtn = document.getElementById('remove-waypoint-btn');
+    const wpRow = document.getElementById('waypoint-row');
+    const wpBadge = document.getElementById('waypoint-badge');
+    const wpSelect = document.getElementById('waypoint-node-select');
+
+    if (addStopBtn) {
+      addStopBtn.addEventListener('click', () => {
+        if (wpRow) wpRow.style.display = 'flex';
+        if (wpBadge) wpBadge.style.display = 'inline-block';
+        if (wpSelect && wpSelect.options.length > 1) {
+          wpSelect.selectedIndex = 1;
+          state.waypointNodeId = wpSelect.value;
+        }
+        if (state.selectedPlotId) {
+          calculateAndDisplayRoute(state.startNodeId, state.selectedPlotId);
+        }
+        showToast("🛑 Errand waypoint added to route", 2000);
+      });
+    }
+
+    if (removeWpBtn) {
+      removeWpBtn.addEventListener('click', () => {
+        if (wpRow) wpRow.style.display = 'none';
+        if (wpBadge) wpBadge.style.display = 'none';
+        state.waypointNodeId = null;
+        if (wpSelect) wpSelect.value = '';
+        if (state.selectedPlotId) {
+          calculateAndDisplayRoute(state.startNodeId, state.selectedPlotId);
+        }
+        showToast("Errand waypoint removed", 2000);
+      });
+    }
+
+    if (wpSelect) {
+      wpSelect.addEventListener('change', (e) => {
+        state.waypointNodeId = e.target.value || null;
+        if (state.selectedPlotId) {
+          calculateAndDisplayRoute(state.startNodeId, state.selectedPlotId);
         }
       });
     }
@@ -4775,6 +5426,14 @@
     } else {
       // By default: Show Portal View! Himagiri is NOT the first map that they see!
       showPortalView();
+    }
+
+    // Check for Rider HUD Mode in URL
+    const modeParam = params.get('mode');
+    if (modeParam === 'rider') {
+      setTimeout(() => {
+        enterRiderHUDMode();
+      }, 400);
     }
   }
 
