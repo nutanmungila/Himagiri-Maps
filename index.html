@@ -32,7 +32,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="style.css?v=34">
+  <link rel="stylesheet" href="style.css?v=35">
   <script>
     // PERMANENTLY MUTE & DISABLE ALL SPEECH / VOICE SYNTHESIS GLOBALLY
     if (typeof window !== 'undefined') {
@@ -437,6 +437,69 @@
 
       <!-- SVG Map Canvas (direct pixel coordinates, pan & zoom managed smoothly by JS) -->
       <svg id="map-svg">
+        <defs id="map-3d-defs">
+          <!-- Ambient 3D Ground Shadow Filter -->
+          <filter id="bldg-shadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3.5" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0"/>
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+          </filter>
+          <filter id="plot-shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.45 0"/>
+          </filter>
+
+          <!-- High-Rise Tower Roof Gradients -->
+          <linearGradient id="tower-roof-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#1e293b" />
+            <stop offset="100%" stop-color="#0f172a" />
+          </linearGradient>
+          <linearGradient id="tower-roof-active" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#b45309" />
+            <stop offset="100%" stop-color="#78350f" />
+          </linearGradient>
+
+          <!-- 3D South Facade (Front Multi-Story Wall) Gradients -->
+          <linearGradient id="facade-south-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#1e293b" />
+            <stop offset="50%" stop-color="#0f172a" />
+            <stop offset="100%" stop-color="#020617" />
+          </linearGradient>
+
+          <!-- 3D East Facade (Side Shadow Wall) Gradients -->
+          <linearGradient id="facade-east-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#090d16" />
+            <stop offset="100%" stop-color="#020617" />
+          </linearGradient>
+
+          <!-- Penthouse Lift Core Roof Gradient -->
+          <linearGradient id="lift-core-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#334155" />
+            <stop offset="100%" stop-color="#1e293b" />
+          </linearGradient>
+
+          <!-- Standard Plot / Villa Roof Gradients -->
+          <linearGradient id="plot-roof-default" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#243248" />
+            <stop offset="100%" stop-color="#131c2e" />
+          </linearGradient>
+          <linearGradient id="plot-roof-green" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#065f46" />
+            <stop offset="100%" stop-color="#022c22" />
+          </linearGradient>
+          <linearGradient id="plot-roof-yellow" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#854d0e" />
+            <stop offset="100%" stop-color="#451a03" />
+          </linearGradient>
+          <linearGradient id="plot-roof-blue" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#1e40af" />
+            <stop offset="100%" stop-color="#0f172a" />
+          </linearGradient>
+          <linearGradient id="plot-roof-purple" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#581c87" />
+            <stop offset="100%" stop-color="#3b0764" />
+          </linearGradient>
+        </defs>
         <g id="viewport-group">
           <!-- Dynamically populated layers -->
           <g id="roads-layer"></g>
@@ -803,10 +866,10 @@
   </div>
 
   <!-- Load Scripts with Version Cache-Buster -->
-  <script src="analytics.js?v=34"></script>
-  <script src="qrcode.min.js?v=34"></script>
-  <script src="map_data.js?v=34"></script>
-  <script src="layouts_data.js?v=34"></script>
-  <script src="app.js?v=34"></script>
+  <script src="analytics.js?v=35"></script>
+  <script src="qrcode.min.js?v=35"></script>
+  <script src="map_data.js?v=35"></script>
+  <script src="layouts_data.js?v=35"></script>
+  <script src="app.js?v=35"></script>
 </body>
 </html>

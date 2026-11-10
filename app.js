@@ -501,7 +501,9 @@
     return numStr;
   }
 
-  // Render Plots / Apartment Blocks (No numbers inside blocks/apartments)
+  // ========================================================
+  // 3D ARCHITECTURAL PLOT & BUILDING RENDERING
+  // ========================================================
   function renderPlots() {
     plotsLayer.innerHTML = '';
 
@@ -547,57 +549,164 @@
         blockG.setAttribute("data-road", uList[0].road);
         blockG.style.cursor = "pointer";
 
-        // Building base footprint shell
-        const shell = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-        shell.setAttribute("class", "building-shell");
-        shell.setAttribute("x", bx);
-        shell.setAttribute("y", by);
-        shell.setAttribute("width", blockW);
-        shell.setAttribute("height", blockH);
-        shell.setAttribute("rx", "8");
-        shell.setAttribute("fill", isBlockActive ? "#1e293b" : "#0f172a");
+        // 3D Extrusion Heights & Isometric Angles
+        const extY = 18; // 3D tower elevation height
+        const extX = -4; // Sun angle offset
+        const rx = bx + extX;
+        const ry = by - extY;
+        const rw = blockW;
+        const rh = blockH;
 
-        if (isBlockActive) {
-          shell.setAttribute("stroke", "#f59e0b");
-          shell.setAttribute("stroke-width", "2.5");
-        } else {
-          shell.setAttribute("stroke", "#3b82f6");
-          shell.setAttribute("stroke-width", "1.5");
+        // 1. Ambient Ground Drop Shadow
+        const groundShadow = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        groundShadow.setAttribute("class", "bldg-ground-shadow");
+        groundShadow.setAttribute("x", bx + 6);
+        groundShadow.setAttribute("y", by + 6);
+        groundShadow.setAttribute("width", blockW);
+        groundShadow.setAttribute("height", blockH + 4);
+        groundShadow.setAttribute("rx", "10");
+        groundShadow.setAttribute("fill", "rgba(0, 0, 0, 0.45)");
+        groundShadow.setAttribute("pointer-events", "none");
+        blockG.appendChild(groundShadow);
+
+        // 2. South Facade (Front multi-story architectural wall)
+        const southWall = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+        southWall.setAttribute("class", "bldg-facade-south");
+        southWall.setAttribute("points", `${rx},${ry + rh} ${rx + rw},${ry + rh} ${bx + blockW},${by + blockH} ${bx},${by + blockH}`);
+        southWall.setAttribute("fill", isBlockActive ? "url(#tower-roof-active)" : "url(#facade-south-grad)");
+        southWall.setAttribute("stroke", isBlockActive ? "#f59e0b" : "#1e293b");
+        southWall.setAttribute("stroke-width", "0.8");
+        blockG.appendChild(southWall);
+
+        // Floor division lines across the front multi-story facade
+        for (let f = 1; f <= 3; f++) {
+          const t = f / 4;
+          const y1 = (ry + rh) * (1 - t) + (by + blockH) * t;
+          const x1 = rx * (1 - t) + bx * t;
+          const y2 = (ry + rh) * (1 - t) + (by + blockH) * t;
+          const x2 = (rx + rw) * (1 - t) + (bx + blockW) * t;
+          const fLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
+          fLine.setAttribute("class", "bldg-floor-line");
+          fLine.setAttribute("x1", x1);
+          fLine.setAttribute("y1", y1);
+          fLine.setAttribute("x2", x2);
+          fLine.setAttribute("y2", y2);
+          fLine.setAttribute("stroke", isBlockActive ? "rgba(251, 191, 36, 0.35)" : "rgba(255, 255, 255, 0.12)");
+          fLine.setAttribute("stroke-width", "0.75");
+          blockG.appendChild(fLine);
         }
 
-        blockG.appendChild(shell);
+        // 3. East Facade (Side shadow wall)
+        const eastWall = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+        eastWall.setAttribute("class", "bldg-facade-east");
+        eastWall.setAttribute("points", `${rx + rw},${ry} ${bx + blockW},${by} ${bx + blockW},${by + blockH} ${rx + rw},${ry + rh}`);
+        eastWall.setAttribute("fill", isBlockActive ? "#451a03" : "url(#facade-east-grad)");
+        eastWall.setAttribute("stroke", isBlockActive ? "#78350f" : "#090d16");
+        eastWall.setAttribute("stroke-width", "0.8");
+        blockG.appendChild(eastWall);
 
-        // Top architectural accent line
-        const accent = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-        accent.setAttribute("x", bx);
-        accent.setAttribute("y", by);
-        accent.setAttribute("width", blockW);
-        accent.setAttribute("height", "4");
-        accent.setAttribute("rx", "2");
-        accent.setAttribute("fill", isBlockActive ? "#f59e0b" : "#38bdf8");
+        // 4. Elevated Rooftop Deck
+        const roof = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        roof.setAttribute("class", "building-shell building-roof");
+        roof.setAttribute("x", rx);
+        roof.setAttribute("y", ry);
+        roof.setAttribute("width", rw);
+        roof.setAttribute("height", rh);
+        roof.setAttribute("rx", "7");
+        roof.setAttribute("fill", isBlockActive ? "url(#tower-roof-active)" : "url(#tower-roof-grad)");
+        roof.setAttribute("stroke", isBlockActive ? "#f59e0b" : "#38bdf8");
+        roof.setAttribute("stroke-width", isBlockActive ? "2.5" : "1.5");
+        blockG.appendChild(roof);
+
+        // Top architectural coping accent line
+        const accent = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        accent.setAttribute("class", "bldg-roof-coping");
+        accent.setAttribute("x1", rx + 4);
+        accent.setAttribute("y1", ry + 1.5);
+        accent.setAttribute("x2", rx + rw - 4);
+        accent.setAttribute("y2", ry + 1.5);
+        accent.setAttribute("stroke", isBlockActive ? "#fef08a" : "rgba(255, 255, 255, 0.35)");
+        accent.setAttribute("stroke-width", "1.5");
+        accent.setAttribute("stroke-linecap", "round");
         blockG.appendChild(accent);
 
-        // Block Title text (e.g. 🏢 Block A, 🏢 Aurum Tower) - Absolutely NO numbers or digits inside
+        // 5. Rooftop Lift Core / Penthouse Structure
+        const coreW = Math.max(26, Math.min(36, rw * 0.25));
+        const coreH = Math.max(16, Math.min(22, rh * 0.28));
+        const coreX = rx + rw - coreW - 8;
+        const coreY = ry + 6;
+        const coreExtY = 5;
+
+        // Core shadow
+        const coreShadow = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        coreShadow.setAttribute("x", coreX + 2);
+        coreShadow.setAttribute("y", coreY + coreExtY);
+        coreShadow.setAttribute("width", coreW);
+        coreShadow.setAttribute("height", coreH);
+        coreShadow.setAttribute("rx", "3");
+        coreShadow.setAttribute("fill", "rgba(0, 0, 0, 0.35)");
+        coreShadow.setAttribute("pointer-events", "none");
+        blockG.appendChild(coreShadow);
+
+        // Core south wall
+        const coreSouth = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+        coreSouth.setAttribute("points", `${coreX},${coreY + coreH - coreExtY} ${coreX + coreW},${coreY + coreH - coreExtY} ${coreX + coreW},${coreY + coreH} ${coreX},${coreY + coreH}`);
+        coreSouth.setAttribute("fill", isBlockActive ? "#78350f" : "#0f172a");
+        blockG.appendChild(coreSouth);
+
+        // Core east wall
+        const coreEast = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+        coreEast.setAttribute("points", `${coreX + coreW},${coreY - coreExtY} ${coreX + coreW},${coreY} ${coreX + coreW},${coreY + coreH} ${coreX + coreW},${coreY + coreH - coreExtY}`);
+        coreEast.setAttribute("fill", isBlockActive ? "#451a03" : "#090d16");
+        blockG.appendChild(coreEast);
+
+        // Core roof slab
+        const coreRoof = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        coreRoof.setAttribute("x", coreX);
+        coreRoof.setAttribute("y", coreY - coreExtY);
+        coreRoof.setAttribute("width", coreW);
+        coreRoof.setAttribute("height", coreH);
+        coreRoof.setAttribute("rx", "2.5");
+        coreRoof.setAttribute("fill", isBlockActive ? "#b45309" : "url(#lift-core-grad)");
+        coreRoof.setAttribute("stroke", isBlockActive ? "#fbbf24" : "#475569");
+        coreRoof.setAttribute("stroke-width", "0.8");
+        blockG.appendChild(coreRoof);
+
+        // Helipad "H" marking on lift core
+        const heliTxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        heliTxt.setAttribute("x", coreX + coreW / 2);
+        heliTxt.setAttribute("y", coreY - coreExtY + coreH / 2 + 3);
+        heliTxt.setAttribute("text-anchor", "middle");
+        heliTxt.setAttribute("font-size", "7.5px");
+        heliTxt.setAttribute("font-weight", "900");
+        heliTxt.setAttribute("fill", isBlockActive ? "#fef08a" : "#94a3b8");
+        heliTxt.setAttribute("pointer-events", "none");
+        heliTxt.textContent = "H";
+        blockG.appendChild(heliTxt);
+
+        // 6. Block Title text (e.g. 🏢 Block A, 🏢 Aurum Tower)
         const titleTxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
         titleTxt.setAttribute("class", "building-title");
-        titleTxt.setAttribute("x", cx);
-        titleTxt.setAttribute("y", cy - 2);
+        titleTxt.setAttribute("x", rx + rw * 0.44);
+        titleTxt.setAttribute("y", ry + rh * 0.42);
         titleTxt.setAttribute("text-anchor", "middle");
         titleTxt.setAttribute("font-size", "12px");
-        titleTxt.setAttribute("font-weight", "700");
-        titleTxt.setAttribute("fill", isBlockActive ? "#fbbf24" : "#f1f5f9");
+        titleTxt.setAttribute("font-weight", "800");
+        titleTxt.setAttribute("fill", isBlockActive ? "#fbbf24" : "#ffffff");
+        titleTxt.setAttribute("filter", "drop-shadow(0 1px 3px rgba(0,0,0,0.9))");
         titleTxt.textContent = `🏢 ${cleanName}`;
         blockG.appendChild(titleTxt);
 
         // Subtitle text (e.g. Apartment Tower / Block)
         const subTxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
         subTxt.setAttribute("class", "building-subtitle");
-        subTxt.setAttribute("x", cx);
-        subTxt.setAttribute("y", cy + 15);
+        subTxt.setAttribute("x", rx + rw * 0.44);
+        subTxt.setAttribute("y", ry + rh * 0.42 + 15);
         subTxt.setAttribute("text-anchor", "middle");
         subTxt.setAttribute("font-size", "9.5px");
-        subTxt.setAttribute("font-weight", "500");
+        subTxt.setAttribute("font-weight", "600");
         subTxt.setAttribute("fill", isBlockActive ? "#fde68a" : "#94a3b8");
+        subTxt.setAttribute("filter", "drop-shadow(0 1px 2px rgba(0,0,0,0.9))");
         subTxt.textContent = (currentLayout.unitType === 'Flat' ? 'Residential Flat' : (currentLayout.unitType ? currentLayout.unitType.replace(/ \/ .*/, '') : 'Apartment Tower')).replace(/\d+/g, '').trim();
         blockG.appendChild(subTxt);
 
@@ -610,10 +719,8 @@
           const isCurrentlyActive = currentPlot && (currentPlot.block === bName || cleanBlockTitle(currentPlot.block) === cleanName);
 
           if (isCurrentlyActive || blockG.classList.contains('block-has-active')) {
-            // Already clicked and highlighted -> clicking it again shows the inside layout!
             openSubAreaInterior('tower', cleanName, uList);
           } else {
-            // First click -> select/highlight the block & track to doorstep
             selectPlot(uList[0].id, false);
           }
         });
@@ -665,37 +772,101 @@
       g.setAttribute("data-id", p.id);
       g.setAttribute("data-road", p.road);
 
-      // Plot polygon / rectangle
-      const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-      rect.setAttribute("x", p.x);
-      rect.setAttribute("y", p.y);
-      rect.setAttribute("width", p.w);
-      rect.setAttribute("height", p.h);
+      // 3D Extrusion Metrics for Houses / Plots
+      const extH = Math.min(5, Math.max(2.5, Math.round(p.h * 0.12)));
+      const extW = Math.min(3, Math.max(1.5, Math.round(p.w * 0.08)));
+      const rx = p.x - extW;
+      const ry = p.y - extH;
+      const rw = p.w;
+      const rh = p.h;
 
-      let fillColor = '#1e293b';
+      // Color scheme based on plot category
+      let roofGrad = 'url(#plot-roof-default)';
       let strokeColor = '#3b82f6';
+      let wallSouth = '#0f172a';
+      let wallEast = '#090d16';
+
       if (p.color === 'green' || p.color === 'lightgreen') {
-        fillColor = '#064e3b';
+        roofGrad = 'url(#plot-roof-green)';
         strokeColor = '#10b981';
+        wallSouth = '#064e3b';
+        wallEast = '#022c22';
       } else if (p.color === 'yellow' || p.color === 'lightyellow') {
-        fillColor = '#451a03';
+        roofGrad = 'url(#plot-roof-yellow)';
         strokeColor = '#f59e0b';
+        wallSouth = '#78350f';
+        wallEast = '#451a03';
       } else if (p.color === 'blue') {
-        fillColor = '#1e3a8a';
+        roofGrad = 'url(#plot-roof-blue)';
         strokeColor = '#38bdf8';
+        wallSouth = '#1e3a8a';
+        wallEast = '#0f172a';
       } else if (p.color === 'purple') {
-        fillColor = '#4c1d95';
+        roofGrad = 'url(#plot-roof-purple)';
         strokeColor = '#a855f7';
+        wallSouth = '#4c1d95';
+        wallEast = '#3b0764';
       }
 
-      rect.setAttribute("fill", fillColor);
+      // 1. Ground Shadow
+      const shadow = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      shadow.setAttribute("class", "plot-3d-shadow");
+      shadow.setAttribute("x", p.x + 2);
+      shadow.setAttribute("y", p.y + 2.5);
+      shadow.setAttribute("width", p.w);
+      shadow.setAttribute("height", p.h);
+      shadow.setAttribute("rx", "2");
+      shadow.setAttribute("fill", "rgba(0, 0, 0, 0.42)");
+      shadow.setAttribute("pointer-events", "none");
+      g.appendChild(shadow);
+
+      // 2. South Wall (Front foundation/wall)
+      const southWall = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+      southWall.setAttribute("class", "plot-wall-south");
+      southWall.setAttribute("points", `${rx},${ry + rh} ${rx + rw},${ry + rh} ${p.x + p.w},${p.y + p.h} ${p.x},${p.y + p.h}`);
+      southWall.setAttribute("fill", wallSouth);
+      southWall.setAttribute("stroke", strokeColor);
+      southWall.setAttribute("stroke-width", "0.4");
+      g.appendChild(southWall);
+
+      // 3. East Wall (Side shadow wall)
+      const eastWall = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+      eastWall.setAttribute("class", "plot-wall-east");
+      eastWall.setAttribute("points", `${rx + rw},${ry} ${p.x + p.w},${p.y} ${p.x + p.w},${p.y + p.h} ${rx + rw},${ry + rh}`);
+      eastWall.setAttribute("fill", wallEast);
+      eastWall.setAttribute("stroke", strokeColor);
+      eastWall.setAttribute("stroke-width", "0.4");
+      g.appendChild(eastWall);
+
+      // 4. Elevated Roof / Villa Slab
+      const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      rect.setAttribute("class", "plot-roof");
+      rect.setAttribute("x", rx);
+      rect.setAttribute("y", ry);
+      rect.setAttribute("width", rw);
+      rect.setAttribute("height", rh);
+      rect.setAttribute("rx", "2");
+      rect.setAttribute("fill", roofGrad);
       rect.setAttribute("stroke", strokeColor);
+      rect.setAttribute("stroke-width", "0.9");
+      g.appendChild(rect);
+
+      // Sunlit top edge highlight
+      const bevel = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      bevel.setAttribute("class", "plot-roof-bevel");
+      bevel.setAttribute("x1", rx + 1);
+      bevel.setAttribute("y1", ry + 0.8);
+      bevel.setAttribute("x2", rx + rw - 1);
+      bevel.setAttribute("y2", ry + 0.8);
+      bevel.setAttribute("stroke", "rgba(255, 255, 255, 0.28)");
+      bevel.setAttribute("stroke-width", "0.8");
+      g.appendChild(bevel);
 
       // Plot number text
       const txt = document.createElementNS("http://www.w3.org/2000/svg", "text");
       txt.setAttribute("class", "plot-label");
-      txt.setAttribute("x", p.x + p.w / 2);
-      txt.setAttribute("y", p.y + p.h / 2);
+      txt.setAttribute("x", rx + rw / 2);
+      txt.setAttribute("y", ry + rh / 2);
 
       if (p.number.length >= 8) {
         txt.setAttribute("font-size", "7.5px");
@@ -710,8 +881,6 @@
         txt.setAttribute("font-size", "11.5px");
       }
       txt.textContent = p.number;
-
-      g.appendChild(rect);
 
       // Only append number label for standard plotted layouts (never inside apartments/blocks)
       if (!isApartmentOrBlockLayout(currentLayout)) {
@@ -732,7 +901,7 @@
     }
   }
 
-  // Render Amenities (Gates, Parks, Temple, Clubhouse, etc.)
+  // Render Amenities (Gates, Parks, Temple, Clubhouse, etc. with 3D Pedestal)
   function renderAmenities() {
     amenitiesLayer.innerHTML = '';
 
@@ -743,23 +912,53 @@
       g.setAttribute("cursor", "pointer");
 
       const isGate = am.type === 'gate' || am.id.includes('gate');
+      const r = isGate ? 15 : 12;
+
+      let bgColor = "#0284c7";
+      let darkColor = "#0369a1";
+      if (isGate) { bgColor = "#059669"; darkColor = "#047857"; }
+      else if (am.type === 'worship') { bgColor = "#d97706"; darkColor = "#b45309"; }
+      else if (am.type === 'recreation') { bgColor = "#16a34a"; darkColor = "#15803d"; }
+      else if (am.type === 'sports' || am.id.includes('clubhouse')) { bgColor = "#0891b2"; darkColor = "#0e7490"; }
+      else if (am.type === 'civic' || am.id.includes('food')) { bgColor = "#ea580c"; darkColor = "#c2410c"; }
+      else if (am.type === 'utility') { bgColor = "#475569"; darkColor = "#334155"; }
+
+      // 3D Landmark Ground Shadow
+      const shadow = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+      shadow.setAttribute("cx", am.x + 3);
+      shadow.setAttribute("cy", am.y + r + 2);
+      shadow.setAttribute("rx", r * 0.9);
+      shadow.setAttribute("ry", r * 0.38);
+      shadow.setAttribute("fill", "rgba(0, 0, 0, 0.4)");
+      shadow.setAttribute("pointer-events", "none");
+      g.appendChild(shadow);
+
+      // 3D Pin Cylinder Base (Depth Wall)
+      const baseWall = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      baseWall.setAttribute("d", `M ${am.x - r},${am.y} L ${am.x - r},${am.y + 4} A ${r} ${r * 0.4} 0 0 0 ${am.x + r},${am.y + 4} L ${am.x + r},${am.y} Z`);
+      baseWall.setAttribute("fill", darkColor);
+      g.appendChild(baseWall);
+
+      // Elevated Landmark Pin Face
       const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
       circle.setAttribute("cx", am.x);
       circle.setAttribute("cy", am.y);
-      circle.setAttribute("r", isGate ? "15" : "12");
-
-      let bgColor = "#0284c7";
-      if (isGate) bgColor = "#059669";
-      else if (am.type === 'worship') bgColor = "#d97706";
-      else if (am.type === 'recreation') bgColor = "#16a34a";
-      else if (am.type === 'sports' || am.id.includes('clubhouse')) bgColor = "#0891b2";
-      else if (am.type === 'civic' || am.id.includes('food')) bgColor = "#ea580c";
-      else if (am.type === 'utility') bgColor = "#475569";
-
+      circle.setAttribute("r", r);
       circle.setAttribute("fill", bgColor);
       circle.setAttribute("stroke", "#ffffff");
       circle.setAttribute("stroke-width", "2");
-      circle.setAttribute("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.4))");
+      circle.setAttribute("filter", "drop-shadow(0 2px 4px rgba(0,0,0,0.5))");
+      g.appendChild(circle);
+
+      // Specular Highlight Arc on top
+      const gloss = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
+      gloss.setAttribute("cx", am.x);
+      gloss.setAttribute("cy", am.y - r * 0.35);
+      gloss.setAttribute("rx", r * 0.6);
+      gloss.setAttribute("ry", r * 0.3);
+      gloss.setAttribute("fill", "rgba(255, 255, 255, 0.28)");
+      gloss.setAttribute("pointer-events", "none");
+      g.appendChild(gloss);
 
       const iconTxt = document.createElementNS("http://www.w3.org/2000/svg", "text");
       iconTxt.setAttribute("x", am.x);
@@ -769,6 +968,7 @@
       iconTxt.setAttribute("fill", "#ffffff");
       iconTxt.setAttribute("font-size", isGate ? "10px" : "8.5px");
       iconTxt.setAttribute("font-weight", "800");
+      iconTxt.setAttribute("pointer-events", "none");
 
       if (am.id === 'gate_1') iconTxt.textContent = "G1";
       else if (am.id === 'gate_2') iconTxt.textContent = "G2";
@@ -783,6 +983,7 @@
       else if (am.id.includes('atm')) iconTxt.textContent = "💳";
       else if (am.id.includes('ev')) iconTxt.textContent = "⚡";
       else iconTxt.textContent = "★";
+      g.appendChild(iconTxt);
 
       // Text Title underneath
       const title = document.createElementNS("http://www.w3.org/2000/svg", "text");
@@ -794,18 +995,14 @@
       title.setAttribute("font-weight", "700");
       title.setAttribute("filter", "drop-shadow(0 1px 2px rgba(0,0,0,0.9))");
       title.textContent = am.name.split(' (')[0];
-
-      g.appendChild(circle);
-      g.appendChild(iconTxt);
       g.appendChild(title);
 
       g.addEventListener('click', () => {
         selectAmenity(am.id, true);
       });
 
-
       g.addEventListener('mouseenter', (e) => {
-        tooltip.innerHTML = `<strong>${am.name}</strong><br><span style="color:#94a3b8;font-size:11px;">${am.description || am.desc || 'Amenity'}</span>`;
+        tooltip.innerHTML = `<strong>${escapeHtml(am.name)}</strong><br><span style="color:#94a3b8;font-size:11px;">${escapeHtml(am.description || am.desc || 'Amenity')}</span>`;
         tooltip.style.display = 'block';
         movePlotTooltip(e);
       });
@@ -2209,15 +2406,26 @@
       targetEl.parentNode.appendChild(targetEl);
     }
 
-    // Update active building block shell if in apartment layout
+    // Update active 3D building block if in apartment layout
     const targetPlot = plots[plotId];
     if (targetPlot && targetPlot.block) {
       document.querySelectorAll('.svg-building-block').forEach(b => {
         b.classList.remove('block-has-active');
-        const s = b.querySelector('.building-shell');
-        if (s) {
-          s.setAttribute('stroke', '#3b82f6');
-          s.setAttribute('stroke-width', '1.5');
+        const roof = b.querySelector('.building-roof');
+        if (roof) {
+          roof.setAttribute('stroke', '#38bdf8');
+          roof.setAttribute('stroke-width', '1.5');
+          roof.setAttribute('fill', 'url(#tower-roof-grad)');
+        }
+        const sWall = b.querySelector('.bldg-facade-south');
+        if (sWall) {
+          sWall.setAttribute('fill', 'url(#facade-south-grad)');
+          sWall.setAttribute('stroke', '#1e293b');
+        }
+        const eWall = b.querySelector('.bldg-facade-east');
+        if (eWall) {
+          eWall.setAttribute('fill', 'url(#facade-east-grad)');
+          eWall.setAttribute('stroke', '#090d16');
         }
       });
       const cleanName = cleanBlockTitle(targetPlot.block);
@@ -2225,11 +2433,23 @@
       const blk = document.getElementById(`building-block-${safeBlockId}`);
       if (blk) {
         blk.classList.add('block-has-active');
-        const s = blk.querySelector('.building-shell');
-        if (s) {
-          s.setAttribute('stroke', '#f59e0b');
-          s.setAttribute('stroke-width', '2.5');
+        const roof = blk.querySelector('.building-roof');
+        if (roof) {
+          roof.setAttribute('stroke', '#f59e0b');
+          roof.setAttribute('stroke-width', '2.5');
+          roof.setAttribute('fill', 'url(#tower-roof-active)');
         }
+        const sWall = blk.querySelector('.bldg-facade-south');
+        if (sWall) {
+          sWall.setAttribute('fill', 'url(#tower-roof-active)');
+          sWall.setAttribute('stroke', '#f59e0b');
+        }
+        const eWall = blk.querySelector('.bldg-facade-east');
+        if (eWall) {
+          eWall.setAttribute('fill', '#451a03');
+          eWall.setAttribute('stroke', '#78350f');
+        }
+        blk.parentNode.appendChild(blk);
       }
     }
   }
