@@ -2487,14 +2487,20 @@ body.big-labels .road-label {
   box-shadow: 0 16px 32px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(99, 102, 241, 0.15);
 }
 
+.card-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
 .card-badge {
-  position: absolute;
-  top: 14px;
-  right: 14px;
   font-size: 10.5px;
   font-weight: 700;
-  padding: 3px 9px;
+  padding: 3.5px 9.5px;
   border-radius: 20px;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
 }
 
 .live-badge {
@@ -3627,11 +3633,29 @@ body.big-labels .road-label {
 /* VISITOR PARKING & EV CHARGING OVERLAYS                    */
 /* ======================================================== */
 .parking-layer-icon {
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.75));
   cursor: pointer;
-  transition: transform 0.2s;
+  touch-action: manipulation;
+  transition: filter 0.2s ease;
+  pointer-events: all;
 }
 
-.parking-layer-icon:hover {
-  transform: scale(1.15);
+.parking-layer-icon:hover,
+.parking-layer-icon.active-parking {
+  filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.95)) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9));
+}
+
+.parking-layer-icon rect {
+  transition: stroke 0.2s ease, stroke-width 0.2s ease, fill 0.2s ease;
+}
+
+.parking-layer-icon:hover rect,
+.parking-layer-icon.active-parking rect {
+  stroke-width: 3.5px !important;
+  stroke: #ffffff !important;
+}
+
+.parking-layer-icon text {
+  pointer-events: none;
+  user-select: none;
 }

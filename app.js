@@ -962,6 +962,9 @@
     populateSelectDropdowns();
 
     updateHeaderForLayout(currentLayout);
+    if (state.parkingVisible) {
+      toggleParkingLayer(true);
+    }
 
     // Update document title and URL parameters for this layout
     document.title = `${currentLayout.name} — HM Maps Layout Navigator`;
@@ -2726,6 +2729,135 @@
   // ========================================================
   // 4. VISITOR PARKING & EV CHARGING OVERLAY
   // ========================================================
+  function selectParkingSpot(ps, zoomIn = false) {
+    if (!ps) return;
+
+    // Highlight selected parking icon on the SVG map
+    document.querySelectorAll('.parking-layer-icon').forEach(el => {
+      if (el.getAttribute('data-id') === ps.id) {
+        el.classList.add('active-parking');
+      } else {
+        el.classList.remove('active-parking');
+      }
+    });
+
+    const nearestNodeId = findClosestRoadNode(ps.x, ps.y);
+    const startNode = (state.userLocation && state.isGeoTracking)
+      ? (findClosestRoadNode(state.userLocation.x, state.userLocation.y) || state.startNodeId)
+      : (nodes[state.startNodeId] ? state.startNodeId : (Object.keys(nodes).find(n => n.includes('main') || n === 'gate_1') || Object.keys(nodes)[0]));
+
+    const route = findShortestPath(startNode, nearestNodeId);
+
+    if (route) {
+      state.activeRoute = route;
+      const points = [];
+      for (const nid of route.nodes) {
+        const n = nodes[nid];
+        if (n) points.push(`${n.x},${n.y}`);
+      }
+      points.push(`${ps.x},${ps.y}`);
+      const pathData = "M " + points.join(" L ");
+
+      const sNode = nodes[startNode] || { x: 80, y: 336 };
+      const isEv = ps.type === 'ev';
+      const badgeText = isEv ? '⚡ FAST EV CHARGER' : (ps.type === 'bike' ? '🚲 TWO-WHEELER BAY' : '🅿️ VISITOR PARKING');
+      const badgeColor = isEv ? '#0284c7' : (ps.type === 'bike' ? '#059669' : '#d97706');
+      const strokeHighlight = isEv ? '#38bdf8' : (ps.type === 'bike' ? '#34d399' : '#fbbf24');
+
+      routeLayer.innerHTML = `
+        <path d="${pathData}" class="nav-route-underlay" />
+        <path id="active-nav-path" d="${pathData}" class="nav-route-path" />
+        <circle cx="${sNode.x}" cy="${sNode.y}" r="8" fill="#10b981" stroke="#ffffff" stroke-width="2.5" />
+        <!-- Destination Pin Badge -->
+        <g transform="translate(${ps.x}, ${ps.y - 28})">
+          <rect x="-65" y="-12" width="130" height="24" rx="12" fill="${badgeColor}" stroke="#ffffff" stroke-width="1.8" filter="drop-shadow(0 3px 6px rgba(0,0,0,0.5))" />
+          <text x="0" y="4" text-anchor="middle" font-size="9" font-weight="900" fill="#ffffff">${badgeText}</text>
+        </g>
+        <circle cx="${ps.x}" cy="${ps.y}" r="11" fill="${badgeColor}" stroke="${strokeHighlight}" stroke-width="3" filter="drop-shadow(0 0 10px ${strokeHighlight})" />
+        <circle id="route-traveler" r="6" fill="#f59e0b" stroke="#ffffff" stroke-width="2" />
+      `;
+
+      startRouteTravelerAnimation();
+
+      const legDist = Math.hypot(ps.x - (nodes[nearestNodeId]?.x || ps.x), ps.y - (nodes[nearestNodeId]?.y || ps.y));
+      const totalDist = Math.round((route.totalDist + legDist) * 0.95);
+      const walkMins = Math.max(1, Math.round(totalDist / 70));
+      const driveMins = Math.max(1, Math.round(totalDist / 250));
+
+      distanceVal.textContent = `${totalDist} m`;
+      walkTimeVal.textContent = `${walkMins} min`;
+      driveTimeVal.textContent = `${driveMins} min`;
+
+      // Generate Directions
+      const steps = generateTurnByTurnDirections(route, null, startNode);
+      steps.push({
+        icon: isEv ? "⚡" : (ps.type === 'bike' ? "🚲" : "🅿️"),
+        text: `Arrive at <strong>${escapeHtml(ps.name)}</strong>. Designated bay with ${ps.slots} slots (${escapeHtml(ps.fee)}).`,
+        dist: Math.round(legDist)
+      });
+      renderDirectionsList(steps);
+
+      if (routeSummary) routeSummary.style.display = 'flex';
+    }
+
+    // Populate Sidebar House Card with parking details
+    const cardHouseNum = document.getElementById('card-house-num');
+    const cardRoad = document.getElementById('card-road');
+    const cardBlock = document.getElementById('card-block');
+    const cardFacing = document.getElementById('card-facing');
+    const amenityInfoEl = document.getElementById('card-amenity-info');
+
+    if (cardHouseNum) cardHouseNum.textContent = ps.name.split(' (')[0];
+    if (cardRoad) cardRoad.textContent = ps.name.includes('Gate 2') ? 'East Gate Access Road' : 'Main Entrance Boulevard';
+    if (cardBlock) cardBlock.textContent = ps.type === 'ev' ? 'EV Charging Zone' : 'Visitor Parking Zone';
+    if (cardFacing) cardFacing.textContent = `${ps.slots} Available Bays`;
+
+    // Distance from Gate 1 and Gate 2
+    const gate1 = Object.keys(nodes).find(n => n.includes('main') || n === 'gate_1') || Object.keys(nodes)[0];
+    const gate2 = Object.keys(nodes).find(n => (n.includes('east') || n.includes('north') || n === 'gate_2') && n !== gate1);
+    const cardDistG1 = document.getElementById('card-dist-g1');
+    const cardDistG2 = document.getElementById('card-dist-g2');
+
+    if (gate1) {
+      const r1 = findShortestPath(gate1, nearestNodeId);
+      if (cardDistG1) cardDistG1.textContent = r1 ? `${Math.round(r1.totalDist)}m` : '--';
+    }
+    if (gate2) {
+      const r2 = findShortestPath(gate2, nearestNodeId);
+      if (cardDistG2) cardDistG2.textContent = r2 ? `${Math.round(r2.totalDist)}m` : '--';
+    }
+
+    // Hide apartment interior button & unit chips
+    const viewInteriorBtn = document.getElementById('card-view-interior-btn');
+    if (viewInteriorBtn) viewInteriorBtn.style.display = 'none';
+    const blockUnitsEl = document.getElementById('card-block-units');
+    if (blockUnitsEl) blockUnitsEl.style.display = 'none';
+
+    // Show amenity / parking info box
+    if (amenityInfoEl) {
+      const isEv = ps.type === 'ev';
+      amenityInfoEl.innerHTML = `
+        <div class="amenity-status-pill open" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4);">
+          🟢 Open 24/7 • Security Guard Monitored
+        </div>
+        <div class="amenity-rules-box" style="margin-top: 8px;">
+          <strong>${isEv ? '⚡ Fast EV Station Specs & Rules:' : '🅿️ Visitor Parking Rules:'}</strong><br>
+          • <strong>Tariff / Fee:</strong> ${escapeHtml(ps.fee)}<br>
+          • <strong>Capacity:</strong> ${ps.slots} Dedicated bays for guests & residents<br>
+          • <strong>Access:</strong> Boom barrier pass issued at security gate<br>
+          ${isEv ? '• <strong>Charger Type:</strong> Dual Type-2 CCS / AC Fast Charging with app QR pay' : '• Overnight visitor parking requires security token registration.'}
+        </div>
+      `;
+      amenityInfoEl.style.display = 'block';
+    }
+
+    if (houseCard) houseCard.classList.add('active');
+
+    if (zoomIn) {
+      zoomToCoordinates(ps.x, ps.y, 1.8);
+    }
+  }
+
   function toggleParkingLayer(visible) {
     state.parkingVisible = typeof visible === 'boolean' ? visible : !state.parkingVisible;
     const layer = document.getElementById('parking-layer');
@@ -2765,27 +2897,59 @@
       const icon = isEv ? '⚡ EV' : '🅿️';
 
       g.innerHTML = `
-        <rect x="${ps.x - 35}" y="${ps.y - 18}" width="70" height="36" rx="8" fill="${bgColor}" stroke="${strokeColor}" stroke-width="2" filter="drop-shadow(0 3px 6px rgba(0,0,0,0.6))" />
-        <text x="${ps.x}" y="${ps.y + 4}" text-anchor="middle" font-size="11" font-weight="900" fill="#ffffff">${icon}</text>
-        <text x="${ps.x}" y="${ps.y + 26}" text-anchor="middle" font-size="8.5" font-weight="700" fill="${strokeColor}">${ps.slots} Slots</text>
+        <rect x="${ps.x - 35}" y="${ps.y - 18}" width="70" height="36" rx="8" fill="${bgColor}" stroke="${strokeColor}" stroke-width="2" filter="drop-shadow(0 3px 6px rgba(0,0,0,0.6))" pointer-events="all" />
+        <text x="${ps.x}" y="${ps.y + 4}" text-anchor="middle" font-size="11" font-weight="900" fill="#ffffff" pointer-events="none">${icon}</text>
+        <text x="${ps.x}" y="${ps.y + 26}" text-anchor="middle" font-size="8.5" font-weight="700" fill="${strokeColor}" pointer-events="none">${ps.slots} Slots</text>
       `;
 
-      g.addEventListener('click', (e) => {
-        e.stopPropagation();
-        showToast(`Selected ${ps.name} (${ps.slots} slots • ${ps.fee})`, 3000);
-        const nearestNode = findClosestRoadNode(ps.x, ps.y);
-        if (nearestNode) {
-          destSelect.value = nearestNode;
-          calculateAndDisplayRoute(state.startNodeId, nearestNode);
+      // Touch handling to eliminate mobile tap drops
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchMoved = false;
+
+      g.addEventListener('touchstart', (e) => {
+        if (e.touches && e.touches.length === 1) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          touchMoved = false;
+        }
+      }, { passive: true });
+
+      g.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches.length === 1) {
+          const dx = Math.abs(e.touches[0].clientX - touchStartX);
+          const dy = Math.abs(e.touches[0].clientY - touchStartY);
+          if (dx > 8 || dy > 8) {
+            touchMoved = true;
+          }
+        }
+      }, { passive: true });
+
+      g.addEventListener('touchend', (e) => {
+        if (!touchMoved) {
+          e.preventDefault();
+          e.stopPropagation();
+          showToast(`Selected ${ps.name} (${ps.slots} slots • ${ps.fee})`, 2500);
+          selectParkingSpot(ps, true);
         }
       });
 
+      g.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showToast(`Selected ${ps.name} (${ps.slots} slots • ${ps.fee})`, 2500);
+        selectParkingSpot(ps, true);
+      });
+
       g.addEventListener('mouseenter', (e) => {
-        tooltip.innerHTML = `<strong>${ps.name}</strong><br><span style="color:#38bdf8;font-size:11px;">Capacity: ${ps.slots} bays • ${ps.fee}</span><br><span style="color:#94a3b8;font-size:10px;">Click to calculate driving directions</span>`;
+        if (!window.matchMedia('(hover: hover)').matches) return;
+        tooltip.innerHTML = `<strong>${escapeHtml(ps.name)}</strong><br><span style="color:#38bdf8;font-size:11px;">Capacity: ${ps.slots} bays • ${escapeHtml(ps.fee)}</span><br><span style="color:#94a3b8;font-size:10px;">Click to calculate driving directions</span>`;
         tooltip.style.display = 'block';
         movePlotTooltip(e);
       });
-      g.addEventListener('mousemove', movePlotTooltip);
+      g.addEventListener('mousemove', (e) => {
+        if (!window.matchMedia('(hover: hover)').matches) return;
+        movePlotTooltip(e);
+      });
       g.addEventListener('mouseleave', hidePlotTooltip);
 
       layer.appendChild(g);
@@ -3956,14 +4120,12 @@
 
       cardsHtml += `
         <div class="community-card active-card" data-layout-id="${lay.id}">
-          <div class="card-badge live-badge">✓ Verified Blueprint</div>
-          <div class="card-header">
+          <div class="card-top-bar">
             <div class="community-avatar">${icon}</div>
-            <div>
-              <h3 class="community-name">${escapeHtml(lay.name)}</h3>
-              <p class="community-loc">${escapeHtml(lay.location)}</p>
-            </div>
+            <span class="card-badge live-badge">✓ Verified Blueprint</span>
           </div>
+          <h3 class="community-name">${escapeHtml(lay.name)}</h3>
+          <p class="community-loc">${escapeHtml(lay.location)}</p>
           <p class="community-desc">${escapeHtml(desc)}</p>
           <div class="community-tags">
             <span class="tag">📍 ${uCount} ${uType}s</span>
@@ -3983,14 +4145,12 @@
     // Append Onboard Society Card at the end
     cardsHtml += `
       <div class="community-card onboard-card" id="card-onboard-society">
-        <div class="card-badge free-badge">Free Onboarding</div>
-        <div class="card-header">
+        <div class="card-top-bar">
           <div class="community-avatar">📐</div>
-          <div>
-            <h3 class="community-name">Onboard Your Community</h3>
-            <p class="community-loc">Residential Societies • Campuses</p>
-          </div>
+          <span class="card-badge free-badge">Free Onboarding</span>
         </div>
+        <h3 class="community-name">Onboard Your Community</h3>
+        <p class="community-loc">Residential Societies • Campuses</p>
         <p class="community-desc">
           Have a physical layout board or blueprint photo? Turn it into a smart, GPS-enabled digital map with turn-by-turn wayfinding for your residents and delivery visitors.
         </p>
